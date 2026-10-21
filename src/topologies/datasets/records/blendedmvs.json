@@ -1,0 +1,12 @@
+{
+  "id": "blendedmvs",
+  "name": "BlendedMVS",
+  "domain": "vision",
+  "description": "A multi-view stereo dataset with 113 scenes and about 17k views. This record is loader-only and does not vendor dataset data.",
+  "citation": "BlendedMVS: A Large-scale Dataset for Generalized Multi-view Stereo Networks. Yao et al., Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2020.",
+  "license": {
+    "identifier": "BlendedMVS release terms (not a standard SPDX identifier)",
+    "url": "https://github.com/YoYo000/BlendedMVS"
+  },
+  "upstream_url": "https://github.com/YoYo000/BlendedMVS"
+}

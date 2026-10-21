@@ -1,0 +1,13 @@
+{
+  "id": "flyingchairs",
+  "name": "Flying Chairs",
+  "domain": "computer-vision",
+  "description": "Synthetic optical-flow dataset comprising 22,872 image pairs with ground-truth flow fields, depicting rendered 3D chairs moving against random Flickr backgrounds.",
+  "citation": "Dosovitskiy, A., Fischer, P., Ilg, E., Häusser, P., Hazırbaş, C., Golkov, V., van der Smagt, P., Cremers, D., & Brox, T. (2015). FlowNet: Learning Optical Flow with Convolutional Networks. IEEE International Conference on Computer Vision (ICCV). https://doi.org/10.48550/arXiv.1504.06852",
+  "license": {
+    "identifier": "other",
+    "url": "",
+    "notes": "The provider permits research use only and prohibits commercial use; no standard license identifier is published."
+  },
+  "upstream_url": "https://lmb.informatik.uni-freiburg.de/resources/datasets/FlyingChairs.en.html"
+}

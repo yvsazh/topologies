@@ -1,0 +1,13 @@
+{
+  "id": "pastis",
+  "name": "PASTIS",
+  "domain": "vision",
+  "description": "PASTIS Sentinel-2 satellite image time series for crop segmentation, about 2400 sequences and 19 classes. Mean IoU on the temporal protocol. Garnot et al., IEEE TGRS 2022. Imagery not vendored.",
+  "citation": "Garnot et al., IEEE TGRS 2022. PASTIS.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://github.com/VSainteuf/pastis-benchmark",
+    "notes": "Provider page does not state a standard SPDX license. Imagery not vendored."
+  },
+  "upstream_url": "https://github.com/VSainteuf/pastis-benchmark"
+}

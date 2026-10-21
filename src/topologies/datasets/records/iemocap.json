@@ -1,0 +1,12 @@
+{
+  "id": "iemocap",
+  "name": "IEMOCAP",
+  "domain": "audio",
+  "description": "Emotional dyadic speech corpus with about 12 hours of recordings from 10 speakers. USC request-gated, loader-only. No data vendored.",
+  "citation": "IEMOCAP: Interactive Emotional Dyadic Motion Capture Database. Busso et al., LREC 2008.",
+  "license": {
+    "identifier": "USC research request terms (not a standard SPDX identifier)",
+    "url": "https://sail.usc.edu/iemocap/"
+  },
+  "upstream_url": "https://sail.usc.edu/iemocap/"
+}

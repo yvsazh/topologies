@@ -1,0 +1,13 @@
+{
+  "id": "adroit",
+  "name": "Adroit",
+  "domain": "scientific",
+  "description": "Adroit dexterous-hand tasks: hammer, door, pen, and relocate. Success rate on the D4RL Adroit split. Environment suite; no demonstrations vendored.",
+  "citation": "Rajeswaran et al., RSS 2018. Adroit dexterous hand.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://github.com/vikashplus/Adroit",
+    "notes": "Provider page does not state a standard SPDX license. Record only; no data vendored."
+  },
+  "upstream_url": "https://github.com/vikashplus/Adroit"
+}

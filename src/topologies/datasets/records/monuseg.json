@@ -1,0 +1,13 @@
+{
+  "id": "monuseg",
+  "name": "MoNuSeg",
+  "domain": "scientific",
+  "description": "MoNuSeg H&E nuclei segmentation, 30 training images and 14 test images. Aggregated Jaccard index and panoptic quality. Kumar et al., TMI 2017. TNBC and CoNSeP are companion notes in this record. Slides not vendored.",
+  "citation": "Kumar et al., TMI 2017. MoNuSeg.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://monuseg.grand-challenge.org/",
+    "notes": "Research terms. Slides not vendored."
+  },
+  "upstream_url": "https://monuseg.grand-challenge.org/"
+}

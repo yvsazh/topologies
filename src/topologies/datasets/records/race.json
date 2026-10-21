@@ -1,0 +1,12 @@
+{
+  "id": "race",
+  "name": "RACE",
+  "domain": "language",
+  "description": "An exam reading-comprehension dataset with about 98k questions. BoolQ and MultiRC are already covered by the recorded SuperGLUE harness and are not separate files. No data is vendored.",
+  "citation": "Lai, G., Xie, Q., Liu, H., Yang, Y., and Hovy, E. (2017). RACE: Large-scale ReAding Comprehension Dataset From Examinations.",
+  "license": {
+    "identifier": "Release terms; no SPDX identifier stated",
+    "url": "http://www.cs.cmu.edu/~glai1/data/race/"
+  },
+  "upstream_url": "http://www.cs.cmu.edu/~glai1/data/race/"
+}

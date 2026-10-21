@@ -1,0 +1,12 @@
+{
+  "id": "drop",
+  "name": "DROP",
+  "domain": "language",
+  "description": "Discrete-reasoning question answering over numbers, dates, and sorts, with about 96k examples. No data is vendored.",
+  "citation": "Dua et al. (2019). DROP: A Reading Comprehension Benchmark Requiring Discrete Reasoning Over Paragraphs. ACL 2019.",
+  "license": {
+    "identifier": "CC-BY-SA-4.0",
+    "url": "https://allenai.org/data/drop"
+  },
+  "upstream_url": "https://allenai.org/data/drop"
+}

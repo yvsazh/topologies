@@ -1,0 +1,13 @@
+{
+  "id": "dns-challenge",
+  "name": "Deep Noise Suppression (DNS) Challenge Dataset",
+  "domain": "audio",
+  "description": "A speech enhancement corpus released for the Microsoft Deep Noise Suppression Challenge, comprising clean speech, noise, and reverberant mixtures for training and evaluating noise suppression systems. This is distinct from GTZAN; GTZAN is a legacy music-genre classification baseline with known flaws.",
+  "citation": "Reddy, C. K. A., Dubey, H., Gopal, V., et al. (2021). The INTERSPEECH 2021 Deep Noise Suppression Challenge. https://doi.org/10.21437/Interspeech.2021-599",
+  "license": {
+    "identifier": "DNS Challenge dataset license (not a standard SPDX identifier)",
+    "url": "https://github.com/microsoft/DNS-Challenge",
+    "notes": "The dataset is provided under the terms published by the challenge organizers; those terms are not a standard SPDX license identifier. Consult the upstream repository and dataset-specific terms before use or redistribution."
+  },
+  "upstream_url": "https://github.com/microsoft/DNS-Challenge"
+}

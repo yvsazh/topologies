@@ -1,0 +1,13 @@
+{
+  "id": "tabula-sapiens",
+  "name": "Tabula Sapiens",
+  "domain": "scientific",
+  "description": "Tabula Sapiens single-cell RNA, about 500 thousand cells across 24 organs. Cell-type F1 on a cross-donor split. Jones et al., Science 2022. The Human Cell Atlas data portal is a companion note in this record. Counts not vendored.",
+  "citation": "Jones et al., Science 2022. Tabula Sapiens.",
+  "license": {
+    "identifier": "CC-BY-4.0",
+    "url": "https://tabula-sapiens.ds.czbiohub.org/",
+    "notes": "CC BY. Counts not vendored."
+  },
+  "upstream_url": "https://tabula-sapiens.ds.czbiohub.org/"
+}

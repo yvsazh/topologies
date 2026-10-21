@@ -1,0 +1,13 @@
+{
+  "id": "nsl-kdd",
+  "name": "NSL-KDD",
+  "domain": "scientific",
+  "description": "NSL-KDD intrusion detection, about 148 thousand records. Accuracy and per-attack detection rate. Tavallaee et al. 2009. KDD Cup 1999, about 5 million rows, is a legacy-biased companion note inside this record, not a separate file. Loader-only metadata.",
+  "citation": "Tavallaee et al. 2009. NSL-KDD.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://www.unb.ca/cic/datasets/nsl.html",
+    "notes": "Provider page does not state a standard SPDX license. Record only; no data vendored."
+  },
+  "upstream_url": "https://www.unb.ca/cic/datasets/nsl.html"
+}

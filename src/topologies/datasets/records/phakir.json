@@ -1,0 +1,13 @@
+{
+  "id": "phakir",
+  "name": "PhaKIR Dataset",
+  "domain": "Surgical video / computer-assisted surgery",
+  "description": "A dataset of laparoscopic cholecystectomy videos with annotations for surgical phase recognition, instrument instance segmentation, and instrument keypoint estimation.",
+  "citation": "Rueckert, T. et al. Comparative validation of surgical phase recognition, instrument keypoint estimation, and instrument instance segmentation in endoscopy: Results of the PhaKIR 2024 challenge. arXiv:2507.16559 (2025). https://arxiv.org/abs/2507.16559",
+  "license": {
+    "identifier": "CC-BY-NC-SA-4.0",
+    "url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "notes": "Dataset is identified as CC BY-NC-SA 4.0 by the PhaKIR challenge site and Zenodo record. Dataset access requires approval."
+  },
+  "upstream_url": "https://zenodo.org/records/15740620"
+}

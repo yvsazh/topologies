@@ -1,0 +1,12 @@
+{
+  "id": "elliptic",
+  "name": "Elliptic",
+  "domain": "graph",
+  "description": "Bitcoin transaction graph for illicit-transaction classification, about 203k nodes over 49 time steps. No data vendored.",
+  "citation": "Elliptic, Weber et al., KDD 2019.",
+  "license": {
+    "identifier": "release terms",
+    "url": "https://www.kaggle.com/datasets/ellipticco/elliptic-data-set"
+  },
+  "upstream_url": "https://www.kaggle.com/datasets/ellipticco/elliptic-data-set"
+}

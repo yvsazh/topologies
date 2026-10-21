@@ -1,0 +1,13 @@
+{
+  "id": "enose",
+  "name": "Gas Sensor Array Drift Dataset",
+  "domain": "gas sensing",
+  "description": "A public electronic-nose dataset containing 13,910 measurements from an array of 16 chemical sensors for classification of six gases, collected over time to study sensor drift.",
+  "citation": "Vergara, A. (2012). Gas Sensor Array Drift Dataset [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5RP6W.",
+  "license": {
+    "identifier": "CC-BY-4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/legalcode",
+    "notes": ""
+  },
+  "upstream_url": "https://archive.ics.uci.edu/dataset/224/gas+sensor+array+drift+dataset"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "flores-200",
+  "name": "FLORES-200",
+  "domain": "natural-language",
+  "description": "A multilingual benchmark dataset for machine translation, with high-quality sentence translations spanning 200 languages.",
+  "citation": "NLLB Team, Costa-jussà, M. R., et al. (2022). No Language Left Behind: Scaling Human-Centered Machine Translation. arXiv:2207.04672. https://arxiv.org/abs/2207.04672",
+  "license": {
+    "identifier": "CC-BY-NC-4.0",
+    "url": "https://creativecommons.org/licenses/by-nc/4.0/",
+    "notes": "Creative Commons Attribution-NonCommercial 4.0 International; this is a standard SPDX identifier. FLORES-200 is non-commercial; review upstream license terms before use or redistribution."
+  },
+  "upstream_url": "https://github.com/facebookresearch/flores"
+}

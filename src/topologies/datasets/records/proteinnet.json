@@ -1,0 +1,13 @@
+{
+  "id": "proteinnet",
+  "name": "ProteinNet",
+  "domain": "scientific",
+  "description": "ProteinNet CASP threading splits with a time cutoff so later structures do not leak into training. Local distance difference test and RMSD. AlQuraishi 2019. Structures not vendored.",
+  "citation": "AlQuraishi 2019. ProteinNet.",
+  "license": {
+    "identifier": "MIT",
+    "url": "https://github.com/aqlaboratory/proteinnet",
+    "notes": "MIT. PDB-derived. Structures not vendored."
+  },
+  "upstream_url": "https://github.com/aqlaboratory/proteinnet"
+}

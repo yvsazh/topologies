@@ -1,0 +1,13 @@
+{
+  "id": "alpaca",
+  "name": "Stanford Alpaca",
+  "domain": "natural-language",
+  "description": "An instruction-following dataset of 52,002 instruction, input, and response examples generated with OpenAI's text-davinci-003 model using self-instruct. The examples were created to fine-tune LLaMA models.",
+  "citation": "Taori, R., Gulrajani, I., Zhang, T., Dubois, Y., Li, X., Guestrin, C., Liang, P., and Hashimoto, T. B. (2023). Stanford Alpaca: An Instruction-following LLaMA Model. https://github.com/tatsu-lab/stanford_alpaca",
+  "license": {
+    "identifier": "CC-BY-NC-4.0",
+    "url": "https://creativecommons.org/licenses/by-nc/4.0/",
+    "notes": "The upstream project states that the dataset is released under CC BY-NC 4.0, a standard SPDX identifier. The generated responses are based on outputs from OpenAI's text-davinci-003; review applicable third-party terms and restrictions before use or redistribution."
+  },
+  "upstream_url": "https://github.com/tatsu-lab/stanford_alpaca"
+}

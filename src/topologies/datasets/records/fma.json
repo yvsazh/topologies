@@ -1,0 +1,13 @@
+{
+  "id": "fma",
+  "name": "Free Music Archive (FMA) Dataset",
+  "domain": "audio",
+  "description": "A dataset of music audio tracks from the Free Music Archive, with metadata and genre labels, intended for music information retrieval research. The FMA-small and FMA-medium subsets contain 30-second audio excerpts.",
+  "citation": "Defferrard, M., Benzi, K., Vandergheynst, P., and Bresson, X. (2017). FMA: A Dataset For Music Analysis. Proceedings of the 18th International Society for Music Information Retrieval Conference (ISMIR 2017), 316–323. https://arxiv.org/abs/1612.01840",
+  "license": {
+    "identifier": "CC BY 4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "notes": "The dataset is distributed under Creative Commons Attribution 4.0 International. This is not a standard SPDX identifier; verify attribution requirements and the terms for individual tracks, which may have separate rights or restrictions."
+  },
+  "upstream_url": "https://github.com/mdeff/fma"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "smap-msl",
+  "name": "SMAP and MSL",
+  "domain": "scientific",
+  "description": "NASA SMAP and MSL telemetry anomaly sets, 55 and 27 entities, command-encoded. Point-adjusted F1. Hundman et al. 2018. One record covers both spacecraft. Loader-only metadata.",
+  "citation": "Hundman et al. 2018. SMAP and MSL NASA telemetry.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://github.com/khundman/telemanom",
+    "notes": "NASA open telemetry. Record only; no data vendored."
+  },
+  "upstream_url": "https://github.com/khundman/telemanom"
+}

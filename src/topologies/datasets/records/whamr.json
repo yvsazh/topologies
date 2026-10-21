@@ -1,0 +1,13 @@
+{
+  "id": "whamr",
+  "name": "WHAMR!",
+  "domain": "audio",
+  "description": "A reverberant, noisy speech separation dataset created by adding noise and reverberation to WSJ0 mixtures, with corresponding clean-source signals.",
+  "citation": "Mack, W., and colleagues. (2020). WHAMR!: Noisy and Reverberant Single-Channel Speech Separation. IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP). https://arxiv.org/abs/1910.06762",
+  "license": {
+    "identifier": "WHAMR! dataset terms (non-SPDX)",
+    "url": "https://whamr.github.io/",
+    "notes": "WHAMR! does not specify a standard SPDX license identifier. Review the dataset terms and the underlying WSJ0 source-data restrictions before use or redistribution."
+  },
+  "upstream_url": "https://whamr.github.io/"
+}

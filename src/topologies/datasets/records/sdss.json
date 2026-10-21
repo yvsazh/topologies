@@ -1,0 +1,13 @@
+{
+  "id": "sdss",
+  "name": "Sloan Digital Sky Survey",
+  "domain": "scientific",
+  "description": "Sloan Digital Sky Survey, more than 500 million photometric objects and about 5 million spectra. Photometric-redshift MAE and morphology accuracy. Catalogs not vendored.",
+  "citation": "SDSS Sloan Digital Sky Survey.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://www.sdss.org/",
+    "notes": "SDSS open data policy. Catalogs not vendored."
+  },
+  "upstream_url": "https://www.sdss.org/"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "multi-news",
+  "name": "Multi-News",
+  "domain": "language",
+  "description": "A multi-document news summarization dataset with about 56k article clusters. It belongs to the long-summarization family alongside BigPatent and BillSum; those are related datasets, not files included here. Open research terms apply; no data is vendored.",
+  "citation": "Fabbri, A. R., Li, I., She, T., Li, S., & Radev, D. R. (2019). Multi-News: a Large-Scale Multi-Document Summarization Dataset and Abstractive Hierarchical Model. Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics, 1074–1084. https://doi.org/10.18653/v1/P19-1102",
+  "license": {
+    "identifier": "Open research terms (no SPDX identifier stated)",
+    "url": "https://github.com/Alex-Fabbri/Multi-News"
+  },
+  "upstream_url": "https://github.com/Alex-Fabbri/Multi-News"
+}

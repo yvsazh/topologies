@@ -1,0 +1,13 @@
+{
+  "id": "radar-doppler",
+  "name": "mmDoppler",
+  "domain": "Radar micro-Doppler human activity recognition",
+  "description": "A public mmWave radar dataset containing seven subjects performing 19 macro- and micro-scale human activities, with range-Doppler heatmaps and point-cloud measurements, including single- and multi-subject recordings.",
+  "citation": "Sen, A., Das, A., Pradhan, S., & Chakraborty, S. (2024). A Dataset for Multi-intensity Continuous Human Activity Recognition through Passive Sensing. arXiv:2407.21125. https://arxiv.org/abs/2407.21125",
+  "license": {
+    "identifier": "GPL-3.0",
+    "url": "https://github.com/arghasen10/mmDoppler/blob/main/LICENSE",
+    "notes": "Repository identifies the dataset and code with GPL-3.0."
+  },
+  "upstream_url": "https://github.com/arghasen10/mmDoppler"
+}

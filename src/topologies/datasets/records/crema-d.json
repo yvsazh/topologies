@@ -1,0 +1,12 @@
+{
+  "id": "crema-d",
+  "name": "CREMA-D",
+  "domain": "audio",
+  "description": "Acted emotional speech, comprising 7,442 clips performed by 91 actors. Access and use are subject to the CREMA-D release terms. No data is vendored here.",
+  "citation": "Cao, H., Cooper, D. G., Keutmann, M. K., Gur, R. C., Nenkova, A., & Verma, R. (2014). CREMA-D: Crowd-sourced Emotional Multimodal Actors Dataset. IEEE Transactions on Affective Computing.",
+  "license": {
+    "identifier": "CREMA-D release terms (not a standard SPDX identifier)",
+    "url": "https://github.com/CheyneyComputerScience/CREMA-D"
+  },
+  "upstream_url": "https://github.com/CheyneyComputerScience/CREMA-D"
+}

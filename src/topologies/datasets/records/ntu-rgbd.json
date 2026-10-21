@@ -1,0 +1,12 @@
+{
+  "id": "ntu-rgbd",
+  "name": "NTU RGB+D",
+  "domain": "vision",
+  "description": "A skeleton action recognition dataset with 60-class and 120-class versions. Access is governed by Nanyang research request terms. This record is loader-only and does not distribute dataset files.",
+  "citation": "NTU RGB+D: A Large Scale Dataset for 3D Human Activity Analysis. Shahroudy et al., Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2016.",
+  "license": {
+    "identifier": "Nanyang research request terms (not a standard SPDX identifier)",
+    "url": "https://rose1.ntu.edu.sg/dataset/actionRecognition/"
+  },
+  "upstream_url": "https://rose1.ntu.edu.sg/dataset/actionRecognition/"
+}

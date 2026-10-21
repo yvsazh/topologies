@@ -1,0 +1,13 @@
+{
+  "id": "n2c2",
+  "name": "n2c2",
+  "domain": "language",
+  "description": "n2c2 and i2b2 clinical NLP challenges, including de-identification 2006 and 2014, smoking 2008, obesity 2008, and relations 2010 and 2018. Entity and micro F1. DBMI portal credential required. Text not vendored.",
+  "citation": "n2c2 and i2b2 clinical NLP challenges.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://portal.dbmi.hms.harvard.edu/projects/n2c2-nlp/",
+    "notes": "Credentialed DBMI portal. Clinical text is loader-only and not vendored."
+  },
+  "upstream_url": "https://portal.dbmi.hms.harvard.edu/projects/n2c2-nlp/"
+}

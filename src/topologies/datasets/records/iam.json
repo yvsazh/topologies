@@ -1,0 +1,13 @@
+{
+  "id": "iam",
+  "name": "IAM Handwriting",
+  "domain": "vision",
+  "description": "IAM handwriting database, about 13 thousand handwritten lines from 657 writers. Character error rate and word error rate on the Aachen splits. Marti and Bunke, ICDAR 1999. Images not vendored.",
+  "citation": "Marti and Bunke, ICDAR 1999. IAM Handwriting.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://fki.tic.heia-fr.ch/databases/iam-handwriting-database",
+    "notes": "FKI research terms. Handwriting images are loader-only and not vendored."
+  },
+  "upstream_url": "https://fki.tic.heia-fr.ch/databases/iam-handwriting-database"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "cassava",
+  "name": "Cassava Leaf Disease",
+  "domain": "vision",
+  "description": "Labeled and unlabeled cassava leaf images for visual classification of disease types and healthy leaves.",
+  "citation": "Mwebaze, E., Gebru, T., Frome, A., Nsumba, S., & Tusubira, J. (2019). iCassava 2019 Fine-Grained Visual Categorization Challenge. arXiv:1908.02900.",
+  "license": {
+    "identifier": "other",
+    "url": "",
+    "notes": "unverified"
+  },
+  "upstream_url": "https://www.kaggle.com/c/cassava-disease"
+}

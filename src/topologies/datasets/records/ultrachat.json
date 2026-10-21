@@ -1,0 +1,12 @@
+{
+  "id": "ultrachat",
+  "name": "UltraChat",
+  "domain": "language",
+  "description": "A dataset of about 1.5 million multi-turn instruction dialogues. Related dialogue datasets include OpenAssistant OASST and LMSYS-Chat-1M. UltraChat is non-commercial; no data is vendored.",
+  "citation": "UltraChat: A Large-Scale Auto-Augmented Conversation Dataset for Instruction Following. Ding et al., 2023.",
+  "license": {
+    "identifier": "CC-BY-NC-4.0",
+    "url": "https://github.com/thunlp/UltraChat"
+  },
+  "upstream_url": "https://github.com/thunlp/UltraChat"
+}

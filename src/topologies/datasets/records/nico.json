@@ -1,0 +1,13 @@
+{
+  "id": "nico",
+  "name": "NICO",
+  "domain": "vision",
+  "description": "NICO animals and vehicles with context shift, about 25 thousand images and 10 contexts per class. Accuracy gap from in-distribution to out-of-distribution. He et al., IJCAI 2021. Images not vendored.",
+  "citation": "He et al., IJCAI 2021. NICO.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://nico-dataset.com/",
+    "notes": "Open research terms. Images not vendored."
+  },
+  "upstream_url": "https://nico-dataset.com/"
+}

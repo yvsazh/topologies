@@ -1,0 +1,13 @@
+{
+  "id": "whu-hi",
+  "name": "WHU-Hi UAV Hyperspectral Crop Dataset",
+  "domain": "agriculture",
+  "description": "A benchmark collection of high-spatial-resolution UAV-borne hyperspectral images and reference labels for precise crop identification.",
+  "citation": "Zhong, Y., Hu, X., Luo, C., Wang, X., Zhao, J., & Zhang, L. (2020). WHU-Hi: UAV-borne hyperspectral with high spatial resolution (H2) benchmark datasets and classifier for precise crop identification based on deep convolutional neural network with CRF. Remote Sensing of Environment, 250, 112012. https://doi.org/10.1016/j.rse.2020.112012",
+  "license": {
+    "identifier": "other",
+    "url": "",
+    "notes": "unverified"
+  },
+  "upstream_url": "https://doi.org/10.1016/j.rse.2020.112012"
+}

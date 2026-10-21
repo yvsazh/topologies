@@ -1,0 +1,13 @@
+{
+  "id": "xview",
+  "name": "xView",
+  "domain": "computer vision",
+  "description": "A large-scale overhead imagery object detection dataset with annotations for objects across many classes in satellite images.",
+  "citation": "Lam, D., et al. (2018). xView: Objects in Context in Overhead Imagery..",
+  "license": {
+    "identifier": "other",
+    "url": "https://xviewdataset.org/",
+    "notes": "Review the dataset terms on the official site; no standard SPDX license identifier is asserted here."
+  },
+  "upstream_url": "https://xviewdataset.org/"
+}

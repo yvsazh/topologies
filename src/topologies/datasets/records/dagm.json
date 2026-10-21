@@ -1,0 +1,13 @@
+{
+  "id": "dagm",
+  "name": "DAGM 2007",
+  "domain": "vision",
+  "description": "DAGM 2007 texture defects, 10 classes of about 1000 images each. Weakly supervised AUROC. AITEX fabric defects, about 245 images, is a companion note in this record. Distinct from MVTec and VisA. Images not vendored.",
+  "citation": "Wieler and Hahn 2007. DAGM 2007.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://hci.iwr.uni-heidelberg.de/benchmarks/dagm2007",
+    "notes": "Open research terms. Original host is recorded as the Heidelberg benchmark page; the inventory marks the canonical URL as unconfirmed. Images not vendored."
+  },
+  "upstream_url": "https://hci.iwr.uni-heidelberg.de/benchmarks/dagm2007"
+}

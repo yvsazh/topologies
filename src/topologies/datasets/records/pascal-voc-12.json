@@ -1,0 +1,13 @@
+{
+  "id": "pascal-voc-12",
+  "name": "PASCAL VOC 2012",
+  "domain": "vision",
+  "description": "The 2012 PASCAL Visual Object Classes challenge dataset, containing images and annotations for visual object classification, detection, and segmentation. This record does not distribute dataset files.",
+  "citation": "Everingham, M., Van Gool, L., Williams, C. K. I., Winn, J., & Zisserman, A. (2010). The Pascal Visual Object Classes (VOC) Challenge. International Journal of Computer Vision, 88, 303–338. https://doi.org/10.1007/s11263-009-0275-4",
+  "license": {
+    "identifier": "PASCAL VOC dataset terms (not a standard SPDX identifier)",
+    "url": "http://host.robots.ox.ac.uk/pascal/VOC/",
+    "notes": "The dataset is provided under PASCAL VOC terms, not a standard SPDX license identifier. Review the provider's terms and rights for the images and annotations before use or redistribution."
+  },
+  "upstream_url": "http://host.robots.ox.ac.uk/pascal/VOC/voc2012/"
+}

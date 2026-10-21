@@ -1,0 +1,13 @@
+{
+  "id": "casia-v2",
+  "name": "CASIA Image Tampering Detection Evaluation Database v1/v2",
+  "domain": "image forgery detection",
+  "description": "Image-splicing forgery dataset with CASIA v1 (921 tampered images) and CASIA v2 (5,123 tampered images), used for pixel-level and image-level forgery detection evaluation.",
+  "citation": "Dong, J., Wang, W., & Tan, T. (2013). CASIA Image Tampering Detection Evaluation Database. In 2013 IEEE China Summit and International Conference on Signal and Information Processing (ChinaSIP), 422\u2013426.",
+  "license": {
+    "identifier": "other",
+    "url": "",
+    "notes": "Unverified. The dataset publisher's license terms are not stated on the Kaggle mirror; the inventory describes CASIA research use."
+  },
+  "upstream_url": "https://www.kaggle.com/datasets/sophatvathana/casia-dataset"
+}

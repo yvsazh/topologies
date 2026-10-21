@@ -1,0 +1,13 @@
+{
+  "id": "inaturalist-2021",
+  "name": "iNaturalist 2021",
+  "domain": "vision",
+  "description": "Large-scale fine-grained species classification dataset from iNaturalist 2021, containing wildlife observations labeled with species categories.",
+  "citation": "Van Horn, G., Cole, E., Beery, S., Wilber, K., Belongie, S., & Mac Aodha, O. (2021). Benchmarking Representation Learning for Natural World Image Collections. Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 12884–12893. https://doi.org/10.1109/CVPR46437.2021.01269",
+  "license": {
+    "identifier": "Not specified by upstream",
+    "url": "https://github.com/visipedia/inat_comp/tree/master/2021",
+    "notes": "The upstream iNaturalist 2021 dataset page does not state a dataset-wide license. Individual observation images may have differing licenses; review the source image rights and current provider terms before use or redistribution."
+  },
+  "upstream_url": "https://github.com/visipedia/inat_comp/tree/master/2021"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "gbsg2",
+  "name": "GBSG2",
+  "domain": "scientific",
+  "description": "GBSG2 breast-cancer survival, 686 patients. Concordance index on five-fold splits. Veteran, Lung, and PBC survival tables are companion notes in this record. Distinct from METABRIC and SUPPORT. Tables not vendored.",
+  "citation": "TH.data GBSG2.",
+  "license": {
+    "identifier": "GPL-2.0-or-later",
+    "url": "https://cran.r-project.org/package=TH.data",
+    "notes": "Ships with the R TH.data package. Clinical tables are loader-only and not vendored."
+  },
+  "upstream_url": "https://cran.r-project.org/package=TH.data"
+}

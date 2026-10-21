@@ -1,0 +1,12 @@
+{
+  "id": "jester",
+  "name": "Jester",
+  "domain": "vision",
+  "description": "Hand-gesture video clips with about 148k clips across 27 classes. Access is subject to TwentyBN terms. This record vendors no data.",
+  "citation": "Jester: A Large-Scale Video Dataset of Human Gestures, Materzynska et al. (2019).",
+  "license": {
+    "identifier": "TwentyBN terms (not a standard SPDX identifier)",
+    "url": "https://developer.qualcomm.com/software/ai-datasets/jester"
+  },
+  "upstream_url": "https://developer.qualcomm.com/software/ai-datasets/jester"
+}

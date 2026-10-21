@@ -1,0 +1,13 @@
+{
+  "id": "floodnet",
+  "name": "FloodNet",
+  "domain": "vision",
+  "description": "FloodNet UAV flood imagery, about 2300 images, nine classes, plus a visual-question-answering track. Mean IoU and VQA accuracy. Rahnemoonfar et al., ACCV 2021. Imagery not vendored.",
+  "citation": "Rahnemoonfar et al., ACCV 2021. FloodNet.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://github.com/BinaLab/FloodNet",
+    "notes": "Provider page does not state a standard SPDX license. Imagery not vendored."
+  },
+  "upstream_url": "https://github.com/BinaLab/FloodNet"
+}

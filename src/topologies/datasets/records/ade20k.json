@@ -1,0 +1,13 @@
+{
+  "id": "ade20k",
+  "name": "ADE20K",
+  "domain": "vision",
+  "description": "Scene parsing dataset containing densely annotated images across a broad range of indoor and outdoor scenes. This record does not distribute dataset files.",
+  "citation": "Zhou, B., Zhao, H., Puig, X., Fidler, S., Barriuso, A., & Torralba, A. (2017). Scene Parsing through ADE20K Dataset. Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 633–641. https://doi.org/10.1109/CVPR.2017.544",
+  "license": {
+    "identifier": "Custom ADE20K terms (not a standard SPDX identifier)",
+    "url": "https://groups.csail.mit.edu/vision/datasets/ADE20K/",
+    "notes": "ADE20K is provided under dataset-specific terms rather than a standard SPDX license identifier. Review the current upstream terms and underlying image rights before use or redistribution."
+  },
+  "upstream_url": "https://groups.csail.mit.edu/vision/datasets/ADE20K/"
+}

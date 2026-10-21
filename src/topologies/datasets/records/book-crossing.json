@@ -1,0 +1,12 @@
+{
+  "id": "book-crossing",
+  "name": "Book-Crossing",
+  "domain": "recommendation",
+  "description": "Book ratings, with about 1.1 million ratings from 278k users. No data is vendored.",
+  "citation": "Book-Crossing dataset; Ziegler et al. (2005).",
+  "license": {
+    "identifier": "Freiburg release terms; no SPDX identifier stated",
+    "url": "http://www2.informatik.uni-freiburg.de/~cziegler/BX/"
+  },
+  "upstream_url": "http://www2.informatik.uni-freiburg.de/~cziegler/BX/"
+}

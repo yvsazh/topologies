@@ -1,0 +1,12 @@
+{
+  "id": "kmnist",
+  "name": "KMNIST",
+  "domain": "vision",
+  "description": "Kuzushiji-MNIST is a drop-in replacement for MNIST featuring Japanese cursive characters across 10 classes, with 70,000 images. K49 and Kanji are companion datasets available through the same loader, not separate records here. No data is vendored.",
+  "citation": "KMNIST: Clanuwat et al., NeurIPS 2018 Workshop.",
+  "license": {
+    "identifier": "CC-BY-SA-4.0",
+    "url": "http://codh.rois.ac.jp/kmnist/"
+  },
+  "upstream_url": "http://codh.rois.ac.jp/kmnist/"
+}

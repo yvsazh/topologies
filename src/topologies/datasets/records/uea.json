@@ -1,0 +1,13 @@
+{
+  "id": "uea",
+  "name": "UEA Time Series Classification Archive",
+  "domain": "time-series",
+  "description": "A collection of multivariate time-series datasets for classification research, made available alongside the UCR archive as the UEA & UCR Time Series Classification repository.",
+  "citation": "Bagnall, A., Dau, H. A., Lines, J., Flynn, M., Large, J., Bostrom, A., Southam, P., & Keogh, E. (2018). The UEA multivariate time series classification archive, 2018. arXiv:1811.00075. https://doi.org/10.48550/arXiv.1811.00075",
+  "license": {
+    "identifier": "Dataset-specific terms; not a standard SPDX identifier",
+    "url": "https://www.timeseriesclassification.com/",
+    "notes": "The archive aggregates datasets from different sources and does not provide one standard SPDX license identifier covering all constituent data. Review the terms and rights for each dataset and its original source before use or redistribution. This record does not include dataset files."
+  },
+  "upstream_url": "https://www.timeseriesclassification.com/"
+}

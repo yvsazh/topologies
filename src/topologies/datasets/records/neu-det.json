@@ -1,0 +1,13 @@
+{
+  "id": "neu-det",
+  "name": "NEU surface defect",
+  "domain": "vision",
+  "description": "NEU steel-surface defect detection, 1800 images and six classes. mAP. Song and Yan 2013. Images not vendored.",
+  "citation": "Song and Yan 2013. NEU surface defect database.",
+  "license": {
+    "identifier": "not specified",
+    "url": "http://faculty.neu.edu.cn/yunhyan/NEU_surface_defect_database.html",
+    "notes": "Northeastern University open research terms. Images not vendored."
+  },
+  "upstream_url": "http://faculty.neu.edu.cn/yunhyan/NEU_surface_defect_database.html"
+}

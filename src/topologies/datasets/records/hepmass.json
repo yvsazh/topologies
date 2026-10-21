@@ -1,0 +1,13 @@
+{
+  "id": "hepmass",
+  "name": "HEPMASS",
+  "domain": "tabular",
+  "description": "A simulated high-energy physics dataset for binary classification, with features describing particles produced in collision events. This record describes the upstream dataset and does not distribute data.",
+  "citation": "Baldi, P., Sadowski, P., & Whiteson, D. (2014). Searching for exotic particles in high-energy physics with deep learning. Nature Communications, 5, 4308. https://doi.org/10.1038/ncomms5308",
+  "license": {
+    "identifier": "Dataset-specific terms (not a standard SPDX identifier)",
+    "url": "https://archive.ics.uci.edu/dataset/347/hepmass",
+    "notes": "The dataset landing page does not identify a standard SPDX license. Review the upstream terms and applicable rights before use or redistribution."
+  },
+  "upstream_url": "https://archive.ics.uci.edu/dataset/347/hepmass"
+}

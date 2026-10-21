@@ -1,0 +1,12 @@
+{
+  "id": "charades",
+  "name": "Charades",
+  "domain": "vision",
+  "description": "A dataset of daily-activity videos annotated with multilabel temporal intervals for 157 actions. STAIR Actions is an extension with additional annotations. This metadata record does not vendor dataset data.",
+  "citation": "Charades: Sigurdsson, G. A., Varol, G., Wang, X., et al. (2016). Hollywood in Homes: Crowdsourcing Data Collection for Activity Understanding. Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR).",
+  "license": {
+    "identifier": "CMU Charades release terms (not a standard SPDX identifier)",
+    "url": "https://prior.allenai.org/projects/charades"
+  },
+  "upstream_url": "https://prior.allenai.org/projects/charades"
+}

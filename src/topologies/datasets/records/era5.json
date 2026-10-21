@@ -1,0 +1,13 @@
+{
+  "id": "era5",
+  "name": "ERA5",
+  "domain": "scientific",
+  "description": "The fifth generation ECMWF atmospheric reanalysis, providing a global, hourly estimate of atmospheric, land and ocean-wave variables from 1940 onward. ERA5 is accessed through the Copernicus Climate Data Store (CDS); users must configure CDS credentials and accept the applicable dataset terms. This record describes the dataset and loader access, and does not distribute data.",
+  "citation": "Hersbach, H., et al. (2020). The ERA5 global reanalysis. Quarterly Journal of the Royal Meteorological Society, 146(730), 1999–2049. https://doi.org/10.1002/qj.3803",
+  "license": {
+    "identifier": "Copernicus licence; not a standard SPDX license identifier",
+    "url": "https://cds.climate.copernicus.eu/api/v2/terms/static/licence-to-use-copernicus-products.pdf",
+    "notes": "ERA5 is provided under the Copernicus licence, which is not a standard SPDX identifier. Consult and accept the current CDS terms for the relevant product before access or reuse; CDS account credentials are required for programmatic access."
+  },
+  "upstream_url": "https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels"
+}

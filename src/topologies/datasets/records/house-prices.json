@@ -1,0 +1,13 @@
+{
+  "id": "house-prices",
+  "name": "House Prices: Advanced Regression Techniques",
+  "domain": "tabular",
+  "description": "A Kaggle competition dataset of residential home sales in Ames, Iowa, with property characteristics and sale prices, intended for predicting house prices.",
+  "citation": "De Cock, D. (2011). Ames, Iowa: Alternative to the Boston Housing Data as an End of Semester Regression Project. Journal of Statistics Education, 19(3). https://doi.org/10.1080/10691898.2011.11889627",
+  "license": {
+    "identifier": "Kaggle competition dataset terms (not a standard SPDX identifier)",
+    "url": "https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques/rules",
+    "notes": "Dataset access and use are governed by Kaggle competition rules; these terms are not a standard SPDX license identifier. Review current competition terms and applicable rights before use or redistribution. This record does not distribute dataset files."
+  },
+  "upstream_url": "https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques"
+}

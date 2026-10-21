@@ -1,0 +1,12 @@
+{
+  "id": "un-parallel",
+  "name": "UN Parallel Corpus",
+  "domain": "language",
+  "description": "United Nations six-language parallel corpus containing about 25 million sentence pairs. Tatoeba is the community sentence collection, not a second file. UN open terms. No data vendored.",
+  "citation": "UN Parallel Corpus.",
+  "license": {
+    "identifier": "UN open terms",
+    "url": "https://conferences.unite.un.org/uncorpus"
+  },
+  "upstream_url": "https://conferences.unite.un.org/uncorpus"
+}

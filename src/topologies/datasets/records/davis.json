@@ -1,0 +1,13 @@
+{
+  "id": "davis",
+  "name": "DAVIS (Densely Annotated Video Segmentation)",
+  "domain": "vision",
+  "description": "A video object segmentation benchmark providing densely annotated videos and pixel-level object masks for evaluating video object segmentation methods. This record is metadata-only and does not distribute dataset files.",
+  "citation": "Perazzi, F., Pont-Tuset, J., McWilliams, B., Van Gool, L., Gross, M., & Sorkine-Hornung, A. (2016). A Benchmark Dataset and Evaluation Methodology for Video Object Segmentation. Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 724–732. https://doi.org/10.1109/CVPR.2016.85",
+  "license": {
+    "identifier": "Custom DAVIS dataset terms (not a standard SPDX identifier)",
+    "url": "https://davischallenge.org/",
+    "notes": "DAVIS dataset access and use are governed by dataset-specific terms, not a standard SPDX license identifier. Review the current upstream terms and rights in the underlying videos before use or redistribution."
+  },
+  "upstream_url": "https://davischallenge.org/"
+}

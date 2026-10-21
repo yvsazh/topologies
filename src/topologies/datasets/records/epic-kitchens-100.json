@@ -1,0 +1,12 @@
+{
+  "id": "epic-kitchens-100",
+  "name": "EPIC-KITCHENS-100",
+  "domain": "vision",
+  "description": "An egocentric kitchen action dataset comprising about 100 hours of video and 90,000 action segments. Access and use are subject to the Bristol release terms. This metadata record vendors no data.",
+  "citation": "Damen, D., et al. (2022). EPIC-KITCHENS-100. https://epic-kitchens.github.io/",
+  "license": {
+    "identifier": "Bristol release terms (not a standard SPDX identifier)",
+    "url": "https://epic-kitchens.github.io/"
+  },
+  "upstream_url": "https://epic-kitchens.github.io/"
+}

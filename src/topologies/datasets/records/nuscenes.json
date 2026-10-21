@@ -1,0 +1,13 @@
+{
+  "id": "nuscenes",
+  "name": "nuScenes",
+  "domain": "vision",
+  "description": "A large-scale autonomous-driving dataset with annotated camera, radar, and lidar data collected in urban scenes. This record is loader-only and does not distribute dataset files.",
+  "citation": "Caesar, H., Bankiti, V., Lang, A. H., et al. (2020). nuScenes: A multimodal dataset for autonomous driving. Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 11621–11631. https://doi.org/10.1109/CVPR42600.2020.01164",
+  "license": {
+    "identifier": "nuScenes Terms of Use (not a standard SPDX identifier)",
+    "url": "https://www.nuscenes.org/terms-of-use",
+    "notes": "Access and use are governed by the nuScenes dataset-specific terms; the license is not a standard SPDX identifier. Review the current terms before access or use. This record is loader-only and vendors no data."
+  },
+  "upstream_url": "https://www.nuscenes.org/"
+}

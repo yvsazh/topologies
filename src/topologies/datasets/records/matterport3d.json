@@ -1,0 +1,12 @@
+{
+  "id": "matterport3d",
+  "name": "Matterport3D",
+  "domain": "vision",
+  "description": "RGB-D building scans of 90 buildings. Application-gated, loader-only, and distinct from Habitat-Matterport 3D. No data vendored.",
+  "citation": "Matterport3D: Chang et al., 3DV 2017.",
+  "license": {
+    "identifier": "Gated research terms (not a standard SPDX identifier)",
+    "url": "https://niessner.github.io/Matterport/"
+  },
+  "upstream_url": "https://niessner.github.io/Matterport/"
+}

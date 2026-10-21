@@ -1,0 +1,13 @@
+{
+  "id": "vctk",
+  "name": "CSTR VCTK Corpus",
+  "domain": "audio",
+  "description": "A corpus of English speech recordings from 110 speakers with diverse accents, recorded for research in speech synthesis and speaker recognition.",
+  "citation": "Yamagishi, J., Veaux, C., and MacDonald, K. (2019). CSTR VCTK Corpus: English Multi-speaker Corpus for CSTR Voice Cloning Toolkit. https://doi.org/10.7488/ds/2645",
+  "license": {
+    "identifier": "Research-use terms; not a standard SPDX license identifier",
+    "url": "https://datashare.ed.ac.uk/handle/10283/3443",
+    "notes": "The corpus is made available under provider research-use terms rather than a standard SPDX-identified license. Review and comply with the current Edinburgh DataShare terms and any restrictions on redistribution, commercial use, and speaker recordings."
+  },
+  "upstream_url": "https://datashare.ed.ac.uk/handle/10283/3443"
+}

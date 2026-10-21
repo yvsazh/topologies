@@ -1,0 +1,12 @@
+{
+  "id": "ccmatrix",
+  "name": "CCMatrix",
+  "domain": "language",
+  "description": "Mined parallel text from Common Crawl, with more than 10 billion pairs across 100 languages. Loader-only; web-mined content carries license risk. No data vendored.",
+  "citation": "CCMatrix (Schwenk et al., 2021).",
+  "license": {
+    "identifier": "Web-mined terms; no single SPDX identifier",
+    "url": "https://github.com/facebookresearch/cc_net"
+  },
+  "upstream_url": "https://github.com/facebookresearch/cc_net"
+}

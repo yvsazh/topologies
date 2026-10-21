@@ -1,0 +1,13 @@
+{
+  "id": "monash-30",
+  "name": "Monash Time Series Forecasting Archive (30 datasets)",
+  "domain": "time-series",
+  "description": "A collection of 30 real-world time-series forecasting datasets assembled for evaluating forecasting methods, spanning domains and frequencies. Includes the Electricity Transformer Temperature (ETT) benchmark's four subsets: ETTh1, ETTh2, ETTm1, and ETTm2.",
+  "citation": "Godahewa, R., Bergmeir, C., Webb, G. I., Hyndman, R. J., & Montero-Manso, P. (2021). Monash Time Series Forecasting Archive. Proceedings of the 30th ACM International Conference on Information and Knowledge Management (CIKM '21), 467–474. https://doi.org/10.1145/3459637.3482137",
+  "license": {
+    "identifier": "Dataset-specific terms; not a standard SPDX identifier",
+    "url": "https://forecastingdata.org/",
+    "notes": "The archive aggregates datasets from different sources and does not establish one standard SPDX license identifier covering all material. Review the terms and rights for the individual datasets and their original sources before use or redistribution. This record does not include dataset files."
+  },
+  "upstream_url": "https://forecastingdata.org/"
+}

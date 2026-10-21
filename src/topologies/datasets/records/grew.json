@@ -1,0 +1,13 @@
+{
+  "id": "grew",
+  "name": "Gait Recognition in the Wild (GREW)",
+  "domain": "vision",
+  "description": "Large-scale gait recognition benchmark collected from natural videos, with 26K identities, 128K sequences, and more than 233K distractor sequences. Dataset access and terms are managed by the benchmark upstream.",
+  "citation": "Zhu, Zheng, Xianda Guo, Tian Yang, Junjie Huang, Jiankang Deng, Guan Huang, Dalong Du, Jiwen Lu, and Jie Zhou. ‘Gait Recognition in the Wild: A Benchmark.’ Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV), 2021, pp. 14789–14799.",
+  "license": {
+    "identifier": "other",
+    "url": "",
+    "notes": "Dataset license is unverified; no license terms were confirmed in the published paper or upstream information."
+  },
+  "upstream_url": "https://www.grew-benchmark.org/"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "bijie",
+  "name": "Bijie Landslide Satellite Dataset",
+  "domain": "earth observation",
+  "description": "Satellite optical imagery and digital elevation model dataset for landslide detection in Bijie, China, used for training and evaluating remote-sensing landslide detection methods.",
+  "citation": "Ji, S., Yu, D., Shen, C., Li, W., & Xu, Q. (2020). Landslide detection from an open satellite imagery and digital elevation model dataset using attention boosted convolutional neural networks. Landslides, 17(6), 1337–1352. https://doi.org/10.1007/s10346-020-01353-2",
+  "license": {
+    "identifier": "other",
+    "url": "",
+    "notes": "The dataset license is unverified; no license terms for the dataset were identified in the cited paper or upstream source."
+  },
+  "upstream_url": "http://gpcv.whu.edu.cn/data/Bijie_pages.html"
+}

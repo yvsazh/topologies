@@ -1,0 +1,13 @@
+{
+  "id": "dolly",
+  "name": "Databricks Dolly 15k",
+  "domain": "natural-language",
+  "description": "An instruction-following dataset of approximately 15,000 human-generated prompts and responses created by Databricks employees, covering tasks such as brainstorming, classification, closed- and open-ended question answering, generation, information extraction, and summarization.",
+  "citation": "Databricks. (2023). Free Dolly: Introducing the World's First Truly Open Instruction-Tuned LLM. https://www.databricks.com/blog/2023/04/12/dolly-first-open-instruction-tuned-llm",
+  "license": {
+    "identifier": "CC-BY-SA-3.0",
+    "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "notes": "The upstream repository identifies the dataset as Creative Commons Attribution-ShareAlike 3.0 Unported. CC-BY-SA-3.0 is not a standard SPDX identifier; attribution and ShareAlike terms apply."
+  },
+  "upstream_url": "https://github.com/databrickslabs/dolly"
+}

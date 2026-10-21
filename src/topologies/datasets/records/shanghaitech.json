@@ -1,0 +1,13 @@
+{
+  "id": "shanghaitech",
+  "name": "ShanghaiTech Campus Video Anomaly Dataset",
+  "domain": "computer vision / video anomaly detection",
+  "description": "A video anomaly detection dataset collected from 13 camera views on the ShanghaiTech University campus, containing normal and anomalous events for training and evaluating methods that detect unusual activity in surveillance video.",
+  "citation": "Liu, W., Luo, W., Lian, D., & Gao, S. (2018). Future Frame Prediction for Anomaly Detection – A New Baseline. Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR).",
+  "license": {
+    "identifier": "other",
+    "url": "https://github.com/StevenLiuWen/ano_pred_cvpr2018",
+    "notes": "Dataset terms are not specified here; consult the upstream project and dataset provider before redistribution or commercial use."
+  },
+  "upstream_url": "https://github.com/StevenLiuWen/ano_pred_cvpr2018"
+}

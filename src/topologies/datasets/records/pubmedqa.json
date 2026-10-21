@@ -1,0 +1,12 @@
+{
+  "id": "pubmedqa",
+  "name": "PubMedQA",
+  "domain": "language",
+  "description": "A biomedical yes/no question-answering dataset with 1,000 expert-annotated questions and about 211,000 artificially generated questions, based on terms and information from PubMed abstracts. No data is vendored here.",
+  "citation": "PubMedQA: A Dataset for Biomedical Research Question Answering. Jin et al. (2019). Proceedings of the AAAI Conference on Artificial Intelligence.",
+  "license": {
+    "identifier": "PubMed abstract terms",
+    "url": "https://pubmedqa.github.io/"
+  },
+  "upstream_url": "https://pubmedqa.github.io/"
+}

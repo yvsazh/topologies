@@ -1,0 +1,17 @@
+{
+  "id": "grad-clip",
+  "name": "Global-Norm Gradient Clipping",
+  "description": "Scales gradients together when their global L2 norm exceeds a maximum.",
+  "api": "grad_clip(grads, max_norm=1.0)",
+  "usage": "scale = grad_clip(grads, max_norm=1.0)",
+  "parameters": {
+    "grads": "list of mutable float tensors or nested numeric sequences",
+    "max_norm": "non-negative maximum global L2 norm; defaults to 1.0"
+  },
+  "implementation": {
+    "path": "training/stability/grad_clip.py",
+    "symbol": "grad_clip"
+  },
+  "papers": [],
+  "examples": []
+}

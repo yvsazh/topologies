@@ -1,0 +1,12 @@
+{
+  "id": "fmd",
+  "name": "Flickr Material Database",
+  "domain": "vision",
+  "description": "Material classification dataset with 10 categories and about 1,000 images; evaluated using 14-fold accuracy. Distinct from the Describable Textures Dataset (DTD). The data is available under the MIT CSAIL release terms; no data is vendored here.",
+  "citation": "Flickr Material Database: Sharan, L., Liu, C., Rosenholtz, R., & Adelson, E. H. (2009). Recognizing Materials Using Perceptually Inspired Features. Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR).",
+  "license": {
+    "identifier": "MIT CSAIL release terms",
+    "url": "https://people.csail.mit.edu/celiu/CVPR2010/FMD/"
+  },
+  "upstream_url": "https://people.csail.mit.edu/celiu/CVPR2010/FMD/"
+}

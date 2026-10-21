@@ -1,0 +1,13 @@
+{
+  "id": "birdclef",
+  "name": "BirdCLEF",
+  "domain": "audio",
+  "description": "BirdCLEF 2021 through 2024 soundscape classification, 3-second windows and more than 300 species per year. Class-mean average precision on a hidden-soundscape protocol. Distinct from the static BirdSet and BEANS benchmarks. Audio not vendored.",
+  "citation": "LifeCLEF BirdCLEF 2021-2024.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://www.kaggle.com/competitions/birdclef-2024",
+    "notes": "Kaggle and LifeCLEF competition terms. Audio not vendored."
+  },
+  "upstream_url": "https://www.kaggle.com/competitions/birdclef-2024"
+}

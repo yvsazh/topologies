@@ -1,0 +1,18 @@
+{
+  "id": "llrd",
+  "name": "Layer-wise Learning-Rate Decay",
+  "description": "Computes a layer learning rate by exponentially decaying the base learning rate with depth.",
+  "api": "llrd(base_lr, depth, decay=0.5)",
+  "usage": "layer_lr = llrd(base_lr=1.0, depth=2, decay=0.5)",
+  "parameters": {
+    "base_lr": "base learning rate",
+    "depth": "layer depth",
+    "decay": "per-layer decay factor; defaults to 0.5"
+  },
+  "implementation": {
+    "path": "training/stability/llrd.py",
+    "symbol": "llrd"
+  },
+  "papers": [],
+  "examples": []
+}

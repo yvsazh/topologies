@@ -1,0 +1,10 @@
+{
+  "id": "generalized-iou",
+  "name": "Generalized IoU loss",
+  "description": "Aligned xyxy boxes in common coordinate units; permits zero-area boxes, rejects reversed corners; returns 1-GIoU.",
+  "api": "topologies.training.losses:compute_loss(cfg, boxes, targets, **extra)",
+  "usage": "loss = generalized_iou(predicted_xyxy, target_xyxy)",
+  "parameters": {"reduction": "none per box, mean, or sum"},
+  "implementation": {"path": "implementations/training/core.py", "symbol": "generalized_iou", "sha256": "878f03ad0677bb8cd1b993861f72dcf5bfa14853743a5b355353c1d1f8162f9b"},
+  "examples": [{"title": "Train a structured box predictor", "code": "import tempfile\nimport torch\nimport torch.nn as nn\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef boxes(ctx):\n    x = torch.rand(4, generator=ctx.rng.torch)\n    return {'inputs': x, 'target': torch.stack((x[0], x[1], x[0] + 0.5, x[1] + 0.5))}\nclass BoxPredictor(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.base = build('mlp', 'tiny', in_features=4, out_features=4)\n    def forward(self, x):\n        raw = self.base(x)\n        start = raw[..., :2].sigmoid()\n        return {'boxes': torch.cat((start, start + torch.nn.functional.softplus(raw[..., 2:])), dim=-1)}\nds = synth.Spec('structured-boxes', generator=boxes, size=24, splits={'train': 0.75, 'val': 0.25}, seed=7, root=root, monitor='none').run()\ntrain = ds.for_recipe('structured-objective', split='train')\nval = ds.for_recipe('structured-objective', split='val', like=train)\ntrainer = Trainer(BoxPredictor(), train, val, recipe='structured-objective', recipe_config={'loss': 'generalized-iou', 'bindings': {'boxes1': {'output': 'boxes'}, 'boxes2': {'batch': 'target'}}}, batch_size=8, max_epochs=1, device='cpu')\ntrainer.fit()\nassert all(torch.isfinite(torch.tensor(v)) for v in trainer.evaluate(val).values())"}]
+}

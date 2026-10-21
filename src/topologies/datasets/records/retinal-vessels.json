@@ -1,0 +1,13 @@
+{
+  "id": "retinal-vessels",
+  "name": "DRIVE STARE and CHASE-DB1",
+  "domain": "vision",
+  "description": "Retinal vessel sets DRIVE, STARE, and CHASE-DB1, about 40, 20, and 28 fundus images. AUC and vessel F1. Staal et al., IEEE TMI 2004 for DRIVE. Hoover et al. 2000 for STARE. One record. Images not vendored.",
+  "citation": "Staal et al., TMI 2004. DRIVE retinal vessels, with STARE and CHASE-DB1.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://drive.grand-challenge.org/",
+    "notes": "Open research terms. Human images are loader-only and not vendored."
+  },
+  "upstream_url": "https://drive.grand-challenge.org/"
+}

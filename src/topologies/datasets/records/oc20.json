@@ -1,0 +1,13 @@
+{
+  "id": "oc20",
+  "name": "Open Catalyst 2020 (OC20)",
+  "domain": "scientific",
+  "description": "A large-scale dataset of density functional theory calculations for catalytic materials, including adsorbate relaxations, initial and relaxed structures, energies, and forces. This metadata record does not distribute dataset data.",
+  "citation": "Chanussot, L., Das, A., Goyal, S., et al. (2021). Open Catalyst 2020 (OC20) Dataset and Community Challenges. ACS Catalysis, 11(10), 6059–6072. https://doi.org/10.1021/acscatal.0c04525",
+  "license": {
+    "identifier": "Dataset-specific terms (not a standard SPDX identifier)",
+    "url": "https://opencatalystproject.org/",
+    "notes": "The OC20 dataset is provided under dataset-specific terms rather than a standard SPDX license identifier. Consult the upstream terms before use or redistribution. This record vendors no data."
+  },
+  "upstream_url": "https://opencatalystproject.org/"
+}

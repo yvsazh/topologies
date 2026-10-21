@@ -1,0 +1,13 @@
+{
+  "id": "ili",
+  "name": "ILI (Influenza-Like Illness) Dataset",
+  "domain": "time-series",
+  "description": "Weekly influenza-like illness (ILI) patient visit percentages in the United States, paired with epidemiological data and used for time-series forecasting. The ETT (Electricity Transformer Temperature) benchmark comprises four subsets: ETTh1, ETTh2, ETTm1, and ETTm2.",
+  "citation": "Wu, H., Xu, J., Wang, J., & Long, M. (2021). Autoformer: Decomposition Transformers with Auto-Correlation for Long-Term Series Forecasting. Advances in Neural Information Processing Systems 34 (NeurIPS 2021). https://arxiv.org/abs/2106.13008",
+  "license": {
+    "identifier": "Research-use terms (not a standard SPDX identifier)",
+    "url": "https://github.com/thuml/Autoformer",
+    "notes": "The upstream repository distributes dataset files for research, but does not identify a standard SPDX license for the ILI data. Treat the dataset license as unspecified/not a standard SPDX identifier; verify rights and terms with the original data provider before redistribution or commercial use."
+  },
+  "upstream_url": "https://github.com/thuml/Autoformer"
+}

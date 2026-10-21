@@ -1,0 +1,13 @@
+{
+  "id": "m4",
+  "name": "M4 Competition Dataset",
+  "domain": "time-series",
+  "description": "A collection of 100,000 time series used in the M4 forecasting competition, spanning yearly, quarterly, monthly, weekly, daily, and hourly frequencies.",
+  "citation": "Makridakis, S., Spiliotis, E., & Assimakopoulos, V. (2020). The M4 Competition: 100,000 time series and 61 forecasting methods. International Journal of Forecasting, 36(1), 54–74. https://doi.org/10.1016/j.ijforecast.2019.04.014",
+  "license": {
+    "identifier": "License not specified (not a standard SPDX identifier)",
+    "url": "https://github.com/Mcompetitions/M4-methods",
+    "notes": "The upstream competition repository does not provide a standard SPDX license for the dataset itself. Dataset usage and redistribution rights are therefore unspecified; review the upstream terms before use."
+  },
+  "upstream_url": "https://github.com/Mcompetitions/M4-methods"
+}

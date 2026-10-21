@@ -1,0 +1,13 @@
+{
+  "id": "synthtext",
+  "name": "SynthText",
+  "domain": "computer vision / scene text detection",
+  "description": "Synthetic dataset of text rendered in natural images, with annotations for text localization.",
+  "citation": "Ankush Gupta, Andrea Vedaldi, and Andrew Zisserman. Synthetic Data for Text Localisation in Natural Images. arXiv:1604.06646, 2016. https://doi.org/10.48550/arXiv.1604.06646",
+  "license": {
+    "identifier": "other",
+    "url": "",
+    "notes": "unverified"
+  },
+  "upstream_url": "https://github.com/ankush-me/SynthText"
+}

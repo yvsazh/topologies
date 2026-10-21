@@ -1,0 +1,12 @@
+{
+  "id": "nerf-synthetic",
+  "name": "NeRF Synthetic",
+  "domain": "vision",
+  "description": "Eight Blender scenes for novel-view synthesis, commonly used alongside LLFF and Mip-NeRF 360 for evaluating neural rendering methods. The renders are openly available from upstream; no data is vendored.",
+  "citation": "NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis, Mildenhall et al., ECCV 2020.",
+  "license": {
+    "identifier": "Render release terms; no SPDX identifier stated.",
+    "url": "https://github.com/bmild/nerf"
+  },
+  "upstream_url": "https://github.com/bmild/nerf"
+}

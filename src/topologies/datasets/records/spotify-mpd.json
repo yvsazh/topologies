@@ -1,0 +1,13 @@
+{
+  "id": "spotify-mpd",
+  "name": "Spotify Million Playlist Dataset",
+  "domain": "recommendation",
+  "description": "Spotify Million Playlist Dataset for playlist continuation: 1 million playlists and about 66 million tracks. R-precision and NDCG under the RecSys challenge protocol. Chen et al., RecSys 2018. Loader-only metadata; no audio vendored.",
+  "citation": "Chen et al., RecSys 2018. Spotify Million Playlist Dataset.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://research.atspotify.com/2020/09/the-million-playlist-dataset-remastered/",
+    "notes": "Spotify research terms. Record only; no data vendored."
+  },
+  "upstream_url": "https://research.atspotify.com/2020/09/the-million-playlist-dataset-remastered/"
+}

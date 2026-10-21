@@ -1,0 +1,13 @@
+{
+  "id": "uc-merced",
+  "name": "UC Merced Land Use",
+  "domain": "vision",
+  "description": "UC Merced land-use scenes, about 2100 images and 21 classes. Accuracy on the 50/50 and 80/20 protocols. Yang and Newsam, ACM SIGSPATIAL 2010. Images not vendored.",
+  "citation": "Yang and Newsam, ACM SIGSPATIAL 2010. UC Merced Land Use.",
+  "license": {
+    "identifier": "not specified",
+    "url": "http://weegee.vision.ucmerced.edu/datasets/landuse.html",
+    "notes": "UC Merced open research terms. Images not vendored."
+  },
+  "upstream_url": "http://weegee.vision.ucmerced.edu/datasets/landuse.html"
+}

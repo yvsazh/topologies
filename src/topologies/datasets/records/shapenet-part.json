@@ -1,0 +1,13 @@
+{
+  "id": "shapenet-part",
+  "name": "ShapeNet Part",
+  "domain": "vision",
+  "description": "A part-annotated subset of ShapeNetCore containing 16,881 3D models across 16 object categories, with point-level part segmentation annotations.",
+  "citation": "Yi, L., Kim, V. G., Ceylan, D., et al. (2016). A Scalable Active Framework for Region Annotation in 3D Shape Collections. ACM Transactions on Graphics, 35(6), Article 210. https://doi.org/10.1145/2980179.2980238",
+  "license": {
+    "identifier": "ShapeNet license terms (not a standard SPDX identifier)",
+    "url": "https://shapenet.org/terms",
+    "notes": "ShapeNet data is provided under ShapeNet's dataset-specific license terms, not a standard SPDX license. Review and comply with the current terms, including restrictions on use and redistribution. This record does not distribute dataset files."
+  },
+  "upstream_url": "https://shapenet.org/"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "fsdnoisy18k",
+  "name": "FSDnoisy18k",
+  "domain": "audio",
+  "description": "Noisy-label sound-event classification dataset with about 42.5k audio clips and 20 classes, distinct from FSD50K. Freesound per-clip terms apply; no data is vendored.",
+  "citation": "Fonseca et al. (2019). FSDnoisy18k: a dataset for sound event classification with noisy labels.",
+  "license": {
+    "identifier": "Freesound per-clip terms apply; licenses vary by clip and are not represented by one SPDX identifier.",
+    "url": "https://zenodo.org/records/2529934"
+  },
+  "upstream_url": "https://zenodo.org/records/2529934"
+}

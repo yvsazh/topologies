@@ -1,0 +1,13 @@
+{
+  "id": "s3dis",
+  "name": "Stanford 3D Indoor Spaces Dataset (S3DIS)",
+  "domain": "vision",
+  "description": "An indoor scene dataset of six areas across three buildings, providing 3D point-cloud scans and semantic annotations for indoor scene understanding. This record is loader-only and does not distribute dataset files.",
+  "citation": "Armeni, I., Sener, O., Zamir, A. R., Jiang, H., Brilakis, I., Fischer, M., & Savarese, S. (2016). 3D Semantic Parsing of Large-Scale Indoor Spaces. Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 1534–1543. https://doi.org/10.1109/CVPR.2016.170",
+  "license": {
+    "identifier": "Stanford 3D Indoor Spaces Dataset terms (not a standard SPDX identifier)",
+    "url": "http://buildingparser.stanford.edu/dataset.html",
+    "notes": "S3DIS is made available under dataset-specific terms rather than a standard SPDX license. Review the provider's current terms and any restrictions on access, use, and redistribution before obtaining or using the data. This record is loader-only and vendors no data."
+  },
+  "upstream_url": "http://buildingparser.stanford.edu/dataset.html"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "retailrocket-ctr",
+  "name": "Retailrocket Click-Through Rate Dataset",
+  "domain": "recommendation",
+  "description": "An anonymized e-commerce behavior dataset for click-through-rate and recommendation research, comprising timestamped visitor events (including item views, add-to-cart actions, and transactions), item properties, and category-tree data. This record describes the upstream dataset; it does not vendor data.",
+  "citation": "好 (He), X., & McAuley, J. (2016). Ups and Downs: Modeling the Visual Evolution of Fashion Trends with One-Class Collaborative Filtering. Proceedings of the 25th International Conference on World Wide Web, 507–517. https://doi.org/10.1145/2872427.2883037",
+  "license": {
+    "identifier": "License not specified (not a standard SPDX identifier)",
+    "url": "https://github.com/retailrocket/ecommerce-dataset",
+    "notes": "The upstream repository does not clearly specify a standard SPDX license for the dataset. Review upstream terms and applicable rights before use or redistribution."
+  },
+  "upstream_url": "https://github.com/retailrocket/ecommerce-dataset"
+}

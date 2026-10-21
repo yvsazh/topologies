@@ -1,0 +1,13 @@
+{
+  "id": "ogbn-papers100m",
+  "name": "ogbn-papers100M",
+  "domain": "graph",
+  "description": "A citation graph derived from the Microsoft Academic Graph (MAG), with about 111 million paper nodes. It is distinct from the smaller ogbn-arxiv dataset. The OGB release uses open terms; this record does not vendor dataset data.",
+  "citation": "Hu, W., Fey, M., Zitnik, M., Dong, Y., Ren, H., Liu, B., Catasta, M., & Leskovec, J. (2020). Open Graph Benchmark: Datasets for Machine Learning on Graphs. Advances in Neural Information Processing Systems, 33, 22118–22133. (ogbn-papers100M, Papers100M) https://arxiv.org/abs/2005.00687",
+  "license": {
+    "identifier": "OGB release terms (no SPDX identifier stated)",
+    "url": "https://ogb.stanford.edu/docs/nodeprop/",
+    "notes": "Review the OGB release terms before use or redistribution. This record does not distribute dataset files."
+  },
+  "upstream_url": "https://ogb.stanford.edu/docs/nodeprop/"
+}

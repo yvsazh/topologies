@@ -1,0 +1,13 @@
+{
+  "id": "atari-100k",
+  "name": "Atari-100k",
+  "domain": "scientific",
+  "description": "Atari-100k data-efficient protocol: 26 games, 100 thousand steps, about two hours of play. Human-normalized median. Kaiser et al., ICLR 2020. Distinct from the full Atari-57 set. ROMs stay external and loader-only.",
+  "citation": "Kaiser et al., ICLR 2020. Atari-100k.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://github.com/Farama-Foundation/Gymnasium",
+    "notes": "ALE environment host. Game ROMs are loader-only and are not vendored."
+  },
+  "upstream_url": "https://github.com/Farama-Foundation/Gymnasium"
+}

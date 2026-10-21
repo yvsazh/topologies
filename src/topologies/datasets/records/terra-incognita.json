@@ -1,0 +1,12 @@
+{
+  "id": "terra-incognita",
+  "name": "TerraIncognita",
+  "domain": "vision",
+  "description": "A WILDS domain generalization dataset with images from four camera locations and ten animal classes (about 24,000 images). It evaluates distribution-shift robustness, including worst-group accuracy, and is distinct from the WILDS FMoW, Camelyon, and iWildCam datasets. Data is not vendored; consult WILDS open terms.",
+  "citation": "Beery, S., Van Horn, G., & Perona, P. (2018). Recognition in Terra Incognita. European Conference on Computer Vision (ECCV). https://doi.org/10.1007/978-3-030-01270-0_12; Terra Incognita dataset (Beery et al., CVPR 2018).",
+  "license": {
+    "identifier": "WILDS terms",
+    "url": "https://wilds.stanford.edu/"
+  },
+  "upstream_url": "https://wilds.stanford.edu/"
+}

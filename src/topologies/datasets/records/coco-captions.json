@@ -1,0 +1,13 @@
+{
+  "id": "coco-captions",
+  "name": "COCO Captions",
+  "domain": "multimodal",
+  "description": "The COCO Captions dataset provides human-written natural-language descriptions for images from the Microsoft COCO dataset, supporting image captioning and vision-language research. This record does not distribute dataset files.",
+  "citation": "Chen, X., Fang, H., Lin, T.-Y., Vedantam, R., Gupta, S., Dollar, P., & Zitnick, C. L. (2015). Microsoft COCO Captions: Data Collection and Evaluation Server. arXiv:1504.00325. https://arxiv.org/abs/1504.00325",
+  "license": {
+    "identifier": "Custom COCO license (not a standard SPDX identifier)",
+    "url": "https://cocodataset.org/#termsofuse",
+    "notes": "COCO uses its own terms rather than a standard SPDX license identifier. Caption annotations and underlying images may be subject to different rights and conditions; review the current terms and source-image licenses before use or redistribution."
+  },
+  "upstream_url": "https://cocodataset.org/#download"
+}

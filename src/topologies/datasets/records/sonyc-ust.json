@@ -1,0 +1,12 @@
+{
+  "id": "sonyc-ust",
+  "name": "SONYC-UST",
+  "domain": "audio",
+  "description": "Urban sensor recordings with weak multilabels, about 18k clips. No data vendored.",
+  "citation": "SONYC-UST: Cartwright et al. (2019).",
+  "license": {
+    "identifier": "CC-BY-4.0",
+    "url": "https://zenodo.org/records/3966543"
+  },
+  "upstream_url": "https://zenodo.org/records/3966543"
+}

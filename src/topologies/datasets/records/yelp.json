@@ -1,0 +1,13 @@
+{
+  "id": "yelp",
+  "name": "Yelp Open Dataset",
+  "domain": "recommendation",
+  "description": "A collection of Yelp user, business, review, and interaction data for research on recommendation, rating prediction, and related tasks. This record is loader-only and does not distribute dataset files.",
+  "citation": "Yelp. Yelp Open Dataset. https://business.yelp.com/data/resources/open-dataset/",
+  "license": {
+    "identifier": "Yelp dataset-specific terms (not a standard SPDX identifier)",
+    "url": "https://www.yelp.com/dataset",
+    "notes": "The dataset is subject to Yelp's dataset-specific terms and is not identified by a standard SPDX license. Review the current terms and restrictions before use or redistribution. This record is loader-only and vendors no data."
+  },
+  "upstream_url": "https://business.yelp.com/data/resources/open-dataset/"
+}

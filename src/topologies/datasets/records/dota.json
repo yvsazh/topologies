@@ -1,0 +1,13 @@
+{
+  "id": "dota",
+  "name": "DOTA: A Large-scale Dataset for Object Detection in Aerial Images",
+  "domain": "computer vision / aerial object detection",
+  "description": "A large-scale benchmark of high-resolution aerial images with objects annotated using oriented bounding boxes, designed for object detection in aerial imagery. This record is loader-only and does not distribute dataset files.",
+  "citation": "Xia, G.-S., Bai, X., Ding, J., Zhu, Z., Belongie, S., Luo, J., Datcu, M., Pelillo, M., & Zhang, L. (2018). DOTA: A Large-scale Dataset for Object Detection in Aerial Images. arXiv:1711.10398. https://arxiv.org/abs/1711.10398",
+  "license": {
+    "identifier": "other",
+    "url": "https://captain-whu.github.io/DOTA/",
+    "notes": "Dataset-specific terms apply; consult the upstream source before use or redistribution. This record is loader-only and vendors no data."
+  },
+  "upstream_url": "https://captain-whu.github.io/DOTA/"
+}

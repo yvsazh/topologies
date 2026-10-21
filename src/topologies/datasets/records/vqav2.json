@@ -1,0 +1,13 @@
+{
+  "id": "vqav2",
+  "name": "VQA v2",
+  "domain": "vision",
+  "description": "A visual question answering dataset containing open-ended questions about images, with answers collected from human annotators. This record is loader-only and does not distribute dataset files.",
+  "citation": "Goyal, Y., Khot, T., Summers-Stay, D., Batra, D., & Parikh, D. (2017). Making the V in VQA Matter: Elevating the Role of Image Understanding in Visual Question Answering. Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 6904–6913. https://doi.org/10.1109/CVPR.2017.670",
+  "license": {
+    "identifier": "Dataset-specific terms (not a standard SPDX identifier)",
+    "url": "https://visualqa.org/",
+    "notes": "The dataset is provided under dataset-specific terms; these are not a standard SPDX license identifier. Review the current upstream terms and rights applicable to the underlying images and annotations before use or redistribution. This record is loader-only and vendors no data."
+  },
+  "upstream_url": "https://visualqa.org/"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "ctc", "name": "Connectionist temporal classification",
+  "description": "PyTorch CTC on [time,batch,class] log-probabilities or logits with explicit input/target lengths and impossible-alignment policy.",
+  "api": "topologies.training.losses:compute_loss(cfg, logits, targets, input_lengths=..., target_lengths=...)",
+  "usage": "loss = ctc(logits, targets, input_lengths, target_lengths, blank=0, zero_infinity=True)",
+  "parameters": {"blank": "blank class index", "reduction": "none, mean (target-length normalized), or sum", "zero_infinity": "zero infinite losses/gradients for impossible alignments", "log_probs": "input is already log-softmax normalized"},
+  "implementation": {"path": "implementations/training/core.py", "symbol": "ctc", "sha256": "878f03ad0677bb8cd1b993861f72dcf5bfa14853743a5b355353c1d1f8162f9b"},
+  "examples": [{"title":"Train a CTC acoustic model","code":"import tempfile\nimport torch\nfrom topologies import Trainer, build, synth\nroot=tempfile.mkdtemp()\n@synth.generator\ndef samples(ctx):\n token=1+int(ctx.index)%3\n features=torch.sin(torch.arange(64,dtype=torch.float32)*(token+1)*0.12)\n return {\"features\":synth.Tensor(features),\"targets\":[token]}\nds=synth.Spec(\"ctc-acoustic\",generator=samples,size=24,splits={\"train\":0.75,\"val\":0.25},seed=11,root=root,monitor=\"none\").run()\ntrain=ds.for_recipe(\"ctc-asr\",split=\"train\")\nval=ds.for_recipe(\"ctc-asr\",split=\"val\",like=train)\nmodel=build(\"ctc-acoustic-model\",\"tiny\",vocab_size=5,conv_channels=4,hidden_size=8,rnn_layers=1,blank_id=0)\ntrainer=Trainer(model,train,val,recipe=\"ctc-asr\",recipe_config={\"loss\":\"ctc\",\"blank_id\":0,\"zero_infinity\":True},max_epochs=1,batch_size=4,device=\"cpu\")\ntrainer.fit()\nresult=trainer.evaluate(val)"}]
+}

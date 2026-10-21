@@ -1,0 +1,13 @@
+{
+  "id": "isprs-potsdam",
+  "name": "ISPRS Potsdam and Vaihingen",
+  "domain": "vision",
+  "description": "ISPRS Potsdam and Vaihingen airborne semantic labeling, 38 and 33 tiles, six classes. Mean IoU and boundary F1. One record for both cities. Imagery not vendored.",
+  "citation": "ISPRS Potsdam and Vaihingen semantic labeling benchmarks.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://www.isprs.org/education/benchmarks/",
+    "notes": "ISPRS open benchmark terms. Imagery not vendored."
+  },
+  "upstream_url": "https://www.isprs.org/education/benchmarks/"
+}

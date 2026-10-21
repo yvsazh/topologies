@@ -1,0 +1,13 @@
+{
+  "id": "kinetics-400",
+  "name": "Kinetics-400",
+  "domain": "vision",
+  "description": "A large-scale human action video dataset comprising approximately 300,000 clips across 400 action classes. This record is metadata-only and does not distribute dataset files.",
+  "citation": "Kay, W., Carreira, J., Simonyan, K., Zhang, B., Hillier, C., Vijayanarasimhan, S., Viola, F., Green, T., Back, T., Natsev, P., Suleyman, M., & Zisserman, A. (2017). The Kinetics Human Action Video Dataset. arXiv:1705.06950. https://arxiv.org/abs/1705.06950",
+  "license": {
+    "identifier": "Custom Kinetics dataset terms (not a standard SPDX identifier)",
+    "url": "https://github.com/cvdfoundation/kinetics-dataset",
+    "notes": "Kinetics-400 is distributed under dataset-specific terms, not a standard SPDX license. Review the upstream terms and applicable rights for source videos before use or redistribution. This record vendors no data."
+  },
+  "upstream_url": "https://github.com/cvdfoundation/kinetics-dataset"
+}

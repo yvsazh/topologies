@@ -1,0 +1,13 @@
+{
+  "id": "jarvis-dft",
+  "name": "JARVIS-DFT",
+  "domain": "scientific",
+  "description": "JARVIS-DFT, about 80 thousand materials plus force fields. Multi-property MAE. Choudhary et al. 2020. Loader-only metadata.",
+  "citation": "Choudhary et al. 2020. JARVIS-DFT.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://jarvis.nist.gov/",
+    "notes": "NIST open data. Record only; no structures vendored."
+  },
+  "upstream_url": "https://jarvis.nist.gov/"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "gigaword",
+  "name": "Gigaword",
+  "domain": "language",
+  "description": "Headline summarization on the New York Times portion using the Rush et al. split; about 4M documents. LDC gated, loader-only. No data vendored.",
+  "citation": "Gigaword: Graff et al. (2003).",
+  "license": {
+    "identifier": "LDC gated terms (not a standard SPDX identifier)",
+    "url": "https://catalog.ldc.upenn.edu/LDC03T05"
+  },
+  "upstream_url": "https://catalog.ldc.upenn.edu/LDC03T05"
+}

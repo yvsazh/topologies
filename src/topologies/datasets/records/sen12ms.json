@@ -1,0 +1,13 @@
+{
+  "id": "sen12ms",
+  "name": "SEN12MS",
+  "domain": "remote sensing",
+  "description": "A dataset of paired Sentinel-1 synthetic-aperture radar and Sentinel-2 multispectral imagery with land-cover labels, designed for multi-modal land-cover mapping and remote-sensing research.",
+  "citation": "Schmitt et al., SEN12MS: A Curated Dataset of Georeferenced Multi-Spectral Sentinel-1/2 Imagery for Deep Learning and Data Fusion, ISPRS Annals of the Photogrammetry, Remote Sensing and Spatial Information Sciences, 2019.",
+  "license": {
+    "identifier": "other",
+    "url": "https://mediatum.ub.tum.de/1474000",
+    "notes": "Refer to the upstream dataset distribution for applicable access and usage terms."
+  },
+  "upstream_url": "https://mediatum.ub.tum.de/1474000"
+}

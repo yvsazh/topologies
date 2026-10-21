@@ -1,0 +1,13 @@
+{
+  "id": "sbu-captions",
+  "name": "SBU Captions",
+  "domain": "vision",
+  "description": "SBU Captions, about 1 million Flickr image-caption pairs. BLEU and CIDEr. Ordonez et al., NAACL-HLT 2011. Images stay under Flickr terms and are loader-only.",
+  "citation": "Ordonez et al., NAACL-HLT 2011. SBU Captions.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://github.com/BryanPlummer/sbu-captions",
+    "notes": "Flickr terms. Loader-only; images not vendored."
+  },
+  "upstream_url": "https://github.com/BryanPlummer/sbu-captions"
+}

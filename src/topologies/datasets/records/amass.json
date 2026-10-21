@@ -1,0 +1,13 @@
+{
+  "id": "amass",
+  "name": "AMASS",
+  "domain": "vision",
+  "description": "Archive of Motion Capture as Surface Shapes (AMASS), a unified collection of human motion capture datasets represented as articulated body meshes using the SMPL model.",
+  "citation": "Mahmood, N., Ghorbani, S., Troje, N. F., Pons-Moll, G., & Black, M. J. (2019). AMASS: Archive of Motion Capture as Surface Shapes. Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV), 5442–5451. https://doi.org/10.1109/ICCV.2019.00554",
+  "license": {
+    "identifier": "AMASS dataset license (non-standard; not an SPDX identifier)",
+    "url": "https://amass.is.tue.mpg.de/license.html",
+    "notes": "AMASS is distributed under its own dataset license, not a standard SPDX license identifier. Review and comply with the license and the licenses/terms of the contributing motion-capture datasets; access and permitted uses may be restricted."
+  },
+  "upstream_url": "https://amass.is.tue.mpg.de/"
+}

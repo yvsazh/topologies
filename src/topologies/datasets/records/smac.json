@@ -1,0 +1,13 @@
+{
+  "id": "smac",
+  "name": "StarCraft Multi-Agent Challenge (SMAC)",
+  "domain": "reinforcement-learning",
+  "description": "A benchmark suite of StarCraft II micromanagement tasks for cooperative multi-agent reinforcement learning, where agents control allied units against built-in opponents. SMAC is an environment and task suite, not a static downloadable dataset; running it requires StarCraft II, whose separate licensing terms apply.",
+  "citation": "Samvelyan, M., Rashid, T., de Witt, C. S., Farquhar, G., Nardelli, N., Rudner, T. G. J., Hung, C.-M., Torr, P. H. S., Foerster, J., & Whiteson, S. (2019). The StarCraft Multi-Agent Challenge. Proceedings of the 18th International Conference on Autonomous Agents and MultiAgent Systems (AAMAS 2019), 2186–2188. https://arxiv.org/abs/1902.04043",
+  "license": {
+    "identifier": "License not stated",
+    "url": "https://github.com/oxwhirl/smac",
+    "notes": "The upstream SMAC repository does not clearly state a standard SPDX license identifier for the project; StarCraft II is proprietary software and has separate terms. Review upstream and Blizzard's terms before use or redistribution. Conceptual 12M (the paper's illustrative StarCraft II setting) is not a dataset or license grant; its game assets and software remain subject to Blizzard's terms."
+  },
+  "upstream_url": "https://github.com/oxwhirl/smac"
+}

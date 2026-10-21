@@ -1,0 +1,13 @@
+{
+  "id": "sketchy",
+  "name": "Sketchy",
+  "domain": "vision",
+  "description": "Sketchy sketch-based image retrieval, about 75 thousand sketches and 12.5 thousand photos across 125 categories. Recall at K. SketchyScene, 2472 triplets, is a companion note in this record. Sketches not vendored.",
+  "citation": "Sangkloy et al., TOG 2016. Sketchy.",
+  "license": {
+    "identifier": "not specified",
+    "url": "http://sketchy.eye.gatech.edu/",
+    "notes": "Provider page does not state a standard SPDX license. Sketches not vendored."
+  },
+  "upstream_url": "http://sketchy.eye.gatech.edu/"
+}

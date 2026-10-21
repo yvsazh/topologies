@@ -1,0 +1,13 @@
+{
+  "id": "solar",
+  "name": "Solar-Energy Dataset",
+  "domain": "time-series",
+  "description": "A multivariate solar power production time-series benchmark used for long-term forecasting. The commonly used Solar-Energy data contains 137 photovoltaic power plant series sampled every 10 minutes; this record describes the dataset and does not distribute its files.",
+  "citation": "Lai, G., Chang, W.-C., Yang, Y., and Liu, H. (2018). Modeling Long- and Short-Term Temporal Patterns with Deep Neural Networks. The 41st International ACM SIGIR Conference on Research & Development in Information Retrieval, 95–104. https://doi.org/10.1145/3209978.3210006",
+  "license": {
+    "identifier": "Dataset-specific terms; not a standard SPDX license identifier",
+    "url": "https://github.com/thuml/Time-Series-Library",
+    "notes": "The upstream repository does not clearly identify a standard SPDX license for the Solar-Energy dataset itself. Its license is not a standard SPDX identifier; review upstream terms and any source-data restrictions before use or redistribution. This record vendors no data."
+  },
+  "upstream_url": "https://github.com/thuml/Time-Series-Library"
+}

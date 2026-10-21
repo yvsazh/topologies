@@ -1,0 +1,13 @@
+{
+  "id": "avenue",
+  "name": "CUHK Avenue Dataset",
+  "domain": "computer vision",
+  "description": "A video anomaly detection dataset of surveillance footage recorded on an avenue at The Chinese University of Hong Kong, with normal training videos and test videos containing anomalous events annotated at frame level.",
+  "citation": "Lu, C., Shi, J., and Jia, J. (2013). Abnormal Event Detection at 150 FPS in MATLAB. Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR).",
+  "license": {
+    "identifier": "other",
+    "url": "http://www.cse.cuhk.edu.hk/leojia/projects/detectabnormal/dataset.html",
+    "notes": "Dataset terms are not represented by a standard SPDX license identifier."
+  },
+  "upstream_url": "http://www.cse.cuhk.edu.hk/leojia/projects/detectabnormal/dataset.html"
+}

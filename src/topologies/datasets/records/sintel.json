@@ -1,0 +1,13 @@
+{
+  "id": "sintel",
+  "name": "MPI Sintel",
+  "domain": "computer-vision/optical-flow",
+  "description": "An optical-flow evaluation dataset derived from the open-source animated short film Sintel, featuring long sequences, large motions, motion blur, defocus blur, reflections, and atmospheric effects.",
+  "citation": "Butler, D. J., Wulff, J., Stanley, G. B., and Black, M. J. (2012). A Naturalistic Open Source Movie for Optical Flow Evaluation. Computer Vision – ECCV 2012, 611–625. https://doi.org/10.1007/978-3-642-33783-3_44",
+  "license": {
+    "identifier": "other",
+    "url": "",
+    "notes": "unverified"
+  },
+  "upstream_url": "http://sintel.is.tue.mpg.de/"
+}

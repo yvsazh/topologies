@@ -1,0 +1,12 @@
+{
+  "id": "voicebank-demand",
+  "name": "VoiceBank-DEMAND",
+  "domain": "audio",
+  "description": "Speech enhancement corpus comprising recordings from 30 speakers mixed with noises from the DEMAND database. Distinct from the already recorded VCTK corpus. No data vendored.",
+  "citation": "VoiceBank-DEMAND: Valentini-Botinhao et al. (2017).",
+  "license": {
+    "identifier": "Edinburgh DataShare terms (non-SPDX)",
+    "url": "https://datashare.ed.ac.uk/handle/10283/1942"
+  },
+  "upstream_url": "https://datashare.ed.ac.uk/handle/10283/1942"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "deeppcb",
+  "name": "DeepPCB",
+  "domain": "vision",
+  "description": "A printed-circuit-board defect dataset containing 1,500 aligned pairs of defect-free template and tested images annotated for six common PCB defect types.",
+  "citation": "Tang, S., He, F., Huang, X., & Yang, J. (2019). Online PCB Defect Detector On A New PCB Defect Dataset. arXiv:1902.06197. https://arxiv.org/abs/1902.06197",
+  "license": {
+    "identifier": "other",
+    "url": "",
+    "notes": "Dataset license not verified. The upstream README says the dataset is for research purposes only."
+  },
+  "upstream_url": "https://github.com/tangsanli5201/DeepPCB"
+}

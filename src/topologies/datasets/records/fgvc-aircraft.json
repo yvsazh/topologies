@@ -1,0 +1,13 @@
+{
+  "id": "fgvc-aircraft",
+  "name": "FGVC-Aircraft",
+  "domain": "vision",
+  "description": "Fine-grained aircraft image dataset containing 10,200 images across 102 aircraft model variants, with annotations for variant, family, and manufacturer.",
+  "citation": "Maji, S., Kannala, J., Rahtu, E., Blaschko, M., & Vedaldi, A. (2013). Fine-Grained Visual Classification of Aircraft. arXiv:1306.5151. https://doi.org/10.48550/arXiv.1306.5151",
+  "license": {
+    "identifier": "Research use; license not specified",
+    "url": "https://www.robots.ox.ac.uk/~vgg/data/fgvc-aircraft/",
+    "notes": "The dataset provider page does not specify a standard license. Review current provider terms and image rights before redistribution or commercial use."
+  },
+  "upstream_url": "https://www.robots.ox.ac.uk/~vgg/data/fgvc-aircraft/"
+}

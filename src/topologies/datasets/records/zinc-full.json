@@ -1,0 +1,13 @@
+{
+  "id": "zinc-full",
+  "name": "ZINC (full dataset)",
+  "domain": "graph",
+  "description": "The full ZINC database of commercially available and purchasable small molecules, represented as molecular structures suitable for graph-based chemistry and drug-discovery tasks. This metadata record does not distribute dataset data.",
+  "citation": "Irwin, J. J., Sterling, T., Mysinger, M. M., Bolstad, E. S., & Coleman, R. G. (2012). ZINC: A Free Tool to Discover Chemistry for Biology. Journal of Chemical Information and Modeling, 52(7), 1757–1768. https://doi.org/10.1021/ci3001277",
+  "license": {
+    "identifier": "ZINC terms of use (not a standard SPDX identifier)",
+    "url": "https://wiki.docking.org/index.php/Terms_And_Conditions",
+    "notes": "ZINC is provided under its own terms of use, not a standard SPDX license identifier. Consult the current terms and the rights or terms applicable to source catalogs before using or redistributing records or molecular data. This metadata record vendors no dataset data."
+  },
+  "upstream_url": "https://zinc.docking.org/"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "human36m",
+  "name": "Human3.6M",
+  "domain": "vision",
+  "description": "A large-scale motion-capture dataset of 3.6 million 3D human poses, synchronized with video from multiple cameras, for human pose estimation and motion analysis. This record does not distribute dataset files.",
+  "citation": "Ionescu, C., Papava, D., Olaru, V., & Sminchisescu, C. (2014). Human3.6M: Large Scale Datasets and Predictive Methods for 3D Human Sensing in Natural Environments. IEEE Transactions on Pattern Analysis and Machine Intelligence, 36(7), 1325–1339. https://doi.org/10.1109/TPAMI.2013.248",
+  "license": {
+    "identifier": "Human3.6M dataset-specific terms (not a standard SPDX identifier)",
+    "url": "http://vision.imar.ro/human3.6m/description.php",
+    "notes": "Human3.6M is subject to dataset-specific access and usage terms, not a standard SPDX license. Review the provider's terms before use or redistribution. This record is loader-only and vendors no data."
+  },
+  "upstream_url": "http://vision.imar.ro/human3.6m/"
+}

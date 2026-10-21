@@ -1,0 +1,13 @@
+{
+  "id": "libero",
+  "name": "LIBERO",
+  "domain": "reinforcement-learning",
+  "description": "A benchmark suite for lifelong robot learning comprising 130 language-conditioned manipulation tasks across four task suites, designed to study knowledge transfer and continual learning. LIBERO is an environment and task benchmark with associated demonstrations, not a single uniform dataset.",
+  "citation": "Liu, H., et al. (2023). LIBERO: Benchmarking Knowledge Transfer for Lifelong Robot Learning. Proceedings of the Conference on Robot Learning (CoRL). https://arxiv.org/abs/2306.03310",
+  "license": {
+    "identifier": "Dataset-specific terms (not a standard SPDX identifier)",
+    "url": "https://github.com/Lifelong-Robot-Learning/LIBERO",
+    "notes": "The repository's code and the benchmark's demonstration assets may have different terms; no single standard SPDX identifier is asserted here. Review the upstream license and any terms accompanying the demonstrations before use or redistribution. If demonstrations or derived resources involve Conceptual 12M assets, those assets may carry separate licensing or copyright restrictions; verify their provenance and terms. This record does not distribute dataset files."
+  },
+  "upstream_url": "https://github.com/Lifelong-Robot-Learning/LIBERO"
+}

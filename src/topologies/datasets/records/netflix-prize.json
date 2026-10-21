@@ -1,0 +1,12 @@
+{
+  "id": "netflix-prize",
+  "name": "Netflix Prize",
+  "domain": "recommendation",
+  "description": "About 100 million movie ratings from the 2006 Netflix Prize. The release was withdrawn after a de-anonymization study; it must not be used to re-identify people. Historic research terms apply. No data is vendored.",
+  "citation": "Netflix Prize; Bennett, J., & Lanning, S. (2007). The Netflix Prize.",
+  "license": {
+    "identifier": "Historic Netflix research terms (not a standard SPDX identifier)",
+    "url": "https://www.kaggle.com/datasets/netflix-inc/netflix-prize-data"
+  },
+  "upstream_url": "https://www.kaggle.com/datasets/netflix-inc/netflix-prize-data"
+}

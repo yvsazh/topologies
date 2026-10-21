@@ -1,0 +1,12 @@
+{
+  "id": "jvs",
+  "name": "JVS",
+  "domain": "audio",
+  "description": "Japanese multi-speaker speech for synthesis, about 100 speakers and 30 hours. Research-only terms. No data vendored.",
+  "citation": "JVS (Japanese versatile speech) corpus. Takamichi et al. (2019).",
+  "license": {
+    "identifier": "Research-only terms (not a standard SPDX identifier)",
+    "url": "https://sites.google.com/site/shinnosuketakamichi/publication/jvs"
+  },
+  "upstream_url": "https://sites.google.com/site/shinnosuketakamichi/publication/jvs"
+}

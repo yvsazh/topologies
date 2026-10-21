@@ -1,0 +1,13 @@
+{
+  "id": "ogbg-molhiv",
+  "name": "OGB Graph Property Prediction: MolHIV",
+  "domain": "graph",
+  "description": "A molecular graph classification benchmark for predicting HIV activity from molecular structures, provided by the Open Graph Benchmark. This record is loader-only and does not distribute dataset files.",
+  "citation": "Hu, W., Fey, M., Zitnik, M., Dong, Y., Ren, H., Liu, B., Catasta, M., & Leskovec, J. (2020). Open Graph Benchmark: Datasets for Machine Learning on Graphs. Advances in Neural Information Processing Systems, 33, 22118–22133. https://arxiv.org/abs/2005.00687",
+  "license": {
+    "identifier": "Dataset-specific terms (not a standard SPDX identifier)",
+    "url": "https://ogb.stanford.edu/docs/graphprop/",
+    "notes": "The OGB graph-property page describes dataset-specific licensing/terms; no standard SPDX identifier is asserted here. Review the OGB and source dataset terms before use or redistribution. This record is loader-only and vendors no data."
+  },
+  "upstream_url": "https://ogb.stanford.edu/docs/graphprop/"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "iwslt",
+  "name": "International Workshop on Spoken Language Translation (IWSLT) datasets",
+  "domain": "natural-language",
+  "description": "A collection of multilingual speech translation and machine translation evaluation datasets released for the annual IWSLT shared tasks.",
+  "citation": "Cettolo, M., Niehues, J., Stüker, S., Bentivogli, L., & Federico, M. (2015). The IWSLT 2015 Evaluation Campaign. Proceedings of the 12th International Workshop on Spoken Language Translation (IWSLT 2015).",
+  "license": {
+    "identifier": "IWSLT dataset terms (not a standard SPDX identifier)",
+    "url": "https://iwslt.org/",
+    "notes": "The IWSLT shared-task datasets do not have a single standard SPDX license; individual task releases and included source materials may have distinct terms. Review the terms for the specific dataset and task before use or redistribution."
+  },
+  "upstream_url": "https://iwslt.org/"
+}

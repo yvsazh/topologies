@@ -1,0 +1,12 @@
+{
+  "id": "ted2020",
+  "name": "TED2020",
+  "domain": "language",
+  "description": "Multilingual TED-talk parallel data in 112 languages. TED non-commercial terms. No data vendored.",
+  "citation": "TED2020: A large-scale multilingual TED-talk parallel corpus.",
+  "license": {
+    "identifier": "TED non-commercial terms",
+    "url": "https://opus.nlpl.eu/TED2020.php"
+  },
+  "upstream_url": "https://opus.nlpl.eu/TED2020.php"
+}

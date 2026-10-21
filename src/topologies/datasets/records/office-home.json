@@ -1,0 +1,12 @@
+{
+  "id": "office-home",
+  "name": "Office-Home",
+  "domain": "vision",
+  "description": "Domain-adaptation classification benchmark with 4 domains and 65 classes, containing about 15.5k images. Office-31 (Amazon, Webcam, DSLR, 31 classes) is a related benchmark using the same protocol. Open research terms; no data vendored.",
+  "citation": "Venkateswara, H., Eusebio, J., Chakrabar, S., & Jagadeesh, V. (2017). Deep Hashing Network for Unsupervised Domain Adaptation. Office-Home dataset. IEEE Conference on Computer Vision and Pattern Recognition (CVPR).",
+  "license": {
+    "identifier": "Open research terms (no SPDX identifier stated)",
+    "url": "https://www.hemanthdv.org/officeHomeDataset.html"
+  },
+  "upstream_url": "https://www.hemanthdv.org/officeHomeDataset.html"
+}

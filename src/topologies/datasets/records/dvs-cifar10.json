@@ -1,0 +1,13 @@
+{
+  "id": "dvs-cifar10",
+  "name": "CIFAR10-DVS",
+  "domain": "neuromorphic vision",
+  "description": "An event-stream object-classification dataset created by converting 10,000 CIFAR-10 images into event streams with a dynamic vision sensor; it covers 10 object classes.",
+  "citation": "Li, H., Liu, H., Ji, X., Li, G., & Shi, L. (2017). CIFAR10-DVS: An Event-Stream Dataset for Object Classification. Frontiers in Neuroscience, 11, 309. https://doi.org/10.3389/fnins.2017.00309",
+  "license": {
+    "identifier": "other",
+    "url": "",
+    "notes": "unverified"
+  },
+  "upstream_url": "https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2017.00309/full"
+}

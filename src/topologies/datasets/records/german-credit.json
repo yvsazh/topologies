@@ -1,0 +1,13 @@
+{
+  "id": "german-credit",
+  "name": "German Credit",
+  "domain": "scientific",
+  "description": "UCI Statlog German Credit has about 1 thousand applicants and is commonly evaluated with AUC, with a cost-sensitive note. Taiwan Default, with about 30 thousand rows, is a companion note in this record.",
+  "citation": "UCI Statlog German Credit data.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://archive.ics.uci.edu/dataset/144/statlog+german+credit+data",
+    "notes": "UCI open data. Record only; no data vendored."
+  },
+  "upstream_url": "https://archive.ics.uci.edu/dataset/144/statlog+german+credit+data"
+}

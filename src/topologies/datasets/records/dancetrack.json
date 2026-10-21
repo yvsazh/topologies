@@ -1,0 +1,13 @@
+{
+  "id": "dancetrack",
+  "name": "DanceTrack",
+  "domain": "vision",
+  "description": "A multi-object tracking dataset focused on people with similar appearance, comprising 100 videos. This record does not distribute dataset files.",
+  "citation": "Sun, P., et al. (2022). DanceTrack: Multi--Object Tracking in Uniform Appearance and Diverse Motion. https://dancetrack.github.io/",
+  "license": {
+    "identifier": "DanceTrack release terms (not a standard SPDX identifier)",
+    "url": "https://dancetrack.github.io/",
+    "notes": "Review the dataset's release terms before use or redistribution. This record is loader-only and vendors no data."
+  },
+  "upstream_url": "https://dancetrack.github.io/"
+}

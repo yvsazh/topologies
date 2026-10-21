@@ -1,0 +1,13 @@
+{
+  "id": "msr-vtt",
+  "name": "MSR-VTT",
+  "domain": "multimodal",
+  "description": "A large-scale video-to-text benchmark containing short web video clips paired with natural-language captions, designed for video understanding and text generation research. This record does not distribute dataset files.",
+  "citation": "Xu, J., Mei, T., Yao, T., & Rui, Y. (2016). MSR-VTT: A Large Video Description Dataset for Bridging Video and Language. Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 5288–5296. https://doi.org/10.1109/CVPR.2016.571",
+  "license": {
+    "identifier": "Custom MSR-VTT dataset terms (not a standard SPDX identifier)",
+    "url": "https://www.microsoft.com/en-us/research/project/msr-vtt-a-large-video-description-dataset-for-bridging-video-and-language/",
+    "notes": "The dataset is provided under custom terms rather than a standard SPDX-identified license. Review the upstream terms and rights for the underlying videos before use or redistribution; do not assume that video-content rights are transferred by dataset access."
+  },
+  "upstream_url": "https://www.microsoft.com/en-us/research/project/msr-vtt-a-large-video-description-dataset-for-bridging-video-and-language/"
+}

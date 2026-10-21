@@ -1,0 +1,12 @@
+{
+  "id": "celeba",
+  "name": "CelebA",
+  "domain": "vision",
+  "description": "Face attribute dataset with 40 binary attributes and facial landmarks across about 200,000 images. MMLAB research-only; loader-only. This is the parent attribute dataset, distinct from the CelebA spurious-correlation protocol already recorded. No data is vendored.",
+  "citation": "Liu et al. (2015). CelebA: A Large-scale CelebFaces Attributes Dataset. IEEE Conference on Computer Vision and Pattern Recognition (CVPR).",
+  "license": {
+    "identifier": "MMLAB research-only terms",
+    "url": "https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html"
+  },
+  "upstream_url": "https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html"
+}

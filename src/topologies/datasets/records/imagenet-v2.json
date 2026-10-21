@@ -1,0 +1,13 @@
+{
+  "id": "imagenet-v2",
+  "name": "ImageNet-V2",
+  "domain": "vision",
+  "description": "Recollected ImageNet test set (Matched-Frequency, Threshold-0.7, Top-Images), containing 10,000 images. Test-only and loader-only; images are rights-reserved. No data is vendored.",
+  "citation": "Recht, B., Roelofs, R., Schmidt, L., & Shankar, V. (2019). Do ImageNet Classifiers Generalize to ImageNet? ImageNet-V2.",
+  "license": {
+    "identifier": "Rights-reserved; not a standard SPDX identifier",
+    "url": "https://github.com/modestyachts/ImageNetV2",
+    "notes": "Images are rights-reserved. This test-only record is loader-only and does not vendor data."
+  },
+  "upstream_url": "https://github.com/modestyachts/ImageNetV2"
+}

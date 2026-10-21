@@ -1,0 +1,13 @@
+{
+  "id": "swat-wadi",
+  "name": "SWaT and WADI",
+  "domain": "scientific",
+  "description": "SWaT and WADI water-plant cyber-physical anomaly sets, about 11 days and 16 days, with labeled attacks. Point-adjusted F1 and detection delay. Mathur and Tippenhauer 2016. Access is by request. One record covers both plants. Loader-only metadata.",
+  "citation": "Mathur and Tippenhauer 2016. SWaT and WADI water-plant traces.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://itrust.sutd.edu.sg/itrust-labs_datasets/",
+    "notes": "iTrust research request. Record only; no data vendored."
+  },
+  "upstream_url": "https://itrust.sutd.edu.sg/itrust-labs_datasets/"
+}

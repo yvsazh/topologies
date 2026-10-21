@@ -1,0 +1,13 @@
+{
+  "id": "dmc",
+  "name": "DeepMind Control Suite",
+  "domain": "scientific",
+  "description": "DeepMind Control Suite continuous control, about 30 tasks, pixels and features. Return over a 1000-episode protocol. Tassa et al. 2018. Environment suite; no trajectories vendored.",
+  "citation": "Tassa et al. 2018. DeepMind Control Suite.",
+  "license": {
+    "identifier": "Apache-2.0",
+    "url": "https://github.com/google-deepmind/mujoco",
+    "notes": "DeepMind Control Suite via dm_control. Apache-2.0 simulator host. No trajectories vendored."
+  },
+  "upstream_url": "https://github.com/google-deepmind/mujoco"
+}

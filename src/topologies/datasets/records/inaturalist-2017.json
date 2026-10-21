@@ -1,0 +1,13 @@
+{
+  "id": "inaturalist-2017",
+  "name": "iNaturalist 2017",
+  "domain": "vision",
+  "description": "Fine-grained species classification dataset from the 2017 iNaturalist competition, with 5,089 categories and 579,184 training images plus 95,986 validation images.",
+  "citation": "Van Horn, G., Mac Aodha, O., Song, Y., Cui, Y., Sun, C., Shepard, A., Adam, H., Perona, P., & Belongie, S. (2018). The iNaturalist Species Classification and Detection Dataset. Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR). https://doi.org/10.48550/arXiv.1707.06642",
+  "license": {
+    "identifier": "Non-commercial research and educational use; dataset license not specified",
+    "url": "https://github.com/visipedia/inat_comp/tree/master/2017",
+    "notes": "The upstream terms restrict use to non-commercial research and education and prohibit distributing the images; they do not state a standard license. The images may have separate rights holders and terms."
+  },
+  "upstream_url": "https://github.com/visipedia/inat_comp/tree/master/2017"
+}

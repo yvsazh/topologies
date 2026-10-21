@@ -1,0 +1,13 @@
+{
+  "id": "xtreme",
+  "name": "XTREME",
+  "domain": "natural-language",
+  "description": "A benchmark for evaluating cross-lingual generalization across nine natural language understanding and generation tasks in 40 languages, built from existing datasets.",
+  "citation": "Hu, J., Ruder, S., Siddhant, A., et al. (2020). XTREME: A Massively Multilingual Multi-task Benchmark for Evaluating Cross-lingual Generalization. Proceedings of the 37th International Conference on Machine Learning, 4411–4421. https://proceedings.mlr.press/v119/hu20b.html",
+  "license": {
+    "identifier": "Varies by constituent dataset (not a standard SPDX identifier)",
+    "url": "https://github.com/google-research/xtreme",
+    "notes": "XTREME aggregates existing datasets with differing licenses and terms; there is no single license for the benchmark. Check the license and usage conditions of each constituent dataset before use or redistribution."
+  },
+  "upstream_url": "https://github.com/google-research/xtreme"
+}

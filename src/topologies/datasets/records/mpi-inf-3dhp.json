@@ -1,0 +1,12 @@
+{
+  "id": "mpi-inf-3dhp",
+  "name": "MPI-INF-3DHP",
+  "domain": "vision",
+  "description": "Multi-view 3D human pose dataset with 8 actors and 14 cameras. Research-only. No data vendored.",
+  "citation": "MPI-INF-3DHP: Mehta et al., 3DV 2017.",
+  "license": {
+    "identifier": "Research-only terms (not a standard SPDX identifier)",
+    "url": "http://gvv.mpi-inf.mpg.de/3dhp-dataset/"
+  },
+  "upstream_url": "http://gvv.mpi-inf.mpg.de/3dhp-dataset/"
+}

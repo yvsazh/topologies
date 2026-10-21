@@ -1,0 +1,12 @@
+{
+  "id": "voxlingua107",
+  "name": "VoxLingua107",
+  "domain": "audio",
+  "description": "A spoken language identification dataset covering 107 languages and about 6,600 hours of audio. No data is vendored.",
+  "citation": "VoxLingua107: A Dataset for Spoken Language Recognition. Valk and Alumäe (2021).",
+  "license": {
+    "identifier": "CC-BY-4.0",
+    "url": "https://github.com/ida-mthd/VoxLingua107"
+  },
+  "upstream_url": "https://github.com/ida-mthd/VoxLingua107"
+}

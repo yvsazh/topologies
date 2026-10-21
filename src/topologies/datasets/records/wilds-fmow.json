@@ -1,0 +1,13 @@
+{
+  "id": "wilds-fmow",
+  "name": "WILDS FMoW",
+  "domain": "vision",
+  "description": "Functional Map of the World (FMoW), a satellite imagery dataset for predicting building and land use categories, with geographic and temporal distribution shifts.",
+  "citation": "Christie, G., Fendley, N., Wilson, J., & Mukherjee, R. (2018). Functional Map of the World. IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR). https://doi.org/10.1109/CVPR.2018.00458",
+  "license": {
+    "identifier": "Research use; dataset license not specified",
+    "url": "https://wilds.stanford.edu/datasets/",
+    "notes": "The WILDS FMoW dataset page does not state a standard license. Review current provider terms and the underlying imagery rights before use or redistribution; do not assume redistribution or commercial-use rights."
+  },
+  "upstream_url": "https://wilds.stanford.edu/datasets/"
+}

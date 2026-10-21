@@ -1,0 +1,13 @@
+{
+  "id": "padchest",
+  "name": "PadChest",
+  "domain": "vision",
+  "description": "PadChest Spanish chest X-rays, about 160 thousand images and 174 findings with multilingual labels. mAP. Bustos et al., Medical Image Analysis 2020. Academic request. Images not vendored.",
+  "citation": "Bustos et al., MedIA 2020. PadChest.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://bimcv.cipf.es/bimcv-projects/padchest/",
+    "notes": "Academic request. Human images are loader-only and not vendored."
+  },
+  "upstream_url": "https://bimcv.cipf.es/bimcv-projects/padchest/"
+}

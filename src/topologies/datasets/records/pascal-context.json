@@ -1,0 +1,12 @@
+{
+  "id": "pascal-context",
+  "name": "PASCAL-Context",
+  "domain": "vision",
+  "description": "Whole-scene parsing dataset with 59 classes plus background. The related PASCAL-Part provides part-level annotations; PASCAL-Context is distinct from PASCAL VOC. No data is vendored in this record.",
+  "citation": "Mottaghi, R., et al. (2014). The Role of Context for Object Detection and Semantic Segmentation in the Wild: PASCAL-Context. Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR).",
+  "license": {
+    "identifier": "Custom PASCAL-Context release terms (not a standard SPDX identifier)",
+    "url": "https://cs.stanford.edu/~roozbeh/pascal-context/"
+  },
+  "upstream_url": "https://cs.stanford.edu/~roozbeh/pascal-context/"
+}

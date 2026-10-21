@@ -1,0 +1,12 @@
+{
+  "id": "objectnet",
+  "name": "ObjectNet",
+  "domain": "vision",
+  "description": "Object classification that controls rotation, background, and viewpoint. About 50k images and 313 classes. Gated research download, loader-only. No data vendored.",
+  "citation": "ObjectNet: A Large-Scale Bias-Controlled Dataset for Object Recognition. Barbu et al. 2019.",
+  "license": {
+    "identifier": "Custom research terms (not a standard SPDX identifier)",
+    "url": "https://objectnet.dev/"
+  },
+  "upstream_url": "https://objectnet.dev/"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "funsd",
+  "name": "FUNSD",
+  "domain": "document understanding",
+  "description": "A dataset of 199 noisy scanned forms with annotations for text detection, OCR, spatial layout analysis, and entity labeling and linking.",
+  "citation": "Guillaume Jaume, Hazim Kemal Ekenel, and Jean-Philippe Thiran. FUNSD: A Dataset for Form Understanding in Noisy Scanned Documents. ICDAR 2019 OST Workshop. https://arxiv.org/abs/1905.13538",
+  "license": {
+    "identifier": "other",
+    "url": "",
+    "notes": "Dataset license is unverified; no published dataset license was confirmed."
+  },
+  "upstream_url": "https://guillaumejaume.github.io/FUNSD/"
+}

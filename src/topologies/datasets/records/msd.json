@@ -1,0 +1,13 @@
+{
+  "id": "msd",
+  "name": "Million Song Dataset",
+  "domain": "audio",
+  "description": "Features and tags for one million tracks. Audio is not included. No data vendored.",
+  "citation": "Bertin-Mahieux, T., Ellis, D. P. W., Whitman, B., and Lamere, P. (2011). The Million Song Dataset. Proceedings of the 12th International Society for Music Information Retrieval Conference (ISMIR 2011).",
+  "license": {
+    "identifier": "CC-BY-NC",
+    "url": "http://millionsongdataset.com/",
+    "notes": "The feature release is identified as CC-BY-NC. Audio is not included."
+  },
+  "upstream_url": "http://millionsongdataset.com/"
+}

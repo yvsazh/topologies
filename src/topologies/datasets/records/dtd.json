@@ -1,0 +1,13 @@
+{
+  "id": "dtd",
+  "name": "Describable Textures Dataset (DTD)",
+  "domain": "vision",
+  "description": "Texture recognition dataset of 5,640 images organized into 47 categories described by human-perceivable attributes.",
+  "citation": "Cimpoi, M., Maji, S., Kokkinos, I., Mohamed, S., & Vedaldi, A. (2014). Describing Textures in the Wild. Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 3606–3613. https://doi.org/10.1109/CVPR.2014.461",
+  "license": {
+    "identifier": "License not specified",
+    "url": "https://www.robots.ox.ac.uk/~vgg/data/dtd/",
+    "notes": "The upstream dataset page does not state a standard license. Review provider terms and the rights to the underlying images before use or redistribution; do not assume redistribution or commercial-use rights."
+  },
+  "upstream_url": "https://www.robots.ox.ac.uk/~vgg/data/dtd/"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "imdb",
+  "name": "IMDB Movie Reviews",
+  "domain": "graph",
+  "description": "A dataset of 50,000 highly polar movie reviews for binary sentiment classification, split evenly into training and test sets.",
+  "citation": "Maas, A. L., Daly, R. E., Pham, P. T., Huang, D., Ng, A. Y., & Potts, C. (2011). Learning Word Vectors for Sentiment Analysis. Proceedings of the 49th Annual Meeting of the Association for Computational Linguistics: Human Language Technologies, 142–150. https://aclanthology.org/P11-1015/",
+  "license": {
+    "identifier": "Dataset license not specified",
+    "url": "https://ai.stanford.edu/~amaas/data/sentiment/",
+    "notes": "The upstream dataset page does not state a standard SPDX license identifier. Review its terms and the underlying review-content rights before use or redistribution."
+  },
+  "upstream_url": "https://ai.stanford.edu/~amaas/data/sentiment/"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "sun-rgbd",
+  "name": "SUN RGB-D",
+  "domain": "vision",
+  "description": "An RGB-D dataset for detection and segmentation containing about 10k images across 19 categories. This record does not distribute dataset files.",
+  "citation": "Song, S., Lichtenberg, S. P., & Xiao, J. (2015). SUN RGB-D: A RGB-D Scene Understanding Benchmark Suite. Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR).",
+  "license": {
+    "identifier": "Princeton terms (not a standard SPDX identifier)",
+    "url": "http://rgbd.cs.princeton.edu/"
+  },
+  "upstream_url": "http://rgbd.cs.princeton.edu/"
+}

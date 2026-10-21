@@ -1,0 +1,13 @@
+{
+  "id": "htru2",
+  "name": "HTRU2",
+  "domain": "scientific",
+  "description": "HTRU2 pulsar candidates, about 17.9 thousand candidates and eight features. F1 and recall on an imbalanced protocol. Lyon et al., MNRAS 2016. Table not vendored.",
+  "citation": "Lyon et al., MNRAS 2016. HTRU2.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://archive.ics.uci.edu/dataset/372/htru2",
+    "notes": "UCI open data. Table not vendored."
+  },
+  "upstream_url": "https://archive.ics.uci.edu/dataset/372/htru2"
+}

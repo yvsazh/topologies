@@ -1,0 +1,13 @@
+{
+  "id": "mapillary-vistas",
+  "name": "Mapillary Vistas",
+  "domain": "vision",
+  "description": "Large-scale street-level image dataset with instance-level annotations for visual understanding of street scenes.",
+  "citation": "Neuhold, G., Ollmann, T., Rota Bulò, S., & Kontschieder, P. (2017). The Mapillary Vistas Dataset for Semantic Understanding of Street Scenes. Proceedings of the IEEE International Conference on Computer Vision (ICCV), 4990–4999. https://doi.org/10.1109/ICCV.2017.534",
+  "license": {
+    "identifier": "Mapillary Vistas Dataset License (not a standard SPDX identifier)",
+    "url": "https://www.mapillary.com/dataset/vistas",
+    "notes": "The dataset is subject to Mapillary's dataset-specific terms and is not offered under a standard SPDX license identifier. Review the current terms and rights applicable to the underlying imagery before use or redistribution."
+  },
+  "upstream_url": "https://www.mapillary.com/dataset/vistas"
+}

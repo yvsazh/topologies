@@ -1,0 +1,13 @@
+{
+  "id": "hellaswag",
+  "name": "HellaSwag",
+  "domain": "natural-language",
+  "description": "A commonsense reasoning benchmark in which models choose the most plausible continuation of a short situation description from four candidate endings, with adversarially generated distractors.",
+  "citation": "Zellers, R., Holtzman, A., Bisk, Y., Farhadi, A., and Choi, Y. (2019). HellaSwag: Can a Machine Really Finish Your Sentence? Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics. https://aclanthology.org/P19-1472/",
+  "license": {
+    "identifier": "Dataset license not stated",
+    "url": "https://github.com/rowanz/hellaswag",
+    "notes": "The upstream dataset repository does not state a standard SPDX license for the dataset; license is therefore unspecified. Dataset contents may include third-party material, so review applicable rights and terms before use or redistribution."
+  },
+  "upstream_url": "https://github.com/rowanz/hellaswag"
+}

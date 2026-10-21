@@ -1,0 +1,13 @@
+{
+  "id": "flchain",
+  "name": "FLCHAIN",
+  "domain": "scientific",
+  "description": "FLCHAIN survival, about 7900 subjects with free light chain and monoclonal gammopathy. Concordance index and integrated Brier score. Table not vendored.",
+  "citation": "R survival package FLCHAIN.",
+  "license": {
+    "identifier": "GPL-2.0-or-later",
+    "url": "https://cran.r-project.org/package=survival",
+    "notes": "Ships with the R survival package. Clinical table is loader-only and not vendored."
+  },
+  "upstream_url": "https://cran.r-project.org/package=survival"
+}

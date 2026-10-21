@@ -1,0 +1,13 @@
+{
+  "id": "uwb-nlos",
+  "name": "UTIL: Ultra-wideband Time-difference-of-arrival Indoor Localization Dataset",
+  "domain": "robotics, indoor positioning, ultra-wideband",
+  "description": "Public UWB TDOA positioning dataset featuring LOS and NLOS identification experiments, including UWB signal measurements under obstacles, as well as real-world quadrotor flight data in cluttered environments.",
+  "citation": "Wenda Zhao, Abhishek Goudar, Xinyuan Qiao, and Angela P. Schoellig. UTIL: An Ultra-wideband Time-difference-of-arrival Indoor Localization Dataset. The International Journal of Robotics Research, 43(10):1443–1456, 2024. https://doi.org/10.48550/arXiv.2203.14471",
+  "license": {
+    "identifier": "other",
+    "url": "",
+    "notes": "Dataset license not published on the project dataset page; unverified."
+  },
+  "upstream_url": "https://learnsyslab.github.io/util-uwb-dataset/"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "info-nce", "name": "Symmetric paired InfoNCE",
+  "description": "Symmetric image/text paired-batch cross-entropy, diagonal positives, optional valid-negative matrix; batch-size one is finite and zero.",
+  "api": "topologies.training.losses:compute_loss(cfg, image_embeddings, text_embeddings, **extra)",
+  "usage": "loss = info_nce(image_vectors, text_vectors, temperature=0.07)",
+  "parameters": {"temperature": "positive similarity-logit divisor", "normalize": "L2-normalize each embedding row", "mask": "optional [N,N] valid candidate matrix retaining diagonal positives", "reduction": "none per-pair, mean, or sum"},
+  "implementation": {"path": "implementations/training/core.py", "symbol": "info_nce", "sha256": "878f03ad0677bb8cd1b993861f72dcf5bfa14853743a5b355353c1d1f8162f9b"},
+  "examples": [{"title":"Train paired encoders with InfoNCE","code":"import tempfile\nimport torch\nfrom topologies import Trainer, build, synth\nroot=tempfile.mkdtemp()\n@synth.generator\ndef samples(ctx):\n ident=int(ctx.index)%4\n image=torch.zeros((1,16,16)); image[:,ident*4:(ident+1)*4,:]=1\n return {\"image\":synth.Image(image),\"text\":f\"shape {ident}\"}\nds=synth.Spec(\"info-nce-pairs\",generator=samples,size=24,splits={\"train\":0.75,\"val\":0.25},seed=11,root=root,monitor=\"none\").run()\ntrain=ds.for_recipe(\"contrastive-pairs\",split=\"train\",tokenizer=\"char\",max_len=16)\nval=ds.for_recipe(\"contrastive-pairs\",split=\"val\",like=train,tokenizer=\"char\",max_len=16)\nmodel=build(\"image-text-dual-encoder\",\"tiny\",vocab_size=64,context_length=16,embedding_dim=8,in_channels=1,width=4,text_width=8,text_heads=2,text_layers=1)\ntrainer=Trainer(model,train,val,recipe=\"contrastive-pairs\",recipe_config={\"loss\":\"info-nce\",\"temperature\":0.07},max_epochs=1,batch_size=4,device=\"cpu\")\ntrainer.fit()\nresult=trainer.evaluate(val)"}]
+}

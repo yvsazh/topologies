@@ -1,0 +1,13 @@
+{
+  "id": "scedc",
+  "name": "SCEDC",
+  "domain": "scientific",
+  "description": "Southern California Earthquake Data Center continuous waveforms, more than 10 million picks from the Southern California Seismic Network. Pick F1 and onset error. Distinct from the STEAD and INSTANCE event-window archives. Waveforms not vendored.",
+  "citation": "SCEDC Southern California Earthquake Data Center continuous waveforms.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://scedc.caltech.edu/",
+    "notes": "SCEDC open data. Waveforms not vendored."
+  },
+  "upstream_url": "https://scedc.caltech.edu/"
+}

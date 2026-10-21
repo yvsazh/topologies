@@ -1,0 +1,13 @@
+{
+  "id": "widar-3",
+  "name": "Widar 3.0",
+  "domain": "scientific",
+  "description": "Widar 3.0 WiFi gesture recognition, about 43 thousand CSI traces and 22 classes. Cross-domain accuracy across body and orientation slices. Zhang et al., IEEE Transactions on Mobile Computing 2021. Traces not vendored.",
+  "citation": "Zhang et al., IEEE Transactions on Mobile Computing 2021. Widar 3.0.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://tns.thss.tsinghua.edu.cn/widar/",
+    "notes": "Tsinghua research terms. CSI traces not vendored."
+  },
+  "upstream_url": "https://tns.thss.tsinghua.edu.cn/widar/"
+}

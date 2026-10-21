@@ -1,0 +1,12 @@
+{
+  "id": "codecontests",
+  "name": "CodeContests",
+  "domain": "language",
+  "description": "Competitive-programming problems (about 13.6k); pass at k. Codeforces-derived terms apply. No data is vendored.",
+  "citation": "CodeContests, Li et al., ICLR 2022.",
+  "license": {
+    "identifier": "Codeforces-derived terms (no SPDX identifier stated)",
+    "url": "https://github.com/deepmind/code_contests"
+  },
+  "upstream_url": "https://github.com/deepmind/code_contests"
+}

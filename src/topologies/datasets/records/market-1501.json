@@ -1,0 +1,12 @@
+{
+  "id": "market-1501",
+  "name": "Market-1501",
+  "domain": "vision",
+  "description": "Person re-identification dataset with 1,501 identities and about 32,000 bounding boxes. Common evaluation metrics include mAP and Rank-1 accuracy. Use is subject to the Tsinghua release terms; no dataset data is vendored here.",
+  "citation": "Market-1501: A Dataset and Benchmark for Person Re-Identification. Zheng et al., ICCV 2015.",
+  "license": {
+    "identifier": "Tsinghua release terms",
+    "url": "https://paperswithcode.com/dataset/market-1501"
+  },
+  "upstream_url": "https://paperswithcode.com/dataset/market-1501"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "cinic-10",
+  "name": "CINIC-10",
+  "domain": "vision",
+  "description": "A 270,000-image classification dataset with ten classes, combining CIFAR-10 images and downsampled ImageNet images to provide train, validation, and test splits.",
+  "citation": "Darlow, L. N., Crowley, E. J., Antoniou, A., & Storkey, A. J. (2018). CINIC-10 is not ImageNet or CIFAR-10. arXiv:1810.03505. https://doi.org/10.48550/arXiv.1810.03505",
+  "license": {
+    "identifier": "Dataset license not specified",
+    "url": "https://github.com/BayesWatch/cinic-10",
+    "notes": "The upstream project does not state a standard license for CINIC-10. The dataset incorporates CIFAR-10 and ImageNet-derived images, whose rights and terms may differ; check the respective providers before use or redistribution."
+  },
+  "upstream_url": "https://github.com/BayesWatch/cinic-10"
+}

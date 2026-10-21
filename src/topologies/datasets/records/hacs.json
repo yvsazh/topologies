@@ -1,0 +1,12 @@
+{
+  "id": "hacs",
+  "name": "HACS",
+  "domain": "vision",
+  "description": "A large-scale action-recognition dataset of about 1.5 million video clips across 200 classes. No data is vendored in this record.",
+  "citation": "Zhao et al. (2019). HACS: Human Action Clips and Segments Dataset for Recognition and Temporal Localization. ICCV 2019.",
+  "license": {
+    "identifier": "HACS dataset release terms (not a standard SPDX identifier)",
+    "url": "https://github.com/hacs-organization/HACS-dataset"
+  },
+  "upstream_url": "https://github.com/hacs-organization/HACS-dataset"
+}

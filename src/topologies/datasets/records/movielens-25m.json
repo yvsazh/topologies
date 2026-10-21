@@ -1,0 +1,12 @@
+{
+  "id": "movielens-25m",
+  "name": "MovieLens 25M",
+  "domain": "recommendation",
+  "description": "About 25 million movie ratings. This dataset is distinct from the already recorded MovieLens 1M and MovieLens 20M sets. Use is subject to GroupLens research terms; no data is vendored here.",
+  "citation": "MovieLens 25M dataset; Harper, F. M. and Konstan, J. A. (2015). The MovieLens Datasets: History and Context. ACM Transactions on Interactive Intelligent Systems, 5(4), Article 19.",
+  "license": {
+    "identifier": "GroupLens research terms (not a standard SPDX identifier)",
+    "url": "https://grouplens.org/datasets/movielens/25m/"
+  },
+  "upstream_url": "https://grouplens.org/datasets/movielens/25m/"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "openml-cc18",
+  "name": "OpenML-CC18",
+  "domain": "tabular",
+  "description": "A curated suite of 72 classification datasets from OpenML, assembled as a benchmark for comparing classification algorithms. This is a benchmark collection of separate datasets, not one consolidated downloadable table; use the OpenML task suite to discover and retrieve its constituent data.",
+  "citation": "Bischl, B., Casalicchio, G., Feurer, M., et al. (2021). OpenML Benchmarking Suites. Proceedings of the Neural Information Processing Systems Track on Datasets and Benchmarks, 1. https://datasets-benchmarks-proceedings.neurips.cc/paper/2021/hash/86e8f7ab32cfd12577bc2619bc635690-Abstract-round2.html",
+  "license": {
+    "identifier": "OpenML dataset-specific licenses (not a single standard SPDX identifier)",
+    "url": "https://www.openml.org/search?type=benchmark",
+    "notes": "CC18 aggregates independently licensed datasets. There is no single suite-wide standard SPDX license; check the license and usage terms of each constituent dataset before downloading, using, or redistributing it. This record does not bundle dataset files."
+  },
+  "upstream_url": "https://www.openml.org/search?type=benchmark&study_type=task&id=99"
+}

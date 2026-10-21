@@ -1,0 +1,13 @@
+{
+  "id": "cifar-100",
+  "name": "CIFAR-100",
+  "domain": "vision",
+  "description": "A labeled image dataset of 60,000 32×32 color images in 100 classes, with 500 training and 100 test images per class. The classes are grouped into 20 superclasses, and each image has fine and coarse labels.",
+  "citation": "Krizhevsky, A. (2009). Learning Multiple Layers of Features from Tiny Images. University of Toronto.",
+  "license": {
+    "identifier": "Provider terms not specified",
+    "url": "https://www.cs.toronto.edu/~kriz/cifar.html",
+    "notes": "The provider page does not state a standard license. Consult the provider terms before redistribution; dataset availability does not establish redistribution rights."
+  },
+  "upstream_url": "https://www.cs.toronto.edu/~kriz/cifar.html"
+}

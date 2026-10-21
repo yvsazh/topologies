@@ -1,0 +1,12 @@
+{
+  "id": "fsd50k",
+  "name": "FSD50K",
+  "domain": "audio",
+  "description": "Sound-event classification dataset with 200 AudioSet-ontology classes and about 51k audio clips. Per-clip Freesound terms apply; metadata is CC-BY. No data is vendored.",
+  "citation": "Fonseca, E., Favory, X., Pons, J., Font, F., & Serra, X. (2022). FSD50K: An Open Dataset of Human-Labeled Sound Events. IEEE/ACM Transactions on Audio, Speech, and Language Processing.",
+  "license": {
+    "identifier": "Per-clip Freesound terms apply; licenses vary by clip and are not represented by one SPDX identifier. Metadata is CC-BY.",
+    "url": "https://annotator.freesound.org/fsd/"
+  },
+  "upstream_url": "https://annotator.freesound.org/fsd/"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "casia-splicing",
+  "name": "CASIA image splicing",
+  "domain": "vision",
+  "description": "CASIA v1 and v2 image splicing, 921 and 5123 tampered images. Pixel F1 and image AUC. One record for both versions. Images not vendored.",
+  "citation": "CASIA v1 and v2 image splicing.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://www.kaggle.com/datasets/sophatvathana/casia-dataset",
+    "notes": "CASIA research terms. Kaggle mirror. Images not vendored."
+  },
+  "upstream_url": "https://www.kaggle.com/datasets/sophatvathana/casia-dataset"
+}

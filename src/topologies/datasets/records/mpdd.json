@@ -1,0 +1,13 @@
+{
+  "id": "mpdd",
+  "name": "Metal Parts Defect Detection (MPDD) Dataset",
+  "domain": "vision",
+  "description": "Industrial visual anomaly detection dataset of metal parts, with defect-free and defective images for defect detection and localization. BTAD is a companion dataset in the same setting. Images are not vendored.",
+  "citation": "Jezek, S., Jonak, M., Burget, R., Dvorak, P., and Skotak, M. Deep learning-based defect detection of metal parts: evaluating current methods in complex conditions. ICUMT 2021. https://doi.org/10.1109/ICUMT54235.2021.9631567",
+  "license": {
+    "identifier": "CC-BY-NC-SA-4.0",
+    "url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "notes": "Anomalib records the dataset license as CC BY-NC-SA 4.0. Confirm the upstream terms before commercial use."
+  },
+  "upstream_url": "https://doi.org/10.1109/ICUMT54235.2021.9631567"
+}

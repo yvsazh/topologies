@@ -1,0 +1,13 @@
+{
+  "id": "tedlium-3",
+  "name": "TED-LIUM 3",
+  "domain": "audio",
+  "description": "An English automatic speech recognition corpus consisting of approximately 452 hours of TED talk audio with transcriptions, curated from TED talks and intended for speech recognition research.",
+  "citation": "Hernandez, F., Nguyen, V., Ghannay, S., Tomashenko, N., & Esteve, Y. (2018). TED-LIUM 3: twice as much data and corpus repartition for experiments on speaker adaptation. Speech and Computer, 198–208. https://doi.org/10.1007/978-3-319-99579-3_21",
+  "license": {
+    "identifier": "No standard SPDX identifier for the dataset as a whole",
+    "url": "https://www.openslr.org/51/",
+    "notes": "TED-LIUM 3 is distributed for research use; its recordings originate from TED talks and may be subject to TED's terms and the rights of individual speakers and content owners. The dataset-level license is not a standard SPDX identifier. Review the distribution terms and rights for specific materials before use or redistribution."
+  },
+  "upstream_url": "https://www.openslr.org/51/"
+}

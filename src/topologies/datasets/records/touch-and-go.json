@@ -1,0 +1,13 @@
+{
+  "id": "touch-and-go",
+  "name": "Touch-and-Go",
+  "domain": "vision",
+  "description": "Touch-and-Go GelSight visuo-tactile pairs, about 13900 touch and vision pairs of 20 objects. Material-property accuracy. Yang et al., CVPR 2022. Images not vendored.",
+  "citation": "Yang et al., CVPR 2022. Touch-and-Go.",
+  "license": {
+    "identifier": "MIT",
+    "url": "https://touch-and-go.github.io/",
+    "notes": "MIT. Images not vendored."
+  },
+  "upstream_url": "https://touch-and-go.github.io/"
+}

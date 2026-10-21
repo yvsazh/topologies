@@ -1,0 +1,13 @@
+{
+  "id": "activitynet-captions",
+  "name": "ActivityNet Captions",
+  "domain": "vision",
+  "description": "ActivityNet Captions dense video captioning, about 20 thousand videos and 100 thousand segments. METEOR and CIDEr with temporal IoU. Krishna et al., ICCV 2017. Distinct from the already recorded ActivityNet temporal-localization labels on the same videos. Videos are not vendored.",
+  "citation": "Krishna et al., ICCV 2017. ActivityNet Captions.",
+  "license": {
+    "identifier": "not specified",
+    "url": "http://activity-net.org/",
+    "notes": "Provider page does not state a standard SPDX license. Record only; videos not vendored."
+  },
+  "upstream_url": "http://activity-net.org/"
+}

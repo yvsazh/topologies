@@ -1,0 +1,13 @@
+{
+  "id": "kvasir-seg",
+  "name": "Kvasir-SEG",
+  "domain": "vision",
+  "description": "Kvasir-SEG polyp segmentation, about 1 thousand images. Mean Dice and mean IoU. Jha et al., MMM 2020. CVC-ClinicDB, 612 images, and ETIS, 196 images, are companion notes in this record, not separate files. Images not vendored.",
+  "citation": "Jha et al., MMM 2020. Kvasir-SEG.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://datasets.simula.no/kvasir-seg/",
+    "notes": "Simula open terms. Human images are loader-only and not vendored."
+  },
+  "upstream_url": "https://datasets.simula.no/kvasir-seg/"
+}

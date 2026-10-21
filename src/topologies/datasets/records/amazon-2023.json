@@ -1,0 +1,13 @@
+{
+  "id": "amazon-2023",
+  "name": "Amazon Reviews 2023",
+  "domain": "recommendation",
+  "description": "A large-scale collection of Amazon product reviews and associated item metadata spanning 1996–2023, suitable for recommendation research. This record is loader-only and does not distribute dataset files.",
+  "citation": "Hou, Y., Li, J., He, Z., Yan, A., Chen, X., & McAuley, J. (2024). Bridging Language and Items for Retrieval and Recommendation. arXiv:2403.03952. https://arxiv.org/abs/2403.03952",
+  "license": {
+    "identifier": "Dataset-specific terms (not a standard SPDX identifier)",
+    "url": "https://amazon-reviews-2023.github.io/",
+    "notes": "The dataset is provided under dataset-specific terms, not a standard SPDX license identifier. Review the upstream terms and applicable Amazon content rights before use or redistribution. This record vendors no data."
+  },
+  "upstream_url": "https://amazon-reviews-2023.github.io/"
+}

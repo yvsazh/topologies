@@ -1,0 +1,12 @@
+{
+  "id": "hotpotqa",
+  "name": "HotpotQA",
+  "domain": "language",
+  "description": "A multi-hop question answering dataset with distractor and full-wiki settings, containing about 113k questions. Distinct from Natural Questions and TriviaQA. No data is vendored.",
+  "citation": "Yang et al. (2018). HotpotQA: A Dataset for Diverse, Explainable Multi-hop Question Answering. Proceedings of EMNLP 2018.",
+  "license": {
+    "identifier": "CC-BY-SA-4.0",
+    "url": "https://hotpotqa.github.io/"
+  },
+  "upstream_url": "https://hotpotqa.github.io/"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "climsim",
+  "name": "ClimSim",
+  "domain": "scientific",
+  "description": "ClimSim climate-emulation inputs and outputs, about 5.7 billion samples across 10 million columns. CRPS and online bias. Yu et al., NeurIPS 2023 Datasets and Benchmarks. Loader-only metadata.",
+  "citation": "Yu et al., NeurIPS 2023. ClimSim.",
+  "license": {
+    "identifier": "CC-BY-4.0",
+    "url": "https://github.com/leap-stc/ClimSim",
+    "notes": "CC-BY. Record only; no samples vendored."
+  },
+  "upstream_url": "https://github.com/leap-stc/ClimSim"
+}

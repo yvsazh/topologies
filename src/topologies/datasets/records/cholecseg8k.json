@@ -1,0 +1,13 @@
+{
+  "id": "cholecseg8k",
+  "name": "CholecSeg8k",
+  "domain": "medical imaging",
+  "description": "A semantic segmentation dataset of 8,080 laparoscopic cholecystectomy frames from 17 Cholec80 videos, with pixel-level annotations for 13 classes.",
+  "citation": "Hong et al., CholecSeg8k: A Semantic Segmentation Dataset for Laparoscopic Cholecystectomy Based on Cholec80, arXiv:2012.12453 (2020). https://arxiv.org/abs/2012.12453",
+  "license": {
+    "identifier": "CC-BY-NC-SA-4.0",
+    "url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "notes": "The arXiv abstract states that CholecSeg8k is released under CC BY-NC-SA 4.0."
+  },
+  "upstream_url": "https://github.com/dataset-ninja/cholec-seg8k"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "kitti",
+  "name": "KITTI Vision Benchmark Suite",
+  "domain": "vision",
+  "description": "A suite of real-world computer vision and autonomous-driving benchmarks, including stereo, optical flow, visual odometry, object detection, and 3D tracking. This record is loader-only and does not distribute dataset files.",
+  "citation": "Geiger, A., Lenz, P., & Urtasun, R. (2012). Are we ready for autonomous driving? The KITTI vision benchmark suite. 2012 IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 3354–3361. https://doi.org/10.1109/CVPR.2012.6248074",
+  "license": {
+    "identifier": "Custom KITTI terms (not a standard SPDX identifier)",
+    "url": "https://www.cvlibs.net/datasets/kitti/",
+    "notes": "KITTI data is subject to the dataset-specific terms and conditions; the license is not a standard SPDX identifier. Review the current terms before use or redistribution. This record is loader-only and vendors no data. Waymo Open is loader-only and rights-reserved."
+  },
+  "upstream_url": "https://www.cvlibs.net/datasets/kitti/"
+}

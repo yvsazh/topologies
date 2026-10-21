@@ -1,0 +1,13 @@
+{
+  "id": "coqa",
+  "name": "CoQA",
+  "domain": "language",
+  "description": "Conversational question answering dataset with about 127k turns. QuAC (Choi et al., TACL 2018) is a related conversational QA dataset with about 100k turns. Data sources may have distinct terms; no data is vendored in this record.",
+  "citation": "CoQA: A Conversational Question Answering Challenge. Reddy et al., Transactions of the Association for Computational Linguistics (TACL), 2019.",
+  "license": {
+    "identifier": "CoQA release terms (not a standard SPDX identifier)",
+    "url": "https://stanfordnlp.github.io/coqa/",
+    "notes": "The CoQA release terms are not expressed as a standard SPDX license identifier. Source materials may carry separate terms; review applicable terms for each source before use or redistribution. No data is vendored."
+  },
+  "upstream_url": "https://stanfordnlp.github.io/coqa/"
+}

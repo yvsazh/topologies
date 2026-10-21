@@ -1,0 +1,13 @@
+{
+  "id": "movielens-1m",
+  "name": "MovieLens 1M Dataset",
+  "domain": "recommendation",
+  "description": "A benchmark dataset of approximately one million ratings from 6,040 users on 3,900 movies, collected by the GroupLens Research Project. Ratings are on a five-star scale and include timestamps and user/movie metadata.",
+  "citation": "Harper, F. M., & Konstan, J. A. (2015). The MovieLens Datasets: History and Context. ACM Transactions on Interactive Intelligent Systems, 5(4), Article 19. https://doi.org/10.1145/2827872",
+  "license": {
+    "identifier": "Dataset-specific terms; not a standard SPDX license identifier",
+    "url": "https://grouplens.org/datasets/movielens/1m/",
+    "notes": "The dataset is subject to the terms stated by GroupLens and is not provided under a standard SPDX license identifier. Review the upstream terms before use or redistribution."
+  },
+  "upstream_url": "https://grouplens.org/datasets/movielens/1m/"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "wsj0-2mix",
+  "name": "WSJ0-2mix",
+  "domain": "audio",
+  "description": "Single-channel speech separation mixes from WSJ0 in two- and three-speaker settings, including WSJ0-3mix. LDC-derived, loader and recipe only. No data vendored.",
+  "citation": "WSJ0-2mix: Hershey, J. R., et al. (2016). Deep clustering: Discriminative embeddings for segmentation and separation. IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP).",
+  "license": {
+    "identifier": "LDC-derived gated terms (not a standard SPDX identifier)",
+    "url": "https://catalog.ldc.upenn.edu/LDC93S6A"
+  },
+  "upstream_url": "https://catalog.ldc.upenn.edu/LDC93S6A"
+}

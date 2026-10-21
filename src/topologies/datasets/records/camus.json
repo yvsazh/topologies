@@ -1,0 +1,13 @@
+{
+  "id": "camus",
+  "name": "CAMUS",
+  "domain": "vision",
+  "description": "CAMUS cardiac ultrasound, 500 patients, end-diastole and end-systole, two-chamber and four-chamber views. Dice and ejection-fraction MAE. Leclerc et al., IEEE TMI 2019. Images not vendored.",
+  "citation": "Leclerc et al., TMI 2019. CAMUS cardiac ultrasound.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://www.creatis.insa-lyon.fr/Challenge/camus/",
+    "notes": "CREATIS terms. Human images are loader-only and not vendored."
+  },
+  "upstream_url": "https://www.creatis.insa-lyon.fr/Challenge/camus/"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "prophesee-gen1",
+  "name": "Prophesee GEN1",
+  "domain": "vision",
+  "description": "Prophesee GEN1 automotive event detection, about 39 hours and 228 thousand boxes. mAP on the event protocol. Events not vendored.",
+  "citation": "de Tournemire et al., CVPRW 2020. Prophesee GEN1.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://www.prophesee.ai/event-based-datasets/",
+    "notes": "Prophesee terms. Events not vendored."
+  },
+  "upstream_url": "https://www.prophesee.ai/event-based-datasets/"
+}

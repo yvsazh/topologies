@@ -1,0 +1,13 @@
+{
+  "id": "qm9",
+  "name": "QM9",
+  "domain": "graph",
+  "description": "A dataset of approximately 134,000 small organic molecules with up to nine heavy atoms, including computed geometric, energetic, and electronic properties. This record is loader-only and does not distribute dataset files.",
+  "citation": "Ramakrishnan, R., Dral, P. O., Rupp, M., & von Lilienfeld, O. A. (2014). Quantum chemistry structures and properties of 134 kilo molecules. Scientific Data, 1, 140022. https://doi.org/10.1038/sdata.2014.22",
+  "license": {
+    "identifier": "Dataset-specific terms (not a standard SPDX identifier)",
+    "url": "https://deepchemdata.s3-us-west-1.amazonaws.com/datasets/gdb9.tar.gz",
+    "notes": "The QM9 distribution does not specify a standard SPDX license identifier. Review the dataset and source-data terms before use or redistribution. This record is loader-only and vendors no data."
+  },
+  "upstream_url": "https://www.quantum-machine.org/datasets/"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "shl",
+  "name": "SHL locomotion",
+  "domain": "scientific",
+  "description": "Sussex-Huawei locomotion dataset, about 281 hours of locomotion and transport from three users. Mode F1 on a user-split protocol. Gjoreski et al., IMWUT 2018. Sensor traces not vendored.",
+  "citation": "Gjoreski et al., IMWUT 2018. SHL locomotion.",
+  "license": {
+    "identifier": "not specified",
+    "url": "http://www.shl-dataset.org/",
+    "notes": "Research terms. Sensor traces not vendored."
+  },
+  "upstream_url": "http://www.shl-dataset.org/"
+}

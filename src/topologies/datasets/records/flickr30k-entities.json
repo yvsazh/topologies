@@ -1,0 +1,12 @@
+{
+  "id": "flickr30k-entities",
+  "name": "Flickr30k Entities",
+  "domain": "vision",
+  "description": "Phrase grounding bounding boxes on about 32,000 Flickr30k images. Distinct from the Flickr30k captions dataset. Flickr image terms apply; no data is vendored.",
+  "citation": "Flickr30k Entities: Plummer et al., ICCV 2015.",
+  "license": {
+    "identifier": "Flickr-derived image terms (not a single SPDX identifier)",
+    "url": "http://bryanplummer.com/Flickr30kEntities/"
+  },
+  "upstream_url": "http://bryanplummer.com/Flickr30kEntities/"
+}

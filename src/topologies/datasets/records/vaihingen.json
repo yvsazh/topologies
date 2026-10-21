@@ -1,0 +1,13 @@
+{
+  "id": "vaihingen",
+  "name": "ISPRS Vaihingen 2D Semantic Labeling Dataset",
+  "domain": "remote sensing",
+  "description": "The ISPRS Vaihingen 2D semantic labeling benchmark provides true orthophotos and digital surface models for 33 patches in Vaihingen, Germany, with manually labeled ground truth for semantic classification.",
+  "citation": "Rottensteiner, F., Sohn, G., Jung, J., Gerke, M., Baillard, C., Benitez, S., & Breitkopf, U. (2012). The ISPRS benchmark on urban object classification and 3D building reconstruction. ISPRS Annals of the Photogrammetry, Remote Sensing and Spatial Information Sciences, I-3, 293–298. https://doi.org/10.5194/isprsannals-i-3-293-2012",
+  "license": {
+    "identifier": "other",
+    "url": "",
+    "notes": "unverified"
+  },
+  "upstream_url": "https://www.isprs.org/resources/datasets/benchmarks/UrbanSemLab/2d-sem-label-vaihingen.aspx"
+}

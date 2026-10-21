@@ -1,0 +1,13 @@
+{
+  "id": "voxceleb-2",
+  "name": "VoxCeleb2",
+  "domain": "audio",
+  "description": "A large-scale speaker recognition dataset containing more than one million YouTube audio utterances from over 6,000 speakers, collected from interview videos.",
+  "citation": "Chung, J. S., Nagrani, A., & Zisserman, A. (2018). VoxCeleb2: Deep Speaker Recognition. Interspeech 2018, 1086–1090. https://doi.org/10.21437/Interspeech.2018-1929",
+  "license": {
+    "identifier": "Research-only dataset terms (not a standard SPDX identifier)",
+    "url": "https://www.robots.ox.ac.uk/~vgg/data/voxceleb/",
+    "notes": "VoxCeleb2 is provided for research use under the dataset provider's terms; it is not offered under a standard SPDX license identifier. The source videos are from YouTube and remain subject to their respective rights and terms. Review the provider's current terms before access, use, or redistribution."
+  },
+  "upstream_url": "https://www.robots.ox.ac.uk/~vgg/data/voxceleb/"
+}

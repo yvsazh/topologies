@@ -1,0 +1,13 @@
+{
+  "id": "domainnet",
+  "name": "DomainNet",
+  "domain": "vision",
+  "description": "Large-scale domain adaptation benchmark comprising images from six visual domains: clipart, infograph, painting, quickdraw, real, and sketch, organized into 345 object categories.",
+  "citation": "Peng, X., Usman, B., Kaushik, N., Hoffman, J., Wang, D., & Saenko, K. (2019). Moment Matching for Multi-Source Domain Adaptation. IEEE/CVF International Conference on Computer Vision (ICCV). https://doi.org/10.1109/ICCV.2019.00515",
+  "license": {
+    "identifier": "Dataset license not stated",
+    "url": "http://ai.bu.edu/M3SDA/",
+    "notes": "The upstream DomainNet page does not state a dataset license. Review upstream terms and rights in the underlying images before use or redistribution; do not infer redistribution or commercial-use permission."
+  },
+  "upstream_url": "http://ai.bu.edu/M3SDA/"
+}

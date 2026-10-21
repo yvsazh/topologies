@@ -1,0 +1,17 @@
+{
+  "id": "ali-ccp",
+  "name": "Ali-CCP (Alibaba Click and Conversion Prediction)",
+  "domain": "recommendation",
+  "description": "A large-scale e-commerce advertising dataset from Alibaba, containing user behavior and ad impression data for click-through and conversion prediction research. This record is metadata only: it has no direct resource URLs or Topologies loader.",
+  "citation": "Zhou, G., Zhu, X., Song, C., Fan, Y., Zhu, H., Ma, X., Yan, Y., Jin, J., Li, H., & Gai, K. (2018). Deep Interest Network for Click-Through Rate Prediction. Proceedings of the 24th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining, 1059–1068. https://doi.org/10.1145/3219819.3219823",
+  "license": {
+    "identifier": "Unknown; provider terms have not been verified",
+    "url": "",
+    "notes": "No standard license identifier or dedicated license URL has been verified. Consult the provider before use or redistribution. The provider link is for dataset access, not a license grant."
+  },
+  "upstream_url": "https://tianchi.aliyun.com/dataset/408",
+  "source_url": "https://tianchi.aliyun.com/dataset/408",
+  "project_url": "https://tianchi.aliyun.com/dataset/408",
+  "access_mode": "manual",
+  "access_notes": "Use the Alibaba Tianchi provider page for manual access. This record has no direct resource URLs and Topologies does not download Ali-CCP automatically."
+}

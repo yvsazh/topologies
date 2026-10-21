@@ -1,0 +1,13 @@
+{
+  "id": "cc3m",
+  "name": "Conceptual Captions 3M",
+  "domain": "multimodal",
+  "description": "A dataset of approximately 3.3 million image-caption pairs harvested from web pages and automatically filtered for image-caption relevance. This record describes the dataset only and does not distribute or vendor its data.",
+  "citation": "Sharma, P., Ding, N., Goodman, S., & Soricut, R. (2018). Conceptual Captions: A Cleaned, Hypernymed, Image Alt-text Dataset For Automatic Image Captioning. Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), 2556–2565. https://doi.org/10.18653/v1/P18-1238",
+  "license": {
+    "identifier": "Not stated (not a standard SPDX identifier)",
+    "url": "https://github.com/google-research-datasets/conceptual-captions",
+    "notes": "The upstream project does not specify a single standard dataset license. The captions and images originate from third-party web sources with potentially varying rights; use and redistribution carry license and copyright risk. Review the upstream terms and source-image rights before use."
+  },
+  "upstream_url": "https://github.com/google-research-datasets/conceptual-captions"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "zinc-250k",
+  "name": "ZINC-250k",
+  "domain": "graph",
+  "description": "A molecular graph dataset of approximately 250,000 drug-like molecules sampled from ZINC, used for molecular generation and property-prediction research. This record is loader-only and does not distribute dataset files.",
+  "citation": "Jin, W., Barzilay, R., & Jaakkola, T. (2018). Junction Tree Variational Autoencoder for Molecular Graph Generation. Proceedings of the 35th International Conference on Machine Learning, 2323–2332. https://proceedings.mlr.press/v80/jin18a.html",
+  "license": {
+    "identifier": "Dataset-specific terms (not a standard SPDX identifier)",
+    "url": "https://zinc.docking.org/",
+    "notes": "ZINC is a curated chemical database with dataset-specific terms; no standard SPDX identifier is asserted for this derived ZINC-250k subset. Review ZINC's current terms and the source-paper dataset details before use or redistribution. This record is loader-only and vendors no data."
+  },
+  "upstream_url": "https://github.com/wengong-jin/icml18-jtnn"
+}

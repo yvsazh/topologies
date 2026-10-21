@@ -1,0 +1,3 @@
+# QWERTY rows (typo model: a key is replaced by a horizontal neighbour).
+layout: qwerty
+rows: ["qwertyuiop", "asdfghjkl", "zxcvbnm"]

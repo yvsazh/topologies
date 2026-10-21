@@ -1,0 +1,12 @@
+{
+  "id": "wavcaps",
+  "name": "WavCaps",
+  "domain": "audio",
+  "description": "A dataset of about 400,000 captioned audio clips aggregated from sources including MACS and SoundDescs. Each source is subject to its own terms. No data is vendored here.",
+  "citation": "Mei et al. (2024). WavCaps.",
+  "license": {
+    "identifier": "Per-source terms (not one SPDX identifier)",
+    "url": "https://github.com/XinhaoMei/WavCaps"
+  },
+  "upstream_url": "https://github.com/XinhaoMei/WavCaps"
+}

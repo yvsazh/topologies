@@ -1,0 +1,13 @@
+{
+  "id": "chime-4",
+  "name": "CHiME-4",
+  "domain": "audio",
+  "description": "A corpus for robust speech recognition in noisy environments, containing real and simulated microphone recordings of conversational speech with corresponding transcripts.",
+  "citation": "Vincent, E., Watanabe, S., Nugraha, A. A., Barker, J., & Marxer, R. (2017). An Analysis of Environment, Microphone and Data Simulation Mismatches in Robust Speech Recognition. Computer Speech & Language, 46, 535–557. https://doi.org/10.1016/j.csl.2017.04.005",
+  "license": {
+    "identifier": "CHiME-4 dataset terms (non-SPDX)",
+    "url": "https://spandh.dcs.shef.ac.uk/chime_challenge/CHiME4/",
+    "notes": "The CHiME-4 corpus does not specify a standard SPDX license identifier; access and use are subject to the dataset/challenge terms. Review the upstream terms and any source-recording rights before use or redistribution."
+  },
+  "upstream_url": "https://spandh.dcs.shef.ac.uk/chime_challenge/CHiME4/"
+}

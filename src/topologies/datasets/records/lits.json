@@ -1,0 +1,13 @@
+{
+  "id": "lits",
+  "name": "LiTS",
+  "domain": "vision",
+  "description": "Liver Tumor Segmentation challenge, 201 contrast CT scans, 131 train and 70 test. Dice and average surface distance for tumor and liver. Bilic et al. 2019. Credentialed human imaging; scans not vendored.",
+  "citation": "Bilic et al. 2019. LiTS liver tumor segmentation.",
+  "license": {
+    "identifier": "CC-BY-NC-SA-4.0",
+    "url": "https://competitions.codalab.org/competitions/17094",
+    "notes": "Challenge license CC BY-NC-SA. Human scans are loader-only and not vendored."
+  },
+  "upstream_url": "https://competitions.codalab.org/competitions/17094"
+}

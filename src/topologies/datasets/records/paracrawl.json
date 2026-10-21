@@ -1,0 +1,12 @@
+{
+  "id": "paracrawl",
+  "name": "ParaCrawl",
+  "domain": "language",
+  "description": "Version 9 web-mined parallel text. Loader-only; no data vendored. Mixed-web licensing creates risk: source material may have varying terms, so review upstream terms before use or redistribution.",
+  "citation": "ParaCrawl: Web-scale parallel corpora for European languages (Bañón et al., WMT 2020).",
+  "license": {
+    "identifier": "Mixed-web terms; not a single SPDX identifier",
+    "url": "https://paracrawl.eu/"
+  },
+  "upstream_url": "https://paracrawl.eu/"
+}

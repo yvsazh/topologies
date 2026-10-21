@@ -1,0 +1,13 @@
+{
+  "id": "bbbc",
+  "name": "Broad Bioimage Benchmark Collection",
+  "domain": "scientific",
+  "description": "Broad Bioimage Benchmark Collection, more than 50 microscopy sets of synthetic and real cells and tissues. Metrics are recorded per collection. Images not vendored.",
+  "citation": "Broad Institute BBBC.",
+  "license": {
+    "identifier": "CC-BY-4.0",
+    "url": "https://bbbc.broadinstitute.org/",
+    "notes": "Per-collection Creative Commons terms, commonly CC BY. Images not vendored."
+  },
+  "upstream_url": "https://bbbc.broadinstitute.org/"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "asvspoof-2019",
+  "name": "ASVspoof 2019",
+  "domain": "audio",
+  "description": "ASVspoof 2019 logical-access and physical-access spoofing, about 122 thousand utterances and 20 attacks. t-DCF and equal error rate. Todisco et al., Interspeech 2019. Audio not vendored.",
+  "citation": "Todisco et al., Interspeech 2019. ASVspoof 2019.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://datashare.ed.ac.uk/handle/10283/3336",
+    "notes": "Research terms. Audio not vendored."
+  },
+  "upstream_url": "https://datashare.ed.ac.uk/handle/10283/3336"
+}

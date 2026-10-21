@@ -1,0 +1,13 @@
+{
+  "id": "sugarbeets-2016",
+  "name": "SugarBeets 2016",
+  "domain": "vision",
+  "description": "SugarBeets 2016 crop and weed segmentation, 283 scenes plus near-infrared. Mean IoU. Chebrolu et al., IROS 2017. Images not vendored.",
+  "citation": "Chebrolu et al., IROS 2017. SugarBeets 2016.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://www.ipb.uni-bonn.de/data/sugarbeets2016/",
+    "notes": "University of Bonn open research terms. Images not vendored."
+  },
+  "upstream_url": "https://www.ipb.uni-bonn.de/data/sugarbeets2016/"
+}

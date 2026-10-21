@@ -1,0 +1,13 @@
+{
+  "id": "cuad",
+  "name": "CUAD",
+  "domain": "language",
+  "description": "CUAD contract clause extraction, more than 500 contracts and 41 labels. Area under the precision-recall curve per clause. Hendrycks et al., NeurIPS 2021 Datasets and Benchmarks. LEDGAR, about 100 thousand provisions, is a companion note in this record. Contracts not vendored.",
+  "citation": "Hendrycks et al., NeurIPS 2021. CUAD.",
+  "license": {
+    "identifier": "CC-BY-4.0",
+    "url": "https://www.atticusprojectai.org/cuad",
+    "notes": "Atticus CC BY. Contracts not vendored."
+  },
+  "upstream_url": "https://www.atticusprojectai.org/cuad"
+}

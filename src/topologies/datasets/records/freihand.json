@@ -1,0 +1,12 @@
+{
+  "id": "freihand",
+  "name": "FreiHAND",
+  "domain": "vision",
+  "description": "Hand pose estimation dataset with about 130k images. InterHand2.6M is mentioned as a related hand dataset. Research-only; no data is vendored.",
+  "citation": "FreiHAND: A Dataset for Markerless Capture of Hand Pose and Shape, Zimmermann et al., ICCV 2019.",
+  "license": {
+    "identifier": "Research-only terms; not a standard SPDX identifier.",
+    "url": "https://lmb.informatik.uni-freiburg.de/resources/datasets/FreihandDataset.en.html"
+  },
+  "upstream_url": "https://lmb.informatik.uni-freiburg.de/resources/datasets/FreihandDataset.en.html"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "casia-webface",
+  "name": "CASIA-WebFace",
+  "domain": "vision",
+  "description": "A face recognition dataset with about 10k identities and 500k images. CASIA research-only, gated, loader-only; no data is vendored.",
+  "citation": "Yi, D., Lei, Z., Liao, S., & Li, S. Z. (2014). Learning Face Representation from Scratch. arXiv:1411.7923. CASIA-WebFace.",
+  "license": {
+    "identifier": "CASIA research-only terms (not a standard SPDX identifier)",
+    "url": "http://www.cbsr.ia.ac.cn/english/CASIA-WebFace-Database.html"
+  },
+  "upstream_url": "http://www.cbsr.ia.ac.cn/english/CASIA-WebFace-Database.html"
+}

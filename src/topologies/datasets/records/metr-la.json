@@ -1,0 +1,12 @@
+{
+  "id": "metr-la",
+  "name": "METR-LA",
+  "domain": "time-series",
+  "description": "A traffic forecasting benchmark containing traffic speed measurements from 207 loop detectors on Los Angeles County highways, collected over four months in 2012.",
+  "citation": "Li, Y., Yu, R., Shahabi, C., & Liu, Y. (2018). Diffusion Convolutional Recurrent Neural Network: Data-Driven Traffic Forecasting. International Conference on Learning Representations (ICLR). https://arxiv.org/abs/1707.01926",
+  "license": {
+    "identifier": "Not specified (not a standard SPDX identifier)",
+    "notes": "The upstream repository does not state a license for the METR-LA dataset itself. The repository's code license should not be assumed to cover the data; review upstream terms and obtain any required permissions before use or redistribution."
+  },
+  "upstream_url": "https://github.com/liyaguang/DCRNN"
+}

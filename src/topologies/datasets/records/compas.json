@@ -1,0 +1,13 @@
+{
+  "id": "compas",
+  "name": "COMPAS",
+  "domain": "scientific",
+  "description": "ProPublica COMPAS recidivism records, about 7 thousand people. Accuracy plus equalized-odds and demographic-parity slices. Angwin et al. 2016; technical discussion Dressel and Farid 2018. Loader-only metadata. Do not add identifying fields beyond the public analysis tables.",
+  "citation": "Angwin et al. 2016. COMPAS recidivism analysis.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://github.com/propublica/compas-analysis",
+    "notes": "ProPublica analysis repository. Record only; no data vendored."
+  },
+  "upstream_url": "https://github.com/propublica/compas-analysis"
+}

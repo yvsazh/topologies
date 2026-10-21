@@ -1,0 +1,13 @@
+{
+  "id": "mbpp",
+  "name": "Mostly Basic Python Problems (MBPP)",
+  "domain": "natural-language",
+  "description": "A benchmark of around 1,000 crowd-sourced Python programming problems for entry-level programmers. Each problem includes a natural-language task description, a Python solution, and automated tests.",
+  "citation": "Austin, J., Odena, A., Nye, M., Bosma, M., Michalewski, H., Dohan, D., et al. (2021). Program Synthesis with Large Language Models. arXiv:2108.07732. https://arxiv.org/abs/2108.07732",
+  "license": {
+    "identifier": "CC-BY-4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "notes": "The dataset card identifies the dataset license as Creative Commons Attribution 4.0 International (CC BY 4.0), a standard SPDX license identifier. Review upstream terms and attribution requirements before redistribution."
+  },
+  "upstream_url": "https://github.com/google-research/google-research/tree/master/mbpp"
+}

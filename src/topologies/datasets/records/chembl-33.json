@@ -1,0 +1,13 @@
+{
+  "id": "chembl-33",
+  "name": "ChEMBL 33",
+  "domain": "scientific",
+  "description": "ChEMBL 33 bioactive compounds, about 2.4 million compounds and 15 thousand targets. pChEMBL mean absolute error and target AUC. Mendez et al., Nucleic Acids Research 2019. Compound table not vendored.",
+  "citation": "Mendez et al., Nucleic Acids Research 2019. ChEMBL.",
+  "license": {
+    "identifier": "CC-BY-SA-3.0",
+    "url": "https://www.ebi.ac.uk/chembl/",
+    "notes": "EBI CC BY-SA. Compound table not vendored."
+  },
+  "upstream_url": "https://www.ebi.ac.uk/chembl/"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "lakh-midi",
+  "name": "Lakh MIDI",
+  "domain": "audio",
+  "description": "Aligned MIDI, LMD-matched subset of about 45k files matched to the Million Song Dataset. No data vendored.",
+  "citation": "Lakh MIDI Dataset (LMD); Raffel, C. (2016). Learning-Based Methods for Comparing Sequences, with Applications to Audio-to-MIDI Alignment and Matching.",
+  "license": {
+    "identifier": "CC-BY-4.0",
+    "url": "https://colinraffel.com/projects/lmd/"
+  },
+  "upstream_url": "https://colinraffel.com/projects/lmd/"
+}

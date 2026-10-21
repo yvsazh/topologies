@@ -1,0 +1,13 @@
+{
+  "id": "chime-frb",
+  "name": "CHIME/FRB Fast Radio Burst Catalog",
+  "domain": "astronomy",
+  "description": "The first CHIME/FRB catalog of 536 fast radio bursts detected from 2018 July to 2019 July, including bursts from repeating and apparently non-repeating sources.",
+  "citation": "The CHIME/FRB Collaboration. (2021). The First CHIME/FRB Fast Radio Burst Catalog. The Astrophysical Journal Supplement Series, 257(2), 59. https://doi.org/10.3847/1538-4365/ac33ab",
+  "license": {
+    "identifier": "other",
+    "url": "",
+    "notes": "The license is unverified; no explicit dataset license was confirmed in the published catalog resources."
+  },
+  "upstream_url": "https://www.canfar.net/storage/list/AstroDataCitationDOI/CISTI.CANFAR/21.0007/data"
+}

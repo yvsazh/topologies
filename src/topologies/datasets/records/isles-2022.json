@@ -1,0 +1,13 @@
+{
+  "id": "isles-2022",
+  "name": "ISLES 2022",
+  "domain": "vision",
+  "description": "ISLES 2022 stroke imaging, about 400 DWI and FLAIR studies with infarct masks. Dice and lesion F1. Hernandez Petzsche et al. 2022. Scans not vendored.",
+  "citation": "Hernandez Petzsche et al. 2022. ISLES 2022.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://isles22.grand-challenge.org/",
+    "notes": "Research terms. Human scans are loader-only and not vendored."
+  },
+  "upstream_url": "https://isles22.grand-challenge.org/"
+}

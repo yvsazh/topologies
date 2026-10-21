@@ -1,0 +1,13 @@
+{
+  "id": "lastfm-1k",
+  "name": "Last.fm 1K User Listening Dataset",
+  "domain": "recommendation",
+  "description": "A collection of listening histories for 992 users, containing timestamped play events and associated user, artist, and tag information. It is used for music recommendation and user listening-behavior research.",
+  "citation": "Celma, O. (2010). Music Recommendation and Discovery in the Long Tail. Springer. https://doi.org/10.1007/978-3-642-13287-2",
+  "license": {
+    "identifier": "License not specified (not a standard SPDX identifier)",
+    "url": "http://ocelma.net/MusicRecommendationDataset/lastfm-1K.html",
+    "notes": "The upstream dataset page does not state a standard SPDX license for the dataset. Treat redistribution and commercial-use rights as unspecified; review upstream terms and rights in the underlying listening and profile data before use."
+  },
+  "upstream_url": "http://ocelma.net/MusicRecommendationDataset/lastfm-1K.html"
+}

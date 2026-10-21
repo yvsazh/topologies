@@ -1,0 +1,13 @@
+{
+  "id": "wikipedia-web-traffic",
+  "name": "Wikipedia Web Traffic",
+  "domain": "scientific",
+  "description": "Daily Wikipedia page hits for about 145 thousand pages over two years. SMAPE under the Wikimedia Kaggle protocol. Loader-only metadata.",
+  "citation": "Wikipedia Web Traffic Kaggle forecasting challenge.",
+  "license": {
+    "identifier": "CC-BY-SA-3.0",
+    "url": "https://www.kaggle.com/c/web-traffic-time-series-forecasting",
+    "notes": "Wikimedia content is CC BY-SA. Record only; no data vendored."
+  },
+  "upstream_url": "https://www.kaggle.com/c/web-traffic-time-series-forecasting"
+}

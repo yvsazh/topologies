@@ -1,0 +1,13 @@
+{
+  "id": "dvs-gesture",
+  "name": "DVS Gesture",
+  "domain": "neuromorphic vision",
+  "description": "The IBM DVS Gesture dataset contains event-based recordings of people performing 29 gesture classes, captured with a Dynamic Vision Sensor (DVS). The recordings provide spatiotemporal event streams for research in gesture recognition and neuromorphic vision.",
+  "citation": "Amir, A., et al. (2017). A Low Power, Fully Event-Based Gesture Recognition System. 2017 IEEE Conference on Computer Vision and Pattern Recognition (CVPR).",
+  "license": {
+    "identifier": "other",
+    "url": "https://research.ibm.com/interactive/dvsgesture/",
+    "notes": "No standard SPDX license identifier is specified here; consult the dataset provider's terms before reuse or redistribution."
+  },
+  "upstream_url": "https://research.ibm.com/interactive/dvsgesture/"
+}

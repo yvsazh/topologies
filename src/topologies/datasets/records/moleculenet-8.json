@@ -1,0 +1,13 @@
+{
+  "id": "moleculenet-8",
+  "name": "MoleculeNet",
+  "domain": "graph",
+  "description": "A benchmark suite of molecular machine-learning datasets spanning quantum mechanics, physical chemistry, biophysics, and physiology. Molecules are represented as graphs and datasets include property-prediction tasks such as classification and regression. This record is metadata-only and does not distribute data.",
+  "citation": "Wu, Z., Ramsundar, B., Feinberg, E. N., Gomes, J., Geniesse, C., Pappu, A. S., Leswing, K., &amp; Pande, V. (2018). MoleculeNet: a benchmark for molecular machine learning. Chemical Science, 9, 513–530. https://doi.org/10.1039/C7SC02664A",
+  "license": {
+    "identifier": "Dataset-specific terms (not a standard SPDX identifier)",
+    "url": "https://moleculenet.org/",
+    "notes": "MoleculeNet aggregates datasets with source-specific terms; the benchmark does not establish one standard SPDX license for the entire suite. Review the terms for each constituent dataset before use or redistribution. No data is vendored."
+  },
+  "upstream_url": "https://moleculenet.org/"
+}

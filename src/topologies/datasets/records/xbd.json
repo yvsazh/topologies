@@ -1,0 +1,13 @@
+{
+  "id": "xbd",
+  "name": "xBD",
+  "domain": "vision",
+  "description": "xBD building damage, about 850 thousand buildings, four damage grades, and 19 disasters. Damage F1 and localization mAP. Gupta et al., CVPR Workshops 2019. Imagery not vendored.",
+  "citation": "Gupta et al., CVPRW 2019. xBD.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://xview2.org/",
+    "notes": "Maxar open terms. Imagery not vendored."
+  },
+  "upstream_url": "https://xview2.org/"
+}

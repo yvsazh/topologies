@@ -1,0 +1,13 @@
+{
+  "id": "nyc-taxi",
+  "name": "NYC Taxi and Bike",
+  "domain": "scientific",
+  "description": "NYC taxi and bike demand forecasting on pickup and dropoff grids. RMSE half an hour ahead. Chicago Taxi is a companion note inside this record, not a separate file. Loader-only metadata.",
+  "citation": "NYC TLC trip records. NYC Taxi and Bike demand.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page",
+    "notes": "NYC TLC open trip records. Record only; no data vendored."
+  },
+  "upstream_url": "https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page"
+}

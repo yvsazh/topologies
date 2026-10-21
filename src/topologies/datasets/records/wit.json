@@ -1,0 +1,13 @@
+{
+  "id": "wit",
+  "name": "Wikipedia Image Text",
+  "domain": "vision",
+  "description": "Wikipedia Image-Text, about 11 million images and 37 million multilingual texts across more than 100 languages. Recall at K on multilingual slices. Loader-only metadata.",
+  "citation": "Srinivasan et al., ICML 2021. WIT Wikipedia Image-Text.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://github.com/google-research-datasets/wit",
+    "notes": "Wikipedia Creative Commons mix. Record only; images not vendored."
+  },
+  "upstream_url": "https://github.com/google-research-datasets/wit"
+}

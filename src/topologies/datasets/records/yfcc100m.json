@@ -1,0 +1,13 @@
+{
+  "id": "yfcc100m",
+  "name": "YFCC100M",
+  "domain": "vision",
+  "description": "Yahoo Flickr Creative Commons 100M: about 99 million photos and 8 million videos with EXIF and tags. Tag mAP and geographic accuracy on slices. Thomee et al., Communications of the ACM 2016. Media stay under Flickr terms and are not vendored.",
+  "citation": "Thomee et al., CACM 2016. YFCC100M.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://multimediacommons.org/",
+    "notes": "Mixed Creative Commons Flickr licenses. Record only; media not vendored."
+  },
+  "upstream_url": "https://multimediacommons.org/"
+}

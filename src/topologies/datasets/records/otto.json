@@ -1,0 +1,13 @@
+{
+  "id": "otto",
+  "name": "OTTO – Multi-Objective Recommender System Dataset",
+  "domain": "recommendation",
+  "description": "A large-scale dataset of anonymized e-commerce session events, including clicks, cart additions, and orders, released for the OTTO competition on multi-objective session-based recommendation. This record is loader-only and does not distribute dataset files.",
+  "citation": "Gergely, A., et al. (2022). OTTO – Multi-Objective Recommender System. Kaggle competition, OTTO Group. https://www.kaggle.com/competitions/otto-recommender-system",
+  "license": {
+    "identifier": "Kaggle competition dataset terms (not a standard SPDX identifier)",
+    "url": "https://www.kaggle.com/competitions/otto-recommender-system/rules",
+    "notes": "Access and use are governed by the Kaggle competition rules and dataset-specific terms, not a standard SPDX license identifier. Review the current rules and applicable rights before use or redistribution. This record is loader-only and vendors no data."
+  },
+  "upstream_url": "https://www.kaggle.com/competitions/otto-recommender-system"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "ppi",
+  "name": "PPI",
+  "domain": "graph",
+  "description": "Inductive protein-protein interaction graphs, comprising 24 graphs and 121 labels. Distinct from ogbn-proteins. No data is vendored.",
+  "citation": "PPI dataset: Zitnik, M. and Leskovec, J. (2017). https://snap.stanford.edu/graphsage/",
+  "license": {
+    "identifier": "Dataset-specific release terms (no SPDX identifier stated)",
+    "url": "https://snap.stanford.edu/graphsage/"
+  },
+  "upstream_url": "https://snap.stanford.edu/graphsage/"
+}

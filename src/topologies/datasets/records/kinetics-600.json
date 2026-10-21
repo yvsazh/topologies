@@ -1,0 +1,13 @@
+{
+  "id": "kinetics-600",
+  "name": "Kinetics-600",
+  "domain": "vision",
+  "description": "A large-scale human action video dataset with 600 action classes, consisting of short clips sourced from YouTube. This record is loader-only and does not distribute dataset files.",
+  "citation": "Carreira, J., Noland, E., Hillier, C., & Zisserman, A. (2018). A Short Note about Kinetics-600. arXiv:1808.01340. https://arxiv.org/abs/1808.01340",
+  "license": {
+    "identifier": "Custom Kinetics-600 terms (not a standard SPDX identifier)",
+    "url": "https://github.com/cvdfoundation/kinetics-dataset",
+    "notes": "The dataset's YouTube-sourced video clips are subject to YouTube's terms and the rights of the respective video owners; dataset access and use are governed by dataset-specific terms, not a standard SPDX license. Review current terms before use or redistribution. This record is loader-only and vendors no data."
+  },
+  "upstream_url": "https://github.com/cvdfoundation/kinetics-dataset"
+}

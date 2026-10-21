@@ -1,0 +1,13 @@
+{
+  "id": "opus-100",
+  "name": "OPUS-100",
+  "domain": "natural-language",
+  "description": "A multilingual parallel-corpus dataset comprising English-centric translation pairs for 100 languages, intended for machine translation research.",
+  "citation": "Zhang, B., Williams, A., Titov, I., & Sennrich, R. (2020). Improving Massively Multilingual Neural Machine Translation and Zero-Shot Translation. Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, 1628–1639. https://doi.org/10.18653/v1/2020.acl-main.148",
+  "license": {
+    "identifier": "CC-BY-4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "notes": "The OPUS-100 dataset is released under Creative Commons Attribution 4.0 International; attribute the dataset as required. Individual source corpora may have additional or different terms, so check their licenses before use or redistribution."
+  },
+  "upstream_url": "https://opus.nlpl.eu/OPUS-100.php"
+}

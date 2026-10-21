@@ -1,0 +1,7 @@
+personas: [a curious student, a busy parent, a careful researcher]
+topics: [travel, cooking, science, music, billing, delivery, returns, accounts, devices, safety]
+facets: [common questions, edge cases, complaints, how-to requests, comparisons, troubleshooting]
+traits:
+  age: [19-year-old, 24-year-old, 31-year-old, 38-year-old, 45-year-old, 52-year-old, 61-year-old, 70-year-old]
+  occupation: [student, nurse, software developer, teacher, driver, shop owner, accountant, chef, designer, warehouse worker, lawyer, parent, electrician, marketer, pharmacist, farmer]
+  style: [formal, casual, concise, detailed, polite, direct, enthusiastic, cautious]

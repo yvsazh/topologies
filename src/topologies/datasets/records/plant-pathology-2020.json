@@ -1,0 +1,13 @@
+{
+  "id": "plant-pathology-2020",
+  "name": "Plant Pathology 2020",
+  "domain": "vision",
+  "description": "Plant Pathology 2020 FGVC7 apple foliar disease, about 3600 images. Mean AUC on a hidden test-20 protocol. Images not vendored.",
+  "citation": "FGVC7 Plant Pathology 2020.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://www.kaggle.com/c/plant-pathology-2020-fgvc7",
+    "notes": "Kaggle competition terms. Images not vendored."
+  },
+  "upstream_url": "https://www.kaggle.com/c/plant-pathology-2020-fgvc7"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "hgb",
+  "name": "HGB",
+  "domain": "graph",
+  "description": "Heterogeneous graph benchmark covering ACM, DBLP, IMDB, and Freebase.",
+  "citation": "Heterogeneous Graph Benchmark (HGB), Lv et al. 2021.",
+  "license": {
+    "identifier": "Release terms not specified as an SPDX identifier",
+    "url": "https://github.com/THUDM/HGB"
+  },
+  "upstream_url": "https://github.com/THUDM/HGB"
+}

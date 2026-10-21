@@ -1,0 +1,13 @@
+{
+  "id": "ccpg",
+  "name": "Cloth-Changing Person Re-identification and Gait Recognition Benchmark (CCPG)",
+  "domain": "computer vision / gait recognition / person re-identification",
+  "description": "A cloth-changing benchmark containing RGB, silhouette, and pose sequences for 200 identities, with more than 16,000 indoor and outdoor sequences spanning seven clothing statuses per identity.",
+  "citation": "Weijia Li, Saihui Hou, Chunjie Zhang, Chunshui Cao, Xu Liu, Yongzhen Huang, and Yao Zhao. An In-Depth Exploration of Person Re-Identification and Gait Recognition in Cloth-Changing Conditions. Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2023, pp. 13824-13833.",
+  "license": {
+    "identifier": "other",
+    "url": "",
+    "notes": "License is unverified; dataset access requires a signed usage agreement and is restricted to academic use, but no standard license identifier is published."
+  },
+  "upstream_url": "https://github.com/BNU-IVC/CCPG"
+}

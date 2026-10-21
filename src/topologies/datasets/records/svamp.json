@@ -1,0 +1,12 @@
+{
+  "id": "svamp",
+  "name": "SVAMP",
+  "domain": "language",
+  "description": "A grade-school math word-problem benchmark of about 1k problems, designed to test robustness to variations in problem structure and wording; related datasets include ASDiv and MAWPS. No data is vendored.",
+  "citation": "Patel et al. (2021). SVAMP: A Benchmark for Simple Arithmetic Word Problems. ACL 2021.",
+  "license": {
+    "identifier": "MIT",
+    "url": "https://github.com/arkilpatel/SVAMP"
+  },
+  "upstream_url": "https://github.com/arkilpatel/SVAMP"
+}

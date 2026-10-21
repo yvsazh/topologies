@@ -1,0 +1,13 @@
+{
+  "id": "nct-crc-he",
+  "name": "NCT-CRC-HE",
+  "domain": "vision",
+  "description": "NCT-CRC-HE colorectal histology patches, about 100 thousand train and 7 thousand validation, nine tissue classes. Accuracy may be affected by stain shift. Images are loader-only and not vendored.",
+  "citation": "Kather et al., JNCI 2019. NCT-CRC-HE.",
+  "license": {
+    "identifier": "CC-BY-4.0",
+    "url": "https://zenodo.org/record/1214456",
+    "notes": "Zenodo CC-BY. Human images are loader-only and not vendored."
+  },
+  "upstream_url": "https://zenodo.org/record/1214456"
+}

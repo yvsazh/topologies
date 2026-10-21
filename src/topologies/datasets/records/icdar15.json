@@ -1,0 +1,13 @@
+{
+  "id": "icdar15",
+  "name": "ICDAR 2015 Incidental Scene Text Dataset",
+  "domain": "computer vision",
+  "description": "A dataset of incidental scene text images used in ICDAR 2015 Robust Reading Competition Challenge 4, covering text localisation, word recognition, and end-to-end recognition.",
+  "citation": "Karatzas, D., Gomez-Bigorda, L., Nicolaou, A., Ghosh, S., Bagdanov, A., Iwamura, M., Matas, J., Neumann, L., Chandrasekhar, V. R., Lu, S., Shafait, F., Uchida, S., & Valveny, E. (2015). ICDAR 2015 competition on Robust Reading. 2015 13th International Conference on Document Analysis and Recognition (ICDAR), 1156–1160. https://doi.org/10.1109/ICDAR.2015.7333942",
+  "license": {
+    "identifier": "other",
+    "url": "",
+    "notes": "unverified"
+  },
+  "upstream_url": "https://rrc.cvc.uab.es/?ch=4"
+}

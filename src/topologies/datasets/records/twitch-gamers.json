@@ -1,0 +1,12 @@
+{
+  "id": "twitch-gamers",
+  "name": "Twitch Gamers",
+  "domain": "graph",
+  "description": "A social graph of Twitch users with about 168k nodes, built from mutual friendships; the Twitch collection includes regional datasets such as Deezer Europe and Genius inline. This record describes metadata only; no data is vendored.",
+  "citation": "Rozemberczki, B., Sarkar, R., & Sutton, C. (2021). Twitch Gamers: A Dataset for Evaluating Graph Learning Algorithms. https://snap.stanford.edu/data/twitch_gamers.html",
+  "license": {
+    "identifier": "Dataset release terms (no SPDX identifier stated)",
+    "url": "https://snap.stanford.edu/data/twitch_gamers.html"
+  },
+  "upstream_url": "https://snap.stanford.edu/data/twitch_gamers.html"
+}

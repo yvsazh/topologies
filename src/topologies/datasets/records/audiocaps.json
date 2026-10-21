@@ -1,0 +1,13 @@
+{
+  "id": "audiocaps",
+  "name": "AudioCaps",
+  "domain": "audio",
+  "description": "A large-scale dataset of approximately 46,000 10-second audio clips sourced from YouTube and annotated with human-written captions, designed for audio captioning research.",
+  "citation": "Kim, C. D., Kim, B., Lee, H., & Kim, G. (2019). AudioCaps: Generating Captions for Audios in The Wild. Proceedings of NAACL-HLT 2019, 119–132. https://doi.org/10.18653/v1/N19-1011",
+  "license": {
+    "identifier": "License not specified (not a standard SPDX identifier)",
+    "url": "https://audiocaps.github.io/",
+    "notes": "The dataset does not specify a standard SPDX license identifier. Audio is sourced from YouTube and remains subject to the rights and terms applicable to each recording; review the upstream project terms and source-media restrictions before use or redistribution."
+  },
+  "upstream_url": "https://audiocaps.github.io/"
+}

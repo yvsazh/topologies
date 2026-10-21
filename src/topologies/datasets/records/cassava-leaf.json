@@ -1,0 +1,13 @@
+{
+  "id": "cassava-leaf",
+  "name": "Cassava Leaf Disease",
+  "domain": "vision",
+  "description": "Cassava leaf disease classification, about 21 thousand images and five classes. Accuracy. A rice leaf disease set of about 3400 images and four classes is a companion note in this record. Images not vendored.",
+  "citation": "Kaggle Cassava Leaf Disease.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://www.kaggle.com/c/cassava-leaf-disease-classification",
+    "notes": "Kaggle competition terms. Images not vendored."
+  },
+  "upstream_url": "https://www.kaggle.com/c/cassava-leaf-disease-classification"
+}

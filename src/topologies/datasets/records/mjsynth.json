@@ -1,0 +1,13 @@
+{
+  "id": "mjsynth",
+  "name": "MJSynth",
+  "domain": "vision",
+  "description": "MJSynth synthetic word images, about 9 million images and a 90 thousand word lexicon, also called Synth90k. Word accuracy on lexicon-constrained slices. Jaderberg et al., IJCV 2016. Renders not vendored.",
+  "citation": "Jaderberg et al., IJCV 2016. MJSynth.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://www.robots.ox.ac.uk/~vgg/data/text/",
+    "notes": "VGG synthetic renders. Images not vendored."
+  },
+  "upstream_url": "https://www.robots.ox.ac.uk/~vgg/data/text/"
+}

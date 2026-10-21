@@ -1,0 +1,13 @@
+{
+  "id": "librispeech",
+  "name": "LibriSpeech",
+  "domain": "audio",
+  "description": "Corpus of approximately 1,000 hours of 16 kHz read English speech derived from audiobooks in the LibriVox project, designed for automatic speech recognition research.",
+  "citation": "Panayotov, V., Chen, G., Povey, D., & Khudanpur, S. (2015). Librispeech: An ASR corpus based on public domain audio books. 2015 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), 5206–5210. https://doi.org/10.1109/ICASSP.2015.7178964",
+  "license": {
+    "identifier": "Public domain audio; no standard SPDX identifier for the dataset as a whole",
+    "url": "https://www.openslr.org/12/",
+    "notes": "The corpus is sourced from LibriVox public-domain audiobooks. This dataset-level public-domain status is not a standard SPDX license identifier; verify rights and terms for the specific recordings and metadata before redistribution or use."
+  },
+  "upstream_url": "https://www.openslr.org/12/"
+}

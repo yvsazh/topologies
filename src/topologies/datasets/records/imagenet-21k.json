@@ -1,0 +1,13 @@
+{
+  "id": "imagenet-21k",
+  "name": "ImageNet-21K",
+  "domain": "vision",
+  "description": "ImageNet-21K (ImageNet-21K/P) is a large-scale image collection organized into approximately 21,000 synsets. This rights-reserved dataset is loader-only; this record does not distribute or vendor dataset files.",
+  "citation": "Ridnik, T., Ben-Baruch, E., Noy, A., & Zelnik-Manor, L. (2021). ImageNet-21K Pretraining for the Masses. arXiv:2104.10972. https://doi.org/10.48550/arXiv.2104.10972",
+  "license": {
+    "identifier": "Not stated by the dataset provider",
+    "url": "https://image-net.org/download.php",
+    "notes": "The ImageNet download page does not state a standard license for ImageNet-21K. ImageNet is rights-reserved and access is governed by the provider's terms; obtain authorization and review current terms before use or redistribution. Loader-only; no data is included."
+  },
+  "upstream_url": "https://image-net.org/"
+}

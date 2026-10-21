@@ -1,0 +1,13 @@
+{
+  "id": "cityscapes",
+  "name": "Cityscapes",
+  "domain": "vision",
+  "description": "A large-scale dataset of urban street scenes from 50 cities, with pixel-level, instance-level, and vehicle-level annotations for semantic urban scene understanding. This record does not distribute dataset files.",
+  "citation": "Cordts, M., Omran, M., Ramos, S., Rehfeld, T., Enzweiler, M., Benenson, R., Franke, U., Roth, S., & Schiele, B. (2016). The Cityscapes Dataset for Semantic Urban Scene Understanding. Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 3213–3223. https://doi.org/10.1109/CVPR.2016.350",
+  "license": {
+    "identifier": "Custom Cityscapes terms (not a standard SPDX identifier)",
+    "url": "https://www.cityscapes-dataset.com/license/",
+    "notes": "Cityscapes is subject to its own terms of use and is not distributed under a standard SPDX license identifier. Access is intended for research purposes under the provider's terms; review those terms before use or redistribution. Images and annotations may have distinct rights and restrictions."
+  },
+  "upstream_url": "https://www.cityscapes-dataset.com/"
+}

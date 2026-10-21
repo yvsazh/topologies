@@ -1,0 +1,13 @@
+{
+  "id": "jigsaws",
+  "name": "JIGSAWS",
+  "domain": "vision",
+  "description": "JIGSAWS surgical skill, 39 suturing, needle-passing, and knot-tying trials with kinematics and video. Skill accuracy and gesture edit score. Gao et al. 2014. Data not vendored.",
+  "citation": "Gao et al. 2014. JIGSAWS.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://cirl.lcsr.jhu.edu/datasets/",
+    "notes": "Johns Hopkins research terms. Human recordings are loader-only and not vendored."
+  },
+  "upstream_url": "https://cirl.lcsr.jhu.edu/datasets/"
+}

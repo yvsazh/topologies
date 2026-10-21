@@ -1,0 +1,13 @@
+{
+  "id": "gelsight-wedge",
+  "name": "GelSight Wedge",
+  "domain": "robotics/tactile sensing",
+  "description": "A compact vision-based tactile sensor for robot fingers that reconstructs high-resolution 3D contact geometry.",
+  "citation": "Shaoxiong Wang, Yu She, Branden Romero, and Edward Adelson. ‘GelSight Wedge: Measuring High-Resolution 3D Contact Geometry with a Compact Robot Finger.’ 2021 IEEE International Conference on Robotics and Automation (ICRA), 2021. https://doi.org/10.48550/arXiv.2106.08851.",
+  "license": {
+    "identifier": "other",
+    "url": "",
+    "notes": "The dataset license is unverified; no license for the dataset was found in the paper or upstream repository."
+  },
+  "upstream_url": "https://github.com/leo9344/Implementation-of-GelSight"
+}

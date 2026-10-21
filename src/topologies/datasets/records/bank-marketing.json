@@ -1,0 +1,13 @@
+{
+  "id": "bank-marketing",
+  "name": "Bank Marketing",
+  "domain": "scientific",
+  "description": "UCI Bank Marketing term-deposit subscription, about 45 thousand rows. F1 and AUC. Moro et al., Decision Support Systems 2014. Loader-only metadata.",
+  "citation": "Moro et al., DSS 2014. Bank Marketing.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://archive.ics.uci.edu/dataset/222/bank+marketing",
+    "notes": "UCI open data. Record only; no data vendored."
+  },
+  "upstream_url": "https://archive.ics.uci.edu/dataset/222/bank+marketing"
+}

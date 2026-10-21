@@ -1,0 +1,13 @@
+{
+  "id": "fmow",
+  "name": "Functional Map of the World (FMoW)",
+  "domain": "satellite imagery",
+  "description": "A satellite imagery dataset containing high-resolution satellite images annotated with building and land-use functional categories, designed to support recognition across geographic and temporal variation.",
+  "citation": "Christie, G., Fendley, N., Wilson, J., & Mukherjee, R. (2018). Functional Map of the World. IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR). https://doi.org/10.1109/CVPR.2018.00458",
+  "license": {
+    "identifier": "other",
+    "url": "https://wilds.stanford.edu/datasets/",
+    "notes": "No standard SPDX license is stated for the dataset on the provider page. Review current provider terms and the underlying imagery rights before use or redistribution; no redistribution or commercial-use permission is implied."
+  },
+  "upstream_url": "https://wilds.stanford.edu/datasets/"
+}

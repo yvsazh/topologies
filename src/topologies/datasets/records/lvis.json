@@ -1,0 +1,13 @@
+{
+  "id": "lvis",
+  "name": "LVIS",
+  "domain": "vision",
+  "description": "A large-vocabulary instance segmentation dataset with object annotations across more than 1,000 categories, built on images from COCO. This record does not distribute dataset files.",
+  "citation": "Gupta, A., Dollar, P., & Girshick, R. (2019). LVIS: A Dataset for Large Vocabulary Instance Segmentation. IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR). https://doi.org/10.1109/CVPR.2019.00426",
+  "license": {
+    "identifier": "Custom LVIS license (not a standard SPDX identifier)",
+    "url": "https://github.com/lvis-dataset/lvis-api/blob/master/LICENSE",
+    "notes": "LVIS uses its own dataset license, which is not a standard SPDX identifier. Review the license and underlying COCO image terms before use or redistribution; annotations and images may be subject to different conditions."
+  },
+  "upstream_url": "https://www.lvisdataset.org/"
+}

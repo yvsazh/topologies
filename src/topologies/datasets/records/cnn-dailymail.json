@@ -1,0 +1,13 @@
+{
+  "id": "cnn-dailymail",
+  "name": "CNN/DailyMail",
+  "domain": "natural-language",
+  "description": "A large-scale reading-comprehension and summarization dataset pairing news articles from CNN and the Daily Mail with cloze-style questions and human-written highlights.",
+  "citation": "Hermann, K. M., Kocisky, T., Grefenstette, E., Espeholt, L., Kay, W., Suleyman, M., & Blunsom, P. (2015). Teaching Machines to Read and Comprehend. Advances in Neural Information Processing Systems 28, 1693–1701. https://papers.nips.cc/paper_files/paper/2015/hash/afdec7005cc9f14302cd0474fd0f3c96-Abstract.html",
+  "license": {
+    "identifier": "Not specified by upstream",
+    "url": "https://github.com/abisee/cnn-dailymail",
+    "notes": "The upstream repository does not specify a standard SPDX license for the dataset. The articles are copyrighted news content; review applicable rights and terms before use or redistribution."
+  },
+  "upstream_url": "https://github.com/abisee/cnn-dailymail"
+}

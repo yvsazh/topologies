@@ -1,0 +1,12 @@
+{
+  "id": "slakh2100",
+  "name": "Slakh2100",
+  "domain": "audio",
+  "description": "Synthesized multitrack stems, 2100 tracks. No data vendored.",
+  "citation": "Slakh2100: A Dataset for Audio Source Separation. Manilow et al., ISMIR 2019.",
+  "license": {
+    "identifier": "CC-BY-4.0",
+    "url": "https://github.com/ethman/slakh-dataset"
+  },
+  "upstream_url": "https://github.com/ethman/slakh-dataset"
+}

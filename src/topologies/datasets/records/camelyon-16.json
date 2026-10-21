@@ -1,0 +1,13 @@
+{
+  "id": "camelyon-16",
+  "name": "CAMELYON16",
+  "domain": "scientific",
+  "description": "A challenge dataset of whole-slide images of lymph node sections for detecting breast cancer metastases, with expert annotations for tumor regions.",
+  "citation": "Ehteshami Bejnordi, B., Veta, M., van Diest, P. J., et al. (2017). Diagnostic Assessment of Deep Learning Algorithms for Detection of Lymph Node Metastases in Women With Breast Cancer. JAMA, 318(22), 2199–2210. https://doi.org/10.1001/jama.2017.14585",
+  "license": {
+    "identifier": "Controlled access; no standard SPDX license identified",
+    "url": "https://camelyon16.grand-challenge.org/",
+    "notes": "Dataset access is provided through the CAMELYON16 challenge under its registration and access terms. This is not a standard SPDX license; review the current challenge terms and any applicable restrictions before use or redistribution. Do not infer a general redistribution or commercial-use license."
+  },
+  "upstream_url": "https://camelyon16.grand-challenge.org/"
+}

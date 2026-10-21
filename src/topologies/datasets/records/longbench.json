@@ -1,0 +1,12 @@
+{
+  "id": "longbench",
+  "name": "LongBench",
+  "domain": "language",
+  "description": "Long-context evaluation across 21 tasks, including RULER. No data vendored.",
+  "citation": "LongBench: A Bilingual, Multitask Benchmark for Long Context Understanding, Bai et al. (2023).",
+  "license": {
+    "identifier": "MIT",
+    "url": "https://github.com/THUDM/LongBench"
+  },
+  "upstream_url": "https://github.com/THUDM/LongBench"
+}

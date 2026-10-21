@@ -1,0 +1,13 @@
+{
+  "id": "middlebury",
+  "name": "Middlebury Stereo Dataset",
+  "domain": "computer vision",
+  "description": "A collection of stereo image pairs and ground-truth disparity maps across multiple datasets, including scenes captured under varied lighting and exposures. The Middlebury stereo website grants permission to use and publish its images and disparity maps.",
+  "citation": "Scharstein, D., Hirschmüller, H., Kitajima, Y., Krathwohl, G., Nesic, N., Wang, X., & Westling, P. (2014). High-resolution stereo datasets with subpixel-accurate ground truth. German Conference on Pattern Recognition (GCPR 2014). https://vision.middlebury.edu/stereo/data/",
+  "license": {
+    "identifier": "other",
+    "url": "https://vision.middlebury.edu/stereo/data/",
+    "notes": "The site grants permission to use and publish images and disparity maps; no standardized license identifier is published."
+  },
+  "upstream_url": "https://vision.middlebury.edu/stereo/data/"
+}

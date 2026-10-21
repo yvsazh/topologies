@@ -1,0 +1,12 @@
+{
+  "id": "sun397",
+  "name": "SUN397",
+  "domain": "vision",
+  "description": "Scene classification dataset with 397 categories and about 108,000 images, using a 50/50 train/test split protocol. Dataset files are not vendored here.",
+  "citation": "Xiao, J., Hays, J., Ehinger, K. A., Oliva, A., & Torralba, A. (2010). SUN397: A new benchmark and database of scene categories. Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR).",
+  "license": {
+    "identifier": "Princeton research terms (not a standard SPDX identifier)",
+    "url": "https://vision.princeton.edu/projects/2010/SUN/"
+  },
+  "upstream_url": "https://vision.princeton.edu/projects/2010/SUN/"
+}

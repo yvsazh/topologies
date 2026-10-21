@@ -1,0 +1,13 @@
+{
+  "id": "ogbg-pcba",
+  "name": "OGB Large-Scale Challenge: PCBA (ogbg-pcba)",
+  "domain": "graph",
+  "description": "A molecular property prediction benchmark of 437,929 molecules represented as graphs, with 128 binary bioassay labels from PubChem. This record describes the dataset and does not distribute data.",
+  "citation": "Hu, W., Fey, M., Zitnik, M., Dong, Y., Ren, H., Liu, B., Catasta, M., & Leskovec, J. (2020). Open Graph Benchmark: Datasets for Machine Learning on Graphs. Advances in Neural Information Processing Systems, 33, 22118–22133. https://arxiv.org/abs/2005.00687",
+  "license": {
+    "identifier": "Dataset-specific terms (not a standard SPDX identifier)",
+    "url": "https://ogb.stanford.edu/docs/graphprop/",
+    "notes": "The dataset documentation does not specify a standard SPDX license identifier. Consult OGB and source-data terms before use or redistribution. This record is metadata-only and vendors no data."
+  },
+  "upstream_url": "https://ogb.stanford.edu/docs/graphprop/"
+}

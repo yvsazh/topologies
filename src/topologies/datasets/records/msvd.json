@@ -1,0 +1,13 @@
+{
+  "id": "msvd",
+  "name": "Microsoft Video Description (MSVD) Dataset",
+  "domain": "multimodal",
+  "description": "A collection of short YouTube video clips paired with multiple crowd-sourced English descriptions, used for video captioning and video-language research. This record does not distribute dataset files.",
+  "citation": "Chen, D. L., & Dolan, W. B. (2011). Collecting highly parallel data for paraphrase evaluation. Proceedings of the 49th Annual Meeting of the Association for Computational Linguistics: Human Language Technologies, 190–200. https://aclanthology.org/P11-1020/",
+  "license": {
+    "identifier": "Not specified (not a standard SPDX identifier)",
+    "url": "https://www.cs.utexas.edu/~ml/clamp/videoDescription/",
+    "notes": "The upstream dataset does not specify a standard SPDX license identifier. Videos are sourced from YouTube and may be subject to the rights and terms applicable to each video; review upstream terms and source-media restrictions before use or redistribution."
+  },
+  "upstream_url": "https://www.cs.utexas.edu/~ml/clamp/videoDescription/"
+}

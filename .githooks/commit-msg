@@ -1,0 +1,5 @@
+#!/bin/sh
+set -eu
+
+root=$(git rev-parse --show-toplevel)
+exec python3 "$root/.github/verify_repository_integrity.py" --message-file "$1"

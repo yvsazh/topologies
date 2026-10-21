@@ -1,0 +1,13 @@
+{
+  "id": "landslide4sense",
+  "name": "Landslide4Sense",
+  "domain": "remote sensing, geospatial, disaster monitoring",
+  "description": "A benchmark dataset for landslide detection consisting of 3,799 satellite image patches combining Sentinel-2 optical imagery with elevation and slope data, with pixel-level landslide labels.",
+  "citation": "Ghorbanzadeh, O., Xu, Y., Ghamisi, P., Kopp, M., & Kreil, D. (2022). Landslide4Sense: Reference Benchmark Data and Deep Learning Models for Landslide Detection. IEEE Transactions on Geoscience and Remote Sensing, 60, 1–17. https://doi.org/10.1109/TGRS.2022.3215209",
+  "license": {
+    "identifier": "other",
+    "url": "",
+    "notes": "The dataset license is unverified; no license terms were identified in the available source information."
+  },
+  "upstream_url": "https://www.iarai.ac.at/landslide4sense/"
+}

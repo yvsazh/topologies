@@ -1,0 +1,13 @@
+{
+  "id": "kits",
+  "name": "KiTS",
+  "domain": "vision",
+  "description": "Kidney Tumor Segmentation KiTS19, KiTS21, and KiTS23: 300, 566, and 614 CT scans with kidney, mass, and tumor labels. KiTS23 adds cysts. Dice and surface distance. Heller et al. 2020. One record for the family. Human scans not vendored.",
+  "citation": "Heller et al. 2020. KiTS kidney tumor segmentation.",
+  "license": {
+    "identifier": "CC-BY-NC-SA-4.0",
+    "url": "https://github.com/neheller/kits19",
+    "notes": "CC BY-NC-SA. Human scans are loader-only and not vendored."
+  },
+  "upstream_url": "https://github.com/neheller/kits19"
+}

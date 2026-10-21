@@ -1,0 +1,13 @@
+{
+  "id": "ava",
+  "name": "AVA (Atomic Visual Actions)",
+  "domain": "vision",
+  "description": "Spatiotemporally localized, densely-labeled human actions in movie clips, with multiple action labels for people. This record does not distribute dataset files.",
+  "citation": "Gu, C., Sun, C., Ross, D. A., et al. (2018). AVA: A Video Dataset of Spatio-temporally Localized Atomic Visual Actions. Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 6047–6056. https://doi.org/10.1109/CVPR.2018.00633",
+  "license": {
+    "identifier": "Custom AVA dataset terms (not a standard SPDX identifier)",
+    "url": "https://research.google.com/ava/",
+    "notes": "AVA is provided under dataset-specific terms rather than a standard SPDX license. Review the upstream terms and the rights associated with source video content before use or redistribution."
+  },
+  "upstream_url": "https://research.google.com/ava/"
+}

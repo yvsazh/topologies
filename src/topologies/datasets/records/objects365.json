@@ -1,0 +1,13 @@
+{
+  "id": "objects365",
+  "name": "Objects365",
+  "domain": "vision",
+  "description": "Large-scale object detection dataset containing 365 object categories and annotated images. This record does not distribute dataset files.",
+  "citation": "Shao, S., Zhao, Z., Li, B., Xiao, T., Yu, G., Zhang, X., & Sun, J. (2019). Objects365: A Large-Scale, High-Quality Dataset for Object Detection. Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV), 8430–8439. https://doi.org/10.1109/ICCV.2019.00852",
+  "license": {
+    "identifier": "Custom Objects365 terms (not a standard SPDX identifier)",
+    "url": "https://www.objects365.org/overview.html",
+    "notes": "Objects365 is governed by its own dataset terms, not a standard SPDX license. Review the current upstream terms and underlying image rights before use or redistribution; do not assume commercial-use or redistribution rights."
+  },
+  "upstream_url": "https://www.objects365.org/"
+}

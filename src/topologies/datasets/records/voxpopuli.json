@@ -1,0 +1,13 @@
+{
+  "id": "voxpopuli",
+  "name": "VoxPopuli",
+  "domain": "audio",
+  "description": "A large-scale multilingual speech corpus collected from European Parliament recordings, including transcribed speech and unlabeled audio for speech recognition and representation learning.",
+  "citation": "Wang, C., Rottmann, K., Dauwels, J., et al. (2021). VoxPopuli: A Large-Scale Multilingual Speech Corpus for Representation Learning, Semi-Supervised Learning and Interpretation. Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing, 993–1003. https://doi.org/10.18653/v1/2021.acl-long.80",
+  "license": {
+    "identifier": "CC-BY-NC-4.0",
+    "url": "https://creativecommons.org/licenses/by-nc/4.0/",
+    "notes": "The upstream VoxPopuli dataset is released under Creative Commons Attribution-NonCommercial 4.0 International (CC-BY-NC-4.0), a standard SPDX license identifier. Use requires attribution and is limited to non-commercial purposes; review the upstream terms for details."
+  },
+  "upstream_url": "https://github.com/facebookresearch/voxpopuli"
+}

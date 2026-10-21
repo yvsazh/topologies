@@ -1,0 +1,13 @@
+{
+  "id": "wind",
+  "name": "Wind Integration National Dataset (WIND) Toolkit",
+  "domain": "time-series",
+  "description": "A large-scale meteorological and wind-power dataset for the contiguous United States, providing modeled time series of wind speed, direction, and other weather variables at multiple heights and locations for wind energy analysis.",
+  "citation": "Draxl, C., Clifton, A., Hodge, B.-M., & McCaa, J. (2015). The Wind Integration National Dataset (WIND) Toolkit. Applied Energy, 151, 355–366. https://doi.org/10.1016/j.apenergy.2015.03.121",
+  "license": {
+    "identifier": "Provider terms; dataset-wide license not specified",
+    "url": "https://www.nrel.gov/wind/wind-toolkit.html",
+    "notes": "The upstream WIND Toolkit site does not identify a standard SPDX license for the dataset. This descriptive identifier is not an SPDX identifier; review current NREL access and use terms before using or redistributing data."
+  },
+  "upstream_url": "https://www.nrel.gov/wind/wind-toolkit.html"
+}

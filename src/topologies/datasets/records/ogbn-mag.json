@@ -1,0 +1,13 @@
+{
+  "id": "ogbn-mag",
+  "name": "ogbn-mag",
+  "domain": "graph",
+  "description": "A heterogeneous academic graph from the Microsoft Academic Graph, with papers, authors, institutions, and fields of study as node types and typed relationships between them. The benchmark commonly uses paper nodes for subject-area classification.",
+  "citation": "Hu, W., Fey, M., Zitnik, M., Dong, Y., Ren, H., Liu, B., Catasta, M., & Leskovec, J. (2020). Open Graph Benchmark: Datasets for Machine Learning on Graphs. Advances in Neural Information Processing Systems, 33, 22118–22133. https://arxiv.org/abs/2005.00687",
+  "license": {
+    "identifier": "Dataset-specific license (not a standard SPDX identifier)",
+    "url": "https://ogb.stanford.edu/docs/nodeprop/",
+    "notes": "The OGB dataset page does not specify a standard SPDX license identifier for ogbn-mag. Review upstream terms and applicable Microsoft Academic Graph data terms before use or redistribution. This record does not distribute dataset files."
+  },
+  "upstream_url": "https://ogb.stanford.edu/docs/nodeprop/#ogbn-mag"
+}

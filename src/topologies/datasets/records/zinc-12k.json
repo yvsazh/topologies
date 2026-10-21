@@ -1,0 +1,13 @@
+{
+  "id": "zinc-12k",
+  "name": "ZINC-12k",
+  "domain": "graph",
+  "description": "A molecular graph regression benchmark containing 12,000 drug-like molecules sampled from the ZINC database. The task is to predict penalized logP from molecular structure.",
+  "citation": "Dwivedi, V. P., Joshi, C. K., Laurent, T., Bengio, Y., & Bresson, X. (2020). Benchmarking Graph Neural Networks. arXiv:2003.00982. https://arxiv.org/abs/2003.00982",
+  "license": {
+    "identifier": "Dataset-specific terms (not a standard SPDX identifier)",
+    "url": "https://github.com/graphdeeplearning/benchmarking-gnns",
+    "notes": "ZINC is a subset derived from the ZINC database and is distributed through benchmark repositories; no standard SPDX identifier for this ZINC-12k dataset release is asserted here. Review the upstream repository and ZINC terms before use or redistribution. This record does not distribute dataset files."
+  },
+  "upstream_url": "https://github.com/graphdeeplearning/benchmarking-gnns"
+}

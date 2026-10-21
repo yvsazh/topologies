@@ -1,0 +1,13 @@
+{
+  "id": "mmlu-pro",
+  "name": "MMLU-Pro",
+  "domain": "natural-language",
+  "description": "An enhanced version of the Massive Multitask Language Understanding benchmark with more challenging, reasoning-focused multiple-choice questions across 14 subjects and up to ten answer options.",
+  "citation": "Wang, Y., Ma, X., Zhang, G., et al. (2024). MMLU-Pro: A More Robust and Challenging Multi-Task Language Understanding Benchmark. Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing. https://aclanthology.org/2024.emnlp-main.992/",
+  "license": {
+    "identifier": "Dataset license not stated",
+    "url": "https://github.com/TIGER-AI-Lab/MMLU-Pro",
+    "notes": "The upstream repository does not specify a standard SPDX license for the dataset. Verify current upstream terms and any rights in the question content before use or redistribution."
+  },
+  "upstream_url": "https://github.com/TIGER-AI-Lab/MMLU-Pro"
+}

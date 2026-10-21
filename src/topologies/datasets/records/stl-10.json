@@ -1,0 +1,13 @@
+{
+  "id": "stl-10",
+  "name": "STL-10",
+  "domain": "vision",
+  "description": "Image recognition dataset of 10 classes, containing labeled training and test images and a larger set of unlabeled images for unsupervised learning.",
+  "citation": "Coates, A., Ng, A., & Lee, H. (2011). An Analysis of Single-Layer Networks in Unsupervised Feature Learning. Proceedings of the Fourteenth International Conference on Artificial Intelligence and Statistics (AISTATS), 15, 215–223.",
+  "license": {
+    "identifier": "Research use; license not specified",
+    "url": "https://cs.stanford.edu/~acoates/stl10/",
+    "notes": "The upstream dataset page does not state a standard license. Review provider terms and underlying image rights before redistribution or commercial use."
+  },
+  "upstream_url": "https://cs.stanford.edu/~acoates/stl10/"
+}

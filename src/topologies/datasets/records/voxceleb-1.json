@@ -1,0 +1,13 @@
+{
+  "id": "voxceleb-1",
+  "name": "VoxCeleb1",
+  "domain": "audio",
+  "description": "A large-scale audio-visual dataset of YouTube interview videos, with over 100,000 utterances from 1,251 celebrities, designed for speaker recognition research.",
+  "citation": "Nagrani, A., Chung, J. S., & Zisserman, A. (2017). VoxCeleb: A large-scale speaker identification dataset. Proceedings of Interspeech 2017, 2616–2620. https://doi.org/10.21437/Interspeech.2017-950",
+  "license": {
+    "identifier": "Research-only terms; no standard SPDX identifier",
+    "url": "https://www.robots.ox.ac.uk/~vgg/data/voxceleb/",
+    "notes": "The VoxCeleb website makes the dataset available for research use and provides terms governing access and use; these are not a standard SPDX license. Review the current upstream terms before downloading, using, or redistributing the dataset."
+  },
+  "upstream_url": "https://www.robots.ox.ac.uk/~vgg/data/voxceleb/"
+}

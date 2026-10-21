@@ -1,0 +1,13 @@
+{
+  "id": "rl-unplugged",
+  "name": "RL Unplugged",
+  "domain": "reinforcement-learning",
+  "description": "A collection of offline reinforcement-learning datasets comprising experience gathered from a range of environments and behavior policies, intended for evaluating and training data-driven reinforcement-learning methods. This is a dataset collection, not a single table or environment suite.",
+  "citation": "Gulcehre, C., Wang, Z., Novikov, A., et al. (2020). RL Unplugged: A Suite of Benchmarks for Offline Reinforcement Learning. Advances in Neural Information Processing Systems, 33. https://arxiv.org/abs/2006.13888",
+  "license": {
+    "identifier": "Dataset-specific terms (not a standard SPDX identifier)",
+    "url": "https://github.com/google-research/batch_rl",
+    "notes": "RL Unplugged datasets are provided via dataset-specific source and environment terms; no single standard SPDX license identifier applies uniformly to the full collection. Review the terms for the individual dataset and its source before access, use, or redistribution. This record does not distribute dataset files."
+  },
+  "upstream_url": "https://github.com/google-research/batch_rl"
+}

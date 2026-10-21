@@ -1,0 +1,13 @@
+{
+  "id": "ucf-crime",
+  "name": "UCF-Crime",
+  "domain": "vision",
+  "description": "UCF-Crime weakly supervised anomaly video, 1900 videos and 13 anomaly classes. Frame-level AUC. Sultani et al., CVPR 2018. Distinct from ShanghaiTech and Avenue. Video not vendored.",
+  "citation": "Sultani et al., CVPR 2018. UCF-Crime.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://www.crcv.ucf.edu/projects/real-world/",
+    "notes": "UCF terms. Video not vendored."
+  },
+  "upstream_url": "https://www.crcv.ucf.edu/projects/real-world/"
+}

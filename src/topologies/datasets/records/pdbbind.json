@@ -1,0 +1,13 @@
+{
+  "id": "pdbbind",
+  "name": "PDBbind",
+  "domain": "scientific",
+  "description": "PDBbind protein-ligand complexes, about 23 thousand complexes with affinities and general, refined, and core splits. RMSE and the fraction of poses under 2 angstrom RMSD. Wang et al. 2004. CrossDocked2020, about 22 million poses, is a companion note in this record. Structures not vendored.",
+  "citation": "Wang et al. 2004. PDBbind.",
+  "license": {
+    "identifier": "not specified",
+    "url": "http://www.pdbbind.org.cn/",
+    "notes": "PDB-derived research terms. Structures not vendored."
+  },
+  "upstream_url": "http://www.pdbbind.org.cn/"
+}

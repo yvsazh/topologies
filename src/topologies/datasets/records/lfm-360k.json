@@ -1,0 +1,13 @@
+{
+  "id": "lfm-360k",
+  "name": "Last.fm-360K",
+  "domain": "recommendation",
+  "description": "Last.fm-360K music listening logs: about 17 million plays and 360 thousand users. Recall and NDCG under a listening-count protocol. Celma 2010. Distinct from the already recorded LastFM-1K set. Loader-only metadata.",
+  "citation": "Celma 2010. Last.fm-360K listening logs.",
+  "license": {
+    "identifier": "not specified",
+    "url": "http://www.dtic.upf.edu/~ocelma/MusicRecommendationDataset/lastfm-360K.html",
+    "notes": "Provider page does not state a standard SPDX license. Record only; no data vendored."
+  },
+  "upstream_url": "http://www.dtic.upf.edu/~ocelma/MusicRecommendationDataset/lastfm-360K.html"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "n-caltech101",
+  "name": "N-Caltech101",
+  "domain": "vision",
+  "description": "N-Caltech101 event-camera classification, about 8700 saccades and 101 categories. Accuracy on an event-tensor protocol. Events not vendored.",
+  "citation": "N-Caltech101 event classification.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://www.garrickorchard.com/datasets/n-caltech101",
+    "notes": "Provider page does not state a standard SPDX license. Events not vendored."
+  },
+  "upstream_url": "https://www.garrickorchard.com/datasets/n-caltech101"
+}

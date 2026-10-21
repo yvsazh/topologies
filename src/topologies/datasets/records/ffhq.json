@@ -1,0 +1,12 @@
+{
+  "id": "ffhq",
+  "name": "FFHQ",
+  "domain": "vision",
+  "description": "Loader-only high-resolution faces for generative evaluation: 70k images at 1024px. CelebA-HQ (30k, 1024px, Karras et al. ICLR 2018) is the companion set. FFHQ Flickr terms vary per image; no data is vendored.",
+  "citation": "FFHQ: Flickr-Faces-HQ dataset, Karras et al., CVPR 2019.",
+  "license": {
+    "identifier": "Per-image Flickr terms; not a single SPDX identifier.",
+    "url": "https://github.com/NVlabs/ffhq-dataset"
+  },
+  "upstream_url": "https://github.com/NVlabs/ffhq-dataset"
+}

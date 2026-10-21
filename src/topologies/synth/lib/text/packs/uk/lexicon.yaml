@@ -1,0 +1,17 @@
+noun:
+  - {word: студент, lemma: студент, gender: m}
+  - {word: студентка, lemma: студентка, gender: f}
+  - {word: книга, lemma: книга, gender: f}
+  - {word: місто, lemma: місто, gender: n}
+  - {word: коти, lemma: кіт, gender: m, number: pl}
+pronoun:
+  - {word: він, person: 3, number: sg}
+  - {word: вони, person: 3, number: pl}
+verb:
+  - {word: читає, lemma: читати, person: 3, number: sg}
+  - {word: читають, lemma: читати, person: 3, number: pl}
+adjective:
+  - {word: великий, lemma: великий, gender: m}
+  - {word: велика, lemma: великий, gender: f}
+  - {word: велике, lemma: великий, gender: n}
+  - {word: великі, lemma: великий, gender: pl}

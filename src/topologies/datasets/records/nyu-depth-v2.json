@@ -1,0 +1,12 @@
+{
+  "id": "nyu-depth-v2",
+  "name": "NYU Depth V2",
+  "domain": "vision",
+  "description": "Indoor RGB-D segmentation and depth, 1449 labeled frames plus raw video. No data vendored.",
+  "citation": "NYU Depth: Silberman et al., ECCV 2012.",
+  "license": {
+    "identifier": "NYU research terms",
+    "url": "https://cs.nyu.edu/~silberman/datasets/nyu_depth_v2.html"
+  },
+  "upstream_url": "https://cs.nyu.edu/~silberman/datasets/nyu_depth_v2.html"
+}

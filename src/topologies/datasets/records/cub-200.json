@@ -1,0 +1,13 @@
+{
+  "id": "cub-200",
+  "name": "Caltech-UCSD Birds-200-2011 (CUB-200-2011)",
+  "domain": "vision",
+  "description": "Fine-grained bird image dataset containing 11,788 images across 200 bird species, with image-level class labels and additional annotations.",
+  "citation": "Wah, C., Branson, S., Welinder, P., Perona, P., & Belongie, S. (2011). The Caltech-UCSD Birds-200-2011 Dataset. California Institute of Technology. CNS-TR-2011-001.",
+  "license": {
+    "identifier": "Research use only; no standard license specified",
+    "url": "https://www.vision.caltech.edu/datasets/cub_200_2011/",
+    "notes": "The dataset is provided for non-commercial research purposes. Review the provider's current terms before use or redistribution; do not assume redistribution rights."
+  },
+  "upstream_url": "https://www.vision.caltech.edu/datasets/cub_200_2011/"
+}

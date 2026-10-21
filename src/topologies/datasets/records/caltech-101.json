@@ -1,0 +1,12 @@
+{
+  "id": "caltech-101",
+  "name": "Caltech-101",
+  "domain": "vision",
+  "description": "Object classification dataset with 101 categories and about 9,000 images, commonly evaluated with 15- or 30-training-images-per-category protocols. Caltech-256 is a related dataset in the same family.",
+  "citation": "Fei-Fei, L., Fergus, R., & Perona, P. (2004). Caltech-101: Learning generative visual models from few training examples. IEEE Conference on Computer Vision and Pattern Recognition (CVPR) Workshop.",
+  "license": {
+    "identifier": "Caltech research-only terms",
+    "url": "http://www.vision.caltech.edu/Image_Datasets/Caltech101/"
+  },
+  "upstream_url": "http://www.vision.caltech.edu/Image_Datasets/Caltech101/"
+}

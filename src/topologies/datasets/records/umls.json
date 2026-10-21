@@ -1,0 +1,13 @@
+{
+  "id": "umls",
+  "name": "UMLS",
+  "domain": "graph",
+  "description": "UMLS biomedical knowledge graph, 135 entities and about 6 thousand clinical-relation triples. MRR on a small-graph protocol. Credentialed NLM access. Triples not vendored.",
+  "citation": "UMLS biomedical knowledge graph.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://www.nlm.nih.gov/research/umls/",
+    "notes": "NLM UMLS license. Credentialed. Triples are loader-only and not vendored."
+  },
+  "upstream_url": "https://www.nlm.nih.gov/research/umls/"
+}

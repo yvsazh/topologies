@@ -1,0 +1,13 @@
+{
+  "id": "outbrain-click-prediction",
+  "name": "Outbrain Click Prediction",
+  "domain": "recommendation",
+  "description": "Outbrain native-ad click prediction: about 2 billion displays and 1 million documents. MAP at 12 under the Kaggle protocol. Loader-only metadata; no click logs vendored.",
+  "citation": "Outbrain Click Prediction Kaggle challenge.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://www.kaggle.com/c/outbrain-click-prediction",
+    "notes": "Kaggle competition terms. Record only; no data vendored."
+  },
+  "upstream_url": "https://www.kaggle.com/c/outbrain-click-prediction"
+}

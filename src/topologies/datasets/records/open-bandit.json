@@ -1,0 +1,13 @@
+{
+  "id": "open-bandit",
+  "name": "Open Bandit Dataset",
+  "domain": "recommendation",
+  "description": "Open Bandit Dataset, about 26 million ZOZO bandit logs across three campaigns with a uniform-random slice. Inverse-propensity and self-normalized inverse-propensity reward. Saito et al., NeurIPS 2021 Datasets and Benchmarks. Logs not vendored.",
+  "citation": "Saito et al., NeurIPS 2021. Open Bandit Dataset.",
+  "license": {
+    "identifier": "CC-BY-4.0",
+    "url": "https://research.zozo.com/data.html",
+    "notes": "CC BY. Logs not vendored. The OBP library is a separate pipeline at https://github.com/st-tech/zr-obp."
+  },
+  "upstream_url": "https://research.zozo.com/data.html"
+}

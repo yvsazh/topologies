@@ -1,0 +1,13 @@
+{
+  "id": "movielens-20m",
+  "name": "MovieLens 20M Dataset",
+  "domain": "recommendation",
+  "description": "A stable benchmark dataset of 20 million ratings and tag applications from MovieLens users, including movie metadata, collected between 1995 and 2015 for recommender-system research.",
+  "citation": "Harper, F. M., & Konstan, J. A. (2015). The MovieLens Datasets: History and Context. ACM Transactions on Interactive Intelligent Systems, 5(4), Article 19. https://doi.org/10.1145/2827872",
+  "license": {
+    "identifier": "Dataset license not specified (not a standard SPDX identifier)",
+    "url": "https://grouplens.org/datasets/movielens/20m/",
+    "notes": "The upstream page does not specify a standard SPDX license identifier. Consult the upstream terms and respect rights in the included movie metadata and user-contributed ratings and tags before use or redistribution."
+  },
+  "upstream_url": "https://grouplens.org/datasets/movielens/20m/"
+}

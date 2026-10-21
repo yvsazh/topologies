@@ -1,0 +1,13 @@
+{
+  "id": "modelnet40",
+  "name": "ModelNet40",
+  "domain": "vision",
+  "description": "A benchmark dataset of 3D CAD models across 40 object categories, commonly used for 3D shape classification. This record is loader-only and does not distribute dataset files.",
+  "citation": "Wu, Z., Song, S., Khosla, A., Yu, F., Zhang, L., Tang, X., & Xiao, J. (2015). 3D ShapeNets: A Deep Representation for Volumetric Shapes. Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 1912–1920. https://doi.org/10.1109/CVPR.2015.7298801",
+  "license": {
+    "identifier": "ShapeNet/ModelNet dataset-specific terms (not a standard SPDX identifier)",
+    "url": "https://modelnet.cs.princeton.edu/",
+    "notes": "ModelNet is distributed under dataset-specific terms; no standard SPDX identifier is specified. Review and comply with the terms provided by the dataset host before use or redistribution. This record is loader-only and vendors no data."
+  },
+  "upstream_url": "https://modelnet.cs.princeton.edu/"
+}

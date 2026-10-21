@@ -1,0 +1,13 @@
+{
+  "id": "gages-ii",
+  "name": "GAGES-II",
+  "domain": "scientific",
+  "description": "GAGES-II streamflow attributes for about 9 thousand US basins and more than 300 attributes. NSE and KGE. USGS public data. Tables not vendored.",
+  "citation": "GAGES-II geospatial attributes of gages for evaluating streamflow.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://water.usgs.gov/GIS/metadata/usgswrd/XML/gagesII_Sept2011.xml",
+    "notes": "USGS public data. Tables not vendored."
+  },
+  "upstream_url": "https://water.usgs.gov/GIS/metadata/usgswrd/XML/gagesII_Sept2011.xml"
+}

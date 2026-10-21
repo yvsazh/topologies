@@ -1,0 +1,12 @@
+{
+  "id": "fever",
+  "name": "FEVER",
+  "domain": "language",
+  "description": "Fact verification dataset of about 185k claims, annotated with evidence from Wikipedia. VitaminC provides contrastive revisions to claims as a related benchmark. No data is vendored here.",
+  "citation": "FEVER: a large-scale dataset for Fact Extraction and VERification. Thorne et al., NAACL 2018.",
+  "license": {
+    "identifier": "FEVER release terms (no SPDX identifier stated)",
+    "url": "https://fever.ai/"
+  },
+  "upstream_url": "https://fever.ai/"
+}

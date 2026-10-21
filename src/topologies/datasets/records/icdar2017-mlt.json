@@ -1,0 +1,13 @@
+{
+  "id": "icdar2017-mlt",
+  "name": "ICDAR 2017 MLT",
+  "domain": "vision",
+  "description": "ICDAR 2017 multilingual scene text, about 7200 train and 9000 validation images across nine languages. Detection F and end-to-end F. ICDAR 2013 and ICDAR 2019 are companion notes in this record. Distinct from ICDAR 2015. Images not vendored.",
+  "citation": "ICDAR 2017 multilingual scene text.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://rrc.cvc.uab.es/?ch=8",
+    "notes": "Robust Reading Competition research terms. Images not vendored."
+  },
+  "upstream_url": "https://rrc.cvc.uab.es/?ch=8"
+}

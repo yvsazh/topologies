@@ -1,0 +1,12 @@
+{
+  "id": "pacs",
+  "name": "PACS",
+  "domain": "vision",
+  "description": "Domain-generalization classification benchmark with four domains (Photo, Art Painting, Cartoon, and Sketch) and seven classes, comprising about 10,000 images. Commonly evaluated using leave-one-domain-out accuracy. Open research terms; no data is vendored here.",
+  "citation": "Li, D., Yang, Y., Song, Y.-Z., & Hospedales, T. M. (2017). Deeper, Broader and Artier Domain Generalization. IEEE International Conference on Computer Vision (ICCV). (PACS)",
+  "license": {
+    "identifier": "Open research terms; no SPDX license identifier stated",
+    "url": "https://github.com/sketchxpress/pacs"
+  },
+  "upstream_url": "https://github.com/sketchxpress/pacs"
+}

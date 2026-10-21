@@ -1,0 +1,13 @@
+{
+  "id": "scannet",
+  "name": "ScanNet",
+  "domain": "vision",
+  "description": "An RGB-D video dataset of indoor scenes with reconstructed 3D surfaces, camera poses, and semantic annotations for 3D scene understanding. This record does not distribute dataset files.",
+  "citation": "Dai, A., Chang, A. X., Savva, M., Halber, M., Funkhouser, T., & Nießner, M. (2017). ScanNet: Richly-annotated 3D reconstructions of indoor scenes. Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 5828–5839. https://doi.org/10.1109/CVPR.2017.261",
+  "license": {
+    "identifier": "Custom ScanNet terms (not a standard SPDX identifier)",
+    "url": "http://www.scan-net.org/ScanNet/TermsOfUse",
+    "notes": "ScanNet is governed by its own terms of use, not a standard SPDX license. Use is subject to the dataset terms, including restrictions on redistribution and commercial use; review and accept the current terms before downloading or using the data."
+  },
+  "upstream_url": "http://www.scan-net.org/"
+}

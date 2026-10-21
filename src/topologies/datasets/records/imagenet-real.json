@@ -1,0 +1,12 @@
+{
+  "id": "imagenet-real",
+  "name": "ImageNet-ReaL",
+  "domain": "vision",
+  "description": "Multi-label-corrected evaluation of the ImageNet-1K validation set, with 50k relabelled images. Loader-only, rights-reserved. No data vendored.",
+  "citation": "Beyer et al. (2020). ImageNet-ReaL: Revisiting the ImageNet benchmark for real humans. International Conference on Learning Representations (ICLR).",
+  "license": {
+    "identifier": "rights-reserved",
+    "url": "https://github.com/google-research/reassessed-imagenet"
+  },
+  "upstream_url": "https://github.com/google-research/reassessed-imagenet"
+}

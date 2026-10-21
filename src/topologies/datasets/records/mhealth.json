@@ -1,0 +1,13 @@
+{
+  "id": "mhealth",
+  "name": "MHEALTH",
+  "domain": "scientific",
+  "description": "MHEALTH wearable activity, about 16 thousand samples from 14 subjects. Subject-independent accuracy. USC-HAD, 14 subjects, is a companion note in this record. Distinct from UCI-HAR. Sensor traces not vendored.",
+  "citation": "Banos et al. MHEALTH wearable activity.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://archive.ics.uci.edu/dataset/319/mhealth+dataset",
+    "notes": "UCI repository terms. Sensor traces not vendored."
+  },
+  "upstream_url": "https://archive.ics.uci.edu/dataset/319/mhealth+dataset"
+}

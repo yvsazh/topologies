@@ -1,0 +1,13 @@
+{
+  "id": "pcb-defect",
+  "name": "Dataset of PCB Surface Defects (DsPCBSD+)",
+  "domain": "vision",
+  "description": "An image dataset for printed circuit board surface-defect detection, containing 10,259 images with 20,276 manually annotated defects across nine categories. Images are not vendored.",
+  "citation": "Lv, S. et al. A dataset for deep learning based detection of printed circuit board surface defect. Scientific Data 11, 811 (2024). https://doi.org/10.1038/s41597-024-03656-8",
+  "license": {
+    "identifier": "other",
+    "url": "https://doi.org/10.6084/m9.figshare.24970329",
+    "notes": "Dataset-specific license terms were not confirmed; review the upstream terms before use."
+  },
+  "upstream_url": "https://doi.org/10.6084/m9.figshare.24970329"
+}

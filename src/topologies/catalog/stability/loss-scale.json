@@ -1,0 +1,17 @@
+{
+  "id": "loss-scale",
+  "name": "Static Loss Scaling",
+  "description": "Multiplies a loss by a fixed scaling factor.",
+  "api": "loss_scale(loss, scale=8.0)",
+  "usage": "scaled_loss = loss_scale(loss, scale=8.0)",
+  "parameters": {
+    "loss": "loss value",
+    "scale": "fixed multiplier; defaults to 8.0"
+  },
+  "implementation": {
+    "path": "training/stability/loss_scale.py",
+    "symbol": "loss_scale"
+  },
+  "papers": [],
+  "examples": []
+}

@@ -1,0 +1,13 @@
+{
+  "id": "flickr30k",
+  "name": "Flickr30k",
+  "domain": "multimodal",
+  "description": "A dataset of 31,783 Flickr images, each paired with five crowdsourced English descriptions, commonly used for image-text retrieval and related vision-language tasks. This record does not distribute dataset files.",
+  "citation": "Young, P., Lai, A., Hodosh, M., & Hockenmaier, J. (2014). From image descriptions to visual denotations: New similarity metrics for semantic inference over event descriptions. Transactions of the Association for Computational Linguistics, 2, 67–78. https://doi.org/10.1162/tacl_a_00183",
+  "license": {
+    "identifier": "Not stated (not a standard SPDX identifier)",
+    "url": "https://shannon.cs.illinois.edu/DenotationGraph/data/index.html",
+    "notes": "The dataset page does not specify a standard SPDX license. Flickr image rights remain with their respective rights holders; review upstream terms and image-level rights before use or redistribution, and do not assume commercial or redistribution rights."
+  },
+  "upstream_url": "https://shannon.cs.illinois.edu/DenotationGraph/data/index.html"
+}

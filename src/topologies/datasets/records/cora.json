@@ -1,0 +1,13 @@
+{
+  "id": "cora",
+  "name": "Cora",
+  "domain": "graph",
+  "description": "A citation-network benchmark containing scientific publications as nodes and citation links as edges, commonly used for node classification. This record is the third Planetoid companion to CiteSeer and PubMed; the standard Planetoid split may be used, but this record is loader-only and does not distribute dataset files.",
+  "citation": "Sen, P., Namata, G., Bilgic, M., Getoor, L., Gallagher, B., & Eliassi-Rad, T. (2008). Collective classification in network data. AI Magazine, 29(3), 93–106. https://doi.org/10.1609/aimag.v29i3.2157",
+  "license": {
+    "identifier": "Cora dataset-specific terms (not a standard SPDX identifier)",
+    "url": "https://linqs.org/datasets/",
+    "notes": "The LINQS datasets page does not state a standard SPDX license identifier for Cora. Review the upstream terms before use or redistribution. This record is loader-only and vendors no data."
+  },
+  "upstream_url": "https://linqs.org/datasets/"
+}

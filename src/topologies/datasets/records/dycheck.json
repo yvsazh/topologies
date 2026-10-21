@@ -1,0 +1,13 @@
+{
+  "id": "dycheck",
+  "name": "DyCheck",
+  "domain": "computer vision / dynamic view synthesis",
+  "description": "A monocular dynamic-scene benchmark comprising diverse real-life deformation sequences captured with an iPhone, introduced to evaluate dynamic view synthesis under a realistic monocular capture protocol.",
+  "citation": "Gao, H., Li, R., Tulsiani, S., Russell, B., & Kanazawa, A. (2022). Monocular Dynamic View Synthesis: A Reality Check. Advances in Neural Information Processing Systems (NeurIPS 2022). arXiv:2210.13445. https://arxiv.org/abs/2210.13445",
+  "license": {
+    "identifier": "other",
+    "url": "",
+    "notes": "Dataset license not verified as published."
+  },
+  "upstream_url": "https://github.com/KAIR-BAIR/dycheck"
+}

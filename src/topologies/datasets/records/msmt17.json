@@ -1,0 +1,12 @@
+{
+  "id": "msmt17",
+  "name": "MSMT17",
+  "domain": "vision",
+  "description": "A person re-identification dataset with 4,101 identities across 15 cameras, including day and night scenes and about 126,000 bounding boxes. The dataset is subject to PKU research terms. This record is metadata-only and vendors no data.",
+  "citation": "Wei, L., et al. (2018). MSMT17: A Large-scale Dataset for Multi-domain Person Re-identification.",
+  "license": {
+    "identifier": "PKU research terms (not a standard SPDX identifier)",
+    "url": "http://www.pkuvmc.com/publications/msmt17/"
+  },
+  "upstream_url": "http://www.pkuvmc.com/publications/msmt17/"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "pems-04",
+  "name": "PeMS04",
+  "domain": "time-series",
+  "description": "A traffic forecasting benchmark built from California Department of Transportation Performance Measurement System (PeMS) data. PeMS04 contains traffic-flow observations from 307 sensors in the San Francisco Bay Area, aggregated into 5-minute intervals over January through February 2018. This record does not distribute dataset files.",
+  "citation": "Song, C., Lin, Y., Guo, S., & Wan, H. (2020). Spatial-Temporal Synchronous Graph Convolutional Networks: A New Framework for Spatial-Temporal Network Data Forecasting. Proceedings of the AAAI Conference on Artificial Intelligence, 34(1), 914–921. https://doi.org/10.1609/aaai.v34i01.5438",
+  "license": {
+    "identifier": "Dataset-specific terms; not a standard SPDX license identifier",
+    "url": "https://github.com/Davidham3/ASTGNN",
+    "notes": "The dataset is derived from California Department of Transportation PeMS data. A standard SPDX license identifier for the PeMS04 dataset is not specified by its commonly cited distribution; do not assume that the repository's code license covers the dataset. Review the upstream repository and Caltrans terms before use or redistribution."
+  },
+  "upstream_url": "https://github.com/Davidham3/ASTGNN"
+}

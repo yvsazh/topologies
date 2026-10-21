@@ -1,0 +1,13 @@
+{
+  "id": "smacv2",
+  "name": "SMACv2",
+  "domain": "scientific",
+  "description": "SMACv2 randomized multi-agent combat, 10 maps. Win rate under the sight-range protocol v2. Ellis et al., ICLR 2024. Distinct from the already recorded SMAC maps. StarCraft II stays an external loader.",
+  "citation": "Ellis et al., ICLR 2024. SMACv2.",
+  "license": {
+    "identifier": "MIT",
+    "url": "https://github.com/oxwhirl/smacv2",
+    "notes": "MIT benchmark. StarCraft II loader stays external. No replays vendored."
+  },
+  "upstream_url": "https://github.com/oxwhirl/smacv2"
+}

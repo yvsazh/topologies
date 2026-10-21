@@ -1,0 +1,13 @@
+{
+  "id": "pdebench",
+  "name": "PDEBench",
+  "domain": "scientific",
+  "description": "A benchmark suite of scientific machine-learning datasets for learning solutions to partial differential equations, including diverse physical systems, equations, and simulation settings.",
+  "citation": "Takamoto, M., Praditia, T., Bonev, B., et al. (2022). PDEBench: An Extensive Benchmark for Scientific Machine Learning. Advances in Neural Information Processing Systems 35, Datasets and Benchmarks Track. https://arxiv.org/abs/2210.07182",
+  "license": {
+    "identifier": "Mixed / dataset-specific terms",
+    "url": "https://github.com/pdebench/PDEBench",
+    "notes": "PDEBench aggregates data from multiple sources with differing terms; there is no single standard SPDX license identifier applicable to the complete collection. Review the license and attribution requirements for each dataset before use or redistribution."
+  },
+  "upstream_url": "https://github.com/pdebench/PDEBench"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "stanford-cars",
+  "name": "Stanford Cars",
+  "domain": "vision",
+  "description": "Stanford Cars is a fine-grained image classification dataset of 16,185 car images across 196 car classes, with training and test splits.",
+  "citation": "Krause, J., Stark, M., Deng, J., & Fei-Fei, L. (2013). 3D Object Representations for Fine-Grained Categorization. IEEE International Conference on Computer Vision Workshops (ICCVW). https://doi.org/10.1109/ICCVW.2013.77",
+  "license": {
+    "identifier": "Research use; license not specified",
+    "url": "https://ai.stanford.edu/~jkrause/cars/car_dataset.html",
+    "notes": "The dataset provider page does not state a standard license. Review the provider's terms and image rights before redistribution or commercial use."
+  },
+  "upstream_url": "https://ai.stanford.edu/~jkrause/cars/car_dataset.html"
+}

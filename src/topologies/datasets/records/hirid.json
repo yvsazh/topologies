@@ -1,0 +1,13 @@
+{
+  "id": "hirid",
+  "name": "HiRID",
+  "domain": "scientific",
+  "description": "HiRID high-resolution ICU data, about 34 thousand stays with 2-minute vitals. Circulatory-failure AUPRC on the early-warning protocol. Hyland et al., Nature Medicine 2020. PhysioNet credential required. Records not vendored.",
+  "citation": "Hyland et al., Nature Medicine 2020. HiRID.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://physionet.org/",
+    "notes": "Credentialed PhysioNet access. Clinical records are loader-only and not vendored."
+  },
+  "upstream_url": "https://physionet.org/"
+}

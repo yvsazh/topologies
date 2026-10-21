@@ -1,0 +1,12 @@
+{
+  "id": "wsj",
+  "name": "WSJ",
+  "domain": "audio",
+  "description": "Read-news speech recognition corpus using WSJ0 and WSJ1, about 80 hours. LDC gated, loader-only. No data vendored.",
+  "citation": "WSJ (CSR) corpus, LDC release LDC93S6A.",
+  "license": {
+    "identifier": "LDC gated terms (not a standard SPDX identifier)",
+    "url": "https://catalog.ldc.upenn.edu/LDC93S6A"
+  },
+  "upstream_url": "https://catalog.ldc.upenn.edu/LDC93S6A"
+}

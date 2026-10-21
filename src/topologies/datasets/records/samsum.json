@@ -1,0 +1,12 @@
+{
+  "id": "samsum",
+  "name": "SAMSum",
+  "domain": "language",
+  "description": "A dialogue summarization dataset with about 16k dialogues; DialogSum contains about 13.5k dialogues. No data is vendored.",
+  "citation": "Gliwa et al. (2019). SAMSum Corpus: A Human-annotated Dialogue Dataset for Abstractive Summarization.",
+  "license": {
+    "identifier": "CC-BY-NC-ND-4.0",
+    "url": "https://arxiv.org/abs/1911.12237"
+  },
+  "upstream_url": "https://arxiv.org/abs/1911.12237"
+}

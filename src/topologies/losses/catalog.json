@@ -1,0 +1,529 @@
+{
+  "entries": [
+    {
+      "api": "topologies.training.losses:get_loss('a2c')(logits_or_prediction, targets, *, value, returns, entropy, entropy_coefficient=0.01, reduction='mean', ignore_index=None)",
+      "description": "Per-sample actor-critic objective from selected-action log probabilities, detached advantages and returns, value predictions, and policy entropies; rollout and distribution calculations remain caller-owned.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nimport torch.nn as nn\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef rollouts(ctx):\n    state = torch.randn(4, generator=ctx.rng.torch)\n    action = int(ctx.index) % 2\n    advantage = float(int(ctx.index) % 5 - 2)\n    returns = float(int(ctx.index) % 3 - 1)\n    inputs = torch.cat((state, torch.tensor([float(action)])))\n    return {\"inputs\": synth.Tensor(inputs), \"advantage\": synth.Tensor(torch.tensor(advantage)), \"returns\": synth.Tensor(torch.tensor(returns))}\nclass ActorCritic(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.network = build(\"mlp\", \"tiny\", in_features=4, out_features=3)\n    def forward(self, inputs):\n        raw = self.network(inputs[..., :4])\n        log_probabilities = torch.log_softmax(raw[..., :2], dim=-1)\n        actions = inputs[..., 4].long().unsqueeze(-1)\n        log_probability = log_probabilities.gather(-1, actions).squeeze(-1)\n        probabilities = log_probabilities.exp()\n        entropy = -(probabilities * log_probabilities).sum(dim=-1)\n        return {\"log_probability\": log_probability, \"value\": raw[..., 2], \"entropy\": entropy}\nds = synth.Spec(\"a2c-rollouts\", generator=rollouts, size=12, splits={\"train\": 1.0}, seed=7, root=root, monitor=\"none\").run()\ntrain = ds.for_recipe(\"structured-objective\", split=\"train\")\ntrainer = Trainer(ActorCritic(), train, recipe=\"structured-objective\", recipe_config={\"loss\": \"a2c\", \"loss_kwargs\": {\"entropy_coefficient\": 0.01, \"reduction\": \"mean\"}, \"bindings\": {\"logits_or_prediction\": {\"output\": \"log_probability\"}, \"targets\": {\"batch\": \"advantage\"}, \"value\": {\"output\": \"value\"}, \"returns\": {\"batch\": \"returns\"}, \"entropy\": {\"output\": \"entropy\"}}}, batch_size=4, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
+          "title": "Train an actor-critic model with A2C"
+        }
+      ],
+      "id": "a2c",
+      "implementation": {
+        "path": "implementations/losses/a2c.py",
+        "sha256": "4eb4f1ae4d81f46f61292a1a905f88ca770fd4e1ca7f04b8767becff0c59998c",
+        "symbol": "a2c"
+      },
+      "name": "A2C actor-critic objective",
+      "parameters": {
+        "entropy": "required floating-point tensor of per-sample policy entropies with shape [B]",
+        "entropy_coefficient": "finite nonnegative real entropy weight (default 0.01)",
+        "ignore_index": "must be None; ignored classes or transitions are unsupported",
+        "logits_or_prediction": "floating-point tensor of selected-action log probabilities with shape [B]",
+        "reduction": "none per sample, mean, or sum (default mean)",
+        "returns": "required floating-point tensor of per-sample return targets with shape [B], detached from gradients",
+        "targets": "floating-point tensor of per-sample advantages with shape [B], detached from gradients",
+        "value": "required floating-point tensor of per-sample value predictions with shape [B]"
+      },
+      "usage": "Trainer(model, loader, recipe='structured-objective', recipe_config={'loss':'a2c','loss_kwargs':{'entropy_coefficient':0.01},'bindings':{...}})"
+    },
+    {
+      "api": "topologies.training.losses:compute_loss(cfg, real_scores, fake_scores) or generator_hinge(fake_scores)",
+      "description": "Separate discriminator relu(1-real)+relu(1+fake) and generator -fake score objectives; caller owns detach/gradient routing.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef real_images(ctx):\n return {\"x\": synth.Tensor(torch.rand((1, 16, 16), generator=ctx.rng.torch) * 2 - 1)}\nds = synth.Spec(\"hinge-gan\", generator=real_images, size=16, splits={\"train\": 1.0}, seed=11, root=root, monitor=\"none\").run()\ntrain = ds.for_recipe(\"gan\", split=\"train\", preserve_shape=True)\ngenerator = build(\"dcgan-generator\", \"tiny\", latent_dim=4, out_channels=1, image_size=16, features=4)\ndiscriminator = build(\"dcgan-discriminator\", \"tiny\", in_channels=1, image_size=16, features=4)\ntrainer = Trainer(generator, train, recipe=\"gan\", components={\"discriminator\": discriminator}, optimizers={\"generator\": \"adam\", \"discriminator\": \"adam\"}, recipe_config={\"loss\": \"adversarial-hinge\", \"latent_dim\": 4, \"image_channels\": 1, \"image_size\": 16}, batch_size=4, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
+          "title": "Train DCGAN with adversarial hinge"
+        }
+      ],
+      "id": "adversarial-hinge",
+      "implementation": {
+        "path": "implementations/training/core.py",
+        "sha256": "878f03ad0677bb8cd1b993861f72dcf5bfa14853743a5b355353c1d1f8162f9b",
+        "symbol": "adversarial_hinge_discriminator"
+      },
+      "name": "Adversarial hinge objectives",
+      "parameters": {
+        "reduction": "none, mean, or sum for each score tensor"
+      },
+      "usage": "Trainer(generator, train, recipe='gan', recipe_config={'loss':'adversarial-hinge'})"
+    },
+    {
+      "api": "topologies.training.losses:compute_loss(cfg, logits, targets, **extra)",
+      "description": "Stable binary/multilabel BCE directly on logits; exact shape match and optional positive-class weights.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nfrom topologies import Trainer, build, synth\nroot=tempfile.mkdtemp()\n@synth.generator\ndef samples(ctx):\n x=torch.randn(6,generator=ctx.rng.torch)\n return {\"inputs\":synth.Tensor(x),\"targets\":synth.Tensor((x[:2]>0).float())}\nds=synth.Spec(\"bce\",generator=samples,size=16,splits={\"train\":0.75,\"val\":0.25},seed=11,root=root,monitor=\"none\").run()\ntrain=ds.for_recipe(\"regression\",split=\"train\",input_field=\"inputs\",target_field=\"targets\",preserve_shape=True)\nval=ds.for_recipe(\"regression\",split=\"val\",like=train,input_field=\"inputs\",target_field=\"targets\",preserve_shape=True)\nmodel=build(\"mlp\",\"tiny\",in_features=6,out_features=2)\ntrainer=Trainer(model,train,val,recipe=\"regression\",recipe_config={\"loss\":\"binary-cross-entropy-logits\"},max_epochs=1,device=\"cpu\")\ntrainer.fit()\nresult=trainer.evaluate(val)",
+          "title": "Train a multilabel regressor with BCE logits"
+        }
+      ],
+      "id": "binary-cross-entropy-logits",
+      "implementation": {
+        "path": "implementations/training/core.py",
+        "sha256": "878f03ad0677bb8cd1b993861f72dcf5bfa14853743a5b355353c1d1f8162f9b",
+        "symbol": "binary_cross_entropy_logits"
+      },
+      "name": "Binary cross entropy with logits",
+      "parameters": {
+        "pos_weight": "positive-class weight tensor or None",
+        "reduction": "none, mean, or sum (default mean)"
+      },
+      "usage": "Trainer(model, loader, recipe_config={'loss':'binary-cross-entropy-logits','loss_kwargs':{'pos_weight':weights}})"
+    },
+    {
+      "api": "topologies.training.losses:compute_loss(cfg, positive_scores, negative_scores, **extra)",
+      "description": "Pairwise implicit-ranking softplus(negative_score-positive_score); sampling is external.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef pairs(ctx):\n user = int(torch.randint(0, 8, (), generator=ctx.rng.torch))\n positive = int(torch.randint(0, 12, (), generator=ctx.rng.torch))\n negative = (positive + 1) % 12\n return {\"users\": user, \"positive_items\": positive, \"negative_items\": negative}\nds = synth.Spec(\"bpr-ranking\", generator=pairs, size=24, splits={\"train\": 0.75, \"val\": 0.25}, seed=11, root=root, monitor=\"none\").run()\ntrain = ds.for_recipe(\"recommender-bpr\", split=\"train\")\nmodel = build(\"matrix-factorization\", \"tiny\", num_users=8, num_items=12, embedding_dim=4)\ntrainer = Trainer(model, train, recipe=\"recommender-bpr\", recipe_config={\"loss\": \"bpr\"}, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
+          "title": "Train matrix factorization with BPR"
+        }
+      ],
+      "id": "bpr",
+      "implementation": {
+        "path": "implementations/training/core.py",
+        "sha256": "878f03ad0677bb8cd1b993861f72dcf5bfa14853743a5b355353c1d1f8162f9b",
+        "symbol": "bpr"
+      },
+      "name": "Bayesian personalized ranking loss",
+      "parameters": {
+        "reduction": "none per pair, mean, or sum"
+      },
+      "usage": "Trainer(model, train, recipe='recommender-bpr', recipe_config={'loss':'bpr'})"
+    },
+    {
+      "api": "topologies.training.losses:compute_loss(cfg, logits, targets, **extra)",
+      "description": "Class-index or probability-target cross entropy; PyTorch class axis, ignore_index, class weights, label smoothing, and none/mean/sum reduction.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef samples(ctx):\n x = torch.randn(6, generator=ctx.rng.torch)\n return {\"features\": x, \"labels\": int(x[0] > 0)}\nds = synth.Spec(\"ce\", generator=samples, size=16, splits={\"train\": 0.75, \"val\": 0.25}, seed=11, root=root, monitor=\"none\").run()\ntrain = ds.for_recipe(\"tabular-classify\", split=\"train\")\nval = ds.for_recipe(\"tabular-classify\", split=\"val\", like=train)\nmodel = build(\"mlp\", \"tiny\", in_features=6, out_features=2)\ntrainer = Trainer(model, train, val, recipe=\"tabular-classify\", recipe_config={\"loss\": \"cross-entropy\"}, max_epochs=1, device=\"cpu\")\ntrainer.fit()\nresult = trainer.evaluate(val)",
+          "title": "Train a classifier with cross entropy"
+        }
+      ],
+      "id": "cross-entropy",
+      "implementation": {
+        "path": "implementations/training/core.py",
+        "sha256": "878f03ad0677bb8cd1b993861f72dcf5bfa14853743a5b355353c1d1f8162f9b",
+        "symbol": "cross_entropy"
+      },
+      "name": "Cross entropy",
+      "parameters": {
+        "ignore_index": "int (default -100)",
+        "label_smoothing": "float in [0,1]",
+        "reduction": "none, mean, or sum",
+        "weight": "class-weight tensor or None"
+      },
+      "usage": "Trainer(model, train_loader, recipe='tabular-classify', recipe_config={'loss':'cross-entropy','loss_kwargs':{'label_smoothing':0.1}})"
+    },
+    {
+      "api": "topologies.training.losses:compute_loss(cfg, logits, targets, input_lengths=..., target_lengths=...)",
+      "description": "PyTorch CTC on [time,batch,class] log-probabilities or logits with explicit input/target lengths and impossible-alignment policy.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nfrom topologies import Trainer, build, synth\nroot=tempfile.mkdtemp()\n@synth.generator\ndef samples(ctx):\n token=1+int(ctx.index)%3\n features=torch.sin(torch.arange(64,dtype=torch.float32)*(token+1)*0.12)\n return {\"features\":synth.Tensor(features),\"targets\":[token]}\nds=synth.Spec(\"ctc-acoustic\",generator=samples,size=24,splits={\"train\":0.75,\"val\":0.25},seed=11,root=root,monitor=\"none\").run()\ntrain=ds.for_recipe(\"ctc-asr\",split=\"train\")\nval=ds.for_recipe(\"ctc-asr\",split=\"val\",like=train)\nmodel=build(\"ctc-acoustic-model\",\"tiny\",vocab_size=5,conv_channels=4,hidden_size=8,rnn_layers=1,blank_id=0)\ntrainer=Trainer(model,train,val,recipe=\"ctc-asr\",recipe_config={\"loss\":\"ctc\",\"blank_id\":0,\"zero_infinity\":True},max_epochs=1,batch_size=4,device=\"cpu\")\ntrainer.fit()\nresult=trainer.evaluate(val)",
+          "title": "Train a CTC acoustic model"
+        }
+      ],
+      "id": "ctc",
+      "implementation": {
+        "path": "implementations/training/core.py",
+        "sha256": "878f03ad0677bb8cd1b993861f72dcf5bfa14853743a5b355353c1d1f8162f9b",
+        "symbol": "ctc"
+      },
+      "name": "Connectionist temporal classification",
+      "parameters": {
+        "blank": "blank class index",
+        "log_probs": "input is already log-softmax normalized",
+        "reduction": "none, mean (target-length normalized), or sum",
+        "zero_infinity": "zero infinite losses/gradients for impossible alignments"
+      },
+      "usage": "loss = ctc(logits, targets, input_lengths, target_lengths, blank=0, zero_infinity=True)"
+    },
+    {
+      "api": "topologies.training.losses:compute_loss(cfg, log_prob, **extra)",
+      "description": "Negative already-computed log probability; flow Jacobian/density calculation remains model-owned.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nfrom topologies import Trainer, build, synth\nroot=tempfile.mkdtemp()\n@synth.generator\ndef samples(ctx):\n z=torch.randn(2,generator=ctx.rng.torch)\n return {\"x\":synth.Tensor(torch.stack((z[0],z[1]+0.5*z[0])))}\nds=synth.Spec(\"density-nll\",generator=samples,size=24,splits={\"train\":0.75,\"val\":0.25},seed=11,root=root,monitor=\"none\").run()\ntrain=ds.for_recipe(\"density-estimation\",split=\"train\")\nval=ds.for_recipe(\"density-estimation\",split=\"val\",like=train)\nmodel=build(\"realnvp\",\"tiny\",features=2,coupling_layers=2,hidden_dims=[8])\ntrainer=Trainer(model,train,val,recipe=\"density-estimation\",recipe_config={\"loss\":\"density-nll\",\"features\":2},max_epochs=1,batch_size=8,device=\"cpu\")\ntrainer.fit()\nresult=trainer.evaluate(val)",
+          "title": "Train RealNVP with density negative log likelihood"
+        }
+      ],
+      "id": "density-nll",
+      "implementation": {
+        "path": "implementations/training/core.py",
+        "sha256": "878f03ad0677bb8cd1b993861f72dcf5bfa14853743a5b355353c1d1f8162f9b",
+        "symbol": "density_nll"
+      },
+      "name": "Density negative log likelihood",
+      "parameters": {
+        "reduction": "none, mean, or sum"
+      },
+      "usage": "loss = density_nll(log_prob)"
+    },
+    {
+      "api": "topologies.training.losses:compute_loss(cfg, logits, targets, **extra)",
+      "description": "Sigmoid binary or softmax multiclass Dice; averages per-sample/class scores, applies optional valid mask, and smooths numerator and denominator with positive smooth.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nfrom topologies import Trainer, build, synth\nroot=tempfile.mkdtemp()\n@synth.generator\ndef samples(ctx):\n image=torch.rand((1,16,16),generator=ctx.rng.torch)\n mask=torch.zeros((16,16),dtype=torch.long)\n mask[4:12,4:12]=1\n return {\"pixels\":synth.Tensor(image),\"mask\":synth.Tensor(mask)}\nds=synth.Spec(\"dice-segmentation\",generator=samples,size=16,splits={\"train\":0.75,\"val\":0.25},seed=11,root=root,monitor=\"none\").run()\ntrain=ds.for_recipe(\"segmentation\",split=\"train\")\nval=ds.for_recipe(\"segmentation\",split=\"val\",like=train)\nmodel=build(\"unet\",\"tiny\",in_channels=1,out_channels=2,features=[4,8])\ntrainer=Trainer(model,train,val,recipe=\"segmentation\",recipe_config={\"loss\":\"dice\",\"loss_kwargs\":{\"mode\":\"multiclass\"}},max_epochs=1,device=\"cpu\")\ntrainer.fit()\nresult=trainer.evaluate(val)",
+          "title": "Train U-Net segmentation with Dice"
+        }
+      ],
+      "id": "dice",
+      "implementation": {
+        "path": "implementations/training/core.py",
+        "sha256": "878f03ad0677bb8cd1b993861f72dcf5bfa14853743a5b355353c1d1f8162f9b",
+        "symbol": "dice"
+      },
+      "name": "Soft Dice loss",
+      "parameters": {
+        "include_background": "include first multiclass channel (default true)",
+        "mask": "optional boolean valid-pixel mask",
+        "mode": "binary or multiclass",
+        "reduction": "none, mean, or sum over sample/class Dice values",
+        "smooth": "positive additive smoothing (default 1.0)"
+      },
+      "usage": "Trainer(model, loader, recipe_config={'loss':'dice','loss_kwargs':{'mode':'multiclass'}})"
+    },
+    {
+      "api": "topologies.training.losses:compute_loss(cfg, mean, logvar, **extra)",
+      "description": "KL(q||N(0,I)) for q=N(mean,diag(exp(logvar))); sums all latent features per example then reduces batch (mean default).",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nfrom topologies import Trainer, build, synth\nroot=tempfile.mkdtemp()\n@synth.generator\ndef samples(ctx):\n z=torch.randn(2,generator=ctx.rng.torch)\n x=torch.stack((z[0],z[1],z[0]+z[1],z[0]-z[1],z[0]*0.5,z[1]*0.5,z.sum(),z.prod()))\n return {\"x\":synth.Tensor(x)}\nds=synth.Spec(\"gaussian-kl-vae\",generator=samples,size=24,splits={\"train\":0.75,\"val\":0.25},seed=11,root=root,monitor=\"none\").run()\ntrain=ds.for_recipe(\"vae\",split=\"train\")\nval=ds.for_recipe(\"vae\",split=\"val\",like=train)\nmodel=build(\"vae\",\"tiny\",in_features=8,latent_dim=2,hidden_dims=[8])\ntrainer=Trainer(model,train,val,recipe=\"vae\",recipe_config={\"loss\":\"gaussian-kl\",\"kl_weight\":0.5},max_epochs=1,batch_size=8,device=\"cpu\")\ntrainer.fit()\nresult=trainer.evaluate(val)",
+          "title": "Train a VAE with Gaussian KL regularization"
+        }
+      ],
+      "id": "gaussian-kl",
+      "implementation": {
+        "path": "implementations/training/core.py",
+        "sha256": "878f03ad0677bb8cd1b993861f72dcf5bfa14853743a5b355353c1d1f8162f9b",
+        "symbol": "gaussian_kl"
+      },
+      "name": "Diagonal Gaussian KL",
+      "parameters": {
+        "kl_weight": "VAE reconstruction objective coefficient",
+        "reduction": "none per-example, mean batch, or sum batch"
+      },
+      "usage": "kl = gaussian_kl(mu, logvar); add once to the VAE reconstruction objective."
+    },
+    {
+      "api": "topologies.training.losses:compute_loss(cfg, mean, targets, variance=variance)",
+      "description": "Elementwise Gaussian NLL in nats; variance is floored by eps; full=true includes 0.5*log(2*pi).",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nimport torch.nn as nn\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef samples(ctx):\n    x = torch.randn(4, generator=ctx.rng.torch)\n    return {'inputs': x, 'target': x[:2]}\nclass GaussianPredictor(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.base = build('mlp', 'tiny', in_features=4, out_features=4)\n    def forward(self, x):\n        raw = self.base(x)\n        return {'mean': raw[..., :2], 'variance': torch.nn.functional.softplus(raw[..., 2:]) + 1e-4}\nds = synth.Spec('gaussian-data', generator=samples, size=24, splits={'train': 0.75, 'val': 0.25}, seed=7, root=root, monitor='none').run()\ntrain = ds.for_recipe('structured-objective', split='train')\nval = ds.for_recipe('structured-objective', split='val', like=train)\ntrainer = Trainer(GaussianPredictor(), train, val, recipe='structured-objective', recipe_config={'loss': 'gaussian-nll', 'bindings': {'mean': {'output': 'mean'}, 'targets': {'batch': 'target'}, 'variance': {'output': 'variance'}}}, batch_size=8, max_epochs=1, device='cpu')\ntrainer.fit()\nassert all(torch.isfinite(torch.tensor(v)) for v in trainer.evaluate(val).values())",
+          "title": "Train a Gaussian predictor"
+        }
+      ],
+      "id": "gaussian-nll",
+      "implementation": {
+        "path": "implementations/training/core.py",
+        "sha256": "878f03ad0677bb8cd1b993861f72dcf5bfa14853743a5b355353c1d1f8162f9b",
+        "symbol": "gaussian_nll"
+      },
+      "name": "Gaussian negative log likelihood",
+      "parameters": {
+        "eps": "positive variance floor",
+        "full": "include Gaussian normalizing constant",
+        "reduction": "none, mean, or sum",
+        "variance": "positive scalar or broadcast-compatible tensor; values clamped below eps"
+      },
+      "usage": "loss = gaussian_nll(mean, target, variance, full=True)"
+    },
+    {
+      "api": "topologies.training.losses:compute_loss(cfg, boxes, targets, **extra)",
+      "description": "Aligned xyxy boxes in common coordinate units; permits zero-area boxes, rejects reversed corners; returns 1-GIoU.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nimport torch.nn as nn\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef boxes(ctx):\n    x = torch.rand(4, generator=ctx.rng.torch)\n    return {'inputs': x, 'target': torch.stack((x[0], x[1], x[0] + 0.5, x[1] + 0.5))}\nclass BoxPredictor(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.base = build('mlp', 'tiny', in_features=4, out_features=4)\n    def forward(self, x):\n        raw = self.base(x)\n        start = raw[..., :2].sigmoid()\n        return {'boxes': torch.cat((start, start + torch.nn.functional.softplus(raw[..., 2:])), dim=-1)}\nds = synth.Spec('structured-boxes', generator=boxes, size=24, splits={'train': 0.75, 'val': 0.25}, seed=7, root=root, monitor='none').run()\ntrain = ds.for_recipe('structured-objective', split='train')\nval = ds.for_recipe('structured-objective', split='val', like=train)\ntrainer = Trainer(BoxPredictor(), train, val, recipe='structured-objective', recipe_config={'loss': 'generalized-iou', 'bindings': {'boxes1': {'output': 'boxes'}, 'boxes2': {'batch': 'target'}}}, batch_size=8, max_epochs=1, device='cpu')\ntrainer.fit()\nassert all(torch.isfinite(torch.tensor(v)) for v in trainer.evaluate(val).values())",
+          "title": "Train a structured box predictor"
+        }
+      ],
+      "id": "generalized-iou",
+      "implementation": {
+        "path": "implementations/training/core.py",
+        "sha256": "878f03ad0677bb8cd1b993861f72dcf5bfa14853743a5b355353c1d1f8162f9b",
+        "symbol": "generalized_iou"
+      },
+      "name": "Generalized IoU loss",
+      "parameters": {
+        "reduction": "none per box, mean, or sum"
+      },
+      "usage": "loss = generalized_iou(predicted_xyxy, target_xyxy)"
+    },
+    {
+      "api": "topologies.training.losses:compute_loss(cfg, prediction, targets, **extra)",
+      "description": "Piecewise quadratic/linear regression loss with positive delta and PyTorch Huber scaling.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef samples(ctx):\n x = torch.randn(6, generator=ctx.rng.torch)\n return {\"inputs\": synth.Tensor(x), \"targets\": synth.Tensor(x[:2])}\nds = synth.Spec(\"huber\", generator=samples, size=16, splits={\"train\": 0.75, \"val\": 0.25}, seed=11, root=root, monitor=\"none\").run()\ntrain = ds.for_recipe(\"regression\", split=\"train\", input_field=\"inputs\", target_field=\"targets\", preserve_shape=True)\nval = ds.for_recipe(\"regression\", split=\"val\", like=train, input_field=\"inputs\", target_field=\"targets\", preserve_shape=True)\nmodel = build(\"mlp\", \"tiny\", in_features=6, out_features=2)\ntrainer = Trainer(model, train, val, recipe=\"regression\", recipe_config={\"loss\": \"huber\", \"loss_kwargs\": {\"delta\": 1.0}}, max_epochs=1, device=\"cpu\")\ntrainer.fit()\nresult = trainer.evaluate(val)",
+          "title": "Train a regressor with Huber loss"
+        }
+      ],
+      "id": "huber",
+      "implementation": {
+        "path": "implementations/training/core.py",
+        "sha256": "878f03ad0677bb8cd1b993861f72dcf5bfa14853743a5b355353c1d1f8162f9b",
+        "symbol": "huber"
+      },
+      "name": "Huber loss",
+      "parameters": {
+        "delta": "positive transition threshold (default 1.0)",
+        "reduction": "none, mean, or sum (default mean)"
+      },
+      "usage": "Trainer(model, loader, recipe_config={'loss':'huber','loss_kwargs':{'delta':1.0}})"
+    },
+    {
+      "api": "topologies.training.losses:compute_loss(cfg, image_embeddings, text_embeddings, **extra)",
+      "description": "Symmetric image/text paired-batch cross-entropy, diagonal positives, optional valid-negative matrix; batch-size one is finite and zero.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nfrom topologies import Trainer, build, synth\nroot=tempfile.mkdtemp()\n@synth.generator\ndef samples(ctx):\n ident=int(ctx.index)%4\n image=torch.zeros((1,16,16)); image[:,ident*4:(ident+1)*4,:]=1\n return {\"image\":synth.Image(image),\"text\":f\"shape {ident}\"}\nds=synth.Spec(\"info-nce-pairs\",generator=samples,size=24,splits={\"train\":0.75,\"val\":0.25},seed=11,root=root,monitor=\"none\").run()\ntrain=ds.for_recipe(\"contrastive-pairs\",split=\"train\",tokenizer=\"char\",max_len=16)\nval=ds.for_recipe(\"contrastive-pairs\",split=\"val\",like=train,tokenizer=\"char\",max_len=16)\nmodel=build(\"image-text-dual-encoder\",\"tiny\",vocab_size=64,context_length=16,embedding_dim=8,in_channels=1,width=4,text_width=8,text_heads=2,text_layers=1)\ntrainer=Trainer(model,train,val,recipe=\"contrastive-pairs\",recipe_config={\"loss\":\"info-nce\",\"temperature\":0.07},max_epochs=1,batch_size=4,device=\"cpu\")\ntrainer.fit()\nresult=trainer.evaluate(val)",
+          "title": "Train paired encoders with InfoNCE"
+        }
+      ],
+      "id": "info-nce",
+      "implementation": {
+        "path": "implementations/training/core.py",
+        "sha256": "878f03ad0677bb8cd1b993861f72dcf5bfa14853743a5b355353c1d1f8162f9b",
+        "symbol": "info_nce"
+      },
+      "name": "Symmetric paired InfoNCE",
+      "parameters": {
+        "mask": "optional [N,N] valid candidate matrix retaining diagonal positives",
+        "normalize": "L2-normalize each embedding row",
+        "reduction": "none per-pair, mean, or sum",
+        "temperature": "positive similarity-logit divisor"
+      },
+      "usage": "loss = info_nce(image_vectors, text_vectors, temperature=0.07)"
+    },
+    {
+      "api": "topologies.training.losses:compute_loss(cfg, prediction, targets, **extra)",
+      "description": "Strict-shape real-valued L1 regression/reconstruction objective.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef samples(ctx):\n x = torch.randn(6, generator=ctx.rng.torch)\n return {\"inputs\": synth.Tensor(x), \"targets\": synth.Tensor(x[:2])}\nds = synth.Spec(\"mae\", generator=samples, size=16, splits={\"train\": 0.75, \"val\": 0.25}, seed=11, root=root, monitor=\"none\").run()\ntrain = ds.for_recipe(\"regression\", split=\"train\", input_field=\"inputs\", target_field=\"targets\", preserve_shape=True)\nval = ds.for_recipe(\"regression\", split=\"val\", like=train, input_field=\"inputs\", target_field=\"targets\", preserve_shape=True)\nmodel = build(\"mlp\", \"tiny\", in_features=6, out_features=2)\ntrainer = Trainer(model, train, val, recipe=\"regression\", recipe_config={\"loss\": \"mean-absolute-error\"}, max_epochs=1, device=\"cpu\")\ntrainer.fit()\nresult = trainer.evaluate(val)",
+          "title": "Train a regressor with absolute error"
+        }
+      ],
+      "id": "mean-absolute-error",
+      "implementation": {
+        "path": "implementations/training/core.py",
+        "sha256": "878f03ad0677bb8cd1b993861f72dcf5bfa14853743a5b355353c1d1f8162f9b",
+        "symbol": "mean_absolute_error"
+      },
+      "name": "Mean absolute error",
+      "parameters": {
+        "reduction": "none, mean, or sum (default mean)"
+      },
+      "usage": "Trainer(model, loader, recipe_config={'loss':'mean-absolute-error'})"
+    },
+    {
+      "api": "topologies.training.losses:compute_loss(cfg, prediction, targets, **extra)",
+      "description": "Strict-shape real-valued squared error; integer class labels are not converted to one-hot targets.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef samples(ctx):\n x = torch.randn(6, generator=ctx.rng.torch)\n return {\"inputs\": synth.Tensor(x), \"targets\": synth.Tensor(x[:2])}\nds = synth.Spec(\"mse\", generator=samples, size=16, splits={\"train\": 0.75, \"val\": 0.25}, seed=11, root=root, monitor=\"none\").run()\ntrain = ds.for_recipe(\"regression\", split=\"train\", input_field=\"inputs\", target_field=\"targets\", preserve_shape=True)\nval = ds.for_recipe(\"regression\", split=\"val\", like=train, input_field=\"inputs\", target_field=\"targets\", preserve_shape=True)\nmodel = build(\"mlp\", \"tiny\", in_features=6, out_features=2)\ntrainer = Trainer(model, train, val, recipe=\"regression\", recipe_config={\"loss\": \"mean-squared-error\"}, max_epochs=1, device=\"cpu\")\ntrainer.fit()\nresult = trainer.evaluate(val)",
+          "title": "Train a regressor with squared error"
+        }
+      ],
+      "id": "mean-squared-error",
+      "implementation": {
+        "path": "implementations/training/core.py",
+        "sha256": "878f03ad0677bb8cd1b993861f72dcf5bfa14853743a5b355353c1d1f8162f9b",
+        "symbol": "mean_squared_error"
+      },
+      "name": "Mean squared error",
+      "parameters": {
+        "reduction": "none, mean, or sum (default mean)"
+      },
+      "usage": "Trainer(model, loader, recipe_config={'loss':'mean-squared-error'})"
+    },
+    {
+      "api": "topologies.training.losses:compute_loss(cfg, prediction, targets, **extra)",
+      "description": "Waveform [batch,samples] objective averaging spectral convergence plus absolute log-magnitude error across (n_fft,hop) resolutions; periodic Hann and explicit center convention.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nfrom topologies import Trainer, build, synth\nroot=tempfile.mkdtemp()\n@synth.generator\ndef samples(ctx):\n pitch=torch.full((4,),220.0+int(ctx.index)%20)\n loudness=torch.full((4,),0.4)\n time=torch.arange(128,dtype=torch.float32)/8000\n audio=loudness[0]*torch.sin(2*torch.pi*pitch[0]*time)\n return {\"audio\":synth.Audio(audio,sr=8000),\"pitch\":pitch,\"loudness\":loudness,\"sample_rate\":8000,\"lengths\":128}\nds=synth.Spec(\"mrstft-audio\",generator=samples,size=16,splits={\"train\":0.75,\"val\":0.25},seed=11,root=root,monitor=\"none\").run()\ntrain=ds.for_recipe(\"audio-reconstruct\",split=\"train\")\nval=ds.for_recipe(\"audio-reconstruct\",split=\"val\",like=train)\nmodel=build(\"ddsp-synthesizer\",\"tiny\",sample_rate=8000,n_harmonics=3,control_rate=100,fir_size=3)\ntrainer=Trainer(model,train,val,recipe=\"audio-reconstruct\",recipe_config={\"loss\":\"multi-resolution-stft\",\"mode\":\"ddsp-controls\",\"sample_rate\":8000,\"resolutions\":[[64,16],[32,8]]},max_epochs=1,batch_size=4,device=\"cpu\")\ntrainer.fit()\nresult=trainer.evaluate(val)",
+          "title": "Train DDSP synthesis with multi-resolution STFT"
+        }
+      ],
+      "id": "multi-resolution-stft",
+      "implementation": {
+        "path": "implementations/training/core.py",
+        "sha256": "878f03ad0677bb8cd1b993861f72dcf5bfa14853743a5b355353c1d1f8162f9b",
+        "symbol": "multi_resolution_stft"
+      },
+      "name": "Multi-resolution STFT loss",
+      "parameters": {
+        "center": "torch.stft center padding convention",
+        "eps": "positive magnitude/norm stability floor",
+        "reduction": "none per waveform, mean, or sum",
+        "resolutions": "nonempty sequence of (n_fft,hop) pairs"
+      },
+      "usage": "loss = multi_resolution_stft(estimate, reference, resolutions=((512,128),(256,64)))"
+    },
+    {
+      "api": "topologies.training.losses:compute_loss(cfg, prediction, targets, **extra)",
+      "description": "Quantile regression for prediction [...,Q], target [...]; averages all sample and quantile terms by default.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nfrom topologies import Trainer, build, synth\nroot=tempfile.mkdtemp()\n@synth.generator\ndef samples(ctx):\n x=torch.randn(6,generator=ctx.rng.torch)\n return {\"inputs\":synth.Tensor(x),\"targets\":synth.Tensor(x[0])}\nds=synth.Spec(\"pinball\",generator=samples,size=16,splits={\"train\":0.75,\"val\":0.25},seed=11,root=root,monitor=\"none\").run()\ntrain=ds.for_recipe(\"regression\",split=\"train\",input_field=\"inputs\",target_field=\"targets\",preserve_shape=True)\nval=ds.for_recipe(\"regression\",split=\"val\",like=train,input_field=\"inputs\",target_field=\"targets\",preserve_shape=True)\nmodel=build(\"mlp\",\"tiny\",in_features=6,out_features=3)\ntrainer=Trainer(model,train,val,recipe=\"regression\",recipe_config={\"loss\":\"pinball\",\"loss_kwargs\":{\"quantiles\":[0.1,0.5,0.9]}},max_epochs=1,device=\"cpu\")\ntrainer.fit()\nresult=trainer.evaluate(val)",
+          "title": "Train quantile regression with pinball loss"
+        }
+      ],
+      "id": "pinball",
+      "implementation": {
+        "path": "implementations/training/core.py",
+        "sha256": "878f03ad0677bb8cd1b993861f72dcf5bfa14853743a5b355353c1d1f8162f9b",
+        "symbol": "pinball"
+      },
+      "name": "Pinball quantile loss",
+      "parameters": {
+        "quantiles": "nonempty sorted sequence in (0,1), matching final prediction dimension",
+        "reduction": "none elementwise, mean, or sum"
+      },
+      "usage": "loss = pinball(quantile_predictions, target, quantiles=[0.1, 0.5, 0.9])"
+    },
+    {
+      "api": "topologies.training.losses:compute_loss(cfg, logits, targets, **extra)",
+      "description": "Class-index Poly-1 classification loss for logits shaped [B, C, ...], adding epsilon times one minus the target-class softmax probability to cross entropy.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef samples(ctx):\n    features = torch.randn(6, generator=ctx.rng.torch)\n    return {\"features\": synth.Tensor(features), \"labels\": int(features[:3].argmax())}\nds = synth.Spec(\"poly1-classifier\", generator=samples, size=16, splits={\"train\": 0.75, \"val\": 0.25}, seed=11, root=root, monitor=\"none\").run()\ntrain = ds.for_recipe(\"tabular-classify\", split=\"train\")\nmodel = build(\"mlp\", \"tiny\", in_features=6, out_features=3)\ntrainer = Trainer(model, train, recipe=\"tabular-classify\", recipe_config={\"loss\": \"poly1-loss\", \"loss_kwargs\": {\"epsilon\": 1.0}}, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
+          "title": "Train a classifier with Poly-1 loss"
+        }
+      ],
+      "id": "poly1-loss",
+      "implementation": {
+        "path": "implementations/losses/poly1_loss.py",
+        "sha256": "cd58c9423e3e343504618a2a3514d35732a3d6e670db7175fbb886ee5828f8f9",
+        "symbol": "poly1_loss"
+      },
+      "name": "Poly-1 cross entropy loss",
+      "parameters": {
+        "epsilon": "required finite real coefficient greater than or equal to -1",
+        "ignore_index": "optional integer class index to exclude (default None)",
+        "reduction": "none per target position, mean over valid positions, or sum (default mean)"
+      },
+      "usage": "Trainer(model, train, recipe='tabular-classify', recipe_config={'loss':'poly1-loss','loss_kwargs':{'epsilon':1.0}})"
+    },
+    {
+      "api": "topologies.training.losses:compute_loss(cfg, estimate, target, **extra)",
+      "description": "Negative SI-SDR in decibels for waveform tensors [batch,...], after per-example mean removal; minimization convention.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nfrom topologies import Trainer, build, synth\nroot=tempfile.mkdtemp()\n@synth.generator\ndef samples(ctx):\n pitch=torch.full((4,),220.0+int(ctx.index)%20)\n loudness=torch.full((4,),0.4)\n time=torch.arange(128,dtype=torch.float32)/8000\n audio=loudness[0]*torch.sin(2*torch.pi*pitch[0]*time)\n return {\"audio\":synth.Audio(audio,sr=8000),\"pitch\":pitch,\"loudness\":loudness,\"sample_rate\":8000,\"lengths\":128}\nds=synth.Spec(\"sisdr-audio\",generator=samples,size=16,splits={\"train\":0.75,\"val\":0.25},seed=11,root=root,monitor=\"none\").run()\ntrain=ds.for_recipe(\"audio-reconstruct\",split=\"train\")\nval=ds.for_recipe(\"audio-reconstruct\",split=\"val\",like=train)\nmodel=build(\"ddsp-synthesizer\",\"tiny\",sample_rate=8000,n_harmonics=3,control_rate=100,fir_size=3)\ntrainer=Trainer(model,train,val,recipe=\"audio-reconstruct\",recipe_config={\"loss\":\"si-sdr\",\"mode\":\"ddsp-controls\",\"sample_rate\":8000},max_epochs=1,batch_size=4,device=\"cpu\")\ntrainer.fit()\nresult=trainer.evaluate(val)",
+          "title": "Train DDSP synthesis with SI-SDR"
+        }
+      ],
+      "id": "si-sdr",
+      "implementation": {
+        "path": "implementations/training/core.py",
+        "sha256": "878f03ad0677bb8cd1b993861f72dcf5bfa14853743a5b355353c1d1f8162f9b",
+        "symbol": "si_sdr"
+      },
+      "name": "Scale-invariant SDR loss",
+      "parameters": {
+        "eps": "positive energy floor for silent/near-silent examples",
+        "reduction": "none per waveform, mean, or sum"
+      },
+      "usage": "loss = si_sdr(estimated_waveform, reference_waveform)"
+    },
+    {
+      "api": "topologies.training.losses:compute_loss(cfg, logits, targets, **extra)",
+      "description": "Stable BCE-with-logits modulated by (1-p_t)^gamma and scalar alpha balancing; matching binary/multilabel shapes.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nfrom topologies import Trainer, build, synth\nroot=tempfile.mkdtemp()\n@synth.generator\ndef samples(ctx):\n x=torch.randn(6,generator=ctx.rng.torch)\n return {\"inputs\":synth.Tensor(x),\"targets\":synth.Tensor((x[:2]>0).float())}\nds=synth.Spec(\"sigmoid-focal\",generator=samples,size=16,splits={\"train\":0.75,\"val\":0.25},seed=11,root=root,monitor=\"none\").run()\ntrain=ds.for_recipe(\"regression\",split=\"train\",input_field=\"inputs\",target_field=\"targets\",preserve_shape=True)\nval=ds.for_recipe(\"regression\",split=\"val\",like=train,input_field=\"inputs\",target_field=\"targets\",preserve_shape=True)\nmodel=build(\"mlp\",\"tiny\",in_features=6,out_features=2)\ntrainer=Trainer(model,train,val,recipe=\"regression\",recipe_config={\"loss\":\"sigmoid-focal\",\"loss_kwargs\":{\"gamma\":2.0}},max_epochs=1,device=\"cpu\")\ntrainer.fit()\nresult=trainer.evaluate(val)",
+          "title": "Train a multilabel regressor with sigmoid focal"
+        }
+      ],
+      "id": "sigmoid-focal",
+      "implementation": {
+        "path": "implementations/training/core.py",
+        "sha256": "878f03ad0677bb8cd1b993861f72dcf5bfa14853743a5b355353c1d1f8162f9b",
+        "symbol": "sigmoid_focal"
+      },
+      "name": "Sigmoid focal loss",
+      "parameters": {
+        "alpha": "scalar in [0,1] (default 0.25)",
+        "gamma": "nonnegative focusing exponent",
+        "reduction": "none, mean, or sum"
+      },
+      "usage": "loss = sigmoid_focal(class_logits, binary_targets, alpha=0.25, gamma=2.0)"
+    },
+    {
+      "api": "topologies.training.losses:compute_loss(cfg, prediction, targets, **extra)",
+      "description": "Elementwise Smooth-L1 for matching prediction/target shapes; beta is the quadratic-to-linear threshold, beta=0 is L1.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nfrom topologies import Trainer, build, synth\nroot=tempfile.mkdtemp()\n@synth.generator\ndef samples(ctx):\n x=torch.randn(6,generator=ctx.rng.torch)\n return {\"inputs\":synth.Tensor(x),\"targets\":synth.Tensor(x[:2])}\nds=synth.Spec(\"smooth-l1\",generator=samples,size=16,splits={\"train\":0.75,\"val\":0.25},seed=11,root=root,monitor=\"none\").run()\ntrain=ds.for_recipe(\"regression\",split=\"train\",input_field=\"inputs\",target_field=\"targets\",preserve_shape=True)\nval=ds.for_recipe(\"regression\",split=\"val\",like=train,input_field=\"inputs\",target_field=\"targets\",preserve_shape=True)\nmodel=build(\"mlp\",\"tiny\",in_features=6,out_features=2)\ntrainer=Trainer(model,train,val,recipe=\"regression\",recipe_config={\"loss\":\"smooth-l1\",\"loss_kwargs\":{\"beta\":1.0}},max_epochs=1,device=\"cpu\")\ntrainer.fit()\nresult=trainer.evaluate(val)",
+          "title": "Train regression with Smooth L1"
+        }
+      ],
+      "id": "smooth-l1",
+      "implementation": {
+        "path": "implementations/training/core.py",
+        "sha256": "878f03ad0677bb8cd1b993861f72dcf5bfa14853743a5b355353c1d1f8162f9b",
+        "symbol": "smooth_l1"
+      },
+      "name": "Smooth L1 loss",
+      "parameters": {
+        "beta": "nonnegative transition threshold",
+        "reduction": "none, mean, or sum over elements"
+      },
+      "usage": "loss = smooth_l1(box_deltas, targets, beta=1.0)"
+    },
+    {
+      "api": "topologies.training.losses:compute_loss(cfg, logits, targets, **extra)",
+      "description": "Class-index multiclass focal objective from log-softmax probabilities, optional scalar/per-class alpha and ignore index.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nfrom topologies import Trainer, build, synth\nroot=tempfile.mkdtemp()\n@synth.generator\ndef samples(ctx):\n x=torch.randn(6,generator=ctx.rng.torch)\n return {\"features\":x,\"labels\":int(x[0]>0)}\nds=synth.Spec(\"softmax-focal\",generator=samples,size=16,splits={\"train\":0.75,\"val\":0.25},seed=11,root=root,monitor=\"none\").run()\ntrain=ds.for_recipe(\"tabular-classify\",split=\"train\")\nval=ds.for_recipe(\"tabular-classify\",split=\"val\",like=train)\nmodel=build(\"mlp\",\"tiny\",in_features=6,out_features=2)\ntrainer=Trainer(model,train,val,recipe=\"tabular-classify\",recipe_config={\"loss\":\"softmax-focal\",\"loss_kwargs\":{\"gamma\":2.0}},max_epochs=1,device=\"cpu\")\ntrainer.fit()\nresult=trainer.evaluate(val)",
+          "title": "Train classification with softmax focal"
+        }
+      ],
+      "id": "softmax-focal",
+      "implementation": {
+        "path": "implementations/training/core.py",
+        "sha256": "878f03ad0677bb8cd1b993861f72dcf5bfa14853743a5b355353c1d1f8162f9b",
+        "symbol": "softmax_focal"
+      },
+      "name": "Softmax focal loss",
+      "parameters": {
+        "alpha": "scalar, per-class sequence/tensor, or None",
+        "gamma": "nonnegative focusing exponent",
+        "ignore_index": "class target ignored in reduction",
+        "reduction": "none, mean over valid targets, or sum"
+      },
+      "usage": "loss = softmax_focal(class_logits, labels, alpha=class_weights, ignore_index=-100)"
+    },
+    {
+      "api": "topologies.training.losses:compute_loss(cfg, anchor, positive, negative, **extra)",
+      "description": "Unmined torch triplet-margin objective over aligned anchor/positive/negative embeddings; mining remains external.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nimport torch.nn as nn\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef triplets(ctx):\n    anchor = torch.randn(4, generator=ctx.rng.torch)\n    positive = anchor + 0.05 * torch.randn(4, generator=ctx.rng.torch)\n    negative = torch.randn(4, generator=ctx.rng.torch)\n    return {'inputs': torch.stack((anchor, positive, negative)), 'anchor_target': anchor}\nclass TripletEncoder(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.encoder = build('mlp', 'tiny', in_features=4, out_features=3)\n    def forward(self, x):\n        return {'anchor': self.encoder(x[:, 0]), 'positive': self.encoder(x[:, 1]), 'negative': self.encoder(x[:, 2])}\nds = synth.Spec('triplet-data', generator=triplets, size=24, splits={'train': 0.75, 'val': 0.25}, seed=7, root=root, monitor='none').run()\ntrain = ds.for_recipe('structured-objective', split='train')\nval = ds.for_recipe('structured-objective', split='val', like=train)\ntrainer = Trainer(TripletEncoder(), train, val, recipe='structured-objective', recipe_config={'loss': 'triplet-margin', 'bindings': {'anchor': {'output': 'anchor'}, 'positive': {'output': 'positive'}, 'negative': {'output': 'negative'}}}, batch_size=8, max_epochs=1, device='cpu')\ntrainer.fit()\nassert all(torch.isfinite(torch.tensor(v)) for v in trainer.evaluate(val).values())",
+          "title": "Train a shared triplet encoder"
+        }
+      ],
+      "id": "triplet-margin",
+      "implementation": {
+        "path": "implementations/training/core.py",
+        "sha256": "878f03ad0677bb8cd1b993861f72dcf5bfa14853743a5b355353c1d1f8162f9b",
+        "symbol": "triplet_margin"
+      },
+      "name": "Triplet margin loss",
+      "parameters": {
+        "margin": "nonnegative separation margin",
+        "p": "positive norm order",
+        "reduction": "none, mean, or sum"
+      },
+      "usage": "loss = triplet_margin(anchor, positive, negative, margin=0.2)"
+    }
+  ],
+  "schema_version": 1
+}

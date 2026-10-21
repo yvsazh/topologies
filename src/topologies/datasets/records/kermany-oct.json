@@ -1,0 +1,13 @@
+{
+  "id": "kermany-oct",
+  "name": "Kermany OCT2017",
+  "domain": "vision",
+  "description": "Kermany OCT2017, about 84 thousand optical coherence tomography images in four classes: CNV, DME, drusen, and normal. Accuracy and AUC. Kermany et al., Cell 2018. Images not vendored.",
+  "citation": "Kermany et al., Cell 2018. OCT2017.",
+  "license": {
+    "identifier": "CC-BY-NC-SA-4.0",
+    "url": "https://data.mendeley.com/datasets/rscbjbr9sj/2",
+    "notes": "Mendeley CC BY-NC-SA. Human images are loader-only and not vendored."
+  },
+  "upstream_url": "https://data.mendeley.com/datasets/rscbjbr9sj/2"
+}

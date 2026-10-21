@@ -1,0 +1,13 @@
+{
+  "id": "mpii",
+  "name": "MPII Human Pose Dataset",
+  "domain": "vision",
+  "description": "A benchmark dataset of images of people engaged in everyday activities, annotated with 2D human body joint positions for articulated human pose estimation. This record does not distribute dataset files.",
+  "citation": "Andriluka, M., Pishchulin, L., Gehler, P., & Schiele, B. (2014). 2D Human Pose Estimation: New Benchmark and State of the Art Analysis. IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 3686–3693. https://doi.org/10.1109/CVPR.2014.471",
+  "license": {
+    "identifier": "Custom MPII dataset terms (not a standard SPDX identifier)",
+    "url": "http://human-pose.mpi-inf.mpg.de/",
+    "notes": "The dataset is provided under its own terms rather than a standard SPDX-identified license. Review the current MPII dataset terms and any underlying image rights before use or redistribution."
+  },
+  "upstream_url": "http://human-pose.mpi-inf.mpg.de/"
+}

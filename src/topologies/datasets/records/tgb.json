@@ -1,0 +1,12 @@
+{
+  "id": "tgb",
+  "name": "Temporal Graph Benchmark",
+  "domain": "graph",
+  "description": "Dynamic link and node tasks, including Wiki, MovieLens, Trade, Reddit, and Flights.",
+  "citation": "Temporal Graph Benchmark (TGB), Huang et al. 2023.",
+  "license": {
+    "identifier": "per-source terms",
+    "url": "https://tgb.complexdatalab.com/"
+  },
+  "upstream_url": "https://tgb.complexdatalab.com/"
+}

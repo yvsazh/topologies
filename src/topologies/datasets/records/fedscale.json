@@ -1,0 +1,13 @@
+{
+  "id": "fedscale",
+  "name": "FedScale",
+  "domain": "scientific",
+  "description": "FedScale is a large federated runtime and benchmark for statistical heterogeneity across more than 3000 clients, including FLAIR and a Reddit-scale FEMNIST setting. It evaluates accuracy and wall-clock time. Client data is not vendored.",
+  "citation": "Lai et al., ICML 2022. FedScale.",
+  "license": {
+    "identifier": "MIT",
+    "url": "https://github.com/SymbioticLab/FedScale",
+    "notes": "MIT. Client data not vendored."
+  },
+  "upstream_url": "https://github.com/SymbioticLab/FedScale"
+}

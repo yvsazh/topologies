@@ -1,0 +1,13 @@
+{
+  "id": "million-aid",
+  "name": "Million-AID",
+  "domain": "remote sensing",
+  "description": "A large-scale remote-sensing image dataset for scene classification, containing satellite and aerial imagery organized into scene categories.",
+  "citation": "Long et al., “Million-AID: A Large-Scale Dataset for Remote Sensing Scene Classification.”",
+  "license": {
+    "identifier": "other",
+    "url": "https://github.com/jianghaocn/Million-AID",
+    "notes": "Dataset license terms are not clearly specified; check upstream before use."
+  },
+  "upstream_url": "https://github.com/jianghaocn/Million-AID"
+}

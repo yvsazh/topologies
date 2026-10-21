@@ -1,0 +1,13 @@
+{
+  "id": "d4rl",
+  "name": "Datasets for Deep Data-Driven Reinforcement Learning (D4RL)",
+  "domain": "reinforcement-learning",
+  "description": "A benchmark suite of offline reinforcement-learning datasets covering locomotion, navigation, manipulation, and other tasks. D4RL provides datasets collected through different policies and environments for evaluating offline RL algorithms; it is a collection of task-specific datasets rather than one uniform table.",
+  "citation": "Fu, J., Kumar, A., Nachum, O., Tucker, G., & Levine, S. (2020). D4RL: Datasets for Deep Data-Driven Reinforcement Learning. arXiv:2004.07219. https://arxiv.org/abs/2004.07219",
+  "license": {
+    "identifier": "Varies by dataset and source (not a standard SPDX identifier)",
+    "url": "https://github.com/Farama-Foundation/D4RL",
+    "notes": "D4RL is a benchmark and distribution of datasets assembled from multiple sources; no single standard SPDX license identifier applies to the full collection. Review the license and terms for each dataset, environment, and underlying source before use or redistribution."
+  },
+  "upstream_url": "https://github.com/Farama-Foundation/D4RL"
+}

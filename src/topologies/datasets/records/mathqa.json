@@ -1,0 +1,12 @@
+{
+  "id": "mathqa",
+  "name": "MathQA",
+  "domain": "language",
+  "description": "GRE and GMAT math word problems, about 37k. MathQA builds on AQuA (Ling et al., EMNLP 2017). No data vendored.",
+  "citation": "MathQA: Towards Interpretable Math Word Problem Solving with Operation-Based Formalisms, Amini et al., EMNLP 2019.",
+  "license": {
+    "identifier": "Release terms; no SPDX identifier stated",
+    "url": "https://github.com/deepmind/AQuA"
+  },
+  "upstream_url": "https://github.com/deepmind/AQuA"
+}

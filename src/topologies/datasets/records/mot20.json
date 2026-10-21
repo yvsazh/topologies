@@ -1,0 +1,13 @@
+{
+  "id": "mot20",
+  "name": "MOT20",
+  "domain": "vision",
+  "description": "A multi-object tracking benchmark focused on crowded pedestrian scenes, providing challenging video sequences and annotations for detection and tracking. This record does not distribute dataset files.",
+  "citation": "Dendorfer, P., Rezatofighi, H., Milan, A., et al. (2020). MOT20: A benchmark for multi object tracking in crowded scenes. arXiv:2003.09003. https://arxiv.org/abs/2003.09003",
+  "license": {
+    "identifier": "Custom MOTChallenge/MOT20 terms (not a standard SPDX identifier)",
+    "url": "https://motchallenge.net/",
+    "notes": "MOT20 data is subject to dataset-specific terms and conditions and is not identified by a standard SPDX license identifier. Review the current MOTChallenge terms before use or redistribution. This record is loader-only and vendors no data."
+  },
+  "upstream_url": "https://motchallenge.net/data/MOT20/"
+}

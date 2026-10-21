@@ -1,0 +1,13 @@
+{
+  "id": "gtzan",
+  "name": "GTZAN Genre Collection",
+  "domain": "audio",
+  "description": "A collection of 1,000 30-second audio excerpts across 10 music genres, widely used as a music-genre classification benchmark. GTZAN is a legacy baseline with known flaws, including mislabeled and duplicated recordings and artist-related data leakage; results should be interpreted with those limitations in mind.",
+  "citation": "Tzanetakis, G., & Cook, P. (2002). Musical genre classification of audio signals. IEEE Transactions on Speech and Audio Processing, 10(5), 293–302. https://doi.org/10.1109/TSA.2002.800560",
+  "license": {
+    "identifier": "License not specified",
+    "url": "https://marsyas.info/downloads/datasets.html",
+    "notes": "The upstream dataset page does not specify a standard license identifier (SPDX or otherwise) for the collection. Review upstream terms and the rights to the underlying recordings before use or redistribution; do not assume redistribution or commercial-use rights."
+  },
+  "upstream_url": "https://marsyas.info/downloads/datasets.html"
+}

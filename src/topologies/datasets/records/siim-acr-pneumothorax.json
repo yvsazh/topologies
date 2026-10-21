@@ -1,0 +1,13 @@
+{
+  "id": "siim-acr-pneumothorax",
+  "name": "SIIM-ACR Pneumothorax",
+  "domain": "vision",
+  "description": "SIIM-ACR pneumothorax chest X-ray segmentation, about 12 thousand images with masks. Dice. Images not vendored.",
+  "citation": "SIIM-ACR Pneumothorax Segmentation Challenge.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://www.kaggle.com/c/siim-acr-pneumothorax-segmentation",
+    "notes": "Kaggle competition terms. Human images are loader-only and not vendored."
+  },
+  "upstream_url": "https://www.kaggle.com/c/siim-acr-pneumothorax-segmentation"
+}

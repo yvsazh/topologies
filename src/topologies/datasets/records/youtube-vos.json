@@ -1,0 +1,13 @@
+{
+  "id": "youtube-vos",
+  "name": "YouTube-VOS",
+  "domain": "vision",
+  "description": "A large-scale video object segmentation dataset with densely annotated objects across video sequences. This record is metadata-only and does not distribute dataset files.",
+  "citation": "Xu, N., Yang, L., Fan, Y., Yue, D., Liang, Y., Yang, J., & Huang, T. (2018). YouTube-VOS: Sequence-to-Sequence Video Object Segmentation. European Conference on Computer Vision (ECCV), 603–619. https://doi.org/10.1007/978-3-030-01228-1_36",
+  "license": {
+    "identifier": "Custom YouTube-VOS dataset terms (not a standard SPDX identifier)",
+    "url": "https://youtube-vos.org/dataset/",
+    "notes": "YouTube-VOS is governed by dataset-specific terms, not a standard SPDX license. Review the upstream terms and rights applicable to the underlying YouTube videos before use or redistribution. This record vendors no data."
+  },
+  "upstream_url": "https://youtube-vos.org/dataset/"
+}

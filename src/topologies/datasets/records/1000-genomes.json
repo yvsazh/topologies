@@ -1,0 +1,13 @@
+{
+  "id": "1000-genomes",
+  "name": "1000 Genomes",
+  "domain": "scientific",
+  "description": "1000 Genomes phase 3, 2504 whole genomes and about 84 million variants. Imputation R-squared. Auton et al., Nature 2015. Genotypes not vendored.",
+  "citation": "Auton et al., Nature 2015. 1000 Genomes.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://www.internationalgenome.org/",
+    "notes": "Open EMBL and international consortium terms. Genotypes are loader-only and not vendored."
+  },
+  "upstream_url": "https://www.internationalgenome.org/"
+}

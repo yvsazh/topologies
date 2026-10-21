@@ -1,0 +1,13 @@
+{
+  "id": "visa",
+  "name": "Visual Anomaly (VisA) Dataset",
+  "domain": "vision",
+  "description": "Industrial visual anomaly detection dataset containing 10,821 high-resolution color images across 12 objects in 3 domains, with image-level and pixel-level labels for normal and anomalous samples.",
+  "citation": "Zou, Y., Jeong, J., Pemula, L., Zhang, D., & Dabeer, O. (2022). SPot-the-Difference Self-Supervised Pre-training for Anomaly Detection and Segmentation. European Conference on Computer Vision (ECCV). arXiv:2207.14315. https://arxiv.org/abs/2207.14315",
+  "license": {
+    "identifier": "other",
+    "url": "https://github.com/amazon-research/spot-diff",
+    "notes": "A standard SPDX license for the dataset was not identified. Review the upstream dataset terms and underlying image rights before use or redistribution."
+  },
+  "upstream_url": "https://github.com/amazon-research/spot-diff"
+}

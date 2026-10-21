@@ -1,0 +1,12 @@
+{
+  "id": "agora",
+  "name": "AGORA",
+  "domain": "vision",
+  "description": "Synthetic crowded scenes with SMPL-X bodies, comprising 4240 scans. Research-only; no data is vendored.",
+  "citation": "AGORA: A Large Scale 3D Multi-Person Dataset, Patel et al., CVPR 2021.",
+  "license": {
+    "identifier": "Research-only terms; not a standard SPDX identifier",
+    "url": "https://agora.is.tue.mpg.de/"
+  },
+  "upstream_url": "https://agora.is.tue.mpg.de/"
+}

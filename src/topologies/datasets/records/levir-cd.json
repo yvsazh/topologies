@@ -1,0 +1,13 @@
+{
+  "id": "levir-cd",
+  "name": "LEVIR-CD",
+  "domain": "vision",
+  "description": "LEVIR-CD building change detection, 637 image pairs and about 31 thousand change instances. Change IoU and F1. Chen and Shi, Remote Sensing 2020. Imagery not vendored.",
+  "citation": "Chen and Shi, Remote Sensing 2020. LEVIR-CD.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://justchenhao.github.io/LEVIR/",
+    "notes": "Provider page does not state a standard SPDX license. Imagery not vendored."
+  },
+  "upstream_url": "https://justchenhao.github.io/LEVIR/"
+}

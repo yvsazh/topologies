@@ -1,0 +1,136 @@
+{
+  "entries": [
+    {
+      "api": "topologies.training.registries:build_optimizer(name_or_cls, params, cfg)",
+      "description": "PyTorch Adagrad factory with initial accumulator, learning-rate decay, epsilon and backend option forwarding; sparse-gradient constraints follow PyTorch.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nfrom topologies import Trainer, build, synth\n\nroot = tempfile.mkdtemp(prefix=\"topologies-adagrad-\")\n@synth.generator\ndef samples(ctx):\n    features = torch.randn(6, generator=ctx.rng.torch)\n    label = int(features[0] + features[1] > 0)\n    return {\"features\": features, \"labels\": label}\n\ndataset = synth.Spec(\"adagrad-classification\", generator=samples, size=24, splits={\"train\": 0.75, \"val\": 0.25}, seed=11, root=root, monitor=\"none\").run()\ntrain = dataset.for_recipe(\"tabular-classify\", split=\"train\")\nval = dataset.for_recipe(\"tabular-classify\", split=\"val\", like=train)\nmodel = build(\"mlp\", \"tiny\", in_features=6, out_features=2)\ntrainer = Trainer(model, train, val, recipe=\"tabular-classify\", optimizer=\"adagrad\", max_epochs=1, batch_size=8, device=\"cpu\")\ntrainer.fit()\nresult = trainer.evaluate(val)",
+          "title": "Train a tabular classifier with Adagrad"
+        }
+      ],
+      "id": "adagrad",
+      "implementation": {
+        "path": "implementations/optimizers/core.py",
+        "sha256": "4ceb0d8a8d647fd4990fee685fe979566f0385431bfb15d5e65b46e58e6735d2",
+        "symbol": "adagrad"
+      },
+      "name": "Adagrad",
+      "parameters": {
+        "backend_options": "forwarded to torch.optim.Adagrad",
+        "eps": "float",
+        "initial_accumulator_value": "nonnegative initial squared-gradient accumulator",
+        "lr": "float",
+        "lr_decay": "nonnegative learning-rate decay",
+        "weight_decay": "float"
+      },
+      "usage": "OptimizerConfig(name='adagrad', lr=0.01, initial_accumulator_value=0.1)"
+    },
+    {
+      "api": "topologies.training.registries:build_optimizer(name_or_cls, params, cfg)",
+      "description": "PyTorch Adam factory with explicit standard hyperparameters and backend option forwarding.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nfrom topologies import Trainer, build, synth\n\nroot = tempfile.mkdtemp(prefix=\"topologies-adam-\")\n@synth.generator\ndef samples(ctx):\n    features = torch.randn(6, generator=ctx.rng.torch)\n    label = int(features[0] + features[1] > 0)\n    return {\"features\": features, \"labels\": label}\n\ndataset = synth.Spec(\"adam-classification\", generator=samples, size=24, splits={\"train\": 0.75, \"val\": 0.25}, seed=11, root=root, monitor=\"none\").run()\ntrain = dataset.for_recipe(\"tabular-classify\", split=\"train\")\nval = dataset.for_recipe(\"tabular-classify\", split=\"val\", like=train)\nmodel = build(\"mlp\", \"tiny\", in_features=6, out_features=2)\ntrainer = Trainer(model, train, val, recipe=\"tabular-classify\", optimizer=\"adam\", max_epochs=1, batch_size=8, device=\"cpu\")\ntrainer.fit()\nresult = trainer.evaluate(val)",
+          "title": "Train a tabular classifier with Adam"
+        }
+      ],
+      "id": "adam",
+      "implementation": {
+        "path": "implementations/optimizers/core.py",
+        "sha256": "4ceb0d8a8d647fd4990fee685fe979566f0385431bfb15d5e65b46e58e6735d2",
+        "symbol": "adam"
+      },
+      "name": "Adam",
+      "parameters": {
+        "amsgrad": "bool",
+        "backend_options": "forwarded to torch.optim.Adam",
+        "betas": "pair of floats",
+        "eps": "float",
+        "lr": "float",
+        "weight_decay": "float"
+      },
+      "usage": "OptimizerConfig(name='adam', lr=0.001)"
+    },
+    {
+      "api": "topologies.training.registries:build_optimizer(name_or_cls, params, cfg)",
+      "description": "PyTorch AdamW adapter with decoupled weight decay and backend option forwarding.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nfrom topologies import Trainer, build, synth\n\nroot = tempfile.mkdtemp(prefix=\"topologies-adamw-\")\n@synth.generator\ndef samples(ctx):\n    features = torch.randn(6, generator=ctx.rng.torch)\n    label = int(features[0] + features[1] > 0)\n    return {\"features\": features, \"labels\": label}\n\ndataset = synth.Spec(\"adamw-classification\", generator=samples, size=24, splits={\"train\": 0.75, \"val\": 0.25}, seed=11, root=root, monitor=\"none\").run()\ntrain = dataset.for_recipe(\"tabular-classify\", split=\"train\")\nval = dataset.for_recipe(\"tabular-classify\", split=\"val\", like=train)\nmodel = build(\"mlp\", \"tiny\", in_features=6, out_features=2)\ntrainer = Trainer(model, train, val, recipe=\"tabular-classify\", optimizer=\"adamw\", max_epochs=1, batch_size=8, device=\"cpu\")\ntrainer.fit()\nresult = trainer.evaluate(val)",
+          "title": "Train a tabular classifier with AdamW"
+        }
+      ],
+      "id": "adamw",
+      "implementation": {
+        "path": "implementations/optimizers/core.py",
+        "sha256": "4ceb0d8a8d647fd4990fee685fe979566f0385431bfb15d5e65b46e58e6735d2",
+        "symbol": "adamw"
+      },
+      "name": "AdamW",
+      "parameters": {
+        "amsgrad": "bool",
+        "backend_options": "forwarded to torch.optim.AdamW",
+        "betas": "pair of floats",
+        "eps": "float",
+        "lr": "float",
+        "weight_decay": "float (decoupled)"
+      },
+      "usage": "OptimizerConfig(name='adamw', lr=0.001, weight_decay=0.01)"
+    },
+    {
+      "api": "topologies.training.registries:build_optimizer(name_or_cls, params, cfg)",
+      "description": "PyTorch RMSprop factory with alpha, eps, momentum, centered, weight decay, and backend option forwarding.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nfrom topologies import Trainer, build, synth\n\nroot = tempfile.mkdtemp(prefix=\"topologies-rmsprop-\")\n@synth.generator\ndef samples(ctx):\n    features = torch.randn(6, generator=ctx.rng.torch)\n    label = int(features[0] + features[1] > 0)\n    return {\"features\": features, \"labels\": label}\n\ndataset = synth.Spec(\"rmsprop-classification\", generator=samples, size=24, splits={\"train\": 0.75, \"val\": 0.25}, seed=11, root=root, monitor=\"none\").run()\ntrain = dataset.for_recipe(\"tabular-classify\", split=\"train\")\nval = dataset.for_recipe(\"tabular-classify\", split=\"val\", like=train)\nmodel = build(\"mlp\", \"tiny\", in_features=6, out_features=2)\ntrainer = Trainer(model, train, val, recipe=\"tabular-classify\", optimizer=\"rmsprop\", max_epochs=1, batch_size=8, device=\"cpu\")\ntrainer.fit()\nresult = trainer.evaluate(val)",
+          "title": "Train a tabular classifier with RMSprop"
+        }
+      ],
+      "id": "rmsprop",
+      "implementation": {
+        "path": "implementations/optimizers/core.py",
+        "sha256": "4ceb0d8a8d647fd4990fee685fe979566f0385431bfb15d5e65b46e58e6735d2",
+        "symbol": "rmsprop"
+      },
+      "name": "RMSprop",
+      "parameters": {
+        "alpha": "squared-gradient averaging coefficient",
+        "backend_options": "forwarded to torch.optim.RMSprop",
+        "centered": "bool",
+        "eps": "float",
+        "lr": "float",
+        "momentum": "float",
+        "weight_decay": "float"
+      },
+      "usage": "OptimizerConfig(name='rmsprop', lr=0.001, alpha=0.99, centered=True)"
+    },
+    {
+      "api": "topologies.training.registries:build_optimizer(name_or_cls, params, cfg)",
+      "description": "PyTorch SGD adapter with Topologies' historical 0.9 momentum default; forwards optimizer backend options.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nfrom topologies import Trainer, build, synth\n\nroot = tempfile.mkdtemp(prefix=\"topologies-sgd-\")\n@synth.generator\ndef samples(ctx):\n    features = torch.randn(6, generator=ctx.rng.torch)\n    label = int(features[0] + features[1] > 0)\n    return {\"features\": features, \"labels\": label}\n\ndataset = synth.Spec(\"sgd-classification\", generator=samples, size=24, splits={\"train\": 0.75, \"val\": 0.25}, seed=11, root=root, monitor=\"none\").run()\ntrain = dataset.for_recipe(\"tabular-classify\", split=\"train\")\nval = dataset.for_recipe(\"tabular-classify\", split=\"val\", like=train)\nmodel = build(\"mlp\", \"tiny\", in_features=6, out_features=2)\ntrainer = Trainer(model, train, val, recipe=\"tabular-classify\", optimizer=\"sgd\", max_epochs=1, batch_size=8, device=\"cpu\")\ntrainer.fit()\nresult = trainer.evaluate(val)",
+          "title": "Train a tabular classifier with SGD"
+        }
+      ],
+      "id": "sgd",
+      "implementation": {
+        "path": "implementations/optimizers/core.py",
+        "sha256": "4ceb0d8a8d647fd4990fee685fe979566f0385431bfb15d5e65b46e58e6735d2",
+        "symbol": "sgd"
+      },
+      "name": "Stochastic gradient descent",
+      "parameters": {
+        "backend_options": "forwarded to torch.optim.SGD",
+        "dampening": "float",
+        "lr": "float",
+        "momentum": "float (default 0.9)",
+        "nesterov": "bool",
+        "weight_decay": "float"
+      },
+      "usage": "OptimizerConfig(name='sgd', lr=0.01, momentum=0.9)"
+    }
+  ],
+  "schema_version": 1
+}

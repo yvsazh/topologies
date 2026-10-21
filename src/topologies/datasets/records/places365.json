@@ -1,0 +1,13 @@
+{
+  "id": "places365",
+  "name": "Places365",
+  "domain": "vision",
+  "description": "Large-scale scene recognition dataset with images labeled across 365 scene categories.",
+  "citation": "Zhou, B., Lapedriza, A., Khosla, A., Oliva, A., & Torralba, A. (2017). Places: A 10 million Image Database for Scene Recognition. IEEE Transactions on Pattern Analysis and Machine Intelligence, 40(6), 1452–1464. https://doi.org/10.1109/TPAMI.2017.2723009",
+  "license": {
+    "identifier": "Research use; dataset license not specified",
+    "url": "http://places2.csail.mit.edu/",
+    "notes": "The upstream dataset page does not specify a standard license. Review the provider's terms and underlying image rights before use or redistribution; do not assume redistribution or commercial-use rights."
+  },
+  "upstream_url": "http://places2.csail.mit.edu/"
+}

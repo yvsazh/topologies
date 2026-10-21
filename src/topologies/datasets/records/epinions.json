@@ -1,0 +1,13 @@
+{
+  "id": "epinions",
+  "name": "Epinions",
+  "domain": "recommendation",
+  "description": "Epinions trust-aware ratings (about 660k ratings and 35k users). RMSE and trust F1. CiaoDVD and FilmTrust are companion notes inside this record, not separate files. Loader-only metadata.",
+  "citation": "Epinions trust-aware ratings. CiaoDVD and FilmTrust noted as companion sets.",
+  "license": {
+    "identifier": "not specified",
+    "url": "http://www.trustlet.org/datasets/",
+    "notes": "Provider page does not state a standard SPDX license. Record only; no data vendored."
+  },
+  "upstream_url": "http://www.trustlet.org/datasets/"
+}

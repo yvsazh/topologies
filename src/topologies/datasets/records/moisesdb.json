@@ -1,0 +1,13 @@
+{
+  "id": "moisesdb",
+  "name": "MoisesDB",
+  "domain": "audio",
+  "description": "A multitrack music dataset for music source separation, with aligned audio stems and mixes. Unlike the legacy GTZAN genre-recognition baseline, which has known flaws, MoisesDB is designed for source-separation research.",
+  "citation": "MoisesDB: A Dataset for Source Separation. ISMIR 2023. https://archives.ismir.net/ismir2023/",
+  "license": {
+    "identifier": "CC BY-NC-SA 4.0",
+    "url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "notes": "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International; this is a standard SPDX license identifier (CC-BY-NC-SA-4.0). Check the upstream terms for attribution, non-commercial use, share-alike obligations, and any restrictions affecting third-party material."
+  },
+  "upstream_url": "https://github.com/moises-ai/moises-db"
+}

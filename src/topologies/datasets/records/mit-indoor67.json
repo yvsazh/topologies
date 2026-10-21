@@ -1,0 +1,12 @@
+{
+  "id": "mit-indoor67",
+  "name": "MIT Indoor 67",
+  "domain": "vision",
+  "description": "Indoor scene classification dataset with 67 categories and about 15.6k images, using an 80/20 per-class train/test split. The dataset is subject to MIT release terms; no data is vendored here.",
+  "citation": "MIT Indoor 67: Quattoni, A., & Torralba, A. (2009). Recognizing indoor scenes. IEEE Conference on Computer Vision and Pattern Recognition (CVPR).",
+  "license": {
+    "identifier": "MIT Indoor release terms",
+    "url": "http://web.mit.edu/torralba/www/indoor.html"
+  },
+  "upstream_url": "http://web.mit.edu/torralba/www/indoor.html"
+}

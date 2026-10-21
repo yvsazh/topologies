@@ -1,0 +1,13 @@
+{
+  "id": "anuraset",
+  "name": "AnuraSet",
+  "domain": "audio",
+  "description": "AnuraSet Neotropical frog recordings, about 26 hours and 42 species with weak labels. Multi-label F1. Cañas et al. 2023. Audio not vendored.",
+  "citation": "Cañas et al. 2023. AnuraSet.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://github.com/soundclim/anuraset",
+    "notes": "Provider page does not state a standard SPDX license. Audio not vendored."
+  },
+  "upstream_url": "https://github.com/soundclim/anuraset"
+}

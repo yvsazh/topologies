@@ -1,0 +1,13 @@
+{
+  "id": "ucf101",
+  "name": "UCF101",
+  "domain": "vision",
+  "description": "An action-recognition dataset of realistic action videos collected from YouTube, covering 101 action categories. This record is metadata-only and does not distribute dataset files.",
+  "citation": "Soomro, K., Zamir, A. R., & Shah, M. (2012). UCF101: A Dataset of 101 Human Actions Classes From Videos in The Wild. Center for Research in Computer Vision, University of Central Florida. https://doi.org/10.48550/arXiv.1212.0402",
+  "license": {
+    "identifier": "Custom UCF101 dataset terms (not a standard SPDX identifier)",
+    "url": "https://www.crcv.ucf.edu/data/UCF101.php",
+    "notes": "UCF101 is provided for academic research purposes under dataset-specific terms, not a standard SPDX license. Review the upstream terms and rights applicable to the source videos before use or redistribution. This record vendors no data."
+  },
+  "upstream_url": "https://www.crcv.ucf.edu/data/UCF101.php"
+}

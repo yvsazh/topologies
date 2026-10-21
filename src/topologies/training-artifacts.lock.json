@@ -1,0 +1,302 @@
+{
+  "artifacts": [
+    {
+      "files": {
+        "catalog/losses/adversarial-hinge.json": "286c60f4abe259ecbc966997c5ea69cfafeb2b0a7ab3cde755375fa7aa6bfdc5",
+        "implementations/training/core.py": "878f03ad0677bb8cd1b993861f72dcf5bfa14853743a5b355353c1d1f8162f9b"
+      },
+      "id": "adversarial-hinge",
+      "kind": "loss",
+      "name": "adversarial-hinge",
+      "namespace": "library",
+      "version": 2
+    },
+    {
+      "files": {
+        "catalog/losses/binary-cross-entropy-logits.json": "911c44ce2e2c851e4ea94714e17db4ea7b588186160863a8d2c4b7ca0434e41f",
+        "implementations/training/core.py": "878f03ad0677bb8cd1b993861f72dcf5bfa14853743a5b355353c1d1f8162f9b"
+      },
+      "id": "binary-cross-entropy-logits",
+      "kind": "loss",
+      "name": "binary-cross-entropy-logits",
+      "namespace": "library",
+      "version": 2
+    },
+    {
+      "files": {
+        "catalog/losses/bpr.json": "6bb7c9bee56ed46e76279f2ff15e24bba23d5ca6f51759b3fa40e96d438922d5",
+        "implementations/training/core.py": "878f03ad0677bb8cd1b993861f72dcf5bfa14853743a5b355353c1d1f8162f9b"
+      },
+      "id": "bpr",
+      "kind": "loss",
+      "name": "bpr",
+      "namespace": "library",
+      "version": 2
+    },
+    {
+      "files": {
+        "catalog/losses/cross-entropy.json": "efd29b1d566b528b1c2bd643a5958704f47a742a4f8328283807115ad82729e7",
+        "implementations/training/core.py": "878f03ad0677bb8cd1b993861f72dcf5bfa14853743a5b355353c1d1f8162f9b"
+      },
+      "id": "cross-entropy",
+      "kind": "loss",
+      "name": "cross-entropy",
+      "namespace": "library",
+      "version": 2
+    },
+    {
+      "files": {
+        "catalog/losses/ctc.json": "a9fafaa022979a8c5a11f5c70b88b51f83b707478900db0efe0af6e5fa59df02",
+        "implementations/training/core.py": "878f03ad0677bb8cd1b993861f72dcf5bfa14853743a5b355353c1d1f8162f9b"
+      },
+      "id": "ctc",
+      "kind": "loss",
+      "name": "ctc",
+      "namespace": "library",
+      "version": 2
+    },
+    {
+      "files": {
+        "catalog/losses/density-nll.json": "8efb9698b515178761c8a97e5114e1b8426cb4adf35f12c5c4a3ada3e156ffae",
+        "implementations/training/core.py": "878f03ad0677bb8cd1b993861f72dcf5bfa14853743a5b355353c1d1f8162f9b"
+      },
+      "id": "density-nll",
+      "kind": "loss",
+      "name": "density-nll",
+      "namespace": "library",
+      "version": 2
+    },
+    {
+      "files": {
+        "catalog/losses/dice.json": "74ed9d2a316587a9391e722394f0841cf9e6c6e74b2dcd10e240f5e0df4e8515",
+        "implementations/training/core.py": "878f03ad0677bb8cd1b993861f72dcf5bfa14853743a5b355353c1d1f8162f9b"
+      },
+      "id": "dice",
+      "kind": "loss",
+      "name": "dice",
+      "namespace": "library",
+      "version": 2
+    },
+    {
+      "files": {
+        "catalog/losses/gaussian-kl.json": "e6b890155cbd9841f9e322a8162a748ddab9ac82ce7307892f9922a33ffdc762",
+        "implementations/training/core.py": "878f03ad0677bb8cd1b993861f72dcf5bfa14853743a5b355353c1d1f8162f9b"
+      },
+      "id": "gaussian-kl",
+      "kind": "loss",
+      "name": "gaussian-kl",
+      "namespace": "library",
+      "version": 2
+    },
+    {
+      "files": {
+        "catalog/losses/gaussian-nll.json": "738fe652a7bc7a05a4bf349711b80eb0ddfbab6f15ef37ac786b583eec2a757d",
+        "implementations/training/core.py": "878f03ad0677bb8cd1b993861f72dcf5bfa14853743a5b355353c1d1f8162f9b"
+      },
+      "id": "gaussian-nll",
+      "kind": "loss",
+      "name": "gaussian-nll",
+      "namespace": "library",
+      "version": 2
+    },
+    {
+      "files": {
+        "catalog/losses/generalized-iou.json": "58738fa365ef9c4b3ccce23ec6792ee22759dfdfd19a71c8b0138d67d99e65e6",
+        "implementations/training/core.py": "878f03ad0677bb8cd1b993861f72dcf5bfa14853743a5b355353c1d1f8162f9b"
+      },
+      "id": "generalized-iou",
+      "kind": "loss",
+      "name": "generalized-iou",
+      "namespace": "library",
+      "version": 2
+    },
+    {
+      "files": {
+        "catalog/losses/huber.json": "c7483686354fbf8585dd058c4e9c4fdc0e34945acfc2e7e1654a7766ea19803b",
+        "implementations/training/core.py": "878f03ad0677bb8cd1b993861f72dcf5bfa14853743a5b355353c1d1f8162f9b"
+      },
+      "id": "huber",
+      "kind": "loss",
+      "name": "huber",
+      "namespace": "library",
+      "version": 2
+    },
+    {
+      "files": {
+        "catalog/losses/info-nce.json": "0192a354405365f7e72a3ce0a2144a8d8d9ff0c990b6d8d2765272bd1becd0cc",
+        "implementations/training/core.py": "878f03ad0677bb8cd1b993861f72dcf5bfa14853743a5b355353c1d1f8162f9b"
+      },
+      "id": "info-nce",
+      "kind": "loss",
+      "name": "info-nce",
+      "namespace": "library",
+      "version": 2
+    },
+    {
+      "files": {
+        "catalog/losses/mean-absolute-error.json": "63d67ec7939833c2b14a980a0c2877b6744d280fb9832360212a48a7c8ee71be",
+        "implementations/training/core.py": "878f03ad0677bb8cd1b993861f72dcf5bfa14853743a5b355353c1d1f8162f9b"
+      },
+      "id": "mean-absolute-error",
+      "kind": "loss",
+      "name": "mean-absolute-error",
+      "namespace": "library",
+      "version": 2
+    },
+    {
+      "files": {
+        "catalog/losses/mean-squared-error.json": "0ee304df66459af43ece23089c52ca4db06e2b5c38ad821b88edfe76b40174de",
+        "implementations/training/core.py": "878f03ad0677bb8cd1b993861f72dcf5bfa14853743a5b355353c1d1f8162f9b"
+      },
+      "id": "mean-squared-error",
+      "kind": "loss",
+      "name": "mean-squared-error",
+      "namespace": "library",
+      "version": 2
+    },
+    {
+      "files": {
+        "catalog/losses/multi-resolution-stft.json": "40152f8fae18a70bdba318d72f73f8825b8fed4eb3b3aabb6b3cd29943bea051",
+        "implementations/training/core.py": "878f03ad0677bb8cd1b993861f72dcf5bfa14853743a5b355353c1d1f8162f9b"
+      },
+      "id": "multi-resolution-stft",
+      "kind": "loss",
+      "name": "multi-resolution-stft",
+      "namespace": "library",
+      "version": 2
+    },
+    {
+      "files": {
+        "catalog/losses/pinball.json": "634d8e419bb589f3dc88c6ac298f34661399dff72ba358b0eb00fe346dc04ba1",
+        "implementations/training/core.py": "878f03ad0677bb8cd1b993861f72dcf5bfa14853743a5b355353c1d1f8162f9b"
+      },
+      "id": "pinball",
+      "kind": "loss",
+      "name": "pinball",
+      "namespace": "library",
+      "version": 2
+    },
+    {
+      "files": {
+        "catalog/losses/poly1-loss.json": "7cc9fc237c0994579ff67cf3b0eb88dd2e1921d6c8b8b4557784ce5e70b0d5de",
+        "implementations/losses/poly1_loss.py": "cd58c9423e3e343504618a2a3514d35732a3d6e670db7175fbb886ee5828f8f9"
+      },
+      "id": "poly1-loss",
+      "kind": "loss",
+      "name": "poly1-loss",
+      "namespace": "library",
+      "version": 1
+    },
+    {
+      "files": {
+        "catalog/losses/si-sdr.json": "0e5aae6fc3b456ef0e9fd7344063af0649cfff074ee7a5497b310cddce8b9b56",
+        "implementations/training/core.py": "878f03ad0677bb8cd1b993861f72dcf5bfa14853743a5b355353c1d1f8162f9b"
+      },
+      "id": "si-sdr",
+      "kind": "loss",
+      "name": "si-sdr",
+      "namespace": "library",
+      "version": 2
+    },
+    {
+      "files": {
+        "catalog/losses/sigmoid-focal.json": "3bbcbdffbef6b8f0273a41deed2eb3464090bdd3d2cb892288f6d2b727636010",
+        "implementations/training/core.py": "878f03ad0677bb8cd1b993861f72dcf5bfa14853743a5b355353c1d1f8162f9b"
+      },
+      "id": "sigmoid-focal",
+      "kind": "loss",
+      "name": "sigmoid-focal",
+      "namespace": "library",
+      "version": 2
+    },
+    {
+      "files": {
+        "catalog/losses/smooth-l1.json": "1ff330df021b22bde778e4eb368808ca362a33756699bea80b5adf90bb069a19",
+        "implementations/training/core.py": "878f03ad0677bb8cd1b993861f72dcf5bfa14853743a5b355353c1d1f8162f9b"
+      },
+      "id": "smooth-l1",
+      "kind": "loss",
+      "name": "smooth-l1",
+      "namespace": "library",
+      "version": 2
+    },
+    {
+      "files": {
+        "catalog/losses/softmax-focal.json": "99c537a068de5dd6ee895c95904a7bd4577280c3f4ff66850f55393c43a20d82",
+        "implementations/training/core.py": "878f03ad0677bb8cd1b993861f72dcf5bfa14853743a5b355353c1d1f8162f9b"
+      },
+      "id": "softmax-focal",
+      "kind": "loss",
+      "name": "softmax-focal",
+      "namespace": "library",
+      "version": 2
+    },
+    {
+      "files": {
+        "catalog/losses/triplet-margin.json": "f50ab04a959fbfa56aec7d67e696bce1c6105fcb514cb0c81f0cfe6d96c15ea5",
+        "implementations/training/core.py": "878f03ad0677bb8cd1b993861f72dcf5bfa14853743a5b355353c1d1f8162f9b"
+      },
+      "id": "triplet-margin",
+      "kind": "loss",
+      "name": "triplet-margin",
+      "namespace": "library",
+      "version": 2
+    },
+    {
+      "files": {
+        "catalog/optimizers/adagrad.json": "eb69076643a5972c978f66de9c8b823a4611a3491249d29f2232169adc5b8cce",
+        "implementations/optimizers/core.py": "4ceb0d8a8d647fd4990fee685fe979566f0385431bfb15d5e65b46e58e6735d2"
+      },
+      "id": "adagrad",
+      "kind": "optimizer",
+      "name": "adagrad",
+      "namespace": "library",
+      "version": 2
+    },
+    {
+      "files": {
+        "catalog/optimizers/adam.json": "e420f39369b3b177d750def83fa01da346243c644f31a238f38f772b5e5402ef",
+        "implementations/optimizers/core.py": "4ceb0d8a8d647fd4990fee685fe979566f0385431bfb15d5e65b46e58e6735d2"
+      },
+      "id": "adam",
+      "kind": "optimizer",
+      "name": "adam",
+      "namespace": "library",
+      "version": 2
+    },
+    {
+      "files": {
+        "catalog/optimizers/adamw.json": "babae746f4bc25d204f6f1681e85ed9c552ddb3d982ec129d85eb8ffb7fe69bb",
+        "implementations/optimizers/core.py": "4ceb0d8a8d647fd4990fee685fe979566f0385431bfb15d5e65b46e58e6735d2"
+      },
+      "id": "adamw",
+      "kind": "optimizer",
+      "name": "adamw",
+      "namespace": "library",
+      "version": 2
+    },
+    {
+      "files": {
+        "catalog/optimizers/rmsprop.json": "77289f20d17474864a7673f9e95d0199ee5580b194d66b4acaa69ab9dc7072b0",
+        "implementations/optimizers/core.py": "4ceb0d8a8d647fd4990fee685fe979566f0385431bfb15d5e65b46e58e6735d2"
+      },
+      "id": "rmsprop",
+      "kind": "optimizer",
+      "name": "rmsprop",
+      "namespace": "library",
+      "version": 2
+    },
+    {
+      "files": {
+        "catalog/optimizers/sgd.json": "a3b871e622acaf3254656649a04cec267e3c329936822f063c6aadf85132baf8",
+        "implementations/optimizers/core.py": "4ceb0d8a8d647fd4990fee685fe979566f0385431bfb15d5e65b46e58e6735d2"
+      },
+      "id": "sgd",
+      "kind": "optimizer",
+      "name": "sgd",
+      "namespace": "library",
+      "version": 2
+    }
+  ],
+  "schema_version": 1
+}

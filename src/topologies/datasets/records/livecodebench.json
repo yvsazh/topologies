@@ -1,0 +1,12 @@
+{
+  "id": "livecodebench",
+  "name": "LiveCodeBench",
+  "domain": "language",
+  "description": "Contamination-aware code evaluation with a monthly refresh and execution pass at k. No data vendored.",
+  "citation": "LiveCodeBench: Holistic and Contamination-Free Evaluation of Large Language Models for Code, Jain et al. (2024).",
+  "license": {
+    "identifier": "MIT",
+    "url": "https://github.com/LiveCodeBench/LiveCodeBench"
+  },
+  "upstream_url": "https://github.com/LiveCodeBench/LiveCodeBench"
+}

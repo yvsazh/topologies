@@ -1,0 +1,13 @@
+{
+  "id": "eicu-crd",
+  "name": "eICU-CRD",
+  "domain": "scientific",
+  "description": "eICU Collaborative Research Database, about 200 thousand ICU stays across 208 hospitals. Mortality and length-of-stay MAE. Pollard et al., Scientific Data 2018. PhysioNet credential required. Records not vendored.",
+  "citation": "Pollard et al., Scientific Data 2018. eICU-CRD.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://physionet.org/",
+    "notes": "Credentialed PhysioNet access. Clinical records are loader-only and not vendored."
+  },
+  "upstream_url": "https://physionet.org/"
+}

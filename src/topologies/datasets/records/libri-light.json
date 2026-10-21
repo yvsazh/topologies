@@ -1,0 +1,13 @@
+{
+  "id": "libri-light",
+  "name": "Libri-Light",
+  "domain": "audio",
+  "description": "A large-scale corpus of English audiobooks derived from LibriVox, designed for self-supervised speech representation learning and evaluation across labeled-data regimes.",
+  "citation": "Kahn, J., Lee, A., and Hannun, A. (2020). Libri-Light: A Benchmark for ASR with Limited or No Supervision. IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP). https://arxiv.org/abs/1912.07875",
+  "license": {
+    "identifier": "CC BY 4.0 (Creative Commons Attribution 4.0 International)",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "notes": "The dataset is distributed under Creative Commons Attribution 4.0 International, which is not a standard SPDX identifier in this record. The underlying LibriVox recordings are public domain in the United States; users should verify rights in their jurisdiction and comply with attribution requirements."
+  },
+  "upstream_url": "https://github.com/facebookresearch/libri-light"
+}

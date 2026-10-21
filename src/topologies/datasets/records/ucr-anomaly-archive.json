@@ -1,0 +1,13 @@
+{
+  "id": "ucr-anomaly-archive",
+  "name": "UCR Anomaly Archive",
+  "domain": "scientific",
+  "description": "UCR Anomaly Archive of about 250 series, one anomaly per series. Tolerance-aware UCR score. Wu and Keogh 2021. Distinct from the UCR classification archive. Individual series such as ECG200 and FordA are not separate records. Loader-only metadata.",
+  "citation": "Wu and Keogh 2021. UCR Anomaly Archive.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://www.cs.ucr.edu/~eamonn/time_series_data_2018/",
+    "notes": "Provider page does not state a standard SPDX license. Record only; no data vendored."
+  },
+  "upstream_url": "https://www.cs.ucr.edu/~eamonn/time_series_data_2018/"
+}

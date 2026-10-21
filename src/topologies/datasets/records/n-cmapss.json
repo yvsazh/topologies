@@ -1,0 +1,13 @@
+{
+  "id": "n-cmapss",
+  "name": "N-CMAPSS",
+  "domain": "scientific",
+  "description": "New CMAPSS full-flight turbofan degradation, 128 units covering climb, cruise, and descent. RMSE and the PHM08 score. Chao et al., International Journal of Prognostics and Health Management 2021. Distinct from classic C-MAPSS. Simulations not vendored.",
+  "citation": "Chao et al., IJPHM 2021. N-CMAPSS.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://data.nasa.gov/Aerospace/CMAPSS-Jet-Engine-Simulated-Data/ff5v-kuh6",
+    "notes": "NASA open data. Simulations not vendored."
+  },
+  "upstream_url": "https://data.nasa.gov/Aerospace/CMAPSS-Jet-Engine-Simulated-Data/ff5v-kuh6"
+}

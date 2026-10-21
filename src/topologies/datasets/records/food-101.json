@@ -1,0 +1,13 @@
+{
+  "id": "food-101",
+  "name": "Food-101",
+  "domain": "vision",
+  "description": "Food-101 is an image classification dataset containing 101 food categories, with 1,000 images per category (101,000 images total).",
+  "citation": "Bossard, L., Guillaumin, M., & Van Gool, L. (2014). Food-101 – Mining Discriminative Components with Random Forests. European Conference on Computer Vision (ECCV). https://doi.org/10.1007/978-3-319-10599-4_29",
+  "license": {
+    "identifier": "Research use; license not specified",
+    "url": "https://data.vision.ee.ethz.ch/cvl/datasets_extra/food-101/",
+    "notes": "The dataset provider page does not state a standard license. Review the provider's terms and image rights before redistribution or commercial use."
+  },
+  "upstream_url": "https://data.vision.ee.ethz.ch/cvl/datasets_extra/food-101/"
+}

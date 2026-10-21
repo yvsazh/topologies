@@ -1,0 +1,13 @@
+{
+  "id": "weather",
+  "name": "Weather",
+  "domain": "time-series",
+  "description": "A multivariate time-series forecasting benchmark derived from local climatological data. The ETT benchmark family comprises four subsets: ETTh1, ETTh2, ETTm1, and ETTm2. This record describes the Weather dataset and does not distribute dataset files.",
+  "citation": "Wu, H., Xu, J., Wang, J., and Long, M. (2021). Autoformer: Decomposition Transformers with Auto-Correlation for Long-Term Series Forecasting. Advances in Neural Information Processing Systems 34 (NeurIPS 2021). https://arxiv.org/abs/2106.13008",
+  "license": {
+    "identifier": "Dataset-specific terms; not a standard SPDX license identifier",
+    "url": "https://github.com/thuml/Time-Series-Library",
+    "notes": "The upstream repository does not clearly state a standard SPDX license for the Weather dataset itself. Its license is not identified by a standard SPDX identifier; review upstream terms and any source-data restrictions before use or redistribution. This record vendors no data."
+  },
+  "upstream_url": "https://github.com/thuml/Time-Series-Library"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "plantvillage",
+  "name": "PlantVillage",
+  "domain": "vision",
+  "description": "A dataset of over 50,000 images of healthy and infected crop leaves for plant disease diagnosis research.",
+  "citation": "Hughes, D. P. and Salathé, M. An open access repository of images on plant health to enable the development of mobile disease diagnostics. arXiv:1511.08060 (2015). https://arxiv.org/abs/1511.08060",
+  "license": {
+    "identifier": "other",
+    "url": "",
+    "notes": "Dataset license not verified."
+  },
+  "upstream_url": "https://github.com/spMohanty/PlantVillage-Dataset"
+}

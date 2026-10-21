@@ -1,0 +1,13 @@
+{
+  "id": "dailydialog",
+  "name": "DailyDialog",
+  "domain": "language",
+  "description": "Multi-turn chit-chat corpus with about 13k dialogues. Related dialogue datasets include PersonaChat, Topical-Chat, and EmpatheticDialogues; each source has its own terms, which should be reviewed independently. No data is vendored.",
+  "citation": "DailyDialog: A Manually Labelled Multi-turn Dialogue Dataset. Li et al., 2017.",
+  "license": {
+    "identifier": "DailyDialog release terms (not a standard SPDX identifier)",
+    "url": "http://yanran.li/dailydialog",
+    "notes": "The DailyDialog release terms are not expressed as a standard SPDX license identifier. Related sources such as PersonaChat, Topical-Chat, and EmpatheticDialogues have per-source terms; review applicable terms before use or redistribution. No data is vendored."
+  },
+  "upstream_url": "http://yanran.li/dailydialog"
+}

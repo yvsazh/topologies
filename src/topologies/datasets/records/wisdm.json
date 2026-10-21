@@ -1,0 +1,13 @@
+{
+  "id": "wisdm",
+  "name": "WISDM Activity Prediction Dataset",
+  "domain": "time-series",
+  "description": "Smartphone accelerometer readings collected in controlled conditions for recognition of six activities: walking, jogging, upstairs, downstairs, sitting, and standing.",
+  "citation": "Jennifer R. Kwapisz, Gary M. Weiss, and Samuel A. Moore. Activity Recognition using Cell Phone Accelerometers. Proceedings of the Fourth International Workshop on Knowledge Discovery from Sensor Data (KDD-10), 2010.",
+  "license": {
+    "identifier": "other",
+    "url": "",
+    "notes": "License terms not published on the upstream dataset page; unverified."
+  },
+  "upstream_url": "https://www.cis.fordham.edu/wisdm/dataset.php"
+}

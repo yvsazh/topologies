@@ -1,0 +1,13 @@
+{
+  "id": "md17",
+  "name": "MD17",
+  "domain": "graph",
+  "description": "A molecular dynamics benchmark containing atomistic trajectories for eight small organic molecules, with energies and forces calculated using density functional theory. This metadata record does not distribute dataset data.",
+  "citation": "Chmiela, S., Tkatchenko, A., Sauceda, H. E., Poltavsky, I., Schütt, K. T., & Müller, K.-R. (2017). Machine learning of accurate energy-conserving molecular force fields. Science Advances, 3(5), e1603015. https://doi.org/10.1126/sciadv.1603015",
+  "license": {
+    "identifier": "Dataset-specific terms (not a standard SPDX identifier)",
+    "url": "https://www.qmlcode.org/",
+    "notes": "The MD17 distribution does not identify a standard SPDX license. Consult the upstream source and applicable terms before use or redistribution. This record vendors no data."
+  },
+  "upstream_url": "https://www.qmlcode.org/"
+}

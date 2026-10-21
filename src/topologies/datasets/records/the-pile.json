@@ -1,0 +1,13 @@
+{
+  "id": "the-pile",
+  "name": "The Pile",
+  "domain": "natural-language",
+  "description": "An 825 GiB diverse, English-language text corpus assembled from 22 sources, including academic, web, code, and literary text, for language-model training and evaluation.",
+  "citation": "Gao, L., Biderman, S., Black, S., Golding, L., Hoppe, T., Foster, C., Phang, J., He, H., Thite, A., Nabeshima, N., Presser, S., & Leahy, C. (2020). The Pile: An 800GB Dataset of Diverse Text for Language Modeling. arXiv:2101.00027. https://arxiv.org/abs/2101.00027",
+  "license": {
+    "identifier": "Various / not a single SPDX license",
+    "url": "https://pile.eleuther.ai/",
+    "notes": "The Pile aggregates sources with varying rights and terms, so there is no single dataset-wide SPDX license. Consult the licensing and usage terms for each constituent source before use or redistribution. Access to hosted copies may be gated by the provider's terms."
+  },
+  "upstream_url": "https://pile.eleuther.ai/"
+}

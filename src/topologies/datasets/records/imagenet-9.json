@@ -1,0 +1,12 @@
+{
+  "id": "imagenet-9",
+  "name": "ImageNet-9",
+  "domain": "vision",
+  "description": "Backgrounds Challenge (Mixed-Rand, Mixed-Same, Only-FG) measuring background dependence on a 9-class ImageNet subset. Code MIT, images rights-reserved, loader-only. No data vendored.",
+  "citation": "ImageNet-9 / Backgrounds Challenge. Xiao et al., NeurIPS 2020.",
+  "license": {
+    "identifier": "MIT code; images rights-reserved",
+    "url": "https://github.com/MadryLab/backgrounds_challenge"
+  },
+  "upstream_url": "https://github.com/MadryLab/backgrounds_challenge"
+}

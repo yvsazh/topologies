@@ -1,0 +1,13 @@
+{
+  "id": "brats",
+  "name": "BraTS",
+  "domain": "vision",
+  "description": "Brain Tumor Segmentation (BraTS) challenge dataset of multimodal brain MRI scans with expert tumor-region annotations for glioma segmentation.",
+  "citation": "Menze et al., The Multimodal Brain Tumor Image Segmentation Benchmark (BRATS), IEEE TMI, 2015.",
+  "license": {
+    "identifier": "other",
+    "url": "https://www.med.upenn.edu/cbica/brats2020/data.html",
+    "notes": "Access and usage are subject to the challenge data terms; human MRI data are not vendored."
+  },
+  "upstream_url": "https://www.med.upenn.edu/cbica/brats2020/"
+}

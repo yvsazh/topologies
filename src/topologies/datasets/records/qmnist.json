@@ -1,0 +1,12 @@
+{
+  "id": "qmnist",
+  "name": "QMNIST",
+  "domain": "vision",
+  "description": "MNIST reconstruction with 60k train and 60k test including the original 10k. Accuracy and reconstruction parity. Facebook Research release. No data vendored.",
+  "citation": "QMNIST: Yadav and Bottou (2019).",
+  "license": {
+    "identifier": "Facebook Research release terms (no SPDX identifier stated)",
+    "url": "https://github.com/facebookresearch/qmnist"
+  },
+  "upstream_url": "https://github.com/facebookresearch/qmnist"
+}

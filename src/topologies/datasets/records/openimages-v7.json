@@ -1,0 +1,13 @@
+{
+  "id": "openimages-v7",
+  "name": "Open Images V7",
+  "domain": "vision",
+  "description": "Open Images V7 is a large-scale image dataset with image-level labels, object bounding boxes, instance segmentations, visual relationships, and other annotations. This record is loader-only and does not distribute dataset files.",
+  "citation": "Kuznetsova, A., et al. (2020). The Open Images Dataset V4: Unified image classification, object detection, and visual relationship detection at scale. International Journal of Computer Vision, 128, 1956–1981. https://doi.org/10.1007/s11263-020-01316-z",
+  "license": {
+    "identifier": "Custom Open Images license (not a standard SPDX identifier)",
+    "url": "https://storage.googleapis.com/openimages/web/index.html",
+    "notes": "Open Images annotations are provided under CC BY 4.0, while images retain their respective licenses and rights. These terms are not represented by a single standard SPDX identifier; review attribution requirements and image-level rights before use or redistribution. This record is loader-only and vendors no data."
+  },
+  "upstream_url": "https://storage.googleapis.com/openimages/web/index.html"
+}

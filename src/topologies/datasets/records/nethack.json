@@ -1,0 +1,13 @@
+{
+  "id": "nethack",
+  "name": "The NetHack Learning Environment (NLE)",
+  "domain": "reinforcement-learning",
+  "description": "An environment suite wrapping the roguelike game NetHack for reinforcement-learning research, with challenges and tools for studying long-horizon decision making under partial observability. NLE is an environment and task suite, not a static downloadable dataset.",
+  "citation": "Küttler, H., Nardelli, N., Miller, A. H., et al. (2020). The NetHack Learning Environment. Advances in Neural Information Processing Systems, 33, 7671–7684. https://proceedings.neurips.cc/paper/2020/hash/569ff987c643b4bedf504efda8f786c2-Abstract.html",
+  "license": {
+    "identifier": "Dataset-specific terms (not a standard SPDX identifier)",
+    "url": "https://github.com/facebookresearch/nle",
+    "notes": "NLE's source code and the underlying NetHack game and assets have distinct licensing terms; there is no single standard SPDX identifier for the complete environment suite. Review the upstream repository, NetHack license, and any bundled or separately obtained assets before use or redistribution. This record does not distribute game data."
+  },
+  "upstream_url": "https://github.com/facebookresearch/nle"
+}

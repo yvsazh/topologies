@@ -1,0 +1,13 @@
+{
+  "id": "pems-07",
+  "name": "PeMSD7 (PeMS-07)",
+  "domain": "time-series",
+  "description": "A traffic forecasting benchmark derived from California Department of Transportation Performance Measurement System (PeMS) data. PeMSD7(M) covers 228 road sensors in District 7 (Los Angeles) at five-minute intervals over May–June 2012; PeMSD7(L) is a larger 883-sensor version spanning May–August 2012.",
+  "citation": "Li, Y., Yu, R., Shahabi, C., & Liu, Y. (2018). Diffusion Convolutional Recurrent Neural Network: Data-Driven Traffic Forecasting. International Conference on Learning Representations (ICLR). https://arxiv.org/abs/1707.01926",
+  "license": {
+    "identifier": "Not specified by upstream (not a standard SPDX identifier)",
+    "url": "https://github.com/liyaguang/DCRNN",
+    "notes": "The upstream repository provides the processed PeMSD7 data but does not specify a dataset license. No standard SPDX identifier can be established from the upstream terms; consult the data provider and repository maintainers before redistribution or use beyond applicable permissions."
+  },
+  "upstream_url": "https://github.com/liyaguang/DCRNN"
+}

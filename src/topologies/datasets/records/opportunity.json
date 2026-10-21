@@ -1,0 +1,13 @@
+{
+  "id": "opportunity",
+  "name": "OPPORTUNITY Activity Recognition",
+  "domain": "scientific",
+  "description": "Wearable, object, and ambient sensor recordings for human activity recognition, including daily living activities and scripted drills.",
+  "citation": "Roggen, D., Calatroni, A., Nguyen-Dinh, L., Chavarriaga, R., & Sagha, H. (2010). Collecting complex activity datasets in highly rich networked sensor environments. International Conference on Networked Sensing Systems.",
+  "license": {
+    "identifier": "CC-BY-4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/legalcode",
+    "notes": "UCI Machine Learning Repository lists this dataset as CC BY 4.0."
+  },
+  "upstream_url": "https://archive.ics.uci.edu/dataset/226/opportunity+activity+recognition"
+}

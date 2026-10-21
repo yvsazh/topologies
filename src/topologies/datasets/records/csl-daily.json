@@ -1,0 +1,13 @@
+{
+  "id": "csl-daily",
+  "name": "CSL-Daily",
+  "domain": "sign language translation",
+  "description": "A large-scale continuous Chinese Sign Language translation dataset featuring daily-life topics, with spoken-language translations and gloss-level annotations.",
+  "citation": "Hao Zhou, Wengang Zhou, Weizhen Qi, Junfu Pu, and Houqiang Li. Improving Sign Language Translation with Monolingual Data by Sign Back-Translation. CVPR 2021. https://arxiv.org/abs/2105.12397",
+  "license": {
+    "identifier": "other",
+    "url": "",
+    "notes": "The dataset license is unverified; no dataset license was published in the cited paper."
+  },
+  "upstream_url": "https://arxiv.org/abs/2105.12397"
+}

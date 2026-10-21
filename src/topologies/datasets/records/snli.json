@@ -1,0 +1,12 @@
+{
+  "id": "snli",
+  "name": "SNLI",
+  "domain": "language",
+  "description": "A natural language inference dataset of about 570k premise-hypothesis pairs, distinct from the GLUE tasks already recorded. No data is vendored here.",
+  "citation": "SNLI: The Stanford Natural Language Inference Corpus. Bowman, S. R., Angeli, G., Potts, C., and Manning, C. D. (2015). Proceedings of the 2015 Conference on Empirical Methods in Natural Language Processing (EMNLP 2015).",
+  "license": {
+    "identifier": "CC-BY-SA-4.0",
+    "url": "https://nlp.stanford.edu/projects/snli/"
+  },
+  "upstream_url": "https://nlp.stanford.edu/projects/snli/"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "fineweb-edu",
+  "name": "FineWeb-Edu",
+  "domain": "natural-language",
+  "description": "An educational-quality-filtered subset of the FineWeb web-text corpus, created to support language-model pretraining and evaluation focused on educational content. This record does not distribute corpus data.",
+  "citation": "Penedo, G., Malartic, Q., Hesslow, D., Cojocaru, R., Cappelli, A., et al. (2024). The FineWeb Datasets: Decanting the Web for the Finest Text Data at Scale. arXiv:2406.17557. https://arxiv.org/abs/2406.17557",
+  "license": {
+    "identifier": "Not stated (source-content rights apply)",
+    "url": "https://huggingface.co/datasets/HuggingFaceFW/fineweb-edu",
+    "notes": "FineWeb-Edu is derived from web-crawled source material and does not have a single standard SPDX license. Review the upstream dataset access conditions and the rights applicable to underlying source content before use or redistribution."
+  },
+  "upstream_url": "https://huggingface.co/datasets/HuggingFaceFW/fineweb-edu"
+}

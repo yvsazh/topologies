@@ -1,0 +1,12 @@
+{
+  "id": "ultrafeedback",
+  "name": "UltraFeedback",
+  "domain": "natural-language",
+  "description": "A large-scale preference dataset of prompts and model responses annotated with instruction-following, truthfulness, honesty, and helpfulness feedback, including pairwise preference data used for training and evaluating language models.",
+  "citation": "Cui, G., Yuan, L., Ding, N., Yao, G., Zhu, W., Ni, Y., Xie, G., Liu, Z., & Sun, M. (2023). ULTRAFEEDBACK: Boosting Language Models with High-quality Feedback. arXiv:2310.01377. https://arxiv.org/abs/2310.01377",
+  "license": {
+    "identifier": "Dataset license not specified",
+    "notes": "The upstream repository does not specify a standard SPDX license for the dataset; this descriptive identifier is not an SPDX identifier. Review upstream terms and the rights and terms applicable to source prompts and generated responses before use or redistribution."
+  },
+  "upstream_url": "https://github.com/THUDM/UltraFeedback"
+}

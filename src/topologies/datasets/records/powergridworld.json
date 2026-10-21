@@ -1,0 +1,13 @@
+{
+  "id": "powergridworld",
+  "name": "PowerGridworld",
+  "domain": "power systems; multi-agent reinforcement learning",
+  "description": "A lightweight, modular framework for creating power-systems-focused multi-agent Gym environments for reinforcement learning.",
+  "citation": "David Biagioni, Xiangyu Zhang, Dylan Wald, Deepthi Vaidhynathan, Rohit Chintala, Jennifer King, and Ahmed S. Zamzam. PowerGridworld: A Framework for Multi-Agent Reinforcement Learning in Power Systems. Proceedings of the Thirteenth ACM International Conference on Future Energy Systems (e-Energy '22), 2022, pp. 565–570. https://doi.org/10.1145/3538637.3539616",
+  "license": {
+    "identifier": "BSD-3-Clause",
+    "url": "https://spdx.org/licenses/BSD-3-Clause.html",
+    "notes": "Repository publishes a BSD 3-Clause License."
+  },
+  "upstream_url": "https://github.com/NatLabRockies/PowerGridworld"
+}

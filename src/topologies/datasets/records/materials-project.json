@@ -1,0 +1,13 @@
+{
+  "id": "materials-project",
+  "name": "Materials Project",
+  "domain": "scientific",
+  "description": "Materials Project inorganic structures and properties, about 190 thousand materials, including band gaps and elasticity. MAE per property.",
+  "citation": "Jain et al., APL Materials 2013. Materials Project.",
+  "license": {
+    "identifier": "CC-BY-4.0",
+    "url": "https://materialsproject.org/",
+    "notes": "CC-BY. Record only; no structures vendored."
+  },
+  "upstream_url": "https://materialsproject.org/"
+}

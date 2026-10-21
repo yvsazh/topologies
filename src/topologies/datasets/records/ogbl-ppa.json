@@ -1,0 +1,13 @@
+{
+  "id": "ogbl-ppa",
+  "name": "ogbl-ppa",
+  "domain": "graph",
+  "description": "A protein association network for link prediction, predicting protein-protein associations; like ogbl-citation2, it is an Open Graph Benchmark link prediction task. This record vendors no data.",
+  "citation": "Hu, W., Fey, M., Zitnik, M., Dong, Y., Ren, H., Liu, B., Catasta, M., & Leskovec, J. (2020). Open Graph Benchmark: Datasets for Machine Learning on Graphs. Advances in Neural Information Processing Systems, 33, 22118–22133. https://arxiv.org/abs/2005.00687 (ogbl-ppa)",
+  "license": {
+    "identifier": "Dataset-specific terms (not a standard SPDX identifier)",
+    "url": "https://ogb.stanford.edu/docs/linkprop/",
+    "notes": "The OGB link-property dataset documentation does not specify a standard SPDX license identifier for ogbl-ppa; consult the OGB release terms before use or redistribution. This record vendors no data."
+  },
+  "upstream_url": "https://ogb.stanford.edu/docs/linkprop/"
+}

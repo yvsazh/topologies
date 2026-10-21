@@ -1,0 +1,13 @@
+{
+  "id": "tape",
+  "name": "TAPE",
+  "domain": "scientific",
+  "description": "TAPE tasks assessing protein embeddings: fluorescence, stability, remote homology, secondary structure, and contact. Spearman correlation, accuracy, and precision at L. Rao et al., NeurIPS 2019. Task tables not vendored.",
+  "citation": "Rao et al., NeurIPS 2019. TAPE.",
+  "license": {
+    "identifier": "MIT",
+    "url": "https://github.com/songlab-cal/tape",
+    "notes": "MIT. Task tables not vendored."
+  },
+  "upstream_url": "https://github.com/songlab-cal/tape"
+}

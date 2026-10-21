@@ -1,0 +1,13 @@
+{
+  "id": "tydiqa",
+  "name": "TyDi QA",
+  "domain": "natural-language",
+  "description": "Question-answering benchmark collected in 11 typologically diverse languages, with information-seeking questions written by people and answers grounded in Wikipedia passages.",
+  "citation": "Clark, J. H., Choi, E., Collins, M., Garrette, D., Kwiatkowski, T., Nikolaev, V., & Palomaki, J. (2020). TyDi QA: A Benchmark for Information-Seeking Question Answering in Typologically Diverse Languages. Transactions of the Association for Computational Linguistics, 8, 454–470. https://doi.org/10.1162/tacl_a_00317",
+  "license": {
+    "identifier": "Dataset license not stated",
+    "url": "https://github.com/google-research-datasets/tydiqa",
+    "notes": "The upstream project does not specify a standard SPDX license for the dataset; this descriptive identifier is not an SPDX identifier. Wikipedia source text may carry separate rights and terms. Review upstream terms and source-content rights before use or redistribution."
+  },
+  "upstream_url": "https://github.com/google-research-datasets/tydiqa"
+}

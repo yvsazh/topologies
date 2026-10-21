@@ -1,0 +1,13 @@
+{
+  "id": "bobsl",
+  "name": "BBC-Oxford British Sign Language Dataset (BOBSL)",
+  "domain": "British Sign Language",
+  "description": "A large-scale video collection of British Sign Language, with annotations supporting sign recognition, sign language alignment, and sign language translation.",
+  "citation": "Samuel Albanie, Gül Varol, Liliane Momeni, Hannah Bull, Triantafyllos Afouras, Himel Chowdhury, Neil Fox, Bencie Woll, Rob Cooper, Andrew McParland, and Andrew Zisserman. BBC-Oxford British Sign Language Dataset. arXiv:2111.03635, 2021. https://arxiv.org/abs/2111.03635",
+  "license": {
+    "identifier": "other",
+    "url": "",
+    "notes": "The dataset license is unverified; no dataset license was published in the sources checked."
+  },
+  "upstream_url": "https://www.robots.ox.ac.uk/~vgg/data/bobsl/"
+}

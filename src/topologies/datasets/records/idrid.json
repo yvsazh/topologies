@@ -1,0 +1,13 @@
+{
+  "id": "idrid",
+  "name": "IDRiD",
+  "domain": "vision",
+  "description": "Indian Diabetic Retinopathy Image Dataset, 516 fundus images with microaneurysms, hemorrhages, exudates, soft exudates, and optic disc. Lesion mAP and image AUC. Porwal et al., Medical Image Analysis 2020. Images not vendored.",
+  "citation": "Porwal et al., MedIA 2020. IDRiD.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://idrid.grand-challenge.org/",
+    "notes": "IEEE ISBI challenge terms. Human images are loader-only and not vendored."
+  },
+  "upstream_url": "https://idrid.grand-challenge.org/"
+}

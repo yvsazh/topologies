@@ -1,0 +1,12 @@
+{
+  "id": "penn-treebank",
+  "name": "Penn Treebank",
+  "domain": "language",
+  "description": "Word-level language modeling and parsing on the Wall Street Journal sections. LDC gated catalog LDC99T42, loader-only. No data vendored.",
+  "citation": "Penn Treebank; Marcus et al. 1993.",
+  "license": {
+    "identifier": "LDC gated terms",
+    "url": "https://catalog.ldc.upenn.edu/LDC99T42"
+  },
+  "upstream_url": "https://catalog.ldc.upenn.edu/LDC99T42"
+}

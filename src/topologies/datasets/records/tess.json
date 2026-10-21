@@ -1,0 +1,13 @@
+{
+  "id": "tess",
+  "name": "TESS",
+  "domain": "scientific",
+  "description": "TESS exoplanet transit light curves, about 200 thousand curves. Detection average precision on the threshold-crossing protocol. MAST open archive. Light curves not vendored.",
+  "citation": "TESS Transiting Exoplanet Survey Satellite light curves.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://archive.stsci.edu/tess/",
+    "notes": "MAST open archive. Light curves not vendored."
+  },
+  "upstream_url": "https://archive.stsci.edu/tess/"
+}

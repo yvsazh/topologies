@@ -1,0 +1,13 @@
+{
+  "id": "esc-50",
+  "name": "ESC-50: Environmental Sound Classification",
+  "domain": "audio",
+  "description": "A labeled collection of 2,000 five-second environmental audio recordings organized into 50 classes, designed for sound classification research.",
+  "citation": "Piczak, K. J. (2015). ESC: Dataset for Environmental Sound Classification. Proceedings of the 23rd ACM International Conference on Multimedia, 1015–1018. https://doi.org/10.1145/2733373.2806390",
+  "license": {
+    "identifier": "CC BY-NC 3.0",
+    "url": "https://creativecommons.org/licenses/by-nc/3.0/",
+    "notes": "The dataset is distributed under Creative Commons Attribution-NonCommercial 3.0 Unported, which is not a standard SPDX identifier. Non-commercial use and attribution requirements apply; review upstream terms and individual source recording rights before use or redistribution."
+  },
+  "upstream_url": "https://github.com/karolpiczak/ESC-50"
+}

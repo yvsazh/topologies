@@ -1,0 +1,21 @@
+{
+  "id": "trapezoidal",
+  "name": "Trapezoidal",
+  "description": "Linear learning-rate warmup, constant plateau, and linear decay.",
+  "api": "trapezoidal(optimizer, total_steps, **kwargs)",
+  "usage": "scheduler = trapezoidal(optimizer, total_steps=100); scheduler.step()",
+  "parameters": {
+    "optimizer": "PyTorch optimizer",
+    "total_steps": "positive integer total schedule length",
+    "warmup_steps": "linear warmup duration; defaults to one quarter of total_steps, at least one",
+    "decay_steps": "linear decay duration; defaults to one quarter of total_steps, at least one",
+    "min_lr": "final learning rate; defaults to 0.0"
+  },
+  "implementation": {
+    "path": "implementations/schedulers/trapezoidal.py",
+    "symbol": "trapezoidal",
+    "sha256": "a3f63481099082782b4ebe85f9bade708eb75c1a9e90757d63065902f59a6a99"
+  },
+  "papers": [],
+  "examples": []
+}

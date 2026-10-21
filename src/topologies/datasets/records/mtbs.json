@@ -1,0 +1,13 @@
+{
+  "id": "mtbs",
+  "name": "Monitoring Trends in Burn Severity (MTBS)",
+  "domain": "geospatial",
+  "description": "U.S.-wide wildfire and prescribed-fire perimeter and burn-severity mapping program; provides fire-level and aggregated perimeter products for large fires from 1984 onward.",
+  "citation": "Monitoring Trends in Burn Severity (MTBS). Interagency program for mapping burn severity and fire extent across U.S. lands.",
+  "license": {
+    "identifier": "other",
+    "url": "",
+    "notes": "A dataset license was not identified in the official MTBS materials reviewed; license is unverified."
+  },
+  "upstream_url": "https://burnseverity.cr.usgs.gov/direct-download"
+}

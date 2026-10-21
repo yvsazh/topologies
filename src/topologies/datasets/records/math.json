@@ -1,0 +1,13 @@
+{
+  "id": "math",
+  "name": "MATH",
+  "domain": "mathematics",
+  "description": "A dataset of 12,500 challenging competition mathematics problems, spanning seven subject areas and five difficulty levels, with step-by-step solutions.",
+  "citation": "Hendrycks, D., Burns, C., Kadavath, S., et al. (2021). Measuring Mathematical Problem Solving With the MATH Dataset. Advances in Neural Information Processing Systems, 34. https://arxiv.org/abs/2103.03874",
+  "license": {
+    "identifier": "MIT",
+    "url": "https://github.com/hendrycks/math/blob/main/LICENSE",
+    "notes": "The upstream repository provides an MIT license; source problem statements may have separate rights, so review their provenance and terms before redistribution."
+  },
+  "upstream_url": "https://github.com/hendrycks/math"
+}

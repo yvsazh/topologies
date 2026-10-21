@@ -1,0 +1,13 @@
+{
+  "id": "phm-milling",
+  "name": "2010 PHM Society Milling Cutter Wear Dataset",
+  "domain": "scientific",
+  "description": "Run-to-failure milling cutter wear data collected for the 2010 PHM Society Conference Data Challenge, including force, vibration, and acoustic-emission measurements from six cutter records.",
+  "citation": "Prognostics and Health Management Society (2010). 2010 PHM Society Conference Data Challenge. https://phmsociety.org/competition/phm/10/",
+  "license": {
+    "identifier": "other",
+    "url": "",
+    "notes": "License not published or verified."
+  },
+  "upstream_url": "https://phmsociety.org/competition/phm/10/"
+}

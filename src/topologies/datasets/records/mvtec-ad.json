@@ -1,0 +1,13 @@
+{
+  "id": "mvtec-ad",
+  "name": "MVTec Anomaly Detection (MVTec AD)",
+  "domain": "vision",
+  "description": "A real-world industrial anomaly-detection benchmark with over 5,000 high-resolution images across 15 object and texture categories. Training images are defect-free; test images include defective and defect-free examples, with pixel-precise anomaly annotations. VisA is a separate companion dataset for industrial anomaly detection. Dataset images are not vendored.",
+  "citation": "Bergmann, P., Fauser, M., Sattlegger, D., and Steger, C. “MVTec AD—A Comprehensive Real-World Dataset for Unsupervised Anomaly Detection.” CVPR 2019.",
+  "license": {
+    "identifier": "CC-BY-NC-SA-4.0",
+    "url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "notes": "MVTec states the dataset is released under CC BY-NC-SA 4.0; commercial use is not allowed."
+  },
+  "upstream_url": "https://www.mvtec.com/company/research/datasets/mvtec-ad"
+}

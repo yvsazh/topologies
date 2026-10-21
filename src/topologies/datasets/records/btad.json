@@ -1,0 +1,13 @@
+{
+  "id": "btad",
+  "name": "BeanTech Anomaly Detection (BTAD)",
+  "domain": "industrial-anomaly-detection",
+  "description": "An industrial anomaly detection dataset of images of products manufactured by BeanTech, with normal and defective samples for evaluating defect detection and localization methods.",
+  "citation": "Mishra, P., Verk, R., Fornasier, D., Piciarelli, C., & Foresti, G. L. (2021). VT-ADL: A Vision Transformer Network for Image Anomaly Detection and Localization. 2021 IEEE 10th International Conference on Image Processing Theory, Tools and Applications (IPTA). https://doi.org/10.1109/IPTA50016.2021.9668239",
+  "license": {
+    "identifier": "other",
+    "url": "",
+    "notes": "No verified dataset license identified; consult the source and paper terms before use or redistribution."
+  },
+  "upstream_url": "https://doi.org/10.1109/IPTA50016.2021.9668239"
+}

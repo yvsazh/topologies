@@ -1,0 +1,13 @@
+{
+  "id": "pv-el",
+  "name": "ELPV: Electroluminescence Images of Photovoltaic Cells",
+  "domain": "photovoltaic-defect-detection",
+  "description": "A dataset of 2,624 grayscale electroluminescence images of functional and defective solar cells extracted from photovoltaic modules, annotated with defect probability and cell type.",
+  "citation": "Buerhop-Lutz, C., Deitsch, S., Maier, A., Gallwitz, F., Berger, S., Doll, B., Hauch, J., Camus, C., & Brabec, C. J. (2018). A Benchmark for Visual Identification of Defective Solar Cells in Electroluminescence Imagery. 35th European Photovoltaic Solar Energy Conference and Exhibition (EU PVSEC), 1287–1289. https://doi.org/10.4229/35thEUPVSEC20182018-5CV.3.15",
+  "license": {
+    "identifier": "CC-BY-NC-SA-4.0",
+    "url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "notes": "The dataset images are licensed under CC BY-NC-SA 4.0; the accompanying Python source code is separately licensed under Apache-2.0."
+  },
+  "upstream_url": "https://github.com/zae-bayern/elpv-dataset"
+}

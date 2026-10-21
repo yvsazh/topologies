@@ -1,0 +1,17 @@
+{
+  "id": "fsdp-wrap",
+  "name": "FSDP Parameter-Count Wrap Helper",
+  "description": "Decides whether a module meets the minimum parameter count for FSDP wrapping.",
+  "api": "fsdp_wrap(min_params, n_params)",
+  "usage": "should_wrap = fsdp_wrap(min_params=1000, n_params=1200)",
+  "parameters": {
+    "min_params": "minimum parameter count required for wrapping",
+    "n_params": "parameter count of the module"
+  },
+  "implementation": {
+    "path": "training/stability/fsdp_wrap.py",
+    "symbol": "fsdp_wrap"
+  },
+  "papers": [],
+  "examples": []
+}

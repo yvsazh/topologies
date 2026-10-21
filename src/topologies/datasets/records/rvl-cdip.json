@@ -1,0 +1,13 @@
+{
+  "id": "rvl-cdip",
+  "name": "RVL-CDIP",
+  "domain": "document image classification",
+  "description": "A dataset of 400,000 grayscale document images across 16 document categories, derived from the IIT-CDIP collection.",
+  "citation": "Adam W. Harley, Alex Ufkes, and Konstantinos G. Derpanis. Evaluation of Deep Convolutional Nets for Document Image Classification and Retrieval. International Conference on Document Analysis and Recognition (ICDAR), 2015. https://arxiv.org/abs/1502.07058",
+  "license": {
+    "identifier": "other",
+    "url": "",
+    "notes": "Dataset license is unverified; no published dataset license was confirmed."
+  },
+  "upstream_url": "https://www.cs.cmu.edu/~aharley/rvl-cdip/"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "ujiindoorloc",
+  "name": "UJIIndoorLoc",
+  "domain": "scientific",
+  "description": "UJIIndoorLoc WiFi fingerprinting, about 20 thousand RSSI samples across three buildings. Mean position error on the EvAAL protocol. Torres-Sospedra et al., IPIN 2014. Fingerprints not vendored.",
+  "citation": "Torres-Sospedra et al., IPIN 2014. UJIIndoorLoc.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://archive.ics.uci.edu/dataset/310/ujiindoorloc",
+    "notes": "UCI repository terms. Fingerprints not vendored."
+  },
+  "upstream_url": "https://archive.ics.uci.edu/dataset/310/ujiindoorloc"
+}

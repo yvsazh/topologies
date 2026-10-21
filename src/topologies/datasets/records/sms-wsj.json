@@ -1,0 +1,12 @@
+{
+  "id": "sms-wsj",
+  "name": "SMS-WSJ",
+  "domain": "audio",
+  "description": "Noisy and reverberant two-speaker mixtures, about 33k mixes. The underlying WSJ audio remains LDC-gated. No data vendored.",
+  "citation": "SMS-WSJ, Drude et al., ICASSP 2019.",
+  "license": {
+    "identifier": "SMS-WSJ recipe terms; underlying WSJ source audio is LDC-gated.",
+    "url": "https://github.com/JonasRump/SMS-WSJ"
+  },
+  "upstream_url": "https://github.com/JonasRump/SMS-WSJ"
+}

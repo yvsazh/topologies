@@ -1,0 +1,13 @@
+{
+  "id": "weatherbench-2",
+  "name": "WeatherBench 2",
+  "domain": "scientific",
+  "description": "A benchmark for evaluating data-driven weather forecasting models against operational numerical weather prediction systems. It provides standardized datasets, evaluation code, and metrics for forecasts of atmospheric variables. This record describes the dataset and does not distribute data.",
+  "citation": "本田, Y., et al. (2024). WeatherBench 2: A benchmark for the next generation of data-driven global weather models. Journal of Advances in Modeling Earth Systems, 16(6), e2023MS004019. https://doi.org/10.1029/2023MS004019",
+  "license": {
+    "identifier": "Dataset-specific terms; not a standard SPDX license identifier",
+    "url": "https://github.com/google-research/weatherbench2",
+    "notes": "WeatherBench 2 uses data from multiple sources with source-specific terms. The dataset does not have one standard SPDX license identifier; consult the upstream documentation and the terms for each underlying data source before use or redistribution. This record vendors no data."
+  },
+  "upstream_url": "https://github.com/google-research/weatherbench2"
+}

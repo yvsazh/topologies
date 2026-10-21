@@ -1,0 +1,13 @@
+{
+  "id": "ljspeech",
+  "name": "LJSpeech",
+  "domain": "audio",
+  "description": "A public-domain corpus of approximately 24 hours of single-speaker English audiobook speech, comprising 13,100 short audio clips with aligned transcripts, commonly used for text-to-speech research.",
+  "citation": "Ito, K. (2017). The LJ Speech Dataset. https://keithito.com/LJ-Speech-Dataset/",
+  "license": {
+    "identifier": "Public domain (not a standard SPDX identifier)",
+    "url": "https://keithito.com/LJ-Speech-Dataset/",
+    "notes": "The dataset creator describes the recordings and transcripts as public domain. Public domain is not a standard SPDX license identifier; independently verify the status and applicable rights in your jurisdiction before use or redistribution."
+  },
+  "upstream_url": "https://keithito.com/LJ-Speech-Dataset/"
+}

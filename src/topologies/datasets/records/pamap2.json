@@ -1,0 +1,13 @@
+{
+  "id": "pamap2",
+  "name": "PAMAP2 Physical Activity Monitoring",
+  "domain": "scientific",
+  "description": "Wearable sensor recordings of 18 physical activities from 9 subjects, collected with three inertial measurement units and a heart-rate monitor.",
+  "citation": "Reiss, A., & Stricker, D. (2012). Introducing a New Benchmarked Dataset for Activity Monitoring. 2012 16th International Symposium on Wearable Computers, 108–109. https://doi.org/10.1109/ISWC.2012.13",
+  "license": {
+    "identifier": "CC-BY-4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/legalcode",
+    "notes": "UCI Machine Learning Repository lists this dataset under the Creative Commons Attribution 4.0 International license."
+  },
+  "upstream_url": "https://archive.ics.uci.edu/dataset/231/pamap2+physical+activity+monitoring"
+}

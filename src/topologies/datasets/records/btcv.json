@@ -1,0 +1,13 @@
+{
+  "id": "btcv",
+  "name": "BTCV",
+  "domain": "vision",
+  "description": "Beyond the Cranial Vault multi-atlas abdomen CT, 50 scans and 13 organs. Mean Dice over 13 organs. Landman et al. 2015. Vanderbilt terms. Human scans not vendored.",
+  "citation": "Landman et al. 2015. BTCV abdomen CT.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://www.synapse.org/#!Synapse:syn3193805/wiki/",
+    "notes": "Vanderbilt terms. Human scans are loader-only and not vendored."
+  },
+  "upstream_url": "https://www.synapse.org/#!Synapse:syn3193805/wiki/"
+}

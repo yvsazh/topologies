@@ -1,0 +1,21 @@
+{
+  "generated": {
+    "__init__.py": "809febb731441ac641b5f930e6d7b2e09545cf3ea7c0b0dcfd4e5986ef72b7d6",
+    "ag_news/__init__.py": "485f03544e3b1c85f00eef6212b2431292c395c8fb7d78a08cb9d678b7971a74",
+    "cifar10/__init__.py": "d5dd9f68625adfa81edc77b9f5cb2207ccc690ac587358b9308218504a41e861",
+    "cora/__init__.py": "0317f9a0315a5a6709d385c50574fde346e45fd63fcf7e3c9bd577d881c76064",
+    "fashion_mnist/__init__.py": "e7bb5f60e44e2b14add383fca5838fb9521dcb22e0f1cbc83750da3b1585e20b",
+    "fsdd/__init__.py": "8d8c601a64ace14fd4354ab0b460d32110c45f97b18077dbe33c2356948b299b",
+    "iris/__init__.py": "34a5b670e25ae43be236aa657e442c29d5ec9848e302e070a60f19baf6b66ab4",
+    "jena_climate/__init__.py": "ebe09f49505749c8757b26629a6155a118fa0b64311b650853905aebcdfb7cdb",
+    "mnist/__init__.py": "80365c4a458a2d899597978ab2c186c475ab1ff4de806c20dc46cfbd210e67d5",
+    "movielens_100k/__init__.py": "0479dc436fc881b601ccee7a3904f9508afe6fcdbf6235ed6d5d0cb12d27692d",
+    "oxford_iiit_pet/__init__.py": "5011b6ba679899023a2d0c38cb37a76a1c990249301bff0d31c860b4f3137fd2",
+    "palmer_penguins/__init__.py": "002c0a8e6d9e30fa3f56e2346e63d73ea09433408074a04db371fa6a79c3bab9",
+    "penn_fudan_pedestrians/__init__.py": "cc2780ac4545438c93970824aaf1ea768aa2a86967ae12815c0a503d91bb76af",
+    "speech_commands/__init__.py": "9fa20c2603755b72a3a3a01bec9ebd28655d6f123a54a43997237d5a5f505e34",
+    "uci_har/__init__.py": "8b6a5b65269bb6f70c93f628a890077e79d91e16bf72762eee67ea048be30c5a",
+    "wikitext_2_raw/__init__.py": "8b5c303fcdb78c44a679ba3976f7faece9e2e30d1f90219588af62f6676b8bfd"
+  },
+  "schema_version": 1
+}

@@ -1,0 +1,13 @@
+{
+  "id": "cholec-t50",
+  "name": "CholecT50",
+  "domain": "vision",
+  "description": "CholecT50 surgical videos, 50 videos with 100 instrument-verb-target triplet labels. Triplet mAP. Nwoye et al., MICCAI 2022. Distinct from Cholec80 phase labels. Video not vendored.",
+  "citation": "Nwoye et al., MICCAI 2022. CholecT50.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://camma.u-strasbg.fr/datasets/",
+    "notes": "CAMMA research terms. Human video is loader-only and not vendored."
+  },
+  "upstream_url": "https://camma.u-strasbg.fr/datasets/"
+}

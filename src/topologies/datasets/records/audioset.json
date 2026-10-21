@@ -1,0 +1,13 @@
+{
+  "id": "audioset",
+  "name": "AudioSet",
+  "domain": "audio",
+  "description": "A large-scale dataset of human-labeled 10-second YouTube audio segments annotated with labels from a 632-class ontology of sound events.",
+  "citation": "Gemmeke, J. F., Ellis, D. P. W., Freedman, D., et al. (2017). Audio Set: An ontology and human-labeled dataset for audio events. 2017 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), 776–780. https://doi.org/10.1109/ICASSP.2017.7952261",
+  "license": {
+    "identifier": "License not specified (not a standard SPDX identifier)",
+    "url": "https://research.google.com/audioset/",
+    "notes": "AudioSet provides annotations and links to YouTube videos; the underlying audio remains subject to YouTube's terms and the rights of the respective content owners. The upstream dataset page does not specify a standard SPDX license for the dataset. Review upstream terms and rights before use or redistribution."
+  },
+  "upstream_url": "https://research.google.com/audioset/"
+}

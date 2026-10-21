@@ -1,0 +1,13 @@
+{
+  "id": "ms-marco",
+  "name": "MS MARCO (Microsoft MAchine Reading COmprehension)",
+  "domain": "natural-language",
+  "description": "A large-scale dataset of real user queries and web documents, with human-generated answers and relevance judgments for machine reading comprehension and passage-ranking research.",
+  "citation": "Nguyen, T., Rosenberg, M., Song, X., Gao, J., Tiwary, S., Majumder, R., & Deng, L. (2016). MS MARCO: A Human Generated MAchine Reading COmprehension Dataset. Proceedings of the Workshop on Cognitive Computation: Integrating neural and symbolic approaches, 1–6. https://doi.org/10.18653/v1/W16-2601",
+  "license": {
+    "identifier": "Dataset license not stated",
+    "url": "https://microsoft.github.io/msmarco/",
+    "notes": "The upstream project does not specify a standard SPDX license identifier for the dataset. Review Microsoft's applicable dataset terms and rights in the underlying web content before use or redistribution."
+  },
+  "upstream_url": "https://microsoft.github.io/msmarco/"
+}

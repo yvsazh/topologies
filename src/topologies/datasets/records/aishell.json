@@ -1,0 +1,12 @@
+{
+  "id": "aishell",
+  "name": "AISHELL-1",
+  "domain": "audio",
+  "description": "Mandarin speech recognition corpus of about 400 hours. AISHELL-2 is a separate, larger related corpus. No data vendored.",
+  "citation": "AISHELL-1: An Open-Source Mandarin Speech Corpus and A Speech Recognition Baseline, Bu et al. 2017.",
+  "license": {
+    "identifier": "Apache-2.0",
+    "url": "http://www.aishelltech.com/aishell_1"
+  },
+  "upstream_url": "http://www.aishelltech.com/aishell_1"
+}

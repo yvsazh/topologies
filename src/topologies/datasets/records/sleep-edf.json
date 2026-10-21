@@ -1,0 +1,13 @@
+{
+  "id": "sleep-edf",
+  "name": "Sleep-EDF",
+  "domain": "time-series",
+  "description": "A collection of polysomnographic sleep recordings, including EEG and other physiological signals, with annotations used for sleep-stage scoring. The Sleep-EDF Expanded dataset contains overnight recordings from healthy subjects and people with mild difficulty falling asleep.",
+  "citation": "Kemp, B., Zwinderman, A. H., Tuk, B., Kamphuisen, H. A. C., & Oberye, J. J. (2000). Analysis of a sleep-dependent neuronal feedback loop: the slow-wave microcontinuity of the EEG. IEEE Transactions on Biomedical Engineering, 47(9), 1185–1194. https://doi.org/10.1109/10.867928",
+  "license": {
+    "identifier": "PhysioNet credentialed-use terms (not a standard SPDX identifier)",
+    "url": "https://physionet.org/content/sleep-edfx/1.0.0/",
+    "notes": "Access and use are subject to PhysioNet's credentialing and data use agreement; these are not a standard SPDX license. Review the current terms and privacy restrictions before using or redistributing the recordings."
+  },
+  "upstream_url": "https://physionet.org/content/sleep-edfx/1.0.0/"
+}

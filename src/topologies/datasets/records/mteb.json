@@ -1,0 +1,12 @@
+{
+  "id": "mteb",
+  "name": "MTEB",
+  "domain": "language",
+  "description": "Massive Text Embedding Benchmark harness over existing datasets, covering 8 task types. Loader-only harness, not a new corpus. No data vendored.",
+  "citation": "MTEB: Massive Text Embedding Benchmark. Muennighoff et al. (2023).",
+  "license": {
+    "identifier": "Apache-2.0",
+    "url": "https://github.com/embeddings-benchmark/mteb"
+  },
+  "upstream_url": "https://github.com/embeddings-benchmark/mteb"
+}

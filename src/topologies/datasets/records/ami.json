@@ -1,0 +1,13 @@
+{
+  "id": "ami",
+  "name": "AMI Meeting Corpus",
+  "domain": "audio",
+  "description": "A corpus of approximately 100 hours of multiparty meeting recordings, including audio, video, transcripts, and annotations, created to support research on meeting understanding and recognition.",
+  "citation": "Carletta, J., Ashby, S., Bourban, S., et al. (2005). The AMI Meeting Corpus: A Pre-announcement. In Proceedings of the 2nd International Conference on Machine Learning for Multimodal Interaction (MLMI 2005), 28–39. https://doi.org/10.1007/11550617_3",
+  "license": {
+    "identifier": "AMI corpus license (non-commercial research use; not a standard SPDX identifier)",
+    "url": "https://groups.inf.ed.ac.uk/ami/corpus/",
+    "notes": "The corpus is distributed under its own license terms, which restrict use to non-commercial research. This is not a standard SPDX license identifier; consult the license accompanying the specific corpus release before use or redistribution."
+  },
+  "upstream_url": "https://groups.inf.ed.ac.uk/ami/corpus/"
+}

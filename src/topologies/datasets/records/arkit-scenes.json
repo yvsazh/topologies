@@ -1,0 +1,12 @@
+{
+  "id": "arkit-scenes",
+  "name": "ARKitScenes",
+  "domain": "vision",
+  "description": "Mobile RGB-D scenes comprising 1,661 scans captured with LiDAR. This record is loader-only and does not vendor dataset data; use is governed by Apple's research terms.",
+  "citation": "Baruch, G., Chen, Z., Dehghan, A., et al. (2021). ARKitScenes: A Diverse Real-World Dataset for 3D Indoor Scene Understanding Using Mobile RGB-D Data. https://arxiv.org/abs/2111.08897",
+  "license": {
+    "identifier": "Apple research terms (not a standard SPDX identifier)",
+    "url": "https://github.com/apple/ARKitScenes"
+  },
+  "upstream_url": "https://github.com/apple/ARKitScenes"
+}

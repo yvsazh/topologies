@@ -1,0 +1,13 @@
+{
+  "id": "pascal-voc-07",
+  "name": "PASCAL VOC 2007",
+  "domain": "vision",
+  "description": "The PASCAL Visual Object Classes 2007 dataset for object classification, detection, and segmentation across 20 object categories. This record does not distribute dataset files.",
+  "citation": "Everingham, M., Van Gool, L., Williams, C. K. I., Winn, J., & Zisserman, A. (2010). The Pascal Visual Object Classes (VOC) Challenge. International Journal of Computer Vision, 88, 303–338. https://doi.org/10.1007/s11263-009-0275-4",
+  "license": {
+    "identifier": "PASCAL VOC terms (not a standard SPDX identifier)",
+    "url": "http://host.robots.ox.ac.uk/pascal/VOC/voc2007/",
+    "notes": "The VOC 2007 distribution is provided for research purposes under its own terms; this is not a standard SPDX license identifier. Images may be subject to third-party rights. Review the provider terms and underlying image rights before use or redistribution."
+  },
+  "upstream_url": "http://host.robots.ox.ac.uk/pascal/VOC/voc2007/"
+}

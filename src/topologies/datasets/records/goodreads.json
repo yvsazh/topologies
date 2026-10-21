@@ -1,0 +1,13 @@
+{
+  "id": "goodreads",
+  "name": "Goodreads (UCSD Book Graph)",
+  "domain": "recommendation",
+  "description": "UCSD Goodreads ratings and reviews, including spoiler labels. About 2 billion interactions. Rating RMSE and spoiler F1. Loader-only metadata; no data vendored. Distinct from Book-Crossing.",
+  "citation": "Wan et al. 2019. Goodreads UCSD Book Graph.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://sites.google.com/eng.ucsd.edu/ucsdbookgraph/",
+    "notes": "UCSD research terms. Record only; no data vendored."
+  },
+  "upstream_url": "https://sites.google.com/eng.ucsd.edu/ucsdbookgraph/"
+}

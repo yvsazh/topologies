@@ -1,0 +1,13 @@
+{
+  "id": "yahoo-s5",
+  "name": "Yahoo Webscope S5 Anomaly Detection Dataset",
+  "domain": "time-series",
+  "description": "A collection of real and synthetic time series used to evaluate anomaly detection methods, including labeled anomalies in the real-world A1 series and synthetic A2–A4 series.",
+  "citation": "Laptev, N., Amizadeh, S., & Flint, I. (2015). Generic and scalable framework for automated time-series anomaly detection. Proceedings of the 21st ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, 1939–1947. https://doi.org/10.1145/2783258.2788611",
+  "license": {
+    "identifier": "Yahoo Webscope dataset-specific license (not a standard SPDX identifier)",
+    "url": "https://webscope.sandbox.yahoo.com/catalog.php?datatype=s&did=70",
+    "notes": "Access and use are governed by Yahoo Webscope's dataset-specific terms and may require registration. These terms are not a standard SPDX license identifier; review the current Webscope agreement and restrictions before use or redistribution."
+  },
+  "upstream_url": "https://webscope.sandbox.yahoo.com/catalog.php?datatype=s&did=70"
+}

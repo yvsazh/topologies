@@ -1,0 +1,13 @@
+{
+  "id": "eqa",
+  "name": "Embodied Question Answering",
+  "domain": "Embodied AI",
+  "description": "A benchmark task in which an agent navigates a 3D environment to gather first-person visual observations and answer questions about the scene.",
+  "citation": "Das, A., Datta, S., Gkioxari, G., Lee, S., Parikh, D., and Batra, D. Embodied Question Answering. Confirmed arXiv 1711.11543. https://arxiv.org/abs/1711.11543",
+  "license": {
+    "identifier": "other",
+    "url": "",
+    "notes": "unverified"
+  },
+  "upstream_url": "https://embodiedqa.org/"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "laion-2b",
+  "name": "LAION-2B",
+  "domain": "multimodal",
+  "description": "A large-scale dataset of approximately 2.3 billion image-text pairs assembled from web-crawled Common Crawl data. LAION-2B is provided as an index of image URLs and associated metadata, not as hosted image content; links may become unavailable and content remains subject to source-site rights and terms.",
+  "citation": "Schuhmann, C., Beaumont, R., Vencu, R., et al. (2022). LAION-5B: An open large-scale dataset for training next generation image-text models. Advances in Neural Information Processing Systems, 35, 25278–25294. https://arxiv.org/abs/2210.08402",
+  "license": {
+    "identifier": "Not stated (not a standard SPDX identifier)",
+    "url": "https://laion.ai/blog/laion-5b/",
+    "notes": "LAION-2B is an index of URLs and metadata; it does not grant rights to the linked images. There is no single standard SPDX license for the underlying web content. Users must assess source-specific copyright, licenses, terms, and privacy obligations before accessing or using linked material. This record vendors no data."
+  },
+  "upstream_url": "https://laion.ai/blog/laion-5b/"
+}

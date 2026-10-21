@@ -1,0 +1,13 @@
+{
+  "id": "leaf",
+  "name": "LEAF",
+  "domain": "scientific",
+  "description": "LEAF federated benchmark family: FEMNIST, Shakespeare, CelebA federated, Sentiment140, and Reddit. Per-task accuracy on natural non-IID client splits. Caldas et al., NeurIPS 2018 workshop. Partitions not vendored.",
+  "citation": "Caldas et al., NeurIPS 2018 workshop. LEAF.",
+  "license": {
+    "identifier": "BSD-2-Clause",
+    "url": "https://leaf.cmu.edu/",
+    "notes": "Per-task licenses, commonly BSD. Client partitions not vendored."
+  },
+  "upstream_url": "https://leaf.cmu.edu/"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "ssdd",
+  "name": "SSDD",
+  "domain": "vision",
+  "description": "SAR Ship Detection Dataset, about 1160 images in S, V, HH, and VV polarizations. mAP. Distinct from OpenSARShip and FUSAR classification sets. Images not vendored.",
+  "citation": "Li et al., TGRS 2017. SSDD SAR ship detection.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://github.com/TianwenZhang0825/SSDD",
+    "notes": "Provider page does not state a standard SPDX license. Images not vendored."
+  },
+  "upstream_url": "https://github.com/TianwenZhang0825/SSDD"
+}

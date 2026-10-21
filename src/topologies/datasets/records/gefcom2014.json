@@ -1,0 +1,13 @@
+{
+  "id": "gefcom2014",
+  "name": "GEFCom2014",
+  "domain": "scientific",
+  "description": "Global Energy Forecasting Competition 2014, with load, price, wind, and solar tracks. Pinball loss and CRPS. Hong et al., International Journal of Forecasting 2016. Loader-only metadata.",
+  "citation": "Hong et al., IJF 2016. GEFCom2014.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://www.kaggle.com/datasets",
+    "notes": "Competition data. Provider page does not state a standard SPDX license. Record only; no data vendored."
+  },
+  "upstream_url": "https://www.kaggle.com/datasets"
+}

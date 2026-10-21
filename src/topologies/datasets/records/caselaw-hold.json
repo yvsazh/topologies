@@ -1,0 +1,13 @@
+{
+  "id": "caselaw-hold",
+  "name": "CaseHOLD",
+  "domain": "legal",
+  "description": "A legal benchmark of more than 53,000 multiple-choice questions identifying the relevant holding of a cited case, with five candidate holdings per question.",
+  "citation": "Lucia Zheng, Neel Guha, Brandon R. Anderson, Peter Henderson, and Daniel E. Ho. 2021. When Does Pretraining Help? Assessing Self-Supervised Learning for Law and the CaseHOLD Dataset. In Proceedings of the 18th International Conference on Artificial Intelligence and Law (ICAIL '21). ACM. https://doi.org/10.1145/3462757.3466088",
+  "license": {
+    "identifier": "Apache-2.0",
+    "url": "https://github.com/reglab/casehold/blob/main/LICENSE",
+    "notes": "The upstream CaseHOLD repository declares Apache-2.0."
+  },
+  "upstream_url": "https://github.com/reglab/casehold"
+}

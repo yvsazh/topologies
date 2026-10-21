@@ -1,0 +1,13 @@
+{
+  "id": "rlbench",
+  "name": "RLBench",
+  "domain": "scientific",
+  "description": "RLBench robot tasks, about 100 variation-parameterized tasks. Success rate on a 25-episode protocol. James et al., RA-L 2020. CoppeliaSim stays external. No demonstrations vendored.",
+  "citation": "James et al., RA-L 2020. RLBench.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://github.com/stepjam/RLBench",
+    "notes": "CoppeliaSim stays external. Record only; no data vendored."
+  },
+  "upstream_url": "https://github.com/stepjam/RLBench"
+}

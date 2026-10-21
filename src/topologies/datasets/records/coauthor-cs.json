@@ -1,0 +1,12 @@
+{
+  "id": "coauthor-cs",
+  "name": "Coauthor CS",
+  "domain": "graph",
+  "description": "A computer science co-authorship graph with about 18,000 nodes; the benchmark also includes Coauthor Physics as a related dataset. No data is vendored in this record.",
+  "citation": "Shchur, O., Mumme, M., Bojchevski, A., & Günnemann, S. (2019). The Amazon co-purchasing and Coauthor CS graphs: A benchmark for graph neural network research. International Conference on Learning Representations (ICLR 2019).",
+  "license": {
+    "identifier": "Release terms are specified by the upstream repository; no SPDX identifier is stated.",
+    "url": "https://github.com/shchur/gnn-benchmark"
+  },
+  "upstream_url": "https://github.com/shchur/gnn-benchmark"
+}

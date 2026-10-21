@@ -1,0 +1,12 @@
+{
+  "id": "uav123",
+  "name": "UAV123",
+  "domain": "vision",
+  "description": "A drone object tracking benchmark comprising 123 videos. Includes the NFS (Need for Speed) high-frame-rate subset inline. This metadata record does not vendor or distribute dataset data.",
+  "citation": "Mueller, M., Smith, N., & Ghanem, B. (2016). A Benchmark and Simulator for UAV Tracking. European Conference on Computer Vision (ECCV 2016). The UAV123 benchmark.",
+  "license": {
+    "identifier": "UAV123 dataset release terms (not a standard SPDX identifier)",
+    "url": "https://cemse.kaust.edu.sa/ivul/uav123"
+  },
+  "upstream_url": "https://cemse.kaust.edu.sa/ivul/uav123"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "ifeval",
+  "name": "IFEval",
+  "domain": "language",
+  "description": "Instruction-following evaluation consisting of 541 prompts. See also MT-Bench for a complementary evaluation of language-model capabilities. No dataset data is vendored.",
+  "citation": "IFEval: Zhou et al. (2023).",
+  "license": {
+    "identifier": "Apache-2.0",
+    "url": "https://github.com/google-research/google-research/tree/master/instruction_following_eval"
+  },
+  "upstream_url": "https://github.com/google-research/google-research/tree/master/instruction_following_eval"
+}

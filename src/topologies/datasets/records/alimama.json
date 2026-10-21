@@ -1,0 +1,13 @@
+{
+  "id": "alimama",
+  "name": "Alimama Taobao Display Ads",
+  "domain": "recommendation",
+  "description": "Alimama Taobao display-ad click and conversion log, about 26 million impressions. AUC and GAUC. Access is gated through Tianchi. Pi et al. 2020. Loader-only metadata; no logs vendored. Distinct from Ali-CCP.",
+  "citation": "Pi et al. 2020. Alimama Taobao display ads.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://tianchi.aliyun.com/dataset/56",
+    "notes": "Alibaba research terms. Gated access. Record only; no data vendored."
+  },
+  "upstream_url": "https://tianchi.aliyun.com/dataset/56"
+}

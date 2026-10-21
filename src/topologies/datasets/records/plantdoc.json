@@ -1,0 +1,13 @@
+{
+  "id": "plantdoc",
+  "name": "PlantDoc",
+  "domain": "vision",
+  "description": "Real-world plant disease image dataset containing 2,598 images across 13 plant species and 27 healthy/diseased classes, with bounding-box annotations.",
+  "citation": "Singh, D. et al. PlantDoc: A Dataset for Visual Plant Disease Detection. arXiv:1911.10317 (2019). https://arxiv.org/abs/1911.10317",
+  "license": {
+    "identifier": "CC-BY-4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "notes": "The upstream PlantDoc-Dataset repository identifies the dataset as CC BY 4.0."
+  },
+  "upstream_url": "https://github.com/pratikkayal/PlantDoc-Dataset"
+}

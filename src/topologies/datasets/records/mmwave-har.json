@@ -1,0 +1,13 @@
+{
+  "id": "mmwave-har",
+  "name": "MiliPoint: A Point Cloud Dataset for mmWave Radar",
+  "domain": "human activity recognition, millimeter-wave radar",
+  "description": "Public large-scale millimeter-wave radar point-cloud dataset for human activity recognition, supporting action classification, human identification, and keypoint estimation.",
+  "citation": "Han Cui, Shu Zhong, Jiacheng Wu, Zichao Shen, Naim Dahnoun, and Yiren Zhao. MiliPoint: A Point Cloud Dataset for mmWave Radar. Advances in Neural Information Processing Systems, 36:62713–62726, 2023. https://arxiv.org/abs/2309.13425",
+  "license": {
+    "identifier": "MIT",
+    "url": "https://github.com/yizzfz/MiliPoint/blob/main/LICENSE",
+    "notes": "The upstream repository identifies its license as MIT."
+  },
+  "upstream_url": "https://github.com/yizzfz/MiliPoint"
+}

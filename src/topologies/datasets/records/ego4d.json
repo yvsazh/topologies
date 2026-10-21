@@ -1,0 +1,12 @@
+{
+  "id": "ego4d",
+  "name": "Ego4D",
+  "domain": "vision",
+  "description": "Egocentric video dataset comprising about 3,670 hours of video from 931 wearers. Research license; loader-only, with no data vendored.",
+  "citation": "Grauman et al. (2022). Ego4D: Around the World in 3,000 Hours of Egocentric Video. Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR).",
+  "license": {
+    "identifier": "Ego4D license (non-standard; not an SPDX identifier)",
+    "url": "https://ego4d-data.org/"
+  },
+  "upstream_url": "https://ego4d-data.org/"
+}

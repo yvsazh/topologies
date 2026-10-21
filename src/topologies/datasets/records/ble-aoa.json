@@ -1,0 +1,13 @@
+{
+  "id": "ble-aoa",
+  "name": "UVIndoorLoc-BLE-AoA&IQ Dataset",
+  "domain": "indoor positioning",
+  "description": "Bluetooth Low Energy 5.1 in-phase/quadrature samples and angle-of-arrival measurements collected in three real-world indoor scenarios at the University of Valencia.",
+  "citation": "Martín Frechina, S., Dura, E., & Torres-Sospedra, J. (2026). UVIndoorLoc-BLE-AoA&IQ Dataset [Data set]. Zenodo. https://doi.org/10.5281/zenodo.19823027",
+  "license": {
+    "identifier": "CC-BY-4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "notes": "The Zenodo record lists CC-BY-4.0."
+  },
+  "upstream_url": "https://doi.org/10.5281/zenodo.19823027"
+}

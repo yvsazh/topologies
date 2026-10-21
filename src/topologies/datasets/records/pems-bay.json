@@ -1,0 +1,13 @@
+{
+  "id": "pems-bay",
+  "name": "PEMS-BAY",
+  "domain": "scientific",
+  "description": "Bay Area traffic speed from 325 sensors over about six months. MAE, RMSE, and MAPE at a 12-step horizon. Li et al., ICLR 2018 (DCRNN). Distinct from PEMS-03, PEMS-04, PEMS-07, PEMS-08, and METR-LA. Loader-only metadata.",
+  "citation": "Li et al., ICLR 2018. PEMS-BAY traffic speeds.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://github.com/chnsh/DCRNN_PyTorch",
+    "notes": "Caltrans open traffic data. Record only; no data vendored."
+  },
+  "upstream_url": "https://github.com/chnsh/DCRNN_PyTorch"
+}

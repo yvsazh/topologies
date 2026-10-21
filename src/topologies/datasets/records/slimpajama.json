@@ -1,0 +1,12 @@
+{
+  "id": "slimpajama",
+  "name": "SlimPajama",
+  "domain": "language",
+  "description": "SlimPajama is a deduplicated version of RedPajama containing about 627B tokens. It is distinct from the already recorded RedPajama-V2. This is a loader-only record; no data is vendored. Its sources are governed by mixed per-source web licenses.",
+  "citation": "Soboleva, D., et al. (2023). SlimPajama: A 627B-token cleaned and deduplicated version of RedPajama. https://huggingface.co/datasets/cerebras/SlimPajama-627B",
+  "license": {
+    "identifier": "Mixed per-source web terms; no single SPDX identifier applies.",
+    "url": "https://huggingface.co/datasets/cerebras/SlimPajama-627B"
+  },
+  "upstream_url": "https://huggingface.co/datasets/cerebras/SlimPajama-627B"
+}

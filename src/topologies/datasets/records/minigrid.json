@@ -1,0 +1,13 @@
+{
+  "id": "minigrid",
+  "name": "MiniGrid",
+  "domain": "reinforcement-learning",
+  "description": "A suite of lightweight, partially observable grid-world environments for reinforcement learning research. MiniGrid provides procedurally generated tasks and an environment API; it is an environment suite, not a single downloadable static dataset.",
+  "citation": "Chevalier-Boisvert, M., Willems, L., and Pal, S. (2018). Minimalistic Gridworld Environment for OpenAI Gym. https://github.com/Farama-Foundation/Minigrid",
+  "license": {
+    "identifier": "BSD-3-Clause",
+    "url": "https://github.com/Farama-Foundation/Minigrid/blob/master/LICENSE",
+    "notes": "The MiniGrid software is distributed under the BSD 3-Clause License (SPDX: BSD-3-Clause). Environment-generated observations and trajectories are not a packaged dataset; check upstream and any task-specific terms for the applicable usage conditions."
+  },
+  "upstream_url": "https://github.com/Farama-Foundation/Minigrid"
+}

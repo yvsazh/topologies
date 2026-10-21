@@ -1,0 +1,13 @@
+{
+  "id": "xeno-canto",
+  "name": "Xeno-canto",
+  "domain": "audio",
+  "description": "Xeno-canto focal bird recordings, more than 800 thousand cuts across more than 10 thousand species. Class-mean average precision and AUROC under a focal-to-soundscape shift. The Macaulay Library, more than one million recordings, is a companion note in this record. Audio not vendored.",
+  "citation": "Xeno-canto focal bird recordings.",
+  "license": {
+    "identifier": "CC-BY-NC-SA-4.0",
+    "url": "https://xeno-canto.org/",
+    "notes": "Per-recording Creative Commons terms, commonly CC BY-NC-SA. Audio not vendored."
+  },
+  "upstream_url": "https://xeno-canto.org/"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "lfw",
+  "name": "LFW",
+  "domain": "vision",
+  "description": "Face verification dataset with about 13k images and 6000 pairs, using a 10-fold protocol. Subject to UMass research terms; this metadata record does not vendor data.",
+  "citation": "Huang, G. B., Ramesh, M., Berg, T., & Learned-Miller, E. (2007). Labeled Faces in the Wild (LFW): A Database for Studying Face Recognition in Unconstrained Environments.",
+  "license": {
+    "identifier": "UMass research terms (not a standard SPDX identifier)",
+    "url": "http://vis-www.cs.umass.edu/lfw/"
+  },
+  "upstream_url": "http://vis-www.cs.umass.edu/lfw/"
+}

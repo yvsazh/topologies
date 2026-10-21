@@ -1,0 +1,13 @@
+{
+  "id": "porto-seguro",
+  "name": "Porto Seguro Safe Driver",
+  "domain": "scientific",
+  "description": "Porto Seguro safe-driver insurance claims, about 595 thousand rows. Normalized Gini under the Kaggle protocol. Loader-only metadata.",
+  "citation": "Porto Seguro Safe Driver Prediction Kaggle challenge.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://www.kaggle.com/c/porto-seguro-safe-driver-prediction",
+    "notes": "Kaggle competition terms. Record only; no data vendored."
+  },
+  "upstream_url": "https://www.kaggle.com/c/porto-seguro-safe-driver-prediction"
+}

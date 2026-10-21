@@ -1,0 +1,13 @@
+{
+  "id": "rossmann-store-sales",
+  "name": "Rossmann Store Sales",
+  "domain": "scientific",
+  "description": "Rossmann store sales, about 1 million rows. RMSPE under the Kaggle protocol. Corporacion Favorita, about 174 million rows, is a companion note inside this record, not a separate file. Loader-only metadata.",
+  "citation": "Rossmann Store Sales Kaggle challenge.",
+  "license": {
+    "identifier": "CC-BY-NC-SA-4.0",
+    "url": "https://www.kaggle.com/c/rossmann-store-sales",
+    "notes": "Kaggle competition terms recorded as CC BY-NC-SA. Record only; no data vendored."
+  },
+  "upstream_url": "https://www.kaggle.com/c/rossmann-store-sales"
+}

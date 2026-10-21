@@ -1,0 +1,13 @@
+{
+  "id": "uecfood256",
+  "name": "UEC Food-256",
+  "domain": "vision",
+  "description": "UEC Food-256, about 25 thousand images and 256 classes. Top-1 and top-5 accuracy. Kawano and Yanai, MMSP 2014. Food-2K and VIREO-172 are companion notes in this record. Distinct from Food-101. Images not vendored.",
+  "citation": "Kawano and Yanai, MMSP 2014. UEC Food-256.",
+  "license": {
+    "identifier": "not specified",
+    "url": "http://foodcam.mobi/dataset256.html",
+    "notes": "UEC terms. Images not vendored."
+  },
+  "upstream_url": "http://foodcam.mobi/dataset256.html"
+}

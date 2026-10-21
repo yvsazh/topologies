@@ -1,0 +1,174 @@
+# Faker data for locale 'en': names, places, companies, formats.
+locale: en
+first_male:
+- James
+- John
+- Robert
+- Michael
+- David
+- William
+- Richard
+- Joseph
+- Thomas
+- Daniel
+- Matthew
+- Anthony
+- Mark
+- Steven
+- Paul
+- Andrew
+- Joshua
+- Kevin
+- Brian
+- George
+- Ryan
+- Jacob
+- Ethan
+- Liam
+first_female:
+- Mary
+- Patricia
+- Jennifer
+- Linda
+- Elizabeth
+- Barbara
+- Susan
+- Jessica
+- Sarah
+- Karen
+- Lisa
+- Nancy
+- Emily
+- Emma
+- Olivia
+- Sophia
+- Ava
+- Chloe
+- Grace
+- Hannah
+- Amelia
+- Megan
+- Laura
+last:
+- Smith
+- Johnson
+- Williams
+- Brown
+- Jones
+- Garcia
+- Miller
+- Davis
+- Wilson
+- Anderson
+- Taylor
+- Thomas
+- Moore
+- Martin
+- Jackson
+- Thompson
+- White
+- Harris
+- Clark
+- Lewis
+- Robinson
+- Walker
+- Young
+- Allen
+- King
+- Wright
+- Scott
+- Green
+- Baker
+- Adams
+- Nelson
+- Hill
+- Campbell
+cities:
+- London
+- Manchester
+- Birmingham
+- Leeds
+- Glasgow
+- Bristol
+- Dublin
+- New York
+- Chicago
+- Boston
+- Seattle
+- Austin
+- Denver
+- Toronto
+- Sydney
+- Edinburgh
+- Cardiff
+- Liverpool
+streets:
+- High Street
+- Station Road
+- Main Street
+- Park Avenue
+- Church Lane
+- Oak Drive
+- Maple Avenue
+- Victoria Road
+- Mill Lane
+- King Street
+- Elm Street
+- Cedar Close
+- Queen's Road
+- Bridge Street
+address_format: '{number} {street}, {city} {postcode}'
+postcode:
+- '??# #??'
+- '#####'
+country: United Kingdom
+company_suffix:
+- Ltd
+- PLC
+- Inc.
+- LLC
+- '& Co.'
+- Group
+- Holdings
+company_words:
+- Acme
+- Northwind
+- Bluebird
+- Summit
+- Crescent
+- Evergreen
+- Pinnacle
+- Riverside
+- Silverline
+- Brightside
+- Oakmont
+- Vertex
+domains:
+- gmail.com
+- outlook.com
+- yahoo.com
+- icloud.com
+- proton.me
+phone:
+- '+44 7### ######'
+- '+1 (###) ###-####'
+- '07### ######'
+currency: GBP
+date_format: '%d/%m/%Y'
+iban_country: GB
+products:
+- wireless headphones
+- laptop
+- USB-C charger
+- smartwatch
+- phone case
+- bluetooth speaker
+- gaming mouse
+- 4K monitor
+- tablet
+- e-reader
+- mechanical keyboard
+- webcam
+- router
+- power bank
+- SSD drive

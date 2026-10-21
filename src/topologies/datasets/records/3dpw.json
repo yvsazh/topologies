@@ -1,0 +1,12 @@
+{
+  "id": "3dpw",
+  "name": "3DPW",
+  "domain": "vision",
+  "description": "In-the-wild SMPL body pose from IMU and video, comprising 60 sequences. Research-only; no data is vendored.",
+  "citation": "3DPW: 3D Poses in the Wild, von Marcard et al., ECCV 2018.",
+  "license": {
+    "identifier": "Research-only terms; not a standard SPDX identifier.",
+    "url": "https://virtualhumans.mpi-inf.mpg.de/3DPW/"
+  },
+  "upstream_url": "https://virtualhumans.mpi-inf.mpg.de/3DPW/"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "amos22",
+  "name": "AMOS22",
+  "domain": "vision",
+  "description": "AMOS22 is an abdominal multi-organ segmentation challenge and benchmark featuring 500 CT and 100 MRI scans with voxel-level annotations for 15 abdominal organs, designed to evaluate segmentation across diverse clinical imaging settings.",
+  "citation": "Ji et al., AMOS: A Large-Scale Abdominal Multi-Organ Benchmark for Versatile Medical Image Segmentation, arXiv:2206.08023, 2022.",
+  "license": {
+    "identifier": "other",
+    "url": "https://amos22.grand-challenge.org/",
+    "notes": "Challenge data access and use are subject to the upstream terms; clinical scans are not vendored."
+  },
+  "upstream_url": "https://amos22.grand-challenge.org/"
+}

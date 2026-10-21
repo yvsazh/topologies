@@ -1,0 +1,13 @@
+{
+  "id": "gwosc",
+  "name": "GWOSC",
+  "domain": "scientific",
+  "description": "Gravitational Wave Open Science Center LIGO and Virgo strain data, observing runs O1 through O4, including chirps and glitches. Detection AUC and glitch F1. Strain files not vendored.",
+  "citation": "GWOSC Gravitational Wave Open Science Center.",
+  "license": {
+    "identifier": "CC-BY-4.0",
+    "url": "https://gwosc.org/",
+    "notes": "CC-BY. Strain files not vendored."
+  },
+  "upstream_url": "https://gwosc.org/"
+}

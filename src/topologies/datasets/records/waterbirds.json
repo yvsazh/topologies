@@ -1,0 +1,13 @@
+{
+  "id": "waterbirds",
+  "name": "Waterbirds",
+  "domain": "vision",
+  "description": "Benchmark dataset combining bird images with land/water backgrounds for studying spurious correlation and domain generalization.",
+  "citation": "Sagawa, S., Koh, P. W., Hashimoto, T. B., & Liang, P. (2020). Distributionally Robust Neural Networks for Group Shifts: On the Importance of Regularization for Worst-Case Generalization. International Conference on Learning Representations (ICLR). https://openreview.net/forum?id=ryxGuJrFvS",
+  "license": {
+    "identifier": "Not stated",
+    "url": "https://github.com/kohpangwei/group_DRO",
+    "notes": "The upstream project does not state a dataset license. Review upstream terms and the underlying image rights before use or redistribution; dataset availability does not establish redistribution rights."
+  },
+  "upstream_url": "https://github.com/kohpangwei/group_DRO"
+}

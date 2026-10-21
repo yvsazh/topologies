@@ -1,0 +1,12 @@
+{
+  "id": "nabirds",
+  "name": "NABirds",
+  "domain": "vision",
+  "description": "Fine-grained bird classification dataset with 555 categories and about 48,000 images. It is distinct from CUB-200. Cornell Lab custom terms apply; no data is vendored in this repository.",
+  "citation": "Van Horn, G., Branson, S., Farrell, R., et al. (2015). Building a bird recognition app and large scale dataset with citizen scientists: The fine print in fine-grained dataset collection. In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR). NABirds.",
+  "license": {
+    "identifier": "Cornell Lab custom terms; not a standard SPDX identifier",
+    "url": "https://dl.allaboutbirds.org/nabirds"
+  },
+  "upstream_url": "https://dl.allaboutbirds.org/nabirds"
+}

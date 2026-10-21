@@ -1,0 +1,12 @@
+{
+  "id": "visda-2017",
+  "name": "VisDA-2017",
+  "domain": "vision",
+  "description": "Synthetic-to-real domain adaptation benchmark with classification and segmentation tracks, comprising about 280,000 images across 12 categories. Open research terms; no data is vendored.",
+  "citation": "VisDA: The Visual Domain Adaptation Challenge. Peng et al. (2017). NIPS 2017 Workshop.",
+  "license": {
+    "identifier": "Open research terms (no SPDX identifier stated)",
+    "url": "http://ai.bu.edu/visda-2017/"
+  },
+  "upstream_url": "http://ai.bu.edu/visda-2017/"
+}

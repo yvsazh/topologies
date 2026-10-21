@@ -1,0 +1,13 @@
+{
+  "id": "pubmed",
+  "name": "PubMed",
+  "domain": "graph",
+  "description": "A citation network of PubMed scientific publications, commonly used for semi-supervised node classification; nodes represent publications and edges represent citation relationships, with labels for research topics.",
+  "citation": "Sen, P., Namata, G., Bilgic, M., Getoor, L., Galligher, B., & Eliassi-Rad, T. (2008). Collective Classification in Network Data. AI Magazine, 29(3), 93–106. https://doi.org/10.1609/aimag.v29i3.2157",
+  "license": {
+    "identifier": "Dataset license not stated",
+    "url": "https://linqs.org/datasets/",
+    "notes": "No standard SPDX license identifier is stated for the commonly used PubMed citation-network dataset. Check the original dataset source and any applicable publication/database terms before use or redistribution."
+  },
+  "upstream_url": "https://linqs.org/datasets/"
+}

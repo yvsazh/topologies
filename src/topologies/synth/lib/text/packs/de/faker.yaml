@@ -1,0 +1,143 @@
+# Faker data for locale 'de': names, places, companies, formats.
+locale: de
+first_male:
+- Lukas
+- Leon
+- Finn
+- Jonas
+- Paul
+- Felix
+- Maximilian
+- Elias
+- Ben
+- Noah
+- Tim
+- Jan
+- Stefan
+- Thomas
+- Michael
+- Andreas
+- Markus
+- Tobias
+- Florian
+- Sebastian
+first_female:
+- Anna
+- Lena
+- Leonie
+- Marie
+- Sophie
+- Lea
+- Emma
+- Hannah
+- Laura
+- Julia
+- Katharina
+- Sabine
+- Petra
+- Claudia
+- Nina
+- Johanna
+- Mia
+- Lina
+last:
+- Müller
+- Schmidt
+- Schneider
+- Fischer
+- Weber
+- Meyer
+- Wagner
+- Becker
+- Schulz
+- Hoffmann
+- Schäfer
+- Koch
+- Bauer
+- Richter
+- Klein
+- Wolf
+- Schröder
+- Neumann
+- Schwarz
+- Zimmermann
+- Braun
+- Krüger
+- Hofmann
+cities:
+- Berlin
+- Hamburg
+- München
+- Köln
+- Frankfurt am Main
+- Stuttgart
+- Düsseldorf
+- Leipzig
+- Dortmund
+- Essen
+- Bremen
+- Dresden
+- Hannover
+- Nürnberg
+- Wien
+- Zürich
+streets:
+- Hauptstraße
+- Schulstraße
+- Gartenstraße
+- Bahnhofstraße
+- Dorfstraße
+- Bergstraße
+- Lindenstraße
+- Kirchstraße
+- Waldstraße
+- Ringstraße
+- Goethestraße
+- Schillerstraße
+- Mozartstraße
+address_format: '{street} {number}, {postcode} {city}'
+postcode:
+- '#####'
+country: Deutschland
+company_suffix:
+- GmbH
+- AG
+- KG
+- GmbH & Co. KG
+- e.K.
+company_words:
+- Nordlicht
+- Alpen
+- Rhein
+- Sonnen
+- Blau
+- Eichen
+- Stern
+- Berg
+- Elbe
+- Falken
+domains:
+- gmail.com
+- web.de
+- gmx.de
+- t-online.de
+- posteo.de
+phone:
+- '+49 1## #######'
+- '0### #######'
+currency: EUR
+date_format: '%d.%m.%Y'
+iban_country: DE
+products:
+- Kopfhörer
+- Laptop
+- Ladegerät
+- Smartwatch
+- Handyhülle
+- Lautsprecher
+- Maus
+- Monitor
+- Tablet
+- Tastatur
+- Router
+- Powerbank

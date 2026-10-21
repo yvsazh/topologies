@@ -1,0 +1,13 @@
+{
+  "id": "nab",
+  "name": "Numenta Anomaly Benchmark (NAB)",
+  "domain": "time-series",
+  "description": "A collection of real-world and artificial time series designed to evaluate algorithms for streaming anomaly detection, with labeled anomalies and a scoring methodology that accounts for timely detection.",
+  "citation": "Lavin, A., & Ahmad, S. (2015). Evaluating Real-Time Anomaly Detection Algorithms — The Numenta Anomaly Benchmark. 2015 IEEE 14th International Conference on Machine Learning and Applications (ICMLA), 38–44. https://doi.org/10.1109/ICMLA.2015.141",
+  "license": {
+    "identifier": "Dataset-specific terms; not a standard SPDX identifier",
+    "url": "https://github.com/numenta/NAB",
+    "notes": "The upstream repository does not specify a standard SPDX license identifier for the dataset as a whole. Review the upstream repository's license and any applicable source-data terms before use or redistribution. This record does not include dataset files."
+  },
+  "upstream_url": "https://github.com/numenta/NAB"
+}

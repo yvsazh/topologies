@@ -1,0 +1,13 @@
+{
+  "id": "noaa-oisst",
+  "name": "NOAA OISST",
+  "domain": "scientific",
+  "description": "NOAA Optimum Interpolation Sea Surface Temperature version 2.1, daily 1-degree grids from 1981 onward, blending AVHRR and AMSR. RMSE and anomaly correlation. Huang et al., Journal of Climate 2021. Grids not vendored.",
+  "citation": "Huang et al., Journal of Climate 2021. NOAA OISST.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://www.ncei.noaa.gov/products/optimum-interpolation-sst",
+    "notes": "NOAA public domain. Grids not vendored."
+  },
+  "upstream_url": "https://www.ncei.noaa.gov/products/optimum-interpolation-sst"
+}

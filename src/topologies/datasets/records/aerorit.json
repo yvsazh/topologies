@@ -1,0 +1,13 @@
+{
+  "id": "aerorit",
+  "name": "AeroRIT",
+  "domain": "hyperspectral remote sensing",
+  "description": "Aerial hyperspectral scene over the Rochester Institute of Technology campus, with pixel-wise semantic labels for roads, buildings, vegetation, cars, and water.",
+  "citation": "Rangnekar, A., Mokashi, N., Ientilucci, E., Kanan, C., & Hoffman, M. J. (2020). AeroRIT: A New Scene for Hyperspectral Image Analysis. IEEE Transactions on Geoscience and Remote Sensing, 58(11), 8116–8124. https://arxiv.org/abs/1912.08178",
+  "license": {
+    "identifier": "other",
+    "url": "",
+    "notes": "Dataset available for non-commercial purposes under the terms stated in the upstream repository README; license identifier not verified."
+  },
+  "upstream_url": "https://github.com/aneesh3108/AeroRIT"
+}

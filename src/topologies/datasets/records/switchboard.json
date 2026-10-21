@@ -1,0 +1,12 @@
+{
+  "id": "switchboard",
+  "name": "Switchboard",
+  "domain": "audio",
+  "description": "Conversational telephone speech, with Fisher and CallHome English mentioned as related conversational speech corpora. LDC gated; loader-only. No data vendored.",
+  "citation": "Switchboard: A telephone speech corpus of conversational speech.",
+  "license": {
+    "identifier": "LDC gated terms",
+    "url": "https://catalog.ldc.upenn.edu/LDC97S62"
+  },
+  "upstream_url": "https://catalog.ldc.upenn.edu/LDC97S62"
+}

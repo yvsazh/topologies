@@ -1,0 +1,13 @@
+{
+  "id": "fraud-ieee",
+  "name": "IEEE-CIS Fraud Detection Dataset",
+  "domain": "tabular",
+  "description": "An anonymized transaction and identity dataset released for the IEEE-CIS Fraud Detection competition, intended for transaction fraud prediction. This record is loader-only and does not distribute dataset files.",
+  "citation": "Vesta Corporation. (2019). IEEE-CIS Fraud Detection [Competition dataset]. Kaggle. https://www.kaggle.com/competitions/ieee-fraud-detection",
+  "license": {
+    "identifier": "Kaggle competition dataset terms (not a standard SPDX identifier)",
+    "url": "https://www.kaggle.com/competitions/ieee-fraud-detection/rules",
+    "notes": "Access and use are governed by the competition rules and dataset-specific terms, not a standard SPDX license identifier. Review the current terms before use or redistribution. This record is loader-only and vendors no data."
+  },
+  "upstream_url": "https://www.kaggle.com/competitions/ieee-fraud-detection"
+}

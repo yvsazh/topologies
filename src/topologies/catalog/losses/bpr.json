@@ -1,0 +1,9 @@
+{
+  "id": "bpr", "name": "Bayesian personalized ranking loss",
+  "description": "Pairwise implicit-ranking softplus(negative_score-positive_score); sampling is external.",
+  "api": "topologies.training.losses:compute_loss(cfg, positive_scores, negative_scores, **extra)",
+  "examples": [{"title": "Train matrix factorization with BPR", "code": "import tempfile\nimport torch\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef pairs(ctx):\n user = int(torch.randint(0, 8, (), generator=ctx.rng.torch))\n positive = int(torch.randint(0, 12, (), generator=ctx.rng.torch))\n negative = (positive + 1) % 12\n return {\"users\": user, \"positive_items\": positive, \"negative_items\": negative}\nds = synth.Spec(\"bpr-ranking\", generator=pairs, size=24, splits={\"train\": 0.75, \"val\": 0.25}, seed=11, root=root, monitor=\"none\").run()\ntrain = ds.for_recipe(\"recommender-bpr\", split=\"train\")\nmodel = build(\"matrix-factorization\", \"tiny\", num_users=8, num_items=12, embedding_dim=4)\ntrainer = Trainer(model, train, recipe=\"recommender-bpr\", recipe_config={\"loss\": \"bpr\"}, max_epochs=1, device=\"cpu\")\ntrainer.fit()"}],
+  "usage": "Trainer(model, train, recipe='recommender-bpr', recipe_config={'loss':'bpr'})",
+  "parameters": {"reduction": "none per pair, mean, or sum"},
+  "implementation": {"path": "implementations/training/core.py", "symbol": "bpr", "sha256": "878f03ad0677bb8cd1b993861f72dcf5bfa14853743a5b355353c1d1f8162f9b"}
+}

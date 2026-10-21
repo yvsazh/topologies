@@ -1,0 +1,13 @@
+{
+  "id": "mvtec-loco",
+  "name": "MVTec LOCO",
+  "domain": "vision",
+  "description": "MVTec LOCO logical anomalies, about 3600 images. Image and pixel AUROC and sPRO. Bergmann et al., IJCV 2022. Distinct from MVTec AD structural anomalies. Images not vendored.",
+  "citation": "Bergmann et al., IJCV 2022. MVTec LOCO.",
+  "license": {
+    "identifier": "CC-BY-NC-SA-4.0",
+    "url": "https://www.mvtec.com/company/research/datasets/mvtec-loco",
+    "notes": "CC BY-NC-SA. Images not vendored."
+  },
+  "upstream_url": "https://www.mvtec.com/company/research/datasets/mvtec-loco"
+}

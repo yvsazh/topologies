@@ -1,0 +1,12 @@
+{
+  "id": "billion-word",
+  "name": "One Billion Word Benchmark",
+  "domain": "language",
+  "description": "Large word-level language modeling benchmark, about 829M tokens. No data vendored.",
+  "citation": "One Billion Word Benchmark; Chelba et al. 2014.",
+  "license": {
+    "identifier": "Release terms",
+    "url": "http://www.statmt.org/lm-benchmark/"
+  },
+  "upstream_url": "http://www.statmt.org/lm-benchmark/"
+}

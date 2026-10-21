@@ -1,0 +1,13 @@
+{
+  "id": "covertype",
+  "name": "Covertype (Forest CoverType) Dataset",
+  "domain": "tabular",
+  "description": "A classification dataset of cartographic variables for 30 × 30 meter cells in the Roosevelt National Forest of northern Colorado, with the target identifying one of seven forest cover types.",
+  "citation": "Blackard, J. A., & Dean, D. J. (1999). Comparative accuracies of artificial neural networks and discriminant analysis in predicting forest cover types from cartographic variables. Computers and Electronics in Agriculture, 24(3), 131–151. https://doi.org/10.1016/S0168-1699(99)00046-0",
+  "license": {
+    "identifier": "Dataset license not specified (not a standard SPDX identifier)",
+    "url": "https://archive.ics.uci.edu/dataset/31/covertype",
+    "notes": "The UCI dataset page does not specify a standard dataset license. Review UCI terms and applicable rights before use or redistribution; this record does not include dataset contents."
+  },
+  "upstream_url": "https://archive.ics.uci.edu/dataset/31/covertype"
+}

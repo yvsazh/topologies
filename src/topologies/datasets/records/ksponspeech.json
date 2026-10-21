@@ -1,0 +1,12 @@
+{
+  "id": "ksponspeech",
+  "name": "KsponSpeech",
+  "domain": "audio",
+  "description": "Korean conversational speech, about 965 hours. Access is subject to AI Hub terms. No data is vendored here.",
+  "citation": "KsponSpeech: Korean conversational speech corpus (about 965 hours).",
+  "license": {
+    "identifier": "AI Hub terms (not a standard SPDX identifier)",
+    "url": "https://aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100"
+  },
+  "upstream_url": "https://aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "dclde",
+  "name": "DCLDE Killer Whale Acoustic Annotations",
+  "domain": "bioacoustics",
+  "description": "Annotated acoustic recordings and killer-whale vocalization labels for detection and ecotype classification, assembled for the DCLDE workshop.",
+  "citation": "Palmer, K. J., et al. (2025). A Public Dataset of Annotated Orcinus orca Acoustic Signals for Detection and Ecotype Classification. Scientific Data, 12, 1137. https://doi.org/10.1038/s41597-025-05281-5. Dataset: Palmer, K. & Joy, R. (2025). DCLDE 2026: Killer whale (Orcinus orca) ecotype and other species annotations for the Detection Classification Localization and Density Estimate (DCLDE) conference in 2026. NOAA National Centers for Environmental Information. https://doi.org/10.25921/15ey-mh50.",
+  "license": {
+    "identifier": "other",
+    "url": "",
+    "notes": "unverified"
+  },
+  "upstream_url": "https://dclde.org/challenges-and-data-sets"
+}

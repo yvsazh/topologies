@@ -1,0 +1,13 @@
+{
+  "id": "beans",
+  "name": "BEANS: The Benchmark of Animal Sounds",
+  "domain": "Bioacoustics",
+  "description": "A benchmark of 12 bioacoustic classification and detection datasets spanning animal groups including birds, land and marine mammals, anurans, and insects.",
+  "citation": "Hagiwara, M., Hoffman, B., Liu, J.-Y., Cusimano, M., Effenberger, F., & Zacarian, K. (2022). BEANS: The Benchmark of Animal Sounds. arXiv:2210.12300.",
+  "license": {
+    "identifier": "other",
+    "url": "",
+    "notes": "The benchmark paper/repository dataset license is unverified; individual component datasets may have separate terms."
+  },
+  "upstream_url": "https://github.com/earthspecies/beans"
+}

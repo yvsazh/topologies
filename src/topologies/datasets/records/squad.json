@@ -1,0 +1,13 @@
+{
+  "id": "squad",
+  "name": "Stanford Question Answering Dataset (SQuAD)",
+  "domain": "natural-language",
+  "description": "Reading-comprehension benchmark consisting of questions posed by crowdworkers on Wikipedia passages, with answers represented as text spans in those passages.",
+  "citation": "Rajpurkar, P., Zhang, J., Lopyrev, K., & Liang, P. (2016). SQuAD: 100,000+ Questions for Machine Comprehension of Text. Proceedings of the 2016 Conference on Empirical Methods in Natural Language Processing, 2383–2392. https://doi.org/10.18653/v1/D16-1264",
+  "license": {
+    "identifier": "Not stated",
+    "url": "https://rajpurkar.github.io/SQuAD-explorer/",
+    "notes": "The upstream dataset page does not state a dataset license, so no standard SPDX identifier can be asserted. Review the upstream terms and the rights in the underlying Wikipedia text before use or redistribution."
+  },
+  "upstream_url": "https://rajpurkar.github.io/SQuAD-explorer/"
+}

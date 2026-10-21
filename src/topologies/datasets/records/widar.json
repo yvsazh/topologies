@@ -1,0 +1,13 @@
+{
+  "id": "widar",
+  "name": "Widar 3.0 WiFi-Based Activity Recognition Dataset",
+  "domain": "WiFi sensing / human activity recognition",
+  "description": "Wi-Fi channel state information (CSI) dataset for cross-domain human gesture recognition, including CSI, Doppler frequency shift, and body-coordinate velocity profile data.",
+  "citation": "Yue Zheng, Yi Zhang, Guidong Zhang, Kun Qian, Yunhao Liu, Chenshu Wu, and Zheng Yang. ‘Zero-Effort Cross-Domain Gesture Recognition With Wi-Fi.’ Proceedings of the 17th Annual International Conference on Mobile Systems, Applications, and Services (MobiSys 2019).",
+  "license": {
+    "identifier": "other",
+    "url": "",
+    "notes": "Dataset license not published on the project page; terms unverified."
+  },
+  "upstream_url": "https://tns.thss.tsinghua.edu.cn/widar3.0/"
+}

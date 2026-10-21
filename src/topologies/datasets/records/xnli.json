@@ -1,0 +1,13 @@
+{
+  "id": "xnli",
+  "name": "Cross-lingual Natural Language Inference (XNLI)",
+  "domain": "natural-language",
+  "description": "A cross-lingual natural language inference benchmark consisting of premise-hypothesis pairs in 15 languages, annotated for entailment, contradiction, or neutral relations.",
+  "citation": "Conneau, A., Rinott, R., Lample, G., et al. (2018). XNLI: Evaluating Cross-lingual Sentence Representations. Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing, 2475–2485. https://doi.org/10.18653/v1/D18-1269",
+  "license": {
+    "identifier": "CC-BY-NC-4.0",
+    "url": "https://creativecommons.org/licenses/by-nc/4.0/",
+    "notes": "Non-commercial Creative Commons license; verify attribution and other license conditions before use. The dataset is publicly available from the upstream repository; no account-gated access is indicated there."
+  },
+  "upstream_url": "https://github.com/facebookresearch/XNLI"
+}

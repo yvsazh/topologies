@@ -1,0 +1,13 @@
+{
+  "id": "home-credit-default-risk",
+  "name": "Home Credit Default Risk",
+  "domain": "scientific",
+  "description": "Home Credit default risk, about 308 thousand applications. AUC under the Kaggle protocol. Loader-only metadata.",
+  "citation": "Home Credit Default Risk Kaggle challenge.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://www.kaggle.com/c/home-credit-default-risk",
+    "notes": "Kaggle competition terms. Record only; no data vendored."
+  },
+  "upstream_url": "https://www.kaggle.com/c/home-credit-default-risk"
+}

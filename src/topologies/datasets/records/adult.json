@@ -1,0 +1,13 @@
+{
+  "id": "adult",
+  "name": "Adult (Census Income) Dataset",
+  "domain": "tabular",
+  "description": "A tabular census-derived dataset for predicting whether an individual’s annual income exceeds $50,000, using demographic and employment attributes.",
+  "citation": "Kohavi, R. (1996). Scaling Up the Accuracy of Naive-Bayes Classifiers: A Decision-Tree Hybrid. Proceedings of the Second International Conference on Knowledge Discovery and Data Mining (KDD-96), 202–207.",
+  "license": {
+    "identifier": "Not specified by upstream (not a standard SPDX identifier)",
+    "url": "https://archive.ics.uci.edu/dataset/2/adult",
+    "notes": "The UCI dataset page does not state a standard dataset license. Review UCI terms and applicable rights for the underlying census data before use or redistribution."
+  },
+  "upstream_url": "https://archive.ics.uci.edu/dataset/2/adult"
+}

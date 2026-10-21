@@ -1,0 +1,13 @@
+{
+  "id": "breakhis",
+  "name": "BreakHis",
+  "domain": "vision",
+  "description": "BreakHis breast histology, about 9 thousand images, eight subtypes at four magnifications. Image-level and patient-level accuracy. Spanhol et al., IEEE TBME 2016. Images not vendored.",
+  "citation": "Spanhol et al., TBME 2016. BreakHis.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://web.inf.ufpr.br/vri/databases/breast-cancer-histopathological-database-breakhis/",
+    "notes": "Provider page does not state a standard SPDX license. Human images are loader-only and not vendored."
+  },
+  "upstream_url": "https://web.inf.ufpr.br/vri/databases/breast-cancer-histopathological-database-breakhis/"
+}

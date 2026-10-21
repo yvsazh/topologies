@@ -1,0 +1,13 @@
+{
+  "id": "pems-08",
+  "name": "PeMSD8 (PeMS-08)",
+  "domain": "time-series",
+  "description": "A multivariate traffic time-series forecasting dataset derived from California Department of Transportation Performance Measurement System (PeMS) data. It contains traffic measurements from 170 sensors in the San Bernardino area, aggregated at 5-minute intervals over July–August 2016. This record does not distribute dataset files.",
+  "citation": "Guo, S., Lin, Y., Feng, N., Song, C., and Wan, H. (2019). Spatial-Temporal Graph Convolutional Networks: A Deep Learning Framework for Traffic Forecasting. Proceedings of the Twenty-Eighth International Joint Conference on Artificial Intelligence (IJCAI-19), 3634–3640. https://doi.org/10.24963/ijcai.2019/505",
+  "license": {
+    "identifier": "Dataset-specific terms; not a standard SPDX license identifier",
+    "url": "https://pems.dot.ca.gov/",
+    "notes": "The PeMSD8 data is derived from Caltrans PeMS. No standard SPDX license identifier for this processed dataset is established here; consult Caltrans and the dataset distributor's terms before use or redistribution. This record vendors no data."
+  },
+  "upstream_url": "https://github.com/guoshnBJTU/ASTGCN-2019-pytorch"
+}

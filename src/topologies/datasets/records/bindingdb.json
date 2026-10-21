@@ -1,0 +1,13 @@
+{
+  "id": "bindingdb",
+  "name": "BindingDB",
+  "domain": "scientific",
+  "description": "BindingDB binding affinities, about 2.7 million measurements covering about 1 million compounds and 9000 targets. RMSE and Pearson correlation on a cluster split. Gilson et al., Nucleic Acids Research 2016. Tables not vendored.",
+  "citation": "Gilson et al., Nucleic Acids Research 2016. BindingDB.",
+  "license": {
+    "identifier": "CC-BY-4.0",
+    "url": "https://www.bindingdb.org/",
+    "notes": "CC BY. Affinity tables not vendored."
+  },
+  "upstream_url": "https://www.bindingdb.org/"
+}

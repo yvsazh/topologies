@@ -1,0 +1,13 @@
+{
+  "id": "magnatagatune",
+  "name": "MagnaTagATune",
+  "domain": "audio",
+  "description": "A music audio dataset containing approximately 25,863 29-second clips from the Magnatune collection, annotated with tags by users of the TagATune game; commonly used for music auto-tagging research.",
+  "citation": "Law, E., West, K., Mandel, M. I., Bay, M., & Ector, G. (2009). Evaluation of algorithms using games: The case of music tagging. Proceedings of the 10th International Society for Music Information Retrieval Conference (ISMIR 2009), 387–392. https://ismir2009.ismir.net/proceedings/OS7-1.pdf",
+  "license": {
+    "identifier": "License not specified",
+    "url": "http://tagatune.org/",
+    "notes": "The upstream dataset site does not identify a standard SPDX license for the dataset. Treat the audio recordings and annotations as having separate rights where applicable; consult upstream terms and obtain permission before redistribution or other use that requires rights clearance."
+  },
+  "upstream_url": "http://tagatune.org/"
+}

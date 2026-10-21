@@ -1,0 +1,13 @@
+{
+  "id": "inria-aerial",
+  "name": "Inria Aerial Image Labeling",
+  "domain": "vision",
+  "description": "Inria aerial building segmentation, 180 tiles covering about 810 square kilometers. IoU on the city split. Maggiori et al., IGARSS 2017. Imagery not vendored.",
+  "citation": "Maggiori et al., IGARSS 2017. Inria Aerial Image Labeling.",
+  "license": {
+    "identifier": "CC-BY-NC-SA-4.0",
+    "url": "https://project.inria.fr/aerialimagelabeling/",
+    "notes": "CC BY-NC-SA. Imagery not vendored."
+  },
+  "upstream_url": "https://project.inria.fr/aerialimagelabeling/"
+}

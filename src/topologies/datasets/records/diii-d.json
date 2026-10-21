@@ -1,0 +1,13 @@
+{
+  "id": "diii-d",
+  "name": "DIII-D",
+  "domain": "scientific",
+  "description": "DIII-D tokamak disruption shots, more than 10 thousand shots with tearing-mode precursors. Disruption average precision and warning time. Collaboration access through General Atomics. Shot data not vendored.",
+  "citation": "DIII-D tokamak disruption data.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://fusion.gat.com/",
+    "notes": "General Atomics collaboration gate. Shot data not vendored."
+  },
+  "upstream_url": "https://fusion.gat.com/"
+}

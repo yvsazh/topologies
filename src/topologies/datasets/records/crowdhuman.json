@@ -1,0 +1,12 @@
+{
+  "id": "crowdhuman",
+  "name": "CrowdHuman",
+  "domain": "vision",
+  "description": "A pedestrian detection dataset focused on crowded scenes, with full, visible, head, and body bounding boxes across about 15k images and 470k boxes. The dataset is subject to SenseTime release terms; this record does not vendor data.",
+  "citation": "Shao, S., Zhao, Z., Li, B., Xiao, T., Yu, G., Zhang, X., & Sun, J. (2018). CrowdHuman: A Benchmark for Detecting Human in a Crowd. arXiv:1805.00123.",
+  "license": {
+    "identifier": "SenseTime release terms (not a standard SPDX identifier)",
+    "url": "https://www.crowdhuman.org/"
+  },
+  "upstream_url": "https://www.crowdhuman.org/"
+}

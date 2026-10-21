@@ -1,0 +1,13 @@
+{
+  "id": "chaos",
+  "name": "CHAOS",
+  "domain": "vision",
+  "description": "CHAOS abdominal CT and MR, five tasks covering liver, kidney, and spleen. Dice and relative absolute volume difference. Kavur et al., Medical Image Analysis 2021. Human scans not vendored.",
+  "citation": "Kavur et al., MedIA 2021. CHAOS abdominal CT and MR.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://chaos.grand-challenge.org/",
+    "notes": "Research terms. Human scans are loader-only and not vendored."
+  },
+  "upstream_url": "https://chaos.grand-challenge.org/"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "amazon-2018",
+  "name": "Amazon 2018 Reviews",
+  "domain": "recommendation",
+  "description": "The 2018 Amazon Reviews corpus, containing user reviews, ratings, and product metadata across product categories, commonly used for recommendation and review-analysis research. This record is loader-only and does not distribute dataset files.",
+  "citation": "McAuley, J., Pandey, R., & Leskovec, J. (2015). Inferring Networks of Substitutable and Complementary Products. Proceedings of the 21st ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, 785–794. https://doi.org/10.1145/2783258.278338opic",
+  "license": {
+    "identifier": "Dataset-specific terms (not a standard SPDX identifier)",
+    "url": "https://nijianmo.github.io/amazon/index.html",
+    "notes": "The dataset is distributed for research purposes under dataset-specific terms; these are not a standard SPDX license identifier. Review current upstream terms and applicable rights before use or redistribution. This record does not distribute dataset files."
+  },
+  "upstream_url": "https://nijianmo.github.io/amazon/index.html"
+}

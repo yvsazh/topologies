@@ -1,0 +1,12 @@
+{
+  "id": "arxiv-pubmed-sum",
+  "name": "ArXiv and PubMed summarization",
+  "domain": "language",
+  "description": "A long-document summarization corpus with arXiv and PubMed subsets containing about 215k and 133k documents, respectively. The subsets are available under their respective open-subset terms; no data is vendored here.",
+  "citation": "Cohan, A., Dernoncourt, F., Kim, D. S., Bui, T., Kim, S., Chang, W., & Goharian, N. (2018). A Discourse-Aware Attention Model for Abstractive Summarization of Long Documents. Proceedings of NAACL-HLT 2018. The long-document summarization corpus is the arXiv and PubMed summarization dataset.",
+  "license": {
+    "identifier": "arXiv and PubMed open-subset terms",
+    "url": "https://github.com/armancohan/long-summarization"
+  },
+  "upstream_url": "https://github.com/armancohan/long-summarization"
+}

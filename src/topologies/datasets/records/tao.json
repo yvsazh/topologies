@@ -1,0 +1,12 @@
+{
+  "id": "tao",
+  "name": "TAO",
+  "domain": "vision",
+  "description": "A large-vocabulary tracking dataset with about 2,907 videos and 833 categories. This record is metadata-only and vendors no data.",
+  "citation": "Dave, A., Khurana, T., Tokmakov, P., Schmid, C., & Ramanan, D. (2020). TAO: A Large-Scale Benchmark for Tracking Any Object. Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR).",
+  "license": {
+    "identifier": "Custom TAO dataset release terms (not a standard SPDX identifier)",
+    "url": "https://taodataset.org/"
+  },
+  "upstream_url": "https://taodataset.org/"
+}

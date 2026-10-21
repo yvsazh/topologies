@@ -1,0 +1,13 @@
+{
+  "id": "gigaspeech",
+  "name": "GigaSpeech",
+  "domain": "audio",
+  "description": "A 10,000-hour, multi-domain English speech recognition corpus assembled from audiobooks, podcasts, and YouTube audio, with transcriptions and multiple data-quality subsets.",
+  "citation": "Chen, G., Chai, S., Wang, G., et al. (2021). GigaSpeech: An Evolving, Multi-domain ASR Corpus with 10,000 Hours of Transcribed Audio. https://arxiv.org/abs/2106.06909",
+  "license": {
+    "identifier": "GigaSpeech License (non-standard; not an SPDX identifier)",
+    "url": "https://github.com/SpeechColab/GigaSpeech",
+    "notes": "GigaSpeech is distributed under its own license terms, which are not a standard SPDX license identifier. Review the upstream license and the rights and restrictions applicable to the source audio before use or redistribution."
+  },
+  "upstream_url": "https://github.com/SpeechColab/GigaSpeech"
+}

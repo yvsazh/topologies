@@ -1,0 +1,12 @@
+{
+  "id": "musicnet",
+  "name": "MusicNet",
+  "domain": "audio",
+  "description": "Note-level classical transcription dataset containing 330 recordings. No data is vendored.",
+  "citation": "MusicNet: A Dataset for Music Audio Research, Thickstun et al., ICLR 2017.",
+  "license": {
+    "identifier": "CC-BY-4.0",
+    "url": "https://zenodo.org/records/5120004"
+  },
+  "upstream_url": "https://zenodo.org/records/5120004"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "mit-bih",
+  "name": "MIT-BIH Arrhythmia Database",
+  "domain": "time-series",
+  "description": "A collection of 48 half-hour, two-channel ambulatory electrocardiogram recordings from 47 subjects, annotated for the study of cardiac arrhythmias.",
+  "citation": "Moody, G. B., & Mark, R. G. (2001). The impact of the MIT-BIH Arrhythmia Database. IEEE Engineering in Medicine and Biology Magazine, 20(3), 45–50. https://doi.org/10.1109/51.932724",
+  "license": {
+    "identifier": "PhysioNet Credentialed Health Data License 1.5.0 (not a standard SPDX identifier)",
+    "url": "https://physionet.org/content/mitdb/1.0.0/",
+    "notes": "Access to the database requires PhysioNet credentialing and acceptance of the applicable data use agreement. This dataset license is not a standard SPDX identifier; review the current PhysioNet terms before access or use. This record does not include dataset files."
+  },
+  "upstream_url": "https://physionet.org/content/mitdb/1.0.0/"
+}

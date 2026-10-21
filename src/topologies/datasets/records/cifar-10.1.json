@@ -1,0 +1,12 @@
+{
+  "id": "cifar-10.1",
+  "name": "CIFAR-10.1",
+  "domain": "vision",
+  "description": "Distribution-shift test set for CIFAR-10 (v6/v7), containing about 2,000 images. This is the new test set only, not CIFAR-10. No data is vendored.",
+  "citation": "CIFAR-10.1: New  Test Sets for CIFAR-10. Recht et al. (2018).",
+  "license": {
+    "identifier": "MIT",
+    "url": "https://github.com/modestyachts/CIFAR-10.1"
+  },
+  "upstream_url": "https://github.com/modestyachts/CIFAR-10.1"
+}

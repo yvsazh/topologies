@@ -1,0 +1,12 @@
+{
+  "id": "mvimgnet",
+  "name": "MVImgNet",
+  "domain": "vision",
+  "description": "A multi-view object image dataset with about 6.5 million frames across 238 classes. This record is loader-only and does not vendor dataset data; use is subject to PKU terms.",
+  "citation": "Yu et al. (2023). MVImgNet: A Large-scale Dataset of Multi-view Images. Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR).",
+  "license": {
+    "identifier": "PKU terms (not a standard SPDX identifier)",
+    "url": "https://gaplab.cuhk.edu.cn/projects/MVImgNet/"
+  },
+  "upstream_url": "https://gaplab.cuhk.edu.cn/projects/MVImgNet/"
+}

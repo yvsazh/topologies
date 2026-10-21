@@ -1,0 +1,13 @@
+{
+  "id": "dcase",
+  "name": "DCASE Challenge Datasets",
+  "domain": "audio",
+  "description": "Audio datasets and task-specific evaluation resources used in the Detection and Classification of Acoustic Scenes and Events (DCASE) challenges, covering acoustic scene classification, sound event detection, and related environmental audio tasks. Dataset contents and terms vary by challenge task and year.",
+  "citation": "Mesaros, A., Heittola, T., & Virtanen, T. (2018). A multi-device dataset for urban acoustic scene classification. Proceedings of the Detection and Classification of Acoustic Scenes and Events Workshop (DCASE 2018). https://doi.org/10.33682/2z8x-3x44",
+  "license": {
+    "identifier": "Varies by dataset and challenge task; not a single standard SPDX identifier",
+    "url": "https://dcase.community/",
+    "notes": "DCASE is a challenge series, not one uniformly licensed dataset. Individual task datasets may have different licenses or terms; no single standard SPDX license identifier applies. Review the terms for the specific task, year, and constituent recordings before use or redistribution."
+  },
+  "upstream_url": "https://dcase.community/"
+}

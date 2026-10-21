@@ -1,0 +1,13 @@
+{
+  "id": "gqa",
+  "name": "GQA",
+  "domain": "vision",
+  "description": "A visual question answering dataset built from real-world images and scene graphs, designed to support compositional reasoning and balanced question-answer distributions.",
+  "citation": "Hudson, D. A., & Manning, C. D. (2019). GQA: A new dataset for real-world visual reasoning and compositional question answering. Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 6700–6709. https://doi.org/10.1109/CVPR.2019.00686",
+  "license": {
+    "identifier": "Not stated (not a standard SPDX identifier)",
+    "url": "https://cs.stanford.edu/people/dorarad/gqa/",
+    "notes": "The upstream dataset page does not specify a standard license. Review upstream terms and the underlying image rights before use or redistribution; do not assume redistribution or commercial-use rights."
+  },
+  "upstream_url": "https://cs.stanford.edu/people/dorarad/gqa/"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "triviaqa",
+  "name": "TriviaQA",
+  "domain": "natural-language",
+  "description": "A large-scale reading comprehension dataset containing trivia questions authored by trivia enthusiasts, paired with evidence documents and answer annotations.",
+  "citation": "Joshi, M., Choi, E., Weld, D. S., & Zettlemoyer, L. (2017). TriviaQA: A Large Scale Distantly Supervised Challenge Dataset for Reading Comprehension. Proceedings of the 55th Annual Meeting of the Association for Computational Linguistics, 1601–1611. https://doi.org/10.18653/v1/P17-1147",
+  "license": {
+    "identifier": "Dataset license not specified",
+    "url": "https://github.com/mandarjoshi90/triviaqa",
+    "notes": "The upstream project does not specify a standard SPDX license for the dataset. Evidence documents originate from external sources and may have separate rights and terms; review upstream terms and underlying content rights before use or redistribution."
+  },
+  "upstream_url": "https://github.com/mandarjoshi90/triviaqa"
+}

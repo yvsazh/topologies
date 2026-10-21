@@ -1,0 +1,6 @@
+# German -> ASCII.
+table:
+  ä: ae
+  ö: oe
+  ü: ue
+  ß: ss

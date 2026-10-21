@@ -1,0 +1,13 @@
+{
+  "id": "foursquare",
+  "name": "Foursquare NYC/TKY",
+  "domain": "recommendation",
+  "description": "Foursquare NYC and Tokyo point-of-interest check-ins (about 227k and 574k). Recall and NDCG with a geographic split. Brightkite (about 4.5 million check-ins) is a companion note inside this record, not a separate file. Yang et al. 2015. Loader-only metadata.",
+  "citation": "Yang et al. 2015. Foursquare NYC and Tokyo check-ins.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://sites.google.com/site/yangdingqi/home/foursquare-dataset",
+    "notes": "Provider page does not state a standard SPDX license. Record per source. No data vendored."
+  },
+  "upstream_url": "https://sites.google.com/site/yangdingqi/home/foursquare-dataset"
+}

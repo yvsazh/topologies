@@ -1,0 +1,13 @@
+{
+  "id": "cholec80",
+  "name": "Cholec80",
+  "domain": "scientific",
+  "description": "A dataset of 80 laparoscopic cholecystectomy videos from 13 surgeons, annotated with surgical phases and tool presence.",
+  "citation": "Twinanda, A. P., Shehata, S., Mutter, D., Marescaux, J., de Mathelin, M., and Padoy, N. (2017). EndoNet: A Deep Architecture for Recognition Tasks on Laparoscopic Videos. IEEE Transactions on Medical Imaging, 36(1), 86–97. https://doi.org/10.1109/TMI.2016.2593957",
+  "license": {
+    "identifier": "CC-BY-NC-SA-4.0",
+    "url": "https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.en",
+    "notes": ""
+  },
+  "upstream_url": "https://camma.unistra.fr/datasets/"
+}

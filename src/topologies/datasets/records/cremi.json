@@ -1,0 +1,13 @@
+{
+  "id": "cremi",
+  "name": "CREMI",
+  "domain": "scientific",
+  "description": "CREMI synaptic clefts, three electron-microscopy volumes of 1250 cubed voxels. Distance-aware CREMI score. Volumes not vendored.",
+  "citation": "CREMI synaptic cleft challenge.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://cremi.org/",
+    "notes": "Open research terms. Volumes not vendored."
+  },
+  "upstream_url": "https://cremi.org/"
+}

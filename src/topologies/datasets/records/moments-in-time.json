@@ -1,0 +1,12 @@
+{
+  "id": "moments-in-time",
+  "name": "Moments in Time",
+  "domain": "vision",
+  "description": "One million three-second video clips spanning 339 action classes. Released under MIT CSAIL terms; no data is vendored here.",
+  "citation": "Monfort, M., et al. (2019). Moments in Time Dataset: One Million Videos for Event Understanding. IEEE Transactions on Pattern Analysis and Machine Intelligence.",
+  "license": {
+    "identifier": "MIT CSAIL terms (not a standard SPDX identifier)",
+    "url": "http://moments.csail.mit.edu/"
+  },
+  "upstream_url": "http://moments.csail.mit.edu/"
+}

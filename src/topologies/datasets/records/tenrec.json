@@ -1,0 +1,13 @@
+{
+  "id": "tenrec",
+  "name": "Tenrec",
+  "domain": "recommendation",
+  "description": "A large-scale, multi-domain recommendation benchmark containing user-item interaction data and auxiliary features for evaluating recommendation models.",
+  "citation": "Yuan, G., et al. (2022). Tenrec: A Large-scale Multipurpose Benchmark Dataset for Recommendation. Proceedings of the 31st ACM International Conference on Information and Knowledge Management (CIKM).",
+  "license": {
+    "identifier": "Dataset-specific terms; not a standard SPDX license identifier",
+    "url": "https://github.com/yuangh-x/2022-CCS-RecSys-Challenge",
+    "notes": "No standard SPDX license identifier is specified here. Review the dataset provider's terms and any restrictions on the source platform data before use or redistribution. This record does not grant rights to the data."
+  },
+  "upstream_url": "https://github.com/yuangh-x/2022-CCS-RecSys-Challenge"
+}

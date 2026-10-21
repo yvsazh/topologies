@@ -1,0 +1,12 @@
+{
+  "id": "medleydb",
+  "name": "MedleyDB",
+  "domain": "audio",
+  "description": "A multitrack music dataset of 122 songs with stems and mixes. No data is vendored.",
+  "citation": "Bittner et al. (2014). MedleyDB: A Multitrack Dataset for Annotation- and Samplerate-Agnostic Audio; ISMIR 2014.",
+  "license": {
+    "identifier": "CC-BY-NC-SA-4.0",
+    "url": "https://medleydb.weebly.com/"
+  },
+  "upstream_url": "https://medleydb.weebly.com/"
+}

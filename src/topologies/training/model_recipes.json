@@ -1,0 +1,1331 @@
+{
+  "models": {
+    "actor-critic": {
+      "class": "ActorCritic",
+      "module": "topologies.models.actor_critic",
+      "recipe": "ppo",
+      "tasks": [
+        "ppo"
+      ]
+    },
+    "albert": {
+      "class": "ALBERT",
+      "defaults": {
+        "learning_rate": 0.0001,
+        "sop_weight": 1.0
+      },
+      "module": "topologies.models.bert_encoder",
+      "recipe": "albert-pretraining",
+      "tasks": [
+        "masked-language-modeling",
+        "sentence-order-prediction",
+        "feature-extraction"
+      ]
+    },
+    "alexnet": {
+      "class": "AlexNet",
+      "defaults": {
+        "dropout": 0.0,
+        "learning_rate": 0.0003
+      },
+      "module": "topologies.models.alexnet",
+      "recipe": "alexnet-classify",
+      "tasks": [
+        "image-classification"
+      ]
+    },
+    "attention-nmt": {
+      "class": "AttentionNMT",
+      "defaults": {
+        "dropout": 0.0,
+        "learning_rate": 0.0003
+      },
+      "module": "topologies.models.attention_nmt",
+      "recipe": "seq2seq-lm",
+      "tasks": [
+        "translation"
+      ]
+    },
+    "attn2d": {
+      "class": "Attn2D",
+      "defaults": {
+        "dropout": 0.0,
+        "learning_rate": 0.0003
+      },
+      "module": "topologies.models.attn2d",
+      "recipe": "attn2d-classify",
+      "tasks": [
+        "semantic-segmentation"
+      ]
+    },
+    "audio-crnn": {
+      "class": "AudioCRNN",
+      "module": "topologies.models.audio_crnn",
+      "recipe": "audio-classify",
+      "tasks": [
+        "audio-classify"
+      ]
+    },
+    "autoencoder": {
+      "class": "Autoencoder",
+      "module": "topologies.models.autoencoders",
+      "recipe": "autoencoder",
+      "tasks": [
+        "autoencoder"
+      ]
+    },
+    "bart": {
+      "class": "BART",
+      "defaults": {
+        "learning_rate": 0.0003
+      },
+      "module": "topologies.models.bart",
+      "recipe": "seq2seq-lm",
+      "tasks": [
+        "sequence-to-sequence",
+        "denoising",
+        "translation"
+      ]
+    },
+    "bert-encoder": {
+      "class": "BERTEncoder",
+      "defaults": {
+        "learning_rate": "1e-3"
+      },
+      "module": "topologies.models.bert_encoder",
+      "recipe": "masked-lm",
+      "tasks": [
+        "masked-language-modeling",
+        "text-classification"
+      ]
+    },
+    "bigbird": {
+      "class": "BigBird",
+      "defaults": {
+        "learning_rate": 0.0003,
+        "mask_token_id": 4,
+        "pad_token_id": 0
+      },
+      "module": "topologies.models.bigbird",
+      "recipe": "masked-lm",
+      "tasks": [
+        "masked-language-modeling",
+        "feature-extraction"
+      ]
+    },
+    "byt5": {
+      "class": "ByT5",
+      "defaults": {
+        "learning_rate": 0.0003
+      },
+      "module": "topologies.models.byt5",
+      "recipe": "seq2seq-lm",
+      "tasks": [
+        "sequence-to-sequence",
+        "denoising",
+        "feature-extraction"
+      ]
+    },
+    "canine": {
+      "class": "CANINE",
+      "defaults": {
+        "learning_rate": 0.0003
+      },
+      "module": "topologies.models.canine",
+      "recipe": "canine-c",
+      "tasks": [
+        "masked-language-modeling",
+        "feature-extraction"
+      ]
+    },
+    "charformer": {
+      "class": "Charformer",
+      "defaults": {
+        "learning_rate": 0.0003
+      },
+      "module": "topologies.models.charformer",
+      "recipe": "seq2seq-lm",
+      "tasks": [
+        "sequence-to-sequence",
+        "denoising",
+        "feature-extraction"
+      ]
+    },
+    "compact-convnet": {
+      "class": "CompactConvNet",
+      "module": "topologies.models.compact_convnet",
+      "recipe": "vision-classify",
+      "tasks": [
+        "vision-classify"
+      ]
+    },
+    "contrastive-vision": {
+      "class": "ContrastiveVision",
+      "defaults": {
+        "dropout": 0.0,
+        "learning_rate": 0.0003
+      },
+      "module": "topologies.models.contrastive_vision",
+      "recipe": "contrastive-vision-classify",
+      "tasks": [
+        "image-classification"
+      ]
+    },
+    "conv-asr": {
+      "class": "ConvASR",
+      "defaults": {
+        "blank_id": 4,
+        "dropout": 0.0,
+        "learning_rate": 0.0003
+      },
+      "module": "topologies.models.conv_asr",
+      "recipe": "ctc-asr",
+      "tasks": [
+        "speech-recognition"
+      ]
+    },
+    "conv-autoencoder": {
+      "class": "ConvAutoencoder",
+      "module": "topologies.models.autoencoders",
+      "recipe": "autoencoder",
+      "tasks": [
+        "autoencoder"
+      ]
+    },
+    "conv-vae": {
+      "class": "ConvVAE",
+      "module": "topologies.models.variational_autoencoders",
+      "recipe": "vae",
+      "tasks": [
+        "vae"
+      ]
+    },
+    "convnext": {
+      "class": "ConvNeXt",
+      "module": "topologies.models.convnext",
+      "recipe": "vision-classify",
+      "tasks": [
+        "vision-classify"
+      ]
+    },
+    "ctc-acoustic-model": {
+      "class": "CTCAcousticModel",
+      "module": "topologies.models.ctc_acoustic_model",
+      "recipe": "ctc-asr",
+      "tasks": [
+        "ctc-asr"
+      ]
+    },
+    "dcgan-discriminator": {
+      "class": "DCGANDiscriminator",
+      "module": "topologies.models.dcgan",
+      "recipe": "gan",
+      "tasks": [
+        "gan"
+      ]
+    },
+    "dcgan-generator": {
+      "class": "DCGANGenerator",
+      "module": "topologies.models.dcgan",
+      "recipe": "gan",
+      "tasks": [
+        "gan"
+      ]
+    },
+    "ddsp-synthesizer": {
+      "class": "DDSPSynthesizer",
+      "module": "topologies.models.ddsp_synthesizer",
+      "recipe": "audio-reconstruct",
+      "tasks": [
+        "audio-reconstruct"
+      ]
+    },
+    "deberta": {
+      "class": "Deberta",
+      "defaults": {
+        "learning_rate": 0.0001
+      },
+      "module": "topologies.models.deberta",
+      "recipe": "masked-lm",
+      "tasks": [
+        "masked-language-modeling",
+        "feature-extraction"
+      ]
+    },
+    "deberta-v3": {
+      "class": "DebertaV3",
+      "defaults": {
+        "cls_token_id": 2,
+        "discriminator_weight": 50.0,
+        "generator_weight": 1.0,
+        "learning_rate": 0.0002,
+        "mask_probability": 0.15,
+        "mask_token_id": 4,
+        "pad_token_id": 0,
+        "sep_token_id": 3,
+        "special_token_ids": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "temperature": 1.0,
+        "unknown_token_id": 1
+      },
+      "module": "topologies.models.deberta",
+      "recipe": "electra-pretraining",
+      "tasks": [
+        "replaced-token-detection",
+        "masked-language-modeling",
+        "feature-extraction"
+      ]
+    },
+    "deepfm": {
+      "class": "DeepFM",
+      "module": "topologies.models.deepfm",
+      "recipe": "recommender-bce",
+      "tasks": [
+        "recommender-bce"
+      ]
+    },
+    "deit": {
+      "class": "DeiT",
+      "defaults": {
+        "dropout": 0.0,
+        "learning_rate": 0.0003
+      },
+      "module": "topologies.models.deit",
+      "recipe": "deit-classify",
+      "tasks": [
+        "image-classification"
+      ]
+    },
+    "densenet": {
+      "class": "DenseNet",
+      "defaults": {
+        "dropout": 0.0,
+        "learning_rate": 0.0003
+      },
+      "module": "topologies.models.densenet",
+      "recipe": "densenet-classify",
+      "tasks": [
+        "image-classification"
+      ]
+    },
+    "detect-ops": {
+      "class": "DetectOps",
+      "defaults": {
+        "dropout": 0.0,
+        "learning_rate": 0.0003
+      },
+      "module": "topologies.models.detect_ops",
+      "recipe": "detect-ops-classify",
+      "tasks": [
+        "object-detection"
+      ]
+    },
+    "diagonal-ssm-model": {
+      "class": "DiagonalSSMModel",
+      "module": "topologies.models.diagonal_ssm_model",
+      "recipe": "regression",
+      "tasks": [
+        "regression"
+      ]
+    },
+    "diffusion-unet": {
+      "class": "DiffusionUNet",
+      "module": "topologies.models.diffusion_unet",
+      "recipe": "diffusion",
+      "tasks": [
+        "diffusion"
+      ]
+    },
+    "distilbert-encoder": {
+      "class": "DistilBERT",
+      "defaults": {
+        "cls_token_id": 101,
+        "cosine_weight": 1.0,
+        "distillation_weight": 5.0,
+        "learning_rate": 0.0001,
+        "mask_token_id": 103,
+        "mlm_weight": 2.0,
+        "pad_token_id": 0,
+        "sep_token_id": 102,
+        "special_token_ids": [
+          0,
+          100,
+          101,
+          102,
+          103
+        ],
+        "temperature": 2.0,
+        "unknown_token_id": 100
+      },
+      "module": "topologies.models.bert_encoder",
+      "recipe": "distilbert-pretraining",
+      "tasks": [
+        "masked-language-modeling",
+        "knowledge-distillation",
+        "feature-extraction"
+      ]
+    },
+    "dss-s5-mamba": {
+      "class": "DSSS5Mamba",
+      "module": "topologies.models.dss_s5_mamba",
+      "recipe": "causal-lm",
+      "tasks": []
+    },
+    "efficient-attention": {
+      "class": "EfficientAttentionEncoder",
+      "defaults": {
+        "learning_rate": 0.0003
+      },
+      "module": "topologies.models.efficient_attention",
+      "recipe": "masked-lm",
+      "tasks": [
+        "masked-language-modeling"
+      ]
+    },
+    "efficient-conv": {
+      "class": "EfficientConv",
+      "defaults": {
+        "dropout": 0.0,
+        "learning_rate": 0.0003
+      },
+      "module": "topologies.models.efficient_conv",
+      "recipe": "efficient-conv-classify",
+      "tasks": [
+        "image-classification"
+      ]
+    },
+    "electra": {
+      "class": "ELECTRA",
+      "defaults": {
+        "cls_token_id": 101,
+        "discriminator_weight": 50.0,
+        "generator_weight": 1.0,
+        "learning_rate": 0.0002,
+        "mask_probability": 0.15,
+        "mask_token_id": 103,
+        "pad_token_id": 0,
+        "sep_token_id": 102,
+        "special_token_ids": [
+          0,
+          100,
+          101,
+          102,
+          103
+        ],
+        "temperature": 1.0,
+        "unknown_token_id": 100
+      },
+      "module": "topologies.models.bert_encoder",
+      "recipe": "electra-pretraining",
+      "tasks": [
+        "masked-language-modeling",
+        "replaced-token-detection",
+        "feature-extraction"
+      ]
+    },
+    "gemma": {
+      "class": "Gemma",
+      "defaults": {
+        "dropout": 0.0,
+        "learning_rate": 0.0003
+      },
+      "module": "topologies.models.gemma",
+      "recipe": "causal-lm",
+      "tasks": [
+        "causal-language-modeling",
+        "text-generation",
+        "feature-extraction"
+      ]
+    },
+    "gpt-2": {
+      "class": "GPT2",
+      "defaults": {
+        "learning_rate": 0.0003,
+        "pad_token_id": null
+      },
+      "module": "topologies.models.gpt2",
+      "recipe": "causal-lm",
+      "tasks": [
+        "causal-language-modeling",
+        "text-generation",
+        "feature-extraction"
+      ]
+    },
+    "gpt-decoder-family": {
+      "class": "GPTDecoderFamily",
+      "defaults": {
+        "dropout": 0.0,
+        "learning_rate": 0.0003
+      },
+      "module": "topologies.models.gpt_decoder_family",
+      "recipe": "causal-lm",
+      "tasks": [
+        "causal-language-modeling",
+        "text-generation",
+        "feature-extraction"
+      ]
+    },
+    "gpt-j-neox-pythia": {
+      "class": "GPTJNeoXPythia",
+      "defaults": {
+        "dropout": 0.0,
+        "learning_rate": 0.0003
+      },
+      "module": "topologies.models.gpt_j_neox_pythia",
+      "recipe": "causal-lm",
+      "tasks": [
+        "causal-language-modeling",
+        "text-generation",
+        "feature-extraction"
+      ]
+    },
+    "graph-network": {
+      "class": "GraphNetwork",
+      "module": "topologies.models.graph_network",
+      "recipe": "graph-supervised",
+      "tasks": [
+        "graph-supervised"
+      ]
+    },
+    "hyena": {
+      "class": "Hyena",
+      "defaults": {
+        "dropout": 0.0,
+        "learning_rate": 0.0003
+      },
+      "module": "topologies.models.hyena",
+      "recipe": "causal-lm",
+      "tasks": [
+        "causal-language-modeling"
+      ]
+    },
+    "image-text-dual-encoder": {
+      "class": "ImageTextDualEncoder",
+      "module": "topologies.models.image_text_dual_encoder",
+      "recipe": "contrastive-pairs",
+      "tasks": [
+        "contrastive-pairs"
+      ]
+    },
+    "inception": {
+      "class": "InceptionNet",
+      "defaults": {
+        "dropout": 0.0,
+        "learning_rate": 0.0003
+      },
+      "module": "topologies.models.inception",
+      "recipe": "inception-classify",
+      "tasks": [
+        "image-classification"
+      ]
+    },
+    "jamba-griffin-hawk": {
+      "class": "JambaGriffinHawk",
+      "defaults": {
+        "dropout": 0.0,
+        "learning_rate": 0.0003
+      },
+      "module": "topologies.models.jamba_griffin_hawk",
+      "recipe": "causal-lm",
+      "tasks": [
+        "causal-language-modeling"
+      ]
+    },
+    "lenet": {
+      "class": "LeNet",
+      "defaults": {
+        "dropout": 0.0,
+        "learning_rate": 0.0003
+      },
+      "module": "topologies.models.lenet",
+      "recipe": "lenet-classify",
+      "tasks": [
+        "image-classification"
+      ]
+    },
+    "llama": {
+      "class": "Llama",
+      "defaults": {
+        "dropout": 0.0,
+        "learning_rate": 0.0003,
+        "pad_token_id": null
+      },
+      "module": "topologies.models.llama",
+      "recipe": "causal-lm",
+      "tasks": [
+        "causal-language-modeling",
+        "text-generation",
+        "feature-extraction"
+      ]
+    },
+    "longformer": {
+      "class": "Longformer",
+      "defaults": {
+        "learning_rate": 0.0003,
+        "mask_token_id": 4,
+        "pad_token_id": 0
+      },
+      "module": "topologies.models.longformer",
+      "recipe": "masked-lm",
+      "tasks": [
+        "masked-language-modeling",
+        "feature-extraction"
+      ]
+    },
+    "mamba2-gated-deltanet-h3": {
+      "class": "Mamba2GatedDeltaNetH3",
+      "defaults": {
+        "dropout": 0.0,
+        "learning_rate": 0.0003
+      },
+      "module": "topologies.models.mamba2_gated_deltanet_h3",
+      "recipe": "causal-lm",
+      "tasks": [
+        "causal-language-modeling"
+      ]
+    },
+    "marian": {
+      "class": "MarianMT",
+      "defaults": {
+        "learning_rate": 0.0003
+      },
+      "module": "topologies.models.marian",
+      "recipe": "seq2seq-lm",
+      "tasks": [
+        "translation",
+        "sequence-to-sequence"
+      ]
+    },
+    "masked-image": {
+      "class": "MaskedImage",
+      "defaults": {
+        "dropout": 0.0,
+        "learning_rate": 0.0003
+      },
+      "module": "topologies.models.masked_image",
+      "recipe": "masked-image-classify",
+      "tasks": [
+        "self-supervised-learning"
+      ]
+    },
+    "matrix-factorization": {
+      "class": "MatrixFactorization",
+      "module": "topologies.models.matrix_factorization",
+      "recipe": "recommender-bce",
+      "tasks": [
+        "recommender-bce"
+      ]
+    },
+    "mistral": {
+      "class": "Mistral",
+      "defaults": {
+        "dropout": 0.0,
+        "learning_rate": 0.0003,
+        "pad_token_id": null
+      },
+      "module": "topologies.models.mistral",
+      "recipe": "causal-lm",
+      "tasks": [
+        "causal-language-modeling",
+        "text-generation",
+        "feature-extraction"
+      ]
+    },
+    "mixtral": {
+      "class": "Mixtral",
+      "defaults": {
+        "dropout": 0.0,
+        "learning_rate": 0.0003,
+        "router_aux_loss_coef": 0.02
+      },
+      "module": "topologies.models.mixtral",
+      "recipe": "mixtral-causal-lm",
+      "tasks": [
+        "causal-language-modeling",
+        "text-generation",
+        "feature-extraction"
+      ]
+    },
+    "mlp": {
+      "class": "MLP",
+      "module": "topologies.models.mlp",
+      "recipe": "tabular-classify",
+      "tasks": [
+        "tabular-classify"
+      ]
+    },
+    "mobilenet-v2": {
+      "class": "MobileNetV2",
+      "module": "topologies.models.mobilenet_v2",
+      "recipe": "vision-classify",
+      "tasks": [
+        "vision-classify"
+      ]
+    },
+    "modern-conv": {
+      "class": "ModernConv",
+      "defaults": {
+        "dropout": 0.0,
+        "learning_rate": 0.0003
+      },
+      "module": "topologies.models.modern_conv",
+      "recipe": "modern-conv-classify",
+      "tasks": [
+        "image-classification"
+      ]
+    },
+    "modernbert": {
+      "class": "ModernBERT",
+      "defaults": {
+        "learning_rate": 0.0003,
+        "mask_token_id": 4,
+        "pad_token_id": 0
+      },
+      "module": "topologies.models.modernbert",
+      "recipe": "masked-lm",
+      "tasks": [
+        "masked-language-modeling",
+        "feature-extraction"
+      ]
+    },
+    "nbeats": {
+      "class": "NBEATS",
+      "module": "topologies.models.nbeats",
+      "recipe": "regression",
+      "tasks": [
+        "regression"
+      ]
+    },
+    "panoptic": {
+      "class": "PanopticHead",
+      "defaults": {
+        "dropout": 0.0,
+        "learning_rate": 0.0003
+      },
+      "module": "topologies.models.panoptic",
+      "recipe": "panoptic-classify",
+      "tasks": [
+        "semantic-segmentation"
+      ]
+    },
+    "phi": {
+      "class": "Phi",
+      "defaults": {
+        "dropout": 0.0,
+        "learning_rate": 0.0003
+      },
+      "module": "topologies.models.phi",
+      "recipe": "causal-lm",
+      "tasks": [
+        "causal-language-modeling",
+        "text-generation",
+        "feature-extraction"
+      ]
+    },
+    "point-cloud": {
+      "class": "PointCloud",
+      "defaults": {
+        "dropout": 0.0,
+        "learning_rate": 0.0003
+      },
+      "module": "topologies.models.point_cloud",
+      "recipe": "point-cloud-classify",
+      "tasks": [
+        "semantic-segmentation"
+      ]
+    },
+    "pos2d": {
+      "class": "Pos2D",
+      "defaults": {
+        "dropout": 0.0,
+        "learning_rate": 0.0003
+      },
+      "module": "topologies.models.pos2d",
+      "recipe": "pos2d-classify",
+      "tasks": [
+        "semantic-segmentation"
+      ]
+    },
+    "pose": {
+      "class": "PoseEstimator",
+      "defaults": {
+        "dropout": 0.0,
+        "learning_rate": 0.0003
+      },
+      "module": "topologies.models.pose",
+      "recipe": "pose-classify",
+      "tasks": [
+        "semantic-segmentation"
+      ]
+    },
+    "prompt-seg": {
+      "class": "PromptSegmenter",
+      "defaults": {
+        "dropout": 0.0,
+        "learning_rate": 0.0003
+      },
+      "module": "topologies.models.prompt_seg",
+      "recipe": "prompt-seg-classify",
+      "tasks": [
+        "semantic-segmentation"
+      ]
+    },
+    "q-network": {
+      "class": "QNetwork",
+      "module": "topologies.models.q_network",
+      "recipe": "td-value",
+      "tasks": [
+        "td-value"
+      ]
+    },
+    "qwen": {
+      "class": "Qwen",
+      "defaults": {
+        "dropout": 0.0,
+        "learning_rate": 0.0003
+      },
+      "module": "topologies.models.qwen",
+      "recipe": "causal-lm",
+      "tasks": [
+        "causal-language-modeling",
+        "text-generation",
+        "feature-extraction"
+      ]
+    },
+    "rag-fid": {
+      "class": "RagFid",
+      "defaults": {
+        "dropout": 0.0,
+        "learning_rate": 0.0003
+      },
+      "module": "topologies.models.rag_fid",
+      "recipe": "seq2seq-lm",
+      "tasks": [
+        "sequence-to-sequence",
+        "question-answering"
+      ]
+    },
+    "realnvp": {
+      "class": "RealNVP",
+      "module": "topologies.models.realnvp",
+      "recipe": "density-estimation",
+      "tasks": [
+        "density-estimation"
+      ]
+    },
+    "recurrent-lm": {
+      "class": "RecurrentLM",
+      "module": "topologies.models.recurrent_models",
+      "recipe": "causal-lm",
+      "tasks": [
+        "causal-lm"
+      ]
+    },
+    "recurrent-predictor": {
+      "class": "RecurrentPredictor",
+      "module": "topologies.models.recurrent_models",
+      "recipe": "regression",
+      "tasks": [
+        "regression"
+      ]
+    },
+    "resnet": {
+      "class": "ResNet",
+      "module": "topologies.models.resnet",
+      "recipe": "vision-classify",
+      "tasks": [
+        "vision-classify"
+      ]
+    },
+    "resnet-variants": {
+      "class": "ResidualVariants",
+      "defaults": {
+        "dropout": 0.0,
+        "learning_rate": 0.0003
+      },
+      "module": "topologies.models.resnet_variants",
+      "recipe": "resnet-variant-classify",
+      "tasks": [
+        "image-classification"
+      ]
+    },
+    "retinanet": {
+      "class": "RetinaNet",
+      "module": "topologies.models.retinanet",
+      "recipe": "object-detection",
+      "tasks": [
+        "object-detection"
+      ]
+    },
+    "retnet": {
+      "class": "RetNet",
+      "defaults": {
+        "dropout": 0.0,
+        "learning_rate": 0.0003
+      },
+      "module": "topologies.models.retnet",
+      "recipe": "causal-lm",
+      "tasks": [
+        "causal-language-modeling"
+      ]
+    },
+    "retro": {
+      "class": "Retro",
+      "defaults": {
+        "dropout": 0.0,
+        "learning_rate": 0.0003
+      },
+      "module": "topologies.models.retro",
+      "recipe": "causal-lm",
+      "tasks": [
+        "causal-language-modeling"
+      ]
+    },
+    "roberta": {
+      "class": "RoBERTa",
+      "defaults": {
+        "learning_rate": 0.0006
+      },
+      "module": "topologies.models.bert_encoder",
+      "recipe": "masked-lm",
+      "tasks": [
+        "masked-language-modeling",
+        "feature-extraction"
+      ]
+    },
+    "rwkv": {
+      "class": "RWKV",
+      "defaults": {
+        "dropout": 0.0,
+        "learning_rate": 0.0003
+      },
+      "module": "topologies.models.rwkv",
+      "recipe": "causal-lm",
+      "tasks": [
+        "causal-language-modeling"
+      ]
+    },
+    "s4": {
+      "class": "S4Model",
+      "defaults": {
+        "learning_rate": 0.001
+      },
+      "module": "topologies.models.s4",
+      "recipe": "causal-lm",
+      "tasks": [
+        "causal-language-modeling"
+      ]
+    },
+    "segment": {
+      "class": "Segmenter",
+      "defaults": {
+        "dropout": 0.0,
+        "learning_rate": 0.0003
+      },
+      "module": "topologies.models.segment",
+      "recipe": "segment-classify",
+      "tasks": [
+        "semantic-segmentation"
+      ]
+    },
+    "sentence-encoder": {
+      "class": "SentenceEncoder",
+      "defaults": {
+        "dropout": 0.0,
+        "learning_rate": 0.0003
+      },
+      "module": "topologies.models.sentence_encoder",
+      "recipe": "sentence-contrastive",
+      "tasks": [
+        "sentence-embedding",
+        "retrieval"
+      ]
+    },
+    "seq2seq": {
+      "class": "Seq2Seq",
+      "module": "topologies.models.seq2seq",
+      "recipe": "seq2seq-lm",
+      "tasks": [
+        "seq2seq-lm"
+      ]
+    },
+    "set-detect": {
+      "class": "SetDetector",
+      "defaults": {
+        "dropout": 0.0,
+        "learning_rate": 0.0003
+      },
+      "module": "topologies.models.set_detect",
+      "recipe": "set-detect-classify",
+      "tasks": [
+        "object-detection"
+      ]
+    },
+    "single-stage-detect": {
+      "class": "SingleStageDetector",
+      "defaults": {
+        "dropout": 0.0,
+        "learning_rate": 0.0003
+      },
+      "module": "topologies.models.single_stage_detect",
+      "recipe": "single-stage-classify",
+      "tasks": [
+        "object-detection"
+      ]
+    },
+    "spanbert": {
+      "class": "SpanBERT",
+      "defaults": {
+        "cls_token_id": 2,
+        "geometric_p": 0.2,
+        "learning_rate": 0.0001,
+        "mask_token_id": 4,
+        "masking_ratio": 0.15,
+        "pad_token_id": 0,
+        "sbo_weight": 1.0,
+        "sep_token_id": 3,
+        "span_lower": 1,
+        "span_upper": 10,
+        "special_token_ids": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "module": "topologies.models.spanbert",
+      "recipe": "spanbert-pretraining",
+      "tasks": [
+        "masked-language-modeling",
+        "span-prediction",
+        "feature-extraction"
+      ]
+    },
+    "static-embeddings": {
+      "class": "StaticEmbeddings",
+      "defaults": {
+        "dropout": 0.0,
+        "learning_rate": 0.0003
+      },
+      "module": "topologies.models.static_embeddings",
+      "recipe": "negative-sampling",
+      "tasks": [
+        "word-embedding"
+      ]
+    },
+    "swin": {
+      "class": "Swin",
+      "defaults": {
+        "dropout": 0.0,
+        "learning_rate": 0.0003
+      },
+      "module": "topologies.models.swin",
+      "recipe": "swin-classify",
+      "tasks": [
+        "image-classification"
+      ]
+    },
+    "t5": {
+      "class": "T5",
+      "defaults": {
+        "learning_rate": 0.0003
+      },
+      "module": "topologies.models.t5",
+      "recipe": "seq2seq-lm",
+      "tasks": [
+        "sequence-to-sequence",
+        "denoising",
+        "instruction-tuning"
+      ]
+    },
+    "tabular-mlp": {
+      "class": "TabularMLP",
+      "module": "topologies.models.tabular_mlp",
+      "recipe": "tabular-classify",
+      "tasks": [
+        "tabular-classify"
+      ]
+    },
+    "temporal-convnet": {
+      "class": "TemporalConvNet",
+      "module": "topologies.models.temporal_convnet",
+      "recipe": "regression",
+      "tasks": [
+        "regression"
+      ]
+    },
+    "text-cnn": {
+      "class": "TextCNN",
+      "module": "topologies.models.text_cnn",
+      "recipe": "text-classify",
+      "tasks": [
+        "text-classify"
+      ]
+    },
+    "token-mixer": {
+      "class": "TokenMixer",
+      "defaults": {
+        "dropout": 0.0,
+        "learning_rate": 0.0003
+      },
+      "module": "topologies.models.token_mixer",
+      "recipe": "token-mixer-classify",
+      "tasks": [
+        "image-classification"
+      ]
+    },
+    "transformer-classifier": {
+      "class": "TransformerClassifier",
+      "module": "topologies.models.transformer_models",
+      "recipe": "text-classify",
+      "tasks": [
+        "text-classify"
+      ]
+    },
+    "transformer-lm": {
+      "class": "TransformerLM",
+      "module": "topologies.models.transformer_models",
+      "recipe": "causal-lm",
+      "tasks": [
+        "causal-lm"
+      ]
+    },
+    "transformer-tagger": {
+      "class": "TransformerTagger",
+      "module": "topologies.models.transformer_models",
+      "recipe": "token-classify",
+      "tasks": [
+        "token-classify"
+      ]
+    },
+    "transformer-xl": {
+      "class": "TransformerXL",
+      "defaults": {
+        "learning_rate": 0.0003,
+        "segment_length": 8
+      },
+      "module": "topologies.models.transformer_xl",
+      "recipe": "transformer-xl-causal-lm",
+      "tasks": [
+        "causal-language-modeling",
+        "feature-extraction"
+      ]
+    },
+    "transitional-text": {
+      "class": "TransitionalText",
+      "defaults": {
+        "dropout": 0.0,
+        "learning_rate": 0.0003
+      },
+      "module": "topologies.models.transitional_text",
+      "recipe": "text-classify",
+      "tasks": [
+        "text-classification"
+      ]
+    },
+    "two-stage-detect": {
+      "class": "TwoStageDetector",
+      "defaults": {
+        "dropout": 0.0,
+        "learning_rate": 0.0003
+      },
+      "module": "topologies.models.two_stage_detect",
+      "recipe": "two-stage-classify",
+      "tasks": [
+        "object-detection"
+      ]
+    },
+    "ul2": {
+      "class": "UL2",
+      "defaults": {
+        "learning_rate": 0.0003
+      },
+      "module": "topologies.models.ul2",
+      "recipe": "seq2seq-lm",
+      "tasks": [
+        "sequence-to-sequence",
+        "denoising"
+      ]
+    },
+    "unet": {
+      "class": "UNet",
+      "module": "topologies.models.unet",
+      "recipe": "segmentation",
+      "tasks": [
+        "segmentation"
+      ]
+    },
+    "vae": {
+      "class": "VAE",
+      "module": "topologies.models.variational_autoencoders",
+      "recipe": "vae",
+      "tasks": [
+        "vae"
+      ]
+    },
+    "vgg": {
+      "class": "VGG",
+      "defaults": {
+        "dropout": 0.0,
+        "learning_rate": 0.0003
+      },
+      "module": "topologies.models.vgg",
+      "recipe": "vgg-classify",
+      "tasks": [
+        "image-classification"
+      ]
+    },
+    "video-conv": {
+      "class": "VideoConv",
+      "defaults": {
+        "dropout": 0.0,
+        "learning_rate": 0.0003
+      },
+      "module": "topologies.models.video_conv",
+      "recipe": "video-conv-classify",
+      "tasks": [
+        "semantic-segmentation"
+      ]
+    },
+    "video-ssl": {
+      "class": "VideoSSL",
+      "defaults": {
+        "dropout": 0.0,
+        "learning_rate": 0.0003
+      },
+      "module": "topologies.models.video_ssl",
+      "recipe": "video-ssl-classify",
+      "tasks": [
+        "semantic-segmentation"
+      ]
+    },
+    "video-transformer": {
+      "class": "VideoTransformer",
+      "defaults": {
+        "dropout": 0.0,
+        "learning_rate": 0.0003
+      },
+      "module": "topologies.models.video_transformer",
+      "recipe": "video-transformer-classify",
+      "tasks": [
+        "semantic-segmentation"
+      ]
+    },
+    "vision-neck": {
+      "class": "VisionNeck",
+      "defaults": {
+        "dropout": 0.0,
+        "learning_rate": 0.0003
+      },
+      "module": "topologies.models.vision_neck",
+      "recipe": "vision-neck-classify",
+      "tasks": [
+        "semantic-segmentation"
+      ]
+    },
+    "vision-norm": {
+      "class": "VisionNorm",
+      "defaults": {
+        "dropout": 0.0,
+        "learning_rate": 0.0003
+      },
+      "module": "topologies.models.vision_norm",
+      "recipe": "vision-norm-classify",
+      "tasks": [
+        "semantic-segmentation"
+      ]
+    },
+    "vision-ssl": {
+      "class": "VisionSSL",
+      "defaults": {
+        "dropout": 0.0,
+        "learning_rate": 0.0003
+      },
+      "module": "topologies.models.vision_ssl",
+      "recipe": "vision-ssl-classify",
+      "tasks": [
+        "self-supervised-learning"
+      ]
+    },
+    "vision-transformer": {
+      "class": "VisionTransformer",
+      "module": "topologies.models.vision_transformer",
+      "recipe": "vision-classify",
+      "tasks": [
+        "vision-classify"
+      ]
+    },
+    "volume-seg": {
+      "class": "VolumeSeg",
+      "defaults": {
+        "dropout": 0.0,
+        "learning_rate": 0.0003
+      },
+      "module": "topologies.models.volume_seg",
+      "recipe": "volume-seg-classify",
+      "tasks": [
+        "semantic-segmentation"
+      ]
+    },
+    "voxel-detect": {
+      "class": "VoxelDetector",
+      "defaults": {
+        "dropout": 0.0,
+        "learning_rate": 0.0003
+      },
+      "module": "topologies.models.voxel_detect",
+      "recipe": "voxel-detect-classify",
+      "tasks": [
+        "semantic-segmentation"
+      ]
+    },
+    "vqvae": {
+      "class": "VQVAE",
+      "module": "topologies.models.vqvae",
+      "recipe": "vqvae",
+      "tasks": [
+        "vqvae"
+      ]
+    },
+    "wavenet": {
+      "class": "WaveNet",
+      "module": "topologies.models.wavenet",
+      "recipe": "waveform-lm",
+      "tasks": [
+        "waveform-lm"
+      ]
+    },
+    "xlnet": {
+      "class": "XLNet",
+      "defaults": {
+        "learning_rate": 0.0003,
+        "predict_fraction": 0.16666666666666666
+      },
+      "module": "topologies.models.xlnet",
+      "recipe": "permutation-lm",
+      "tasks": [
+        "permutation-language-modeling",
+        "feature-extraction"
+      ]
+    },
+    "xlstm": {
+      "class": "XLSTM",
+      "defaults": {
+        "dropout": 0.0,
+        "learning_rate": 0.0003
+      },
+      "module": "topologies.models.xlstm",
+      "recipe": "causal-lm",
+      "tasks": [
+        "causal-language-modeling"
+      ]
+    }
+  },
+  "schema_version": 1
+}

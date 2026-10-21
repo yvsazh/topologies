@@ -1,0 +1,12 @@
+{
+  "id": "openwebtext",
+  "name": "OpenWebText",
+  "domain": "language",
+  "description": "GPT-2-era web pretraining corpus assembled from outbound links on Reddit; OpenWebText2 is a later related corpus. Loader-only metadata: no data is vendored here. Reddit-outbound sourcing carries license and underlying-content rights risk; review source terms before use or redistribution.",
+  "citation": "OpenWebText. Gokaslan et al. (2019). OpenWebText corpus.",
+  "license": {
+    "identifier": "Public-web terms; license risk: source pages may have differing rights and Reddit-outbound collection does not grant blanket permission.",
+    "url": "https://huggingface.co/datasets/openwebtext"
+  },
+  "upstream_url": "https://huggingface.co/datasets/openwebtext"
+}

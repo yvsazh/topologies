@@ -1,0 +1,13 @@
+{
+  "id": "pcqm4mv2",
+  "name": "PCQM4Mv2",
+  "domain": "graph",
+  "description": "A large-scale quantum chemistry benchmark containing approximately 3.7 million molecular graphs with 3D structures and HOMO-LUMO gap targets. This record describes the dataset and does not distribute data.",
+  "citation": "Hu, W., Fey, M., Ren, H., Nakata, M., Dong, Y., sato, M., Kitagawa, M., & Leskovec, J. (2021). OGB-LSC: A Large-Scale Challenge for Machine Learning on Graphs. Advances in Neural Information Processing Systems, 34. https://arxiv.org/abs/2103.09430",
+  "license": {
+    "identifier": "Dataset-specific terms (not a standard SPDX identifier)",
+    "url": "https://ogb.stanford.edu/docs/lsc/pcqm4mv2/",
+    "notes": "The dataset documentation does not specify a standard SPDX license identifier. Consult the OGB dataset terms and source-data terms before use or redistribution. This record is metadata-only and vendors no data."
+  },
+  "upstream_url": "https://ogb.stanford.edu/docs/lsc/pcqm4mv2/"
+}

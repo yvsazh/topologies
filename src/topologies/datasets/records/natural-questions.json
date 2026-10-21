@@ -1,0 +1,13 @@
+{
+  "id": "natural-questions",
+  "name": "Natural Questions",
+  "domain": "natural-language",
+  "description": "A question answering dataset of real user queries issued to Google, paired with Wikipedia pages containing long-answer and short-answer annotations.",
+  "citation": "Kwiatkowski, T., Palomaki, J., Redfield, O., Collins, M., Parikh, A., Alberti, C., et al. (2019). Natural Questions: A Benchmark for Question Answering Research. Transactions of the Association for Computational Linguistics, 7, 453–466. https://doi.org/10.1162/tacl_a_00276",
+  "license": {
+    "identifier": "Not specified by upstream",
+    "url": "https://github.com/google-research-datasets/natural-questions",
+    "notes": "The upstream project does not specify a standard SPDX license for the dataset. Access to the downloadable dataset requires accepting Google's dataset terms; review those terms and the separate rights applicable to Wikipedia content before use or redistribution."
+  },
+  "upstream_url": "https://github.com/google-research-datasets/natural-questions"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "ogbn-arxiv",
+  "name": "ogbn-arxiv",
+  "domain": "graph",
+  "description": "A directed citation network of arXiv computer science papers, with papers as nodes, citation links as edges, and subject areas as node labels. The benchmark commonly uses the graph for paper subject-area classification.",
+  "citation": "Hu, W., Fey, M., Zitnik, M., Dong, Y., Ren, H., Liu, B., Catasta, M., & Leskovec, J. (2020). Open Graph Benchmark: Datasets for Machine Learning on Graphs. Advances in Neural Information Processing Systems, 33, 22118–22133. https://arxiv.org/abs/2005.00687",
+  "license": {
+    "identifier": "ODC-BY (Open Data Commons Attribution License; not a standard SPDX identifier)",
+    "url": "https://opendatacommons.org/licenses/by/1-0/",
+    "notes": "The OGBN-Arxiv dataset is distributed under the Open Data Commons Attribution License (ODC-BY), which is not a standard SPDX identifier. Review the license and upstream terms, including attribution requirements, before use or redistribution. This record does not distribute dataset files."
+  },
+  "upstream_url": "https://ogb.stanford.edu/docs/nodeprop/#ogbn-arxiv"
+}

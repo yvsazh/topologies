@@ -1,0 +1,13 @@
+{
+  "id": "orcadata",
+  "name": "Orcadata (Orcasound killer-whale hydrophone collection)",
+  "domain": "bioacoustics",
+  "description": "Open bioacoustic audio and associated training and testing data from the Orcasound hydrophone network, supporting analysis and machine-learning research on killer-whale calls, clicks, and whistles.",
+  "citation": "Orcasound. Orcadata: Orcasound open bioacoustic data and killer-whale training and test data. https://github.com/orcasound/orcadata/wiki",
+  "license": {
+    "identifier": "CC-BY-NC-SA-4.0",
+    "url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "notes": "Orcasound states that works associated with its hydrophone network and hosted on orcasound.net, including data, are licensed under CC BY-NC-SA 4.0."
+  },
+  "upstream_url": "https://github.com/orcasound/orcadata"
+}

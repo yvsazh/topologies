@@ -1,0 +1,13 @@
+{
+  "id": "titanic",
+  "name": "Titanic",
+  "domain": "tabular",
+  "description": "A small passenger-level dataset commonly used to demonstrate binary classification and exploratory data analysis, with passenger demographics, ticket and fare information, and survival outcomes. Intended for tutorials and education only; it is not a representative or production-grade benchmark.",
+  "citation": "Dawson, R. J. MacG. (1995). The 'Unusual Episode' Data Revisited. Journal of Statistics Education, 3(3). https://doi.org/10.1080/10691898.1995.11910499",
+  "license": {
+    "identifier": "Dataset-specific terms (not a standard SPDX identifier)",
+    "url": "https://www.openml.org/search?type=data&status=active&id=40945",
+    "notes": "Titanic tables are circulated through multiple versions and mirrors with differing provenance and terms; no single standard SPDX license is asserted here. Check the terms and provenance of the particular source before use or redistribution. Tutorial-only; this record does not include or vendor data."
+  },
+  "upstream_url": "https://www.openml.org/search?type=data&status=active&id=40945"
+}

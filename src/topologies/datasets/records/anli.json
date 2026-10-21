@@ -1,0 +1,12 @@
+{
+  "id": "anli",
+  "name": "ANLI",
+  "domain": "language",
+  "description": "An adversarial natural language inference dataset with rounds R1 through R3 and about 163k premise-hypothesis pairs. No data is vendored.",
+  "citation": "Nie et al. (2020). ANLI: Adversarial NLI. International Conference on Learning Representations (ICLR 2020).",
+  "license": {
+    "identifier": "CC-BY-NC-4.0",
+    "url": "https://github.com/facebookresearch/anli"
+  },
+  "upstream_url": "https://github.com/facebookresearch/anli"
+}

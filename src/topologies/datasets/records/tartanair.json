@@ -1,0 +1,13 @@
+{
+  "id": "tartanair",
+  "name": "TartanAir",
+  "domain": "vision",
+  "description": "A photo-realistic simulated corpus for visual SLAM and robotics, providing stereo imagery, depth, segmentation, optical flow, camera poses, and LiDAR with precise ground truth across diverse environments and motion patterns. This record is loader-only and does not distribute dataset files.",
+  "citation": "Wang, W., Zhu, D., Wang, X., Hu, Y., Qiu, Y., Wang, C., Hu, Y., Kapoor, A., & Scherer, S. (2020). TartanAir: A Dataset to Push the Limits of Visual SLAM. 2020 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS). https://arxiv.org/abs/2003.14338",
+  "license": {
+    "identifier": "other",
+    "url": "",
+    "notes": "The license for the original TartanAir dataset is unverified; the TartanAir V2 documentation's CC BY 4.0 license is not assumed to apply to this corpus."
+  },
+  "upstream_url": "https://tartanair.org/"
+}

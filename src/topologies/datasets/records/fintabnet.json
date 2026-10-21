@@ -1,0 +1,13 @@
+{
+  "id": "fintabnet",
+  "name": "FinTabNet",
+  "domain": "finance",
+  "description": "A real-world dataset of financial tables extracted from business documents, with detailed table structure annotations for table recognition.",
+  "citation": "Xinyi Zheng, Doug Burdick, Lucian Popa, Xu Zhong, and Nancy Xin Ru Wang. Global Table Extractor (GTE): A Framework for Joint Table Identification and Cell Structure Recognition Using Visual Context. Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV), 2021. https://arxiv.org/abs/2005.00589",
+  "license": {
+    "identifier": "other",
+    "url": "",
+    "notes": "Dataset license is unverified; no published dataset license was confirmed."
+  },
+  "upstream_url": "https://github.com/microsoft/table-transformer"
+}

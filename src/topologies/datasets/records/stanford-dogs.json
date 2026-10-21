@@ -1,0 +1,12 @@
+{
+  "id": "stanford-dogs",
+  "name": "Stanford Dogs",
+  "domain": "vision",
+  "description": "Fine-grained dog classification dataset with 120 breeds, an ImageNet subset with bounding boxes, and about 22k images. Rights-reserved ImageNet subset; loader-only. No data vendored.",
+  "citation": "Stanford Dogs; Khosla, A. et al. (2011). Novel Dataset for Fine-Grained Image Categorization. CVPR 2011.",
+  "license": {
+    "identifier": "rights-reserved",
+    "url": "http://vision.stanford.edu/aditya86/ImageNetDogs/"
+  },
+  "upstream_url": "http://vision.stanford.edu/aditya86/ImageNetDogs/"
+}

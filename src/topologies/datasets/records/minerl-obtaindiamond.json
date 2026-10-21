@@ -1,0 +1,13 @@
+{
+  "id": "minerl-obtaindiamond",
+  "name": "MineRL ObtainDiamond",
+  "domain": "scientific",
+  "description": "MineRL ObtainDiamond Minecraft survival demonstrations, about 60 million frames and 60 thousand demos. Milestone rate on the diamond protocol. Guss et al., NeurIPS 2019. Game assets stay loader-only.",
+  "citation": "Guss et al., NeurIPS 2019. MineRL ObtainDiamond.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://minerl.io/",
+    "notes": "Microsoft research terms. Game loader-only. No demonstrations vendored."
+  },
+  "upstream_url": "https://minerl.io/"
+}

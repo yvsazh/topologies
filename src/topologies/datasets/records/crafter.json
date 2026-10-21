@@ -1,0 +1,13 @@
+{
+  "id": "crafter",
+  "name": "Crafter",
+  "domain": "scientific",
+  "description": "Crafter survival benchmark, 22 achievements, 2D Minecraft-like. Score and reward on a 1 million step protocol. Hafner 2022. No trajectories vendored.",
+  "citation": "Hafner 2022. Crafter.",
+  "license": {
+    "identifier": "MIT",
+    "url": "https://github.com/danijar/crafter",
+    "notes": "MIT environment. No trajectories vendored."
+  },
+  "upstream_url": "https://github.com/danijar/crafter"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "nell-995",
+  "name": "NELL-995",
+  "domain": "graph",
+  "description": "NELL-995 knowledge-graph triples, about 75 thousand triples and 12 relations. Filtered MRR and Hits at K. Xiong et al., EMNLP 2017. Triples not vendored.",
+  "citation": "Xiong et al., EMNLP 2017. NELL-995.",
+  "license": {
+    "identifier": "not specified",
+    "url": "http://rtw.ml.cmu.edu/rtw/",
+    "notes": "CMU open research terms. Triples not vendored."
+  },
+  "upstream_url": "http://rtw.ml.cmu.edu/rtw/"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "textvqa",
+  "name": "TextVQA",
+  "domain": "vision",
+  "description": "Visual question answering dataset requiring reasoning about text in images, with questions and answers grounded in scene text. This record does not distribute dataset files.",
+  "citation": "Singh, A., Natarajan, V., Shah, M., Jiang, Y., Chen, X., Batra, D., Parikh, D., & Rohrbach, M. (2019). Towards VQA Models That Can Read. Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 8317–8326. https://doi.org/10.1109/CVPR.2019.00851",
+  "license": {
+    "identifier": "Custom TextVQA dataset terms (not a standard SPDX identifier)",
+    "url": "https://textvqa.org/",
+    "notes": "TextVQA does not identify its dataset license as a standard SPDX license. Review the upstream terms and the rights applying to source images before use or redistribution."
+  },
+  "upstream_url": "https://textvqa.org/"
+}

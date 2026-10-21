@@ -1,0 +1,13 @@
+{
+  "id": "xsum",
+  "name": "Extreme Summarization (XSum)",
+  "domain": "natural-language",
+  "description": "A news summarization dataset containing BBC articles paired with concise, one-sentence summaries, designed to test abstractive summarization systems.",
+  "citation": "Narayan, S., Cohen, S. B., & Lapata, M. (2018). Don't Give Me the Details, Just the Summary! Topic-Aware Convolutional Neural Networks for Extreme Summarization. Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing, 1797–1807. https://doi.org/10.18653/v1/D18-1206",
+  "license": {
+    "identifier": "Not stated",
+    "url": "https://github.com/EdinburghNLP/XSum",
+    "notes": "The upstream repository does not identify a standard SPDX license for the dataset. The data contains BBC articles; review upstream terms and rights in the underlying source content before use or redistribution."
+  },
+  "upstream_url": "https://github.com/EdinburghNLP/XSum"
+}

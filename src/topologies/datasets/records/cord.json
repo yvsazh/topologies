@@ -1,0 +1,13 @@
+{
+  "id": "cord",
+  "name": "CORD (Consolidated Receipt Dataset)",
+  "domain": "document understanding",
+  "description": "A dataset of Indonesian receipt images with OCR box/text annotations and multi-level semantic labels for post-OCR receipt parsing.",
+  "citation": "Park, Seunghyun, et al. ‘CORD: A Consolidated Receipt Dataset for Post-OCR Parsing.’ Document Intelligence Workshop at NeurIPS, 2019.",
+  "license": {
+    "identifier": "CC-BY-4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "notes": "The upstream repository states that the work is licensed under Creative Commons Attribution 4.0 International."
+  },
+  "upstream_url": "https://github.com/clovaai/cord"
+}

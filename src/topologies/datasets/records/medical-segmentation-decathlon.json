@@ -1,0 +1,13 @@
+{
+  "id": "medical-segmentation-decathlon",
+  "name": "Medical Segmentation Decathlon",
+  "domain": "vision",
+  "description": "Medical Segmentation Decathlon, 10 tasks covering liver, brain, hippocampus, lung, prostate, cardiac, colon, vessels, and spleen. Mean Dice across tasks. Simpson et al., Nature Communications 2019. Distinct from the Million Song Dataset. Human scans not vendored.",
+  "citation": "Simpson et al., Nature Communications 2019. Medical Segmentation Decathlon.",
+  "license": {
+    "identifier": "CC-BY-SA-4.0",
+    "url": "http://medicaldecathlon.com/",
+    "notes": "CC BY-SA per task. Human scans are loader-only and not vendored."
+  },
+  "upstream_url": "http://medicaldecathlon.com/"
+}

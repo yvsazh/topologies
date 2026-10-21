@@ -1,0 +1,13 @@
+{
+  "id": "nih-14",
+  "name": "NIH ChestX-ray14",
+  "domain": "scientific",
+  "description": "A chest radiograph dataset containing 112,120 frontal-view X-ray images from 30,805 patients, annotated with labels for 14 thoracic disease categories. Access is controlled by the NIH; this record does not distribute dataset files.",
+  "citation": "Wang, X., Peng, Y., Lu, L., Lu, Z., Bagheri, M., & Summers, R. M. (2017). ChestX-ray8: Hospital-scale Chest X-ray Database and Benchmarks on Weakly-Supervised Classification and Localization of Common Thorax Diseases. Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2097–2106. https://doi.org/10.1109/CVPR.2017.369",
+  "license": {
+    "identifier": "Not specified as a standard SPDX license",
+    "url": "https://nihcc.app.box.com/v/ChestXray-Nihcc",
+    "notes": "Access tier: registration and acceptance of the NIH dataset terms are required. The NIH does not provide this dataset under a standard SPDX license; review the current access and use terms before downloading, using, or redistributing the data."
+  },
+  "upstream_url": "https://nihcc.app.box.com/v/ChestXray-Nihcc"
+}

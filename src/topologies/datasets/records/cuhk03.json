@@ -1,0 +1,12 @@
+{
+  "id": "cuhk03",
+  "name": "CUHK03",
+  "domain": "vision",
+  "description": "Person re-identification dataset with labeled and detected bounding boxes, 1,467 identities, about 14k images, and a 100-trial Rank-1 evaluation protocol. Use is subject to CUHK terms; no data is vendored.",
+  "citation": "CUHK03: A new dataset and benchmark for person re-identification. Li et al., NIPS 2014 workshop.",
+  "license": {
+    "identifier": "CUHK terms (not a standard SPDX identifier)",
+    "url": "http://www.ee.cuhk.edu.hk/~xgwang/CUHK_identification.html"
+  },
+  "upstream_url": "http://www.ee.cuhk.edu.hk/~xgwang/CUHK_identification.html"
+}

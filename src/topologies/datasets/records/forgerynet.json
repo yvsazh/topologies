@@ -1,0 +1,13 @@
+{
+  "id": "forgerynet",
+  "name": "ForgeryNet",
+  "domain": "vision",
+  "description": "ForgeryNet forgery analysis, about 2.9 million images and eight tasks covering detection, segmentation, and clustering. AUC and mean IoU per task. He et al., CVPR 2021. Images not vendored.",
+  "citation": "He et al., CVPR 2021. ForgeryNet.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://github.com/yinglinzheng/ForgeryNet",
+    "notes": "Research terms. Images not vendored."
+  },
+  "upstream_url": "https://github.com/yinglinzheng/ForgeryNet"
+}

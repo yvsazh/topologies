@@ -1,0 +1,13 @@
+{
+  "id": "potsdam",
+  "name": "ISPRS Potsdam 2D Semantic Labeling Dataset",
+  "domain": "remote sensing",
+  "description": "Aerial true orthophotos and digital surface models from Potsdam, Germany, with manually labeled semantic land-cover classes for the ISPRS 2D semantic labeling benchmark. The benchmark provides training labels for a subset of tiles and retains labels for other tiles for evaluation.",
+  "citation": "ISPRS Working Group III/4. 2D Semantic Labeling Contest – Potsdam. ISPRS Test Project on Urban Classification, 3D Building Reconstruction and Semantic Labeling. https://www.isprs.org/resources/datasets/benchmarks/UrbanSemLab/2d-sem-label-potsdam.aspx",
+  "license": {
+    "identifier": "other",
+    "url": "",
+    "notes": "No dataset license was published on the confirmed ISPRS Potsdam dataset page; terms are unverified. Contact the provider before reuse or redistribution."
+  },
+  "upstream_url": "https://www.isprs.org/resources/datasets/benchmarks/UrbanSemLab/2d-sem-label-potsdam.aspx"
+}

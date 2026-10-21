@@ -1,0 +1,12 @@
+{
+  "id": "posetrack21",
+  "name": "PoseTrack21",
+  "domain": "vision",
+  "description": "Multi-person pose tracking dataset comprising 1777 videos. No data is vendored in this record.",
+  "citation": "Doering, A., Chen, L., Zhang, S., Schiele, B., & Gall, J. (2022). PoseTrack21: A Dataset for Person Search, Multi-Object Tracking and Multiple Person Pose Tracking. IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR).",
+  "license": {
+    "identifier": "PoseTrack21 release terms (not a standard SPDX identifier)",
+    "url": "https://posetrack.net/"
+  },
+  "upstream_url": "https://posetrack.net/"
+}

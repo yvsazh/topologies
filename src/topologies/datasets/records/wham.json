@@ -1,0 +1,13 @@
+{
+  "id": "wham",
+  "name": "WHAM!",
+  "domain": "audio",
+  "description": "A corpus of noisy and clean speech mixtures derived from WSJ0, intended for research on speech separation and enhancement.",
+  "citation": "Wang, Z., Wichern, G., Watanabe, S., & Le Roux, J. (2019). WHAM!: A Noisy and Reverberant Speech Separation Dataset. 2019 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), 696–700. https://doi.org/10.1109/ICASSP.2019.868 ಸ್ವ",
+  "license": {
+    "identifier": "WHAM! dataset terms (not a standard SPDX identifier)",
+    "url": "https://wham.whisper.ai/",
+    "notes": "The dataset is distributed under its own research-use terms, not a standard SPDX license. Review the upstream terms and the rights applicable to the underlying WSJ0 recordings before access, use, or redistribution."
+  },
+  "upstream_url": "https://wham.whisper.ai/"
+}

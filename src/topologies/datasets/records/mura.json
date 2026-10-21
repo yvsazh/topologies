@@ -1,0 +1,13 @@
+{
+  "id": "mura",
+  "name": "MURA",
+  "domain": "vision",
+  "description": "MURA musculoskeletal X-rays, about 40 thousand studies across seven anatomies. Cohen kappa and AUC at study level. Rajpurkar et al. 2018. Stanford research terms. Images not vendored.",
+  "citation": "Rajpurkar et al. 2018. MURA.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://stanfordmlgroup.github.io/competitions/mura/",
+    "notes": "Stanford research terms. Human images are loader-only and not vendored."
+  },
+  "upstream_url": "https://stanfordmlgroup.github.io/competitions/mura/"
+}

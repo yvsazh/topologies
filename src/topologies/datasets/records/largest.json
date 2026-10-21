@@ -1,0 +1,13 @@
+{
+  "id": "largest",
+  "name": "LargeST",
+  "domain": "scientific",
+  "description": "LargeST California traffic forecasting, about 8600 sensors over 4 years, with subsets SD, GBA, GLA, and CA. MAE on horizon slices. Liu et al. 2023. Distinct from PEMS-BAY and METR-LA. Loader-only metadata.",
+  "citation": "Liu et al. 2023. LargeST California traffic.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://github.com/liuxu77/LargeST",
+    "notes": "Provider page does not state a standard SPDX license. Record only; no data vendored."
+  },
+  "upstream_url": "https://github.com/liuxu77/LargeST"
+}

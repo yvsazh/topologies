@@ -1,0 +1,13 @@
+{
+  "id": "synthia",
+  "name": "SYNTHIA",
+  "domain": "vision",
+  "description": "Synthetic driving scenes for domain adaptation; SYNTHIA-RAND contains about 13k images. GTA5 is a related synthetic source whose separate licensing may pose a license risk; it is not included here and no data is redistributed. This record does not vendor or distribute dataset files.",
+  "citation": "Ros, G., Sellart, L., Materzynska, J., Vazquez, D., & Lopez, A. M. (2016). The SYNTHIA Dataset: A Large Collection of Synthetic Images for Semantic Segmentation of Urban Scenes. Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR).",
+  "license": {
+    "identifier": "SYNTHIA research terms (not a standard SPDX identifier)",
+    "url": "https://synthia-dataset.net/",
+    "notes": "Use is governed by SYNTHIA research terms; review the provider's current terms before access or use. GTA5 is mentioned only as a license-risk note and is neither included nor redistributed."
+  },
+  "upstream_url": "https://synthia-dataset.net/"
+}

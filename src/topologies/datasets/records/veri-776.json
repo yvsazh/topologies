@@ -1,0 +1,12 @@
+{
+  "id": "veri-776",
+  "name": "VeRi-776",
+  "domain": "vision",
+  "description": "Vehicle re-identification dataset with 776 identities, 20 cameras, and about 50k images. VehicleID (Liu et al., ECCV 2016) is part of the same loader family. Open research terms; no data is vendored.",
+  "citation": "VeRi: A Large-scale, Real-world Vehicle Re-identification Benchmark. Liu et al., CVPR 2016.",
+  "license": {
+    "identifier": "Open research terms",
+    "url": "https://github.com/JDAI-CV/VeRi"
+  },
+  "upstream_url": "https://github.com/JDAI-CV/VeRi"
+}

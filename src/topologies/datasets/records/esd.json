@@ -1,0 +1,12 @@
+{
+  "id": "esd",
+  "name": "Emotional Speech Database",
+  "domain": "audio",
+  "description": "Parallel emotional speech in English and Mandarin from 10 speakers, about 29 hours. Research-only terms. No data vendored.",
+  "citation": "Emotional Speech Database (ESD). Zhou et al., Interspeech 2021.",
+  "license": {
+    "identifier": "Research-only terms (not a standard SPDX identifier)",
+    "url": "https://github.com/HLTSingapore/Emotional-Speech-Data"
+  },
+  "upstream_url": "https://github.com/HLTSingapore/Emotional-Speech-Data"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "fashioniq",
+  "name": "FashionIQ",
+  "domain": "vision",
+  "description": "FashionIQ multimodal fashion retrieval, about 77 thousand dress, shirt, and toptee images with captions. Recall at 10 and 50. Wu et al., CVPR 2021. Images not vendored.",
+  "citation": "Wu et al., CVPR 2021. FashionIQ.",
+  "license": {
+    "identifier": "MIT",
+    "url": "https://github.com/eulashidi/FashionIQ",
+    "notes": "MIT. Images not vendored."
+  },
+  "upstream_url": "https://github.com/eulashidi/FashionIQ"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "europarl",
+  "name": "Europarl",
+  "domain": "language",
+  "description": "Machine translation from European Parliament proceedings in 21 languages. EU public terms. No data vendored.",
+  "citation": "Europarl: A Parallel Corpus for Statistical Machine Translation (Koehn, 2005).",
+  "license": {
+    "identifier": "EU public terms",
+    "url": "https://www.statmt.org/europarl/"
+  },
+  "upstream_url": "https://www.statmt.org/europarl/"
+}

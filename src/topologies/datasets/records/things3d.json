@@ -1,0 +1,13 @@
+{
+  "id": "things3d",
+  "name": "FlyingThings3D",
+  "domain": "computer-vision/optical-flow",
+  "description": "A large synthetic stereo-video dataset with optical-flow, disparity, and scene-flow annotations, rendered from varied 3D scenes for training and evaluation.",
+  "citation": "Mayer, N., Ilg, E., Häusser, P., Fischer, P., Cremers, D., Dosovitskiy, A., and Brox, T. (2016). A Large Dataset to Train Convolutional Networks for Disparity, Optical Flow, and Scene Flow Estimation. IEEE Conference on Computer Vision and Pattern Recognition (CVPR). https://arxiv.org/abs/1512.02134",
+  "license": {
+    "identifier": "other",
+    "url": "",
+    "notes": "Research purposes only; commercial use is prohibited. No standard license identifier is published."
+  },
+  "upstream_url": "https://lmb.informatik.uni-freiburg.de/resources/datasets/SceneFlowDatasets.en.html"
+}

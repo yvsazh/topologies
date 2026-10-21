@@ -1,0 +1,12 @@
+{
+  "id": "2wikimultihopqa",
+  "name": "2WikiMultihopQA",
+  "domain": "language",
+  "description": "A multi-hop question answering dataset with explicit evidence paths, comprising about 192k examples. No data is vendored.",
+  "citation": "Ho et al. (2020). 2WikiMultihopQA: A Multi-hop Question Answering Dataset. Proceedings of the 29th ACM International Conference on Information & Knowledge Management (CIKM 2020).",
+  "license": {
+    "identifier": "Apache-2.0",
+    "url": "https://github.com/Alab-NII/2wikimultihop"
+  },
+  "upstream_url": "https://github.com/Alab-NII/2wikimultihop"
+}

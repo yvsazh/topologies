@@ -1,0 +1,13 @@
+{
+  "id": "vima",
+  "name": "VIMA-Bench",
+  "domain": "reinforcement-learning",
+  "description": "A benchmark suite for robot manipulation with multimodal prompts, covering diverse tasks and generalization settings. VIMA is an environment and task suite rather than a single static dataset; its associated training data and assets may have terms distinct from the benchmark software.",
+  "citation": "Jiang, Y., Gupta, A., Zhang, Z., Wang, G., Dou, Y., Chen, Y., Fei-Fei, L., Anandkumar, A., Zhu, Y., & Fan, L. (2023). VIMA: General Robot Manipulation with Multimodal Prompts. Proceedings of the 40th International Conference on Machine Learning, PMLR 202, 150 visual-tasks (citation paper). https://arxiv.org/abs/2210.03094",
+  "license": {
+    "identifier": "MIT",
+    "url": "https://github.com/vimalabs/VimaBench/blob/main/LICENSE",
+    "notes": "VIMA-Bench software is stated as MIT-licensed; MIT is a standard SPDX identifier. The benchmark depends on assets and task content whose licenses may differ, and the separately hosted VIMA-Data training data should not be assumed to share the software license. Review those terms before use or redistribution."
+  },
+  "upstream_url": "https://github.com/vimalabs/VimaBench"
+}

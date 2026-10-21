@@ -1,0 +1,13 @@
+{
+  "id": "robomimic",
+  "name": "robomimic",
+  "domain": "reinforcement-learning",
+  "description": "A benchmark and collection of demonstration datasets for learning from human and scripted demonstrations in robot manipulation. The datasets support imitation learning and offline reinforcement learning; robomimic is distinct from environment and task suites such as BabyAI, NetHack, SMAC, Meta-World, and VIMA.",
+  "citation": "Mandlekar, A., Xu, D., Wong, J., et al. (2021). What Matters in Learning from Offline Human Demonstrations for Robot Manipulation. Proceedings of the 5th Conference on Robot Learning, PMLR 164, 1678–1690. https://proceedings.mlr.press/v164/mandlekar22a.html",
+  "license": {
+    "identifier": "Dataset-specific terms (not a standard SPDX identifier)",
+    "url": "https://github.com/ARISE-Initiative/robomimic",
+    "notes": "No single standard SPDX license identifier is asserted for the complete dataset collection. Review the applicable terms for each dataset, demonstration source, and associated assets before use or redistribution. This record does not distribute dataset files."
+  },
+  "upstream_url": "https://github.com/ARISE-Initiative/robomimic"
+}

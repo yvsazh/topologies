@@ -1,0 +1,12 @@
+{
+  "id": "flan",
+  "name": "FLAN",
+  "domain": "language",
+  "description": "Instruction-tuning mixture assembled from multiple sources, including P3 and Super-NaturalInstructions. Source data retains its per-source licensing terms; no data is vendored here.",
+  "citation": "FLAN: Finetuned Language Models Are Zero-Shot Learners. Wei et al. 2022.",
+  "license": {
+    "identifier": "Per-source Apache and CC terms; individual sources may have different licenses.",
+    "url": "https://github.com/google-research/FLAN"
+  },
+  "upstream_url": "https://github.com/google-research/FLAN"
+}

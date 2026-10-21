@@ -1,0 +1,9 @@
+{
+  "id": "si-sdr", "name": "Scale-invariant SDR loss",
+  "description": "Negative SI-SDR in decibels for waveform tensors [batch,...], after per-example mean removal; minimization convention.",
+  "api": "topologies.training.losses:compute_loss(cfg, estimate, target, **extra)",
+  "usage": "loss = si_sdr(estimated_waveform, reference_waveform)",
+  "parameters": {"eps": "positive energy floor for silent/near-silent examples", "reduction": "none per waveform, mean, or sum"},
+  "implementation": {"path": "implementations/training/core.py", "symbol": "si_sdr", "sha256": "878f03ad0677bb8cd1b993861f72dcf5bfa14853743a5b355353c1d1f8162f9b"},
+  "examples": [{"title":"Train DDSP synthesis with SI-SDR","code":"import tempfile\nimport torch\nfrom topologies import Trainer, build, synth\nroot=tempfile.mkdtemp()\n@synth.generator\ndef samples(ctx):\n pitch=torch.full((4,),220.0+int(ctx.index)%20)\n loudness=torch.full((4,),0.4)\n time=torch.arange(128,dtype=torch.float32)/8000\n audio=loudness[0]*torch.sin(2*torch.pi*pitch[0]*time)\n return {\"audio\":synth.Audio(audio,sr=8000),\"pitch\":pitch,\"loudness\":loudness,\"sample_rate\":8000,\"lengths\":128}\nds=synth.Spec(\"sisdr-audio\",generator=samples,size=16,splits={\"train\":0.75,\"val\":0.25},seed=11,root=root,monitor=\"none\").run()\ntrain=ds.for_recipe(\"audio-reconstruct\",split=\"train\")\nval=ds.for_recipe(\"audio-reconstruct\",split=\"val\",like=train)\nmodel=build(\"ddsp-synthesizer\",\"tiny\",sample_rate=8000,n_harmonics=3,control_rate=100,fir_size=3)\ntrainer=Trainer(model,train,val,recipe=\"audio-reconstruct\",recipe_config={\"loss\":\"si-sdr\",\"mode\":\"ddsp-controls\",\"sample_rate\":8000},max_epochs=1,batch_size=4,device=\"cpu\")\ntrainer.fit()\nresult=trainer.evaluate(val)"}]
+}

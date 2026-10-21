@@ -1,0 +1,13 @@
+{
+  "id": "c4",
+  "name": "C4",
+  "domain": "natural-language",
+  "description": "The Colossal Clean Crawled Corpus (C4) is a cleaned English-language web-text dataset derived from Common Crawl for language-model pretraining. This record does not distribute corpus data.",
+  "citation": "Raffel, C., Shazeer, N., Roberts, A., Lee, K., Narang, S., Matena, M., Zhou, Y., Li, W., & Liu, P. J. (2020). Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer. Journal of Machine Learning Research, 21(140), 1–67. https://jmlr.org/papers/v21/20-074.html",
+  "license": {
+    "identifier": "Not specified (not a standard SPDX license identifier)",
+    "url": "https://www.tensorflow.org/datasets/catalog/c4",
+    "notes": "C4 is derived from Common Crawl web content and has no single standard SPDX license for the corpus. Individual source documents may have separate rights and terms; review upstream/provider terms and source-content rights before use or redistribution."
+  },
+  "upstream_url": "https://www.tensorflow.org/datasets/catalog/c4"
+}

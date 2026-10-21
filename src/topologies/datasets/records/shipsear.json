@@ -1,0 +1,13 @@
+{
+  "id": "shipsear",
+  "name": "ShipsEar",
+  "domain": "audio",
+  "description": "ShipsEar underwater ship noise, 90 recordings and 11 classes. Accuracy under a propagation shift. Santos-Domínguez et al., Applied Acoustics 2016. DeepShip, about 47 hours and four classes, is a companion note in this record. Audio not vendored.",
+  "citation": "Santos-Domínguez et al., Applied Acoustics 2016. ShipsEar.",
+  "license": {
+    "identifier": "not specified",
+    "url": "http://atlanttic.uvigo.es/underwaternoise/",
+    "notes": "Research terms. Audio not vendored."
+  },
+  "upstream_url": "http://atlanttic.uvigo.es/underwaternoise/"
+}

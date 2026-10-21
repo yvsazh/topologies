@@ -1,0 +1,13 @@
+{
+  "id": "ctw1500",
+  "name": "CTW1500",
+  "domain": "vision",
+  "description": "CTW1500 curved scene text, 1500 images. Detection F on a polygon protocol. Liu et al., Pattern Recognition 2019. MSRA-TD500 multi-oriented text is a companion note in this record. Images not vendored.",
+  "citation": "Liu et al., Pattern Recognition 2019. CTW1500.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://github.com/Yuliang-Liu/Curve-Text-Detector",
+    "notes": "Provider page does not state a standard SPDX license. Images not vendored."
+  },
+  "upstream_url": "https://github.com/Yuliang-Liu/Curve-Text-Detector"
+}

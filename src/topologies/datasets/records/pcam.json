@@ -1,0 +1,13 @@
+{
+  "id": "pcam",
+  "name": "PatchCamelyon",
+  "domain": "vision",
+  "description": "PatchCamelyon, about 327 thousand 96-pixel metastatic-tissue patches. Accuracy and AUC. Veeling et al., ICLR 2018 workshop. Distinct from the CAMELYON-16 and CAMELYON-17 whole-slide records. Images not vendored.",
+  "citation": "Veeling et al., ICLR 2018. PCam PatchCamelyon.",
+  "license": {
+    "identifier": "CC0-1.0",
+    "url": "https://github.com/basveeling/pcam",
+    "notes": "CC0, derived from CAMELYON. Human images are loader-only and not vendored."
+  },
+  "upstream_url": "https://github.com/basveeling/pcam"
+}

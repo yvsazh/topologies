@@ -1,0 +1,9 @@
+{
+  "id": "softmax-focal", "name": "Softmax focal loss",
+  "description": "Class-index multiclass focal objective from log-softmax probabilities, optional scalar/per-class alpha and ignore index.",
+  "api": "topologies.training.losses:compute_loss(cfg, logits, targets, **extra)",
+  "usage": "loss = softmax_focal(class_logits, labels, alpha=class_weights, ignore_index=-100)",
+  "parameters": {"alpha": "scalar, per-class sequence/tensor, or None", "gamma": "nonnegative focusing exponent", "ignore_index": "class target ignored in reduction", "reduction": "none, mean over valid targets, or sum"},
+  "implementation": {"path": "implementations/training/core.py", "symbol": "softmax_focal", "sha256": "878f03ad0677bb8cd1b993861f72dcf5bfa14853743a5b355353c1d1f8162f9b"},
+  "examples": [{"title":"Train classification with softmax focal","code":"import tempfile\nimport torch\nfrom topologies import Trainer, build, synth\nroot=tempfile.mkdtemp()\n@synth.generator\ndef samples(ctx):\n x=torch.randn(6,generator=ctx.rng.torch)\n return {\"features\":x,\"labels\":int(x[0]>0)}\nds=synth.Spec(\"softmax-focal\",generator=samples,size=16,splits={\"train\":0.75,\"val\":0.25},seed=11,root=root,monitor=\"none\").run()\ntrain=ds.for_recipe(\"tabular-classify\",split=\"train\")\nval=ds.for_recipe(\"tabular-classify\",split=\"val\",like=train)\nmodel=build(\"mlp\",\"tiny\",in_features=6,out_features=2)\ntrainer=Trainer(model,train,val,recipe=\"tabular-classify\",recipe_config={\"loss\":\"softmax-focal\",\"loss_kwargs\":{\"gamma\":2.0}},max_epochs=1,device=\"cpu\")\ntrainer.fit()\nresult=trainer.evaluate(val)"}]
+}

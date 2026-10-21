@@ -1,0 +1,13 @@
+{
+  "id": "libritts",
+  "name": "LibriTTS",
+  "domain": "audio",
+  "description": "A corpus of approximately 585 hours of read English speech derived from the LibriSpeech audiobook collection, prepared for text-to-speech research with aligned speech and text.",
+  "citation": "Zen, H., Dang, V., Clark, R., et al. (2019). LibriTTS: A Corpus Derived from LibriSpeech for Text-to-Speech. Interspeech 2019, 1526–1530. https://doi.org/10.21437/Interspeech.2019-2441",
+  "license": {
+    "identifier": "CC BY 4.0 (Creative Commons Attribution 4.0 International)",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "notes": "LibriTTS is distributed under Creative Commons Attribution 4.0 International; this license name is not a standard SPDX identifier. The source audiobooks originate from LibriVox, so verify the rights and terms applying to individual recordings and included materials before redistribution or use."
+  },
+  "upstream_url": "https://www.openslr.org/60/"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "imagenet-p",
+  "name": "ImageNet-P",
+  "domain": "vision",
+  "description": "ImageNet-P and CIFAR-10-P perturbation robustness. Mean flip rate and mean top-5 distance. Hendrycks et al., ICLR 2019. Distinct from the corruption benchmarks. Images not vendored.",
+  "citation": "Hendrycks et al., ICLR 2019. ImageNet-P.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://github.com/hendrycks/robustness",
+    "notes": "Rights-reserved ImageNet images and CIFAR terms. Loader-only. Images not vendored."
+  },
+  "upstream_url": "https://github.com/hendrycks/robustness"
+}

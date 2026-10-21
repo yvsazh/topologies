@@ -1,0 +1,13 @@
+{
+  "id": "steam",
+  "name": "Steam (Valve)",
+  "domain": "recommendation",
+  "description": "Steam game purchases and reviews, about 7 million users. Recall and NDCG under a bundle and playtime protocol. Loader-only metadata. Kang and McAuley, SIGIR 2018. Distinct from other rating sets.",
+  "citation": "Kang and McAuley, SIGIR 2018. Steam game purchases and reviews.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://cseweb.ucsd.edu/~jmcauley/datasets.html",
+    "notes": "Provider page does not state a standard SPDX license. Record only; no data vendored."
+  },
+  "upstream_url": "https://cseweb.ucsd.edu/~jmcauley/datasets.html"
+}

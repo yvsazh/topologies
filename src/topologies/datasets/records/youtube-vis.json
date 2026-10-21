@@ -1,0 +1,12 @@
+{
+  "id": "youtube-vis",
+  "name": "YouTube-VIS",
+  "domain": "vision",
+  "description": "A video instance segmentation dataset with 2019 and 2021 releases; OVIS is a related video instance segmentation benchmark. Distinct from YouTube-VOS. No data is vendored in this record.",
+  "citation": "Yang et al. (2019). YouTube-VIS: A Large-Scale Video Object Segmentation Dataset. ICCV 2019.",
+  "license": {
+    "identifier": "YouTube-VIS dataset release terms (not a standard SPDX identifier)",
+    "url": "https://youtube-vos.org/dataset/vis/"
+  },
+  "upstream_url": "https://youtube-vos.org/dataset/vis/"
+}

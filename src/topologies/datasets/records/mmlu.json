@@ -1,0 +1,13 @@
+{
+  "id": "mmlu",
+  "name": "MMLU (Massive Multitask Language Understanding)",
+  "domain": "natural-language",
+  "description": "A benchmark of multiple-choice questions spanning 57 subjects, including humanities, social sciences, STEM, and other areas, designed to evaluate broad knowledge and reasoning in language models.",
+  "citation": "Hendrycks, D., Burns, C., Basart, S., Zou, A., Mazeika, M., Song, D., & Steinhardt, J. (2021). Measuring Massive Multitask Language Understanding. International Conference on Learning Representations (ICLR). https://openreview.net/forum?id=d7KBjmI3GmQ",
+  "license": {
+    "identifier": "Dataset license not stated",
+    "url": "https://github.com/hendrycks/test",
+    "notes": "The upstream repository does not specify a standard SPDX license for the dataset. Verify current upstream terms and any rights in the question content before use or redistribution."
+  },
+  "upstream_url": "https://github.com/hendrycks/test"
+}

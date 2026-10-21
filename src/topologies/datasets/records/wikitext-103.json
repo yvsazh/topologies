@@ -1,0 +1,12 @@
+{
+  "id": "wikitext-103",
+  "name": "WikiText-103",
+  "domain": "language",
+  "description": "A word-level language modeling dataset containing about 103M tokens, distinct from WikiText-2. No data vendored.",
+  "citation": "Merity et al. WikiText-103: A Large-Scale Language Modeling Dataset. ICLR 2017.",
+  "license": {
+    "identifier": "CC-BY-SA-3.0",
+    "url": "https://huggingface.co/datasets/Salesforce/wikitext"
+  },
+  "upstream_url": "https://huggingface.co/datasets/Salesforce/wikitext"
+}

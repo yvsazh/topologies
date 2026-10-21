@@ -1,0 +1,12 @@
+{
+  "id": "once",
+  "name": "ONCE",
+  "domain": "vision",
+  "description": "A large-scale LiDAR driving-scenes dataset with one million frames, of which 15,000 are labeled. Governed by Huawei release terms; this record is loader-only and does not distribute dataset data.",
+  "citation": "Mao, J., Niu, M., Jiang, Y., et al. (2021). ONCE: A Large-scale Dataset for One-shot 3D Object Detection. https://once-for-auto-driving.github.io/",
+  "license": {
+    "identifier": "Huawei release terms (not a standard SPDX identifier)",
+    "url": "https://once-for-auto-driving.github.io/"
+  },
+  "upstream_url": "https://once-for-auto-driving.github.io/"
+}

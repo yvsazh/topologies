@@ -1,0 +1,13 @@
+{
+  "id": "arc",
+  "name": "AI2 Reasoning Challenge (ARC)",
+  "domain": "natural-language",
+  "description": "A benchmark of grade-school science questions designed to evaluate a model's ability to answer challenging multiple-choice questions requiring scientific reasoning.",
+  "citation": "Clark, P., Cowhey, I., Etzioni, O., Khot, T., Sabharwal, A., Schoenick, C., & Tafjord, O. (2018). Think you have Solved Question Answering? Try ARC, the AI2 Reasoning Challenge. arXiv:1803.05457. https://arxiv.org/abs/1803.05457",
+  "license": {
+    "identifier": "Dataset license not stated",
+    "url": "https://allenai.org/data/arc",
+    "notes": "The upstream dataset page does not state a standard SPDX license for ARC. Review current provider terms and any rights applying to source question content before use or redistribution."
+  },
+  "upstream_url": "https://allenai.org/data/arc"
+}

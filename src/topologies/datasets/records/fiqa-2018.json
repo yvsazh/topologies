@@ -1,0 +1,13 @@
+{
+  "id": "fiqa-2018",
+  "name": "FiQA 2018",
+  "domain": "language",
+  "description": "FiQA 2018 financial sentiment and question answering, about 17 thousand posts. F1 and MRR for aspect sentiment. Financial PhraseBank and financial headlines are companion notes in this record. Posts not vendored.",
+  "citation": "FiQA 2018 financial sentiment and QA.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://sites.google.com/view/fiqa/",
+    "notes": "Open research terms. Posts not vendored."
+  },
+  "upstream_url": "https://sites.google.com/view/fiqa/"
+}

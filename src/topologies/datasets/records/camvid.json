@@ -1,0 +1,12 @@
+{
+  "id": "camvid",
+  "name": "CamVid",
+  "domain": "vision",
+  "description": "Road-scene semantic segmentation dataset with 11 classes. No data vendored.",
+  "citation": "CamVid: The Cambridge-driving Labeled Video Database, Brostow et al., ECCV 2008.",
+  "license": {
+    "identifier": "Cambridge research terms",
+    "url": "http://mi.eng.cam.ac.uk/research/projects/VideoRec/CamVid/"
+  },
+  "upstream_url": "http://mi.eng.cam.ac.uk/research/projects/VideoRec/CamVid/"
+}

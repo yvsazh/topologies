@@ -1,0 +1,13 @@
+{
+  "id": "criteo",
+  "name": "Criteo Display Advertising Challenge Dataset",
+  "domain": "recommendation",
+  "description": "A large-scale click-through-rate prediction dataset consisting of anonymized user, ad, and context features with click labels from display advertising logs. This record is loader-only and does not distribute dataset files.",
+  "citation": "Criteo Labs. (2014). Display Advertising Challenge dataset. Kaggle. https://www.kaggle.com/c/criteo-display-ad-challenge",
+  "license": {
+    "identifier": "Dataset-specific terms (not a standard SPDX identifier)",
+    "url": "https://www.kaggle.com/c/criteo-display-ad-challenge",
+    "notes": "The upstream dataset is governed by dataset-specific terms; no standard SPDX license identifier is asserted. Review the current Kaggle/Criteo terms before access, use, or redistribution. This record is loader-only and vendors no data."
+  },
+  "upstream_url": "https://www.kaggle.com/c/criteo-display-ad-challenge"
+}

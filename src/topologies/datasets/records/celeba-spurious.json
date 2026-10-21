@@ -1,0 +1,13 @@
+{
+  "id": "celeba-spurious",
+  "name": "CelebA Spurious Correlation Benchmark",
+  "domain": "vision",
+  "description": "CelebA face-attribute classification benchmark using hair color as the target and gender as a spurious attribute, creating group distribution shifts.",
+  "citation": "Sagawa, S., Koh, P. W., Hashimoto, T. B., & Liang, P. (2020). Distributionally Robust Neural Networks for Group Shifts: On the Importance of Regularization for Worst-Case Generalization. International Conference on Learning Representations (ICLR). https://arxiv.org/abs/1911.08731",
+  "license": {
+    "identifier": "Not specified",
+    "url": "http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html",
+    "notes": "The upstream CelebA page does not state a standard license. Review provider terms and underlying image rights before use or redistribution; do not assume redistribution or commercial-use rights."
+  },
+  "upstream_url": "http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "openhermes",
+  "name": "OpenHermes 2.5",
+  "domain": "natural-language",
+  "description": "A compilation and curation of approximately one million primarily synthetic instruction-following and chat samples, assembled from open-source and custom-generated datasets to train generalist language-model assistants.",
+  "citation": "Teknium. (2023). OpenHermes 2.5: An Open Dataset of Synthetic Data for Generalist LLM Assistants. https://huggingface.co/datasets/teknium/OpenHermes-2.5",
+  "license": {
+    "identifier": "other",
+    "url": "https://huggingface.co/datasets/teknium/OpenHermes-2.5",
+    "notes": "The dataset card does not specify a license for the compilation; the license is not a standard SPDX identifier and should be treated as unspecified. It aggregates third-party datasets that may have distinct terms, so review the upstream card and source dataset licenses before use or redistribution."
+  },
+  "upstream_url": "https://huggingface.co/datasets/teknium/OpenHermes-2.5"
+}

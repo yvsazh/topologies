@@ -1,0 +1,19 @@
+{
+  "id": "exponential",
+  "name": "Exponential",
+  "description": "Exponential per-step decay of the learning rate.",
+  "api": "exponential(optimizer, total_steps, **kwargs)",
+  "usage": "scheduler = exponential(optimizer, total_steps=5); scheduler.step()",
+  "parameters": {
+    "optimizer": "PyTorch optimizer",
+    "total_steps": "positive integer; number of training steps",
+    "gamma": "positive per-step decay multiplier; defaults to 0.9"
+  },
+  "implementation": {
+    "path": "implementations/schedulers/exponential.py",
+    "symbol": "exponential",
+    "sha256": "d8b073a1069f3bc5772a613583058f6b2030935af720be0bd8e5e955ebbba7a3"
+  },
+  "papers": [],
+  "examples": []
+}

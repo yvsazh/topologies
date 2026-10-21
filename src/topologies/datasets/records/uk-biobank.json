@@ -1,0 +1,13 @@
+{
+  "id": "uk-biobank",
+  "name": "UK Biobank",
+  "domain": "scientific",
+  "description": "UK Biobank, about 500 thousand participants with genotypes, imaging, and electronic health records. SAIGE and REGENIE association protocol. Credentialed access. Data not vendored.",
+  "citation": "UK Biobank.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://www.ukbiobank.ac.uk/",
+    "notes": "Credentialed application and material transfer agreement. Loader-only. Never vendor genotypes, imaging, or records."
+  },
+  "upstream_url": "https://www.ukbiobank.ac.uk/"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "maestro",
+  "name": "MAESTRO (MIDI and Audio Edited for Synchronous Tracks and Organization)",
+  "domain": "audio",
+  "description": "A dataset of virtuoso piano performances with aligned audio recordings and MIDI files, curated from the International Piano-e-Competition.",
+  "citation": "Hawthorne, C., Stasyuk, A., Roberts, A., Simon, I., Huang, C.-Z. A., Dieleman, S., Elsen, E., Engel, J., &amp; Eck, D. (2019). Enabling Factorized Piano Music Modeling and Generation with the MAESTRO Dataset. International Conference on Learning Representations (ICLR). https://openreview.net/forum?id=r1lYRjC9F7",
+  "license": {
+    "identifier": "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0; not a standard SPDX identifier)",
+    "url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "notes": "MAESTRO is distributed under CC BY-NC-SA 4.0, which is not a standard SPDX identifier. Attribution, non-commercial use, and share-alike conditions apply; review the license and upstream terms before use or redistribution."
+  },
+  "upstream_url": "https://magenta.tensorflow.org/datasets/maestro"
+}

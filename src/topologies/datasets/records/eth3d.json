@@ -1,0 +1,13 @@
+{
+  "id": "eth3d",
+  "name": "ETH3D",
+  "domain": "computer-vision/multi-view-stereo",
+  "description": "A multi-view stereo benchmark with high-resolution images and multi-camera videos, covering diverse indoor and outdoor scenes with laser-scanned ground truth.",
+  "citation": "Schöps, T., Schönberger, J. L., Galliani, S., Sattler, T., Schindler, K., Pollefeys, M., and Geiger, A. (2017). A Multi-View Stereo Benchmark With High-Resolution Images and Multi-Camera Videos. Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 3260–3269. https://doi.org/10.1109/CVPR.2017.369",
+  "license": {
+    "identifier": "other",
+    "url": "",
+    "notes": "unverified"
+  },
+  "upstream_url": "https://www.eth3d.net/"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "mind",
+  "name": "Microsoft News Dataset (MIND)",
+  "domain": "recommendation",
+  "description": "A large-scale news recommendation benchmark containing user click histories, news articles, and impression logs. MIND supports personalized news recommendation research; this record describes the dataset only and does not distribute its data.",
+  "citation": "Wu, F., Qiao, Y., Chen, J.-H., Wu, C., Qi, T., Lian, J., Liu, D., Xie, X., Gao, J., Wu, W., & Zhou, M. (2020). MIND: A Large-scale Dataset for News Recommendation. Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, 3597–3606. https://doi.org/10.18653/v1/2020.acl-main.331",
+  "license": {
+    "identifier": "Dataset-specific terms; not a standard SPDX license identifier",
+    "url": "https://msnews.github.io/",
+    "notes": "Use is subject to Microsoft Research dataset-specific terms and conditions, not a standard SPDX license. Review the upstream terms before use or redistribution; this record vendors no data."
+  },
+  "upstream_url": "https://msnews.github.io/"
+}

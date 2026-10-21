@@ -1,0 +1,12 @@
+{
+  "id": "real-toxicity-prompts",
+  "name": "RealToxicityPrompts",
+  "domain": "language",
+  "description": "Toxicity-continuation prompts, about 100k. No data vendored.",
+  "citation": "RealToxicityPrompts: Gehman et al., Findings of EMNLP 2020.",
+  "license": {
+    "identifier": "Apache-2.0",
+    "url": "https://allenai.org/data/real-toxicity-prompts"
+  },
+  "upstream_url": "https://allenai.org/data/real-toxicity-prompts"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "spacenet",
+  "name": "SpaceNet",
+  "domain": "vision",
+  "description": "Satellite imagery dataset and challenge series with building footprint and road network labels for geospatial mapping and machine learning. Dataset files are not included here.",
+  "citation": "Van Etten, A., Lindenbaum, D., & Bacastow, T. (2018). SpaceNet: A Remote Sensing Dataset and Challenge Series..",
+  "license": {
+    "identifier": "other",
+    "url": "https://spacenet.ai/terms/",
+    "notes": "SpaceNet datasets are distributed under dataset-specific terms; review the applicable terms before use or redistribution. No dataset files are included here."
+  },
+  "upstream_url": "https://spacenet.ai/"
+}

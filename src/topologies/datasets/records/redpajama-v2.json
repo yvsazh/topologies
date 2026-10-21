@@ -1,0 +1,13 @@
+{
+  "id": "redpajama-v2",
+  "name": "RedPajama-V2",
+  "domain": "natural-language",
+  "description": "Large-scale web text corpus derived from Common Crawl, provided as filtered and deduplicated documents with quality signals and metadata for language-model pretraining.",
+  "citation": "Computer, R. P. (2023). RedPajama: an Open Dataset for Training Large Language Models. https://github.com/togethercomputer/RedPajama-Data",
+  "license": {
+    "identifier": "Not stated (source-content terms apply)",
+    "url": "https://github.com/togethercomputer/RedPajama-Data",
+    "notes": "RedPajama-V2 is derived from Common Crawl; the upstream project does not assign a single standard SPDX license to the corpus, and source documents may carry their own terms. Review those rights before use or redistribution. Access to some hosted artifacts may require registration or acceptance of provider terms."
+  },
+  "upstream_url": "https://github.com/togethercomputer/RedPajama-Data"
+}

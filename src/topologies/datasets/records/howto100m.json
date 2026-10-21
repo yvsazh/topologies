@@ -1,0 +1,13 @@
+{
+  "id": "howto100m",
+  "name": "HowTo100M",
+  "domain": "vision",
+  "description": "HowTo100M narrated instructional video, about 136 million clips with ASR subtitles. Recall at K and zero-shot transfer. Miech et al., ICCV 2019. YouTube-derived; subtitles only, videos not vendored.",
+  "citation": "Miech et al., ICCV 2019. HowTo100M.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://www.di.ens.fr/willow/research/howto100m/",
+    "notes": "YouTube-derived. Loader-only subtitles. Videos not vendored."
+  },
+  "upstream_url": "https://www.di.ens.fr/willow/research/howto100m/"
+}

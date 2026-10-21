@@ -1,0 +1,13 @@
+{
+  "id": "rsna-pneumonia",
+  "name": "RSNA Pneumonia",
+  "domain": "vision",
+  "description": "RSNA pneumonia chest X-rays, about 30 thousand images with boxes. mAP and AUC on the stage-1 and stage-2 protocol. Images not vendored.",
+  "citation": "RSNA Pneumonia Detection Challenge.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://www.kaggle.com/c/rsna-pneumonia-detection-challenge",
+    "notes": "RSNA and Kaggle terms. Human images are loader-only and not vendored."
+  },
+  "upstream_url": "https://www.kaggle.com/c/rsna-pneumonia-detection-challenge"
+}

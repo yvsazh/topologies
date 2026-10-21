@@ -1,0 +1,12 @@
+{
+  "id": "lvos",
+  "name": "LVOS",
+  "domain": "vision",
+  "description": "A long-term video object segmentation dataset comprising 720 videos. This record is metadata-only; no dataset data is vendored.",
+  "citation": "Hong et al. (2023). LVOS: A Benchmark for Long-term Video Object Segmentation.",
+  "license": {
+    "identifier": "LVOS release terms (no SPDX identifier stated)",
+    "url": "https://lingyi-hong.github.io/LVOS.github.io/"
+  },
+  "upstream_url": "https://lingyi-hong.github.io/LVOS.github.io/"
+}

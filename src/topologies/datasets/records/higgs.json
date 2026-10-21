@@ -1,0 +1,13 @@
+{
+  "id": "higgs",
+  "name": "HIGGS",
+  "domain": "tabular",
+  "description": "A large simulated dataset for classifying whether events correspond to Higgs boson signal or background, described by 28 kinematic features and 21 low-level features. This record does not distribute dataset files.",
+  "citation": "Baldi, P., Sadowski, P., & Whiteson, D. (2014). Searching for Exotic Particles in High-Energy Physics with Deep Learning. Nature Communications, 5, 4308. https://doi.org/10.1038/ncomms5308",
+  "license": {
+    "identifier": "Dataset-specific terms (not a standard SPDX identifier)",
+    "url": "https://archive.ics.uci.edu/dataset/280/higgs",
+    "notes": "The dataset is available through the UCI Machine Learning Repository. The dataset license is not identified here as a standard SPDX license; review the UCI record and original source terms before use or redistribution. No data is vendored."
+  },
+  "upstream_url": "https://archive.ics.uci.edu/dataset/280/higgs"
+}

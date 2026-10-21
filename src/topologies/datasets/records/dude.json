@@ -1,0 +1,13 @@
+{
+  "id": "dude",
+  "name": "DUD-E",
+  "domain": "scientific",
+  "description": "DUD-E directory of useful decoys, 102 targets with about 22 thousand actives and 1 million decoys. ROC-AUC and BEDROC, with a decoy-bias note. Mysinger et al., Journal of Medicinal Chemistry 2012. Ligands not vendored.",
+  "citation": "Mysinger et al., Journal of Medicinal Chemistry 2012. DUD-E.",
+  "license": {
+    "identifier": "not specified",
+    "url": "http://dude.docking.org/",
+    "notes": "Open research terms. Ligands not vendored."
+  },
+  "upstream_url": "http://dude.docking.org/"
+}

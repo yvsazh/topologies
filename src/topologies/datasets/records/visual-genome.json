@@ -1,0 +1,13 @@
+{
+  "id": "visual-genome",
+  "name": "Visual Genome",
+  "domain": "vision",
+  "description": "Scene graphs for about 108k Flickr-derived images. No data is vendored here.",
+  "citation": "Visual Genome: Connecting Language and Vision using Crowdsourced Dense Image Annotations. Krishna et al. (2017).",
+  "license": {
+    "identifier": "CC-BY-4.0",
+    "url": "https://visualgenome.org/",
+    "notes": "CC-BY-4.0 applies to the annotations. Images are Flickr-derived and remain subject to their respective Flickr image terms and rights."
+  },
+  "upstream_url": "https://visualgenome.org/"
+}

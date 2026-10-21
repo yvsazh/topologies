@@ -1,0 +1,13 @@
+{
+  "id": "common-voice",
+  "name": "Mozilla Common Voice",
+  "domain": "audio",
+  "description": "A crowdsourced multilingual speech corpus of recorded utterances and validated transcripts, developed to support speech technology research and development.",
+  "citation": "Ardila, R., Branson, M., Davis, K., et al. (2020). Common Voice: A Massively-Multilingual Speech Corpus. Proceedings of the 12th Language Resources and Evaluation Conference, 4218–4222. https://aclanthology.org/2020.lrec-1.520/",
+  "license": {
+    "identifier": "CC0-1.0",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "notes": "Common Voice corpus contributions are released into the public domain under CC0 1.0 Universal (a standard SPDX license identifier). Check the terms and notices for the specific release and any included materials; attribution is encouraged, and recorded speech may contain personal data subject to applicable privacy rules."
+  },
+  "upstream_url": "https://commonvoice.mozilla.org/"
+}

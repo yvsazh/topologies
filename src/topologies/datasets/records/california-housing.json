@@ -1,0 +1,12 @@
+{
+  "id": "california-housing",
+  "name": "California Housing",
+  "domain": "tabular",
+  "description": "A regression dataset derived from the 1990 U.S. Census, containing housing and demographic information for California census block groups. Features include median income, housing age, rooms, bedrooms, population, households, location, and median house value.",
+  "citation": "Pace, R. K., & Barry, R. (1997). Sparse Spatial Autoregressions. Statistics & Probability Letters, 33(3), 291–297. https://doi.org/10.1016/S0167-7152(96)00140-X",
+  "license": {
+    "identifier": "Dataset license not specified (not a standard SPDX identifier)",
+    "notes": "The original dataset is distributed via StatLib and is not accompanied by a clearly specified standard SPDX license. Consult the upstream terms and applicable rights before use or redistribution. This record does not include dataset contents."
+  },
+  "upstream_url": "https://www.dcc.fc.up.pt/~ltorgo/Regression/cal_housing.html"
+}

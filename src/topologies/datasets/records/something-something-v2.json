@@ -1,0 +1,13 @@
+{
+  "id": "something-something-v2",
+  "name": "Something-Something V2",
+  "domain": "vision",
+  "description": "A video dataset of people performing everyday actions with objects, annotated for fine-grained action recognition.",
+  "citation": "Goyal, R., E: X., K·rsen, V., et al. (2017). The 'Something Something' Video Database for Learning and Evaluating Visual Common Sense. IEEE International Conference on Computer Vision (ICCV). https://doi.org/10.1109/ICCV.2017.214",
+  "license": {
+    "identifier": "Custom dataset terms (not a standard SPDX identifier)",
+    "url": "https://20bn.com/datasets/something-something",
+    "notes": "Dataset access and use are governed by the terms provided by the dataset publisher; review those terms before use. The license is not a standard SPDX identifier."
+  },
+  "upstream_url": "https://20bn.com/datasets/something-something"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "transnas-bench-101",
+  "name": "TransNAS-Bench-101",
+  "domain": "scientific",
+  "description": "TransNAS-Bench-101 cross-task neural architecture search, about 4000 architectures across seven vision tasks. Task-conditioned rank correlation. Duan et al., CVPR 2021. Tables not vendored.",
+  "citation": "Duan et al., CVPR 2021. TransNAS-Bench-101.",
+  "license": {
+    "identifier": "MIT",
+    "url": "https://github.com/yawen-duan/TransNASBench",
+    "notes": "MIT. Architecture tables not vendored. Inventory path yawen-duan/transnas-bench-101 is a name variant; the published repository is yawen-duan/TransNASBench."
+  },
+  "upstream_url": "https://github.com/yawen-duan/TransNASBench"
+}

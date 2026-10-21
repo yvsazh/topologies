@@ -1,0 +1,13 @@
+{
+  "id": "urbansound8k",
+  "name": "UrbanSound8K",
+  "domain": "audio",
+  "description": "A collection of 8,732 labeled sound excerpts (up to 4 seconds) from 10 classes of urban sounds, designed for sound event classification research.",
+  "citation": "Salamon, J., Jacoby, C., & Bello, J. P. (2014). A Dataset and Taxonomy for Urban Sound Research. Proceedings of the 22nd ACM International Conference on Multimedia, 1041–1044. https://doi.org/10.1145/2647868.2655045",
+  "license": {
+    "identifier": "License not specified",
+    "url": "https://urbansounddataset.weebly.com/urbansound8k.html",
+    "notes": "The upstream dataset page does not specify a standard SPDX license identifier. Review the upstream terms and the rights to the underlying audio recordings before use or redistribution; do not assume redistribution or commercial-use rights."
+  },
+  "upstream_url": "https://urbansounddataset.weebly.com/urbansound8k.html"
+}

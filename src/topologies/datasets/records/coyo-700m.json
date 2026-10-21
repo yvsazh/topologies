@@ -1,0 +1,13 @@
+{
+  "id": "coyo-700m",
+  "name": "COYO-700M",
+  "domain": "vision",
+  "description": "COYO-700M image-text pairs, about 747 million pairs, a LAION-scale alternative with watermarks filtered. CLIP zero-shot. Byun et al., NeurIPS 2022 Datasets and Benchmarks. Web index only; images are not redistributed.",
+  "citation": "Byun et al., NeurIPS 2022. COYO-700M.",
+  "license": {
+    "identifier": "CC-BY-4.0",
+    "url": "https://github.com/kakaobra/coyo-dataset",
+    "notes": "CC-BY web index. Same redistribution risk as LAION. Images are not vendored."
+  },
+  "upstream_url": "https://github.com/kakaobra/coyo-dataset"
+}

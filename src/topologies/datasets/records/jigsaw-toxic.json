@@ -1,0 +1,12 @@
+{
+  "id": "jigsaw-toxic",
+  "name": "Jigsaw Toxic Comment",
+  "domain": "language",
+  "description": "Toxicity classification from the Kaggle Jigsaw Toxic Comment Classification Challenge. HateCheck (Röttger et al., ACL 2021) provides functional tests for hate speech detection. No data is vendored.",
+  "citation": "Jigsaw; Wulczyn et al. (2017). Ex Machina: Personal Attacks Seen at Scale. Proceedings of the 26th International Conference on World Wide Web.",
+  "license": {
+    "identifier": "CC-BY-SA-4.0",
+    "url": "https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge"
+  },
+  "upstream_url": "https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge"
+}

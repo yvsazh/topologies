@@ -1,0 +1,13 @@
+{
+  "id": "imagenet-o",
+  "name": "ImageNet-O",
+  "domain": "vision",
+  "description": "ImageNet-O out-of-distribution detection, about 2000 out-of-distribution images and 10000 in-distribution images. Area under the precision-recall curve on the Hendrycks protocol. Hendrycks et al., CVPR 2021. Distinct from ImageNet-A and ImageNet-R. Images not vendored.",
+  "citation": "Hendrycks et al., CVPR 2021. ImageNet-O.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://github.com/hendrycks/natural-adv-examples",
+    "notes": "Rights-reserved images. Loader-only. Images not vendored."
+  },
+  "upstream_url": "https://github.com/hendrycks/natural-adv-examples"
+}

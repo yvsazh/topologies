@@ -1,0 +1,13 @@
+{
+  "id": "chestxray14",
+  "name": "NIH ChestX-ray14",
+  "domain": "scientific",
+  "description": "A dataset of 112,120 frontal-view chest X-ray images from 30,805 patients, labeled with up to 14 thoracic disease findings, released by the NIH Clinical Center for chest radiograph classification and localization research.",
+  "citation": "Wang, X., Peng, Y., Lu, L., Lu, Z., Bagheri, M., and Summers, R. M. (2017). ChestX-ray8: Hospital-scale Chest X-ray Database and Benchmarks on Weakly-Supervised Classification and Localization of Common Thorax Diseases. Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2097-2106. https://doi.org/10.1109/CVPR.2017.369",
+  "license": {
+    "identifier": "other",
+    "url": "https://nihcc.app.box.com/v/ChestXray-Nihcc",
+    "notes": "The dataset is provided for research use under NIH Clinical Center terms; no standard SPDX license is asserted. Consult the upstream terms for access and permitted use."
+  },
+  "upstream_url": "https://nihcc.app.box.com/v/ChestXray-Nihcc"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "refcocog",
+  "name": "RefCOCOg",
+  "domain": "vision",
+  "description": "A referring-expression comprehension dataset built from COCO images, containing natural-language expressions referring to objects and corresponding object annotations. This record does not distribute dataset files.",
+  "citation": "Mao, J., Huang, J., Toshev, A., Camburu, O., Yuille, A. L., & Murphy, K. (2016). Generation and Comprehension of Contextualized Referring Expressions. Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 4171–4180. https://doi.org/10.1109/CVPR.2016.452",
+  "license": {
+    "identifier": "Custom dataset terms; no standard SPDX identifier",
+    "url": "https://github.com/lichengunc/refer",
+    "notes": "RefCOCOg is distributed under dataset-specific terms rather than a standard SPDX license identifier. Images originate from COCO and retain their applicable image rights; review the upstream terms and source-image licenses before use or redistribution."
+  },
+  "upstream_url": "https://github.com/lichengunc/refer"
+}

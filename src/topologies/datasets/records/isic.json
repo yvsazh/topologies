@@ -1,0 +1,13 @@
+{
+  "id": "isic",
+  "name": "ISIC 2019 and 2020",
+  "domain": "vision",
+  "description": "ISIC 2019 and 2020 skin-lesion images, about 25 thousand and 33 thousand dermoscopic images, in the HAM10000 lineage. Balanced accuracy and AUC. Tschandl et al. 2018 and Combalia et al. 2019. Images not vendored.",
+  "citation": "Tschandl et al. 2018. ISIC skin lesions and HAM10000.",
+  "license": {
+    "identifier": "CC-BY-NC-4.0",
+    "url": "https://challenge.isic-archive.com/",
+    "notes": "CC BY-NC. Human images are loader-only and not vendored."
+  },
+  "upstream_url": "https://challenge.isic-archive.com/"
+}

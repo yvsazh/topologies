@@ -1,0 +1,13 @@
+{
+  "id": "spgispeech",
+  "name": "SPGISpeech",
+  "domain": "audio",
+  "description": "An approximately 5,000-hour corpus of English financial-domain audio with human transcripts, assembled from earnings calls and intended for automatic speech recognition research.",
+  "citation": "O'Neill, P., Mavlyutov, R., Bulyko, I., & Ostendorf, M. (2021). SPGISpeech: 5,000 hours of transcribed financial audio for speech recognition. Interspeech 2021.",
+  "license": {
+    "identifier": "Dataset-specific terms; no standard SPDX identifier",
+    "url": "https://github.com/anton-l/spgispeech",
+    "notes": "The dataset is distributed under dataset-specific terms rather than a standard SPDX-identified license. Review the upstream terms and any restrictions before access, use, or redistribution; do not assume the audio or transcripts are freely redistributable."
+  },
+  "upstream_url": "https://github.com/anton-l/spgispeech"
+}

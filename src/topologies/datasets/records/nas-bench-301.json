@@ -1,0 +1,13 @@
+{
+  "id": "nas-bench-301",
+  "name": "NAS-Bench-301",
+  "domain": "scientific",
+  "description": "NAS-Bench-301 surrogate for about 1 million DARTS-space architectures. Regret and rank correlation. Siems et al., ICLR 2021. Distinct from NAS-Bench-101 and NAS-Bench-201. Surrogate tables not vendored.",
+  "citation": "Siems et al., ICLR 2021. NAS-Bench-301.",
+  "license": {
+    "identifier": "MIT",
+    "url": "https://github.com/automl/nasbench301",
+    "notes": "MIT. Surrogate tables not vendored."
+  },
+  "upstream_url": "https://github.com/automl/nasbench301"
+}

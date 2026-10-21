@@ -1,0 +1,13 @@
+{
+  "id": "squad-2",
+  "name": "Stanford Question Answering Dataset 2.0 (SQuAD 2.0)",
+  "domain": "natural-language",
+  "description": "Reading-comprehension benchmark combining SQuAD questions answerable from Wikipedia passages with adversarially written questions that cannot be answered from the passage.",
+  "citation": "Rajpurkar, P., Jia, R., & Liang, P. (2018). Know What You Don't Know: Unanswerable Questions for SQuAD. Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers), 784–789. https://doi.org/10.18653/v1/P18-2124",
+  "license": {
+    "identifier": "Dataset license not specified",
+    "url": "https://rajpurkar.github.io/SQuAD-explorer/",
+    "notes": "The upstream dataset page does not state a dataset license; no standard SPDX identifier can be asserted. Review upstream terms and rights in the underlying Wikipedia text before use or redistribution."
+  },
+  "upstream_url": "https://rajpurkar.github.io/SQuAD-explorer/"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "mstar",
+  "name": "MSTAR",
+  "domain": "vision",
+  "description": "MSTAR SAR target recognition, 10 classes, X-band. Accuracy on the standard operating condition and extended operating condition protocols. AFRL public release. Chips not vendored.",
+  "citation": "MSTAR moving and stationary target acquisition and recognition.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://www.sdms.afrl.af.mil/index.php?collection=mstar",
+    "notes": "AFRL public release. SAR chips not vendored."
+  },
+  "upstream_url": "https://www.sdms.afrl.af.mil/index.php?collection=mstar"
+}

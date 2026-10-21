@@ -1,0 +1,13 @@
+{
+  "id": "musdb18-hq",
+  "name": "MUSDB18-HQ",
+  "domain": "audio",
+  "description": "A high-quality version of the MUSDB18 benchmark, providing stereo music mixtures and isolated vocals, drums, bass, and other stems for music source separation research.",
+  "citation": "Rafii, Z., Liutkus, A., Fabian-Robert, S., Mimilakis, S. I., & Bittner, R. (2017). MUSDB18: a corpus for music separation. https://doi.org/10.5281/zenodo.1117372",
+  "license": {
+    "identifier": "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0; not a standard SPDX identifier)",
+    "url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "notes": "The dataset is distributed under CC BY-NC-SA 4.0, which is not a standard SPDX identifier. Attribution, non-commercial use, and share-alike conditions apply; review the license and upstream terms before use or redistribution."
+  },
+  "upstream_url": "https://sigsep.github.io/datasets/musdb.html"
+}

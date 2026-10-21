@@ -1,0 +1,13 @@
+{
+  "id": "nwpu-resisc45",
+  "name": "NWPU-RESISC45",
+  "domain": "vision",
+  "description": "NWPU-RESISC45 remote-sensing scenes, about 31.5 thousand images and 45 classes. Accuracy on the 10 percent and 20 percent protocols. Cheng et al., Proceedings of the IEEE 2017. Images not vendored.",
+  "citation": "Cheng et al., Proc. IEEE 2017. NWPU-RESISC45.",
+  "license": {
+    "identifier": "not specified",
+    "url": "http://www.escience.cn/people/JunweiHan/NWPU-RESISC45.html",
+    "notes": "NWPU open research terms. Images not vendored."
+  },
+  "upstream_url": "http://www.escience.cn/people/JunweiHan/NWPU-RESISC45.html"
+}

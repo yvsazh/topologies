@@ -1,0 +1,13 @@
+{
+  "id": "procgen",
+  "name": "Procgen Benchmark",
+  "domain": "reinforcement-learning",
+  "description": "A suite of procedurally-generated environments for measuring sample efficiency and generalization in reinforcement learning. Procgen provides 16 game-like environments with configurable training and test levels; it is an environment suite, not a static downloadable dataset.",
+  "citation": "Cobbe, K., Hesse, C., Hilton, J., & Schulman, J. (2020). Leveraging Procedural Generation to Benchmark Reinforcement Learning. Proceedings of the 37th International Conference on Machine Learning, PMLR 119, 2048–2056. https://proceedings.mlr.press/v119/cobbe20a.html",
+  "license": {
+    "identifier": "License not stated",
+    "url": "https://github.com/openai/procgen",
+    "notes": "The upstream repository does not identify a standard SPDX license for the Procgen environments. Review the repository and any applicable asset or dependency terms before use or redistribution."
+  },
+  "upstream_url": "https://github.com/openai/procgen"
+}

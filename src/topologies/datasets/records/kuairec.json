@@ -1,0 +1,13 @@
+{
+  "id": "kuairec",
+  "name": "KuaiRec",
+  "domain": "recommendation",
+  "description": "A fully observed recommendation dataset based on user-video interaction data from the Kuaishou short-video platform, designed to support evaluation of recommender systems and studies of exposure bias. This record is loader-only and does not distribute dataset files.",
+  "citation": "Gao, C., Li, S., Zhang, Y., Chen, J., Li, B., Lei, X., and Jiang, P. (2022). KuaiRec: A Fully-observed Dataset and Insights for Evaluating Recommender Systems. Proceedings of the 31st ACM International Conference on Information & Knowledge Management (CIKM 2022). https://doi.org/10.1145/3511808.3557624",
+  "license": {
+    "identifier": "Dataset-specific terms; not a standard SPDX license identifier",
+    "url": "https://kuairec.com/",
+    "notes": "Review the dataset's current terms and any applicable platform or user-data restrictions before access or use. The license is not identified by a standard SPDX identifier. This record is loader-only and vendors no data."
+  },
+  "upstream_url": "https://github.com/KuaiRec/KuaiRec"
+}

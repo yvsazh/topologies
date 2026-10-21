@@ -1,0 +1,13 @@
+{
+  "id": "nmnist",
+  "name": "N-MNIST",
+  "domain": "neuromorphic vision",
+  "description": "N-MNIST is a neuromorphic event-based dataset of handwritten digits, created by recording MNIST samples with a Dynamic Vision Sensor (DVS). DVS Gesture is a companion dataset in the same neuromorphic event-data family.",
+  "citation": "Orchard, G., et al. (2015). Converting Static Image Datasets to Spiking Neuromorphic Datasets Using Saccades. Frontiers in Neuroscience, 9, 437.",
+  "license": {
+    "identifier": "other",
+    "url": "https://www.garrickorchard.com/datasets/n-mnist",
+    "notes": "No standard SPDX license identifier is specified here; consult the dataset provider's terms before reuse or redistribution."
+  },
+  "upstream_url": "https://www.garrickorchard.com/datasets/n-mnist"
+}

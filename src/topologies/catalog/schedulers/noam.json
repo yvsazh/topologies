@@ -1,0 +1,21 @@
+{
+  "id": "noam",
+  "name": "Noam",
+  "description": "Transformer-style inverse-square-root learning-rate schedule with linear warmup.",
+  "api": "noam(optimizer, total_steps, **kwargs)",
+  "usage": "scheduler = noam(optimizer, total_steps=4000); scheduler.step()",
+  "parameters": {
+    "optimizer": "PyTorch optimizer",
+    "total_steps": "positive integer; default warmup length",
+    "model_size": "positive float; defaults to 512 (d_model is accepted as an alias)",
+    "warmup_steps": "positive integer; defaults to total_steps",
+    "factor": "positive float multiplier; defaults to 1.0"
+  },
+  "implementation": {
+    "path": "implementations/schedulers/noam.py",
+    "symbol": "noam",
+    "sha256": "1e30542e3db6269e0d5d03fff10611ba61a20f7c7348d44e8de6a4134117341f"
+  },
+  "papers": [],
+  "examples": []
+}

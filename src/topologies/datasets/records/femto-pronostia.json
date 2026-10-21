@@ -1,0 +1,13 @@
+{
+  "id": "femto-pronostia",
+  "name": "FEMTO PRONOSTIA",
+  "domain": "scientific",
+  "description": "FEMTO PRONOSTIA IEEE PHM 2012 bearing run-to-failure, 17 bearings under three conditions. Remaining-useful-life MAE on the challenge protocol. Nectoux et al., IEEE PHM 2012. Traces not vendored.",
+  "citation": "Nectoux et al., IEEE PHM 2012. FEMTO PRONOSTIA.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://github.com/wkzs111/phm-ieee-2012-data-challenge-dataset",
+    "notes": "FEMTO-ST open challenge data. Bearing traces not vendored."
+  },
+  "upstream_url": "https://github.com/wkzs111/phm-ieee-2012-data-challenge-dataset"
+}

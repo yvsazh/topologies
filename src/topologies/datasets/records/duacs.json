@@ -1,0 +1,13 @@
+{
+  "id": "duacs",
+  "name": "DUACS AVISO Mesoscale Eddy Trajectory Atlas (META4.0 DT)",
+  "domain": "scientific",
+  "description": "Global anticyclonic and cyclonic mesoscale eddy trajectories derived from multimission satellite altimetry, including location, contours, amplitude, radius, speed, and metadata; covers 1993 onward.",
+  "citation": "The altimetric Mesoscale Eddy Trajectories Atlas (META4.0exp DT) was produced by SSALTO/DUACS and distributed by AVISO+ (https://aviso.altimetry.fr) with support from CNES, in collaboration with IMEDEA (DOI: 10.24400/527896/a01-2026.001 for the META4.0exp DT allsat version).",
+  "license": {
+    "identifier": "other",
+    "url": "https://www.aviso.altimetry.fr/fileadmin/documents/data/License_Aviso_ini.pdf",
+    "notes": "AVISO+ product page states free of charge access for any purpose under its licence agreement; license identifier not specified here."
+  },
+  "upstream_url": "https://www.aviso.altimetry.fr/en/data/products/value-added-products/global-mesoscale-eddy-trajectory-product.html"
+}

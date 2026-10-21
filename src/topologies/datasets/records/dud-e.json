@@ -1,0 +1,13 @@
+{
+  "id": "dud-e",
+  "name": "Directory of Useful Decoys, Enhanced (DUD-E)",
+  "domain": "scientific",
+  "description": "A molecular docking benchmark containing 22,886 active compounds across 102 targets and 50 property-matched decoys per active compound.",
+  "citation": "Mysinger, M. M., Carchia, M., Irwin, J. J., & Shoichet, B. K. (2012). Directory of Useful Decoys, Enhanced (DUD-E): Better Ligands and Decoys for Better Benchmarking. Journal of Medicinal Chemistry, 55(14), 6582\u20136594. https://doi.org/10.1021/jm300687e",
+  "license": {
+    "identifier": "other",
+    "url": "",
+    "notes": "The DUD-E website states that the dataset is free to use. No standard license identifier was published."
+  },
+  "upstream_url": "https://dude.docking.org/"
+}

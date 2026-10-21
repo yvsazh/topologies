@@ -1,0 +1,13 @@
+{
+  "id": "docvqa",
+  "name": "DocVQA",
+  "domain": "document visual question answering",
+  "description": "A dataset of manually annotated questions and answers about document images, with 50,000 questions over approximately 12,000 images.",
+  "citation": "Mathew, Minesh, Dimosthenis Karatzas, and C. V. Jawahar. DocVQA: A Dataset for VQA on Document Images. WACV 2021. https://arxiv.org/abs/2007.00398",
+  "license": {
+    "identifier": "other",
+    "url": "",
+    "notes": "unverified"
+  },
+  "upstream_url": "https://docvqa.org/datasets/docvqa"
+}

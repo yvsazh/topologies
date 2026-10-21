@@ -1,0 +1,13 @@
+{
+  "id": "cwru",
+  "name": "Case Western Reserve University Bearing Data Center Dataset",
+  "domain": "scientific",
+  "description": "Motor bearing vibration measurements from normal bearings and single-point drive-end and fan-end bearing defects, collected at 12,000 and 48,000 samples per second.",
+  "citation": "Case Western Reserve University Bearing Data Center. Download a Data File. https://engineering.case.edu/bearingdatacenter/download-data-file",
+  "license": {
+    "identifier": "other",
+    "url": "",
+    "notes": "License not published or verified."
+  },
+  "upstream_url": "https://engineering.case.edu/bearingdatacenter/download-data-file"
+}

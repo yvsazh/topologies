@@ -1,0 +1,13 @@
+{
+  "id": "clotho",
+  "name": "Clotho",
+  "domain": "audio",
+  "description": "A dataset for audio captioning, containing audio clips sourced from Freesound and human-written captions describing their acoustic content.",
+  "citation": "Drossos, K., Lipping, S., & Virtanen, T. (2020). Clotho: An Audio Captioning Dataset. IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), 736–740. https://doi.org/10.1109/ICASSP40776.2020.905299(Audio)",
+  "license": {
+    "identifier": "Dataset-wide license not specified (not an SPDX identifier)",
+    "url": "https://github.com/audio-captioning/clotho-dataset",
+    "notes": "The corpus combines Freesound audio with captions, and the upstream project does not establish one standard SPDX license covering all material. Individual recordings may have different licenses; review the upstream terms and each recording's applicable rights before use or redistribution."
+  },
+  "upstream_url": "https://github.com/audio-captioning/clotho-dataset"
+}

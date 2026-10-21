@@ -1,0 +1,13 @@
+{
+  "id": "gsm8k",
+  "name": "GSM8K (Grade School Math 8K)",
+  "domain": "natural-language",
+  "description": "A dataset of 8,500 linguistically diverse grade-school math word problems, each with a multi-step solution requiring basic arithmetic operations.",
+  "citation": "Cobbe, K., Kosaraju, V., Bavarian, M., Chen, M., Jun, H., Kaiser, L., et al. (2021). Training Verifiers to Solve Math Word Problems. arXiv:2110.14168. https://arxiv.org/abs/2110.14168",
+  "license": {
+    "identifier": "MIT",
+    "url": "https://github.com/openai/grade-school-math/blob/master/LICENSE",
+    "notes": "The upstream repository is licensed under the standard SPDX MIT license; verify that this license covers the dataset files and consider any third-party rights in included content before redistribution."
+  },
+  "upstream_url": "https://github.com/openai/grade-school-math"
+}

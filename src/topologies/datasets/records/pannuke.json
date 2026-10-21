@@ -1,0 +1,13 @@
+{
+  "id": "pannuke",
+  "name": "PanNuke",
+  "domain": "scientific",
+  "description": "PanNuke nuclei, about 200 thousand nuclei across 19 tissues and five classes. Multi-class panoptic quality. Gamper et al., Medical Image Analysis 2020. Images not vendored.",
+  "citation": "Gamper et al., Medical Image Analysis 2020. PanNuke.",
+  "license": {
+    "identifier": "CC-BY-4.0",
+    "url": "https://warwick.ac.uk/fac/cross_fac/tia/data/pannuke",
+    "notes": "CC BY. Images not vendored."
+  },
+  "upstream_url": "https://warwick.ac.uk/fac/cross_fac/tia/data/pannuke"
+}

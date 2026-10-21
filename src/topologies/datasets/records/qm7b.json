@@ -1,0 +1,13 @@
+{
+  "id": "qm7b",
+  "name": "QM7-X (QM7b) Dataset",
+  "domain": "graph",
+  "description": "A quantum-chemistry dataset of small organic molecules with up to seven heavy atoms, including QM7b properties and computed electronic-structure quantities. This record is loader-only and does not distribute dataset files.",
+  "citation": "Montavon, G., Hansen, K., Janosh, S., et al. (2013). Machine learning of molecular electronic properties in chemical compound space. New Journal of Physics, 15, 095003. https://doi.org/10.1088/1367-2630/15/9/095003",
+  "license": {
+    "identifier": "Dataset-specific terms (not a standard SPDX identifier)",
+    "url": "https://quantum-machine.org/datasets/",
+    "notes": "The upstream distribution does not specify a standard SPDX license identifier. Review the source dataset terms before use or redistribution. This record is loader-only and vendors no data."
+  },
+  "upstream_url": "https://quantum-machine.org/datasets/"
+}

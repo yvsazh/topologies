@@ -1,0 +1,13 @@
+{
+  "id": "chime-6",
+  "name": "CHiME-6",
+  "domain": "audio",
+  "description": "A corpus of multichannel conversational speech recorded in real homes, designed for distant-microphone speech recognition and speaker diarization research.",
+  "citation": "Watanabe, S., Mandel, M., Barker, J., et al. (2020). CHiME-6 Challenge: Tackling Multispeaker Speech Recognition for Unsegmented Recordings. Proceedings of the 6th International Workshop on Speech Processing in Everyday Environments (CHiME 2020). https://doi.org/10.21437/CHiME.2020-1",
+  "license": {
+    "identifier": "Research-use license (not a standard SPDX identifier)",
+    "url": "https://chimechallenge.github.io/chime6/",
+    "notes": "CHiME-6 data are distributed under the challenge's research-use terms; this is not a standard SPDX license identifier. Review the current agreement and restrictions on redistribution before accessing or using the recordings."
+  },
+  "upstream_url": "https://chimechallenge.github.io/chime6/"
+}

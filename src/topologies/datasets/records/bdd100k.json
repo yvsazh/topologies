@@ -1,0 +1,12 @@
+{
+  "id": "bdd100k",
+  "name": "BDD100K",
+  "domain": "vision",
+  "description": "Driving detection, segmentation, and tracking across 100k videos. Loader-only record; no data is vendored. Use is subject to Berkeley research terms.",
+  "citation": "Yu, F., Chen, H., Wang, X., Xian, W., Chen, Y., Liu, F., Madhavan, V., & Darrell, T. (2020). BDD100K: A Diverse Driving Dataset for Heterogeneous Multitask Learning. Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR).",
+  "license": {
+    "identifier": "Berkeley terms of use (not a standard SPDX identifier)",
+    "url": "https://bdd-data.berkeley.edu/"
+  },
+  "upstream_url": "https://bdd-data.berkeley.edu/"
+}

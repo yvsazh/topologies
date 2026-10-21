@@ -1,0 +1,1 @@
+{"id":"zero-partition","name":"ZeRO partitioning","description":"Computes the parameter count per rank by integer-dividing total parameters by world size.","api":"topologies.training.stability.zero_partition:zero_partition(n_params, world_size)","usage":"zero_partition(8, 4)  # 2 parameters per rank","parameters":{"n_params":"int","world_size":"int"},"papers":[]}

@@ -1,0 +1,13 @@
+{
+  "id": "fineweb",
+  "name": "FineWeb",
+  "domain": "natural-language",
+  "description": "A large-scale, cleaned and deduplicated web-text corpus derived from Common Crawl for language-model pretraining. Dataset access is provided through Hugging Face and may require accepting its access conditions; this record does not distribute corpus data.",
+  "citation": "Penedo, G., others. (2024). The FineWeb Datasets: Decanting the Web for the Finest Text Data at Scale. arXiv:2406.17557. https://arxiv.org/abs/2406.17557",
+  "license": {
+    "identifier": "Not stated (source-content rights apply)",
+    "url": "https://huggingface.co/datasets/HuggingFaceFW/fineweb",
+    "notes": "FineWeb is an aggregate of web-crawled material, not a corpus with a single standard SPDX license. Access is gated by Hugging Face dataset conditions; those conditions do not grant blanket rights to underlying source content. Review upstream terms and source-content rights before use or redistribution."
+  },
+  "upstream_url": "https://huggingface.co/datasets/HuggingFaceFW/fineweb"
+}

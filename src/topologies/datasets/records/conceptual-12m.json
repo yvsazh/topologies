@@ -1,0 +1,13 @@
+{
+  "id": "conceptual-12m",
+  "name": "Conceptual 12M",
+  "domain": "multimodal",
+  "description": "A large-scale image-text dataset of approximately 12 million image URLs paired with descriptive captions, introduced to support vision-and-language research. The distributed metadata provides links rather than the image data itself.",
+  "citation": "Changpinyo, S., Sharma, P., Ding, N., & Soricut, R. (2021). Conceptual 12M: Pushing the Limits of Image-Text Pairing in Vision-Language Pre-training. Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 3558–3568. https://doi.org/10.1109/CVPR46437.2021.00356",
+  "license": {
+    "identifier": "Not stated (not a standard SPDX identifier)",
+    "url": "https://github.com/google-research-datasets/conceptual-12m",
+    "notes": "The dataset repository does not establish a single standard SPDX license covering the linked images and captions. Images are sourced from the web and may be subject to separate copyright and license terms; verify rights, attribution, and permitted use for each source before downloading, using, or redistributing. This record vendors no data."
+  },
+  "upstream_url": "https://github.com/google-research-datasets/conceptual-12m"
+}

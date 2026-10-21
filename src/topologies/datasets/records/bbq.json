@@ -1,0 +1,12 @@
+{
+  "id": "bbq",
+  "name": "BBQ",
+  "domain": "language",
+  "description": "A bias question-answering benchmark for measuring social biases in language models, in the same bias-evaluation family as BOLD, CrowS-Pairs, and StereoSet. No data is vendored here.",
+  "citation": "Parrish et al. (2022). BBQ: A hand-built bias benchmark for question answering.",
+  "license": {
+    "identifier": "Release terms not stated as an SPDX license",
+    "url": "https://github.com/nyu-mll/BBQ"
+  },
+  "upstream_url": "https://github.com/nyu-mll/BBQ"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "codex",
+  "name": "CoDEx",
+  "domain": "graph",
+  "description": "CoDEx Wikidata knowledge graphs in small, medium, and large sizes, about 2 million triples with hard negatives. MRR on the hard-negative protocol. Safavi and Koutra, KDD 2020. Triples not vendored.",
+  "citation": "Safavi and Koutra, KDD 2020. CoDEx.",
+  "license": {
+    "identifier": "CC-BY-4.0",
+    "url": "https://github.com/tsafavi/codex",
+    "notes": "CC BY. Wikidata-derived. Triples not vendored."
+  },
+  "upstream_url": "https://github.com/tsafavi/codex"
+}

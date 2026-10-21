@@ -1,0 +1,13 @@
+{
+  "id": "refcoco",
+  "name": "RefCOCO",
+  "domain": "vision",
+  "description": "Dataset for referring expression comprehension, pairing COCO images with natural-language expressions referring to objects and corresponding bounding-box annotations. This record does not distribute dataset files.",
+  "citation": "Yu, L., Poirson, P., Yang, S., Berg, A. C., & Berg, T. L. (2016). Modeling Context in Referring Expressions. European Conference on Computer Vision (ECCV), 69–85. https://doi.org/10.1007/978-3-319-46448-0_5",
+  "license": {
+    "identifier": "Custom RefCOCO terms (not a standard SPDX identifier)",
+    "url": "https://github.com/lichengunc/refer",
+    "notes": "The upstream repository provides access instructions but does not identify the dataset license with a standard SPDX identifier. Review upstream terms and the underlying COCO image rights before use or redistribution."
+  },
+  "upstream_url": "https://github.com/lichengunc/refer"
+}

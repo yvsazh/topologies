@@ -1,0 +1,13 @@
+{
+  "id": "kuaisar",
+  "name": "KuaiSAR",
+  "domain": "recommendation",
+  "description": "A large-scale real-world dataset of integrated search and recommendation interactions from Kuaishou, including user-video feedback, search queries, transitions between search and recommendation, and user/item side information. Suitable for joint search-and-recommendation, sequential behavior modeling, and multi-task recommendation research; this record does not distribute data.",
+  "citation": "Sun, Z., Si, Z., Zang, X., Leng, D., Niu, Y., Song, Y., Zhang, X., & Xu, J. (2023). KuaiSAR: A Unified Search And Recommendation Dataset. Proceedings of the 32nd ACM International Conference on Information and Knowledge Management (CIKM '23), 5407–5411. https://doi.org/10.1145/3583780.3615123",
+  "license": {
+    "identifier": "other",
+    "url": "https://ethan00si.github.io/KuaiSAR/",
+    "notes": "The dataset is distributed under dataset-specific terms, not a standard SPDX license identifier. Review the upstream terms and any access conditions before use or redistribution; this record vendors no data."
+  },
+  "upstream_url": "https://ethan00si.github.io/KuaiSAR/"
+}

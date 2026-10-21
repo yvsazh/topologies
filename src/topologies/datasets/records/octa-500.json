@@ -1,0 +1,13 @@
+{
+  "id": "octa-500",
+  "name": "OCTA-500",
+  "domain": "vision",
+  "description": "OCTA-500 optical coherence tomography angiography, 500 volumes at 6 mm and 3 mm fields. Dice for retinal vessels and the foveal avascular zone. Images not vendored.",
+  "citation": "Li et al., MedIA 2021. OCTA-500.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://ieee-dataport.org/open-access/octa-500",
+    "notes": "Research terms. Human images are loader-only and not vendored."
+  },
+  "upstream_url": "https://ieee-dataport.org/open-access/octa-500"
+}

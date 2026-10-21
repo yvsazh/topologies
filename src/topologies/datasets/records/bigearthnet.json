@@ -1,0 +1,13 @@
+{
+  "id": "bigearthnet",
+  "name": "BigEarthNet",
+  "domain": "vision",
+  "description": "BigEarthNet is a large-scale Sentinel-2 satellite image archive for multi-label land-cover classification, with image patches annotated using CORINE Land Cover classes. Imagery not vendored.",
+  "citation": "Sumbul et al., BigEarthNet: A Large-Scale Benchmark Archive for Remote Sensing Image Understanding, IGARSS 2019.",
+  "license": {
+    "identifier": "CDLA-Permissive-1.0",
+    "url": "https://bigearth.net/",
+    "notes": "The BigEarthNet website identifies the dataset license as Community Data License Agreement – Permissive, Version 1.0. Imagery not vendored."
+  },
+  "upstream_url": "https://bigearth.net/"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "spring",
+  "name": "Spring",
+  "domain": "computer-vision/optical-flow",
+  "description": "A high-resolution, high-detail benchmark for scene flow, optical flow, and stereo, based on rendered scenes from the Blender movie Spring. It provides HD stereo imagery and ground-truth optical flow in forward and backward directions for left and right views.",
+  "citation": "Mehl, L., Schmalfuss, J., Jahedi, A., Nalivayko, Y., and Bruhn, A. (2023). Spring: A High-Resolution High-Detail Dataset and Benchmark for Scene Flow, Optical Flow and Stereo. Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 4981–4991. https://openaccess.thecvf.com/content/CVPR2023/html/Mehl_Spring_A_High-Resolution_High-Detail_Dataset_and_Benchmark_for_Scene_Flow_CVPR_2023_paper.html",
+  "license": {
+    "identifier": "other",
+    "url": "",
+    "notes": "The dataset license is unverified; the official benchmark page does not publish a dataset license."
+  },
+  "upstream_url": "https://spring-benchmark.org/"
+}

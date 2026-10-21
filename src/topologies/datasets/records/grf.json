@@ -1,0 +1,13 @@
+{
+  "id": "grf",
+  "name": "Google Research Football",
+  "domain": "scientific",
+  "description": "Google Research Football 11v11 scenarios and full games. Score difference and ELO. Kurach et al., ICML 2020. No trajectories vendored.",
+  "citation": "Kurach et al., ICML 2020. Google Research Football.",
+  "license": {
+    "identifier": "Apache-2.0",
+    "url": "https://github.com/google-research/football",
+    "notes": "Apache-2.0 environment. No trajectories vendored."
+  },
+  "upstream_url": "https://github.com/google-research/football"
+}

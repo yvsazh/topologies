@@ -1,0 +1,13 @@
+{
+  "id": "datacomp-1b",
+  "name": "DataComp-1B",
+  "domain": "vision",
+  "description": "DataComp-1B web-filtering benchmark, about 1.4 billion image-text pairs. Zero-shot average on 38 tasks. Gadre et al., NeurIPS 2023. Web index only; images are not redistributed.",
+  "citation": "Gadre et al., NeurIPS 2023. DataComp-1B.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://www.datacomp.ai/",
+    "notes": "CC web index with redistribution risk. Images are not vendored."
+  },
+  "upstream_url": "https://www.datacomp.ai/"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "ogbl-collab",
+  "name": "Open Graph Benchmark: ogbl-collab",
+  "domain": "graph",
+  "description": "A collaboration graph derived from the MAG (Microsoft Academic Graph), where nodes are authors and edges represent collaboration; the prediction task is to predict future author collaborations.",
+  "citation": "Hu, W., Fey, M., Zitnik, M., et al. (2020). Open Graph Benchmark: Datasets for Machine Learning on Graphs. Advances in Neural Information Processing Systems 33, 22118–22133. https://arxiv.org/abs/2005.00687",
+  "license": {
+    "identifier": "other",
+    "url": "https://ogb.stanford.edu/docs/linkprop/",
+    "notes": "Not a standard SPDX identifier. OGB describes ogbl-collab as derived from the Microsoft Academic Graph; consult OGB and the upstream source for applicable terms before redistribution or commercial use."
+  },
+  "upstream_url": "https://ogb.stanford.edu/docs/linkprop/"
+}

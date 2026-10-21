@@ -1,0 +1,13 @@
+{
+  "id": "mimic-iii",
+  "name": "MIMIC-III and MIMIC-IV",
+  "domain": "scientific",
+  "description": "MIMIC-III and MIMIC-IV ICU electronic health records, about 60 thousand and 300 thousand admissions. Mortality and length-of-stay phenotyping AUPRC on the Harutyunyan splits. Johnson et al., Scientific Data 2016 and 2023. Distinct from MIMIC-CXR. PhysioNet credential required. Records not vendored.",
+  "citation": "Johnson et al., Scientific Data 2016. MIMIC-III and MIMIC-IV.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://physionet.org/",
+    "notes": "Credentialed PhysioNet access. Clinical records are loader-only and not vendored."
+  },
+  "upstream_url": "https://physionet.org/"
+}

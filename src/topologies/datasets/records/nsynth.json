@@ -1,0 +1,13 @@
+{
+  "id": "nsynth",
+  "name": "NSynth Dataset",
+  "domain": "audio",
+  "description": "A dataset of 305,979 four-second audio recordings of musical notes, annotated with instrument family, instrument source, pitch, velocity, and other sound attributes, designed for research in machine learning for music.",
+  "citation": "Engel, J., Hantrakul, L., Gu, C., and Roberts, A. (2019). NSynth: A Dataset for Musical Note Synthesis. https://arxiv.org/abs/1704.01279",
+  "license": {
+    "identifier": "Creative Commons Attribution 4.0 International (CC BY 4.0; not a standard SPDX identifier)",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "notes": "The NSynth dataset is released under CC BY 4.0, which is not a standard SPDX identifier. Review attribution requirements and upstream terms before use or redistribution."
+  },
+  "upstream_url": "https://magenta.tensorflow.org/datasets/nsynth"
+}

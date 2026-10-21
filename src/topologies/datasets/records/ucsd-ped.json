@@ -1,0 +1,13 @@
+{
+  "id": "ucsd-ped",
+  "name": "UCSD Ped1 and Ped2",
+  "domain": "vision",
+  "description": "UCSD Ped1 and Ped2 surveillance anomaly, 34 and 36 videos with pedestrian-only normal scenes. Frame equal-error rate and pixel AUC. Mahadevan et al., CVPR 2010. Distinct from ShanghaiTech and Avenue. Video not vendored.",
+  "citation": "Mahadevan et al., CVPR 2010. UCSD Ped1 and Ped2.",
+  "license": {
+    "identifier": "not specified",
+    "url": "http://www.svcl.ucsd.edu/projects/anomaly/",
+    "notes": "UCSD research terms. Video not vendored."
+  },
+  "upstream_url": "http://www.svcl.ucsd.edu/projects/anomaly/"
+}

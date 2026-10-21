@@ -1,0 +1,9 @@
+{
+  "id": "adversarial-hinge", "name": "Adversarial hinge objectives",
+  "description": "Separate discriminator relu(1-real)+relu(1+fake) and generator -fake score objectives; caller owns detach/gradient routing.",
+  "api": "topologies.training.losses:compute_loss(cfg, real_scores, fake_scores) or generator_hinge(fake_scores)",
+  "examples": [{"title": "Train DCGAN with adversarial hinge", "code": "import tempfile\nimport torch\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef real_images(ctx):\n return {\"x\": synth.Tensor(torch.rand((1, 16, 16), generator=ctx.rng.torch) * 2 - 1)}\nds = synth.Spec(\"hinge-gan\", generator=real_images, size=16, splits={\"train\": 1.0}, seed=11, root=root, monitor=\"none\").run()\ntrain = ds.for_recipe(\"gan\", split=\"train\", preserve_shape=True)\ngenerator = build(\"dcgan-generator\", \"tiny\", latent_dim=4, out_channels=1, image_size=16, features=4)\ndiscriminator = build(\"dcgan-discriminator\", \"tiny\", in_channels=1, image_size=16, features=4)\ntrainer = Trainer(generator, train, recipe=\"gan\", components={\"discriminator\": discriminator}, optimizers={\"generator\": \"adam\", \"discriminator\": \"adam\"}, recipe_config={\"loss\": \"adversarial-hinge\", \"latent_dim\": 4, \"image_channels\": 1, \"image_size\": 16}, batch_size=4, max_epochs=1, device=\"cpu\")\ntrainer.fit()"}],
+  "usage": "Trainer(generator, train, recipe='gan', recipe_config={'loss':'adversarial-hinge'})",
+  "parameters": {"reduction": "none, mean, or sum for each score tensor"},
+  "implementation": {"path": "implementations/training/core.py", "symbol": "adversarial_hinge_discriminator", "sha256": "878f03ad0677bb8cd1b993861f72dcf5bfa14853743a5b355353c1d1f8162f9b"}
+}

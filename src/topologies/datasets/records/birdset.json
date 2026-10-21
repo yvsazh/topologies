@@ -1,0 +1,13 @@
+{
+  "id": "birdset",
+  "name": "BirdSet",
+  "domain": "audio classification; avian bioacoustics",
+  "description": "Large-scale benchmark dataset collection for audio classification in avian bioacoustics, with bird vocalization recordings and diverse soundscape evaluation datasets.",
+  "citation": "Rauch, L. et al. (2025). BirdSet: A Large-Scale Dataset for Audio Classification in Avian Bioacoustics. https://arxiv.org/abs/2403.10380",
+  "license": {
+    "identifier": "CC-BY-NC-4.0",
+    "url": "https://creativecommons.org/licenses/by-nc/4.0/",
+    "notes": "Hugging Face dataset card lists cc-by-nc-4.0; constituent recordings may carry their own licenses, so check per-recording metadata."
+  },
+  "upstream_url": "https://huggingface.co/datasets/DBD-research-group/BirdSet"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "theoremqa",
+  "name": "TheoremQA",
+  "domain": "language",
+  "description": "STEM theorem question answering, about 800 questions, program-aided protocol. No data vendored.",
+  "citation": "TheoremQA: A Theorem-driven Question Answering Dataset, Chen et al. 2023.",
+  "license": {
+    "identifier": "MIT",
+    "url": "https://github.com/wenhucheer/TheoremQA"
+  },
+  "upstream_url": "https://github.com/wenhucheer/TheoremQA"
+}

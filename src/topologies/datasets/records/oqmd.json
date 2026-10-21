@@ -1,0 +1,13 @@
+{
+  "id": "oqmd",
+  "name": "OQMD",
+  "domain": "scientific",
+  "description": "Open Quantum Materials Database DFT formation energies, more than 1 million structures. Formation-energy MAE. Kirklin et al. 2015. Loader-only metadata.",
+  "citation": "Kirklin et al. 2015. OQMD.",
+  "license": {
+    "identifier": "not specified",
+    "url": "http://oqmd.org/",
+    "notes": "OQMD terms. Record only; no structures vendored."
+  },
+  "upstream_url": "http://oqmd.org/"
+}

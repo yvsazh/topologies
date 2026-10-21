@@ -1,0 +1,13 @@
+{
+  "id": "santander",
+  "name": "Santander Customer Transaction Prediction Dataset",
+  "domain": "tabular",
+  "description": "An anonymized binary classification dataset of customer transaction features, released for the Santander Customer Transaction Prediction competition.",
+  "citation": "Kaggle. (2019). Santander Customer Transaction Prediction. Kaggle competition dataset. https://www.kaggle.com/competitions/santander-customer-transaction-prediction",
+  "license": {
+    "identifier": "Competition-specific terms (not a standard SPDX identifier)",
+    "url": "https://www.kaggle.com/competitions/santander-customer-transaction-prediction/rules",
+    "notes": "The dataset is governed by competition-specific terms, not a standard SPDX license. Review the current competition rules and terms before accessing, using, or redistributing the data. This record does not include dataset files."
+  },
+  "upstream_url": "https://www.kaggle.com/competitions/santander-customer-transaction-prediction"
+}

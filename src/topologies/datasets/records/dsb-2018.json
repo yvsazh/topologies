@@ -1,0 +1,13 @@
+{
+  "id": "dsb-2018",
+  "name": "Data Science Bowl 2018 Nuclei",
+  "domain": "scientific",
+  "description": "Data Science Bowl 2018 nuclei segmentation, 670 images across diverse microscopy modalities. Mean average precision at IoU thresholds. Images not vendored.",
+  "citation": "Kaggle Data Science Bowl 2018 nuclei.",
+  "license": {
+    "identifier": "CC0-1.0",
+    "url": "https://www.kaggle.com/c/data-science-bowl-2018",
+    "notes": "CC0 Kaggle release. Images not vendored."
+  },
+  "upstream_url": "https://www.kaggle.com/c/data-science-bowl-2018"
+}

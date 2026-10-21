@@ -1,0 +1,13 @@
+{
+  "id": "ok-vqa",
+  "name": "OK-VQA",
+  "domain": "vision",
+  "description": "Open-Ended Knowledgeable Visual Question Answering (OK-VQA) is a dataset of questions about images that require external knowledge beyond the visual content to answer. The dataset uses images from COCO; this record does not distribute dataset files.",
+  "citation": "Marino, K., Rastegari, M., Farhadi, A., & Mottaghi, R. (2019). OK-VQA: A Visual Question Answering Benchmark Requiring External Knowledge. IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 3195–3204. https://doi.org/10.1109/CVPR.2019.00331",
+  "license": {
+    "identifier": "Not stated (not a standard SPDX identifier)",
+    "url": "https://okvqa.allenai.org/",
+    "notes": "The upstream dataset site does not clearly state a dataset-wide license. Images are sourced from COCO and have their own underlying rights; review upstream terms and image licenses before use or redistribution."
+  },
+  "upstream_url": "https://okvqa.allenai.org/"
+}

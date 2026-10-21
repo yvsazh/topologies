@@ -1,0 +1,13 @@
+{
+  "id": "matbench",
+  "name": "MatBench",
+  "domain": "scientific",
+  "description": "A benchmark suite of materials science datasets and tasks for evaluating machine-learning methods, including prediction of materials properties and structures. This record describes the upstream benchmark and does not distribute dataset files.",
+  "citation": "Dunn, A., Wang, Q., Ganose, A., Dopp, D., & Jain, A. (2020). Benchmarking materials property prediction methods: the Matbench test set and Automatminer reference algorithm. npj Computational Materials, 6, 138. https://doi.org/10.1038/s41524-020-00406-3",
+  "license": {
+    "identifier": "Dataset-specific terms (not a standard SPDX identifier)",
+    "url": "https://matbench.materialsproject.org/",
+    "notes": "MatBench is a benchmark suite comprising datasets from multiple sources; a single standard SPDX license identifier is not specified for the entire suite. Review the terms for each constituent dataset and its source before use or redistribution. This record is loader-only and vendors no data."
+  },
+  "upstream_url": "https://matbench.materialsproject.org/"
+}

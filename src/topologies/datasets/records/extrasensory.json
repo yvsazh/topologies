@@ -1,0 +1,13 @@
+{
+  "id": "extrasensory",
+  "name": "ExtraSensory",
+  "domain": "scientific",
+  "description": "ExtraSensory in-the-wild phone sensors, about 300 thousand minutes from 60 users. Multi-label F1. Vaizman et al., GetMobile 2018. Sensor minutes not vendored.",
+  "citation": "Vaizman et al., GetMobile 2018. ExtraSensory.",
+  "license": {
+    "identifier": "not specified",
+    "url": "http://extrasensory.ucsd.edu/",
+    "notes": "UCSD research terms. Sensor minutes not vendored."
+  },
+  "upstream_url": "http://extrasensory.ucsd.edu/"
+}

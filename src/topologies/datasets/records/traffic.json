@@ -1,0 +1,13 @@
+{
+  "id": "traffic",
+  "name": "Traffic",
+  "domain": "time-series",
+  "description": "The ETT (Electricity Transformer Temperature) benchmark for multivariate time-series forecasting, containing hourly subsets ETTh1 and ETTh2 and 15-minute subsets ETTm1 and ETTm2. The Traffic dataset records hourly road occupancy rates from the San Francisco Bay area, used for multivariate forecasting benchmarks.",
+  "citation": "Zhou, H., Zhang, S., Peng, J., Zhang, S., Li, J., Xiong, H., & Zhang, W. (2021). Informer: Beyond Efficient Transformer for Long Sequence Time-Series Forecasting. Proceedings of the AAAI Conference on Artificial Intelligence, 35(12), 11106–11115. https://doi.org/10.1609/aaai.v35i12.17325",
+  "license": {
+    "identifier": "Research use terms (not a standard SPDX identifier)",
+    "url": "https://github.com/zhouhaoyi/ETDataset",
+    "notes": "The upstream repository provides the benchmark data but does not specify a standard SPDX license identifier for the dataset. Review upstream terms and obtain any necessary permissions before use or redistribution."
+  },
+  "upstream_url": "https://github.com/zhouhaoyi/ETDataset"
+}

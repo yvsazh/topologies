@@ -1,0 +1,13 @@
+{
+  "id": "ipinyou",
+  "name": "iPinYou Real-Time Bidding Dataset",
+  "domain": "recommendation",
+  "description": "A large-scale real-time bidding click-log dataset containing ad impressions, clicks, and auction context, used for click-through-rate prediction and advertising recommendation research. This record is loader-only and does not distribute dataset files.",
+  "citation": "Zhang, W., Yuan, S., & Wang, J. (2014). Optimal Real-Time Bidding for Display Advertising. Proceedings of the 20th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, 1077–1086. https://doi.org/10.1145/2623330.2623633",
+  "license": {
+    "identifier": "iPinYou dataset-specific terms (not a standard SPDX identifier)",
+    "url": "http://data.computational-advertising.org/",
+    "notes": "The upstream dataset is distributed under dataset-specific terms, not a standard SPDX license identifier. Review the current upstream terms and applicable rights before use or redistribution. This record is loader-only and vendors no data."
+  },
+  "upstream_url": "http://data.computational-advertising.org/"
+}

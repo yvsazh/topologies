@@ -1,0 +1,13 @@
+{
+  "id": "pubtabnet",
+  "name": "PubTabNet",
+  "domain": "vision",
+  "description": "PubTabNet table recognition, about 568 thousand images. Tree-edit distance similarity. Zhong et al., ICDAR 2019. TableBank and FinTabNet are companion notes in this record. Images not vendored.",
+  "citation": "Zhong et al., ICDAR 2019. PubTabNet.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://github.com/ibm-aur-nlp/PubTabNet",
+    "notes": "IBM research release. Provider page does not state a standard SPDX license. Images not vendored."
+  },
+  "upstream_url": "https://github.com/ibm-aur-nlp/PubTabNet"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "objaverse",
+  "name": "Objaverse",
+  "domain": "vision",
+  "description": "A collection of about 800k annotated 3D objects. Objaverse-XL is a web-mined license-risk companion, not a second file or part of this record; licenses are per object and vary. No data vendored.",
+  "citation": "Objaverse: A Universe of Annotated 3D Objects, Deitke et al., CVPR 2023.",
+  "license": {
+    "identifier": "Mixed per-object terms (not one SPDX identifier)",
+    "url": "https://objaverse.allenai.org/"
+  },
+  "upstream_url": "https://objaverse.allenai.org/"
+}

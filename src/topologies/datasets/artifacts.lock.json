@@ -1,0 +1,5332 @@
+{
+  "definitions": {
+    "1000-genomes": {
+      "digests": {
+        "catalog/datasets/1000-genomes.json": "aaf84ce9e349458e368e0544b49813e6da5accfe116896cdd65ed6a0bafab16c"
+      },
+      "name": "1000-genomes",
+      "namespace": "library",
+      "version": 2
+    },
+    "2wikimultihopqa": {
+      "digests": {
+        "catalog/datasets/2wikimultihopqa.json": "e732faa5d3f5874de1a5207e658e7adbe9835cebb9ccf0364d153a31a3ceb85c"
+      },
+      "name": "2wikimultihopqa",
+      "namespace": "library",
+      "version": 2
+    },
+    "3dpw": {
+      "digests": {
+        "catalog/datasets/3dpw.json": "4f6b9d50be7207d4992984b505c9c32fe97a62c1cbd4c2d510fdaf571789e374"
+      },
+      "name": "3dpw",
+      "namespace": "library",
+      "version": 2
+    },
+    "abo": {
+      "digests": {
+        "catalog/datasets/abo.json": "2e5503f6314b4dc536176f60c2e1d1fef0d10cf93be052289393e51199604104"
+      },
+      "name": "abo",
+      "namespace": "library",
+      "version": 2
+    },
+    "acdc": {
+      "digests": {
+        "catalog/datasets/acdc.json": "f90adcce3e8b4a4a2446f50234b6fd58ec05f55dff69ad4f236b72e24fca436a"
+      },
+      "name": "acdc",
+      "namespace": "library",
+      "version": 2
+    },
+    "activitynet": {
+      "digests": {
+        "catalog/datasets/activitynet.json": "10a7f4819a7311baa4d770e77ce41a77434a19389f9faa36df6caf00062011c6"
+      },
+      "name": "activitynet",
+      "namespace": "library",
+      "version": 2
+    },
+    "activitynet-captions": {
+      "digests": {
+        "catalog/datasets/activitynet-captions.json": "b4d4866c75dfcdcbdfccc37545c9e5f28ea007326d8304eacda000ea9d30b6c5"
+      },
+      "name": "activitynet-captions",
+      "namespace": "library",
+      "version": 2
+    },
+    "ade20k": {
+      "digests": {
+        "catalog/datasets/ade20k.json": "d59ee4caf78516d553a2bdc91f9f586b450a77d5ba519c12ae6db102bb8fab7c"
+      },
+      "name": "ade20k",
+      "namespace": "library",
+      "version": 2
+    },
+    "adni": {
+      "digests": {
+        "catalog/datasets/adni.json": "c39beeb70c0892e0c738ab9aee9d2622b6e3dc4d47e2590be8050a9e97884121"
+      },
+      "name": "adni",
+      "namespace": "library",
+      "version": 2
+    },
+    "adroit": {
+      "digests": {
+        "catalog/datasets/adroit.json": "7f6ab348d9f66d84c4ee14a402b7f371b07290d0fc0b55133e90b9953f13a1f4"
+      },
+      "name": "adroit",
+      "namespace": "library",
+      "version": 2
+    },
+    "adult": {
+      "digests": {
+        "catalog/datasets/adult.json": "253edee6f50eb7b6b163140f874f97df9429ba6ff68f6e6e81f9ac900a2c3c17"
+      },
+      "name": "adult",
+      "namespace": "library",
+      "version": 2
+    },
+    "aerorit": {
+      "digests": {
+        "catalog/datasets/aerorit.json": "ce569e1931f82178beb884204f4fa20843dd60dba6a1ccf3d73e6175716fda87"
+      },
+      "name": "aerorit",
+      "namespace": "library",
+      "version": 2
+    },
+    "ag-news": {
+      "digests": {
+        "catalog/datasets/ag-news.json": "928530073c5d62e8f2ed87116261d1087a455f50b04cab4c063ce0a496e1fc9d",
+        "implementations/ag-news/__init__.py": "32ee852fe6f662c4e270c54cffeb59dccaf33b1c3e27d2f7b962e1893d635aaa"
+      },
+      "name": "ag-news",
+      "namespace": "library",
+      "version": 2
+    },
+    "agora": {
+      "digests": {
+        "catalog/datasets/agora.json": "3295ca6313548c5139452dff3273a4131dcced3ea4ab0da211a329c11b7c387d"
+      },
+      "name": "agora",
+      "namespace": "library",
+      "version": 2
+    },
+    "aishell": {
+      "digests": {
+        "catalog/datasets/aishell.json": "d04cbf98916297f90645440a1ad1f59c86ebe59fc83c378e2da4c2cc3505860e"
+      },
+      "name": "aishell",
+      "namespace": "library",
+      "version": 2
+    },
+    "ali-ccp": {
+      "digests": {
+        "catalog/datasets/ali-ccp.json": "dea6b5720a751ca25316ffa55fb95a5eaa6cdaab5a5cb9a2e5e891f7eb221f7b"
+      },
+      "name": "ali-ccp",
+      "namespace": "library",
+      "version": 2
+    },
+    "alimama": {
+      "digests": {
+        "catalog/datasets/alimama.json": "cd5f818b5a8c13a795dc8953de50d57ebd4fff872775049827eb3a3d5741c879"
+      },
+      "name": "alimama",
+      "namespace": "library",
+      "version": 2
+    },
+    "alpaca": {
+      "digests": {
+        "catalog/datasets/alpaca.json": "0c83e410b1cd027106c14b2494dddd420b74429b07920407a93a239661b8a5d0"
+      },
+      "name": "alpaca",
+      "namespace": "library",
+      "version": 2
+    },
+    "amass": {
+      "digests": {
+        "catalog/datasets/amass.json": "f3a0e73b427ab6453f9ce1066663676581d0bf7a9cf6d3e3c5c85a659746700d"
+      },
+      "name": "amass",
+      "namespace": "library",
+      "version": 2
+    },
+    "amazon-2018": {
+      "digests": {
+        "catalog/datasets/amazon-2018.json": "4aa48039e32baadfa21deb5633c501a6c0d4da1054c447a2b61721b0c01e855b"
+      },
+      "name": "amazon-2018",
+      "namespace": "library",
+      "version": 2
+    },
+    "amazon-2023": {
+      "digests": {
+        "catalog/datasets/amazon-2023.json": "84b889e0e3d247efeaeadc8df02b6c46706c561df5f3de5c6c48d8b121516016"
+      },
+      "name": "amazon-2023",
+      "namespace": "library",
+      "version": 2
+    },
+    "amazon-computers": {
+      "digests": {
+        "catalog/datasets/amazon-computers.json": "de7575caafa99b08b759c67d3daa3d763bf9e2bd9b412acf7e75a297154fc9c5"
+      },
+      "name": "amazon-computers",
+      "namespace": "library",
+      "version": 2
+    },
+    "ami": {
+      "digests": {
+        "catalog/datasets/ami.json": "9a861bd9b17c5d584eb826dde802b9c6fa1e3cae38912de36bf3eec9f78bf121"
+      },
+      "name": "ami",
+      "namespace": "library",
+      "version": 2
+    },
+    "amos": {
+      "digests": {
+        "catalog/datasets/amos.json": "276cd000dae0ba651784afc4214f2adc8a152203e8983c200408d1c25567af9f"
+      },
+      "name": "amos",
+      "namespace": "library",
+      "version": 2
+    },
+    "amos22": {
+      "digests": {
+        "catalog/datasets/amos22.json": "86a6d676dee3735adeb3c69968264ac79e63b29b71187d72efeb27c1b3873e67"
+      },
+      "name": "amos22",
+      "namespace": "library",
+      "version": 2
+    },
+    "anli": {
+      "digests": {
+        "catalog/datasets/anli.json": "4c887cf4309520c355e6228b2d1458b5af8730837add62aceeb545ba2f5403aa"
+      },
+      "name": "anli",
+      "namespace": "library",
+      "version": 2
+    },
+    "anuraset": {
+      "digests": {
+        "catalog/datasets/anuraset.json": "68fa179aaae7c1a4bea2db72afc300055deeb48afb0aab1dcde2e8799ba3b38d"
+      },
+      "name": "anuraset",
+      "namespace": "library",
+      "version": 2
+    },
+    "apps": {
+      "digests": {
+        "catalog/datasets/apps.json": "ea90b699c5251c4316baf2dd8d1b7aa8bc1999284bca3dc065b2272653970148"
+      },
+      "name": "apps",
+      "namespace": "library",
+      "version": 2
+    },
+    "aptos": {
+      "digests": {
+        "catalog/datasets/aptos.json": "4211227a411515dd98c92dd05045b824fa6d1e4c952a5700686b2e5b7f5b4dd8"
+      },
+      "name": "aptos",
+      "namespace": "library",
+      "version": 2
+    },
+    "arc": {
+      "digests": {
+        "catalog/datasets/arc.json": "0f0cf2e2dbfc085b0d3235bde9fbab337ec258eac8befd42583b64dc5b0f791a"
+      },
+      "name": "arc",
+      "namespace": "library",
+      "version": 2
+    },
+    "argoverse-2": {
+      "digests": {
+        "catalog/datasets/argoverse-2.json": "74f0e484be6ceb296aa580c7389aa0aa2ae905a7366d94f795b124c3f9ef1b3a"
+      },
+      "name": "argoverse-2",
+      "namespace": "library",
+      "version": 2
+    },
+    "arkit-scenes": {
+      "digests": {
+        "catalog/datasets/arkit-scenes.json": "44108858ec7a50ce89be2f767874a63b4d98edbb99399f6f9fd3699cf657246c"
+      },
+      "name": "arkit-scenes",
+      "namespace": "library",
+      "version": 2
+    },
+    "arxiv-pubmed-sum": {
+      "digests": {
+        "catalog/datasets/arxiv-pubmed-sum.json": "ab99ea2aca12490bfe83d932f7d2df9beae636c430367260edbaa9c77afde103"
+      },
+      "name": "arxiv-pubmed-sum",
+      "namespace": "library",
+      "version": 2
+    },
+    "ashrae-gepiii": {
+      "digests": {
+        "catalog/datasets/ashrae-gepiii.json": "e085ab10823f21b64d05b82e038ad813fdd91f1b347881452e6f4223da9c146f"
+      },
+      "name": "ashrae-gepiii",
+      "namespace": "library",
+      "version": 2
+    },
+    "asvspoof-2019": {
+      "digests": {
+        "catalog/datasets/asvspoof-2019.json": "1eacaac5990b2673cbf3423947cf21a4d978fcf8d5b20b5f25cf38fbfd021889"
+      },
+      "name": "asvspoof-2019",
+      "namespace": "library",
+      "version": 2
+    },
+    "atari-100k": {
+      "digests": {
+        "catalog/datasets/atari-100k.json": "195765f935d5a07f723edff0791d5e0dc78a5037c70965b7f0ec2f00e4c76876"
+      },
+      "name": "atari-100k",
+      "namespace": "library",
+      "version": 2
+    },
+    "audiocaps": {
+      "digests": {
+        "catalog/datasets/audiocaps.json": "472fbb72b0d3a55e5f7ab7c827bf0e49598cc3c40d0a382121bc04b3cc3858fb"
+      },
+      "name": "audiocaps",
+      "namespace": "library",
+      "version": 2
+    },
+    "audioset": {
+      "digests": {
+        "catalog/datasets/audioset.json": "b0e027fdc6f92d9580d1c2ec68a6d00343d24ce9fff3597e300949d10f76bbf4"
+      },
+      "name": "audioset",
+      "namespace": "library",
+      "version": 2
+    },
+    "ava": {
+      "digests": {
+        "catalog/datasets/ava.json": "81ac5f92525953063cf87bf6abb91a8abffef1481bc4057ddaa7697c49f62d0c"
+      },
+      "name": "ava",
+      "namespace": "library",
+      "version": 2
+    },
+    "avazu": {
+      "digests": {
+        "catalog/datasets/avazu.json": "f6d1380cf6069cf708dfa4c12519914ffd2ce59b9af9e5153595e929b6ceb44b"
+      },
+      "name": "avazu",
+      "namespace": "library",
+      "version": 2
+    },
+    "avenue": {
+      "digests": {
+        "catalog/datasets/avenue.json": "c4ed0b4d00c091972d00e766bf6b658ab46536876f30f6c183059f05391544b2"
+      },
+      "name": "avenue",
+      "namespace": "library",
+      "version": 2
+    },
+    "babyai": {
+      "digests": {
+        "catalog/datasets/babyai.json": "d824e7fdfb4327bada2423c92b1389fc3cba4d4537c6023d3a35c7ac0f58a86b"
+      },
+      "name": "babyai",
+      "namespace": "library",
+      "version": 2
+    },
+    "bach": {
+      "digests": {
+        "catalog/datasets/bach.json": "b7a253ea2ec62e292326a078a8ce98faa669ba3a935cdd1fb05fdce1b8a39bfc"
+      },
+      "name": "bach",
+      "namespace": "library",
+      "version": 2
+    },
+    "bank-marketing": {
+      "digests": {
+        "catalog/datasets/bank-marketing.json": "1200c9e6417ad9298b4861ea034e5a7ec0d2976ef7e4898b399826448101a405"
+      },
+      "name": "bank-marketing",
+      "namespace": "library",
+      "version": 2
+    },
+    "bbbc": {
+      "digests": {
+        "catalog/datasets/bbbc.json": "8f456f469d43211cde4112a94918edff5aeea9f6f1753b6a6b976613e2db806f"
+      },
+      "name": "bbbc",
+      "namespace": "library",
+      "version": 2
+    },
+    "bbh": {
+      "digests": {
+        "catalog/datasets/bbh.json": "d389689d283c68b060a221f2a0699c2f85fc7107d01c22a9767d358ff50d090c"
+      },
+      "name": "bbh",
+      "namespace": "library",
+      "version": 2
+    },
+    "bbq": {
+      "digests": {
+        "catalog/datasets/bbq.json": "1ffee9d23737d5ffa6def24c34f9137f5d742b76e1a939c67cf41bc4d896599e"
+      },
+      "name": "bbq",
+      "namespace": "library",
+      "version": 2
+    },
+    "bdd100k": {
+      "digests": {
+        "catalog/datasets/bdd100k.json": "70d3e6eb593b09181eed1a8d34845ff27a52167582939911c99b7196df130d1c"
+      },
+      "name": "bdd100k",
+      "namespace": "library",
+      "version": 2
+    },
+    "beans": {
+      "digests": {
+        "catalog/datasets/beans.json": "b450460e1ff700ec847822b2c1e99896e004fc9d7b6e1e7d029936358bfcb50a"
+      },
+      "name": "beans",
+      "namespace": "library",
+      "version": 2
+    },
+    "bigearthnet": {
+      "digests": {
+        "catalog/datasets/bigearthnet.json": "85138a5b8994241a7eb06986d6d81a95a80fd548d2aa91e424931ccb9163f283"
+      },
+      "name": "bigearthnet",
+      "namespace": "library",
+      "version": 2
+    },
+    "bijie": {
+      "digests": {
+        "catalog/datasets/bijie.json": "1a6c6868abef3362f040c2f0bcdec72f5aa75fae4ba7a785c644cc39b8344768"
+      },
+      "name": "bijie",
+      "namespace": "library",
+      "version": 2
+    },
+    "billion-word": {
+      "digests": {
+        "catalog/datasets/billion-word.json": "4edfa445764d1263152f038355ba8a8095566b31e88e8b5e3d8e9d75b09565ab"
+      },
+      "name": "billion-word",
+      "namespace": "library",
+      "version": 2
+    },
+    "bindingdb": {
+      "digests": {
+        "catalog/datasets/bindingdb.json": "51e2f14566456562efd7c7968e0d5426a9a8bb9f4ab482974c68d2fa98182b74"
+      },
+      "name": "bindingdb",
+      "namespace": "library",
+      "version": 2
+    },
+    "birdclef": {
+      "digests": {
+        "catalog/datasets/birdclef.json": "ba70cccad06f9e8642685ba11305654061337ceda6a94f78f24c41f3c033c5d2"
+      },
+      "name": "birdclef",
+      "namespace": "library",
+      "version": 2
+    },
+    "birdset": {
+      "digests": {
+        "catalog/datasets/birdset.json": "4294fffa214c54747a62d7ecc69c50068dcdafde916de7ac362807926dd163e4"
+      },
+      "name": "birdset",
+      "namespace": "library",
+      "version": 2
+    },
+    "ble-aoa": {
+      "digests": {
+        "catalog/datasets/ble-aoa.json": "6686eda2e70c1e84909f8dfa215bff163c1658f7cac8303a0e35097f89a07d74"
+      },
+      "name": "ble-aoa",
+      "namespace": "library",
+      "version": 2
+    },
+    "blendedmvs": {
+      "digests": {
+        "catalog/datasets/blendedmvs.json": "84fd8485166e0b4d59f19de7dec581cd82658fbbc4491d352f1952d960cc2a37"
+      },
+      "name": "blendedmvs",
+      "namespace": "library",
+      "version": 2
+    },
+    "bobsl": {
+      "digests": {
+        "catalog/datasets/bobsl.json": "75abc7af6bf57fa88c532c2d48dcb33388c0f5d6d8e1c68fbaa67f604dec8ea9"
+      },
+      "name": "bobsl",
+      "namespace": "library",
+      "version": 2
+    },
+    "book-crossing": {
+      "digests": {
+        "catalog/datasets/book-crossing.json": "a95f7e6d2a120df403d2671d4681c677d493a663ec6a10e7faa3425d940079e0"
+      },
+      "name": "book-crossing",
+      "namespace": "library",
+      "version": 2
+    },
+    "brats": {
+      "digests": {
+        "catalog/datasets/brats.json": "20d054855387d7992890ea9b16dfabbab38293472892532c4deb244a4993ed8b"
+      },
+      "name": "brats",
+      "namespace": "library",
+      "version": 2
+    },
+    "breakhis": {
+      "digests": {
+        "catalog/datasets/breakhis.json": "f2aa9f4d717391ec3b23ea01c3dd6397780c1d51c0cee41f54488495e27cd739"
+      },
+      "name": "breakhis",
+      "namespace": "library",
+      "version": 2
+    },
+    "btad": {
+      "digests": {
+        "catalog/datasets/btad.json": "b8996252ecdd4789869086f7e0b53d027c604fd4ffd78258b1e7dd9b87cbf409"
+      },
+      "name": "btad",
+      "namespace": "library",
+      "version": 2
+    },
+    "btcv": {
+      "digests": {
+        "catalog/datasets/btcv.json": "0c89cde0e7f466d3c474c6adce43840e81f9dbd06153e37551c08d59e065607b"
+      },
+      "name": "btcv",
+      "namespace": "library",
+      "version": 2
+    },
+    "c4": {
+      "digests": {
+        "catalog/datasets/c4.json": "739f2b3d60188e761d4d10cfd6892d4b74e34a16bc1d5a17b12bd372883f9902"
+      },
+      "name": "c4",
+      "namespace": "library",
+      "version": 2
+    },
+    "california-housing": {
+      "digests": {
+        "catalog/datasets/california-housing.json": "3fb1fe2c625c750bb13d9b27aaf3b45be27543d486eb2345653149d88c9529ff"
+      },
+      "name": "california-housing",
+      "namespace": "library",
+      "version": 2
+    },
+    "caltech-101": {
+      "digests": {
+        "catalog/datasets/caltech-101.json": "9fa2f814d543ac8fc54dd4f0354cccdcae4d207ee7b533cd7f607082c320573d"
+      },
+      "name": "caltech-101",
+      "namespace": "library",
+      "version": 2
+    },
+    "camelyon": {
+      "digests": {
+        "catalog/datasets/camelyon.json": "66a9f8da9a86344e149a3c8e5afd047344affc61b7c17a58df194de425c47979"
+      },
+      "name": "camelyon",
+      "namespace": "library",
+      "version": 2
+    },
+    "camelyon-16": {
+      "digests": {
+        "catalog/datasets/camelyon-16.json": "52a04fdcb01c8af4f67b4b8387a0606235c8a548c62d79a57add319e96d8eefc"
+      },
+      "name": "camelyon-16",
+      "namespace": "library",
+      "version": 2
+    },
+    "camelyon-17": {
+      "digests": {
+        "catalog/datasets/camelyon-17.json": "851e2385d083369fa7bd063dd36cfbffcaa7f0c7911247834a07b6c6a3245dd1"
+      },
+      "name": "camelyon-17",
+      "namespace": "library",
+      "version": 2
+    },
+    "camus": {
+      "digests": {
+        "catalog/datasets/camus.json": "42691fb393cc5c3c66dd8149f946edef836db569ca6ed21ae7bfe26c6210f485"
+      },
+      "name": "camus",
+      "namespace": "library",
+      "version": 2
+    },
+    "camvid": {
+      "digests": {
+        "catalog/datasets/camvid.json": "67ff7de146207e55e974857b371d53912295cdb930a9daee5e73afe82cca84e3"
+      },
+      "name": "camvid",
+      "namespace": "library",
+      "version": 2
+    },
+    "caselaw-hold": {
+      "digests": {
+        "catalog/datasets/caselaw-hold.json": "c3ba1505cc91e852e6ca27321fb93e0435158008944cbf22b1bff15de60dbde2"
+      },
+      "name": "caselaw-hold",
+      "namespace": "library",
+      "version": 2
+    },
+    "casia-splicing": {
+      "digests": {
+        "catalog/datasets/casia-splicing.json": "fb19135b4885f1351e9905d09e2cab3bcb8cda013df9b4efe01db968fe06f199"
+      },
+      "name": "casia-splicing",
+      "namespace": "library",
+      "version": 2
+    },
+    "casia-v2": {
+      "digests": {
+        "catalog/datasets/casia-v2.json": "de5bba5555a7ce6589eab643c0dc9d924e9e51a9ce8b018182562a6630701542"
+      },
+      "name": "casia-v2",
+      "namespace": "library",
+      "version": 2
+    },
+    "casia-webface": {
+      "digests": {
+        "catalog/datasets/casia-webface.json": "49cb7904e1f8bd8406f2eaf12fa3854b3d52634b85cbf9ab40b1c7a843c3d0e0"
+      },
+      "name": "casia-webface",
+      "namespace": "library",
+      "version": 2
+    },
+    "cassava": {
+      "digests": {
+        "catalog/datasets/cassava.json": "e0d128ea5778eef48f25214923651f14613dde7fa91f68500c4fd4f7554b2512"
+      },
+      "name": "cassava",
+      "namespace": "library",
+      "version": 2
+    },
+    "cassava-leaf": {
+      "digests": {
+        "catalog/datasets/cassava-leaf.json": "02d2465d99eb06102b044c02a52ab5d22a529c70bb613a0854e6ee683d5bdb88"
+      },
+      "name": "cassava-leaf",
+      "namespace": "library",
+      "version": 2
+    },
+    "cc3m": {
+      "digests": {
+        "catalog/datasets/cc3m.json": "275621ab8917a7ccd6087797078c234da9c6882caf361116abdbf9c1ac562b17"
+      },
+      "name": "cc3m",
+      "namespace": "library",
+      "version": 2
+    },
+    "ccmatrix": {
+      "digests": {
+        "catalog/datasets/ccmatrix.json": "fda26cca90ac6745ffed06265af82595ff213d61b2f85d6d25829e38fae525eb"
+      },
+      "name": "ccmatrix",
+      "namespace": "library",
+      "version": 2
+    },
+    "ccpg": {
+      "digests": {
+        "catalog/datasets/ccpg.json": "e464798f59187f72c51358f2902d7be81cff05a994e8407ad339f51f05773f30"
+      },
+      "name": "ccpg",
+      "namespace": "library",
+      "version": 2
+    },
+    "celeba": {
+      "digests": {
+        "catalog/datasets/celeba.json": "2c8279ba8bce8fa66a61c2e869467d44cd868b54455ad91450181d6a4af3db81"
+      },
+      "name": "celeba",
+      "namespace": "library",
+      "version": 2
+    },
+    "celeba-spurious": {
+      "digests": {
+        "catalog/datasets/celeba-spurious.json": "ce1a3e7b500756d0f63db61799a1971f1ad639012c3a50f4fcbb6cc5243f3533"
+      },
+      "name": "celeba-spurious",
+      "namespace": "library",
+      "version": 2
+    },
+    "census": {
+      "digests": {
+        "catalog/datasets/census.json": "eb5dcd1e0dd497e4771fbb9bde24117115ad74849534bf7ff0e35a628aa0ba0d"
+      },
+      "name": "census",
+      "namespace": "library",
+      "version": 2
+    },
+    "chaos": {
+      "digests": {
+        "catalog/datasets/chaos.json": "800e0066ddd956adb22404be8f84c1898ff326c9ab24836ad8edae5d228d9190"
+      },
+      "name": "chaos",
+      "namespace": "library",
+      "version": 2
+    },
+    "charades": {
+      "digests": {
+        "catalog/datasets/charades.json": "3f550adce59cd363c88f2ae5d74f4a01e9b5d51a9943b6307e410aa6030a4633"
+      },
+      "name": "charades",
+      "namespace": "library",
+      "version": 2
+    },
+    "chembl-33": {
+      "digests": {
+        "catalog/datasets/chembl-33.json": "9ce7b8821287f0d1677ccd240857ff38720f15efc96d215925113b6275f08dca"
+      },
+      "name": "chembl-33",
+      "namespace": "library",
+      "version": 2
+    },
+    "chestxray14": {
+      "digests": {
+        "catalog/datasets/chestxray14.json": "cb275e57188ed09a6716f30f2f767eff56cfc135880bf194e8a1035339ad7261"
+      },
+      "name": "chestxray14",
+      "namespace": "library",
+      "version": 2
+    },
+    "chexpert": {
+      "digests": {
+        "catalog/datasets/chexpert.json": "647d36a1ca4187fe4e3a86b66bdef58ba934978af564624d12c91efabe0d5423"
+      },
+      "name": "chexpert",
+      "namespace": "library",
+      "version": 2
+    },
+    "chime-4": {
+      "digests": {
+        "catalog/datasets/chime-4.json": "69648aae34fd1f9545844ffcd8155b11627335d6d03a2b9ce49fb07b70fa9a46"
+      },
+      "name": "chime-4",
+      "namespace": "library",
+      "version": 2
+    },
+    "chime-6": {
+      "digests": {
+        "catalog/datasets/chime-6.json": "4ac4a394ff04100d31ab01345da90f84c8d4b0b71c3606954d19e6c5c045dca6"
+      },
+      "name": "chime-6",
+      "namespace": "library",
+      "version": 2
+    },
+    "chime-frb": {
+      "digests": {
+        "catalog/datasets/chime-frb.json": "1a5fbf8b130cf8878c563811d2f745854ea8f1fcdc019bff74afab1adb63b3c2"
+      },
+      "name": "chime-frb",
+      "namespace": "library",
+      "version": 2
+    },
+    "cholec-t50": {
+      "digests": {
+        "catalog/datasets/cholec-t50.json": "6c62ede4696cbc7c0d39af68923604492292da40c96067eb8b95bd56e457683a"
+      },
+      "name": "cholec-t50",
+      "namespace": "library",
+      "version": 2
+    },
+    "cholec80": {
+      "digests": {
+        "catalog/datasets/cholec80.json": "08f4de7db3cb380c3e2b11dafc1b793ddd7a184abc29375150d917839d91fff4"
+      },
+      "name": "cholec80",
+      "namespace": "library",
+      "version": 2
+    },
+    "cholecseg8k": {
+      "digests": {
+        "catalog/datasets/cholecseg8k.json": "26bfa765c48e15d8769ca2bacc27df2a55fd33884b601baa5aad05ec88f770eb"
+      },
+      "name": "cholecseg8k",
+      "namespace": "library",
+      "version": 2
+    },
+    "cifar-100": {
+      "digests": {
+        "catalog/datasets/cifar-100.json": "e903001de4fd2ae8ae0ae0bdc4a0a5f61d7c103a7f5ed0fa1f89b795881e266f"
+      },
+      "name": "cifar-100",
+      "namespace": "library",
+      "version": 2
+    },
+    "cifar10": {
+      "digests": {
+        "catalog/datasets/cifar10.json": "07e0830bb528eb4f1b4b1cdb6935708c08421c5a0544596b28e9d97956ae78c4",
+        "implementations/cifar10/__init__.py": "be153e1e7b498de3003fcabd2df2263a68c8bfd45c6baa05d8694d9dfbc7051d"
+      },
+      "name": "cifar10",
+      "namespace": "library",
+      "version": 2
+    },
+    "cinic-10": {
+      "digests": {
+        "catalog/datasets/cinic-10.json": "b6c935a300198fa39b8987af875568fdffd9267bda9e2087e493fa5f3c69a533"
+      },
+      "name": "cinic-10",
+      "namespace": "library",
+      "version": 2
+    },
+    "citeseer": {
+      "digests": {
+        "catalog/datasets/citeseer.json": "c1ba8c87e5c8f1b6f14032e38da6002b21f94c7ae7454e0d425156e270257b8b"
+      },
+      "name": "citeseer",
+      "namespace": "library",
+      "version": 2
+    },
+    "cityscapes": {
+      "digests": {
+        "catalog/datasets/cityscapes.json": "716f643ec56d57df96fc76b4544a07094a7c33273454122610c472670c21e561"
+      },
+      "name": "cityscapes",
+      "namespace": "library",
+      "version": 2
+    },
+    "climsim": {
+      "digests": {
+        "catalog/datasets/climsim.json": "1d7ae794000acecd9fbcb13abaacf4a0894022eef55083c3f8a5df3be4ee83e5"
+      },
+      "name": "climsim",
+      "namespace": "library",
+      "version": 2
+    },
+    "clotho": {
+      "digests": {
+        "catalog/datasets/clotho.json": "b6c74818ab95d4803ab297e9b9dd4c8355610630e606c5814ab1971b1cb720b7"
+      },
+      "name": "clotho",
+      "namespace": "library",
+      "version": 2
+    },
+    "cmapss": {
+      "digests": {
+        "catalog/datasets/cmapss.json": "3e619bb2f4a2d1bb09d04494296cfbef4a2cba4b7ded8642c1074d0bed178788"
+      },
+      "name": "cmapss",
+      "namespace": "library",
+      "version": 2
+    },
+    "cnn-dailymail": {
+      "digests": {
+        "catalog/datasets/cnn-dailymail.json": "fb633dfa4b53953d2a1d392b008d946e29550b90e22f5ff1977a86c6209ec1ab"
+      },
+      "name": "cnn-dailymail",
+      "namespace": "library",
+      "version": 2
+    },
+    "co3d": {
+      "digests": {
+        "catalog/datasets/co3d.json": "068fd1b7d7b3c5ceb2c4f637007e34ec04a8d8203768434cfd4aecfc76818acb"
+      },
+      "name": "co3d",
+      "namespace": "library",
+      "version": 2
+    },
+    "coauthor-cs": {
+      "digests": {
+        "catalog/datasets/coauthor-cs.json": "b68e5e91563168a024c8f88ba4c5ac844b3d0c99fe842a8010846116d0837b5d"
+      },
+      "name": "coauthor-cs",
+      "namespace": "library",
+      "version": 2
+    },
+    "coco-2017": {
+      "digests": {
+        "catalog/datasets/coco-2017.json": "21f0caa0a775ed51fc9dacb4e065206b848dda97c76963ccd6f82eda17b0c1f9"
+      },
+      "name": "coco-2017",
+      "namespace": "library",
+      "version": 2
+    },
+    "coco-captions": {
+      "digests": {
+        "catalog/datasets/coco-captions.json": "9b8948bd9c7bf0294dd3922e0433d7ac6415e50b58c01dcf28b2b57e7f6bb0b4"
+      },
+      "name": "coco-captions",
+      "namespace": "library",
+      "version": 2
+    },
+    "coco-pose": {
+      "digests": {
+        "catalog/datasets/coco-pose.json": "5d5fc2348e73e5d406bd20191abbc7850dc6b3125ff62d63c3974ce604d7e4a0"
+      },
+      "name": "coco-pose",
+      "namespace": "library",
+      "version": 2
+    },
+    "codecontests": {
+      "digests": {
+        "catalog/datasets/codecontests.json": "25e4efe64bab75ac819a5e8a9fd6e6ec549eaa315189c04b4696930edfc60c27"
+      },
+      "name": "codecontests",
+      "namespace": "library",
+      "version": 2
+    },
+    "codex": {
+      "digests": {
+        "catalog/datasets/codex.json": "6ea7b6f2b9b4dbe5576514621a478472194815760363e80d0a1e1a065a76770d"
+      },
+      "name": "codex",
+      "namespace": "library",
+      "version": 2
+    },
+    "common-voice": {
+      "digests": {
+        "catalog/datasets/common-voice.json": "09bb7d5100e9a1a9507eba7915ad9239f79699082f94839faa30df95ce79f1b3"
+      },
+      "name": "common-voice",
+      "namespace": "library",
+      "version": 2
+    },
+    "compas": {
+      "digests": {
+        "catalog/datasets/compas.json": "100e3f7331fa4f4783249b6477fe8a584b54003de524c57b55a6a78bbf2f09e4"
+      },
+      "name": "compas",
+      "namespace": "library",
+      "version": 2
+    },
+    "compcars": {
+      "digests": {
+        "catalog/datasets/compcars.json": "d9e266e48e281f3faf7440f14a25671044da40acf0b62dab6ba71b4b141e21f7"
+      },
+      "name": "compcars",
+      "namespace": "library",
+      "version": 2
+    },
+    "conceptual-12m": {
+      "digests": {
+        "catalog/datasets/conceptual-12m.json": "62cca177eea4a66be71d459d398e776ba0b9d85ed2c2c2b5446c9c78daf4ce24"
+      },
+      "name": "conceptual-12m",
+      "namespace": "library",
+      "version": 2
+    },
+    "coqa": {
+      "digests": {
+        "catalog/datasets/coqa.json": "1f071308e07e26081a27033fffd4eed3045f30ae33cca000c8c9528461a789cc"
+      },
+      "name": "coqa",
+      "namespace": "library",
+      "version": 2
+    },
+    "cora": {
+      "digests": {
+        "catalog/datasets/cora.json": "7ba1270a21e2b558a10e9202b79262a832260ddeff805c18aa290815e148a37a",
+        "implementations/cora/__init__.py": "a4b131a554ec145ff63ac46ee982abf59b3802a0fe238cee1c542a6b02343cb0"
+      },
+      "name": "cora",
+      "namespace": "library",
+      "version": 2
+    },
+    "cord": {
+      "digests": {
+        "catalog/datasets/cord.json": "aef91dbef454b70b80243900f13bf8df04337aa4354167d5f2b062aea6250db3"
+      },
+      "name": "cord",
+      "namespace": "library",
+      "version": 2
+    },
+    "covertype": {
+      "digests": {
+        "catalog/datasets/covertype.json": "4202a85c6f09a999b213ac5cb5562aac8545742cdd3f05a8a46651b74eb4a1ef"
+      },
+      "name": "covertype",
+      "namespace": "library",
+      "version": 2
+    },
+    "coyo-700m": {
+      "digests": {
+        "catalog/datasets/coyo-700m.json": "24c31fcde423e2f32baefa7994af88003c4302db57e9e10594f1b81e62cea54b"
+      },
+      "name": "coyo-700m",
+      "namespace": "library",
+      "version": 2
+    },
+    "crafter": {
+      "digests": {
+        "catalog/datasets/crafter.json": "7a4a89c636393cc498faee0ee46c956fe67fb8b320228ccb77031c6ba8d3c6aa"
+      },
+      "name": "crafter",
+      "namespace": "library",
+      "version": 2
+    },
+    "crema-d": {
+      "digests": {
+        "catalog/datasets/crema-d.json": "46711c0d5b5bf9d85c7ec83fc4bd7154a6df250b69985c25019df4b8ec92583c"
+      },
+      "name": "crema-d",
+      "namespace": "library",
+      "version": 2
+    },
+    "cremi": {
+      "digests": {
+        "catalog/datasets/cremi.json": "0f6e24fd03443c9f87ce484796cfd8f897f0ec32df873f5235d5bdf13c1648f4"
+      },
+      "name": "cremi",
+      "namespace": "library",
+      "version": 2
+    },
+    "criteo": {
+      "digests": {
+        "catalog/datasets/criteo.json": "c2d1ee9f8c123316438b9760855299a99be185f6d8ef8bb5830684c57d7843e9"
+      },
+      "name": "criteo",
+      "namespace": "library",
+      "version": 2
+    },
+    "crowdhuman": {
+      "digests": {
+        "catalog/datasets/crowdhuman.json": "ea41fd1c8592370a3a1fc5ca7bfa6e72c29b9e774d11b0042cffb298ac7cad71"
+      },
+      "name": "crowdhuman",
+      "namespace": "library",
+      "version": 2
+    },
+    "crowdpose": {
+      "digests": {
+        "catalog/datasets/crowdpose.json": "50667312b609ffc7b74b10e5b0cb9e5f471c032673bdeb208d5c2ca062b37a15"
+      },
+      "name": "crowdpose",
+      "namespace": "library",
+      "version": 2
+    },
+    "csl-daily": {
+      "digests": {
+        "catalog/datasets/csl-daily.json": "3f286abdc3e962f6a0a74d947744719828b652c45211a0e2b01a75d70810f87f"
+      },
+      "name": "csl-daily",
+      "namespace": "library",
+      "version": 2
+    },
+    "ctw1500": {
+      "digests": {
+        "catalog/datasets/ctw1500.json": "2b11a56ff52c9704e621c54aed86bcf9c07103139def21a00b914826cfe09a89"
+      },
+      "name": "ctw1500",
+      "namespace": "library",
+      "version": 2
+    },
+    "cuad": {
+      "digests": {
+        "catalog/datasets/cuad.json": "a7df722eb5fdb865509bd2d76d02857fb35177af42221b40502f1748eca0093c"
+      },
+      "name": "cuad",
+      "namespace": "library",
+      "version": 2
+    },
+    "cub-200": {
+      "digests": {
+        "catalog/datasets/cub-200.json": "c8d8549609cdfe092554f97b53613ac67eac9be7e2ef7e754ee80990b51ccc67"
+      },
+      "name": "cub-200",
+      "namespace": "library",
+      "version": 2
+    },
+    "cuhk03": {
+      "digests": {
+        "catalog/datasets/cuhk03.json": "18a9906f8158a3abe9b3b43467f0d55712f28d23280925d8452ec10a52aa38c9"
+      },
+      "name": "cuhk03",
+      "namespace": "library",
+      "version": 2
+    },
+    "cwru": {
+      "digests": {
+        "catalog/datasets/cwru.json": "f2497103fe871d1875c85bab533ef209912b1d0c575e0aac9893af57149ed8e6"
+      },
+      "name": "cwru",
+      "namespace": "library",
+      "version": 2
+    },
+    "d4rl": {
+      "digests": {
+        "catalog/datasets/d4rl.json": "ffffa8095a4c194308c3d5ff37c36e98ff532b10921067201e86bbec5ea67eb2"
+      },
+      "name": "d4rl",
+      "namespace": "library",
+      "version": 2
+    },
+    "dagm": {
+      "digests": {
+        "catalog/datasets/dagm.json": "5a157388752b7a944d4ce2c26a0bd07578bc40702933714a8e6c2d634a0989ee"
+      },
+      "name": "dagm",
+      "namespace": "library",
+      "version": 2
+    },
+    "dailydialog": {
+      "digests": {
+        "catalog/datasets/dailydialog.json": "cc4c542be60748aada7b059031c23e7b985a24ca1c98dc154cb10388ef0bea4d"
+      },
+      "name": "dailydialog",
+      "namespace": "library",
+      "version": 2
+    },
+    "dancetrack": {
+      "digests": {
+        "catalog/datasets/dancetrack.json": "72556ef39801db225edfbcbc24fee8aeaa87491df2f540413619df84ad2c4484"
+      },
+      "name": "dancetrack",
+      "namespace": "library",
+      "version": 2
+    },
+    "datacomp-1b": {
+      "digests": {
+        "catalog/datasets/datacomp-1b.json": "6711e38b6ba29371837a4acc05216fb666869ef1b93b322cc3e8651ddb09a412"
+      },
+      "name": "datacomp-1b",
+      "namespace": "library",
+      "version": 2
+    },
+    "davis": {
+      "digests": {
+        "catalog/datasets/davis.json": "8929af6705ec0fb675f7518d04d0c6cc9a15b3896076673e6b0cbba49047fa42"
+      },
+      "name": "davis",
+      "namespace": "library",
+      "version": 2
+    },
+    "dcase": {
+      "digests": {
+        "catalog/datasets/dcase.json": "6ff27d459c05943ec7333eb82d55dbd9a95db2f3fba816f87dfbb39ef3851fb0"
+      },
+      "name": "dcase",
+      "namespace": "library",
+      "version": 2
+    },
+    "dclde": {
+      "digests": {
+        "catalog/datasets/dclde.json": "ff577e1fd3cbc18031d7d966cb930010cb78a0df6c2c444d70baab34c51a5ba2"
+      },
+      "name": "dclde",
+      "namespace": "library",
+      "version": 2
+    },
+    "deeperforensics": {
+      "digests": {
+        "catalog/datasets/deeperforensics.json": "5b9a04d48c466f0b15c9cd212d0619c61d4647c6ccc006d09ca1290c55c757a2"
+      },
+      "name": "deeperforensics",
+      "namespace": "library",
+      "version": 2
+    },
+    "deepglobe": {
+      "digests": {
+        "catalog/datasets/deepglobe.json": "367a00b104f0e6576764bdce33b85a3fec57539d0420a987b1e5859409ef50cc"
+      },
+      "name": "deepglobe",
+      "namespace": "library",
+      "version": 2
+    },
+    "deeppcb": {
+      "digests": {
+        "catalog/datasets/deeppcb.json": "ab9a81fb16db72388ec8de0280c37c3a41e00f26131fdab9c4891b38402f1c06"
+      },
+      "name": "deeppcb",
+      "namespace": "library",
+      "version": 2
+    },
+    "didemo": {
+      "digests": {
+        "catalog/datasets/didemo.json": "0538411c7813c8dd71774e9e009a612d12164513833db4867508d18df08ac94a"
+      },
+      "name": "didemo",
+      "namespace": "library",
+      "version": 2
+    },
+    "diii-d": {
+      "digests": {
+        "catalog/datasets/diii-d.json": "ad11b74b5beb9da45f8cf99a3365a4b0bb0dc025f88e7c7e5aedd1fbfa29c207"
+      },
+      "name": "diii-d",
+      "namespace": "library",
+      "version": 2
+    },
+    "dmc": {
+      "digests": {
+        "catalog/datasets/dmc.json": "36be3e3c616b97a3f44b9e46462cf63bdbca82aa4f4db2a8d660a859fe4dc6eb"
+      },
+      "name": "dmc",
+      "namespace": "library",
+      "version": 2
+    },
+    "dns-challenge": {
+      "digests": {
+        "catalog/datasets/dns-challenge.json": "7e2c020500a073df4b2a7350215fc0d38fee7baff73b6676bc5aeb1ac2c9bb80"
+      },
+      "name": "dns-challenge",
+      "namespace": "library",
+      "version": 2
+    },
+    "docvqa": {
+      "digests": {
+        "catalog/datasets/docvqa.json": "9c1e6b9f86970dafc06805d4abf75f4bd07efd8403ce4bebad1862cb65e27615"
+      },
+      "name": "docvqa",
+      "namespace": "library",
+      "version": 2
+    },
+    "dolly": {
+      "digests": {
+        "catalog/datasets/dolly.json": "bbcd64635f5a47ab3244143b97fb3c089543aa273e0c1ce787c3dbea89730981"
+      },
+      "name": "dolly",
+      "namespace": "library",
+      "version": 2
+    },
+    "dolma": {
+      "digests": {
+        "catalog/datasets/dolma.json": "c01949cbdca6aba2bb5ede769892efdbafd1789bfbfb44ee893cd44fa806319d"
+      },
+      "name": "dolma",
+      "namespace": "library",
+      "version": 2
+    },
+    "domainnet": {
+      "digests": {
+        "catalog/datasets/domainnet.json": "6a80a41e8dc5af78064da2691bbba59e700ea59985b8d91ff644a3f2091fa54b"
+      },
+      "name": "domainnet",
+      "namespace": "library",
+      "version": 2
+    },
+    "dota": {
+      "digests": {
+        "catalog/datasets/dota.json": "e0a731d08dab1e32d25907c36160a11dcfe8abd8647500d396e256abce9f2696"
+      },
+      "name": "dota",
+      "namespace": "library",
+      "version": 2
+    },
+    "drop": {
+      "digests": {
+        "catalog/datasets/drop.json": "2d608d51adcdbc93742094349b279a1613acfff86a21e455a619e88e5c24a092"
+      },
+      "name": "drop",
+      "namespace": "library",
+      "version": 2
+    },
+    "ds-1000": {
+      "digests": {
+        "catalog/datasets/ds-1000.json": "ed31a544d172adb861ccd5a06bfab11deaeca31b068b0d48627797149edf5e79"
+      },
+      "name": "ds-1000",
+      "namespace": "library",
+      "version": 2
+    },
+    "dsb-2018": {
+      "digests": {
+        "catalog/datasets/dsb-2018.json": "6f671cc393c7aa65dfab8844c6aaf2eebaae679e2630a00fea921f0d983ce7b9"
+      },
+      "name": "dsb-2018",
+      "namespace": "library",
+      "version": 2
+    },
+    "dsec-flow": {
+      "digests": {
+        "catalog/datasets/dsec-flow.json": "8fda9b1a109f9a83d26b018a6772ce17abd67f9b029bc3c76e11a9f6cceb1663"
+      },
+      "name": "dsec-flow",
+      "namespace": "library",
+      "version": 2
+    },
+    "dtd": {
+      "digests": {
+        "catalog/datasets/dtd.json": "4f2c34f0fd82285f926160fa1ea836aa7e8b1abf99e4fd9cf4dd0405cc9f5726"
+      },
+      "name": "dtd",
+      "namespace": "library",
+      "version": 2
+    },
+    "duacs": {
+      "digests": {
+        "catalog/datasets/duacs.json": "9d36fe15a4f8e75bba39acf3cb3b5c38cc7b5458514a67544815d46bdd11735c"
+      },
+      "name": "duacs",
+      "namespace": "library",
+      "version": 2
+    },
+    "duacs-aviso": {
+      "digests": {
+        "catalog/datasets/duacs-aviso.json": "441a5d4433982601e81daf7cb44067ce4c5e0f5adb9bd91318cb83cea3938771"
+      },
+      "name": "duacs-aviso",
+      "namespace": "library",
+      "version": 2
+    },
+    "dud-e": {
+      "digests": {
+        "catalog/datasets/dud-e.json": "e91772dc03de4153266dfc35edf1e97b5a4d6b5ddf10ecb299de48629e519e17"
+      },
+      "name": "dud-e",
+      "namespace": "library",
+      "version": 2
+    },
+    "dude": {
+      "digests": {
+        "catalog/datasets/dude.json": "cb48edbc664e0eb768235a6045282e55dd51a1660b159da581360298fd95d4a1"
+      },
+      "name": "dude",
+      "namespace": "library",
+      "version": 2
+    },
+    "dvs-cifar10": {
+      "digests": {
+        "catalog/datasets/dvs-cifar10.json": "065de414236c5a28e2805d4d4796d8778d9abff6ba2adf87c5e2604703a8cd58"
+      },
+      "name": "dvs-cifar10",
+      "namespace": "library",
+      "version": 2
+    },
+    "dvs-gesture": {
+      "digests": {
+        "catalog/datasets/dvs-gesture.json": "6f44c3671f45cce2cf57a8b230dd09fef09b98674ffd2556230ca17b686deeb8"
+      },
+      "name": "dvs-gesture",
+      "namespace": "library",
+      "version": 2
+    },
+    "dycheck": {
+      "digests": {
+        "catalog/datasets/dycheck.json": "b3c98340a6cdcdfb4132426a84ae83b7b53fa21a325f46eb522d902583aef034"
+      },
+      "name": "dycheck",
+      "namespace": "library",
+      "version": 2
+    },
+    "earnings-22": {
+      "digests": {
+        "catalog/datasets/earnings-22.json": "7c13af16e24d53836e7eee7ed5eba49afa57b2892f8e4cd6492cfe7c9d8bc243"
+      },
+      "name": "earnings-22",
+      "namespace": "library",
+      "version": 2
+    },
+    "ego4d": {
+      "digests": {
+        "catalog/datasets/ego4d.json": "24633a00c13f8c6f729d0f417c5230b90b2d6fa6330e550b5d8a87c9216b3c67"
+      },
+      "name": "ego4d",
+      "namespace": "library",
+      "version": 2
+    },
+    "eicu-crd": {
+      "digests": {
+        "catalog/datasets/eicu-crd.json": "4b272b496d28fde4a1bd69f382e63c9842aec655f8c8406acd5e4fedfcff23ee"
+      },
+      "name": "eicu-crd",
+      "namespace": "library",
+      "version": 2
+    },
+    "electricity": {
+      "digests": {
+        "catalog/datasets/electricity.json": "e2faf216a68139cc4cedaee51e5e818f647f5400c5a525d04970b02e1eff5ff1"
+      },
+      "name": "electricity",
+      "namespace": "library",
+      "version": 2
+    },
+    "elliptic": {
+      "digests": {
+        "catalog/datasets/elliptic.json": "49fdf4b6f8fa14dba1ecc7339e7433cf1a92a8d5f3cc8603647d4afc7b39ccd6"
+      },
+      "name": "elliptic",
+      "namespace": "library",
+      "version": 2
+    },
+    "elpv": {
+      "digests": {
+        "catalog/datasets/elpv.json": "595f8ff0b4b5eb67dd656b39eb9fcab9b62ff324f0d848f38f86cf1531b69357"
+      },
+      "name": "elpv",
+      "namespace": "library",
+      "version": 2
+    },
+    "emnist": {
+      "digests": {
+        "catalog/datasets/emnist.json": "f8102aeac123decc0c9f709200a8d7097f5d01a97ca5ed4670b4563792e33576"
+      },
+      "name": "emnist",
+      "namespace": "library",
+      "version": 2
+    },
+    "endovis": {
+      "digests": {
+        "catalog/datasets/endovis.json": "9868d20a5fa94223aa9b69bb81c3c21498ed9e152c8be11228e31ad75a829049"
+      },
+      "name": "endovis",
+      "namespace": "library",
+      "version": 2
+    },
+    "enose": {
+      "digests": {
+        "catalog/datasets/enose.json": "4e63ad66ac81956df47250516a32a92bc883ba348c1a26c507eb0d8cb01c5ae0"
+      },
+      "name": "enose",
+      "namespace": "library",
+      "version": 2
+    },
+    "epic-kitchens-100": {
+      "digests": {
+        "catalog/datasets/epic-kitchens-100.json": "6d5504e9256bfe030dffb320ae18606eda6c3f6917590978299f8f20c097ec35"
+      },
+      "name": "epic-kitchens-100",
+      "namespace": "library",
+      "version": 2
+    },
+    "epinions": {
+      "digests": {
+        "catalog/datasets/epinions.json": "34d058917ac8a986b25133e56ed9339d3519e9fa71fd6e870361366de9209100"
+      },
+      "name": "epinions",
+      "namespace": "library",
+      "version": 2
+    },
+    "eqa": {
+      "digests": {
+        "catalog/datasets/eqa.json": "302ad86f93044117c99413fa5e1139a2f8f3f3b067ec48208aff1488b09e5915"
+      },
+      "name": "eqa",
+      "namespace": "library",
+      "version": 2
+    },
+    "era5": {
+      "digests": {
+        "catalog/datasets/era5.json": "7ceeb45163b6a71d72ee536003bc4db2d507e81596d3eadb009c9a3ca6d32feb"
+      },
+      "name": "era5",
+      "namespace": "library",
+      "version": 2
+    },
+    "esc-50": {
+      "digests": {
+        "catalog/datasets/esc-50.json": "52f46596c2baf1c28e354e32c81c594c49d92d351a72c2a4319f4f6dd222a75e"
+      },
+      "name": "esc-50",
+      "namespace": "library",
+      "version": 2
+    },
+    "esd": {
+      "digests": {
+        "catalog/datasets/esd.json": "ce17c2ffedac4997892f75b21cb1acd4ac41c4be1faef8b184778bd6c6517bb6"
+      },
+      "name": "esd",
+      "namespace": "library",
+      "version": 2
+    },
+    "eth3d": {
+      "digests": {
+        "catalog/datasets/eth3d.json": "f9af0617821cfb5384429f6d512d4390fc672a17e1d91bf6a6bf72e487ab6127"
+      },
+      "name": "eth3d",
+      "namespace": "library",
+      "version": 2
+    },
+    "ett": {
+      "digests": {
+        "catalog/datasets/ett.json": "d06a4079b9598e9d8729942b437b4b71a918885e18dabbfd0d16e5120ed1cff7"
+      },
+      "name": "ett",
+      "namespace": "library",
+      "version": 2
+    },
+    "europarl": {
+      "digests": {
+        "catalog/datasets/europarl.json": "33caf314c9f2b41ada0f05ba45785964a07b8e90114912b7c6c5bf1a1852bdf5"
+      },
+      "name": "europarl",
+      "namespace": "library",
+      "version": 2
+    },
+    "eurosat": {
+      "digests": {
+        "catalog/datasets/eurosat.json": "deb24c61c11e175afb6f20d0a8559807c318d3587e2d6ae827c484c1a4e13f5f"
+      },
+      "name": "eurosat",
+      "namespace": "library",
+      "version": 2
+    },
+    "exchange": {
+      "digests": {
+        "catalog/datasets/exchange.json": "9b5fbcc39c2e30f15928e9137abebfb400579239ee213fb573994d2b247c678a"
+      },
+      "name": "exchange",
+      "namespace": "library",
+      "version": 2
+    },
+    "extrasensory": {
+      "digests": {
+        "catalog/datasets/extrasensory.json": "561bbd4fdd2670b985a264df7973b971bfe6efb2dad87246fd4aa59ce3f4e031"
+      },
+      "name": "extrasensory",
+      "namespace": "library",
+      "version": 2
+    },
+    "fair1m": {
+      "digests": {
+        "catalog/datasets/fair1m.json": "f21e6822f3616547cc0580e08bbfe14b5695a7387e705807f5590b8f4e9da933"
+      },
+      "name": "fair1m",
+      "namespace": "library",
+      "version": 2
+    },
+    "fashion-mnist": {
+      "digests": {
+        "catalog/datasets/fashion-mnist.json": "8ccaa7f6db20b223b1d6c685efe3d8e7334a90f1e3404fcacb0d397261a99906",
+        "implementations/fashion-mnist/__init__.py": "e7bb5f60e44e2b14add383fca5838fb9521dcb22e0f1cbc83750da3b1585e20b"
+      },
+      "name": "fashion-mnist",
+      "namespace": "library",
+      "version": 2
+    },
+    "fashioniq": {
+      "digests": {
+        "catalog/datasets/fashioniq.json": "0047ecd20d4e05780540f041d6723d3050d08257a92b2eedc80daf9e8c2b3965"
+      },
+      "name": "fashioniq",
+      "namespace": "library",
+      "version": 2
+    },
+    "fedscale": {
+      "digests": {
+        "catalog/datasets/fedscale.json": "579085396336df93987abb51c9d2002809f12a11345b469254c622aea05fb78e"
+      },
+      "name": "fedscale",
+      "namespace": "library",
+      "version": 2
+    },
+    "femto-pronostia": {
+      "digests": {
+        "catalog/datasets/femto-pronostia.json": "ba9c6fc6a060b0a58ec555a81e61c2f01f8e5f1f3449b2cd148df26da49917fd"
+      },
+      "name": "femto-pronostia",
+      "namespace": "library",
+      "version": 2
+    },
+    "fever": {
+      "digests": {
+        "catalog/datasets/fever.json": "f8dc69219245216078572897b7e9f41a0120480fc708dd88f4995a17cfdb304e"
+      },
+      "name": "fever",
+      "namespace": "library",
+      "version": 2
+    },
+    "ffhq": {
+      "digests": {
+        "catalog/datasets/ffhq.json": "68d677543e90bce28d035525a75ef84ccca32ce4b66edbe333f5c96e7beb3752"
+      },
+      "name": "ffhq",
+      "namespace": "library",
+      "version": 2
+    },
+    "fgvc-aircraft": {
+      "digests": {
+        "catalog/datasets/fgvc-aircraft.json": "3b8ddf34304ac7a8b5ad9c595e043e2128a996cf851e05a294e0e24896b92205"
+      },
+      "name": "fgvc-aircraft",
+      "namespace": "library",
+      "version": 2
+    },
+    "fineweb": {
+      "digests": {
+        "catalog/datasets/fineweb.json": "4a0d9c5e78259279f3582370fcde678ff95418dc9b803639a1edd202dfd4d225"
+      },
+      "name": "fineweb",
+      "namespace": "library",
+      "version": 2
+    },
+    "fineweb-edu": {
+      "digests": {
+        "catalog/datasets/fineweb-edu.json": "1be0b4fac7de865b40b97be551a039c474b4786ad988a202b8713bce59702e2f"
+      },
+      "name": "fineweb-edu",
+      "namespace": "library",
+      "version": 2
+    },
+    "fintabnet": {
+      "digests": {
+        "catalog/datasets/fintabnet.json": "cbccc7351dd5f2b8a69ef82cfb1ea2acd6f6e02dcabc44f4602d1967ee5a7211"
+      },
+      "name": "fintabnet",
+      "namespace": "library",
+      "version": 2
+    },
+    "fiqa-2018": {
+      "digests": {
+        "catalog/datasets/fiqa-2018.json": "ae1f5b4109f48ef1ff6a240ddd30587d76f94e2bee10e2346aa1b64859c9167b"
+      },
+      "name": "fiqa-2018",
+      "namespace": "library",
+      "version": 2
+    },
+    "flan": {
+      "digests": {
+        "catalog/datasets/flan.json": "ace31275b10da3521cad8c979bb977a9ca070a88984e553b6e9521289ae5dfdb"
+      },
+      "name": "flan",
+      "namespace": "library",
+      "version": 2
+    },
+    "flchain": {
+      "digests": {
+        "catalog/datasets/flchain.json": "2195ed51e0ca4cbf6fd8832e2f008f5f593836232f1cef337811c10d9b1a4304"
+      },
+      "name": "flchain",
+      "namespace": "library",
+      "version": 2
+    },
+    "fleurs": {
+      "digests": {
+        "catalog/datasets/fleurs.json": "afca16fbe0353adcb7e65d7bb495983c09cbe3e328a2fdef8475c87f4bd5ebdc"
+      },
+      "name": "fleurs",
+      "namespace": "library",
+      "version": 2
+    },
+    "flickr30k": {
+      "digests": {
+        "catalog/datasets/flickr30k.json": "a79e8261cab60372679eac6203c3c76ef027aa55a19c24acec2d3c93ce92dfec"
+      },
+      "name": "flickr30k",
+      "namespace": "library",
+      "version": 2
+    },
+    "flickr30k-entities": {
+      "digests": {
+        "catalog/datasets/flickr30k-entities.json": "e0020bb31a040dab81671a8ac908b51436103ce816d47effd4e82c34d0a12248"
+      },
+      "name": "flickr30k-entities",
+      "namespace": "library",
+      "version": 2
+    },
+    "floodnet": {
+      "digests": {
+        "catalog/datasets/floodnet.json": "888a65ee5f067bee7f8c9ef93af2ff7c81fe152d153fd843c680c08a5996a0e2"
+      },
+      "name": "floodnet",
+      "namespace": "library",
+      "version": 2
+    },
+    "flores-200": {
+      "digests": {
+        "catalog/datasets/flores-200.json": "10fc3497df4510cecc739ea40d06c430bd95f0841160d395c7ae3edea68aaf5d"
+      },
+      "name": "flores-200",
+      "namespace": "library",
+      "version": 2
+    },
+    "flyingchairs": {
+      "digests": {
+        "catalog/datasets/flyingchairs.json": "773537342b921486f4da97a8129d3270505492f67f1ddf496624cc237c443ed1"
+      },
+      "name": "flyingchairs",
+      "namespace": "library",
+      "version": 2
+    },
+    "fma": {
+      "digests": {
+        "catalog/datasets/fma.json": "76799cf8ba0e82a3a0a644bccc6c344210500139154ef3dfb282ae05879f7195"
+      },
+      "name": "fma",
+      "namespace": "library",
+      "version": 2
+    },
+    "fmd": {
+      "digests": {
+        "catalog/datasets/fmd.json": "f864f45f3e15358b8560e3257a11aa447aebe36dac371489397bf4b654bdf323"
+      },
+      "name": "fmd",
+      "namespace": "library",
+      "version": 2
+    },
+    "fmow": {
+      "digests": {
+        "catalog/datasets/fmow.json": "f03b918de704ffa31cb2601ed21320de3d2995441f6276a975b6536bf7d6f65e"
+      },
+      "name": "fmow",
+      "namespace": "library",
+      "version": 2
+    },
+    "food-101": {
+      "digests": {
+        "catalog/datasets/food-101.json": "e9c3749ddfd096fe2f3bb54172d15979537d0940e7fe63203d2819be64ccc4ac"
+      },
+      "name": "food-101",
+      "namespace": "library",
+      "version": 2
+    },
+    "forgerynet": {
+      "digests": {
+        "catalog/datasets/forgerynet.json": "9da4f7ed41ccfe38276798f6f2e1125f6dfb6f98f05305547aa3222ec4ab1a37"
+      },
+      "name": "forgerynet",
+      "namespace": "library",
+      "version": 2
+    },
+    "foursquare": {
+      "digests": {
+        "catalog/datasets/foursquare.json": "cd1dc9a1d096b8f27ee8b4e2027b2b79c5f9a8be6f6a11b83362b13f808a160e"
+      },
+      "name": "foursquare",
+      "namespace": "library",
+      "version": 2
+    },
+    "franka-kitchen": {
+      "digests": {
+        "catalog/datasets/franka-kitchen.json": "af7dd5d35a29cb5266f8ffe1c66296bf43560da2f884670f85e02909ccb643ad"
+      },
+      "name": "franka-kitchen",
+      "namespace": "library",
+      "version": 2
+    },
+    "fraud-ieee": {
+      "digests": {
+        "catalog/datasets/fraud-ieee.json": "088d5cf4cefec3a2e8cdc5c23ec856c8b9f3d2eea01221d117c0f60a664febb8"
+      },
+      "name": "fraud-ieee",
+      "namespace": "library",
+      "version": 2
+    },
+    "freihand": {
+      "digests": {
+        "catalog/datasets/freihand.json": "a8a3352526dc094921546827ea3a05453477da0d521c128d40216ceee6ac211c"
+      },
+      "name": "freihand",
+      "namespace": "library",
+      "version": 2
+    },
+    "fsd50k": {
+      "digests": {
+        "catalog/datasets/fsd50k.json": "1e9bb389b9d1cc1cd0021e6cba0f895a1bf4f697bb34fd7c214e062bd518c72d"
+      },
+      "name": "fsd50k",
+      "namespace": "library",
+      "version": 2
+    },
+    "fsdd": {
+      "digests": {
+        "catalog/datasets/fsdd.json": "2ea235f1934a9dc4c643be9d26c5a20acd3d023f43df458d7b95947395270945",
+        "implementations/fsdd/__init__.py": "bff66b1c6f471b3b5432702a19fe798f8507f3176374e24508de7b7309179671"
+      },
+      "name": "fsdd",
+      "namespace": "library",
+      "version": 2
+    },
+    "fsdnoisy18k": {
+      "digests": {
+        "catalog/datasets/fsdnoisy18k.json": "b393f8f2ac8fdc25c5dd479abddf9b3f44b8fdfd3dd3c0286298c27a65ff61fc"
+      },
+      "name": "fsdnoisy18k",
+      "namespace": "library",
+      "version": 2
+    },
+    "funsd": {
+      "digests": {
+        "catalog/datasets/funsd.json": "5a8c882390026b02fa098838a63b9376dfd2dd79a4f923394edcc5184a91ef56"
+      },
+      "name": "funsd",
+      "namespace": "library",
+      "version": 2
+    },
+    "gages-ii": {
+      "digests": {
+        "catalog/datasets/gages-ii.json": "d6227f15fe9e1d6e3d68d5dc08a80dd1f611cff2f125d62fca47c33a6b20928a"
+      },
+      "name": "gages-ii",
+      "namespace": "library",
+      "version": 2
+    },
+    "gait3d": {
+      "digests": {
+        "catalog/datasets/gait3d.json": "9bd5b13eb0f9f2be1e2960d140be6466b07310ef3089e73df65464b493e679e2"
+      },
+      "name": "gait3d",
+      "namespace": "library",
+      "version": 2
+    },
+    "gbsg2": {
+      "digests": {
+        "catalog/datasets/gbsg2.json": "6e7fbd6fca00f0dff9ea46f10fc944936a10f6d0db6d50aeb8eb410ec8b9f800"
+      },
+      "name": "gbsg2",
+      "namespace": "library",
+      "version": 2
+    },
+    "gefcom2014": {
+      "digests": {
+        "catalog/datasets/gefcom2014.json": "a8b3ac73d8a8fd8c494b734b17126cc8457e1d4fdfabf19a1e525b7c79e9d44d"
+      },
+      "name": "gefcom2014",
+      "namespace": "library",
+      "version": 2
+    },
+    "gelsight-wedge": {
+      "digests": {
+        "catalog/datasets/gelsight-wedge.json": "67d954c22a83f7aa1c159ea7ff5b6390885e0ee0f2e74ae02e6b925f2ad45047"
+      },
+      "name": "gelsight-wedge",
+      "namespace": "library",
+      "version": 2
+    },
+    "german-credit": {
+      "digests": {
+        "catalog/datasets/german-credit.json": "eb5ce3f064660898481a21ff6b07e52c4fa4f6a496bc5c08d83d507765d8c02b"
+      },
+      "name": "german-credit",
+      "namespace": "library",
+      "version": 2
+    },
+    "gigaspeech": {
+      "digests": {
+        "catalog/datasets/gigaspeech.json": "ae8ce72704bb17c3dcb58091073b4d4fb3cfb30a1523a505307ddb67ff4e3900"
+      },
+      "name": "gigaspeech",
+      "namespace": "library",
+      "version": 2
+    },
+    "gigaword": {
+      "digests": {
+        "catalog/datasets/gigaword.json": "53e82134e1cc432a5ca854c545e406a1c9a124ab8789962c3c949bca4ccbd916"
+      },
+      "name": "gigaword",
+      "namespace": "library",
+      "version": 2
+    },
+    "glue": {
+      "digests": {
+        "catalog/datasets/glue.json": "c9b8c72c989ebd141530d6b0c73773fbed1d062b30b02119255d834203fcb22a"
+      },
+      "name": "glue",
+      "namespace": "library",
+      "version": 2
+    },
+    "goodreads": {
+      "digests": {
+        "catalog/datasets/goodreads.json": "cc1e2499ab4ef44ad64871d7637562aa7c52bb6f51301f5dc1b097f2f2e7d5df"
+      },
+      "name": "goodreads",
+      "namespace": "library",
+      "version": 2
+    },
+    "got-10k": {
+      "digests": {
+        "catalog/datasets/got-10k.json": "d85aa030356c1353ab3ce8a5eb6d28f360a08efde1dadc2d8404d6e99d86a3de"
+      },
+      "name": "got-10k",
+      "namespace": "library",
+      "version": 2
+    },
+    "gowalla": {
+      "digests": {
+        "catalog/datasets/gowalla.json": "a6292867a2a11d0a265cdddfad9ddb43dd0fb98a36196dadd957e76a00d70c98"
+      },
+      "name": "gowalla",
+      "namespace": "library",
+      "version": 2
+    },
+    "gqa": {
+      "digests": {
+        "catalog/datasets/gqa.json": "9f1df1407c0b7299b7a53ce9eec81861e1c26a0d3dae6ed5aca850b188daff77"
+      },
+      "name": "gqa",
+      "namespace": "library",
+      "version": 2
+    },
+    "grew": {
+      "digests": {
+        "catalog/datasets/grew.json": "c5856b12fc292b18f3b531f508e818c2eb4fa15ee9547f8e17e47571dc8382c1"
+      },
+      "name": "grew",
+      "namespace": "library",
+      "version": 2
+    },
+    "grf": {
+      "digests": {
+        "catalog/datasets/grf.json": "3690366349bd81b97dd73cc010692e25a635193b6dcc1963c5e63f758983cbc2"
+      },
+      "name": "grf",
+      "namespace": "library",
+      "version": 2
+    },
+    "gsm8k": {
+      "digests": {
+        "catalog/datasets/gsm8k.json": "1eb99631976431fa2c0aec465a3a3c2db76cffe97692dd815a0cef940d313ab5"
+      },
+      "name": "gsm8k",
+      "namespace": "library",
+      "version": 2
+    },
+    "gtzan": {
+      "digests": {
+        "catalog/datasets/gtzan.json": "17fb708341f3aa422b0ff947a24443c9901ad21432de18a3171b4258eabf8a8e"
+      },
+      "name": "gtzan",
+      "namespace": "library",
+      "version": 2
+    },
+    "gwosc": {
+      "digests": {
+        "catalog/datasets/gwosc.json": "4a855118d763892bd831d070c94709c8606a98ba9c1ed56b262b7c1d21db8f71"
+      },
+      "name": "gwosc",
+      "namespace": "library",
+      "version": 2
+    },
+    "hacs": {
+      "digests": {
+        "catalog/datasets/hacs.json": "b2d78032124c8cf3f9f5ae418421dc82c70ff3e5a92f9b38085b7542e89eb7b0"
+      },
+      "name": "hacs",
+      "namespace": "library",
+      "version": 2
+    },
+    "hellaswag": {
+      "digests": {
+        "catalog/datasets/hellaswag.json": "347d0377ecf76376bb83d2763c0b93d4eeddfba40d8bab8a4e7c45449ef85e38"
+      },
+      "name": "hellaswag",
+      "namespace": "library",
+      "version": 2
+    },
+    "hepmass": {
+      "digests": {
+        "catalog/datasets/hepmass.json": "f790b7d70aa0133e9c9beedc6d0e6d310f4d1116e35434f842942fd806b93f16"
+      },
+      "name": "hepmass",
+      "namespace": "library",
+      "version": 2
+    },
+    "hgb": {
+      "digests": {
+        "catalog/datasets/hgb.json": "9ec77c00be16343c6ad3fb21d73e78602b155fc76fd90be956cb0dfd42cc8190"
+      },
+      "name": "hgb",
+      "namespace": "library",
+      "version": 2
+    },
+    "higgs": {
+      "digests": {
+        "catalog/datasets/higgs.json": "fe1ab70d06a1ea55e6a455a3ded65495456e26142da3a300955901fa922e6d01"
+      },
+      "name": "higgs",
+      "namespace": "library",
+      "version": 2
+    },
+    "hirid": {
+      "digests": {
+        "catalog/datasets/hirid.json": "3d3a0f0eedf8930193cd39be6d7eda33a6f5ded66cf097708411318cdc5009f5"
+      },
+      "name": "hirid",
+      "namespace": "library",
+      "version": 2
+    },
+    "hm3d": {
+      "digests": {
+        "catalog/datasets/hm3d.json": "18f1b4bed5423799d646902aad8c22f9b1a0ec21af003cdac7958103d087efd2"
+      },
+      "name": "hm3d",
+      "namespace": "library",
+      "version": 2
+    },
+    "hmdb51": {
+      "digests": {
+        "catalog/datasets/hmdb51.json": "b1d50c1aa690243168ae03311a7d9d86b232669cca1e21fae62eff2e59ef30eb"
+      },
+      "name": "hmdb51",
+      "namespace": "library",
+      "version": 2
+    },
+    "home-credit-default-risk": {
+      "digests": {
+        "catalog/datasets/home-credit-default-risk.json": "f99ce445e2d81a0668e5db726dff5512ace253e277c318f2072b569eff73538c"
+      },
+      "name": "home-credit-default-risk",
+      "namespace": "library",
+      "version": 2
+    },
+    "hotpotqa": {
+      "digests": {
+        "catalog/datasets/hotpotqa.json": "6e49624c8c4241747512dda6ad2c514fedcb0b0376da9b040bc0e1433bcff66f"
+      },
+      "name": "hotpotqa",
+      "namespace": "library",
+      "version": 2
+    },
+    "house-prices": {
+      "digests": {
+        "catalog/datasets/house-prices.json": "a60e27d3055b4e1525bb5bdf649247025d1e9f4300ef0884704576c21992a10a"
+      },
+      "name": "house-prices",
+      "namespace": "library",
+      "version": 2
+    },
+    "howto100m": {
+      "digests": {
+        "catalog/datasets/howto100m.json": "9684ebc288db7321e9ca2c2094d7a42af25242da4dd8714819d46d7671bbcd53"
+      },
+      "name": "howto100m",
+      "namespace": "library",
+      "version": 2
+    },
+    "htru2": {
+      "digests": {
+        "catalog/datasets/htru2.json": "e09d60e362e37cb1de6f96fbaac2b1f3d2b0195bb565a3eaacbf6bf2106e83e1"
+      },
+      "name": "htru2",
+      "namespace": "library",
+      "version": 2
+    },
+    "human36m": {
+      "digests": {
+        "catalog/datasets/human36m.json": "643a752670d036a250ac25f0b941a945375ac5a02bba110e96a335f883ba4602"
+      },
+      "name": "human36m",
+      "namespace": "library",
+      "version": 2
+    },
+    "humaneval": {
+      "digests": {
+        "catalog/datasets/humaneval.json": "b525a4aa1954a8bd301757447cd9a995d700dcc8eba69563bb7938f0271609f0"
+      },
+      "name": "humaneval",
+      "namespace": "library",
+      "version": 2
+    },
+    "iam": {
+      "digests": {
+        "catalog/datasets/iam.json": "a87b55a90c611290173913af3104cf96ba922b2a7097461b6aafbf4002171f59"
+      },
+      "name": "iam",
+      "namespace": "library",
+      "version": 2
+    },
+    "icdar15": {
+      "digests": {
+        "catalog/datasets/icdar15.json": "0bb469bbc09075e1ea753376d640c308e8038605de880a2e2b9f5916a681d158"
+      },
+      "name": "icdar15",
+      "namespace": "library",
+      "version": 2
+    },
+    "icdar2017-mlt": {
+      "digests": {
+        "catalog/datasets/icdar2017-mlt.json": "cd70e63e26cb69945d57e288d4e32b3f8514843dd9fba5546f084243662f30ab"
+      },
+      "name": "icdar2017-mlt",
+      "namespace": "library",
+      "version": 2
+    },
+    "idrid": {
+      "digests": {
+        "catalog/datasets/idrid.json": "3c7a430fbecc840d3567bb7d74dc7957ea699db9e5f21b5fb71e8e0e5e056f1d"
+      },
+      "name": "idrid",
+      "namespace": "library",
+      "version": 2
+    },
+    "iemocap": {
+      "digests": {
+        "catalog/datasets/iemocap.json": "11a6c6d0031288578ab238d9f0977eae1fb144aedc8825de30ca070b797705d4"
+      },
+      "name": "iemocap",
+      "namespace": "library",
+      "version": 2
+    },
+    "ifeval": {
+      "digests": {
+        "catalog/datasets/ifeval.json": "517270dd2fb95b0f25a4b9b7c107fe41620be7c4249cfb468658706b4a24f994"
+      },
+      "name": "ifeval",
+      "namespace": "library",
+      "version": 2
+    },
+    "ili": {
+      "digests": {
+        "catalog/datasets/ili.json": "c82dca6deebabfcff5e30b63803249873705a67c602baa5059f068f115e887a5"
+      },
+      "name": "ili",
+      "namespace": "library",
+      "version": 2
+    },
+    "imagenet-1k": {
+      "digests": {
+        "catalog/datasets/imagenet-1k.json": "6506d00de039b01c85ae16f8412ce34c2faf985e5627fa93f9f9d91149ebf441"
+      },
+      "name": "imagenet-1k",
+      "namespace": "library",
+      "version": 2
+    },
+    "imagenet-21k": {
+      "digests": {
+        "catalog/datasets/imagenet-21k.json": "600431e562f795ff39b9eab381085fc50b93cac5bfe60908e1ea9cdfa63ed6cc"
+      },
+      "name": "imagenet-21k",
+      "namespace": "library",
+      "version": 2
+    },
+    "imagenet-9": {
+      "digests": {
+        "catalog/datasets/imagenet-9.json": "774361a644bda098bfbe3263c67a0f7f71d9199222b170496556967e9921f242"
+      },
+      "name": "imagenet-9",
+      "namespace": "library",
+      "version": 2
+    },
+    "imagenet-o": {
+      "digests": {
+        "catalog/datasets/imagenet-o.json": "81ffeae97930235e4972a69d73592027027c9a079c344b49f630d1dcb05ea7ed"
+      },
+      "name": "imagenet-o",
+      "namespace": "library",
+      "version": 2
+    },
+    "imagenet-p": {
+      "digests": {
+        "catalog/datasets/imagenet-p.json": "79f767da72b3a503584bdbf401ccd86fa8ea407b6ed0e846b83ac32de81dcab6"
+      },
+      "name": "imagenet-p",
+      "namespace": "library",
+      "version": 2
+    },
+    "imagenet-real": {
+      "digests": {
+        "catalog/datasets/imagenet-real.json": "e814d4b8ac4009005a6972ee09b69bf53fcf4b855e3d73d58f70f9d4cde79f45"
+      },
+      "name": "imagenet-real",
+      "namespace": "library",
+      "version": 2
+    },
+    "imagenet-v2": {
+      "digests": {
+        "catalog/datasets/imagenet-v2.json": "08e67e61a5ca633016bf9f455aefda1b64b3e466eb43f14c7bfa82af520670c5"
+      },
+      "name": "imagenet-v2",
+      "namespace": "library",
+      "version": 2
+    },
+    "imdb": {
+      "digests": {
+        "catalog/datasets/imdb.json": "92f7b6191a857a63d3cb27f69643fda28d03a7202dcf588ca85cf1997dcb6d95"
+      },
+      "name": "imdb",
+      "namespace": "library",
+      "version": 2
+    },
+    "inaturalist-2017": {
+      "digests": {
+        "catalog/datasets/inaturalist-2017.json": "bb84260b54d48d8b041796fee43e763d73ea6d50c8e63afbbc050a96a1fe43d6"
+      },
+      "name": "inaturalist-2017",
+      "namespace": "library",
+      "version": 2
+    },
+    "inaturalist-2021": {
+      "digests": {
+        "catalog/datasets/inaturalist-2021.json": "b9ce6eed07a7b33052180e45b1e158e83f8de962aac894610671dc307b1f24b9"
+      },
+      "name": "inaturalist-2021",
+      "namespace": "library",
+      "version": 2
+    },
+    "inria-aerial": {
+      "digests": {
+        "catalog/datasets/inria-aerial.json": "b801b6accc26c2e20eb0c0723c4c51b47431fbddc466e6e11f7c385e87c8b5a9"
+      },
+      "name": "inria-aerial",
+      "namespace": "library",
+      "version": 2
+    },
+    "ipinyou": {
+      "digests": {
+        "catalog/datasets/ipinyou.json": "6d32eb5edf14c7f374b29fdf0802c5771362030cc3f672bbb4869707d72812aa"
+      },
+      "name": "ipinyou",
+      "namespace": "library",
+      "version": 2
+    },
+    "iris": {
+      "digests": {
+        "catalog/datasets/iris.json": "dfe161a2684d2cb92398847304435fb0251bd5eb6202402a21baf4e1f203c1b0",
+        "implementations/iris/__init__.py": "60c5e479745c64a511767a72f6163182d3f6ba2909f2eff01ecd4a759aecfece"
+      },
+      "name": "iris",
+      "namespace": "library",
+      "version": 2
+    },
+    "isic": {
+      "digests": {
+        "catalog/datasets/isic.json": "c72093db7635576a308fa41d640f085cbe17ac080454752ed3c58b2c410fb054"
+      },
+      "name": "isic",
+      "namespace": "library",
+      "version": 2
+    },
+    "isles-2022": {
+      "digests": {
+        "catalog/datasets/isles-2022.json": "7977d1f60125f7054edf98fe062e83bc29e7f8a83dd34ac4f895296c0d078abf"
+      },
+      "name": "isles-2022",
+      "namespace": "library",
+      "version": 2
+    },
+    "isprs-potsdam": {
+      "digests": {
+        "catalog/datasets/isprs-potsdam.json": "4736d789593cc9d4c6b00112ab964cb9b0f7de15523f59a6dcd80e652594c78b"
+      },
+      "name": "isprs-potsdam",
+      "namespace": "library",
+      "version": 2
+    },
+    "iwslt": {
+      "digests": {
+        "catalog/datasets/iwslt.json": "da98f04b27b7991028c565cdf5f71a4e08f7438fda86a9bc89ba91daa61f68c1"
+      },
+      "name": "iwslt",
+      "namespace": "library",
+      "version": 2
+    },
+    "jarvis-dft": {
+      "digests": {
+        "catalog/datasets/jarvis-dft.json": "0c3cc193516241cf579d0f85b2486d050c5f72982486905237bfc4240eac0055"
+      },
+      "name": "jarvis-dft",
+      "namespace": "library",
+      "version": 2
+    },
+    "jena-climate": {
+      "digests": {
+        "catalog/datasets/jena-climate.json": "364974de7f78977bcabd57859dd8d6e67da4c60e5d9932239cad8c45df38f6d1",
+        "implementations/jena-climate/__init__.py": "7855f704a10176a7ae79605d7a4e0517fbc3ae019a245766d723e5f69ed16fc8"
+      },
+      "name": "jena-climate",
+      "namespace": "library",
+      "version": 2
+    },
+    "jester": {
+      "digests": {
+        "catalog/datasets/jester.json": "92eff0ea617204a6dd1968e708e96e6b04c7d4547943a5c6182050bb07afd232"
+      },
+      "name": "jester",
+      "namespace": "library",
+      "version": 2
+    },
+    "jigsaw-toxic": {
+      "digests": {
+        "catalog/datasets/jigsaw-toxic.json": "f31395e1a9f2e37c2eba6695d290c80fa60e73de57248672e145de52d8c4ad29"
+      },
+      "name": "jigsaw-toxic",
+      "namespace": "library",
+      "version": 2
+    },
+    "jigsaws": {
+      "digests": {
+        "catalog/datasets/jigsaws.json": "da71c8c587bef017aa51e16098bde3dad74aaebeb38190352adabc9b4594576a"
+      },
+      "name": "jigsaws",
+      "namespace": "library",
+      "version": 2
+    },
+    "jvs": {
+      "digests": {
+        "catalog/datasets/jvs.json": "ea588050b4e5a82c6c103e67b47db3ad114f8313123fb2baa33f471087e70ce2"
+      },
+      "name": "jvs",
+      "namespace": "library",
+      "version": 2
+    },
+    "kermany-oct": {
+      "digests": {
+        "catalog/datasets/kermany-oct.json": "96a2ebad428b061704103953b7364750b6e58da993503aeb00a5eedf21fce6b2"
+      },
+      "name": "kermany-oct",
+      "namespace": "library",
+      "version": 2
+    },
+    "kilt": {
+      "digests": {
+        "catalog/datasets/kilt.json": "f581f71395d53d20894740282e549a1a1c73fd56c360b3546645041b0598ecc8"
+      },
+      "name": "kilt",
+      "namespace": "library",
+      "version": 2
+    },
+    "kinetics-400": {
+      "digests": {
+        "catalog/datasets/kinetics-400.json": "9175a4b586217e9dbfe4ec40b58961f0a89dad6c551c5c35d82fd631f2ceb27b"
+      },
+      "name": "kinetics-400",
+      "namespace": "library",
+      "version": 2
+    },
+    "kinetics-600": {
+      "digests": {
+        "catalog/datasets/kinetics-600.json": "126ffb7af8d70e78f2577ffb09d8a9787c844b6bf68aa2b9bf796e0f9d23cefa"
+      },
+      "name": "kinetics-600",
+      "namespace": "library",
+      "version": 2
+    },
+    "kinetics-700": {
+      "digests": {
+        "catalog/datasets/kinetics-700.json": "05f88edbbdfee3d23952a6e24f2313dcf713779d038f563c6295d99bdcb46fe9"
+      },
+      "name": "kinetics-700",
+      "namespace": "library",
+      "version": 2
+    },
+    "kits": {
+      "digests": {
+        "catalog/datasets/kits.json": "a2132231940cff81209d3db21391674f4bdc84a2914f85fbe8acb4adb84c520b"
+      },
+      "name": "kits",
+      "namespace": "library",
+      "version": 2
+    },
+    "kitti": {
+      "digests": {
+        "catalog/datasets/kitti.json": "f330c108e2d852f2159b34fb81e63a4ae76744325b700a46e4f969005a9db7a7"
+      },
+      "name": "kitti",
+      "namespace": "library",
+      "version": 2
+    },
+    "kkbox-wsdm-cup": {
+      "digests": {
+        "catalog/datasets/kkbox-wsdm-cup.json": "50ad4722aa416b25ce7575925a4f813b790246ed50621fdd5485b0971cdf49cc"
+      },
+      "name": "kkbox-wsdm-cup",
+      "namespace": "library",
+      "version": 2
+    },
+    "kmnist": {
+      "digests": {
+        "catalog/datasets/kmnist.json": "70c4f3c1dc5753d2455231170a21b42deabde9282f33bbdf1016b86efbc24a9e"
+      },
+      "name": "kmnist",
+      "namespace": "library",
+      "version": 2
+    },
+    "ksponspeech": {
+      "digests": {
+        "catalog/datasets/ksponspeech.json": "23b156e7f80200955a6357586cd75e305a252e764a3740f243e7f8d1bb820c62"
+      },
+      "name": "ksponspeech",
+      "namespace": "library",
+      "version": 2
+    },
+    "kuairec": {
+      "digests": {
+        "catalog/datasets/kuairec.json": "ea28ba4c75f2578a3a4440c012dd5cafa521544f0800c1e117f937dfe881f1fd"
+      },
+      "name": "kuairec",
+      "namespace": "library",
+      "version": 2
+    },
+    "kuaisar": {
+      "digests": {
+        "catalog/datasets/kuaisar.json": "7f0a7307f67b13acd6972e36596c4fd8968134acb13ea9a94a26f40d8da13b19"
+      },
+      "name": "kuaisar",
+      "namespace": "library",
+      "version": 2
+    },
+    "kvasir-seg": {
+      "digests": {
+        "catalog/datasets/kvasir-seg.json": "db736c7b7c932a4ae9b217d8789d827cacdb354206709ba6ab6d19253f6627e7"
+      },
+      "name": "kvasir-seg",
+      "namespace": "library",
+      "version": 2
+    },
+    "laion-2b": {
+      "digests": {
+        "catalog/datasets/laion-2b.json": "90d436ddc131ee2896941374ada998b44a66f9d3430cab5b1b60858b2dd1a697"
+      },
+      "name": "laion-2b",
+      "namespace": "library",
+      "version": 2
+    },
+    "laion-400m": {
+      "digests": {
+        "catalog/datasets/laion-400m.json": "4b233e5ff4e850efb32226c4de2b54ba04e147fcc0edd84c1748fd5b7da8c8b1"
+      },
+      "name": "laion-400m",
+      "namespace": "library",
+      "version": 2
+    },
+    "lakh-midi": {
+      "digests": {
+        "catalog/datasets/lakh-midi.json": "2f3a8e80c05def636a3aeb5a61cd1ca8d6c126496fa78dc34dbb8d912148ec5f"
+      },
+      "name": "lakh-midi",
+      "namespace": "library",
+      "version": 2
+    },
+    "landslide4sense": {
+      "digests": {
+        "catalog/datasets/landslide4sense.json": "84b55f09bcb39505cc54489e196a60a479cf6a278ec842a4f5adaf591488dd7b"
+      },
+      "name": "landslide4sense",
+      "namespace": "library",
+      "version": 2
+    },
+    "largest": {
+      "digests": {
+        "catalog/datasets/largest.json": "9289be639f48c4480d21cb652db45de87d1a675ad5a02518a29f01af6e3f5bd2"
+      },
+      "name": "largest",
+      "namespace": "library",
+      "version": 2
+    },
+    "lasot": {
+      "digests": {
+        "catalog/datasets/lasot.json": "e33ff9067d178d2425aec584c67f4209da10d77b4d4c68518dadb3e252dce24b"
+      },
+      "name": "lasot",
+      "namespace": "library",
+      "version": 2
+    },
+    "lastfm-1k": {
+      "digests": {
+        "catalog/datasets/lastfm-1k.json": "b910c45ca8abb478f153f05def5d8eecf26b04cb76c9d89aa66ce0aac274cfb0"
+      },
+      "name": "lastfm-1k",
+      "namespace": "library",
+      "version": 2
+    },
+    "leaf": {
+      "digests": {
+        "catalog/datasets/leaf.json": "50747e5ecc2270a6f361e12bb0032361d3d67ae68883778a550e2f6737e673fd"
+      },
+      "name": "leaf",
+      "namespace": "library",
+      "version": 2
+    },
+    "levir-cd": {
+      "digests": {
+        "catalog/datasets/levir-cd.json": "bcd8a6cab6549d2e16d15b20ce51ae82efb3ff11de9689c4d77e036b67b56c3e"
+      },
+      "name": "levir-cd",
+      "namespace": "library",
+      "version": 2
+    },
+    "lfm-360k": {
+      "digests": {
+        "catalog/datasets/lfm-360k.json": "9bf0c9240c07cc9602c45633496b7ff848c6d4ac2646b369360c7f51f3cdbffe"
+      },
+      "name": "lfm-360k",
+      "namespace": "library",
+      "version": 2
+    },
+    "lfw": {
+      "digests": {
+        "catalog/datasets/lfw.json": "a85b3b11da3774983629094ab0a5698a2440b3cb5851673b4017ed12866591c7"
+      },
+      "name": "lfw",
+      "namespace": "library",
+      "version": 2
+    },
+    "libero": {
+      "digests": {
+        "catalog/datasets/libero.json": "858e48694fca62e307e979f26a183ca8aed1e9dccf0071f0ea18a7f02f1a0bd7"
+      },
+      "name": "libero",
+      "namespace": "library",
+      "version": 2
+    },
+    "libri-light": {
+      "digests": {
+        "catalog/datasets/libri-light.json": "bbb458b8bf0b3f95cb76f5cff4f669a3f27df0d65437bd6ea6b76b673d512bde"
+      },
+      "name": "libri-light",
+      "namespace": "library",
+      "version": 2
+    },
+    "librimix": {
+      "digests": {
+        "catalog/datasets/librimix.json": "fb0c343e801f0fc8b587e8cb37ef103e7e4cfd00b83a772c52ac9fdb553d3aca"
+      },
+      "name": "librimix",
+      "namespace": "library",
+      "version": 2
+    },
+    "librispeech": {
+      "digests": {
+        "catalog/datasets/librispeech.json": "4135df82bbb1e430e811c7e46c6333ded9aa47e53b6d9bbc900b1982105ba4e1"
+      },
+      "name": "librispeech",
+      "namespace": "library",
+      "version": 2
+    },
+    "libritts": {
+      "digests": {
+        "catalog/datasets/libritts.json": "3c9b7d90560d623a52992e914772d1c7a47c039a1583d1f8a7c7dee17db637e5"
+      },
+      "name": "libritts",
+      "namespace": "library",
+      "version": 2
+    },
+    "lidc-idri": {
+      "digests": {
+        "catalog/datasets/lidc-idri.json": "80e590b00bb4d7d1439794c3e52fd6a894a714c3ad4a2101904729236261ee76"
+      },
+      "name": "lidc-idri",
+      "namespace": "library",
+      "version": 2
+    },
+    "lits": {
+      "digests": {
+        "catalog/datasets/lits.json": "fe0a3bb1de20e9785acf7dc27187d2d24bc955fa55e403b11b5694805afb6be7"
+      },
+      "name": "lits",
+      "namespace": "library",
+      "version": 2
+    },
+    "livecodebench": {
+      "digests": {
+        "catalog/datasets/livecodebench.json": "c4ef289d3606b6d1988cfd71714e1debebf43b6859a72ac649bd51c057e897a4"
+      },
+      "name": "livecodebench",
+      "namespace": "library",
+      "version": 2
+    },
+    "ljspeech": {
+      "digests": {
+        "catalog/datasets/ljspeech.json": "4eaef94a74018bdad4698e696ef928af24b818d5e1fe2030366e73be7dfa60d6"
+      },
+      "name": "ljspeech",
+      "namespace": "library",
+      "version": 2
+    },
+    "llava-instruct-150k": {
+      "digests": {
+        "catalog/datasets/llava-instruct-150k.json": "a4030a9540ff322b59813c44131ba2eaaab09887646a7809e6a093ec5cf577c0"
+      },
+      "name": "llava-instruct-150k",
+      "namespace": "library",
+      "version": 2
+    },
+    "longbench": {
+      "digests": {
+        "catalog/datasets/longbench.json": "9d9aea874d026d80681b2ac29d81693e31e8e41c984dbf9c6272c8533781c4cf"
+      },
+      "name": "longbench",
+      "namespace": "library",
+      "version": 2
+    },
+    "lsst-alert": {
+      "digests": {
+        "catalog/datasets/lsst-alert.json": "3aec167dc658ecaea607d8c6dfc87b820034622cf325f7164c78815f97c5439d"
+      },
+      "name": "lsst-alert",
+      "namespace": "library",
+      "version": 2
+    },
+    "luna16": {
+      "digests": {
+        "catalog/datasets/luna16.json": "915a109c9f1db3c16c0010531fa2642f090e73ccba36e714823a4a72557cbc66"
+      },
+      "name": "luna16",
+      "namespace": "library",
+      "version": 2
+    },
+    "lvis": {
+      "digests": {
+        "catalog/datasets/lvis.json": "0e51a72d3b1c09b618416f945fd465f14756e4e8566174e1dbed9f0752430079"
+      },
+      "name": "lvis",
+      "namespace": "library",
+      "version": 2
+    },
+    "lvos": {
+      "digests": {
+        "catalog/datasets/lvos.json": "5716745b118b09c989a367e039cf8c9e9808518640932d487fb90014c95bd15f"
+      },
+      "name": "lvos",
+      "namespace": "library",
+      "version": 2
+    },
+    "m4": {
+      "digests": {
+        "catalog/datasets/m4.json": "63cd216f0d8710fd38dd6e36c164bc70bd2a795c2e3791df8f6760f56962ad44"
+      },
+      "name": "m4",
+      "namespace": "library",
+      "version": 2
+    },
+    "m5": {
+      "digests": {
+        "catalog/datasets/m5.json": "cf5d698751a214c2274a343cea0f50a63e135174890b16d9dba00df889e2de7f"
+      },
+      "name": "m5",
+      "namespace": "library",
+      "version": 2
+    },
+    "maestro": {
+      "digests": {
+        "catalog/datasets/maestro.json": "c9530b03e04c78c81a95f4ef1669f4a8138752b4f76f38bcee08223e8095d099"
+      },
+      "name": "maestro",
+      "namespace": "library",
+      "version": 3
+    },
+    "magnatagatune": {
+      "digests": {
+        "catalog/datasets/magnatagatune.json": "8888c098b5d9fa55a4c51901ba1a779604ce406816c740166e4f08b7fb81b72e"
+      },
+      "name": "magnatagatune",
+      "namespace": "library",
+      "version": 2
+    },
+    "mapillary-vistas": {
+      "digests": {
+        "catalog/datasets/mapillary-vistas.json": "40a6b32e08736db8c0ca845a7572fd0dfc30ae3b79773ff7e287d1687165ed0b"
+      },
+      "name": "mapillary-vistas",
+      "namespace": "library",
+      "version": 2
+    },
+    "market-1501": {
+      "digests": {
+        "catalog/datasets/market-1501.json": "b29055883a26b27b0fce2b90dbc35c3c57f8d2f29419e8d59456e18430897f53"
+      },
+      "name": "market-1501",
+      "namespace": "library",
+      "version": 2
+    },
+    "matbench": {
+      "digests": {
+        "catalog/datasets/matbench.json": "2ed13ed2eb9c5b2725791d608b458a7d044f1277a9fb7d9abbe9f3a576936a70"
+      },
+      "name": "matbench",
+      "namespace": "library",
+      "version": 2
+    },
+    "materials-project": {
+      "digests": {
+        "catalog/datasets/materials-project.json": "40feb5dda2b101c56d941e608694ad7fc70d4d6aeadf68ef320c37a4892dae11"
+      },
+      "name": "materials-project",
+      "namespace": "library",
+      "version": 2
+    },
+    "math": {
+      "digests": {
+        "catalog/datasets/math.json": "6d08256008415c639ef66dc4638344cb20de1678a0197b777093b122a98d9839"
+      },
+      "name": "math",
+      "namespace": "library",
+      "version": 2
+    },
+    "mathqa": {
+      "digests": {
+        "catalog/datasets/mathqa.json": "8ee244241b38c177b8b413e1dd64ea684cf5847ca8795d9b574ae53553290ab7"
+      },
+      "name": "mathqa",
+      "namespace": "library",
+      "version": 2
+    },
+    "matterport3d": {
+      "digests": {
+        "catalog/datasets/matterport3d.json": "4b20caa7aeb83ba875422abe908eb8e6e4db66a72acb6c99cf75828f499f513c"
+      },
+      "name": "matterport3d",
+      "namespace": "library",
+      "version": 2
+    },
+    "mbpp": {
+      "digests": {
+        "catalog/datasets/mbpp.json": "520782bf88266863d823d48b14a89fe37bfa0e255e804855422cfa7db2fcd6c8"
+      },
+      "name": "mbpp",
+      "namespace": "library",
+      "version": 2
+    },
+    "md17": {
+      "digests": {
+        "catalog/datasets/md17.json": "ce4c2d7b29bded9e203a35b159a4a63296ed125d21451d9733bf68a9b9d572ca"
+      },
+      "name": "md17",
+      "namespace": "library",
+      "version": 2
+    },
+    "medical-segmentation-decathlon": {
+      "digests": {
+        "catalog/datasets/medical-segmentation-decathlon.json": "6780f6d87c90957e7cbd7bde905da3deb7d7c3c135d305e4b45fc481ee6b75e0"
+      },
+      "name": "medical-segmentation-decathlon",
+      "namespace": "library",
+      "version": 2
+    },
+    "medleydb": {
+      "digests": {
+        "catalog/datasets/medleydb.json": "b2410150ec352794afc6d249e6ccaa88ee9c138ff8f0560e3ad5c58b6964538c"
+      },
+      "name": "medleydb",
+      "namespace": "library",
+      "version": 2
+    },
+    "metaworld": {
+      "digests": {
+        "catalog/datasets/metaworld.json": "2eee35374a8af4110c55a7354105e4617be86402a561c83df87714c4b78cfd4e"
+      },
+      "name": "metaworld",
+      "namespace": "library",
+      "version": 2
+    },
+    "metr-la": {
+      "digests": {
+        "catalog/datasets/metr-la.json": "5b46a6df2942d3b9bcb4ded3b032104a70437e26d43ea625cab16f295b95d366"
+      },
+      "name": "metr-la",
+      "namespace": "library",
+      "version": 2
+    },
+    "mhealth": {
+      "digests": {
+        "catalog/datasets/mhealth.json": "c6be5787a268af1d82b8f0e405d894ef222a73ca15dbc0d11d19498e79e0896a"
+      },
+      "name": "mhealth",
+      "namespace": "library",
+      "version": 2
+    },
+    "middlebury": {
+      "digests": {
+        "catalog/datasets/middlebury.json": "0bd39b16afd82baae8f5495a4dd2abac3b88d00c5df6cec33d1db81cfcf03182"
+      },
+      "name": "middlebury",
+      "namespace": "library",
+      "version": 2
+    },
+    "million-aid": {
+      "digests": {
+        "catalog/datasets/million-aid.json": "d4716727891cb0b9397a5ba308f0ab643d53564b562db7cf907cb21d87e41007"
+      },
+      "name": "million-aid",
+      "namespace": "library",
+      "version": 2
+    },
+    "mimic-cxr": {
+      "digests": {
+        "catalog/datasets/mimic-cxr.json": "d1fb690d8378c6be588e1e624836e29d857a176cd0c52dc7add3277415efc27c"
+      },
+      "name": "mimic-cxr",
+      "namespace": "library",
+      "version": 2
+    },
+    "mimic-iii": {
+      "digests": {
+        "catalog/datasets/mimic-iii.json": "fe93b1c60d2a94ed0bade6fb197620be204d6cf15350782d992090e67b8fa107"
+      },
+      "name": "mimic-iii",
+      "namespace": "library",
+      "version": 2
+    },
+    "mind": {
+      "digests": {
+        "catalog/datasets/mind.json": "418ec49b51b7ce661e6406e59ab425f4f6d87a9473d87d9777954d31128cac2b"
+      },
+      "name": "mind",
+      "namespace": "library",
+      "version": 2
+    },
+    "minerl-obtaindiamond": {
+      "digests": {
+        "catalog/datasets/minerl-obtaindiamond.json": "a8c1aa76b55c89791af604d2ee8ac93433922508cdab69116fbfc7e70f2b91fe"
+      },
+      "name": "minerl-obtaindiamond",
+      "namespace": "library",
+      "version": 2
+    },
+    "minigrid": {
+      "digests": {
+        "catalog/datasets/minigrid.json": "e4849c88d85ded90bd51cc6c4d03c4b2f8df81d09f31130960b6365367431f0b"
+      },
+      "name": "minigrid",
+      "namespace": "library",
+      "version": 2
+    },
+    "mit-bih": {
+      "digests": {
+        "catalog/datasets/mit-bih.json": "77ba8867628aec6ebbbdc468d860fef0d6d6e740ef1815cdedf156fb4f746f42"
+      },
+      "name": "mit-bih",
+      "namespace": "library",
+      "version": 2
+    },
+    "mit-indoor67": {
+      "digests": {
+        "catalog/datasets/mit-indoor67.json": "4e8d612470244d03573031f1f2586767a9d33342469c68a13f7b734ea0970beb"
+      },
+      "name": "mit-indoor67",
+      "namespace": "library",
+      "version": 2
+    },
+    "mjsynth": {
+      "digests": {
+        "catalog/datasets/mjsynth.json": "640ae8a581e868e2908a9ee283262f82514c68375b6f3cd5f3e014347edafeee"
+      },
+      "name": "mjsynth",
+      "namespace": "library",
+      "version": 2
+    },
+    "mls": {
+      "digests": {
+        "catalog/datasets/mls.json": "57a98a55acc97244a5aba325253bb6a938afdd7c7ec44e7cd841a011862501f5"
+      },
+      "name": "mls",
+      "namespace": "library",
+      "version": 2
+    },
+    "mmlu": {
+      "digests": {
+        "catalog/datasets/mmlu.json": "eb9dec72092769de5297669ff15a2fad5e585b262b63d632578a5894ce3a483c"
+      },
+      "name": "mmlu",
+      "namespace": "library",
+      "version": 2
+    },
+    "mmlu-pro": {
+      "digests": {
+        "catalog/datasets/mmlu-pro.json": "26bfd6416e8a0c7ace18e6febb7291eb42e6c9abe8ee5ce497d8f892b204b84d"
+      },
+      "name": "mmlu-pro",
+      "namespace": "library",
+      "version": 2
+    },
+    "mmwave-har": {
+      "digests": {
+        "catalog/datasets/mmwave-har.json": "2a80ea70ba5549fcfcc77e29b4d531a792aa3ffc2ab3262f3b47dc85066710e6"
+      },
+      "name": "mmwave-har",
+      "namespace": "library",
+      "version": 2
+    },
+    "mnist": {
+      "digests": {
+        "catalog/datasets/mnist.json": "bcb7c6d266e013b35c957913ed3c8c1ec2cc2fc39173f1ee1fd88fe9d6ecf9d7",
+        "implementations/mnist/__init__.py": "80365c4a458a2d899597978ab2c186c475ab1ff4de806c20dc46cfbd210e67d5"
+      },
+      "name": "mnist",
+      "namespace": "library",
+      "version": 2
+    },
+    "modelnet40": {
+      "digests": {
+        "catalog/datasets/modelnet40.json": "612fef66b84a1a2b5f064c3bfe37f1c03cede41f5771114342a9fd4cc59f4998"
+      },
+      "name": "modelnet40",
+      "namespace": "library",
+      "version": 2
+    },
+    "moisesdb": {
+      "digests": {
+        "catalog/datasets/moisesdb.json": "d1d78d9a45d425bf86391a19d75fd1f8cd0b777e955f20980a105402e25128e0"
+      },
+      "name": "moisesdb",
+      "namespace": "library",
+      "version": 2
+    },
+    "moleculenet-8": {
+      "digests": {
+        "catalog/datasets/moleculenet-8.json": "01c7c06200799db5c56cc30b8c3a993e23e50864ffe0222f6879a3437f975d31"
+      },
+      "name": "moleculenet-8",
+      "namespace": "library",
+      "version": 2
+    },
+    "moments-in-time": {
+      "digests": {
+        "catalog/datasets/moments-in-time.json": "78fe936d577cc6d695c85ab06ee6a9690a7d94b223d1947f23138f88f9f10027"
+      },
+      "name": "moments-in-time",
+      "namespace": "library",
+      "version": 2
+    },
+    "monash-30": {
+      "digests": {
+        "catalog/datasets/monash-30.json": "42758737b075878fa0e4fdf0b40354dcd0ddc5ff031de305b89e65bebf4ba1bd"
+      },
+      "name": "monash-30",
+      "namespace": "library",
+      "version": 2
+    },
+    "monuseg": {
+      "digests": {
+        "catalog/datasets/monuseg.json": "07c17652fa4b41536673f5df9a6da3c7091253d5af00450b9902939f2d3ae851"
+      },
+      "name": "monuseg",
+      "namespace": "library",
+      "version": 2
+    },
+    "mose": {
+      "digests": {
+        "catalog/datasets/mose.json": "5ff1dca71bb20a0c150834aeb2d23726c452f0f16e6d846dc62ca1250cbc64e5"
+      },
+      "name": "mose",
+      "namespace": "library",
+      "version": 2
+    },
+    "mot17": {
+      "digests": {
+        "catalog/datasets/mot17.json": "d95b16d1ba7c85d599415f0b5bf2c4b6dd7631ad783f27fc667098025f7b2a0b"
+      },
+      "name": "mot17",
+      "namespace": "library",
+      "version": 2
+    },
+    "mot20": {
+      "digests": {
+        "catalog/datasets/mot20.json": "1e6fd6f9d23b0a9f358faada20c72987119af3ffc403b6ade9f7fcff5f478499"
+      },
+      "name": "mot20",
+      "namespace": "library",
+      "version": 2
+    },
+    "movielens-100k": {
+      "digests": {
+        "catalog/datasets/movielens-100k.json": "d361d8b9d67dd7ca609e02661aa374a90909d3ead29e1f37b6be1c6c4373bcf6",
+        "implementations/movielens-100k/__init__.py": "c11a3d12a12cf3a5a7fe62e408bb0df122a33bf385db44e249c55e90b8168f36"
+      },
+      "name": "movielens-100k",
+      "namespace": "library",
+      "version": 2
+    },
+    "movielens-1m": {
+      "digests": {
+        "catalog/datasets/movielens-1m.json": "0fe828048a88dacdcd0c97f1428a28ca391507ba7ad8123842429ac661772f6a"
+      },
+      "name": "movielens-1m",
+      "namespace": "library",
+      "version": 2
+    },
+    "movielens-20m": {
+      "digests": {
+        "catalog/datasets/movielens-20m.json": "20f24580f24cf66e1358a570148ed30e66231266645063611b605b73263833c0"
+      },
+      "name": "movielens-20m",
+      "namespace": "library",
+      "version": 2
+    },
+    "movielens-25m": {
+      "digests": {
+        "catalog/datasets/movielens-25m.json": "f03672fc65ab0b325dde1ab22de5ad912c9ce6a49b155239bf1928d5ae7bbc11"
+      },
+      "name": "movielens-25m",
+      "namespace": "library",
+      "version": 2
+    },
+    "mpdd": {
+      "digests": {
+        "catalog/datasets/mpdd.json": "6a5c6b358dabd2936ac0856e4e0647e6d2ab69e5f6df8a136d349a64f5b0e3e7"
+      },
+      "name": "mpdd",
+      "namespace": "library",
+      "version": 2
+    },
+    "mpi-inf-3dhp": {
+      "digests": {
+        "catalog/datasets/mpi-inf-3dhp.json": "3a0d2d2db367e566e6f09c73158e6f31db0484da42db88992a678d06a4fda2f7"
+      },
+      "name": "mpi-inf-3dhp",
+      "namespace": "library",
+      "version": 2
+    },
+    "mpii": {
+      "digests": {
+        "catalog/datasets/mpii.json": "76de2c827220ce082ca7098b5751ad6b01bde418ad03958dea5cfbfac98999b5"
+      },
+      "name": "mpii",
+      "namespace": "library",
+      "version": 2
+    },
+    "ms-asl": {
+      "digests": {
+        "catalog/datasets/ms-asl.json": "28b6439218d50f641d2ba66faef3cc5d0378d296cde2f1a1a4bf7eafa72cc31d"
+      },
+      "name": "ms-asl",
+      "namespace": "library",
+      "version": 2
+    },
+    "ms-marco": {
+      "digests": {
+        "catalog/datasets/ms-marco.json": "20dc1b6b4b7946ee016737bda8db122a0dfc231c705a79faafcb21d50e173ed3"
+      },
+      "name": "ms-marco",
+      "namespace": "library",
+      "version": 2
+    },
+    "msd": {
+      "digests": {
+        "catalog/datasets/msd.json": "529543e85fbfdedf04273ccc14bb678355262f0b68d5278e6b4cf965e4af471b"
+      },
+      "name": "msd",
+      "namespace": "library",
+      "version": 2
+    },
+    "msmt17": {
+      "digests": {
+        "catalog/datasets/msmt17.json": "1f510c3c578a435ddcfccfe3719c27da884acb7ff07ac3d0af7a92f5cac8abf0"
+      },
+      "name": "msmt17",
+      "namespace": "library",
+      "version": 2
+    },
+    "msr-vtt": {
+      "digests": {
+        "catalog/datasets/msr-vtt.json": "25a9c75efe572a765e01e2ec74e5fcca9038bc973f3fe8a27f0e54fc33093eb0"
+      },
+      "name": "msr-vtt",
+      "namespace": "library",
+      "version": 2
+    },
+    "mstar": {
+      "digests": {
+        "catalog/datasets/mstar.json": "867a470b362b9ba4120f7bfd23469b1f23092eff9ab254a29fb8110db3b4924a"
+      },
+      "name": "mstar",
+      "namespace": "library",
+      "version": 2
+    },
+    "msvd": {
+      "digests": {
+        "catalog/datasets/msvd.json": "476f24c69959e435c8a2a9307633bb636f8650c5072c7a52e962804bd18bb41c"
+      },
+      "name": "msvd",
+      "namespace": "library",
+      "version": 2
+    },
+    "mtbs": {
+      "digests": {
+        "catalog/datasets/mtbs.json": "a830c79858c50882b1cc2b440e4a572fef88061503cd0a8e5d679193da60f69f"
+      },
+      "name": "mtbs",
+      "namespace": "library",
+      "version": 2
+    },
+    "mteb": {
+      "digests": {
+        "catalog/datasets/mteb.json": "02cc2a7286be5b643ca37966b6f9863988f3070c709763db46d252e350e7f0d8"
+      },
+      "name": "mteb",
+      "namespace": "library",
+      "version": 2
+    },
+    "multi-news": {
+      "digests": {
+        "catalog/datasets/multi-news.json": "bf267f4d291c409a5c83e30b26c3351a874b1cb482979685bf576340172f2cc6"
+      },
+      "name": "multi-news",
+      "namespace": "library",
+      "version": 2
+    },
+    "mura": {
+      "digests": {
+        "catalog/datasets/mura.json": "abec28d7ced7ba533ab4fca2630273f9d628162634383ad2dfc13d2859a5a87e"
+      },
+      "name": "mura",
+      "namespace": "library",
+      "version": 2
+    },
+    "musdb18-hq": {
+      "digests": {
+        "catalog/datasets/musdb18-hq.json": "3908e53b5adcef72f2175624afbdbf22687b902f6a858d986729d02e7acb8b2a"
+      },
+      "name": "musdb18-hq",
+      "namespace": "library",
+      "version": 3
+    },
+    "musiccaps": {
+      "digests": {
+        "catalog/datasets/musiccaps.json": "d6ad98471af7899bb3bfba7b8c949ff6c080f22cfd9cd784b93022a07c075429"
+      },
+      "name": "musiccaps",
+      "namespace": "library",
+      "version": 2
+    },
+    "musicnet": {
+      "digests": {
+        "catalog/datasets/musicnet.json": "b449b4160b0587d94a5486ac06547e038c7901156f581e8490decbf986b145e3"
+      },
+      "name": "musicnet",
+      "namespace": "library",
+      "version": 2
+    },
+    "mutag": {
+      "digests": {
+        "catalog/datasets/mutag.json": "7d341ea42bbafe61f97d9fa5c0edc60428589588d36385e48199144b77b9e6cb"
+      },
+      "name": "mutag",
+      "namespace": "library",
+      "version": 2
+    },
+    "mvimgnet": {
+      "digests": {
+        "catalog/datasets/mvimgnet.json": "65c8798dd500c08d12208b2e53458de19bb43fa7b1e7017fdec3f9b8a46ce9d0"
+      },
+      "name": "mvimgnet",
+      "namespace": "library",
+      "version": 2
+    },
+    "mvsec": {
+      "digests": {
+        "catalog/datasets/mvsec.json": "11e59be7fb3b1a6a76041d8ab009429bb0eababc419cb91f8f246ef4ca233fa7"
+      },
+      "name": "mvsec",
+      "namespace": "library",
+      "version": 2
+    },
+    "mvtec": {
+      "digests": {
+        "catalog/datasets/mvtec.json": "5fb56bbc7c8067f6a2c1e86e94001d92635c5cbf71a68b7209d3753efbb72822"
+      },
+      "name": "mvtec",
+      "namespace": "library",
+      "version": 2
+    },
+    "mvtec-ad": {
+      "digests": {
+        "catalog/datasets/mvtec-ad.json": "8b7b45c4f766e7d9c0f5ae816c5ea2ce53865207b8f979940c461f80499a4aa6"
+      },
+      "name": "mvtec-ad",
+      "namespace": "library",
+      "version": 2
+    },
+    "mvtec-loco": {
+      "digests": {
+        "catalog/datasets/mvtec-loco.json": "cb5cbe88eb7ee98f3a55de69cde5e265b33dbc03943980904baf723628b8193a"
+      },
+      "name": "mvtec-loco",
+      "namespace": "library",
+      "version": 2
+    },
+    "n-caltech101": {
+      "digests": {
+        "catalog/datasets/n-caltech101.json": "7d2c7b35cad9b789c48591f4cf55a2d25939fea4fa2eefa9186b2cd45165c0ac"
+      },
+      "name": "n-caltech101",
+      "namespace": "library",
+      "version": 2
+    },
+    "n-cmapss": {
+      "digests": {
+        "catalog/datasets/n-cmapss.json": "bfc02b84c7f696c7971dcd08bc6ebae5ea90da458aeebcd5c8263ed523b9d125"
+      },
+      "name": "n-cmapss",
+      "namespace": "library",
+      "version": 2
+    },
+    "n2c2": {
+      "digests": {
+        "catalog/datasets/n2c2.json": "0b5f781560229228d3d16282d7eba0d161b68df87966e7e937f474b21408138b"
+      },
+      "name": "n2c2",
+      "namespace": "library",
+      "version": 2
+    },
+    "nab": {
+      "digests": {
+        "catalog/datasets/nab.json": "c1d7fc5f41a6a37bb2b0738ddbc6c0cb7555f6d604b2de67e40d64f81649dcd6"
+      },
+      "name": "nab",
+      "namespace": "library",
+      "version": 2
+    },
+    "nabirds": {
+      "digests": {
+        "catalog/datasets/nabirds.json": "aceb7c2e048a53cc3c71a4955b413659e44fb0de7c59f1bf6b1cd6a07e978078"
+      },
+      "name": "nabirds",
+      "namespace": "library",
+      "version": 2
+    },
+    "nas-bench-301": {
+      "digests": {
+        "catalog/datasets/nas-bench-301.json": "a369ca4a5c7f8475b489e9bb470993c0b12b8e4b8f632d3d9ced92e6d745f710"
+      },
+      "name": "nas-bench-301",
+      "namespace": "library",
+      "version": 2
+    },
+    "natural-questions": {
+      "digests": {
+        "catalog/datasets/natural-questions.json": "5d1b4060845fd0b46f97a0b3582915078282d1f4900f5a8ab085d4c8a0fef73a"
+      },
+      "name": "natural-questions",
+      "namespace": "library",
+      "version": 2
+    },
+    "nct-crc-he": {
+      "digests": {
+        "catalog/datasets/nct-crc-he.json": "8e7c39716bbeca43348ee72021c49a36b3a776f3e639b7ca3fa95ab871dc0a66"
+      },
+      "name": "nct-crc-he",
+      "namespace": "library",
+      "version": 2
+    },
+    "nell-995": {
+      "digests": {
+        "catalog/datasets/nell-995.json": "6732f6e9ec7018a9053d5d1934d2149bb37edebd145e6c723b1937faa4d5a3c1"
+      },
+      "name": "nell-995",
+      "namespace": "library",
+      "version": 2
+    },
+    "nerf-synthetic": {
+      "digests": {
+        "catalog/datasets/nerf-synthetic.json": "a7afc55a4528a728ddb706b3fb621f6c4a414952e84ac66465b7cb5df25384b5"
+      },
+      "name": "nerf-synthetic",
+      "namespace": "library",
+      "version": 2
+    },
+    "netflix-prize": {
+      "digests": {
+        "catalog/datasets/netflix-prize.json": "5f609fa2a1de3bc4a422fb5f8d7c775afa465ca50da12301bbf1468ca9ebcac3"
+      },
+      "name": "netflix-prize",
+      "namespace": "library",
+      "version": 2
+    },
+    "nethack": {
+      "digests": {
+        "catalog/datasets/nethack.json": "fd5801bfdfb96a7cc4fe84ef20ca1c7b6e7f3ee9cddbf17d80045b4a9dadbef3"
+      },
+      "name": "nethack",
+      "namespace": "library",
+      "version": 2
+    },
+    "neu-det": {
+      "digests": {
+        "catalog/datasets/neu-det.json": "86d20aa65e3ae913ed8065e7f70c1bdd840a7ad6393465da82339c5023532246"
+      },
+      "name": "neu-det",
+      "namespace": "library",
+      "version": 2
+    },
+    "nico": {
+      "digests": {
+        "catalog/datasets/nico.json": "a8a2503c422cad6fdc97aa949eebada8e2cf6a0b3bea1fdaf5bdf776f2179311"
+      },
+      "name": "nico",
+      "namespace": "library",
+      "version": 2
+    },
+    "nih-14": {
+      "digests": {
+        "catalog/datasets/nih-14.json": "a69899241c3f8cc286e410dbc00ade9f6450554324071391edf360c71c7f315c"
+      },
+      "name": "nih-14",
+      "namespace": "library",
+      "version": 2
+    },
+    "nllb-seed": {
+      "digests": {
+        "catalog/datasets/nllb-seed.json": "87e60ad9ce5dc985b6e60e564798493cf00d611e94aa92655fecf9e04d5d726e"
+      },
+      "name": "nllb-seed",
+      "namespace": "library",
+      "version": 2
+    },
+    "nmnist": {
+      "digests": {
+        "catalog/datasets/nmnist.json": "489d41378f2b5971d29a1969ebbc47b35fd1a812e51ac994c7ec1fbc3d578f83"
+      },
+      "name": "nmnist",
+      "namespace": "library",
+      "version": 2
+    },
+    "noaa-oisst": {
+      "digests": {
+        "catalog/datasets/noaa-oisst.json": "b66979e752e70f1ed186720e473227e881ba6dbc89d879dd411937936ef7159c"
+      },
+      "name": "noaa-oisst",
+      "namespace": "library",
+      "version": 2
+    },
+    "nsl-kdd": {
+      "digests": {
+        "catalog/datasets/nsl-kdd.json": "07243b0174dce6f04a7f9b7520a046d9e037e153b3fa4533ee5457c86a701591"
+      },
+      "name": "nsl-kdd",
+      "namespace": "library",
+      "version": 2
+    },
+    "nsynth": {
+      "digests": {
+        "catalog/datasets/nsynth.json": "f04f83bb0633e4d97b852e09555551d5eaf347e4eb172120ae0258c7eaf24d57"
+      },
+      "name": "nsynth",
+      "namespace": "library",
+      "version": 2
+    },
+    "ntu-rgbd": {
+      "digests": {
+        "catalog/datasets/ntu-rgbd.json": "92be00699e7dac84ba6b64a26c8434e4831f2e6be3115298c7a65f9e571d4ec7"
+      },
+      "name": "ntu-rgbd",
+      "namespace": "library",
+      "version": 2
+    },
+    "nuscenes": {
+      "digests": {
+        "catalog/datasets/nuscenes.json": "3c7a62c2119922c92d40519a1cc7a80c277936d9b1b165c5e5bf6748801234d6"
+      },
+      "name": "nuscenes",
+      "namespace": "library",
+      "version": 2
+    },
+    "nwpu-resisc45": {
+      "digests": {
+        "catalog/datasets/nwpu-resisc45.json": "8f74e480c942e692e4bf80e5f82b920807ce364acb47fa09e19da47b305ff92e"
+      },
+      "name": "nwpu-resisc45",
+      "namespace": "library",
+      "version": 2
+    },
+    "nyc-taxi": {
+      "digests": {
+        "catalog/datasets/nyc-taxi.json": "4c8e123fa60743265ec428e4693e56d4f6670f1754bba8dfe25abca6c2876fd3"
+      },
+      "name": "nyc-taxi",
+      "namespace": "library",
+      "version": 2
+    },
+    "nyu-depth-v2": {
+      "digests": {
+        "catalog/datasets/nyu-depth-v2.json": "e7c40c829fcc7b92561ef68dad505eae8698961047f8e1b24c25322a0357ad50"
+      },
+      "name": "nyu-depth-v2",
+      "namespace": "library",
+      "version": 2
+    },
+    "objaverse": {
+      "digests": {
+        "catalog/datasets/objaverse.json": "a6a2e8d35ac7e6e99ef8f35c5902c82cb934d3696bedff7047c8ba9cd2a852ae"
+      },
+      "name": "objaverse",
+      "namespace": "library",
+      "version": 2
+    },
+    "objectnet": {
+      "digests": {
+        "catalog/datasets/objectnet.json": "2ec4b95f796d7448c82abb629c22b6d2cd082ea97bec011f6856bb8b36082bb1"
+      },
+      "name": "objectnet",
+      "namespace": "library",
+      "version": 2
+    },
+    "objects365": {
+      "digests": {
+        "catalog/datasets/objects365.json": "32561735fb8dd231b7c3f28719d11a14b1955d8653fd9b4f549f46564e0bae38"
+      },
+      "name": "objects365",
+      "namespace": "library",
+      "version": 2
+    },
+    "oc20": {
+      "digests": {
+        "catalog/datasets/oc20.json": "99ce09fbf6924d9ad24d3aecce169a3d6f31579a83d937d91d92443cebfe9e52"
+      },
+      "name": "oc20",
+      "namespace": "library",
+      "version": 2
+    },
+    "oc22": {
+      "digests": {
+        "catalog/datasets/oc22.json": "47b60d1ef8933189d76c8320680a625905e940e84d18016e68cda8b19bb24e41"
+      },
+      "name": "oc22",
+      "namespace": "library",
+      "version": 2
+    },
+    "octa-500": {
+      "digests": {
+        "catalog/datasets/octa-500.json": "1fd6701770f8c2b36b9fd2fa78aeb60ee850a9d56019abc6f67a4b519a0716cb"
+      },
+      "name": "octa-500",
+      "namespace": "library",
+      "version": 2
+    },
+    "office-home": {
+      "digests": {
+        "catalog/datasets/office-home.json": "7a59b9c4bc3861b495203aee71aaf06c753d7cdc5e59c08c1ea9e6143733345b"
+      },
+      "name": "office-home",
+      "namespace": "library",
+      "version": 2
+    },
+    "ogbg-molhiv": {
+      "digests": {
+        "catalog/datasets/ogbg-molhiv.json": "36d0a0dd51958a48d5effa489cdbd8671f732acdb4f9688559a7b6b21022f2c0"
+      },
+      "name": "ogbg-molhiv",
+      "namespace": "library",
+      "version": 2
+    },
+    "ogbg-pcba": {
+      "digests": {
+        "catalog/datasets/ogbg-pcba.json": "b2ebfc641f61553a6e27f3cf556352f19ffbfb6910ecb338f77d4f9c383bac8b"
+      },
+      "name": "ogbg-pcba",
+      "namespace": "library",
+      "version": 2
+    },
+    "ogbg-ppa": {
+      "digests": {
+        "catalog/datasets/ogbg-ppa.json": "8571e2e48f5f3ab99cd748a6bf098e3685daf9c7eaf0ecf39a829ceed9c48de2"
+      },
+      "name": "ogbg-ppa",
+      "namespace": "library",
+      "version": 2
+    },
+    "ogbl-collab": {
+      "digests": {
+        "catalog/datasets/ogbl-collab.json": "3966814e2a1d8e554e6adb05f707f8596376ea8e812a4179ab262f56191db975"
+      },
+      "name": "ogbl-collab",
+      "namespace": "library",
+      "version": 2
+    },
+    "ogbl-ddi": {
+      "digests": {
+        "catalog/datasets/ogbl-ddi.json": "ba53dab13af388ad2c336a1b83e3ae93de702399b67a8fa5c327e18d055f991f"
+      },
+      "name": "ogbl-ddi",
+      "namespace": "library",
+      "version": 2
+    },
+    "ogbl-ppa": {
+      "digests": {
+        "catalog/datasets/ogbl-ppa.json": "66c1712b5df9d3c55f999204b837c1f58815cd66fca47f277f1cbd6af2fb4d0a"
+      },
+      "name": "ogbl-ppa",
+      "namespace": "library",
+      "version": 2
+    },
+    "ogbn-arxiv": {
+      "digests": {
+        "catalog/datasets/ogbn-arxiv.json": "efb7860ccf729ff38d8f79007e92d6e472b7f8e55109f9a863e6eb74ffcee2ab"
+      },
+      "name": "ogbn-arxiv",
+      "namespace": "library",
+      "version": 2
+    },
+    "ogbn-mag": {
+      "digests": {
+        "catalog/datasets/ogbn-mag.json": "80d328adbe5c7e0e9bc15d16a7bf389331531c8db953d2ddcb6072a063817d49"
+      },
+      "name": "ogbn-mag",
+      "namespace": "library",
+      "version": 2
+    },
+    "ogbn-papers100m": {
+      "digests": {
+        "catalog/datasets/ogbn-papers100m.json": "c36f861d8406479d4d5a3a0a6a0e3e525e48ba39c9a81b438facdd987c25c99d"
+      },
+      "name": "ogbn-papers100m",
+      "namespace": "library",
+      "version": 2
+    },
+    "ogbn-products": {
+      "digests": {
+        "catalog/datasets/ogbn-products.json": "638d4534282923038be4e5202709539203f47d2f56f99d9ee39ea749cd5da2f0"
+      },
+      "name": "ogbn-products",
+      "namespace": "library",
+      "version": 2
+    },
+    "ogbn-proteins": {
+      "digests": {
+        "catalog/datasets/ogbn-proteins.json": "dc00671760d071fb03aca6f9982b7004c837c2d658d87752521e885e3f34adc1"
+      },
+      "name": "ogbn-proteins",
+      "namespace": "library",
+      "version": 2
+    },
+    "ok-vqa": {
+      "digests": {
+        "catalog/datasets/ok-vqa.json": "0c2eb0b8b6146a9e0c0d14118912b95c477a961eaa8c11b09eb8bb8c841d7766"
+      },
+      "name": "ok-vqa",
+      "namespace": "library",
+      "version": 2
+    },
+    "once": {
+      "digests": {
+        "catalog/datasets/once.json": "2d0258a82c43e3174073e567c736389c67dead39543f707be50d192bf12c4add"
+      },
+      "name": "once",
+      "namespace": "library",
+      "version": 2
+    },
+    "open-bandit": {
+      "digests": {
+        "catalog/datasets/open-bandit.json": "5ede3c3e151b05514c3deb5fa290cdf7d63be34ec86ff6adbaaa473988ea8a65"
+      },
+      "name": "open-bandit",
+      "namespace": "library",
+      "version": 2
+    },
+    "openhermes": {
+      "digests": {
+        "catalog/datasets/openhermes.json": "377af4d2abd344dac235b6d603b71b74bf957a6537382a2164e6d2448417b660"
+      },
+      "name": "openhermes",
+      "namespace": "library",
+      "version": 2
+    },
+    "openimages-v7": {
+      "digests": {
+        "catalog/datasets/openimages-v7.json": "4c56e4b711fdbc273117850b1140b35f270722a604637509c58ece79c7fee63d"
+      },
+      "name": "openimages-v7",
+      "namespace": "library",
+      "version": 2
+    },
+    "openmic-2018": {
+      "digests": {
+        "catalog/datasets/openmic-2018.json": "a595570a724c46a3353bfaa5e14983d8599ec4e86211880a8bb21204d5315180"
+      },
+      "name": "openmic-2018",
+      "namespace": "library",
+      "version": 2
+    },
+    "openml-cc18": {
+      "digests": {
+        "catalog/datasets/openml-cc18.json": "0646475b377abc6065b655805c43f3742a3477b027ed626e4350f037b83f6db0"
+      },
+      "name": "openml-cc18",
+      "namespace": "library",
+      "version": 2
+    },
+    "openwebtext": {
+      "digests": {
+        "catalog/datasets/openwebtext.json": "bceb9e187311971d1c1ec035e2ebc900086475e5698cc6a9a59602350a697d8b"
+      },
+      "name": "openwebtext",
+      "namespace": "library",
+      "version": 3
+    },
+    "opportunity": {
+      "digests": {
+        "catalog/datasets/opportunity.json": "b84b2234c277378d23ad336c19622c3135aa2e5df79eeb72ab120ec469269ae5"
+      },
+      "name": "opportunity",
+      "namespace": "library",
+      "version": 2
+    },
+    "opus-100": {
+      "digests": {
+        "catalog/datasets/opus-100.json": "aa06103966f3cfc910ea44bf052a0f4543a7040215611fbef1fa82b8d1721534"
+      },
+      "name": "opus-100",
+      "namespace": "library",
+      "version": 2
+    },
+    "oqmd": {
+      "digests": {
+        "catalog/datasets/oqmd.json": "590ad94cbae3081826e4e928c9b4fbad00ab0d807fe5a15ea414b23db0697869"
+      },
+      "name": "oqmd",
+      "namespace": "library",
+      "version": 2
+    },
+    "orcadata": {
+      "digests": {
+        "catalog/datasets/orcadata.json": "b9f512bc36e32c82d73306921783e57e7d209534386346b61995e50cf085390c"
+      },
+      "name": "orcadata",
+      "namespace": "library",
+      "version": 2
+    },
+    "otb100": {
+      "digests": {
+        "catalog/datasets/otb100.json": "44f44fbf4a529a354196acd1a4d8ba1330011412a93fe9a4426d71e6ecf43154"
+      },
+      "name": "otb100",
+      "namespace": "library",
+      "version": 2
+    },
+    "otto": {
+      "digests": {
+        "catalog/datasets/otto.json": "77cf06834a5fa167ff1c9797720bb56d79c7d2e7da0300dbe10fb3b1541c3df5"
+      },
+      "name": "otto",
+      "namespace": "library",
+      "version": 2
+    },
+    "outbrain-click-prediction": {
+      "digests": {
+        "catalog/datasets/outbrain-click-prediction.json": "942ffc22d1a82c03ebb109d90dcbd8d1e76b89f8378ed5691668a047b0a461c9"
+      },
+      "name": "outbrain-click-prediction",
+      "namespace": "library",
+      "version": 2
+    },
+    "oxford-flowers-102": {
+      "digests": {
+        "catalog/datasets/oxford-flowers-102.json": "3954088c421bc83b44d0eac55a405a8e63d8d3069d43217f24be0240be719380"
+      },
+      "name": "oxford-flowers-102",
+      "namespace": "library",
+      "version": 2
+    },
+    "oxford-iiit-pet": {
+      "digests": {
+        "catalog/datasets/oxford-iiit-pet.json": "4b2a905273f5db1cd207e53285c99081f99536c7e39af2e0dd4918fbb0bb411a",
+        "implementations/oxford-iiit-pet/__init__.py": "af1517f07d1b054c976d5dc4f012d1ed40cfe68be0f80b0a9cc6b829165d0860"
+      },
+      "name": "oxford-iiit-pet",
+      "namespace": "library",
+      "version": 2
+    },
+    "pacs": {
+      "digests": {
+        "catalog/datasets/pacs.json": "25fcf0ace09b6e861ac537fc12492856e65f17ee6da2ae7421ff4d41df077a53"
+      },
+      "name": "pacs",
+      "namespace": "library",
+      "version": 2
+    },
+    "padchest": {
+      "digests": {
+        "catalog/datasets/padchest.json": "b7ec1d48c6bdcb75ab7d4676ea6d56037386026f988b7af1318681b7a3cf66b3"
+      },
+      "name": "padchest",
+      "namespace": "library",
+      "version": 2
+    },
+    "palmer-penguins": {
+      "digests": {
+        "catalog/datasets/palmer-penguins.json": "0ea9092a4e7b306ce2bbfc50566d9826b46470bdda0f3edb4b391219d29d422d",
+        "implementations/palmer-penguins/__init__.py": "fc6f1c2538e54935bf478448233f0b68c0145934ed41acf1ceba9e0fcc16aa44"
+      },
+      "name": "palmer-penguins",
+      "namespace": "library",
+      "version": 2
+    },
+    "pamap2": {
+      "digests": {
+        "catalog/datasets/pamap2.json": "1a7948436fe19b4bd2ca288e13f7b0385bc0d4f04b786bb614b4e2ac46a0e011"
+      },
+      "name": "pamap2",
+      "namespace": "library",
+      "version": 2
+    },
+    "pannuke": {
+      "digests": {
+        "catalog/datasets/pannuke.json": "2b5217f1f021552fb9477f97666554157d35dd028536738ab6191c859d9481ec"
+      },
+      "name": "pannuke",
+      "namespace": "library",
+      "version": 2
+    },
+    "paracrawl": {
+      "digests": {
+        "catalog/datasets/paracrawl.json": "5f0089b6869903a477b311080b76caeb029b60e0ce6ee39956bd98b5b8234c06"
+      },
+      "name": "paracrawl",
+      "namespace": "library",
+      "version": 2
+    },
+    "pascal-context": {
+      "digests": {
+        "catalog/datasets/pascal-context.json": "2c4b1d61c8dc22fb3d19b0091549856f8447b57518e28392f06b8d206e44b18e"
+      },
+      "name": "pascal-context",
+      "namespace": "library",
+      "version": 2
+    },
+    "pascal-voc-07": {
+      "digests": {
+        "catalog/datasets/pascal-voc-07.json": "70ac39839bc984293c0e6d5491d358e8fa48f74efa7e87dfc173440c3ed123f7"
+      },
+      "name": "pascal-voc-07",
+      "namespace": "library",
+      "version": 2
+    },
+    "pascal-voc-12": {
+      "digests": {
+        "catalog/datasets/pascal-voc-12.json": "6acda54315eeb9690f05f09a8158ac71094ecbf067cc59334361d15095a113cc"
+      },
+      "name": "pascal-voc-12",
+      "namespace": "library",
+      "version": 2
+    },
+    "pastis": {
+      "digests": {
+        "catalog/datasets/pastis.json": "b959555ffaf7b080fc66940dc4e28595516573fc01b0f920aca5c0c48f6bd0ad"
+      },
+      "name": "pastis",
+      "namespace": "library",
+      "version": 2
+    },
+    "pcam": {
+      "digests": {
+        "catalog/datasets/pcam.json": "3fc6007be21233a9867a4fae1563d409fdf0aca81a8f3f6bbb770989656155fe"
+      },
+      "name": "pcam",
+      "namespace": "library",
+      "version": 2
+    },
+    "pcb-defect": {
+      "digests": {
+        "catalog/datasets/pcb-defect.json": "c998f2ebd58ef1d6e66358a068a42b9b24cb890bae4ff1319ae2826f569dafe2"
+      },
+      "name": "pcb-defect",
+      "namespace": "library",
+      "version": 2
+    },
+    "pcqm4mv2": {
+      "digests": {
+        "catalog/datasets/pcqm4mv2.json": "a85bb23ca55aff26b7d87c5559d4c8ba6e67316add081b0645bf034852b18716"
+      },
+      "name": "pcqm4mv2",
+      "namespace": "library",
+      "version": 2
+    },
+    "pdbbind": {
+      "digests": {
+        "catalog/datasets/pdbbind.json": "809d3443d72cc61717c25b76cd80bd92f578345bb86aefac47ecf9b26cbc8cc3"
+      },
+      "name": "pdbbind",
+      "namespace": "library",
+      "version": 2
+    },
+    "pdebench": {
+      "digests": {
+        "catalog/datasets/pdebench.json": "3f368f8c8812e1fbc5890c30c308c387f454dd2f09c8b87eb07d33a72775a7e7"
+      },
+      "name": "pdebench",
+      "namespace": "library",
+      "version": 2
+    },
+    "pems-03": {
+      "digests": {
+        "catalog/datasets/pems-03.json": "5bb02f1f61663b9fe8cacdc49e1c251060a74dbf2d32a15ce4aa718146142270"
+      },
+      "name": "pems-03",
+      "namespace": "library",
+      "version": 2
+    },
+    "pems-04": {
+      "digests": {
+        "catalog/datasets/pems-04.json": "5cf4a5b1af695ad55bbb3cfb5b9c7c1d38ee88f35b0c4cffd732bf827258de39"
+      },
+      "name": "pems-04",
+      "namespace": "library",
+      "version": 2
+    },
+    "pems-07": {
+      "digests": {
+        "catalog/datasets/pems-07.json": "1eeb169ee7f21dbec1f01cf75fb7a08fce24f0d376fa3bf46aaa441abda57dca"
+      },
+      "name": "pems-07",
+      "namespace": "library",
+      "version": 2
+    },
+    "pems-08": {
+      "digests": {
+        "catalog/datasets/pems-08.json": "0fda24a671502713defa08788a32987352d5e6a359ef8c9b50a2ec92351008fe"
+      },
+      "name": "pems-08",
+      "namespace": "library",
+      "version": 2
+    },
+    "pems-bay": {
+      "digests": {
+        "catalog/datasets/pems-bay.json": "9b446d87d03e4c256cc1a108cc943d4b2016c03c4d941309f3d9200e46828001"
+      },
+      "name": "pems-bay",
+      "namespace": "library",
+      "version": 2
+    },
+    "penn-fudan-pedestrians": {
+      "digests": {
+        "catalog/datasets/penn-fudan-pedestrians.json": "cc148e5f87fabe490d54a26c50b6d55e5575f072effb55526fdec5ca7d437a9c",
+        "implementations/penn-fudan-pedestrians/__init__.py": "0f9cb17144242662848d4bba331b0ca05d6914ec9f1f7340c26e59cd77128bda"
+      },
+      "name": "penn-fudan-pedestrians",
+      "namespace": "library",
+      "version": 2
+    },
+    "penn-treebank": {
+      "digests": {
+        "catalog/datasets/penn-treebank.json": "65741ee7ac2498a024a17dca1a40ebcabd4c262d58213e23791ef2e120d7adea"
+      },
+      "name": "penn-treebank",
+      "namespace": "library",
+      "version": 2
+    },
+    "peoples-speech": {
+      "digests": {
+        "catalog/datasets/peoples-speech.json": "68a99b8e6979383abf79bbf287a5422d22cfdd209963040b7d9a02b511008576"
+      },
+      "name": "peoples-speech",
+      "namespace": "library",
+      "version": 2
+    },
+    "phakir": {
+      "digests": {
+        "catalog/datasets/phakir.json": "c1e5ef21537a14cf80ae28cec28524d387466b5a87c5b653e80b200fe6ea4337"
+      },
+      "name": "phakir",
+      "namespace": "library",
+      "version": 2
+    },
+    "phm-milling": {
+      "digests": {
+        "catalog/datasets/phm-milling.json": "e9d801e45f63804111ab61b4782bf3285daf5fb569273d32a0d1acb0377ceb2e"
+      },
+      "name": "phm-milling",
+      "namespace": "library",
+      "version": 2
+    },
+    "physionet-2012": {
+      "digests": {
+        "catalog/datasets/physionet-2012.json": "1059947a99db2cbca8aa7af17ad100881f0baa5ab72b9e2736793ebbf72b6508"
+      },
+      "name": "physionet-2012",
+      "namespace": "library",
+      "version": 2
+    },
+    "places365": {
+      "digests": {
+        "catalog/datasets/places365.json": "ac13cc90e087f8a156d6a20aeeb2d35443678292b98418e79502d2fc8411c2c0"
+      },
+      "name": "places365",
+      "namespace": "library",
+      "version": 2
+    },
+    "plant-pathology-2020": {
+      "digests": {
+        "catalog/datasets/plant-pathology-2020.json": "454704f1b9e6af611d2ff4c5d0d04a3df9c176211304da67f41dcd556d59d545"
+      },
+      "name": "plant-pathology-2020",
+      "namespace": "library",
+      "version": 2
+    },
+    "plantdoc": {
+      "digests": {
+        "catalog/datasets/plantdoc.json": "1bf3b17da4a98925ba31bc60515823abd55921b5dd370c039bac619704e4d650"
+      },
+      "name": "plantdoc",
+      "namespace": "library",
+      "version": 2
+    },
+    "plantvillage": {
+      "digests": {
+        "catalog/datasets/plantvillage.json": "190236d93b932f74def46329c921485acfd2a43c5c009d8c7d594c9a74ca08fe"
+      },
+      "name": "plantvillage",
+      "namespace": "library",
+      "version": 2
+    },
+    "porto-seguro": {
+      "digests": {
+        "catalog/datasets/porto-seguro.json": "e428007631e154f6bf6129cc163efc4736a2f69e3b0b694a46e223ae35cee605"
+      },
+      "name": "porto-seguro",
+      "namespace": "library",
+      "version": 2
+    },
+    "posetrack21": {
+      "digests": {
+        "catalog/datasets/posetrack21.json": "24e1409c65d50838e480f99aa9efc994c7e6e48900dec23eecf54ad97e19d4eb"
+      },
+      "name": "posetrack21",
+      "namespace": "library",
+      "version": 2
+    },
+    "potsdam": {
+      "digests": {
+        "catalog/datasets/potsdam.json": "39d5d88040cc562b4277863fe5f6413774c3e45e133543f6a4f76013ac55165f"
+      },
+      "name": "potsdam",
+      "namespace": "library",
+      "version": 2
+    },
+    "powergridworld": {
+      "digests": {
+        "catalog/datasets/powergridworld.json": "d383490f16aaa94667531f8b39dcbf85f6345e004ba8bd9f37bb4d9ad930df11"
+      },
+      "name": "powergridworld",
+      "namespace": "library",
+      "version": 2
+    },
+    "ppi": {
+      "digests": {
+        "catalog/datasets/ppi.json": "2afb2d42769ed39283dd3a6df36dec35613ce4967e271b5e01dd947c7e9fd60b"
+      },
+      "name": "ppi",
+      "namespace": "library",
+      "version": 2
+    },
+    "procgen": {
+      "digests": {
+        "catalog/datasets/procgen.json": "dae5176baa82886013f71a91ad89dfca8885d0291261fcb10ad32e874b51eee8"
+      },
+      "name": "procgen",
+      "namespace": "library",
+      "version": 2
+    },
+    "prophesee-gen1": {
+      "digests": {
+        "catalog/datasets/prophesee-gen1.json": "9ea350445725a7433295ac02aac424fce28e53001e9f9b7e0d3ae513dac6f335"
+      },
+      "name": "prophesee-gen1",
+      "namespace": "library",
+      "version": 2
+    },
+    "proteinnet": {
+      "digests": {
+        "catalog/datasets/proteinnet.json": "0916f68b66e24d79b70aaf3fd8e1719f7ea7af24675e45acf5161a5ecddcb01b"
+      },
+      "name": "proteinnet",
+      "namespace": "library",
+      "version": 2
+    },
+    "proteins": {
+      "digests": {
+        "catalog/datasets/proteins.json": "a61e69ec37391bef9bfb7f5e22b93f401e4c22897264c11c4535f42ac702fff4"
+      },
+      "name": "proteins",
+      "namespace": "library",
+      "version": 2
+    },
+    "publaynet": {
+      "digests": {
+        "catalog/datasets/publaynet.json": "56005fe09c8fcbe9b8a730703a702debbdfec3abbfcfe7d66d4dc86ab03938bd"
+      },
+      "name": "publaynet",
+      "namespace": "library",
+      "version": 2
+    },
+    "pubmed": {
+      "digests": {
+        "catalog/datasets/pubmed.json": "37928f51cc12fc25890b6467ee87b7247dfb4794c3b8ad3b411af39dbe9476b3"
+      },
+      "name": "pubmed",
+      "namespace": "library",
+      "version": 2
+    },
+    "pubmedqa": {
+      "digests": {
+        "catalog/datasets/pubmedqa.json": "aabd7eba661d92bbdd806dd27586e6c51d84f9d21c710ccb3fa19b69fbf9c7ab"
+      },
+      "name": "pubmedqa",
+      "namespace": "library",
+      "version": 2
+    },
+    "pubtabnet": {
+      "digests": {
+        "catalog/datasets/pubtabnet.json": "0b001a158720fd160efa8ec29167de1d6f78dcbf5ae18454f0ed907391390416"
+      },
+      "name": "pubtabnet",
+      "namespace": "library",
+      "version": 2
+    },
+    "pv-el": {
+      "digests": {
+        "catalog/datasets/pv-el.json": "2e95ead355ae4659e4bd8842e8cb8eec774669cee8eb389adbd5ccb9297140a4"
+      },
+      "name": "pv-el",
+      "namespace": "library",
+      "version": 2
+    },
+    "qm7b": {
+      "digests": {
+        "catalog/datasets/qm7b.json": "09d2fddf3bdc86a5cebf9829c42526fcd9326b57657965867a300e1bcffe6c7a"
+      },
+      "name": "qm7b",
+      "namespace": "library",
+      "version": 2
+    },
+    "qm9": {
+      "digests": {
+        "catalog/datasets/qm9.json": "50d4fc463ced60487874f4e70f8499d00cc7d6859679e55255900d97227f9743"
+      },
+      "name": "qm9",
+      "namespace": "library",
+      "version": 2
+    },
+    "qmnist": {
+      "digests": {
+        "catalog/datasets/qmnist.json": "2b54c4c0a93a27c9b33108c045774058342ac0abf67650c1038f1df50094f591"
+      },
+      "name": "qmnist",
+      "namespace": "library",
+      "version": 2
+    },
+    "race": {
+      "digests": {
+        "catalog/datasets/race.json": "c4113898f17b63ae534986c6e7d7365244e98f034fddbec305b898d6ca116120"
+      },
+      "name": "race",
+      "namespace": "library",
+      "version": 2
+    },
+    "radar-doppler": {
+      "digests": {
+        "catalog/datasets/radar-doppler.json": "adb837b8e77f8608ae420629339d7fa43af05ec5eaa9c7e94a0a141c2fb488bf"
+      },
+      "name": "radar-doppler",
+      "namespace": "library",
+      "version": 2
+    },
+    "real-toxicity-prompts": {
+      "digests": {
+        "catalog/datasets/real-toxicity-prompts.json": "cb3961512549da900f9c44bd726c20a0eb9dbc6f7b7ae742693e5f741622b128"
+      },
+      "name": "real-toxicity-prompts",
+      "namespace": "library",
+      "version": 2
+    },
+    "reddit": {
+      "digests": {
+        "catalog/datasets/reddit.json": "3f41eb34a15fb7602de1f460c7cc78b76f818f9de927b12f8c2129092d179d7d"
+      },
+      "name": "reddit",
+      "namespace": "library",
+      "version": 2
+    },
+    "redpajama-v2": {
+      "digests": {
+        "catalog/datasets/redpajama-v2.json": "12b54d6329f6158c6f66df67990159ff3b5d2666186b0c7f5b9fec2f8a0b9bf3"
+      },
+      "name": "redpajama-v2",
+      "namespace": "library",
+      "version": 2
+    },
+    "ref-youtube-vos": {
+      "digests": {
+        "catalog/datasets/ref-youtube-vos.json": "408b6f8254400405d598595963e0e4f28c1d17dda54e86389c52c8231634d9df"
+      },
+      "name": "ref-youtube-vos",
+      "namespace": "library",
+      "version": 2
+    },
+    "refcoco": {
+      "digests": {
+        "catalog/datasets/refcoco.json": "d365ebe33ffad6487c58797b9f79e3fd6cbd206de47f90f8ba3d7101f70535eb"
+      },
+      "name": "refcoco",
+      "namespace": "library",
+      "version": 2
+    },
+    "refcoco-plus": {
+      "digests": {
+        "catalog/datasets/refcoco-plus.json": "104e6c7d1bcc24429a60304fea71f95741d7209d115a77182a0005c151b466b5"
+      },
+      "name": "refcoco-plus",
+      "namespace": "library",
+      "version": 2
+    },
+    "refcocog": {
+      "digests": {
+        "catalog/datasets/refcocog.json": "3c1585bc1652e6bb0ef9e94bfc944866a6846195edeb7887c093e90dd843923f"
+      },
+      "name": "refcocog",
+      "namespace": "library",
+      "version": 2
+    },
+    "replica": {
+      "digests": {
+        "catalog/datasets/replica.json": "e5d4b79b7cd050a7e517e43ffcaef3d423b30d345183a21b3e235bd0a08a107a"
+      },
+      "name": "replica",
+      "namespace": "library",
+      "version": 2
+    },
+    "retailrocket": {
+      "digests": {
+        "catalog/datasets/retailrocket.json": "3c4db3b9633fea9aba35209d14dbb1ee7c6f21ad6d45317f0b714253f3a7d440"
+      },
+      "name": "retailrocket",
+      "namespace": "library",
+      "version": 2
+    },
+    "retailrocket-ctr": {
+      "digests": {
+        "catalog/datasets/retailrocket-ctr.json": "a7f1fc0bda91f2eb36be1caf49581bcb36bfddfdcdb3f5993c78adc5c372e32d"
+      },
+      "name": "retailrocket-ctr",
+      "namespace": "library",
+      "version": 2
+    },
+    "retinal-vessels": {
+      "digests": {
+        "catalog/datasets/retinal-vessels.json": "6330c3c720ca6ad0b1ea34228dde0435ebaacc17880fc0f9604244ff5a050c09"
+      },
+      "name": "retinal-vessels",
+      "namespace": "library",
+      "version": 2
+    },
+    "rl-unplugged": {
+      "digests": {
+        "catalog/datasets/rl-unplugged.json": "f838c8d1c3580a367cd0bef8118cb153490c7eb6ece964cdf7617148953956f1"
+      },
+      "name": "rl-unplugged",
+      "namespace": "library",
+      "version": 2
+    },
+    "rlbench": {
+      "digests": {
+        "catalog/datasets/rlbench.json": "41aca83d9950d206845338afc4534c328f7a2a87e64a7fcd38e7fc1d8621da77"
+      },
+      "name": "rlbench",
+      "namespace": "library",
+      "version": 2
+    },
+    "rmd17": {
+      "digests": {
+        "catalog/datasets/rmd17.json": "ca5ca911426594a0f4f0ad98c2e75f7b76324b2d3b41d7046a4b5ad0691e5fd7"
+      },
+      "name": "rmd17",
+      "namespace": "library",
+      "version": 2
+    },
+    "robomimic": {
+      "digests": {
+        "catalog/datasets/robomimic.json": "77f3a26897ecdbeb62ebf1580014a20d8483a39a56c75d550510c0de6e969250"
+      },
+      "name": "robomimic",
+      "namespace": "library",
+      "version": 2
+    },
+    "rossmann-store-sales": {
+      "digests": {
+        "catalog/datasets/rossmann-store-sales.json": "23eca9b8f75bf25feb49ff74fc1916761958132a046a9a83186aece39a7f17c4"
+      },
+      "name": "rossmann-store-sales",
+      "namespace": "library",
+      "version": 2
+    },
+    "rsna-pneumonia": {
+      "digests": {
+        "catalog/datasets/rsna-pneumonia.json": "8913eedf536ff33d0a6c6ad5a04efcbdbb4ec16dc6a438038b67539f2141c97f"
+      },
+      "name": "rsna-pneumonia",
+      "namespace": "library",
+      "version": 2
+    },
+    "rvl-cdip": {
+      "digests": {
+        "catalog/datasets/rvl-cdip.json": "74441bb136963307d9785176155d795d37ba3ab0dfc4cfa0dfe4041a019f3e93"
+      },
+      "name": "rvl-cdip",
+      "namespace": "library",
+      "version": 2
+    },
+    "s3dis": {
+      "digests": {
+        "catalog/datasets/s3dis.json": "29d8d47f76cadc3bbfcfdeaa0c4e98c31894903064496fb003844b6b67f1ce53"
+      },
+      "name": "s3dis",
+      "namespace": "library",
+      "version": 2
+    },
+    "samsum": {
+      "digests": {
+        "catalog/datasets/samsum.json": "887590c94ea6465becc8e96c0a33ca09ede2353e7f0fb3a724eeadcd7022c4e8"
+      },
+      "name": "samsum",
+      "namespace": "library",
+      "version": 2
+    },
+    "santander": {
+      "digests": {
+        "catalog/datasets/santander.json": "2bd379fb12cd38cea6171c3e546e92e496a4a865ce9ed9f308517e139c624797"
+      },
+      "name": "santander",
+      "namespace": "library",
+      "version": 2
+    },
+    "sbu-captions": {
+      "digests": {
+        "catalog/datasets/sbu-captions.json": "28c5e7e55332d486840d663ff649c0af0e849b116c8b49fb8f93802f11dcf499"
+      },
+      "name": "sbu-captions",
+      "namespace": "library",
+      "version": 2
+    },
+    "scannet": {
+      "digests": {
+        "catalog/datasets/scannet.json": "40e1a53fce8ecaf598aaa522c96655ef5a91bae40abbb43f1afa0a34f6c7e5ec"
+      },
+      "name": "scannet",
+      "namespace": "library",
+      "version": 2
+    },
+    "scedc": {
+      "digests": {
+        "catalog/datasets/scedc.json": "567dfce9f2ca847b9ee3629c2be47b23416d99a73a914eae303457c81b31d43d"
+      },
+      "name": "scedc",
+      "namespace": "library",
+      "version": 2
+    },
+    "sdss": {
+      "digests": {
+        "catalog/datasets/sdss.json": "6091ce72f4d49ff286f6cb593f025189e65a505a8846550daa2bca1ec7e76066"
+      },
+      "name": "sdss",
+      "namespace": "library",
+      "version": 2
+    },
+    "sen12ms": {
+      "digests": {
+        "catalog/datasets/sen12ms.json": "852e3d12602b341b48213ab39ef72cbd0e293881996ec46bbd091a09b357be56"
+      },
+      "name": "sen12ms",
+      "namespace": "library",
+      "version": 2
+    },
+    "shanghaitech": {
+      "digests": {
+        "catalog/datasets/shanghaitech.json": "0ce2c931e3ee9ccd2e7ec845ddc524043d53856979d92df4cf82262a350e704d"
+      },
+      "name": "shanghaitech",
+      "namespace": "library",
+      "version": 2
+    },
+    "shapenet-part": {
+      "digests": {
+        "catalog/datasets/shapenet-part.json": "94d33f92e5170d641ea846ab7f36b5c1780f5e2d721892614bc38e48cfbb1c0f"
+      },
+      "name": "shapenet-part",
+      "namespace": "library",
+      "version": 2
+    },
+    "shipsear": {
+      "digests": {
+        "catalog/datasets/shipsear.json": "46eebcf739d9b670224b6a9882d0d1119acd8676a8818d62fb427ab58c6d344c"
+      },
+      "name": "shipsear",
+      "namespace": "library",
+      "version": 2
+    },
+    "shl": {
+      "digests": {
+        "catalog/datasets/shl.json": "86bfa2b996022da3967eed9ac4a24b17db21cdd5726d789351b2f44d38e4e022"
+      },
+      "name": "shl",
+      "namespace": "library",
+      "version": 2
+    },
+    "siim-acr-pneumothorax": {
+      "digests": {
+        "catalog/datasets/siim-acr-pneumothorax.json": "5e155fe579024ef0a01386cba568542de722a214a4d9ec0198cb70b2b9828c44"
+      },
+      "name": "siim-acr-pneumothorax",
+      "namespace": "library",
+      "version": 2
+    },
+    "sintel": {
+      "digests": {
+        "catalog/datasets/sintel.json": "4b67608a9919678a05e6ddf18c163496112650938eb37de92d9175a306e03a04"
+      },
+      "name": "sintel",
+      "namespace": "library",
+      "version": 2
+    },
+    "sketchy": {
+      "digests": {
+        "catalog/datasets/sketchy.json": "e5a242622ca5f77fad5dbe04f8d7863527a7323eb05db8410eefd4c9b8e85257"
+      },
+      "name": "sketchy",
+      "namespace": "library",
+      "version": 2
+    },
+    "slakh2100": {
+      "digests": {
+        "catalog/datasets/slakh2100.json": "17208cacbaafb20eac08a0fd80fa311f37a41f59d1bdaeef9e308ffb7d87eea7"
+      },
+      "name": "slakh2100",
+      "namespace": "library",
+      "version": 2
+    },
+    "sleep-edf": {
+      "digests": {
+        "catalog/datasets/sleep-edf.json": "a6dc4a5cec731667e2d0571bc16be5c4725794e81fb750ae2b6cc5dc74429fae"
+      },
+      "name": "sleep-edf",
+      "namespace": "library",
+      "version": 2
+    },
+    "slimpajama": {
+      "digests": {
+        "catalog/datasets/slimpajama.json": "73e6c54d18839188d5d8dc060c2325a8d721f61c5a7724af6ec182dc520d47dc"
+      },
+      "name": "slimpajama",
+      "namespace": "library",
+      "version": 2
+    },
+    "smac": {
+      "digests": {
+        "catalog/datasets/smac.json": "8763c740fb1676ed902f799811e51c03932cd4c88892a9077596b907905e0c76"
+      },
+      "name": "smac",
+      "namespace": "library",
+      "version": 2
+    },
+    "smacv2": {
+      "digests": {
+        "catalog/datasets/smacv2.json": "b0701f72c7921b8114ef93841443ad858e4009d7acfc0dbc967f97f9b9c5a870"
+      },
+      "name": "smacv2",
+      "namespace": "library",
+      "version": 2
+    },
+    "smap-msl": {
+      "digests": {
+        "catalog/datasets/smap-msl.json": "026cd97e5b8b7591ff22fb96b86a54e5db84842c9d3b679c1249b7babbc81b13"
+      },
+      "name": "smap-msl",
+      "namespace": "library",
+      "version": 2
+    },
+    "smd": {
+      "digests": {
+        "catalog/datasets/smd.json": "fbbf94a7bb05d71463b4d4acc87fb69afa7eda2bc774536f76a02b302028f8c8"
+      },
+      "name": "smd",
+      "namespace": "library",
+      "version": 2
+    },
+    "sms-wsj": {
+      "digests": {
+        "catalog/datasets/sms-wsj.json": "d53c1cca350a576aea8ed09762d0ad4ce1dcf961ec81c07ae445cf183f4dc67e"
+      },
+      "name": "sms-wsj",
+      "namespace": "library",
+      "version": 2
+    },
+    "snli": {
+      "digests": {
+        "catalog/datasets/snli.json": "dd1aa8b19287876304ec0f5cd941a18d29a70c9f04100bee6cc6f148109b63fb"
+      },
+      "name": "snli",
+      "namespace": "library",
+      "version": 2
+    },
+    "solar": {
+      "digests": {
+        "catalog/datasets/solar.json": "0be785f56b6b2d5ebc1f2c094b26f898123a8f06024f06b09df3141257efc6ec"
+      },
+      "name": "solar",
+      "namespace": "library",
+      "version": 2
+    },
+    "something-something-v2": {
+      "digests": {
+        "catalog/datasets/something-something-v2.json": "f3a5ee2fdc271e82ce599e51d1248598ceda62e46e9d5861d6e41817ab978231"
+      },
+      "name": "something-something-v2",
+      "namespace": "library",
+      "version": 2
+    },
+    "sonyc-ust": {
+      "digests": {
+        "catalog/datasets/sonyc-ust.json": "59fb148bf5ba5689e31837f6ad248918a732894c1244ef8f3d82e85a4742006c"
+      },
+      "name": "sonyc-ust",
+      "namespace": "library",
+      "version": 2
+    },
+    "spacenet": {
+      "digests": {
+        "catalog/datasets/spacenet.json": "e1568790f966db07fdac6f16d831e557cb7fd9c3fb52223e633fe00b9a068dff"
+      },
+      "name": "spacenet",
+      "namespace": "library",
+      "version": 2
+    },
+    "speech-commands": {
+      "digests": {
+        "catalog/datasets/speech-commands.json": "863f0600df392e250d91ec7afd5f3f9f08f210af8ae51ce06ccd0c2ced76e286",
+        "implementations/speech-commands/__init__.py": "ce80bbd36868964ca12b044b340fba245fd37c1bc33c5dd955ebdfa0ecfdabf5"
+      },
+      "name": "speech-commands",
+      "namespace": "library",
+      "version": 2
+    },
+    "spgispeech": {
+      "digests": {
+        "catalog/datasets/spgispeech.json": "8eb07dd5920879b064450289e5a3425aca8797be938829840102bab9f1ad0cf3"
+      },
+      "name": "spgispeech",
+      "namespace": "library",
+      "version": 2
+    },
+    "spotify-mpd": {
+      "digests": {
+        "catalog/datasets/spotify-mpd.json": "51ea86fe03344b1a15b5ee770777075f22158127849c72da5715bb834b78663e"
+      },
+      "name": "spotify-mpd",
+      "namespace": "library",
+      "version": 2
+    },
+    "spring": {
+      "digests": {
+        "catalog/datasets/spring.json": "12413e1f22d704714ce36a3d691ad16c5ac1355df784cd9da652ab6fa538a921"
+      },
+      "name": "spring",
+      "namespace": "library",
+      "version": 2
+    },
+    "squad": {
+      "digests": {
+        "catalog/datasets/squad.json": "68aa67fd65f1f7af78146c574f02664cb8472019587894ea1d9a8d0285e9baea"
+      },
+      "name": "squad",
+      "namespace": "library",
+      "version": 2
+    },
+    "squad-2": {
+      "digests": {
+        "catalog/datasets/squad-2.json": "4a876f6549906f664a041ac6597ff8af951c94ef606d125c36973fdd928517a4"
+      },
+      "name": "squad-2",
+      "namespace": "library",
+      "version": 2
+    },
+    "sroie": {
+      "digests": {
+        "catalog/datasets/sroie.json": "368cb3c5f5179d64647eb1a8655a64cd319fa42e3ff6511ad68981d83f10b656"
+      },
+      "name": "sroie",
+      "namespace": "library",
+      "version": 2
+    },
+    "ssdd": {
+      "digests": {
+        "catalog/datasets/ssdd.json": "5a02ec9b2938365ecfa1d09ce979d419170f5e244d2d133fa42f8286d2f3f305"
+      },
+      "name": "ssdd",
+      "namespace": "library",
+      "version": 2
+    },
+    "stanford-cars": {
+      "digests": {
+        "catalog/datasets/stanford-cars.json": "d21013863f51798cb14ede0d6f8f390492bb4029e9b36dfd2ad6b222155d80bc"
+      },
+      "name": "stanford-cars",
+      "namespace": "library",
+      "version": 2
+    },
+    "stanford-dogs": {
+      "digests": {
+        "catalog/datasets/stanford-dogs.json": "ec0d805dc213d6384f434cb7813877586f4c55240f3761fddffac3e076ab83a3"
+      },
+      "name": "stanford-dogs",
+      "namespace": "library",
+      "version": 2
+    },
+    "steam": {
+      "digests": {
+        "catalog/datasets/steam.json": "d5cdf0ce06c5886431a7247795ff298217083ea6f7bb7d781c5fbfbd19709cba"
+      },
+      "name": "steam",
+      "namespace": "library",
+      "version": 2
+    },
+    "stl-10": {
+      "digests": {
+        "catalog/datasets/stl-10.json": "9fc704e1f969ce630f5f831ece24417458a365ac032b0487610ef59ffdb80380"
+      },
+      "name": "stl-10",
+      "namespace": "library",
+      "version": 2
+    },
+    "sugarbeets-2016": {
+      "digests": {
+        "catalog/datasets/sugarbeets-2016.json": "1487c56e568b9cc398415cb2cd03bb1ccb1491d90f204dd7b2e2bbfaa5b3399b"
+      },
+      "name": "sugarbeets-2016",
+      "namespace": "library",
+      "version": 2
+    },
+    "sun-rgbd": {
+      "digests": {
+        "catalog/datasets/sun-rgbd.json": "bff2226ddc87ab5e779a07b329ae2982e0e6d695a37b6cbf92d724ba377143dd"
+      },
+      "name": "sun-rgbd",
+      "namespace": "library",
+      "version": 2
+    },
+    "sun397": {
+      "digests": {
+        "catalog/datasets/sun397.json": "0d02b049a31ad306eb98c13ffb15dd3a87ef35023c6241f3e7f8c2e31ca7ddcc"
+      },
+      "name": "sun397",
+      "namespace": "library",
+      "version": 2
+    },
+    "superglue": {
+      "digests": {
+        "catalog/datasets/superglue.json": "48b2576ce3983bafdf648d6cd5fb54f285782d57694d6aec5a076f6711433bd1"
+      },
+      "name": "superglue",
+      "namespace": "library",
+      "version": 2
+    },
+    "sustainbench": {
+      "digests": {
+        "catalog/datasets/sustainbench.json": "8f168bbe8b4d8ef765ae78c0ea35d1eb8bb9e356d5c15541a56da307d67ca2ee"
+      },
+      "name": "sustainbench",
+      "namespace": "library",
+      "version": 2
+    },
+    "susy": {
+      "digests": {
+        "catalog/datasets/susy.json": "820814b13dd8c4a21ed0b8fcc4a422d793bd992491da7cc859fbca833606f034"
+      },
+      "name": "susy",
+      "namespace": "library",
+      "version": 2
+    },
+    "svamp": {
+      "digests": {
+        "catalog/datasets/svamp.json": "0cfa193fc2c9e507be06184934e565bdd452afad1613e37bec5321f29d777111"
+      },
+      "name": "svamp",
+      "namespace": "library",
+      "version": 2
+    },
+    "svhn": {
+      "digests": {
+        "catalog/datasets/svhn.json": "8cadeba750020726a5b2528ac3baf4af2fa7897499ed2bcf53ce420c3919acdd"
+      },
+      "name": "svhn",
+      "namespace": "library",
+      "version": 2
+    },
+    "swat-wadi": {
+      "digests": {
+        "catalog/datasets/swat-wadi.json": "04f811bd327c24a7bac0c4ce9f878950642e1df17cae0b8402eb7a44208d11a3"
+      },
+      "name": "swat-wadi",
+      "namespace": "library",
+      "version": 2
+    },
+    "switchboard": {
+      "digests": {
+        "catalog/datasets/switchboard.json": "c150c5c4963c73bd05493e30a080ccf9cd121565bae123f67e5343332527590b"
+      },
+      "name": "switchboard",
+      "namespace": "library",
+      "version": 2
+    },
+    "synthia": {
+      "digests": {
+        "catalog/datasets/synthia.json": "413f617aa81c8806fdc6eb8234fa5b57a8b144975f131110cf3b394345bc6810"
+      },
+      "name": "synthia",
+      "namespace": "library",
+      "version": 2
+    },
+    "synthtext": {
+      "digests": {
+        "catalog/datasets/synthtext.json": "4ae4ca12b3849cc020cdf4e2a14c0fbe64e30b180499d13ce6d75c97150b8d3e"
+      },
+      "name": "synthtext",
+      "namespace": "library",
+      "version": 2
+    },
+    "tabarena": {
+      "digests": {
+        "catalog/datasets/tabarena.json": "f67c0480a9fbfc91eb5fbd83a5491156c2101fe0f2c618ff42e0f1f6799fb19a"
+      },
+      "name": "tabarena",
+      "namespace": "library",
+      "version": 2
+    },
+    "tabula-sapiens": {
+      "digests": {
+        "catalog/datasets/tabula-sapiens.json": "90bc4cbee355be87a60d34d9fc7d72046f938f3d4802cc8afada7df7afc8c583"
+      },
+      "name": "tabula-sapiens",
+      "namespace": "library",
+      "version": 2
+    },
+    "tao": {
+      "digests": {
+        "catalog/datasets/tao.json": "384d801f69e1f4a59228e97aa29b739bb031565519e960a226d4118dac559ef5"
+      },
+      "name": "tao",
+      "namespace": "library",
+      "version": 2
+    },
+    "tape": {
+      "digests": {
+        "catalog/datasets/tape.json": "15b8f9a4a716d48d26686f6513bc981cb100689b165e3d49987acc6059224919"
+      },
+      "name": "tape",
+      "namespace": "library",
+      "version": 2
+    },
+    "tartanair": {
+      "digests": {
+        "catalog/datasets/tartanair.json": "28aebdecb8fe85548bcd59c515b19838de28b20eb819276a0b249d0d8b36ffcf"
+      },
+      "name": "tartanair",
+      "namespace": "library",
+      "version": 2
+    },
+    "tcga": {
+      "digests": {
+        "catalog/datasets/tcga.json": "025ce2ae3294938941a84eadec476495e7a2f008579b62542718c624c16a187f"
+      },
+      "name": "tcga",
+      "namespace": "library",
+      "version": 2
+    },
+    "ted2020": {
+      "digests": {
+        "catalog/datasets/ted2020.json": "d9d4ce4010425853ef57996129f94120c2d48ef6638aee2858a1104074bd1abf"
+      },
+      "name": "ted2020",
+      "namespace": "library",
+      "version": 2
+    },
+    "tedlium-3": {
+      "digests": {
+        "catalog/datasets/tedlium-3.json": "c7fbcdcbb6c4e3257c4e8cbd18132c8fd2ea40b16ba46b4ec665bf8df345d39b"
+      },
+      "name": "tedlium-3",
+      "namespace": "library",
+      "version": 2
+    },
+    "tenrec": {
+      "digests": {
+        "catalog/datasets/tenrec.json": "42107d9a7efa96c279fe1453a2086a8b0369fedfe70662b7d1ccb7ed5690f99f"
+      },
+      "name": "tenrec",
+      "namespace": "library",
+      "version": 2
+    },
+    "terra-incognita": {
+      "digests": {
+        "catalog/datasets/terra-incognita.json": "7d180925995f1614198b827b8d34c09b5cf3fa6966a9dd778b849c9ee00563d7"
+      },
+      "name": "terra-incognita",
+      "namespace": "library",
+      "version": 2
+    },
+    "tess": {
+      "digests": {
+        "catalog/datasets/tess.json": "f8514026481426acc782a6de8aa64cf86cbf9988ab8ded1be9eb5de7c9e6fee2"
+      },
+      "name": "tess",
+      "namespace": "library",
+      "version": 2
+    },
+    "textvqa": {
+      "digests": {
+        "catalog/datasets/textvqa.json": "498fd23226bb4dbe7f324d13695dcf02cc536a2edaf39e5e5a79f22b1d9fa91d"
+      },
+      "name": "textvqa",
+      "namespace": "library",
+      "version": 2
+    },
+    "tgb": {
+      "digests": {
+        "catalog/datasets/tgb.json": "850ff76bf66a81accac9100941b3ee3fbfe33a5fc86ac2b32a3c2968279631d7"
+      },
+      "name": "tgb",
+      "namespace": "library",
+      "version": 2
+    },
+    "the-pile": {
+      "digests": {
+        "catalog/datasets/the-pile.json": "e564ee628d9fac58f080a8d85c4e0ec42c65eda2570ba990593cb7168f2a343e"
+      },
+      "name": "the-pile",
+      "namespace": "library",
+      "version": 2
+    },
+    "theoremqa": {
+      "digests": {
+        "catalog/datasets/theoremqa.json": "2988edc08f5486e39e61e3622cf43ff4239262930a020fccaa6e6d2b9bf2633d"
+      },
+      "name": "theoremqa",
+      "namespace": "library",
+      "version": 2
+    },
+    "things3d": {
+      "digests": {
+        "catalog/datasets/things3d.json": "d8a4c4ba5c3b72d3e0b71ac713cb690fc9afb9305b0f03c78c8bd98c3cc9dc78"
+      },
+      "name": "things3d",
+      "namespace": "library",
+      "version": 2
+    },
+    "timit": {
+      "digests": {
+        "catalog/datasets/timit.json": "8e6a31b43dacfcce9dd5134a9db1018e6d18069a895dbb679a097f1fd3487d92"
+      },
+      "name": "timit",
+      "namespace": "library",
+      "version": 2
+    },
+    "tiny-imagenet": {
+      "digests": {
+        "catalog/datasets/tiny-imagenet.json": "af9202c78a123fc14a6e8064c1c01f1bdfd21ed48619a211db2a3bfa8aad6436"
+      },
+      "name": "tiny-imagenet",
+      "namespace": "library",
+      "version": 2
+    },
+    "titanic": {
+      "digests": {
+        "catalog/datasets/titanic.json": "fb396d545b788e2e20b2b5185597d617778297a174cf3b56182aaa449ec593c1"
+      },
+      "name": "titanic",
+      "namespace": "library",
+      "version": 2
+    },
+    "totalsegmentator": {
+      "digests": {
+        "catalog/datasets/totalsegmentator.json": "bbd3640cdc708d1503ce59bdd6b1ce529639e374665fc4f10236958a20d18923"
+      },
+      "name": "totalsegmentator",
+      "namespace": "library",
+      "version": 2
+    },
+    "touch-and-go": {
+      "digests": {
+        "catalog/datasets/touch-and-go.json": "afaf09006cc7cb0b17f8808611d73973ad32c24c89f34ea3c2379efb2c03beee"
+      },
+      "name": "touch-and-go",
+      "namespace": "library",
+      "version": 2
+    },
+    "trackingnet": {
+      "digests": {
+        "catalog/datasets/trackingnet.json": "039bedf82ed3575475ac3c64072dae71cef0c8b28ce38cb4ac64b444a50b38fc"
+      },
+      "name": "trackingnet",
+      "namespace": "library",
+      "version": 2
+    },
+    "traffic": {
+      "digests": {
+        "catalog/datasets/traffic.json": "babd0522aa32590423edaa4ac5daabbfaedacc5555e1994c33cac1b50452895f"
+      },
+      "name": "traffic",
+      "namespace": "library",
+      "version": 2
+    },
+    "transnas-bench-101": {
+      "digests": {
+        "catalog/datasets/transnas-bench-101.json": "89565cfa7af07a45b3a08731ca9be630135d808623e8ffd7c817aa1be59d0c74"
+      },
+      "name": "transnas-bench-101",
+      "namespace": "library",
+      "version": 2
+    },
+    "triviaqa": {
+      "digests": {
+        "catalog/datasets/triviaqa.json": "4b2bc84f2a7e9bc5d9af477718e7c7fddd0036499f7c6ca3169ae21318d99c38"
+      },
+      "name": "triviaqa",
+      "namespace": "library",
+      "version": 2
+    },
+    "truthfulqa": {
+      "digests": {
+        "catalog/datasets/truthfulqa.json": "d9640394887f7587b8d341fc9724fcbe3683cd9d6d04954b29f3d6b200d1443e"
+      },
+      "name": "truthfulqa",
+      "namespace": "library",
+      "version": 2
+    },
+    "twitch-gamers": {
+      "digests": {
+        "catalog/datasets/twitch-gamers.json": "90edf5c04f83310ce9ca5d9a9db3694d18661261721a85f967d414ea6a75011a"
+      },
+      "name": "twitch-gamers",
+      "namespace": "library",
+      "version": 2
+    },
+    "tydiqa": {
+      "digests": {
+        "catalog/datasets/tydiqa.json": "aa0e0df57b51c5a8531987f074a9bc7fe3ab62486b603042953ccdb55b892a05"
+      },
+      "name": "tydiqa",
+      "namespace": "library",
+      "version": 2
+    },
+    "uav123": {
+      "digests": {
+        "catalog/datasets/uav123.json": "cbff7a2c401b0fa2d939ecab490ebb18fb3f1c7857c918cb481f1991599e1e7c"
+      },
+      "name": "uav123",
+      "namespace": "library",
+      "version": 2
+    },
+    "uc-merced": {
+      "digests": {
+        "catalog/datasets/uc-merced.json": "cee29309766bcca3aa7325f1bec76cb128d627ead86b9b0c3363fc0a9f520574"
+      },
+      "name": "uc-merced",
+      "namespace": "library",
+      "version": 2
+    },
+    "ucf-crime": {
+      "digests": {
+        "catalog/datasets/ucf-crime.json": "2aa44f11688d1397618c0a803edf6d2997f94db660e1db2904d4867a821a24c6"
+      },
+      "name": "ucf-crime",
+      "namespace": "library",
+      "version": 2
+    },
+    "ucf101": {
+      "digests": {
+        "catalog/datasets/ucf101.json": "b91a2c7061a5488c3508b8e5dfb94f01acc14748d06fcfb6e57bf0ff7832ec37"
+      },
+      "name": "ucf101",
+      "namespace": "library",
+      "version": 2
+    },
+    "uci-har": {
+      "digests": {
+        "catalog/datasets/uci-har.json": "8d83cbe397644f3b52cb137201ce9aadd58b7df61f44428f225760d2472821aa",
+        "implementations/uci-har/__init__.py": "61de6a60dc10e30c60b34576caa849b01c550281c88d29b053eb7e96006a0883"
+      },
+      "name": "uci-har",
+      "namespace": "library",
+      "version": 2
+    },
+    "ucr": {
+      "digests": {
+        "catalog/datasets/ucr.json": "1cfcbf455dc732c0ee11844db498fb05343c4feaf9025d82d65350058fdb85fc"
+      },
+      "name": "ucr",
+      "namespace": "library",
+      "version": 2
+    },
+    "ucr-anomaly-archive": {
+      "digests": {
+        "catalog/datasets/ucr-anomaly-archive.json": "53c76cc265300ca3e1b734186c6f5075c90d697e53949af011afc89fae86d321"
+      },
+      "name": "ucr-anomaly-archive",
+      "namespace": "library",
+      "version": 2
+    },
+    "ucsd-ped": {
+      "digests": {
+        "catalog/datasets/ucsd-ped.json": "7afebbcdc4d6172aefd5a5109bfed8793db52d81d83e2b8cffc2f7bc02f07e84"
+      },
+      "name": "ucsd-ped",
+      "namespace": "library",
+      "version": 2
+    },
+    "uea": {
+      "digests": {
+        "catalog/datasets/uea.json": "1a92e1a0a77d11be5b043ab4084d9ff6416f9a4659f812b560be3e8019a6d6c0"
+      },
+      "name": "uea",
+      "namespace": "library",
+      "version": 2
+    },
+    "uecfood256": {
+      "digests": {
+        "catalog/datasets/uecfood256.json": "5ee61188425d11468aaffc2f9ac60fdb724d9423d24a06324cb13c9a038207d0"
+      },
+      "name": "uecfood256",
+      "namespace": "library",
+      "version": 2
+    },
+    "ujiindoorloc": {
+      "digests": {
+        "catalog/datasets/ujiindoorloc.json": "37e3a0b8e02e30b89f8b874822fe7b2f044e7e3974846df6ff3f88ab68e50ee6"
+      },
+      "name": "ujiindoorloc",
+      "namespace": "library",
+      "version": 2
+    },
+    "uk-biobank": {
+      "digests": {
+        "catalog/datasets/uk-biobank.json": "d60889a0430cff54fbef92660d9eea866d1b9088cde7e4eecfff9993168a9dfe"
+      },
+      "name": "uk-biobank",
+      "namespace": "library",
+      "version": 2
+    },
+    "uk-dale": {
+      "digests": {
+        "catalog/datasets/uk-dale.json": "a114a74c9b7a1f79a0ef3c835e7c29c0756ff020c21bbfb38d1c934f01de4c28"
+      },
+      "name": "uk-dale",
+      "namespace": "library",
+      "version": 2
+    },
+    "ultrachat": {
+      "digests": {
+        "catalog/datasets/ultrachat.json": "c5a5c722b1d42c100ef3292de0dacbd7d269963cebeb36c18c2bdacfa7b93e3b"
+      },
+      "name": "ultrachat",
+      "namespace": "library",
+      "version": 2
+    },
+    "ultrafeedback": {
+      "digests": {
+        "catalog/datasets/ultrafeedback.json": "85cdac815bb2851d930026695e29d2fda6c9559cb98e85180da676b9ffd029eb"
+      },
+      "name": "ultrafeedback",
+      "namespace": "library",
+      "version": 2
+    },
+    "umls": {
+      "digests": {
+        "catalog/datasets/umls.json": "e51af32f7527bc2d0d7afbe75ea19efa2a3087221827f0bd6cdac81467920f4d"
+      },
+      "name": "umls",
+      "namespace": "library",
+      "version": 2
+    },
+    "un-parallel": {
+      "digests": {
+        "catalog/datasets/un-parallel.json": "346c85f3de97325f28edf3eef4b4ae989f52e9e758eeaf192b4265f87ba3f128"
+      },
+      "name": "un-parallel",
+      "namespace": "library",
+      "version": 2
+    },
+    "urbansound8k": {
+      "digests": {
+        "catalog/datasets/urbansound8k.json": "d833ea5130c755e65c0ba5516057778b92d54ee446c24ec5b43a6b5465c2021e"
+      },
+      "name": "urbansound8k",
+      "namespace": "library",
+      "version": 2
+    },
+    "uwb-nlos": {
+      "digests": {
+        "catalog/datasets/uwb-nlos.json": "9939f7ee61286841dcf5ab54516d73d70023501c918cbcaa743d8df1050721e9"
+      },
+      "name": "uwb-nlos",
+      "namespace": "library",
+      "version": 2
+    },
+    "vaihingen": {
+      "digests": {
+        "catalog/datasets/vaihingen.json": "c1eee1ed7191e0ac2e5d442ce2375818607f32f5d492566a4d4d7bbf92d4ed8d"
+      },
+      "name": "vaihingen",
+      "namespace": "library",
+      "version": 2
+    },
+    "vctk": {
+      "digests": {
+        "catalog/datasets/vctk.json": "dd7110d869827ee5e0cb94d7c56ca0770d2b122095aa6a1c8754bdab7404827b"
+      },
+      "name": "vctk",
+      "namespace": "library",
+      "version": 2
+    },
+    "veri-776": {
+      "digests": {
+        "catalog/datasets/veri-776.json": "c2e68e50861967a31ba89634026f34e82db3e3e0e747c40f39327ec5c45e2070"
+      },
+      "name": "veri-776",
+      "namespace": "library",
+      "version": 2
+    },
+    "vggface2": {
+      "digests": {
+        "catalog/datasets/vggface2.json": "f8afd6a4291e1e3454d97536a2fcbb4f210f1f25615d22aa10be6d342da4f276"
+      },
+      "name": "vggface2",
+      "namespace": "library",
+      "version": 2
+    },
+    "vima": {
+      "digests": {
+        "catalog/datasets/vima.json": "f8c35ef2e89ad5cee541738560462fff47067ac1f89c2a15d748bb47ec9f40fa"
+      },
+      "name": "vima",
+      "namespace": "library",
+      "version": 2
+    },
+    "visa": {
+      "digests": {
+        "catalog/datasets/visa.json": "50282a9cf690ee8a1a133594dc76c33fdbc256c495308f1f4534393b3f812b5d"
+      },
+      "name": "visa",
+      "namespace": "library",
+      "version": 2
+    },
+    "visda-2017": {
+      "digests": {
+        "catalog/datasets/visda-2017.json": "4d7692f4c82da7d6b45d731a7ca7bbac2d6922a4768259f26e0e760765aca05c"
+      },
+      "name": "visda-2017",
+      "namespace": "library",
+      "version": 2
+    },
+    "visual-genome": {
+      "digests": {
+        "catalog/datasets/visual-genome.json": "3a5338831dacd05bb441cee9547b91a356d4219ccd438000cf222ac45a887ec7"
+      },
+      "name": "visual-genome",
+      "namespace": "library",
+      "version": 2
+    },
+    "voicebank-demand": {
+      "digests": {
+        "catalog/datasets/voicebank-demand.json": "3e1472c8a94bd22dabfe2d5e8cad1be7ac349312c8cd26e7f75976522956560a"
+      },
+      "name": "voicebank-demand",
+      "namespace": "library",
+      "version": 2
+    },
+    "voxceleb-1": {
+      "digests": {
+        "catalog/datasets/voxceleb-1.json": "ff0def2946c539a6b37fe0c77765e929eca636ecc6b87709d9214b3497905d49"
+      },
+      "name": "voxceleb-1",
+      "namespace": "library",
+      "version": 2
+    },
+    "voxceleb-2": {
+      "digests": {
+        "catalog/datasets/voxceleb-2.json": "11375fc64ff8fc2feec83dde3fef26b9e3db734f5acd56858b94f745ed0c62f2"
+      },
+      "name": "voxceleb-2",
+      "namespace": "library",
+      "version": 2
+    },
+    "voxlingua107": {
+      "digests": {
+        "catalog/datasets/voxlingua107.json": "3b4cf3ff89c92a3b03b1542d94f659ad4ec3ca7d27232d291b96b9bb7adb621d"
+      },
+      "name": "voxlingua107",
+      "namespace": "library",
+      "version": 2
+    },
+    "voxpopuli": {
+      "digests": {
+        "catalog/datasets/voxpopuli.json": "aadd9ed604a7e29e83252174ffb10524a3c17dad8d32dc5095d444082fa1cfc6"
+      },
+      "name": "voxpopuli",
+      "namespace": "library",
+      "version": 2
+    },
+    "vqav2": {
+      "digests": {
+        "catalog/datasets/vqav2.json": "5806c4f3e97353146d16efe51e8302052602dcf83e8ba18741a202cbb72c8c8d"
+      },
+      "name": "vqav2",
+      "namespace": "library",
+      "version": 2
+    },
+    "waterbirds": {
+      "digests": {
+        "catalog/datasets/waterbirds.json": "729ad609cc4dbcd7ae679763f79fd6988ad0436654d44e05c222442b7c4710f0"
+      },
+      "name": "waterbirds",
+      "namespace": "library",
+      "version": 2
+    },
+    "wavcaps": {
+      "digests": {
+        "catalog/datasets/wavcaps.json": "fa21bb1c849dee5e25f1bb09ef2cb4487246a4508a579bc16279e3d208a52ca7"
+      },
+      "name": "wavcaps",
+      "namespace": "library",
+      "version": 2
+    },
+    "waymo-open": {
+      "digests": {
+        "catalog/datasets/waymo-open.json": "391ca0d75bb94ec6498ff3f34ecf1bc63b964aa2a525093d6dad8e30cd1626e8"
+      },
+      "name": "waymo-open",
+      "namespace": "library",
+      "version": 2
+    },
+    "weather": {
+      "digests": {
+        "catalog/datasets/weather.json": "e6b358c24aa3a5d5a2bd37da0c1387e135646d3fc78441b5b8c5e4cf79201c56"
+      },
+      "name": "weather",
+      "namespace": "library",
+      "version": 2
+    },
+    "weatherbench-2": {
+      "digests": {
+        "catalog/datasets/weatherbench-2.json": "b7cb682262d7b6ee62daecc40dcc001df1f52af66e19bdedcb4a14f5613b93e0"
+      },
+      "name": "weatherbench-2",
+      "namespace": "library",
+      "version": 2
+    },
+    "wham": {
+      "digests": {
+        "catalog/datasets/wham.json": "421bc9f3549efb0888f7bb063425907ded81ceafa98f9a22e9950d9f8e7af7f3"
+      },
+      "name": "wham",
+      "namespace": "library",
+      "version": 2
+    },
+    "whamr": {
+      "digests": {
+        "catalog/datasets/whamr.json": "561666df8ed4c5702b4ebb2512edd499b57dbc625457c01369a171d28fa45f1d"
+      },
+      "name": "whamr",
+      "namespace": "library",
+      "version": 2
+    },
+    "whu-hi": {
+      "digests": {
+        "catalog/datasets/whu-hi.json": "3c352ef6f9766706d2a9b2f550fd3b9a928f721d564b6953485ada2f2af4417a"
+      },
+      "name": "whu-hi",
+      "namespace": "library",
+      "version": 2
+    },
+    "widar": {
+      "digests": {
+        "catalog/datasets/widar.json": "b2609aa3d5eff4c366c822350fc56b8696e4b29c807f3cd4e3dd8f7ef8c5dcc8"
+      },
+      "name": "widar",
+      "namespace": "library",
+      "version": 2
+    },
+    "widar-3": {
+      "digests": {
+        "catalog/datasets/widar-3.json": "d470d25545c21a507ee7a959a4d6a7ece58892174e887bf1b3dbbed4467b9576"
+      },
+      "name": "widar-3",
+      "namespace": "library",
+      "version": 2
+    },
+    "wider-face": {
+      "digests": {
+        "catalog/datasets/wider-face.json": "c09f7da7b77d8af3b5a1410d3fc5f2f905690cc0366c37697833f745af36635b"
+      },
+      "name": "wider-face",
+      "namespace": "library",
+      "version": 2
+    },
+    "wikipedia-web-traffic": {
+      "digests": {
+        "catalog/datasets/wikipedia-web-traffic.json": "525e8afa133ba9917849e73915b3a67d78b5b0ae7ba945f8d8eac0d2c4863588"
+      },
+      "name": "wikipedia-web-traffic",
+      "namespace": "library",
+      "version": 2
+    },
+    "wikitext-103": {
+      "digests": {
+        "catalog/datasets/wikitext-103.json": "37a7f483ef189d1fd0616b05aa73d80b1092df16b3d7dd8eee057c013adfd4d0"
+      },
+      "name": "wikitext-103",
+      "namespace": "library",
+      "version": 2
+    },
+    "wikitext-2-raw": {
+      "digests": {
+        "catalog/datasets/wikitext-2-raw.json": "2736acfb9ddd8244865eb017fe11b37e62add4ee58e064c7a8d67490319a12b3",
+        "implementations/wikitext-2-raw/__init__.py": "e3877692afb22351c79b257ea19fe24b2ba5c92ef7d8adf9aaf28f2efffead9d"
+      },
+      "name": "wikitext-2-raw",
+      "namespace": "library",
+      "version": 2
+    },
+    "wilds-fmow": {
+      "digests": {
+        "catalog/datasets/wilds-fmow.json": "293278b6970f28c621cf8fb1b073cb39d176fcba91574724c481180d410420aa"
+      },
+      "name": "wilds-fmow",
+      "namespace": "library",
+      "version": 2
+    },
+    "wilds-rxrx1": {
+      "digests": {
+        "catalog/datasets/wilds-rxrx1.json": "2405c5d68aea1118c608ced8a2dd9f3e739c62e3726e48646a3a4d579ae19740"
+      },
+      "name": "wilds-rxrx1",
+      "namespace": "library",
+      "version": 2
+    },
+    "wind": {
+      "digests": {
+        "catalog/datasets/wind.json": "c0908af9317df2ef914ec9f0c741b72a0190b0d4b054891349e7febc9b89cf0e"
+      },
+      "name": "wind",
+      "namespace": "library",
+      "version": 2
+    },
+    "wisdm": {
+      "digests": {
+        "catalog/datasets/wisdm.json": "783f37263c34a824abfdfdac45f3a4aa04d36536c6754af45c478dea4f18d33a"
+      },
+      "name": "wisdm",
+      "namespace": "library",
+      "version": 2
+    },
+    "wit": {
+      "digests": {
+        "catalog/datasets/wit.json": "ce58768d4e00346b4054def76eccbe37016a41d77841bd54bc41aaa7596107c2"
+      },
+      "name": "wit",
+      "namespace": "library",
+      "version": 2
+    },
+    "wmt": {
+      "digests": {
+        "catalog/datasets/wmt.json": "3eab0cdd677538af3e1df0f338c92d063bcc1334a8c82507a9a89082205cc77e"
+      },
+      "name": "wmt",
+      "namespace": "library",
+      "version": 2
+    },
+    "wsj": {
+      "digests": {
+        "catalog/datasets/wsj.json": "1c2a38575af1dcf370a0c01c3f80895a1635e616e043b74338fec1af6aa78a14"
+      },
+      "name": "wsj",
+      "namespace": "library",
+      "version": 2
+    },
+    "wsj0-2mix": {
+      "digests": {
+        "catalog/datasets/wsj0-2mix.json": "129b3613b4be802d5ba45e5c987f4534a4589b48a68a6e4f70cfec7109bbe890"
+      },
+      "name": "wsj0-2mix",
+      "namespace": "library",
+      "version": 2
+    },
+    "xbd": {
+      "digests": {
+        "catalog/datasets/xbd.json": "90efdfe62eed109102a69556b9d7a077b7be4c494417e79f5ab0d1d4d5f89277"
+      },
+      "name": "xbd",
+      "namespace": "library",
+      "version": 2
+    },
+    "xeno-canto": {
+      "digests": {
+        "catalog/datasets/xeno-canto.json": "a537b5e72352d92a2adf8467b18faf75e01df36fd9857c58c07b966aef13c0b6"
+      },
+      "name": "xeno-canto",
+      "namespace": "library",
+      "version": 2
+    },
+    "xnli": {
+      "digests": {
+        "catalog/datasets/xnli.json": "77ee792ccfef27c5d8723cccbc3b6ceea889c9a92f973e4f9e6ed6282801699e"
+      },
+      "name": "xnli",
+      "namespace": "library",
+      "version": 2
+    },
+    "xsum": {
+      "digests": {
+        "catalog/datasets/xsum.json": "51be7de2476c8f0f30ac4211892c06fbb7dd59477571e351cdc18b6c539d8bac"
+      },
+      "name": "xsum",
+      "namespace": "library",
+      "version": 2
+    },
+    "xtreme": {
+      "digests": {
+        "catalog/datasets/xtreme.json": "a4c8092e810dc883e1a8c2543c9a5da819650f6a1b645c16e04d4e64e30bbc4b"
+      },
+      "name": "xtreme",
+      "namespace": "library",
+      "version": 2
+    },
+    "xview": {
+      "digests": {
+        "catalog/datasets/xview.json": "3c207a2c5dac2eace744b833e6eb379ec7200676fd8ad222323450f15946c21a"
+      },
+      "name": "xview",
+      "namespace": "library",
+      "version": 2
+    },
+    "yahoo-s5": {
+      "digests": {
+        "catalog/datasets/yahoo-s5.json": "2f9abd6212161b2360252ece6d4519ac78a736a033e49405b2e504a91e2d86fb"
+      },
+      "name": "yahoo-s5",
+      "namespace": "library",
+      "version": 2
+    },
+    "yelp": {
+      "digests": {
+        "catalog/datasets/yelp.json": "a54b6c5da03387e3c83aa4ce5d28f371fa55cd705a4e3dfe3677b9f64fd064b9"
+      },
+      "name": "yelp",
+      "namespace": "library",
+      "version": 2
+    },
+    "yfcc100m": {
+      "digests": {
+        "catalog/datasets/yfcc100m.json": "1f32ff244fca49657d7a1512b5c3ed79d658be8f7e1174bb4538ab3c8e18ac6f"
+      },
+      "name": "yfcc100m",
+      "namespace": "library",
+      "version": 2
+    },
+    "youtube-vis": {
+      "digests": {
+        "catalog/datasets/youtube-vis.json": "70bcd7ca1201cb4666f0d10b77f336d4e74fe878bf6409f34da00fc952562af0"
+      },
+      "name": "youtube-vis",
+      "namespace": "library",
+      "version": 2
+    },
+    "youtube-vos": {
+      "digests": {
+        "catalog/datasets/youtube-vos.json": "5bf532ce4d25b674694b0ce49e49c02800aee1cc455ea92f34fb9b60ac69e3c4"
+      },
+      "name": "youtube-vos",
+      "namespace": "library",
+      "version": 2
+    },
+    "zinc-12k": {
+      "digests": {
+        "catalog/datasets/zinc-12k.json": "1f8a5dfaa8041ed6daacc6ad7bae3fbf6113c4fd630aa7b9f8c3646473d1ddf4"
+      },
+      "name": "zinc-12k",
+      "namespace": "library",
+      "version": 2
+    },
+    "zinc-250k": {
+      "digests": {
+        "catalog/datasets/zinc-250k.json": "b94b6f00eebeb13b362ae51d127d6534e60ef1f60037c44fb8834ffce8ba2ac4"
+      },
+      "name": "zinc-250k",
+      "namespace": "library",
+      "version": 2
+    },
+    "zinc-full": {
+      "digests": {
+        "catalog/datasets/zinc-full.json": "cd5569d1b249346befec1c7aa2682baf6a4f238354619d764416d3aefc06b1d3"
+      },
+      "name": "zinc-full",
+      "namespace": "library",
+      "version": 2
+    }
+  },
+  "schema_version": 1
+}

@@ -1,0 +1,13 @@
+{
+  "id": "susy",
+  "name": "SUSY",
+  "domain": "tabular",
+  "description": "A simulated high-energy physics dataset for classifying supersymmetric signal events against Standard Model background events, represented by 18 kinematic features.",
+  "citation": "Baldi, P., Sadowski, P., and Whiteson, D. (2014). Searching for Exotic Particles in High-Energy Physics with Deep Learning. Nature Communications, 5, 4308. https://doi.org/10.1038/ncomms5308",
+  "license": {
+    "identifier": "CC-BY-4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "notes": "The UCI Machine Learning Repository lists the dataset under CC BY 4.0; this is a standard SPDX identifier. Attribute the dataset creators and review the license terms when redistributing or using the data."
+  },
+  "upstream_url": "https://archive.ics.uci.edu/dataset/279/susy"
+}

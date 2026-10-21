@@ -1,0 +1,13 @@
+{
+  "id": "avazu",
+  "name": "Avazu Click-Through Rate Prediction Dataset",
+  "domain": "recommendation",
+  "description": "A large-scale anonymized mobile advertising click log for click-through-rate prediction, with impression-level user, device, and ad features and click labels. This record is loader-only and does not distribute dataset files.",
+  "citation": "McMahan, H. B., Holt, G., Sculley, D., et al. (2013). Ad Click Prediction: a View from the Trenches. Proceedings of the 19th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (KDD '13), 1222–1230. https://doi.org/10.1145/2487575.2488200",
+  "license": {
+    "identifier": "Avazu competition dataset terms (not a standard SPDX identifier)",
+    "url": "https://www.kaggle.com/c/avazu-ctr-prediction/rules",
+    "notes": "The competition data is governed by dataset- and competition-specific terms, not a standard SPDX license identifier. Review the applicable Kaggle competition rules and source terms before use or redistribution. This record is loader-only and vendors no data."
+  },
+  "upstream_url": "https://www.kaggle.com/c/avazu-ctr-prediction"
+}

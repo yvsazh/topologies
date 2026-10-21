@@ -1,0 +1,13 @@
+{
+  "id": "wilds-rxrx1",
+  "name": "WILDS RxRx1",
+  "domain": "scientific",
+  "description": "Cell microscopy image dataset for predicting genetic perturbations from cellular phenotypes, with distribution shifts across experimental batches and plates.",
+  "citation": "Taylor, J., et al. (2019). RxRx1: A Dataset for Evaluating Experimental Batch Correction Methods. arXiv:1901.08028. https://arxiv.org/abs/1901.08028",
+  "license": {
+    "identifier": "Research use; dataset license not specified",
+    "url": "https://wilds.stanford.edu/datasets/",
+    "notes": "No standard SPDX license identifier is specified for the WILDS RxRx1 dataset. Review the current WILDS and RxRx1 provider terms before use or redistribution; do not infer licensing from the paper or access availability."
+  },
+  "upstream_url": "https://wilds.stanford.edu/datasets/"
+}

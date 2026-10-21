@@ -1,0 +1,13 @@
+{
+  "id": "duacs-aviso",
+  "name": "DUACS AVISO eddies",
+  "domain": "scientific",
+  "description": "DUACS AVISO sea-surface-height mesoscale eddy tracks from 1993 onward. Eddy detection F1. CMEMS sea-level anomaly is a companion note in this record. Grids not vendored.",
+  "citation": "DUACS AVISO mesoscale eddy tracks.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://marine.copernicus.eu/",
+    "notes": "CMEMS open terms. Altimetry grids not vendored."
+  },
+  "upstream_url": "https://marine.copernicus.eu/"
+}

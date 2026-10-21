@@ -1,0 +1,13 @@
+{
+  "id": "lidc-idri",
+  "name": "LIDC-IDRI",
+  "domain": "scientific",
+  "description": "A publicly available collection of thoracic CT scans annotated for lung nodules by multiple radiologists, supporting research in nodule detection and characterization. Images and annotations are not vendored.",
+  "citation": "Armato, S. G. III, et al. (2011). The Lung Image Database Consortium (LIDC) and Image Database Resource Initiative (IDRI): A completed reference database of lung nodules on CT scans. Medical Physics, 38(2), 915-931. https://doi.org/10.1118/1.3528204",
+  "license": {
+    "identifier": "other",
+    "url": "https://www.cancerimagingarchive.net/collection/lidc-idri/",
+    "notes": "No standard SPDX license is asserted. Consult the upstream collection page and data-use terms for access and permitted use."
+  },
+  "upstream_url": "https://www.cancerimagingarchive.net/collection/lidc-idri/"
+}

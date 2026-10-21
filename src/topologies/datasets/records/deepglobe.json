@@ -1,0 +1,13 @@
+{
+  "id": "deepglobe",
+  "name": "DeepGlobe",
+  "domain": "vision",
+  "description": "DeepGlobe road, building, and land-cover tracks, about 10 thousand satellite images. Mean IoU and road F1. Demir et al., CVPR Workshops 2018. Imagery not vendored.",
+  "citation": "Demir et al., CVPRW 2018. DeepGlobe.",
+  "license": {
+    "identifier": "not specified",
+    "url": "http://deepglobe.org/",
+    "notes": "DigitalGlobe terms. Imagery not vendored."
+  },
+  "upstream_url": "http://deepglobe.org/"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "wider-face",
+  "name": "WIDER FACE",
+  "domain": "vision",
+  "description": "Face detection benchmark with easy, medium, and hard subsets, comprising about 32k images and 393k faces. Open research terms; no data vendored.",
+  "citation": "WIDER FACE: A Face Detection Benchmark. Yang et al., CVPR 2016.",
+  "license": {
+    "identifier": "WIDER FACE research terms",
+    "url": "http://shuoyang1213.me/WIDERFACE/"
+  },
+  "upstream_url": "http://shuoyang1213.me/WIDERFACE/"
+}

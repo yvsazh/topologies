@@ -1,0 +1,12 @@
+{
+  "id": "ds-1000",
+  "name": "DS-1000",
+  "domain": "language",
+  "description": "A data-science code evaluation benchmark of about 1,000 problems spanning seven Python libraries. BigCodeBench is its practical-code companion, extending evaluation toward more practical, diverse coding tasks. No dataset data is vendored here.",
+  "citation": "Lai, Y., Li, C., Wang, Y., Zhang, T., Zhong, R., Zettlemoyer, L., Yih, W., Fried, D., Wang, S., & Yu, T. (2023). DS-1000: A Natural and Reliable Benchmark for Data Science Code Generation. International Conference on Machine Learning (ICML) 2023.",
+  "license": {
+    "identifier": "DS-1000 release terms (no SPDX identifier stated)",
+    "url": "https://github.com/HKUNLP/DS-1000"
+  },
+  "upstream_url": "https://github.com/HKUNLP/DS-1000"
+}

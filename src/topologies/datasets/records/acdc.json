@@ -1,0 +1,13 @@
+{
+  "id": "acdc",
+  "name": "ACDC",
+  "domain": "vision",
+  "description": "ACDC cardiac MRI, 150 end-diastole and end-systole cases. Dice, Hausdorff, and ejection-fraction correlation. Bernard et al., IEEE TMI 2018. M&Ms, 375 multi-center cases, is a companion note in this record, not a separate file. Access by request. Scans not vendored.",
+  "citation": "Bernard et al., TMI 2018. ACDC cardiac MRI.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://www.creatis.insa-lyon.fr/Challenge/acdc/",
+    "notes": "Research request. Human scans are loader-only and not vendored."
+  },
+  "upstream_url": "https://www.creatis.insa-lyon.fr/Challenge/acdc/"
+}

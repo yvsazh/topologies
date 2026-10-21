@@ -1,0 +1,12 @@
+{
+  "id": "co3d",
+  "name": "CO3D",
+  "domain": "vision",
+  "description": "Common Objects in 3D (CO3D) contains about 19k turntable videos across 50 categories. Meta research terms. No data vendored.",
+  "citation": "CO3D: Common Objects in 3D Dataset, Reizenstein et al., 2021.",
+  "license": {
+    "identifier": "Meta research terms (not a standard SPDX identifier)",
+    "url": "https://github.com/facebookresearch/co3d"
+  },
+  "upstream_url": "https://github.com/facebookresearch/co3d"
+}

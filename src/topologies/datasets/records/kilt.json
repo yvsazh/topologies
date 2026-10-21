@@ -1,0 +1,12 @@
+{
+  "id": "kilt",
+  "name": "KILT",
+  "domain": "language",
+  "description": "Knowledge-intensive language tasks unified over a Wikipedia snapshot. Distinct from the already recorded FEVER, Natural Questions, TriviaQA, and HotpotQA source sets. No data vendored.",
+  "citation": "Petroni et al. (2021). KILT: a Benchmark for Knowledge Intensive Language Tasks. NAACL 2021.",
+  "license": {
+    "identifier": "MIT (code); Wikipedia terms apply to data (no single SPDX identifier covers both)",
+    "url": "https://github.com/facebookresearch/KILT"
+  },
+  "upstream_url": "https://github.com/facebookresearch/KILT"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "franka-kitchen",
+  "name": "Franka Kitchen",
+  "domain": "scientific",
+  "description": "Franka Kitchen seven-object manipulation sequences. Completed-subtask score on the 3-task and 4-task protocol. Gupta et al., CoRL 2020. Environment suite; no demonstrations vendored.",
+  "citation": "Gupta et al., CoRL 2020. Franka Kitchen.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://github.com/rail-berkeley/relay_policy_learning",
+    "notes": "Provider page does not state a standard SPDX license. Record only; no data vendored."
+  },
+  "upstream_url": "https://github.com/rail-berkeley/relay_policy_learning"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "uk-dale",
+  "name": "UK-DALE",
+  "domain": "scientific",
+  "description": "UK-DALE energy disaggregation, five houses and 655 days at 6-second sampling. MAE and event F1. Kelly and Knottenbelt 2015. REDD and REFIT are companion notes in this record. Distinct from GEFCom forecasting. Traces not vendored.",
+  "citation": "Kelly and Knottenbelt 2015. UK-DALE.",
+  "license": {
+    "identifier": "CC-BY-4.0",
+    "url": "https://jack-kelly.com/data/",
+    "notes": "CC-BY. Power traces not vendored."
+  },
+  "upstream_url": "https://jack-kelly.com/data/"
+}

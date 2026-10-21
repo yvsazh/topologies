@@ -1,0 +1,12 @@
+{
+  "id": "mls",
+  "name": "Multilingual LibriSpeech",
+  "domain": "audio",
+  "description": "An eight-language LibriVox speech recognition corpus, distinct from the English-only LibriSpeech dataset. No data is vendored in this record.",
+  "citation": "Multilingual LibriSpeech (MLS): A Large Multilingual Corpus for Speech Research. Pratap et al. (2020).",
+  "license": {
+    "identifier": "CC-BY-4.0",
+    "url": "https://openslr.org/94/"
+  },
+  "upstream_url": "https://openslr.org/94/"
+}

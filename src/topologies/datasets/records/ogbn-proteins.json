@@ -1,0 +1,13 @@
+{
+  "id": "ogbn-proteins",
+  "name": "ogbn-proteins",
+  "domain": "graph",
+  "description": "A large-scale protein-protein interaction graph from ogbn, with proteins as nodes and edges representing interactions; node features aggregate amino-acid-level biological features, and labels describe the proteins' functional categories. This record catalogs the dataset and does not distribute data.",
+  "citation": "Hu, W., Fey, M., Zitnik, M., Dong, Y., Ren, H., Liu, B., Catasta, M., & Leskovec, J. (2020). Open Graph Benchmark: Datasets for Machine Learning on Graphs. Advances in Neural Information Processing Systems, 33, 22118–22133. https://proceedings.neurips.cc/paper/2020/hash/fb60d411a5c5b72b2e7d3527cfc84fd0-Abstract.html",
+  "license": {
+    "identifier": "Dataset-specific terms (not a standard SPDX identifier)",
+    "url": "https://ogb.stanford.edu/docs/license/",
+    "notes": "OGB dataset licensing and underlying source-data terms may vary; no standard SPDX identifier is asserted for ogbn-proteins. Consult the OGB license guidance and upstream data terms before use or redistribution."
+  },
+  "upstream_url": "https://ogb.stanford.edu/docs/nodeprop/#ogbn-proteins"
+}

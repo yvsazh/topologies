@@ -1,0 +1,13 @@
+{
+  "id": "ett",
+  "name": "Electricity Transformer Temperature (ETT)",
+  "domain": "time-series",
+  "description": "A multivariate time-series benchmark for long-term forecasting, comprising four subsets: ETTh1, ETTh2, ETTm1, and ETTm2. The hourly subsets are sampled hourly and the minute subsets are sampled every 15 minutes.",
+  "citation": "Zhou, H., Zhang, S., Peng, J., Zhang, S., Li, J., Xiong, H., & Zhang, W. (2021). Informer: Beyond Efficient Transformer for Long Sequence Time-Series Forecasting. Proceedings of the AAAI Conference on Artificial Intelligence, 35(12), 11106–11115. https://doi.org/10.1609/aaai.v35i12.17325",
+  "license": {
+    "identifier": "CC BY-NC-SA 4.0 (not a standard SPDX identifier)",
+    "url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "notes": "The ETT dataset is distributed under CC BY-NC-SA 4.0, which is not a standard SPDX identifier. Attribution, non-commercial use, and share-alike conditions apply; review the dataset and upstream terms before use or redistribution."
+  },
+  "upstream_url": "https://github.com/zhouhaoyi/ETDataset"
+}

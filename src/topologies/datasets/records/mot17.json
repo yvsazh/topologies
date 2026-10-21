@@ -1,0 +1,13 @@
+{
+  "id": "mot17",
+  "name": "MOT17",
+  "domain": "vision",
+  "description": "A benchmark dataset for multi-object tracking in crowded scenes, providing video sequences with pedestrian detections and tracking annotations. This record does not distribute dataset files.",
+  "citation": "Milan, A., Leal-Taixé, L., Reid, I., Roth, S., & Schindler, K. (2016). MOT16: A Benchmark for Multi-Object Tracking. arXiv:1603.00831. https://arxiv.org/abs/1603.00831",
+  "license": {
+    "identifier": "Custom MOTChallenge terms (not a standard SPDX identifier)",
+    "url": "https://motchallenge.net/",
+    "notes": "MOT17 data is subject to the dataset-specific MOTChallenge terms and source-data restrictions; the license is not a standard SPDX identifier. Review the current terms before use or redistribution. This record is loader-only and vendors no data."
+  },
+  "upstream_url": "https://motchallenge.net/data/MOT17/"
+}

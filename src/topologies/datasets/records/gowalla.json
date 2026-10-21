@@ -1,0 +1,13 @@
+{
+  "id": "gowalla",
+  "name": "Gowalla",
+  "domain": "recommendation",
+  "description": "A user–item implicit-feedback dataset derived from Gowalla users' check-in activity, commonly used to evaluate recommendation algorithms. This record describes the dataset only and does not distribute its data.",
+  "citation": "Liang, D., Krishnan, R. G., Hoffman, M. D., & Jebara, T. (2018). Variational Autoencoders for Collaborative Filtering. Proceedings of the 2018 World Wide Web Conference, 689–698. https://doi.org/10.1145/3178876.3186150",
+  "license": {
+    "identifier": "other",
+    "url": "https://github.com/xiangnanhe/RecDataset",
+    "notes": "The dataset is distributed under dataset-specific terms, not a standard SPDX identifier. Review the upstream repository and original data terms before use or redistribution; this record vendors no data."
+  },
+  "upstream_url": "https://github.com/xiangnanhe/RecDataset"
+}

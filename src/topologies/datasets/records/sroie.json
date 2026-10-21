@@ -1,0 +1,13 @@
+{
+  "id": "sroie",
+  "name": "SROIE",
+  "domain": "vision",
+  "description": "SROIE scanned receipts, about 1000 images, tasks 1 through 3 for text detection, OCR, and key information extraction. Field F1 and ANLS. Distinct from CORD. Scans not vendored.",
+  "citation": "ICDAR 2019. SROIE.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://rrc.cvc.uab.es/?ch=13",
+    "notes": "Robust Reading Competition research terms. Scans not vendored."
+  },
+  "upstream_url": "https://rrc.cvc.uab.es/?ch=13"
+}

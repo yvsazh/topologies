@@ -1,0 +1,13 @@
+{
+  "id": "dolma",
+  "name": "Dolma",
+  "domain": "natural-language",
+  "description": "Dolma is a large English-language corpus for language-model pretraining research, comprising approximately three trillion tokens from a mixture of web content, academic publications, code, books, social media, and encyclopedic materials. This record is loader-only and does not distribute dataset files.",
+  "citation": "Soldaini, L., Kinney, R., Bhagia, A., Schwenk, D., Atkinson, D., Authur, R., et al. (2024). Dolma: an Open Corpus of Three Trillion Tokens for Language Model Pretraining Research. arXiv:2402.00159. https://doi.org/10.48550/arXiv.2402.00159",
+  "license": {
+    "identifier": "ODC-BY-1.0",
+    "url": "https://opendatacommons.org/licenses/by/1-0/",
+    "notes": "The upstream dataset card identifies the dataset license as ODC-BY. ODC-BY-1.0 is not a standard SPDX identifier. Use is also subject to the license agreements and terms of the original data sources; review those terms before use or redistribution."
+  },
+  "upstream_url": "https://huggingface.co/datasets/allenai/dolma"
+}

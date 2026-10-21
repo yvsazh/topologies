@@ -1,0 +1,13 @@
+{
+  "id": "hmdb51",
+  "name": "HMDB51",
+  "domain": "vision",
+  "description": "A human action recognition dataset containing 6,766 video clips across 51 action categories. This record is metadata-only and does not distribute dataset files.",
+  "citation": "Kuehne, H., Jhuang, H., Garrote, E., Poggio, T., & Serre, T. (2011). HMDB: A large video database for human motion recognition. Proceedings of the IEEE International Conference on Computer Vision (ICCV), 2556–2563. https://doi.org/10.1109/ICCV.2011.6126543",
+  "license": {
+    "identifier": "Custom HMDB51 dataset terms (not a standard SPDX identifier)",
+    "url": "https://serre-lab.clps.brown.edu/resource/hmdb-a-large-human-motion-database/",
+    "notes": "HMDB51 is provided under dataset-specific terms, not a standard SPDX license. Review the upstream terms and applicable rights for source videos before use or redistribution. This record vendors no data."
+  },
+  "upstream_url": "https://serre-lab.clps.brown.edu/resource/hmdb-a-large-human-motion-database/"
+}

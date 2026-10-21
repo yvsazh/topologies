@@ -1,0 +1,12 @@
+{
+  "id": "earnings-22",
+  "name": "Earnings-22",
+  "domain": "audio",
+  "description": "An approximately 125-hour corpus of accented and noisy earnings-call speech. No data is vendored in this record.",
+  "citation": "Earnings-22: A Practical Benchmark for Accented Speech Recognition. Del Rio et al. (Interspeech 2022).",
+  "license": {
+    "identifier": "Rev.com release terms (non-standard; not an SPDX identifier)",
+    "url": "https://github.com/revdotcom/speech-datasets"
+  },
+  "upstream_url": "https://github.com/revdotcom/speech-datasets"
+}

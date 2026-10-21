@@ -1,0 +1,13 @@
+{
+  "id": "amazon-computers",
+  "name": "Amazon Computers",
+  "domain": "graph",
+  "description": "A co-purchase graph with about 13k nodes, evaluated with the Shchur random-split protocol. Amazon Photo is a related co-purchase graph. Distinct from the Amazon review corpora already recorded; no data is vendored here.",
+  "citation": "Amazon Computers; Shchur et al. (2019), Pitfalls of Graph Neural Network Evaluation, International Conference on Learning Representations (ICLR 2019).",
+  "license": {
+    "identifier": "Dataset release terms (no SPDX identifier stated)",
+    "url": "https://github.com/shchur/gnn-benchmark",
+    "notes": "Consult the upstream release terms before use or redistribution. No data is vendored here."
+  },
+  "upstream_url": "https://github.com/shchur/gnn-benchmark"
+}

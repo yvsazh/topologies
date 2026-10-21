@@ -1,0 +1,13 @@
+{
+  "id": "mutag",
+  "name": "MUTAG",
+  "domain": "graph",
+  "description": "A benchmark of 188 nitroaromatic compounds represented as graphs, classified according to their mutagenic effect on the bacterium Salmonella typhimurium. This record does not distribute dataset files.",
+  "citation": "Debnath, A. K., Lopez de Compadre, R. L., Debnath, G., Shusterman, A. J., & Hansch, C. (1991). Structure-activity relationship of mutagenic aromatic and heteroaromatic nitro compounds. Correlation with molecular orbital energies and hydrophobicity. Journal of Medicinal Chemistry, 34(2), 786–797. https://doi.org/10.1021/jm00106a046",
+  "license": {
+    "identifier": "Dataset-specific terms (not a standard SPDX identifier)",
+    "url": "https://www.graphlearning.io/",
+    "notes": "The MUTAG dataset is distributed via third-party graph-learning repositories; this record does not assert a standard SPDX license. Review the applicable source repository and original publication terms before use or redistribution. No data is vendored."
+  },
+  "upstream_url": "https://www.graphlearning.io/"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "gait3d",
+  "name": "Gait3D",
+  "domain": "vision",
+  "description": "Gait3D in-the-wild 3D gait, about 4000 identities and 25 thousand sequences. Rank-1 and mAP. Zheng et al., ECCV 2022. SUSTech1K LiDAR and RGB gait is a companion note in this record. Sequences not vendored.",
+  "citation": "Zheng et al., ECCV 2022. Gait3D.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://gait3d.github.io/",
+    "notes": "PKU and SUSTech terms. Sequences not vendored."
+  },
+  "upstream_url": "https://gait3d.github.io/"
+}

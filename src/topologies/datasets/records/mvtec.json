@@ -1,0 +1,13 @@
+{
+  "id": "mvtec",
+  "name": "MVTec AD",
+  "domain": "vision",
+  "description": "MVTec AD is an industrial anomaly-detection dataset of high-resolution images across object and texture categories, with pixel-precise defect masks for the test set.",
+  "citation": "Bergmann, P., Fauser, M., Sattlegger, D., and Steger, C. MVTec AD \u2014 A Comprehensive Real-World Dataset for Unsupervised Anomaly Detection. CVPR 2019. https://doi.org/10.1109/CVPR.2019.00982",
+  "license": {
+    "identifier": "other",
+    "url": "",
+    "notes": "unverified"
+  },
+  "upstream_url": "https://www.mvtec.com/company/research/datasets/mvtec-ad"
+}

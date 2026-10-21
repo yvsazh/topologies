@@ -1,0 +1,13 @@
+{
+  "id": "totalsegmentator",
+  "name": "TotalSegmentator",
+  "domain": "medical imaging",
+  "description": "Computed tomography (CT) dataset and benchmark for automatic segmentation of 104 anatomical structures, including organs, bones, and muscles.",
+  "citation": "Wasserthal et al. TotalSegmentator: Robust Segmentation of 104 Anatomic Structures in CT Images. Radiology: Artificial Intelligence, 2023.",
+  "license": {
+    "identifier": "other",
+    "url": "https://github.com/wasserth/TotalSegmentator",
+    "notes": "Dataset and software licensing terms are described by the upstream project; verify terms before use."
+  },
+  "upstream_url": "https://github.com/wasserth/TotalSegmentator"
+}

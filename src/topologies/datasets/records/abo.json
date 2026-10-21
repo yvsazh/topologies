@@ -1,0 +1,12 @@
+{
+  "id": "abo",
+  "name": "ABO",
+  "domain": "vision",
+  "description": "Amazon Berkeley Objects, about 8k product 3D models and 300k images. Amazon research terms. No data vendored.",
+  "citation": "Amazon Berkeley Objects (ABO), Collins et al., CVPR 2022.",
+  "license": {
+    "identifier": "Amazon research terms",
+    "url": "https://amazon-berkeley-objects.s3.amazonaws.com/index.html"
+  },
+  "upstream_url": "https://amazon-berkeley-objects.s3.amazonaws.com/index.html"
+}

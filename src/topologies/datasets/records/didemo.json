@@ -1,0 +1,13 @@
+{
+  "id": "didemo",
+  "name": "DiDeMo",
+  "domain": "multimodal",
+  "description": "A video-language dataset for localizing moments in untrimmed videos from natural-language descriptions.",
+  "citation": "Hendricks, L. A., Wang, O., Shechtman, E., Sivic, J., Darrell, T., and others. (2017). Localizing Moments in Video with Natural Language. Proceedings of the IEEE International Conference on Computer Vision (ICCV). https://doi.org/10.1109/ICCV.2017.604",
+  "license": {
+    "identifier": "Not stated (not a standard SPDX identifier)",
+    "url": "https://github.com/LisaAnne/LocalizingMoments",
+    "notes": "The repository provides DiDeMo annotations and access instructions, but does not establish a standard SPDX license for the dataset. Videos originate from Flickr/YFCC100M and retain their respective rights and terms; review those terms before use or redistribution."
+  },
+  "upstream_url": "https://github.com/LisaAnne/LocalizingMoments"
+}

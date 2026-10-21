@@ -1,0 +1,13 @@
+{
+  "id": "reddit",
+  "name": "Reddit",
+  "domain": "graph",
+  "description": "A social network graph derived from Reddit posts, with users as nodes and edges connecting users who interacted in the same discussion thread; used for graph-based classification tasks. This record is loader-only and does not distribute dataset files.",
+  "citation": "Hamilton, W. L., Ying, R., & Leskovec, J. (2017). Inductive Representation Learning on Large Graphs. Advances in Neural Information Processing Systems, 30. https://arxiv.org/abs/1706.02216",
+  "license": {
+    "identifier": "Reddit dataset-specific terms (not a standard SPDX identifier)",
+    "url": "https://snap.stanford.edu/graphsage/",
+    "notes": "The Reddit graph dataset is provided for research use under dataset-specific terms, not a standard SPDX license identifier. Review upstream terms before use or redistribution. This record is loader-only and vendors no data."
+  },
+  "upstream_url": "https://snap.stanford.edu/graphsage/"
+}

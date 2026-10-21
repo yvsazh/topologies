@@ -1,0 +1,12 @@
+{
+  "id": "replica",
+  "name": "Replica",
+  "domain": "vision",
+  "description": "18 high-fidelity indoor scans with semantic labels. Gated research, loader-only. No data vendored.",
+  "citation": "Replica dataset, Straub et al. 2019.",
+  "license": {
+    "identifier": "Gated research terms",
+    "url": "https://github.com/facebookresearch/Replica-Dataset"
+  },
+  "upstream_url": "https://github.com/facebookresearch/Replica-Dataset"
+}

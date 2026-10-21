@@ -1,0 +1,13 @@
+{
+  "id": "fair1m",
+  "name": "FAIR1M",
+  "domain": "vision",
+  "description": "Fine-grained aerial object detection dataset for detecting and classifying objects in high-resolution remote-sensing images, including fine-grained aircraft and ship categories. Dataset files are not vendored.",
+  "citation": "Sun et al., FAIR1M: A Benchmark Dataset for Fine-grained Object Recognition in High-Resolution Remote Sensing Imagery.",
+  "license": {
+    "identifier": "other",
+    "url": "https://captain-whu.github.io/Fair1M/",
+    "notes": "Dataset license terms are not clearly specified on the project page; check the upstream terms before use."
+  },
+  "upstream_url": "https://captain-whu.github.io/Fair1M/"
+}

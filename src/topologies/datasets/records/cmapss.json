@@ -1,0 +1,13 @@
+{
+  "id": "cmapss",
+  "name": "NASA C-MAPSS Turbofan Engine Degradation Simulation Dataset",
+  "domain": "scientific",
+  "description": "Simulated turbofan engine run-to-failure data generated with the Commercial Modular Aero-Propulsion System Simulation (C-MAPSS), comprising four subsets under different operating conditions and fault modes.",
+  "citation": "A. Saxena and K. Goebel (2008). “Turbofan Engine Degradation Simulation Data Set”, NASA Prognostics Data Repository, NASA Ames Research Center, Moffett Field, CA.",
+  "license": {
+    "identifier": "other",
+    "url": "",
+    "notes": "License not published or verified."
+  },
+  "upstream_url": "https://www.nasa.gov/intelligent-systems-division/discovery-and-systems-health/pcoe/pcoe-data-set-repository/"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "camelyon-17",
+  "name": "CAMELYON17",
+  "domain": "scientific",
+  "description": "A histopathology dataset for detecting metastatic breast cancer in lymph node tissue sections, collected from five medical centers. It includes whole-slide images and tumor-region annotations and supports domain generalization research. Access is subject to challenge registration and data-use terms; this record does not distribute dataset files.",
+  "citation": "Bándi, P., et al. (2018). From detection of individual metastases to classification of lymph node status at the patient level: The CAMELYON17 challenge. IEEE Transactions on Medical Imaging, 38(2), 550–560. https://doi.org/10.1109/TMI.2018.2867352",
+  "license": {
+    "identifier": "CAMELYON17 challenge terms (not a standard SPDX identifier)",
+    "url": "https://camelyon17.grand-challenge.org/",
+    "notes": "This medical imaging dataset is subject to challenge-specific access terms, not a standard SPDX license. Consult the upstream source for current registration requirements, permitted uses, and redistribution restrictions."
+  },
+  "upstream_url": "https://camelyon17.grand-challenge.org/"
+}

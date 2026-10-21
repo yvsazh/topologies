@@ -1,0 +1,13 @@
+{
+  "id": "trackingnet",
+  "name": "TrackingNet",
+  "domain": "computer-vision",
+  "description": "A large-scale object-tracking dataset and benchmark with more than 30,000 videos and over 14 million dense bounding-box annotations.",
+  "citation": "Müller, M., Bibi, A., Giancola, S., Al-Subaihi, S., & Ghanem, B. (2018). TrackingNet: A Large-Scale Dataset and Benchmark for Object Tracking in the Wild. arXiv:1803.10794. https://doi.org/10.48550/arXiv.1803.10794",
+  "license": {
+    "identifier": "other",
+    "url": "",
+    "notes": "unverified"
+  },
+  "upstream_url": "https://trackingnet.org/"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "tcga",
+  "name": "The Cancer Genome Atlas (TCGA)",
+  "domain": "scientific",
+  "description": "A landmark cancer genomics program that characterized molecular profiles and clinical data across more than 20,000 primary cancer and matched normal samples spanning 33 cancer types. Access to controlled genomic and clinical data is governed by dbGaP authorization; this record does not distribute dataset files.",
+  "citation": "Weinstein, J. N., Collisson, E. A., Mills, G. B., Shaw, K. R. M., Ozenberger, B. A., Ellrott, K., Shmulevich, I., Sander, C., & Stuart, J. M. (2013). The Cancer Genome Atlas Pan-Cancer analysis project. Nature Genetics, 45, 1113–1120. https://doi.org/10.1038/ng.2764",
+  "license": {
+    "identifier": "TCGA data access terms (not a standard SPDX identifier)",
+    "url": "https://www.cancer.gov/ccg/research/genome-sequencing/tcga",
+    "notes": "Access tier varies by data type: open-access data are publicly available; controlled-access genomic and clinical data require dbGaP authorization and compliance with the applicable data use limitations. No single dataset license is asserted here; consult the upstream access policies and applicable terms."
+  },
+  "upstream_url": "https://www.cancer.gov/ccg/research/genome-sequencing/tcga"
+}

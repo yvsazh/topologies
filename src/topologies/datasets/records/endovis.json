@@ -1,0 +1,13 @@
+{
+  "id": "endovis",
+  "name": "EndoVis Robotic Instrument Segmentation",
+  "domain": "vision",
+  "description": "EndoVis is a collection of endoscopic vision datasets and MICCAI challenges. The 2017 challenge included Robotic Instrument Segmentation; the 2018 program included Robotic Scene Segmentation.",
+  "citation": "EndoVis, official challenge page: https://endovis.grand-challenge.org/",
+  "license": {
+    "identifier": "other",
+    "url": "",
+    "notes": "Dataset license not verified."
+  },
+  "upstream_url": "https://endovis.grand-challenge.org/"
+}

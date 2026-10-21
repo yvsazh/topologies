@@ -1,0 +1,12 @@
+{
+  "id": "tabarena",
+  "name": "TabArena",
+  "domain": "tabular",
+  "description": "A benchmark for evaluating tabular machine-learning models across a collection of datasets and tasks. TabArena is a benchmark note, not a single downloadable table; dataset availability and terms vary across its constituent tasks.",
+  "citation": "Erickson, N., Mueller, J., Shirkov, A., et al. (2025). TabArena: A Living Benchmark for Machine Learning on Tabular Data. arXiv:2506.16791. https://arxiv.org/abs/2506.16791",
+  "license": {
+    "identifier": "Not specified as a single standard SPDX identifier",
+    "notes": "TabArena is a benchmark suite whose constituent datasets may have different licenses and access terms. No single standard SPDX identifier applies to the benchmark as a whole; check the benchmark repository and each dataset's terms before use or redistribution. This record does not include or vendor data."
+  },
+  "upstream_url": "https://github.com/TabArena/tabarena"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "glue",
+  "name": "GLUE (General Language Understanding Evaluation)",
+  "domain": "natural-language",
+  "description": "A benchmark suite of nine natural language understanding tasks for evaluating and analyzing model performance, including single-sentence classification, paraphrase detection, textual similarity, and natural language inference.",
+  "citation": "Wang, A., Singh, A., Michael, J., Hill, F., Levy, O., & Bowman, S. R. (2018). GLUE: A Multi-Task Benchmark and Analysis Platform for Natural Language Understanding. Proceedings of the 2018 EMNLP Workshop BlackboxNLP: Analyzing and Interpreting Neural Networks for NLP. https://doi.org/10.18653/v1/W18-5446",
+  "license": {
+    "identifier": "Dataset license not stated",
+    "url": "https://gluebenchmark.com/",
+    "notes": "The GLUE benchmark page does not specify a standard SPDX license for the dataset suite; component datasets may have distinct terms. Verify terms and access conditions for each component before use or redistribution."
+  },
+  "upstream_url": "https://gluebenchmark.com/"
+}

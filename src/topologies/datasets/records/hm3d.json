@@ -1,0 +1,12 @@
+{
+  "id": "hm3d",
+  "name": "Habitat-Matterport 3D",
+  "domain": "vision",
+  "description": "1000 indoor scans for embodied navigation, distinct from the 90-building Matterport3D set. This record is gated and loader-only; no data is vendored.",
+  "citation": "Ramakrishnan et al. (2021). Habitat-Matterport 3D (HM3D).",
+  "license": {
+    "identifier": "Matterport and HM3D gated terms (not a standard SPDX identifier)",
+    "url": "https://matterport.com/habitat-matterport-3d-research-dataset"
+  },
+  "upstream_url": "https://matterport.com/habitat-matterport-3d-research-dataset"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "peoples-speech",
+  "name": "People's Speech",
+  "domain": "audio",
+  "description": "An open transcribed speech dataset of about 30,000 hours. It includes mixed CC-BY-SA and CC0 licensing; no data is vendored here.",
+  "citation": "People's Speech: A Large-Scale Diverse English Speech Recognition Dataset for Commercial Usage. Galvez et al. (2021).",
+  "license": {
+    "identifier": "Mixed CC-BY-SA and CC0 (not one SPDX identifier for every file)",
+    "url": "https://github.com/mlcommons/peoples-speech"
+  },
+  "upstream_url": "https://github.com/mlcommons/peoples-speech"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "mose",
+  "name": "MOSE",
+  "domain": "vision",
+  "description": "A video object segmentation dataset focused on crowded and occluded scenes, comprising about 2,149 videos. Metadata only; no data is vendored.",
+  "citation": "MOSE: A New Dataset for Video Object Segmentation in Complex Scenes. Ding et al., Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2023.",
+  "license": {
+    "identifier": "MOSE release terms (not a standard SPDX identifier)",
+    "url": "https://henghuiding.github.io/MOSE/"
+  },
+  "upstream_url": "https://henghuiding.github.io/MOSE/"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "waymo-open",
+  "name": "Waymo Open Dataset",
+  "domain": "vision",
+  "description": "A large-scale autonomous driving dataset containing high-resolution sensor data, including camera images and LiDAR, with annotated driving scenes. This record is loader-only and does not distribute dataset files.",
+  "citation": "Sun, P., Kretzschmar, H., Dotiwalla, X., et al. (2020). Scalability in Perception for Autonomous Driving: Waymo Open Dataset. Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2446–2454. https://doi.org/10.1109/CVPR42600.2020.00252",
+  "license": {
+    "identifier": "Waymo Open Dataset Terms of Use (not a standard SPDX identifier)",
+    "url": "https://waymo.com/open/terms/",
+    "notes": "Waymo Open Dataset access and use are governed by Waymo's terms and applicable rights. The license is not a standard SPDX identifier; dataset content is rights-reserved and this record is loader-only, with no data distributed. Review the current terms before access or use."
+  },
+  "upstream_url": "https://waymo.com/open/"
+}

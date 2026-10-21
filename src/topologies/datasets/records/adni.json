@@ -1,0 +1,13 @@
+{
+  "id": "adni",
+  "name": "ADNI",
+  "domain": "vision",
+  "description": "Alzheimer's Disease Neuroimaging Initiative, about 2 thousand subjects with longitudinal T1 MRI, FDG PET, AV45 PET, and ADAS scores. CDR prediction and atrophy MAE. LONI application required. Scans not vendored.",
+  "citation": "ADNI Alzheimer's Disease Neuroimaging Initiative.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://adni.loni.usc.edu/",
+    "notes": "Credentialed LONI application. Human scans are loader-only and not vendored."
+  },
+  "upstream_url": "https://adni.loni.usc.edu/"
+}

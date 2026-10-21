@@ -1,0 +1,13 @@
+{
+  "id": "lasot",
+  "name": "LaSOT (Large-scale Single Object Tracking)",
+  "domain": "vision",
+  "description": "A large-scale single-object tracking benchmark containing 1,400 long-term video sequences across 70 object categories, with dense bounding-box annotations. This record is metadata-only and does not distribute dataset files.",
+  "citation": "Fan, H., Lin, L., Yang, F., Chu, P., Deng, G., Yu, S., Bai, H., Xu, Y., Liao, Z., & Ling, H. (2019). LaSOT: A High-quality Benchmark for Large-scale Single Object Tracking. Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 5374–5383. https://doi.org/10.1109/CVPR.2019.00552",
+  "license": {
+    "identifier": "Custom LaSOT dataset terms (not a standard SPDX identifier)",
+    "url": "https://cis.temple.edu/lasot/",
+    "notes": "LaSOT is distributed under dataset-specific terms rather than a standard SPDX license identifier. Review the current upstream terms and rights in the underlying video content before use or redistribution. This record vendors no data."
+  },
+  "upstream_url": "https://cis.temple.edu/lasot/"
+}

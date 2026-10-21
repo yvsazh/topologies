@@ -1,0 +1,13 @@
+{
+  "id": "pems-03",
+  "name": "PEMS-BAY PEMS03",
+  "domain": "time-series",
+  "description": "A traffic-flow forecasting dataset containing measurements from 358 sensors in the San Francisco Bay Area, sampled at 5-minute intervals. PEMS03 denotes the first three months of the PEMS-BAY collection.",
+  "citation": "Li, Y., Yu, R., Shahabi, C., & Liu, Y. (2018). Diffusion Convolutional Recurrent Neural Network: Data-Driven Traffic Forecasting. International Conference on Learning Representations (ICLR 2018). https://openreview.net/forum?id=SJiHXGWAZ",
+  "license": {
+    "identifier": "Dataset-specific terms; not a standard SPDX identifier",
+    "url": "https://github.com/liyaguang/DCRNN",
+    "notes": "The upstream data repository does not specify a standard SPDX license for the dataset files. Dataset licensing is therefore unclear and not represented by a standard SPDX identifier; review upstream terms and any applicable source-data restrictions before use or redistribution. This record does not include dataset files."
+  },
+  "upstream_url": "https://github.com/liyaguang/DCRNN"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "superglue",
+  "name": "SuperGLUE",
+  "domain": "natural-language",
+  "description": "A benchmark suite of eight challenging language understanding tasks designed to evaluate general-purpose language models, including coreference resolution, question answering, textual entailment, and word sense disambiguation.",
+  "citation": "Wang, A., Pruksachatkun, Y., Nangia, N., et al. (2019). SuperGLUE: A Stickier Benchmark for General-Purpose Language Understanding Systems. Advances in Neural Information Processing Systems 32. https://arxiv.org/abs/1905.00537",
+  "license": {
+    "identifier": "Dataset license not stated",
+    "url": "https://super.gluebenchmark.com/",
+    "notes": "The benchmark materials do not specify a single standard SPDX license for SuperGLUE; component datasets may have distinct terms. Access to the official evaluation/test labels is restricted through the benchmark submission process. Review component dataset terms before use or redistribution."
+  },
+  "upstream_url": "https://super.gluebenchmark.com/"
+}

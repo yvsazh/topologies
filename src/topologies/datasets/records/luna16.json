@@ -1,0 +1,13 @@
+{
+  "id": "luna16",
+  "name": "LUNA16",
+  "domain": "vision",
+  "description": "LUNA16 lung nodules, 888 CT scans and 1186 nodules. FROC on candidate detection and false-positive reduction. Setio et al., Medical Image Analysis 2017. Scans not vendored.",
+  "citation": "Setio et al., MedIA 2017. LUNA16.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://luna16.grand-challenge.org/",
+    "notes": "Research terms. Human scans are loader-only and not vendored."
+  },
+  "upstream_url": "https://luna16.grand-challenge.org/"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "timit",
+  "name": "TIMIT",
+  "domain": "audio",
+  "description": "A phoneme recognition corpus with 630 speakers and about 5.4 hours of speech. Access is through the LDC gated catalog (LDC93S1); loader-only, with no data vendored.",
+  "citation": "Garofolo, J. S., et al. (1993). TIMIT: Acoustic-Phonetic Continuous Speech Corpus.",
+  "license": {
+    "identifier": "LDC gated terms (not a standard SPDX identifier)",
+    "url": "https://catalog.ldc.upenn.edu/LDC93S1"
+  },
+  "upstream_url": "https://catalog.ldc.upenn.edu/LDC93S1"
+}

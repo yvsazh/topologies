@@ -1,0 +1,13 @@
+{
+  "id": "coco-2017",
+  "name": "COCO 2017",
+  "domain": "vision",
+  "description": "The 2017 release of the Common Objects in Context (COCO) dataset, providing images with object-instance annotations, captions, and other vision annotations. This record does not distribute dataset files.",
+  "citation": "Lin, T.-Y., Maire, M., Belongie, S., Hays, J., Perona, P., Ramanan, D., Dollár, P., & Zitnick, C. L. (2014). Microsoft COCO: Common Objects in Context. European Conference on Computer Vision (ECCV), 740–755. https://doi.org/10.1007/978-3-319-10602-1_48",
+  "license": {
+    "identifier": "Custom COCO license (not a standard SPDX identifier)",
+    "url": "https://cocodataset.org/#termsofuse",
+    "notes": "COCO is distributed under its own terms and licenses; images and annotations may have differing rights and conditions. The license is not a standard SPDX identifier. Review the current COCO terms and underlying image licenses before use or redistribution."
+  },
+  "upstream_url": "https://cocodataset.org/#download"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "kkbox-wsdm-cup",
+  "name": "KKBox WSDM Cup",
+  "domain": "recommendation",
+  "description": "KKBox WSDM Cup music churn and next-song recommendation. About 4 million members. Churn AUC and MAP at K. Both the music-recommendation challenge and the churn-prediction challenge belong in this one record. Loader-only metadata.",
+  "citation": "KKBox WSDM Cup music recommendation and churn challenges.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://www.kaggle.com/c/kkbox-music-recommendation-challenge",
+    "notes": "KKBox and Kaggle terms. Record only; no data vendored. Companion churn challenge: https://www.kaggle.com/c/kkboxs-churn-prediction-challenge"
+  },
+  "upstream_url": "https://www.kaggle.com/c/kkbox-music-recommendation-challenge"
+}

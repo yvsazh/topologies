@@ -1,0 +1,12 @@
+{
+  "id": "compcars",
+  "name": "CompCars",
+  "domain": "vision",
+  "description": "Fine-grained car dataset with 431 models and about 214,000 images, including web-nature and surveillance views plus verification annotations. Distinct from Stanford Cars. Data is not vendored; access and use are subject to CUHK terms.",
+  "citation": "Yang, L., Luo, P., Loy, C. C., & Tang, X. (2015). A Large-Scale Car Dataset for Fine-Grained Categorization and Verification (CompCars). Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR).",
+  "license": {
+    "identifier": "CUHK terms; not a standard SPDX identifier",
+    "url": "http://mmlab.ie.cuhk.edu.hk/datasets/comp_cars/"
+  },
+  "upstream_url": "http://mmlab.ie.cuhk.edu.hk/datasets/comp_cars/"
+}

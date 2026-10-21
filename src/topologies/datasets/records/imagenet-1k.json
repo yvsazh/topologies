@@ -1,0 +1,13 @@
+{
+  "id": "imagenet-1k",
+  "name": "ImageNet-1K",
+  "domain": "vision",
+  "description": "ImageNet-1K (ILSVRC 2012) is a large-scale image classification dataset with approximately 1.28 million training images and 50,000 validation images across 1,000 object categories. This record is loader-only and does not distribute dataset files.",
+  "citation": "Deng, J., Dong, W., Socher, R., Li, L.-J., Li, K., & Fei-Fei, L. (2009). ImageNet: A large-scale hierarchical image database. IEEE Conference on Computer Vision and Pattern Recognition (CVPR). https://doi.org/10.1109/CVPR.2009.5206848",
+  "license": {
+    "identifier": "Rights-reserved; ImageNet terms apply",
+    "url": "https://image-net.org/download.php",
+    "notes": "ImageNet images are rights-reserved and access is subject to ImageNet's current terms. Use and redistribution require authorization; this record is loader-only and vendors no data."
+  },
+  "upstream_url": "https://image-net.org/challenges/LSVRC/2012/"
+}

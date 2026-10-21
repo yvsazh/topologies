@@ -1,0 +1,13 @@
+{
+  "id": "vggface2",
+  "name": "VGGFace2",
+  "domain": "vision",
+  "description": "VGGFace2 is a face recognition dataset containing about 9,000 identities and 3.3 million images. Access is gated under Oxford research-only terms; this record is loader-only and does not vendor dataset data.",
+  "citation": "Cao, Q., Shen, L., Xie, W., Parkhi, O. M., & Zisserman, A. (2018). VGGFace2: A dataset for recognising faces across pose and age. 13th IEEE International Conference on Automatic Face & Gesture Recognition (FG 2018).",
+  "license": {
+    "identifier": "Oxford research-only terms (not a standard SPDX identifier)",
+    "url": "https://github.com/ox-vgg/vgg_face2",
+    "notes": "Gated access; use is limited to Oxford research-only terms. This record is loader-only and no data is vendored."
+  },
+  "upstream_url": "https://github.com/ox-vgg/vgg_face2"
+}

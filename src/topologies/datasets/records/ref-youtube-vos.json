@@ -1,0 +1,12 @@
+{
+  "id": "ref-youtube-vos",
+  "name": "Ref-YouTube-VOS",
+  "domain": "vision",
+  "description": "A dataset for referring video object segmentation, pairing video frames with language expressions that identify target objects. It is distinct from YouTube-VOS and is related to Refer-DAVIS. This record is metadata-only; no data is vendored.",
+  "citation": "Seo, M., et al. (2020). Ref-YouTube-VOS: A Large-Scale Benchmark for Video Object Segmentation with Language Expressions. Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR).",
+  "license": {
+    "identifier": "Custom Ref-YouTube-VOS release terms (not a standard SPDX identifier)",
+    "url": "https://youtube-vos.org/dataset/rvos/"
+  },
+  "upstream_url": "https://youtube-vos.org/dataset/rvos/"
+}

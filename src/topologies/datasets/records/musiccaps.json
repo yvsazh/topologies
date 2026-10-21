@@ -1,0 +1,12 @@
+{
+  "id": "musiccaps",
+  "name": "MusicCaps",
+  "domain": "audio",
+  "description": "Approximately 5,500 music-and-text pairs used to evaluate MusicLM. The music is YouTube-derived; no data is vendored here, and source-media licensing and rights remain a risk that should be reviewed before use or redistribution.",
+  "citation": "Agostinelli, A. et al. (2023). MusicCaps: A Dataset for Music Captioning. https://arxiv.org/abs/2301.11325",
+  "license": {
+    "identifier": "YouTube-derived terms (not a single SPDX identifier)",
+    "url": "https://github.com/google-research/musiccaps"
+  },
+  "upstream_url": "https://github.com/google-research/musiccaps"
+}

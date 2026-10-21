@@ -1,0 +1,13 @@
+{
+  "id": "librimix",
+  "name": "LibriMix",
+  "domain": "audio",
+  "description": "A corpus for speech separation research, created by mixing utterances from LibriSpeech (and, in some configurations, WHAM!) to provide single- and multi-speaker mixture audio with source references.",
+  "citation": "Cosentino, J., Pariente, M., Cornell, S., Kumar, A., Deleforge, A., & Vincent, E. (2020). LibriMix: An Open-Source Dataset for Generalizable Speech Separation. arXiv:2005.11262. https://arxiv.org/abs/2005.11262",
+  "license": {
+    "identifier": "LibriMix dataset terms (non-SPDX)",
+    "url": "https://github.com/JorisCos/LibriMix",
+    "notes": "LibriMix does not provide a single standard SPDX license identifier for all distributed material. Mixtures inherit rights and terms from their source corpora (including LibriSpeech and optionally WHAM!); review each source corpus's license and applicable terms before use or redistribution."
+  },
+  "upstream_url": "https://github.com/JorisCos/LibriMix"
+}

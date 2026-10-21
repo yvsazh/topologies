@@ -1,0 +1,13 @@
+{
+  "id": "laion-400m",
+  "name": "LAION-400M",
+  "domain": "multimodal",
+  "description": "A dataset of approximately 400 million image-text pairs collected from web-accessible sources and filtered using CLIP-based similarity. LAION-400M is a URL index with metadata, not a redistribution of the referenced image files.",
+  "citation": "Schuhmann, C., et al. (2021). LAION-400M: Open Dataset of CLIP-Filtered 400 Million Image-Text Pairs. arXiv:2111.02114. https://doi.org/10.48550/arXiv.2111.02114",
+  "license": {
+    "identifier": "Not stated (not a standard SPDX identifier)",
+    "url": "https://laion.ai/blog/laion-400-open-dataset/",
+    "notes": "LAION-400M provides URLs and associated metadata, not the image content itself, and does not grant rights to the images or captions. Referenced material may be subject to third-party copyright, licenses, and site terms; assess the rights and terms for each source before access, use, or redistribution. This record is URL-index-only and vendors no data."
+  },
+  "upstream_url": "https://laion.ai/blog/laion-400-open-dataset/"
+}

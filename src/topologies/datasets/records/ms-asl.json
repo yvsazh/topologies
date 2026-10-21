@@ -1,0 +1,13 @@
+{
+  "id": "ms-asl",
+  "name": "MS-ASL",
+  "domain": "vision",
+  "description": "MS-ASL American Sign Language, about 25 thousand clips, 1000 signs, and 200 signers. Per-instance accuracy. Joze and Koller, ICCV 2019 workshop. Distinct from WLASL. Video not vendored.",
+  "citation": "Joze and Koller, ICCV 2019. MS-ASL.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://www.microsoft.com/en-us/research/project/ms-asl/",
+    "notes": "TTIC and Microsoft research terms. Video not vendored."
+  },
+  "upstream_url": "https://www.microsoft.com/en-us/research/project/ms-asl/"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "ucr",
+  "name": "UCR Time Series Classification Archive",
+  "domain": "time-series",
+  "description": "A collection of univariate time-series datasets for classification research, spanning diverse application domains and series lengths. The archive is maintained as part of the broader UCR/UEA Time Series Classification repository.",
+  "citation": "Dau, H. A., Bagnall, A., Kamgar, K., Yeh, C.-C. M., Zhu, Y., Gharghabi, S., Ratanamahatana, C. A., & Keogh, E. (2019). The UCR Time Series Archive. IEEE/CAA Journal of Automatica Sinica, 6(6), 1293–1305. https://doi.org/10.1109/JAS.2019.1911747",
+  "license": {
+    "identifier": "Dataset-specific terms; not a standard SPDX identifier",
+    "url": "https://www.timeseriesclassification.com/",
+    "notes": "The archive aggregates datasets from different sources and does not provide one standard SPDX license identifier covering all constituent data. Review the terms and rights for each dataset and its original source before use or redistribution. This record does not include dataset files."
+  },
+  "upstream_url": "https://www.timeseriesclassification.com/"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "oxford-flowers-102",
+  "name": "Oxford Flowers 102",
+  "domain": "vision",
+  "description": "Oxford Flowers 102 is an image classification dataset containing 102 flower categories, with 40 to 258 images per category.",
+  "citation": "Nilsback, M.-E., & Zisserman, A. (2008). Automated Flower Classification over a Large Number of Classes. Indian Conference on Computer Vision, Graphics and Image Processing (ICVGIP).",
+  "license": {
+    "identifier": "Research use; license not specified",
+    "url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/",
+    "notes": "The dataset provider page does not state a standard license. Review the provider's terms and image rights before redistribution or commercial use."
+  },
+  "upstream_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/"
+}

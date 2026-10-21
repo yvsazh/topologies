@@ -1,0 +1,13 @@
+{
+  "id": "mimic-cxr",
+  "name": "MIMIC-CXR",
+  "domain": "multimodal",
+  "description": "A large, de-identified database of chest radiographs paired with free-text radiology reports from the Beth Israel Deaconess Medical Center. Access is credentialed through PhysioNet and requires completion of required training and acceptance of the applicable data use agreement; this record does not distribute dataset files.",
+  "citation": "Johnson, A. E. W., Pollard, T. J., Greenbaum, N. R., Lungren, M. P., Deng, C.-Y., Peng, Y., Lu, Z., Mark, R. G., Berkowitz, S. J., & Horng, S. (2019). MIMIC-CXR-JPG, a large publicly available database of labeled chest radiographs. arXiv:1901.07042. https://doi.org/10.1109/CVPR.2019.00851",
+  "license": {
+    "identifier": "PhysioNet Credentialed Health Data License 1.5.0 (not a standard SPDX identifier)",
+    "url": "https://physionet.org/content/mimic-cxr/",
+    "notes": "Credentialed access is required. Users must meet PhysioNet credentialing requirements, complete the required training, and sign the applicable data use agreement. The license is not a standard SPDX license identifier; consult the upstream terms for access, use, and redistribution conditions."
+  },
+  "upstream_url": "https://physionet.org/content/mimic-cxr/"
+}

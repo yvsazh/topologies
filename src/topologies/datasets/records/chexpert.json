@@ -1,0 +1,11 @@
+{
+  "id": "chexpert",
+  "name": "CheXpert",
+  "domain": "scientific",
+  "description": "A large chest radiograph dataset for training and evaluating machine-learning models for the diagnosis of 14 observations from chest X-rays, with uncertainty labels and radiologist-labeled validation data.",
+  "citation": "Irvin, J., Rajpurkar, P., Ko, M., et al. (2019). CheXpert: A Large Chest Radiograph Dataset with Uncertainty Labels and Expert Comparison. Proceedings of the AAAI Conference on Artificial Intelligence, 33(01), 590-597. https://doi.org/10.1609/aaai.v33i01.3301590",
+  "license": {
+    "notes": "Access is restricted: obtain the dataset through the Stanford ML Group's access process and agree to the applicable terms. No standard SPDX license identifier is asserted; access and use are subject to the upstream agreement."
+  },
+  "upstream_url": "https://stanfordmlgroup.github.io/competitions/chexpert/"
+}

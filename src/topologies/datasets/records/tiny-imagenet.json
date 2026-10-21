@@ -1,0 +1,13 @@
+{
+  "id": "tiny-imagenet",
+  "name": "Tiny ImageNet",
+  "domain": "vision",
+  "description": "Tiny ImageNet is a 200-class image classification dataset containing 100,000 color images at 64×64 pixels, with 500 training images and 50 validation images per class.",
+  "citation": "Tiny ImageNet Visual Recognition Challenge, Stanford CS231n. https://tiny-imagenet.herokuapp.com/",
+  "license": {
+    "identifier": "Provider terms not specified",
+    "url": "https://tiny-imagenet.herokuapp.com/",
+    "notes": "The dataset page does not specify a standard license; consult the provider's terms before redistribution or commercial use."
+  },
+  "upstream_url": "http://cs231n.stanford.edu/tiny-imagenet-200.zip"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "sustainbench",
+  "name": "SustainBench",
+  "domain": "scientific",
+  "description": "SustainBench sustainable-development tasks from DHS surveys and remote sensing, covering poverty, stunting, and crop yield. R-squared and rank correlation. Yeh et al., Nature Communications 2020, plus the 2021 benchmark. Survey microdata not vendored.",
+  "citation": "Yeh et al., Nature Communications 2020. SustainBench.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://sustainlab-group.github.io/sustainbench/",
+    "notes": "Stanford SustainBench terms. Survey microdata not vendored."
+  },
+  "upstream_url": "https://sustainlab-group.github.io/sustainbench/"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "activitynet",
+  "name": "ActivityNet",
+  "domain": "vision",
+  "description": "Temporal action localization dataset, version 1.3, with about 20k videos and 200 classes. Distinct from the ActivityNet-QA task. No data vendored.",
+  "citation": "ActivityNet: A Large-Scale Video Benchmark for Human Activity Understanding. Heilbron et al., CVPR 2015.",
+  "license": {
+    "identifier": "ActivityNet release terms",
+    "url": "http://activity-net.org/"
+  },
+  "upstream_url": "http://activity-net.org/"
+}

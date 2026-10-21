@@ -1,0 +1,13 @@
+{
+  "id": "openmic-2018",
+  "name": "OpenMIC-2018",
+  "domain": "audio",
+  "description": "OpenMIC-2018 polyphonic instrument recognition, about 20 thousand clips and 20 instruments with weak labels. Mean average precision. Humphrey et al., ISMIR 2018. Audio not vendored.",
+  "citation": "Humphrey et al., ISMIR 2018. OpenMIC-2018.",
+  "license": {
+    "identifier": "CC-BY-4.0",
+    "url": "https://github.com/cosmir/openmic-2018",
+    "notes": "Freesound-derived Creative Commons clips. Audio not vendored. Inventory URL courtiol/openmic-2018 is a mirror; canonical host is cosmir/openmic-2018."
+  },
+  "upstream_url": "https://github.com/cosmir/openmic-2018"
+}

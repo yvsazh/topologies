@@ -1,0 +1,13 @@
+{
+  "id": "smd",
+  "name": "Server Machine Dataset",
+  "domain": "scientific",
+  "description": "Server Machine Dataset anomaly traces from 28 machines over about five weeks. Point-adjusted F1 and raw F1. Su et al., KDD 2019 (OmniAnomaly). Loader-only metadata.",
+  "citation": "Su et al., KDD 2019. SMD server-machine anomaly traces.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://github.com/NetManAIOps/OmniAnomaly",
+    "notes": "Provider page does not state a standard SPDX license. Record only; no data vendored."
+  },
+  "upstream_url": "https://github.com/NetManAIOps/OmniAnomaly"
+}

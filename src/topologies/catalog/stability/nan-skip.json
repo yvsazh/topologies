@@ -1,0 +1,1 @@
+{"id":"nan-skip","name":"NaN Skip","description":"Detect NaN losses so training updates can be skipped.","api":"nan_skip(loss)","usage":"nan_skip(loss)","parameters":{"loss":"loss value to check"},"implementation":{"path":"training/stability/nan_skip.py","symbol":"nan_skip"},"papers":[],"examples":[]}

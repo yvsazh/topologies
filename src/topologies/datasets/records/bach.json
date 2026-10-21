@@ -1,0 +1,13 @@
+{
+  "id": "bach",
+  "name": "BACH",
+  "domain": "vision",
+  "description": "BACH breast histology, 400 microscopy images in four classes. Accuracy on the whole-slide patch protocol. Aresta et al., Medical Image Analysis 2019. Images not vendored.",
+  "citation": "Aresta et al., MedIA 2019. BACH breast histology.",
+  "license": {
+    "identifier": "not specified",
+    "url": "https://iciar2018-challenge.grand-challenge.org/",
+    "notes": "Research terms. Human images are loader-only and not vendored."
+  },
+  "upstream_url": "https://iciar2018-challenge.grand-challenge.org/"
+}

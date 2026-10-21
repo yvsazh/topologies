@@ -1,0 +1,13 @@
+{
+  "id": "argoverse-2",
+  "name": "Argoverse 2",
+  "domain": "vision",
+  "description": "A large-scale autonomous-driving dataset with sensor data and annotations for 3D object tracking, motion forecasting, and sensor-based perception. This record is loader-only and does not distribute dataset files.",
+  "citation": "Wilson, B., Qi, W., Agarwal, T., et al. (2021). Argoverse 2: Next Generation Datasets for Self-Driving Perception and Forecasting. Advances in Neural Information Processing Systems, 34. https://arxiv.org/abs/2301.00493",
+  "license": {
+    "identifier": "Argoverse 2 Dataset License (not a standard SPDX identifier)",
+    "url": "https://www.argoverse.org/av2.html",
+    "notes": "Dataset access and use are governed by the Argoverse 2 dataset-specific terms; this is not a standard SPDX identifier. Review the current terms before access or use. This record is loader-only and does not distribute data."
+  },
+  "upstream_url": "https://www.argoverse.org/av2.html"
+}

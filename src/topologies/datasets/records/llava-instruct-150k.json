@@ -1,0 +1,13 @@
+{
+  "id": "llava-instruct-150k",
+  "name": "LLaVA-Instruct-150K",
+  "domain": "multimodal",
+  "description": "An instruction-following dataset of approximately 150,000 multimodal conversations generated from image-text data and used to train LLaVA. This record does not distribute dataset files.",
+  "citation": "Liu, H., Li, C., Wu, Q., & Lee, Y. J. (2023). Visual Instruction Tuning. Advances in Neural Information Processing Systems, 36. https://arxiv.org/abs/2304.08485",
+  "license": {
+    "identifier": "Custom LLaVA dataset terms (not a standard SPDX identifier)",
+    "url": "https://github.com/haotian-liu/LLaVA",
+    "notes": "The dataset is provided under the custom terms described by the upstream project, not a standard SPDX license. Review those terms and the licenses and rights of underlying images and source data before use or redistribution."
+  },
+  "upstream_url": "https://github.com/haotian-liu/LLaVA/tree/main"
+}

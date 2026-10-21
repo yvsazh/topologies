@@ -1,0 +1,14 @@
+{
+  "id": "bf16-recipe",
+  "name": "BF16 Recipe",
+  "description": "A minimal recipe note identifying bfloat16 training precision.",
+  "api": "bf16_recipe()",
+  "usage": "recipe = bf16_recipe()",
+  "parameters": {},
+  "implementation": {
+    "path": "training/stability/bf16_recipe.py",
+    "symbol": "bf16_recipe"
+  },
+  "papers": [],
+  "examples": []
+}

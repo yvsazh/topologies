@@ -1,0 +1,12 @@
+{
+  "id": "crowdpose",
+  "name": "CrowdPose",
+  "domain": "vision",
+  "description": "A crowded multi-person pose estimation dataset containing about 20,000 people, designed to evaluate pose estimation in challenging crowd scenes. OCHuman is another benchmark for crowded human pose estimation. This record does not include or vendor dataset data.",
+  "citation": "Li, J., Wang, C., Zhu, H., Mao, Y., Fang, H.-S., & Lu, C. (2019). CrowdPose: Efficient Crowded Scenes Pose Estimation and A New Benchmark. IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR).",
+  "license": {
+    "identifier": "Custom CrowdPose release terms (not a standard SPDX identifier)",
+    "url": "https://github.com/Jeff-sjtu/CrowdPose"
+  },
+  "upstream_url": "https://github.com/Jeff-sjtu/CrowdPose"
+}

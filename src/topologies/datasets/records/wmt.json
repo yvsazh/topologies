@@ -1,0 +1,13 @@
+{
+  "id": "wmt",
+  "name": "WMT (Workshop on Machine Translation) shared-task datasets",
+  "domain": "natural-language",
+  "description": "A collection of datasets and evaluation resources released for the annual Workshop on Machine Translation shared tasks, covering machine translation across multiple language pairs and task settings.",
+  "citation": "Bojar, O., Chatterjee, R., Federmann, C., et al. (2016). Findings of the 2016 Conference on Machine Translation. Proceedings of the First Conference on Machine Translation: Volume 2, Shared Task Papers. https://aclanthology.org/W16-2301/",
+  "license": {
+    "identifier": "Varies by dataset and source",
+    "url": "https://www.statmt.org/wmt24/",
+    "notes": "WMT shared tasks aggregate datasets, translated material, and evaluation resources with potentially different licenses and access terms; there is no single license covering all releases. Consult the specific task's documentation and underlying source-data terms before use or redistribution."
+  },
+  "upstream_url": "https://www.statmt.org/wmt24/"
+}

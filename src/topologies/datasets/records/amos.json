@@ -1,0 +1,13 @@
+{
+  "id": "amos",
+  "name": "AMOS",
+  "domain": "vision",
+  "description": "AMOS is a large-scale abdominal multi-organ segmentation benchmark with 500 CT and 100 MRI scans, each annotated for 15 abdominal organs.",
+  "citation": "Ji et al., AMOS: A Large-Scale Abdominal Multi-Organ Benchmark for Versatile Medical Image Segmentation, arXiv:2206.08023, 2022. https://arxiv.org/abs/2206.08023",
+  "license": {
+    "identifier": "other",
+    "url": "",
+    "notes": "unverified"
+  },
+  "upstream_url": "https://amos22.grand-challenge.org/"
+}

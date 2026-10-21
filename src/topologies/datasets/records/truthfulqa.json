@@ -1,0 +1,13 @@
+{
+  "id": "truthfulqa",
+  "name": "TruthfulQA",
+  "domain": "natural-language",
+  "description": "A benchmark of 817 questions across 38 categories designed to test whether language models produce truthful answers to questions that commonly elicit false beliefs or misconceptions.",
+  "citation": "Lin, S., Hilton, J., & Evans, O. (2022). TruthfulQA: Measuring How Models Mimic Human Falsehoods. Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics, 3214–3252. https://doi.org/10.18653/v1/2022.acl-long.229",
+  "license": {
+    "identifier": "License not stated",
+    "url": "https://github.com/sylinrl/TruthfulQA",
+    "notes": "The upstream repository does not specify a standard SPDX license for the dataset; verify upstream terms and rights in the included question and answer content before use or redistribution."
+  },
+  "upstream_url": "https://github.com/sylinrl/TruthfulQA"
+}

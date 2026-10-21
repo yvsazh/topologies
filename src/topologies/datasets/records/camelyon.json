@@ -1,0 +1,13 @@
+{
+  "id": "camelyon",
+  "name": "CAMELYON16 and CAMELYON17",
+  "domain": "scientific",
+  "description": "Challenge datasets of whole-slide histopathology images of lymph nodes for detecting breast cancer metastases. CAMELYON16 provides annotated slides for tumor detection; CAMELYON17 extends the task across five medical centers and includes patient-level lymph-node status classification. Access is subject to challenge-specific terms; no data files are included here.",
+  "citation": "Ehteshami Bejnordi, B., Veta, M., van Diest, P. J., et al. (2017). Diagnostic Assessment of Deep Learning Algorithms for Detection of Lymph Node Metastases in Women With Breast Cancer. JAMA, 318(22), 2199–2210. https://doi.org/10.1001/jama.2017.14585; Bándi, P., et al. (2018). From detection of individual metastases to classification of lymph node status at the patient level: The CAMELYON17 challenge. IEEE Transactions on Medical Imaging, 38(2), 550–560. https://doi.org/10.1109/TMI.2018.2867352",
+  "license": {
+    "identifier": "other",
+    "url": "https://camelyon17.grand-challenge.org/",
+    "notes": "Challenge-specific access and data-use terms apply; consult the CAMELYON16 and CAMELYON17 challenge sites for current terms. No general redistribution or commercial-use permission is implied."
+  },
+  "upstream_url": "https://camelyon17.grand-challenge.org/"
+}

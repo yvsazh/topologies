@@ -1,0 +1,13 @@
+{
+  "id": "proteins",
+  "name": "PROTEINS",
+  "domain": "graph",
+  "description": "A graph-classification dataset of protein structures from the TU Dortmund graph kernel benchmark collection. Each graph represents a protein, with vertices corresponding to secondary-structure elements and edges encoding spatial proximity; the graph label indicates whether the protein is an enzyme. This record catalogs the dataset and does not distribute data.",
+  "citation": "Dobson, P. D., & Doig, A. J. (2003). Distinguishing enzyme structures from non-enzymes without alignments. Journal of Molecular Biology, 330(4), 771–783. https://doi.org/10.1016/S0022-2836(03)00376-1",
+  "license": {
+    "identifier": "Not specified by upstream (not a standard SPDX identifier)",
+    "url": "https://chrsmrrs.github.io/datasets/docs/datasets/",
+    "notes": "The TU Dortmund dataset page does not specify a standard SPDX license for PROTEINS. Treat licensing and redistribution terms as unspecified; consult the upstream maintainers and original source before use or redistribution."
+  },
+  "upstream_url": "https://chrsmrrs.github.io/datasets/docs/datasets/"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "oc22",
+  "name": "Open Catalyst 2022 (OC22)",
+  "domain": "scientific",
+  "description": "A dataset for machine-learning research on electrocatalyst materials, containing density-functional-theory relaxations and energies for catalyst surfaces and adsorbates. This record describes the dataset; it does not distribute dataset data.",
+  "citation": "Tran, R., et al. (2022). The Open Catalyst 2022 (OC22) Dataset and Challenges for Oxide Electrocatalysts. ACS Catalysis, 12(20), 12349–12363. https://doi.org/10.1021/acscatal.2c02434",
+  "license": {
+    "identifier": "OC22 dataset terms (not a standard SPDX identifier)",
+    "url": "https://github.com/Open-Catalyst-Project/ocp",
+    "notes": "The upstream repository provides dataset-specific terms; these are not represented here as a standard SPDX license identifier. Consult the upstream terms and documentation before use or redistribution. This metadata record vendors no data."
+  },
+  "upstream_url": "https://github.com/Open-Catalyst-Project/ocp"
+}

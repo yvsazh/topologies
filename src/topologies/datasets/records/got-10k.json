@@ -1,0 +1,13 @@
+{
+  "id": "got-10k",
+  "name": "GOT-10k (Generic Object Tracking Benchmark)",
+  "domain": "vision",
+  "description": "A large-scale visual object tracking benchmark with more than 10,000 video segments spanning diverse object classes and motion patterns. This record contains metadata only and does not distribute dataset files.",
+  "citation": "Huang, L., Zhao, X., & Huang, K. (2019). GOT-10k: A Large High-Diversity Benchmark for Generic Object Tracking in the Wild. IEEE Transactions on Pattern Analysis and Machine Intelligence, 43(5), 1562–1577. https://doi.org/10.1109/TPAMI.2019.2957464",
+  "license": {
+    "identifier": "Custom GOT-10k dataset terms (not a standard SPDX identifier)",
+    "url": "http://got-10k.aitestunion.com/",
+    "notes": "GOT-10k is subject to dataset-specific terms of use and is not distributed under a standard SPDX license identifier. Review the current upstream terms before use or redistribution."
+  },
+  "upstream_url": "http://got-10k.aitestunion.com/"
+}

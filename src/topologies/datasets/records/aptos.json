@@ -1,0 +1,13 @@
+{
+  "id": "aptos",
+  "name": "APTOS",
+  "domain": "vision",
+  "description": "APTOS 2019 blindness grading, about 3662 fundus images and five grades. Quadratic weighted kappa. EyePACS, about 88 thousand images, is a companion note in this record, not a separate file. Images not vendored.",
+  "citation": "APTOS 2019 blindness detection.",
+  "license": {
+    "identifier": "CC-BY-NC-SA-4.0",
+    "url": "https://www.kaggle.com/c/aptos2019-blindness-detection",
+    "notes": "Kaggle CC BY-NC-SA. Human images are loader-only and not vendored."
+  },
+  "upstream_url": "https://www.kaggle.com/c/aptos2019-blindness-detection"
+}

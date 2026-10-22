@@ -31,13 +31,14 @@ logger = logging.getLogger("topologies.artifact_store")
 # wins; otherwise TOPOLOGIES_ENV selects the matching deployment.
 STORE_URLS_BY_ENV = {
     "local": "http://localhost:8008",
+    "prod": "https://topologies-store.hackwhiz.net",
 }
 DEFAULT_STORE_URL = STORE_URLS_BY_ENV["local"]
 
 
 def resolve_store_url(default: str = DEFAULT_STORE_URL) -> str:
     """Resolve the store URL. Explicit ARTIFACT_STORE_URL always wins, then
-    the TOPOLOGIES_ENV mapping (local), then the given default
+    the TOPOLOGIES_ENV mapping (local, prod), then the given default
     (typically topologies.toml [artifact_store] url)."""
     explicit = os.environ.get("ARTIFACT_STORE_URL", "").strip()
     if explicit:

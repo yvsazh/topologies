@@ -4,6 +4,10 @@ All notable changes to `topologies` are listed here.
 
 ## 0.0.1 — 2026-10-20
 
+First public release: the training engine, data utilities, tokenizers, model constructor,
+generation, evaluation, experiments and introspection, plus the experimental catalog of
+reference implementations in `topologies.models` and `topologies.layers`.
+
 ### Added
 - **Models**: `xmem` (XMem) ([paper](https://arxiv.org/abs/2207.07115))
 - **Models**: `consistency-model` (Consistency Models) ([paper](https://arxiv.org/abs/2303.01469))
@@ -30,8 +34,8 @@ All notable changes to `topologies` are listed here.
 - **Training/docs**: Add a guide and an end-to-end `poly1-loss` quickstart.
 
 ### Changed
-- Document how to enumerate catalog entries from Python (TPC-ZYNND4GA).
-- Add a licensed catalog-listing example (TPC-TPATES06).
+- Document how to enumerate catalog entries from Python.
+- Add a licensed catalog-listing example.
 
 ### Fixed
-- Validate synthetic loader sample counts (TPC-XK5Q2N6V).
+- Validate synthetic loader sample counts.

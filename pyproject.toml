@@ -24,7 +24,7 @@ classifiers = [
   "Topic :: Scientific/Engineering :: Artificial Intelligence",
 ]
 dependencies = [
-  "torch>=2.2,<2.13",  # upper bound = newest torch CI runs; raise it after CI passes
+  "torch>=2.2,<2.13",  # upper bound = newest torch the local suite passes on; raise after testing
   "numpy>=1.23",
   "pydantic>=2.0",
   "PyYAML>=6.0",

@@ -93,6 +93,31 @@
       "usage": "Trainer(model, train, recipe='recommender-bpr', recipe_config={'loss':'bpr'})"
     },
     {
+      "api": "topologies.training.losses:get_loss('byol-loss')(logits_or_prediction, targets, *, ignore_index=None, reduction='mean')",
+      "description": "One-direction BYOL cosine loss per paper Section 3.1, Equation (2): squared distance between row-wise L2-normalized predictions and detached targets. The caller computes the swapped-view term for the full symmetric objective in Equation (3).",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef paired_views(ctx):\n    view = torch.randn(4, generator=ctx.rng.torch)\n    target = torch.randn(4, generator=ctx.rng.torch)\n    return {\"inputs\": synth.Tensor(view), \"targets\": synth.Tensor(target)}\nds = synth.Spec(\"byol-views\", generator=paired_views, size=8, splits={\"train\": 1.0}, seed=7, root=root, monitor=\"none\").run()\ntrain = ds.for_recipe(\"regression\", split=\"train\", input_field=\"inputs\", target_field=\"targets\", preserve_shape=True)\nmodel = build(\"mlp\", \"tiny\", in_features=4, out_features=4)\ntrainer = Trainer(model, train, recipe=\"regression\", recipe_config={\"loss\": \"byol-loss\"}, batch_size=4, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
+          "title": "Train a predictor with BYOL cosine loss"
+        }
+      ],
+      "id": "byol-loss",
+      "implementation": {
+        "path": "implementations/losses/byol_loss.py",
+        "sha256": "01c118a5688a8017150ec21aed6b14482c5f6de46a3dc94a7c435302668d6d52",
+        "symbol": "byol_loss"
+      },
+      "name": "BYOL cosine loss",
+      "parameters": {
+        "additional parameters": "unsupported; any **params cause ValueError",
+        "ignore_index": "must be None because embedding vectors are not indexed classes",
+        "logits_or_prediction": "floating-point prediction tensor with shape [B, D], where B and D are at least 1",
+        "reduction": "none per example, mean, or sum (default mean)",
+        "targets": "floating-point tensor with the same shape, dtype, and device as prediction; detached inside the loss"
+      },
+      "usage": "Trainer(model, train, recipe='regression', recipe_config={'loss':'byol-loss'})"
+    },
+    {
       "api": "topologies.training.losses:compute_loss(cfg, logits, targets, **extra)",
       "description": "Class-index or probability-target cross entropy; PyTorch class axis, ignore_index, class weights, label smoothing, and none/mean/sum reduction.",
       "examples": [

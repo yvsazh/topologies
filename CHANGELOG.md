@@ -2,6 +2,22 @@
 
 All notable changes to `topologies` are listed here.
 
+## 0.0.2 — 2026-10-22
+
+### Added
+- **Models**: `occupancy-networks` (Occupancy Networks: Learning 3D Reconstruction in Function Space) ([paper](https://arxiv.org/abs/1812.03828))
+- **Models**: `ds-cnn` (Hello Edge: Keyword Spotting on Microcontrollers) ([paper](https://arxiv.org/abs/1711.07128))
+- **Models**: `deeponet` (DeepONet) ([paper](https://arxiv.org/abs/1910.03193))
+- **Models**: `perceiver` (Perceiver) ([paper](https://arxiv.org/abs/2103.03206))
+- **Models**: `chronos` (Chronos) ([paper](https://arxiv.org/abs/2403.07815))
+- **Models**: `barlow-twins` (Barlow Twins) ([paper](https://arxiv.org/abs/2103.03230))
+- **Components**: `alibi-bias` (ALiBiBias) ([paper](https://arxiv.org/abs/2108.12409))
+- **Components**: `tent` (Tent: Fully Test-time Adaptation by Entropy Minimization) ([paper](https://arxiv.org/abs/2006.10726))
+- **Components**: `nerf` (NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis) ([paper](https://arxiv.org/abs/2003.08934))
+- **Components**: `classifier-free-guidance` (Classifier-Free Diffusion Guidance) ([paper](https://arxiv.org/abs/2207.12598))
+- **Losses**: `byol-loss`
+
+
 ## 0.0.1 — 2026-10-20
 
 First public release: the training engine, data utilities, tokenizers, model constructor,

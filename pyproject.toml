@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "topologies"
 dynamic = ["version"]
-description = "A continuously updated library of modern neural-network architectures on PyTorch"
+description = "A PyTorch framework for quick, convenient experiments with different neural-network architectures"
 readme = "README.md"
 license = { text = "Apache-2.0" }
 requires-python = ">=3.10"

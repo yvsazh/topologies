@@ -2,6 +2,48 @@
 
 All notable changes to `topologies` are listed here.
 
+## 0.0.3 — 2026-10-23
+
+### Added
+- **Models**: `reverse-distillation` (Reverse distillation) ([paper](https://arxiv.org/abs/2201.10703))
+- **Models**: `abmil` (Attention-based Deep Multiple Instance Learning) ([paper](https://arxiv.org/abs/1802.04712))
+- **Components**: `gem-pooling` (Generalized Mean Pooling) ([paper](https://arxiv.org/abs/1711.02512))
+- **Components**: `rl-iqm` (Interquartile Mean for Reinforcement Learning Evaluation) ([paper](https://arxiv.org/abs/2108.13264))
+- **Components**: `graph-drop` (DropEdge edge-mask component) ([paper](https://arxiv.org/abs/1907.10903))
+- **Components**: `maml` (Model-Agnostic Meta-Learning for Fast Adaptation of Deep Networks) ([paper](https://arxiv.org/abs/1703.03400))
+- **Components**: `prototypical-networks` (Prototypical Networks for Few-shot Learning) ([paper](https://arxiv.org/abs/1703.05175))
+- **Components**: `reptile` (Reptile outer step) ([paper](https://arxiv.org/abs/1803.02999))
+- **Components**: `tabr` (TabR) ([paper](https://arxiv.org/abs/2307.14338))
+- **Components**: `continual-eval` (Continual Evaluation Metrics) ([paper](https://arxiv.org/abs/1706.08840))
+- **Components**: `matching-networks` (Matching Networks for One Shot Learning) ([paper](https://arxiv.org/abs/1606.04080))
+- **Components**: `laplace-redux` (Laplace Redux) ([paper](https://arxiv.org/abs/2106.14806))
+- **Components**: `colbert` (ColBERT) ([paper](https://arxiv.org/abs/2004.12832))
+- **Components**: `cqr` (Conformalized Quantile Regression) ([paper](https://arxiv.org/abs/1905.03222))
+- **Components**: `sngp` (Spectral-normalized Neural Gaussian Process) ([paper](https://arxiv.org/abs/2006.10108))
+- **Components**: `bbb` (Bayes linear Gaussian-prior primitive) ([paper](https://arxiv.org/abs/1505.05424))
+- **Components**: `mc-dropout` (Monte Carlo Dropout) ([paper](https://arxiv.org/abs/1506.02142))
+- **Components**: `seco` (Seasonal Contrast) ([paper](https://arxiv.org/abs/2103.16607))
+- **Components**: `chexnet` (CheXNet-style multi-label head) ([paper](https://arxiv.org/abs/1711.05225))
+- **Components**: `optnet` (Equality projection) ([paper](https://arxiv.org/abs/1703.00443))
+- **Components**: `octo` (Octo-style Policy Readout) ([paper](https://arxiv.org/abs/2405.12213))
+- **Components**: `minnen-context` (Minnen causal context model) ([paper](https://arxiv.org/abs/1809.02736))
+- **Components**: `notears` (NOTEARS Smooth Acyclicity Constraint) ([paper](https://arxiv.org/abs/1803.01422))
+- **Components**: `dag-gnn` (DAG-GNN-style Linear SEM) ([paper](https://arxiv.org/abs/1904.10098))
+- **Components**: `midas` (MiDaS Scale-Shift Loss) ([paper](https://arxiv.org/abs/1907.01341))
+- **Components**: `fedprox` (Proximal federated penalty) ([paper](https://arxiv.org/abs/1812.06127))
+- **Components**: `tcav` (TCAV Concept Score) ([paper](https://arxiv.org/abs/1711.11279))
+- **Components**: `fedavg` (Count-weighted federated averaging) ([paper](https://arxiv.org/abs/1602.05629))
+- **Components**: `grad-cam` (Grad-CAM) ([paper](https://arxiv.org/abs/1610.02391))
+- **Components**: `darts` (DARTS Mixed Operation Primitive) ([paper](https://arxiv.org/abs/1806.09055))
+- **Losses**: `der-replay`
+- **Losses**: `lwf`
+- **Losses**: `evidential`
+- **Losses**: `temperature-scaling`
+- **Losses**: `fixmatch`
+- **Losses**: `raft-epe`
+- **Losses**: `infoxlm`
+
+
 ## 0.0.2 — 2026-10-22
 
 ### Added

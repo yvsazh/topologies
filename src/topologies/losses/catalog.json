@@ -187,6 +187,29 @@
       "usage": "loss = density_nll(log_prob)"
     },
     {
+      "api": "topologies.training.losses:compute_loss(cfg, prediction, targets, **extra)",
+      "description": "Alpha-weighted squared Euclidean distance between current replay logits and stored pre-softmax logits, summed across classes and reduced across the replay batch; implements the replay term in Paper §3 Eq. (5).",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef replay_pairs(ctx):\n features = torch.randn(4, generator=ctx.rng.torch)\n stored_logits = torch.randn(2, generator=ctx.rng.torch)\n return {\"inputs\": synth.Tensor(features), \"targets\": synth.Tensor(stored_logits)}\nds = synth.Spec(\"der-replay\", generator=replay_pairs, size=8, splits={\"train\": 1.0}, seed=7, root=root, monitor=\"none\").run()\ntrain = ds.for_recipe(\"regression\", split=\"train\", input_field=\"inputs\", target_field=\"targets\", preserve_shape=True)\nmodel = build(\"mlp\", \"tiny\", in_features=4, out_features=2)\ntrainer = Trainer(model, train, recipe=\"regression\", recipe_config={\"loss\": \"der-replay\", \"loss_kwargs\": {\"alpha\": 0.5}}, batch_size=4, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
+          "title": "Train on replay samples with stored logits"
+        }
+      ],
+      "id": "der-replay",
+      "implementation": {
+        "path": "implementations/losses/der_replay.py",
+        "sha256": "5239d3ba2cea7fbe6449c3c5abbef9678e2f2c34a1f94b4c132bf36490616726",
+        "symbol": "der_replay"
+      },
+      "name": "Dark Experience Replay logit regularizer",
+      "parameters": {
+        "alpha": "finite nonnegative replay-logit penalty weight (default 0.5)",
+        "ignore_index": "must be None because targets are stored logits",
+        "reduction": "none returns one value per sample; mean or sum reduces across the batch (default mean)"
+      },
+      "usage": "Trainer(model, loader, recipe='regression', recipe_config={'loss':'der-replay','loss_kwargs':{'alpha':0.5}}); samples represent items already drawn from the replay buffer"
+    },
+    {
       "api": "topologies.training.losses:compute_loss(cfg, logits, targets, **extra)",
       "description": "Sigmoid binary or softmax multiclass Dice; averages per-sample/class scores, applies optional valid mask, and smooths numerator and denominator with positive smooth.",
       "examples": [
@@ -210,6 +233,59 @@
         "smooth": "positive additive smoothing (default 1.0)"
       },
       "usage": "Trainer(model, loader, recipe_config={'loss':'dice','loss_kwargs':{'mode':'multiclass'}})"
+    },
+    {
+      "api": "topologies.implementations.losses.evidential:evidential(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', annealing_coef=1.0)",
+      "description": "Expected squared-error Bayes risk for nonnegative class evidence, with an annealed KL divergence from the uniform Dirichlet after removing target-class evidence.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef samples(ctx):\n    features = torch.randn(4, generator=ctx.rng.torch)\n    return {\"features\": synth.Tensor(features), \"labels\": int(features[:3].argmax())}\nds = synth.Spec(\"evidential-classifier\", generator=samples, size=12, splits={\"train\": 1.0}, seed=11, root=root, monitor=\"none\").run()\ntrain = ds.for_recipe(\"tabular-classify\", split=\"train\")\nclass EvidenceModel(torch.nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.network = build(\"mlp\", \"tiny\", in_features=4, out_features=3)\n    def forward(self, features):\n        return torch.nn.functional.softplus(self.network(features))\nmodel = EvidenceModel()\ntrainer = Trainer(model, train, recipe=\"tabular-classify\", recipe_config={\"loss\": \"evidential\", \"loss_kwargs\": {\"annealing_coef\": 0.5, \"reduction\": \"sum\"}}, batch_size=4, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
+          "title": "Train a classifier with evidential loss"
+        }
+      ],
+      "id": "evidential",
+      "implementation": {
+        "path": "implementations/losses/evidential.py",
+        "sha256": "148db84063145ac5186c21ea2ea576e8d94090ee17f23f48a28b7aca28d6521d",
+        "symbol": "evidential"
+      },
+      "name": "Evidential expected squared-error loss",
+      "parameters": {
+        "annealing_coef": "finite scalar in [0, 1] multiplying the target-evidence-masked Dirichlet KL penalty (default 1.0)",
+        "ignore_index": "must be None; ignored labels are not defined for this loss",
+        "logits_or_prediction": "nonnegative floating point evidence tensor with shape [B, K]; activation is supplied by the model",
+        "reduction": "none per sample, mean over the batch, or sum (default mean)",
+        "targets": "integer class indices with shape [B] and values in [0, K)"
+      },
+      "usage": "Trainer(model, train, recipe='tabular-classify', recipe_config={'loss':'evidential','loss_kwargs':{'annealing_coef':0.5,'reduction':'sum'}})"
+    },
+    {
+      "api": "topologies.training.losses:get_loss('fixmatch')(logits_or_prediction, targets, *, weak_logits, strong_logits, threshold=0.95, unlabeled_weight=1.0, reduction='mean', ignore_index=None)",
+      "description": "FixMatch objective combining labeled cross-entropy with confidence-masked pseudo-label cross-entropy on strong-view logits; hard pseudo-labels come from detached weak-view logits and the unlabeled term is averaged across the full unlabeled batch.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nimport torch.nn as nn\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef samples(ctx):\n    label = int(ctx.index) % 2\n    inputs = torch.cat((torch.tensor([float(label)]), torch.randn(6, generator=ctx.rng.torch)))\n    return {\"inputs\": synth.Tensor(inputs)}\nclass FixMatchModel(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.network = build(\"mlp\", \"tiny\", in_features=6, out_features=6)\n    def forward(self, inputs):\n        if inputs.shape[-1] < 7:\n            padding = inputs.new_zeros((inputs.shape[0], 7 - inputs.shape[-1]))\n            inputs = torch.cat((inputs, padding), dim=-1)\n        outputs = self.network(inputs[:, 1:])\n        return {\"logits\": outputs[:, :2], \"weak_logits\": outputs[:, 2:4], \"strong_logits\": outputs[:, 4:6], \"targets\": inputs[:, 0].long()}\nds = synth.Spec(\"fixmatch-data\", generator=samples, size=16, splits={\"train\": 1.0}, seed=7, root=root, monitor=\"none\").run()\ntrain = ds.for_recipe(\"structured-objective\", split=\"train\")\ntrainer = Trainer(FixMatchModel(), train, recipe=\"structured-objective\", recipe_config={\"loss\": \"fixmatch\", \"loss_kwargs\": {\"threshold\": 0.95, \"unlabeled_weight\": 1.0}, \"bindings\": {\"logits_or_prediction\": {\"output\": \"logits\"}, \"targets\": {\"output\": \"targets\"}, \"weak_logits\": {\"output\": \"weak_logits\"}, \"strong_logits\": {\"output\": \"strong_logits\"}}}, batch_size=4, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
+          "title": "Train a classifier with FixMatch"
+        }
+      ],
+      "id": "fixmatch",
+      "implementation": {
+        "path": "implementations/losses/fixmatch.py",
+        "sha256": "4780e1c1f44d5753263c0ebb2ede76cb1d59623f0f4400fb72bed74b3e01101d",
+        "symbol": "fixmatch"
+      },
+      "name": "FixMatch loss",
+      "parameters": {
+        "ignore_index": "optional integer target value ignored in the supervised labeled term (default None)",
+        "logits_or_prediction": "floating point labeled class logits with shape [B_l, C]",
+        "reduction": "none returns concatenated labeled and unlabeled per-example losses; mean averages each branch by its own denominator; sum adds all losses (default mean)",
+        "strong_logits": "required floating point logits for strongly augmented unlabeled examples with shape [B_u, C]",
+        "targets": "long tensor of labeled class indices with shape [B_l]",
+        "threshold": "finite real confidence threshold in [0, 1], accepted when maximum weak-view probability is greater than or equal to it (default 0.95)",
+        "unlabeled_weight": "finite nonnegative weight for the confidence-masked unlabeled loss (default 1.0)",
+        "weak_logits": "required floating point logits for weakly augmented unlabeled examples with shape [B_u, C]"
+      },
+      "usage": "Trainer(model, loader, recipe='structured-objective', recipe_config={'loss':'fixmatch','loss_kwargs':{'threshold':0.95,'unlabeled_weight':1.0},'bindings':{...}})"
     },
     {
       "api": "topologies.training.losses:compute_loss(cfg, mean, logvar, **extra)",
@@ -325,6 +401,58 @@
       "usage": "loss = info_nce(image_vectors, text_vectors, temperature=0.07)"
     },
     {
+      "api": "topologies.training.losses:get_loss('infoxlm')(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', **params)",
+      "description": "One-way XlCo query-to-candidate contrastive classification over caller-supplied [B,C] raw dot-product scores, using the positive index per row and no normalization or temperature; InfoXLM Section 3.3, Eqs. (5)-(6).",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef samples(ctx):\n    features = torch.randn(6, generator=ctx.rng.torch)\n    return {\"features\": synth.Tensor(features), \"labels\": int(ctx.index) % 4}\nds = synth.Spec(\"infoxlm-candidate-scores\", generator=samples, size=12, splits={\"train\": 1.0}, seed=11, root=root, monitor=\"none\").run()\ntrain = ds.for_recipe(\"tabular-classify\", split=\"train\")\nmodel = build(\"mlp\", \"tiny\", in_features=6, out_features=4)\ntrainer = Trainer(model, train, recipe=\"tabular-classify\", recipe_config={\"loss\": \"infoxlm\"}, batch_size=4, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
+          "title": "Train candidate scores with InfoXLM XlCo loss"
+        }
+      ],
+      "id": "infoxlm",
+      "implementation": {
+        "path": "implementations/losses/infoxlm.py",
+        "sha256": "e6989d82b0930fc66ad7c273ef542876fb1947accf23ac9a32200638797ebd08",
+        "symbol": "infoxlm_loss"
+      },
+      "name": "InfoXLM XlCo contrastive loss",
+      "parameters": {
+        "ignore_index": "optional integer target value excluded from reductions; ignored rows return zero",
+        "logits_or_prediction": "floating-point raw query-candidate score tensor shaped [B, C]",
+        "reduction": "none per row, mean over nonignored rows, or sum (default mean)",
+        "targets": "integer positive-candidate indices shaped [B] in [0, C), except ignore_index"
+      },
+      "usage": "Trainer(model, train, recipe='tabular-classify', recipe_config={'loss':'infoxlm'})"
+    },
+    {
+      "api": "topologies.training.losses:get_loss('lwf')(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', old_logits, old_probabilities, temperature=2.0, lambda_old=1.0)",
+      "description": "Implements Li & Hoiem, Sec. III, Fig. 3 and Eqs. (1)-(4): new-task class-index cross entropy plus lambda_old times the summed temperature-softened old-task distillation cross entropies. Cached old-model probabilities and current old-task logits are supplied by the caller. The structured-objective recipe binds named model outputs and batch fields (src/topologies/training/recipes/structured_objective.py:36-48).",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nimport torch.nn as nn\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef samples(ctx):\n    features = torch.randn(4, generator=ctx.rng.torch)\n    teacher_probabilities = torch.softmax(torch.stack((features[0], -features[0])), dim=0)\n    return {\"inputs\": synth.Tensor(features), \"labels\": int(features[0] > 0), \"teacher_probabilities\": synth.Tensor(teacher_probabilities)}\nclass ContinualModel(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.network = build(\"mlp\", \"tiny\", in_features=4, out_features=4)\n    def forward(self, inputs):\n        logits = self.network(inputs)\n        return {\"new_logits\": logits[:, :2], \"old_logits\": logits[:, 2:]}\nds = synth.Spec(\"lwf-data\", generator=samples, size=12, splits={\"train\": 1.0}, seed=11, root=root, monitor=\"none\").run()\ntrain = ds.for_recipe(\"structured-objective\", split=\"train\")\ntrainer = Trainer(ContinualModel(), train, recipe=\"structured-objective\", recipe_config={\"loss\": \"lwf\", \"loss_kwargs\": {\"temperature\": 2.0, \"lambda_old\": 1.0}, \"bindings\": {\"logits_or_prediction\": {\"output\": \"new_logits\"}, \"targets\": {\"batch\": \"labels\"}, \"old_logits\": {\"output\": \"old_logits\"}, \"old_probabilities\": {\"batch\": \"teacher_probabilities\"}}}, batch_size=4, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
+          "title": "Train new and old task heads with LwF"
+        }
+      ],
+      "id": "lwf",
+      "implementation": {
+        "path": "implementations/losses/lwf.py",
+        "sha256": "efd13ee0d516f60af1704339efeb9aeb570e9c599fe279cc35e6d6154b9aa175",
+        "symbol": "lwf"
+      },
+      "name": "Learning without Forgetting composite loss",
+      "parameters": {
+        "ignore_index": "optional integer class-index sentinel; ignored samples contribute zero to both new and old-task terms",
+        "lambda_old": "finite nonnegative real weight for the sum of old-task distillation losses (default 1.0)",
+        "logits_or_prediction": "floating-point new-task logits with shape [B, C_new]",
+        "old_logits": "current old-task logits with shape [B, C_old], or a nonempty sequence of such tensors for multiple tasks",
+        "old_probabilities": "cached old-model probability rows matching old_logits; tensor for one task or a matching sequence for multiple tasks",
+        "reduction": "none per sample, mean over nonignored samples, or sum (default mean)",
+        "targets": "new-task class-index targets with shape [B]",
+        "temperature": "finite positive probability-softening temperature for old-task distillation (default 2.0)"
+      },
+      "usage": "Trainer(model, loader, recipe='structured-objective', recipe_config={'loss':'lwf','loss_kwargs':{'temperature':2.0,'lambda_old':1.0},'bindings':{...}})"
+    },
+    {
       "api": "topologies.training.losses:compute_loss(cfg, prediction, targets, **extra)",
       "description": "Strict-shape real-valued L1 regression/reconstruction objective.",
       "examples": [
@@ -436,6 +564,34 @@
       "usage": "Trainer(model, train, recipe='tabular-classify', recipe_config={'loss':'poly1-loss','loss_kwargs':{'epsilon':1.0}})"
     },
     {
+      "api": "topologies.training.losses:get_loss('raft-epe')(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', **params)",
+      "description": "RAFT sequence-supervision componentwise L1 objective from paper Section 3.4, Equation (7), with exponentially weighted full-resolution predictions. The official validity threshold and strict target-magnitude cutoff are in train.py:753-772; Euclidean endpoint error is a separate metric.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nimport torch.nn as nn\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef flows(ctx):\n    inputs = torch.randn(4, generator=ctx.rng.torch)\n    targets = torch.tensor([[[0.2]], [[-0.1]]])\n    valid = torch.ones(1, 1)\n    return {\"inputs\": synth.Tensor(inputs), \"targets\": synth.Tensor(targets), \"valid\": synth.Tensor(valid)}\nclass FlowPredictor(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.network = build(\"mlp\", \"tiny\", in_features=4, out_features=2)\n    def forward(self, inputs):\n        flow = self.network(inputs).reshape(-1, 2, 1, 1)\n        return {\"predictions\": [flow, flow * 0.5]}\nds = synth.Spec(\"raft-flow\", generator=flows, size=8, splits={\"train\": 1.0}, seed=7, root=root, monitor=\"none\").run()\ntrain = ds.for_recipe(\"structured-objective\", split=\"train\")\ntrainer = Trainer(FlowPredictor(), train, recipe=\"structured-objective\", recipe_config={\"loss\": \"raft-epe\", \"loss_kwargs\": {\"gamma\": 0.8, \"max_flow\": 400}, \"bindings\": {\"logits_or_prediction\": {\"output\": \"predictions\"}, \"targets\": {\"batch\": \"targets\"}, \"valid\": {\"batch\": \"valid\"}}}, batch_size=4, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
+          "title": "Train iterative flow predictions with RAFT sequence supervision"
+        }
+      ],
+      "id": "raft-epe",
+      "implementation": {
+        "path": "implementations/losses/raft_epe.py",
+        "sha256": "61067f71b7f31c36f1c688d231e245faeb661eb9f2a186479f3de792500c2a9f",
+        "symbol": "raft_epe"
+      },
+      "name": "RAFT sequence-supervision L1 loss",
+      "parameters": {
+        "additional parameters": "valid, gamma, and max_flow only; unsupported parameters raise ValueError",
+        "gamma": "finite real weighting factor in [0, 1] (default 0.8)",
+        "ignore_index": "must be None because optical-flow vectors are not indexed classes",
+        "logits_or_prediction": "nonempty list or tuple of floating-point flow tensors shaped [B, 2, H, W]",
+        "max_flow": "finite positive real target-magnitude cutoff; vectors are retained when their L2 norm is strictly less than this value (default 400)",
+        "reduction": "none returns the weighted masked component map, mean averages all B*2*H*W components including masked zeros, or sum totals all components (default mean)",
+        "targets": "floating-point ground-truth flow tensor shaped [B, 2, H, W], matching prediction dtype and device",
+        "valid": "required tensor shaped [B, H, W]; values greater than or equal to 0.5 are marked valid"
+      },
+      "usage": "Trainer(model, train, recipe='structured-objective', recipe_config={'loss':'raft-epe','loss_kwargs':{'gamma':0.8,'max_flow':400},'bindings':{'logits_or_prediction':{'output':'predictions'},'targets':{'batch':'targets'},'valid':{'batch':'valid'}}})"
+    },
+    {
       "api": "topologies.training.losses:compute_loss(cfg, estimate, target, **extra)",
       "description": "Negative SI-SDR in decibels for waveform tensors [batch,...], after per-example mean removal; minimization convention.",
       "examples": [
@@ -525,6 +681,31 @@
         "reduction": "none, mean over valid targets, or sum"
       },
       "usage": "loss = softmax_focal(class_logits, labels, alpha=class_weights, ignore_index=-100)"
+    },
+    {
+      "api": "temperature_scaling(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', temperature=1.0)",
+      "description": "Categorical negative log likelihood after dividing class logits by a positive scalar temperature, following Guo et al. §4.2, Eq. (9) and §3, Eq. (6); callers supply or fit temperature on held-out validation data with the classifier fixed.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef samples(ctx):\n    features = torch.randn(6, generator=ctx.rng.torch)\n    return {\"features\": synth.Tensor(features), \"labels\": int(features[:3].argmax())}\nds = synth.Spec(\"temperature-scaling-classification\", generator=samples, size=16, splits={\"train\": 0.75, \"val\": 0.25}, seed=11, root=root, monitor=\"none\").run()\ntrain = ds.for_recipe(\"tabular-classify\", split=\"train\")\nmodel = build(\"mlp\", \"tiny\", in_features=6, out_features=3)\ntrainer = Trainer(model, train, recipe=\"tabular-classify\", recipe_config={\"loss\": \"temperature-scaling\", \"loss_kwargs\": {\"temperature\": 1.0}}, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
+          "title": "Train a classifier with temperature-scaled NLL"
+        }
+      ],
+      "id": "temperature-scaling",
+      "implementation": {
+        "path": "implementations/losses/temperature_scaling.py",
+        "sha256": "734490ad9de7e42466ef4dcf6254f6857b48a8340392a601a5d35955179a0d06",
+        "symbol": "temperature_scaling"
+      },
+      "name": "Temperature scaling loss",
+      "parameters": {
+        "ignore_index": "optional integer class index to exclude from loss (default None)",
+        "logits_or_prediction": "floating-point class logits with shape [B, K]",
+        "reduction": "none per sample, mean over valid samples, or sum (default mean)",
+        "targets": "long tensor of class indices with shape [B]",
+        "temperature": "positive finite scalar divisor applied to logits before log-softmax (default 1.0)"
+      },
+      "usage": "Trainer(model, train, recipe='tabular-classify', recipe_config={'loss':'temperature-scaling','loss_kwargs':{'temperature':1.0}})"
     },
     {
       "api": "topologies.training.losses:compute_loss(cfg, anchor, positive, negative, **extra)",

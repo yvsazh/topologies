@@ -35,6 +35,17 @@
     },
     {
       "files": {
+        "catalog/losses/byol-loss.json": "3e642d090a55fa5d740daef3aea38b2a7d61479c5a7104af099fcbfe335babef",
+        "implementations/losses/byol_loss.py": "01c118a5688a8017150ec21aed6b14482c5f6de46a3dc94a7c435302668d6d52"
+      },
+      "id": "byol-loss",
+      "kind": "loss",
+      "name": "byol-loss",
+      "namespace": "library",
+      "version": 1
+    },
+    {
+      "files": {
         "catalog/losses/cross-entropy.json": "efd29b1d566b528b1c2bd643a5958704f47a742a4f8328283807115ad82729e7",
         "implementations/training/core.py": "878f03ad0677bb8cd1b993861f72dcf5bfa14853743a5b355353c1d1f8162f9b"
       },

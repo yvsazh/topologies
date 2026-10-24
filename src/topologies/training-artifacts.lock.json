@@ -79,6 +79,17 @@
     },
     {
       "files": {
+        "catalog/losses/der-replay.json": "0456bb0dfcad4085d8e65620a36e3d29a8f5a6c0e9aaf369c3e9438dc27726e6",
+        "implementations/losses/der_replay.py": "5239d3ba2cea7fbe6449c3c5abbef9678e2f2c34a1f94b4c132bf36490616726"
+      },
+      "id": "der-replay",
+      "kind": "loss",
+      "name": "der-replay",
+      "namespace": "library",
+      "version": 2
+    },
+    {
+      "files": {
         "catalog/losses/dice.json": "74ed9d2a316587a9391e722394f0841cf9e6c6e74b2dcd10e240f5e0df4e8515",
         "implementations/training/core.py": "878f03ad0677bb8cd1b993861f72dcf5bfa14853743a5b355353c1d1f8162f9b"
       },
@@ -87,6 +98,28 @@
       "name": "dice",
       "namespace": "library",
       "version": 2
+    },
+    {
+      "files": {
+        "catalog/losses/evidential.json": "ce0f2196c9ba40773336c418ad96e78d56d9ff3f2b9ac224386c07ba5b154440",
+        "implementations/losses/evidential.py": "148db84063145ac5186c21ea2ea576e8d94090ee17f23f48a28b7aca28d6521d"
+      },
+      "id": "evidential",
+      "kind": "loss",
+      "name": "evidential",
+      "namespace": "library",
+      "version": 1
+    },
+    {
+      "files": {
+        "catalog/losses/fixmatch.json": "8fad6e7b9768d5232aacb375da1d0e34ab21fc644b4f55dda4371367cb1da977",
+        "implementations/losses/fixmatch.py": "4780e1c1f44d5753263c0ebb2ede76cb1d59623f0f4400fb72bed74b3e01101d"
+      },
+      "id": "fixmatch",
+      "kind": "loss",
+      "name": "fixmatch",
+      "namespace": "library",
+      "version": 1
     },
     {
       "files": {
@@ -140,6 +173,28 @@
       "id": "info-nce",
       "kind": "loss",
       "name": "info-nce",
+      "namespace": "library",
+      "version": 2
+    },
+    {
+      "files": {
+        "catalog/losses/infoxlm.json": "b4b28c9e6834a4c5f0dbe3a3ad8fb8a0a1818420e01c02bb5bb7b8aec66f43fd",
+        "implementations/losses/infoxlm.py": "e6989d82b0930fc66ad7c273ef542876fb1947accf23ac9a32200638797ebd08"
+      },
+      "id": "infoxlm",
+      "kind": "loss",
+      "name": "infoxlm",
+      "namespace": "library",
+      "version": 2
+    },
+    {
+      "files": {
+        "catalog/losses/lwf.json": "73bd89bb69a2acc276c2beb9934448676f7ee20946163ae502c767b07d83e79b",
+        "implementations/losses/lwf.py": "efd13ee0d516f60af1704339efeb9aeb570e9c599fe279cc35e6d6154b9aa175"
+      },
+      "id": "lwf",
+      "kind": "loss",
+      "name": "lwf",
       "namespace": "library",
       "version": 2
     },
@@ -200,6 +255,17 @@
     },
     {
       "files": {
+        "catalog/losses/raft-epe.json": "16affe3cd8a26ba45f1a284abfdbda92fc6ecda63539daa44be5c0dc83bebfea",
+        "implementations/losses/raft_epe.py": "61067f71b7f31c36f1c688d231e245faeb661eb9f2a186479f3de792500c2a9f"
+      },
+      "id": "raft-epe",
+      "kind": "loss",
+      "name": "raft-epe",
+      "namespace": "library",
+      "version": 2
+    },
+    {
+      "files": {
         "catalog/losses/si-sdr.json": "0e5aae6fc3b456ef0e9fd7344063af0649cfff074ee7a5497b310cddce8b9b56",
         "implementations/training/core.py": "878f03ad0677bb8cd1b993861f72dcf5bfa14853743a5b355353c1d1f8162f9b"
       },
@@ -241,6 +307,17 @@
       "name": "softmax-focal",
       "namespace": "library",
       "version": 2
+    },
+    {
+      "files": {
+        "catalog/losses/temperature-scaling.json": "6331d929b4f83ba6c5e2649ffe3bb0ffe7581e714c408338bc33ea67c390b095",
+        "implementations/losses/temperature_scaling.py": "734490ad9de7e42466ef4dcf6254f6857b48a8340392a601a5d35955179a0d06"
+      },
+      "id": "temperature-scaling",
+      "kind": "loss",
+      "name": "temperature-scaling",
+      "namespace": "library",
+      "version": 1
     },
     {
       "files": {

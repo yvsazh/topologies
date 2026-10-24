@@ -2,6 +2,31 @@
 
 All notable changes to `topologies` are listed here.
 
+## 0.0.4 — 2026-10-24
+
+### Added
+- **Models**: `phasenet` (PhaseNet: A Deep-Neural-Network-Based Seismic Arrival Time Picking Method) ([paper](https://arxiv.org/abs/1803.03211))
+- **Models**: `dkt` (Deep Knowledge Tracing) ([paper](https://arxiv.org/abs/1506.05908))
+- **Models**: `aae` (AAE Network and Objective Primitives) ([paper](https://arxiv.org/abs/1511.05644))
+- **Models**: `autoencoder-mlp` (Shallow MLP Autoencoder) ([paper](https://www.science.org/doi/10.1126/science.1127647))
+- **Components**: `capsnet` (Dynamic Routing Between Capsules) ([paper](https://arxiv.org/abs/1710.09829))
+- **Components**: `lottery-ticket` (lottery-ticket) ([paper](https://arxiv.org/abs/1803.03635))
+- **Components**: `crnn` (Convolutional Recurrent Neural Network readout) ([paper](https://arxiv.org/abs/1507.05717))
+- **Components**: `dncnn` (Beyond a Gaussian Denoiser: Residual Learning of Deep CNN for Image Denoising) ([paper](https://arxiv.org/abs/1608.03981))
+- **Components**: `magnitude-pruning` (magnitude-pruning) ([paper](https://arxiv.org/abs/1506.02626))
+- **Components**: `llm-int8` (LLM.int8(): 8-bit Matrix Multiplication for Transformers at Scale) ([paper](https://arxiv.org/abs/2208.07339))
+- **Components**: `wanda` (Wanda pruning score) ([paper](https://arxiv.org/abs/2306.11695))
+- **Components**: `squared-relu` (squared-relu) ([paper](https://arxiv.org/abs/2109.08668))
+- **Components**: `randomized-smoothing` (Randomized Smoothing (Cohen)) ([paper](https://arxiv.org/abs/1902.02918))
+- **Components**: `fgsm` (Fast Gradient Sign Method: adversarial input perturbation) ([paper](https://arxiv.org/abs/1412.6572))
+- **Components**: `neural-process` (Neural Processes) ([paper](https://arxiv.org/abs/1807.01622))
+- **Components**: `deepsurv` (deepsurv) ([paper](https://arxiv.org/abs/1606.00931))
+- **Components**: `rigl` (rigl) ([paper](https://arxiv.org/abs/1911.11134))
+- **Components**: `grl` (grl) ([paper](https://arxiv.org/abs/1505.07818))
+- **Losses**: `asl`
+- **Losses**: `attention-transfer`
+
+
 ## 0.0.3 — 2026-10-23
 
 ### Added

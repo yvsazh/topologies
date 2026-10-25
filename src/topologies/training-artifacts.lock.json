@@ -13,6 +13,28 @@
     },
     {
       "files": {
+        "catalog/losses/asl.json": "0214e0322789890edadd65e15d492da42be27a9fa367c69797edac7437ca8ad5",
+        "implementations/losses/asl.py": "e966b1dda88be62bee6feea285b98d03bbd5937469877d1ba17d833c666db482"
+      },
+      "id": "asl",
+      "kind": "loss",
+      "name": "asl",
+      "namespace": "library",
+      "version": 1
+    },
+    {
+      "files": {
+        "catalog/losses/attention-transfer.json": "7c05db3f104f5e4883a69db09f14699e8694fe8ff633303fb5dec36aa3776911",
+        "implementations/losses/attention_transfer.py": "d60cb070a4d0de66dd177461cd32af4fe9e87578887b07ff2edd55752261abae"
+      },
+      "id": "attention-transfer",
+      "kind": "loss",
+      "name": "attention-transfer",
+      "namespace": "library",
+      "version": 1
+    },
+    {
+      "files": {
         "catalog/losses/binary-cross-entropy-logits.json": "911c44ce2e2c851e4ea94714e17db4ea7b588186160863a8d2c4b7ca0434e41f",
         "implementations/training/core.py": "878f03ad0677bb8cd1b993861f72dcf5bfa14853743a5b355353c1d1f8162f9b"
       },

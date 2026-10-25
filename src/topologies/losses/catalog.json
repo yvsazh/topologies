@@ -103,6 +103,32 @@
       "usage": "Trainer(model, train, recipe='structured-objective', recipe_config={'loss':'attention-transfer','loss_kwargs':{'beta':1.0},'bindings':{'logits_or_prediction':{'output':'student_features'},'targets':{'batch':'teacher_features'}}})"
     },
     {
+      "api": "topologies.training.losses:get_loss('berhu')(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', **params)",
+      "description": "Reverse Huber regression penalty with a shared batch threshold c=max|prediction-target|/5 and the quadratic branch above c (paper §3.2 Eq. (1) and the following threshold paragraph).",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef samples(ctx):\n    features = torch.randn(6, generator=ctx.rng.torch)\n    return {\"inputs\": synth.Tensor(features), \"targets\": synth.Tensor(features[:2])}\ndataset = synth.Spec(\"berhu-regression\", generator=samples, size=16, splits={\"train\": 1.0}, seed=11, root=root, monitor=\"none\").run()\ntrain = dataset.for_recipe(\"regression\", split=\"train\", input_field=\"inputs\", target_field=\"targets\", preserve_shape=True)\nmodel = build(\"mlp\", \"tiny\", in_features=6, out_features=2)\ntrainer = Trainer(model, train, recipe=\"regression\", recipe_config={\"loss\": \"berhu\"}, batch_size=4, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
+          "title": "Train a regressor with BerHu loss"
+        }
+      ],
+      "id": "berhu",
+      "implementation": {
+        "path": "implementations/losses/berhu.py",
+        "sha256": "bdf862ecf8ee1fd410ead43184fee1c1f4668891258eb9a5b99d34d7c570f9b5",
+        "symbol": "berhu"
+      },
+      "name": "BerHu loss",
+      "parameters": {
+        "additional parameters": "**params accepts no additional parameters; unsupported keys raise ValueError",
+        "ignore_index": "must be None because regression targets are not indexed classes",
+        "logits_or_prediction": "floating-point prediction tensor with any nonempty shape",
+        "reduction": "none returns elementwise penalties, mean averages all elements, or sum totals them (default mean)",
+        "targets": "floating-point tensor with the same shape, dtype, and device as the prediction",
+        "threshold": "fixed at one fifth of the maximum absolute residual over all elements in the current batch (paper §3.2 after Eq. (1))"
+      },
+      "usage": "Trainer(model, train, recipe='regression', recipe_config={'loss':'berhu'})"
+    },
+    {
       "api": "topologies.training.losses:compute_loss(cfg, logits, targets, **extra)",
       "description": "Stable binary/multilabel BCE directly on logits; exact shape match and optional positive-class weights.",
       "examples": [
@@ -123,6 +149,31 @@
         "reduction": "none, mean, or sum (default mean)"
       },
       "usage": "Trainer(model, loader, recipe_config={'loss':'binary-cross-entropy-logits','loss_kwargs':{'pos_weight':weights}})"
+    },
+    {
+      "api": "topologies.training.losses:get_loss('boundary-loss')(logits_or_prediction, targets, *, ignore_index=None, reduction='mean')",
+      "description": "Binary boundary term from precomputed signed ground-truth level set and foreground probabilities. Follows Kervadec et al., Section 2, Eqs. (3)-(5); the unit-grid sum is the discrete integral, while mean averages entries. Does not compute softmax or the distance map and excludes the regional term and alpha weighting (src/topologies/implementations/losses/boundary_loss.py:4-35).",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nimport torch.nn as nn\nimport torch.nn.functional as F\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef samples(ctx):\n    image = torch.rand((1, 16, 16), generator=ctx.rng.torch)\n    mask = torch.zeros((16, 16), dtype=torch.bool)\n    mask[5:11, 5:11] = True\n    outside = F.max_pool2d((~mask).float()[None, None], 3, stride=1, padding=1)[0, 0] > 0\n    boundary = mask & outside\n    rows, columns = torch.meshgrid(torch.arange(16), torch.arange(16), indexing=\"ij\")\n    points = torch.stack((rows, columns), dim=-1).reshape(-1, 2).float()\n    boundary_points = points[boundary.reshape(-1)]\n    distances = torch.cdist(points, boundary_points).min(dim=1).values.reshape(16, 16)\n    signed_distance = torch.where(mask, -distances, distances).unsqueeze(0)\n    return {\"inputs\": synth.Tensor(image), \"distance\": synth.Tensor(signed_distance)}\nds = synth.Spec(\"boundary-segmentation\", generator=samples, size=8, splits={\"train\": 1.0}, seed=7, root=root, monitor=\"none\").run()\ntrain = ds.for_recipe(\"structured-objective\", split=\"train\")\nclass ForegroundModel(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.network = build(\"unet\", \"tiny\", in_channels=1, out_channels=1, features=[4, 8])\n    def forward(self, inputs):\n        return {\"probabilities\": self.network(inputs).sigmoid()}\ntrainer = Trainer(ForegroundModel(), train, recipe=\"structured-objective\", recipe_config={\"loss\": \"boundary-loss\", \"bindings\": {\"logits_or_prediction\": {\"output\": \"probabilities\"}, \"targets\": {\"batch\": \"distance\"}}}, batch_size=2, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
+          "title": "Train a binary segmenter with boundary loss"
+        }
+      ],
+      "id": "boundary-loss",
+      "implementation": {
+        "path": "implementations/losses/boundary_loss.py",
+        "sha256": "6c578ef919d74e714c2f5130b1ddfe94a10a2512f568de805155ac42e2fd9ff5",
+        "symbol": "boundary_loss"
+      },
+      "name": "Boundary loss for binary segmentation",
+      "parameters": {
+        "additional parameters": "unsupported; unrecognized keyword parameters raise ValueError",
+        "ignore_index": "must be None because targets are continuous signed distances",
+        "logits_or_prediction": "floating point foreground probabilities in [0, 1] with shape [B, 1, *spatial] and nonempty dimensions",
+        "reduction": "none returns the elementwise product; sum computes the unit-grid discrete integral; mean averages all elements (default mean)",
+        "targets": "finite floating point signed ground-truth distance map with the same shape, dtype, and device as probabilities"
+      },
+      "usage": "Trainer(model, loader, recipe='structured-objective', recipe_config={'loss':'boundary-loss','bindings':{'logits_or_prediction':{'output':'probabilities'},'targets':{'batch':'distance'}}})"
     },
     {
       "api": "topologies.training.losses:compute_loss(cfg, positive_scores, negative_scores, **extra)",
@@ -169,6 +220,31 @@
         "targets": "floating-point tensor with the same shape, dtype, and device as prediction; detached inside the loss"
       },
       "usage": "Trainer(model, train, recipe='regression', recipe_config={'loss':'byol-loss'})"
+    },
+    {
+      "api": "topologies.training.losses:get_loss('chamfer')(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', **params)",
+      "description": "Symmetric sum of squared nearest-neighbor distances between batched 3D point clouds, with no point-count normalization and configurable batch reduction (Fan et al., §4.3).",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nimport torch.nn as nn\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef point_clouds(ctx):\n    features = torch.randn(6, generator=ctx.rng.torch)\n    points = torch.randn(3, 3, generator=ctx.rng.torch)\n    return {\"inputs\": synth.Tensor(features), \"targets\": synth.Tensor(points)}\ndataset = synth.Spec(\"chamfer-point-clouds\", generator=point_clouds, size=8, splits={\"train\": 1.0}, seed=7, root=root, monitor=\"none\").run()\ntrain = dataset.for_recipe(\"structured-objective\", split=\"train\")\nclass PointCloudPredictor(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.network = build(\"mlp\", \"tiny\", in_features=6, out_features=6)\n    def forward(self, inputs):\n        return {\"points\": self.network(inputs).reshape(-1, 2, 3)}\ntrainer = Trainer(PointCloudPredictor(), train, recipe=\"structured-objective\", recipe_config={\"loss\": \"chamfer\", \"bindings\": {\"logits_or_prediction\": {\"output\": \"points\"}, \"targets\": {\"batch\": \"targets\"}}}, batch_size=4, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
+          "title": "Train a point-cloud predictor with Chamfer distance"
+        }
+      ],
+      "id": "chamfer",
+      "implementation": {
+        "path": "implementations/losses/chamfer.py",
+        "sha256": "cf40ab679087edb2ec7b09602855eae4a90c7093df4107361a74b672a0f83eb2",
+        "symbol": "chamfer"
+      },
+      "name": "Chamfer Distance",
+      "parameters": {
+        "additional parameters": "No additional parameters are accepted; unknown keys in **params raise ValueError",
+        "ignore_index": "must be None; point-index ignoring is unsupported",
+        "logits_or_prediction": "floating-point prediction tensor shaped [B,N,3] with nonempty batch and point axes",
+        "reduction": "none returns one summed distance per cloud, mean averages the batch, or sum totals it (default mean)",
+        "targets": "floating-point target tensor shaped [B,M,3], with matching batch, dtype, and device; M may differ from N"
+      },
+      "usage": "Trainer(model, train, recipe='structured-objective', recipe_config={'loss':'chamfer','bindings':{'logits_or_prediction':{'output':'points'},'targets':{'batch':'targets'}}})"
     },
     {
       "api": "topologies.training.losses:compute_loss(cfg, logits, targets, **extra)",

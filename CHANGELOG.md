@@ -2,6 +2,29 @@
 
 All notable changes to `topologies` are listed here.
 
+## 0.0.5 — 2026-10-25
+
+### Added
+- **Models**: `bandsplit-rnn` (Band-split time-then-band GRU ordering miniature) ([paper](https://arxiv.org/abs/2209.15174))
+- **Models**: `basic-pitch` (Sigmoid posterior-head miniature (not Basic Pitch)) ([paper](https://arxiv.org/abs/2203.09893))
+- **Models**: `bgrl` (BGRL) ([paper](https://arxiv.org/abs/2102.06514))
+- **Models**: `chebnet` (ChebNet) ([paper](https://arxiv.org/abs/1606.09375))
+- **Models**: `cogvlm` (CogVLM Candidate (Rejected: Method Mismatch)) ([paper](https://arxiv.org/abs/2311.03079))
+- **Components**: `streamingllm` (Efficient Streaming Language Models with Attention Sinks) ([paper](https://arxiv.org/abs/2309.17453))
+- **Components**: `mixstyle` (MixStyle) ([paper](https://arxiv.org/abs/2104.02008))
+- **Components**: `sds` (Score-distillation residual) ([paper](https://arxiv.org/abs/2209.14988))
+- **Components**: `neus` (NeuS Opacity) ([paper](https://arxiv.org/abs/2106.10689))
+- **Components**: `targeted-reg` (Targeted regularization term) ([paper](https://arxiv.org/abs/1906.02120))
+- **Components**: `rat-sql` (rat-sql) ([paper](https://arxiv.org/abs/1911.04942))
+- **Components**: `4dgs` (4DGS Residual Gaussian Deformation Primitive) ([paper](https://arxiv.org/abs/2310.08528))
+- **Components**: `airl` (Adversarial Inverse Reinforcement Learning) ([paper](https://arxiv.org/abs/1710.11248))
+- **Components**: `adafactor` (Adafactor Factored Second-Moment Step) ([paper](https://arxiv.org/abs/1804.04235))
+- **Components**: `adam-mini` (Adam-mini Single-Block Moment Update Primitive) ([paper](https://arxiv.org/abs/2406.16793))
+- **Losses**: `berhu`
+- **Losses**: `boundary-loss`
+- **Losses**: `chamfer`
+
+
 ## 0.0.4 — 2026-10-24
 
 ### Added

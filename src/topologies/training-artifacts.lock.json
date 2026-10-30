@@ -35,6 +35,17 @@
     },
     {
       "files": {
+        "catalog/losses/berhu.json": "e27a97b1ae7aa492d5b7a1b7ab19ca25a8969bf525d0790f0381d58b9f88ad78",
+        "implementations/losses/berhu.py": "bdf862ecf8ee1fd410ead43184fee1c1f4668891258eb9a5b99d34d7c570f9b5"
+      },
+      "id": "berhu",
+      "kind": "loss",
+      "name": "berhu",
+      "namespace": "library",
+      "version": 1
+    },
+    {
+      "files": {
         "catalog/losses/binary-cross-entropy-logits.json": "911c44ce2e2c851e4ea94714e17db4ea7b588186160863a8d2c4b7ca0434e41f",
         "implementations/training/core.py": "878f03ad0677bb8cd1b993861f72dcf5bfa14853743a5b355353c1d1f8162f9b"
       },
@@ -43,6 +54,17 @@
       "name": "binary-cross-entropy-logits",
       "namespace": "library",
       "version": 2
+    },
+    {
+      "files": {
+        "catalog/losses/boundary-loss.json": "5704e2625b7c75246edc2381ec37f0ade0f0e2ac7850793d0a41386146a1fe3d",
+        "implementations/losses/boundary_loss.py": "6c578ef919d74e714c2f5130b1ddfe94a10a2512f568de805155ac42e2fd9ff5"
+      },
+      "id": "boundary-loss",
+      "kind": "loss",
+      "name": "boundary-loss",
+      "namespace": "library",
+      "version": 1
     },
     {
       "files": {
@@ -63,6 +85,17 @@
       "id": "byol-loss",
       "kind": "loss",
       "name": "byol-loss",
+      "namespace": "library",
+      "version": 1
+    },
+    {
+      "files": {
+        "catalog/losses/chamfer.json": "d9a3b9694630fece3f59ebf46495ad4163610e9e35d9b23a49c19581db51f6b8",
+        "implementations/losses/chamfer.py": "cf40ab679087edb2ec7b09602855eae4a90c7093df4107361a74b672a0f83eb2"
+      },
+      "id": "chamfer",
+      "kind": "loss",
+      "name": "chamfer",
       "namespace": "library",
       "version": 1
     },

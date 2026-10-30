@@ -247,6 +247,164 @@
       "usage": "Trainer(model, train, recipe='structured-objective', recipe_config={'loss':'chamfer','bindings':{'logits_or_prediction':{'output':'points'},'targets':{'batch':'targets'}}})"
     },
     {
+      "api": "topologies.training.losses:get_loss('cif-quantity')(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', **params)",
+      "description": "Per-example absolute discrepancy between the sum of CIF firing weights and the target label count, reduced across the batch. Follows the quantity-loss equation in CIF paper §3.2 (paper.txt:177-181; implementation in src/topologies/implementations/losses/cif_quantity.py).",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nimport torch.nn as nn\nfrom topologies import Trainer, analysis, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef samples(ctx):\n    inputs = torch.randn(4, generator=ctx.rng.torch)\n    target_length = float(int(ctx.index) % 3 + 1)\n    return {\"inputs\": synth.Tensor(inputs), \"target_length\": synth.Tensor(torch.tensor(target_length))}\ndataset = synth.Spec(\"cif-quantity\", generator=samples, size=12, splits={\"train\": 1.0}, seed=7, root=root, monitor=\"none\").run()\ntrain = dataset.for_recipe(\"structured-objective\", split=\"train\")\nclass CIFPredictor(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.network = build(\"mlp\", \"tiny\", in_features=4, out_features=3)\n    def forward(self, inputs):\n        return {\"alpha\": self.network(inputs).sigmoid()}\nmodel = CIFPredictor()\ntrainer = Trainer(model, train, recipe=\"structured-objective\", recipe_config={\"loss\": \"cif-quantity\", \"bindings\": {\"logits_or_prediction\": {\"output\": \"alpha\"}, \"targets\": {\"batch\": \"target_length\"}}}, batch_size=4, max_epochs=1, device=\"cpu\")\ntrainer.fit()\nreport = analysis.analyze(model)",
+          "title": "Train a CIF predictor with quantity loss"
+        }
+      ],
+      "id": "cif-quantity",
+      "implementation": {
+        "path": "implementations/losses/cif_quantity.py",
+        "sha256": "6197c2c37a0f88cb5771c73d058e573677881d0e9594eced490719bd467fc685",
+        "symbol": "cif_quantity"
+      },
+      "name": "CIF Quantity Loss",
+      "parameters": {
+        "additional parameters": "unsupported; unrecognized keyword parameters raise ValueError",
+        "ignore_index": "must be None because the quantity equation has no token-level masking",
+        "logits_or_prediction": "floating-point CIF firing weights shaped [B, U] with positive B and U",
+        "reduction": "none returns one absolute discrepancy per example; mean averages examples; sum totals examples (default mean)",
+        "targets": "real numeric target label counts shaped [B] on the prediction device"
+      },
+      "usage": "Trainer(model, train, recipe='regression', recipe_config={'loss':'cif-quantity'})"
+    },
+    {
+      "api": "topologies.training.losses:get_loss('cldice-loss')(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', iterations, epsilon)",
+      "description": "Differentiable soft-clDice for one-channel 2D probability masks and 3D volumes, using Shit et al. §2 Eqs. (1)–(2), §4.1 Algorithms 1–2 and Appendix G.2–G.3; per-sample batch reductions follow src/topologies/implementations/training/core.py:68-76.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nimport torch.nn as nn\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef samples(ctx):\n    features = torch.randn(4, generator=ctx.rng.torch)\n    mask = torch.zeros((1, 4, 4))\n    mask[0, 1, :] = 1\n    return {\"inputs\": synth.Tensor(features), \"targets\": synth.Tensor(mask)}\nclass SegmentationModel(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.network = build(\"mlp\", \"tiny\", in_features=4, out_features=16)\n    def forward(self, inputs):\n        return torch.sigmoid(self.network(inputs)).reshape(-1, 1, 4, 4)\nds = synth.Spec(\"cldice-segmentation\", generator=samples, size=8, splits={\"train\": 1.0}, seed=11, root=root, monitor=\"none\").run()\ntrain = ds.for_recipe(\"regression\", split=\"train\", input_field=\"inputs\", target_field=\"targets\", preserve_shape=True)\nmodel = SegmentationModel()\ntrainer = Trainer(model, train, recipe=\"regression\", recipe_config={\"loss\": \"cldice-loss\", \"loss_kwargs\": {\"iterations\": 1, \"epsilon\": 0.01}}, batch_size=4, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
+          "title": "Train a binary tubular segmentation model with soft clDice"
+        }
+      ],
+      "id": "cldice-loss",
+      "implementation": {
+        "path": "implementations/losses/cldice_loss.py",
+        "sha256": "375d5d923d38583f2d0e19ef46e546f2bbd6950d1de54438c7a5b8730553e73c",
+        "symbol": "cldice_loss"
+      },
+      "name": "Soft clDice loss",
+      "parameters": {
+        "epsilon": "required positive finite real smoothing value added to both numerator and denominator in topology precision and sensitivity; the paper specifies no numeric default",
+        "ignore_index": "must be None because binary foreground masks have no ignored class index",
+        "iterations": "required nonnegative integer skeletonization iteration count k, chosen for the largest observed foreground radius; the paper specifies no default",
+        "logits_or_prediction": "finite floating-point probabilities in [0, 1] with shape [B, 1, H, W] or [B, 1, D, H, W]",
+        "reduction": "none returns one loss per sample, mean averages samples, or sum adds samples (default mean)",
+        "targets": "binary floating-point mask of 0 and 1 with the same shape, dtype, and device as logits_or_prediction"
+      },
+      "usage": "Trainer(model, train, recipe='regression', recipe_config={'loss':'cldice-loss','loss_kwargs':{'iterations':1,'epsilon':0.01}})"
+    },
+    {
+      "api": "topologies.training.losses:get_loss('combo-loss')(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', **params)",
+      "description": "Alpha-weighted beta-balanced binary cross entropy over class-position elements minus the sum of add-one-smoothed soft Dice scores per class, computed per volume from independent sigmoid probabilities and dense binary targets (paper Sec. II, Eq. (3)).",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nimport torch.nn as nn\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef masks(ctx):\n    inputs = torch.rand(16, generator=ctx.rng.torch)\n    targets = (inputs.reshape(1, 4, 4) > 0.5).float()\n    return {\"inputs\": synth.Tensor(inputs), \"targets\": synth.Tensor(targets)}\ndataset = synth.Spec(\"combo-loss-masks\", generator=masks, size=8, splits={\"train\": 1.0}, seed=7, root=root, monitor=\"none\").run()\ntrain = dataset.for_recipe(\"regression\", split=\"train\", input_field=\"inputs\", target_field=\"targets\", preserve_shape=True)\nclass Segmenter(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.network = build(\"mlp\", \"tiny\", in_features=16, out_features=16)\n    def forward(self, inputs):\n        logits = self.network(inputs.reshape(inputs.shape[0], -1))\n        return torch.sigmoid(logits).reshape(-1, 1, 4, 4)\ntrainer = Trainer(Segmenter(), train, recipe=\"regression\", recipe_config={\"loss\": \"combo-loss\", \"loss_kwargs\": {\"alpha\": 0.5, \"beta\": 0.5}}, batch_size=4, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
+          "title": "Train a segmentation model with Combo Loss"
+        }
+      ],
+      "id": "combo-loss",
+      "implementation": {
+        "path": "implementations/losses/combo_loss.py",
+        "sha256": "c75401de87f6426c7ffc2becc9aa50cbf98596350a2298409daf9b79bbcca065",
+        "symbol": "combo_loss"
+      },
+      "name": "Combo Loss for segmentation",
+      "parameters": {
+        "alpha": "finite weight in [0, 1] for the beta-weighted binary cross entropy (default 0.5)",
+        "beta": "finite positive-label weight in [0, 1]; values below 0.5 penalize false positives more (default 0.5)",
+        "ignore_index": "must be None because dense binary targets do not support ignored labels",
+        "logits_or_prediction": "floating sigmoid probabilities in [0, 1] shaped [B, C, *spatial], with independent class channels",
+        "reduction": "none returns one loss per volume; mean or sum reduces the batch (default mean)",
+        "targets": "dense binary one-hot or multi-label targets matching [B, C, *spatial]"
+      },
+      "usage": "Trainer(model, train, recipe='regression', recipe_config={'loss':'combo-loss','loss_kwargs':{'alpha':0.5,'beta':0.5}})"
+    },
+    {
+      "api": "topologies.training.losses:get_loss('cosface')(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', margin=0.35, scale=64.0)",
+      "description": "Large-margin cosine classification objective that subtracts a fixed margin from each sample's target cosine score, scales all class scores, and computes softmax cross entropy. Inputs are unscaled cosine similarities from normalized feature and class-weight vectors, following the CosFace paper §3.1, Eqs. (4)–(5).",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nimport torch.nn as nn\nimport torch.nn.functional as F\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef samples(ctx):\n    label = int(ctx.index) % 3\n    features = 0.1 * torch.randn(6, generator=ctx.rng.torch)\n    features[label] += 1.0\n    return {\"features\": synth.Tensor(features), \"labels\": label}\nds = synth.Spec(\"cosface-classification\", generator=samples, size=24, splits={\"train\": 0.75, \"val\": 0.25}, seed=7, root=root, monitor=\"none\").run()\ntrain = ds.for_recipe(\"tabular-classify\", split=\"train\")\nclass CosFaceClassifier(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.encoder = build(\"mlp\", \"tiny\", in_features=6, out_features=4)\n        self.class_weights = nn.Parameter(torch.randn(3, 4))\n    def forward(self, features):\n        embeddings = F.normalize(self.encoder(features), dim=-1)\n        class_weights = F.normalize(self.class_weights, dim=-1)\n        return F.linear(embeddings, class_weights)\ntrainer = Trainer(CosFaceClassifier(), train, recipe=\"tabular-classify\", recipe_config={\"loss\": \"cosface\", \"loss_kwargs\": {\"margin\": 0.35, \"scale\": 64.0}}, batch_size=4, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
+          "title": "Train a cosine classifier with CosFace"
+        }
+      ],
+      "id": "cosface",
+      "implementation": {
+        "path": "implementations/losses/cosface.py",
+        "sha256": "93c37e9368eb1d64d1f36988ce8676abdf1cf1c76b1dd445dbc70ddc5ed5765b",
+        "symbol": "cosface"
+      },
+      "name": "CosFace large-margin cosine loss",
+      "parameters": {
+        "additional parameters": "none; unknown parameter names raise ValueError",
+        "ignore_index": "must be None because ignored targets are unsupported",
+        "logits_or_prediction": "unscaled cosine scores computed from L2-normalized feature and class-weight vectors, shaped [B, K]",
+        "margin": "finite nonnegative additive cosine margin subtracted from the target class score (default 0.35; CosFace paper §4.2)",
+        "reduction": "none per sample, mean, or sum (default mean)",
+        "scale": "finite positive multiplier for all margin-adjusted cosine scores (default 64.0; CosFace paper §4.1)",
+        "targets": "long tensor of class indices shaped [B], with values in [0, K)"
+      },
+      "usage": "Trainer(model, train, recipe='tabular-classify', recipe_config={'loss':'cosface','loss_kwargs':{'margin':0.35,'scale':64.0}})"
+    },
+    {
+      "api": "cpo(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', beta=0.1)",
+      "description": "CPO objective from §3.2 Eqs. (3) and (5): sequence-summed token log probabilities with a uniform-reference preference term and unit-weight preferred-sequence NLL; beta=0.1 follows §4.2. Structured-objective bindings and scalar loss requirements are in src/topologies/training/recipes/structured_objective.py:36-50; record fields are converted to floats at :63.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nimport torch.nn as nn\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef comparisons(ctx):\n    inputs = torch.randn(4, generator=ctx.rng.torch)\n    targets = torch.tensor([[0, 1], [1, 0]])\n    return {\"inputs\": synth.Tensor(inputs), \"targets\": synth.Tensor(targets)}\ndataset = synth.Spec(\"cpo-preferences\", generator=comparisons, size=8, splits={\"train\": 1.0}, seed=7, root=root, monitor=\"none\").run()\ntrain = dataset.for_recipe(\"structured-objective\", split=\"train\")\nclass PairLanguageModel(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.network = build(\"mlp\", \"tiny\", in_features=4, out_features=12)\n    def forward(self, inputs):\n        return {\"pair_logits\": self.network(inputs).reshape(-1, 2, 2, 3)}\ntrainer = Trainer(PairLanguageModel(), train, recipe=\"structured-objective\", recipe_config={\"loss\": \"cpo\", \"bindings\": {\"logits_or_prediction\": {\"output\": \"pair_logits\"}, \"targets\": {\"batch\": \"targets\"}}}, batch_size=4, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
+          "title": "Train on paired preference sequences"
+        }
+      ],
+      "id": "cpo",
+      "implementation": {
+        "path": "implementations/losses/cpo.py",
+        "sha256": "855fce00b0a8246608a606cba034de40088480f85c31837e3d02570cd0516a87",
+        "symbol": "cpo"
+      },
+      "name": "Contrastive Preference Optimization loss",
+      "parameters": {
+        "beta": "positive finite preference scale (default 0.1)",
+        "ignore_index": "optional integer token ID excluded from both response sequence log probabilities",
+        "logits_or_prediction": "floating point logits with shape [B, 2, T, V], preferred response first",
+        "reduction": "none per preference pair, mean, or sum (default mean)",
+        "targets": "integer or integral-valued floating token IDs with shape [B, 2, T]"
+      },
+      "usage": "Trainer(model, train, recipe='structured-objective', recipe_config={'loss':'cpo','bindings':{'logits_or_prediction':{'output':'pair_logits'},'targets':{'batch':'targets'}}})"
+    },
+    {
+      "api": "topologies.training.losses:get_loss('crd')(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', **params)",
+      "description": "L2-normalized NCE critic for paired positive and caller-supplied product-of-marginals negative teacher features, using the N/M correction and the weighted binary objective from Tian et al., §3.1, Eqs. (18)-(19); structured-objective supports output and batch bindings (src/topologies/training/recipes/structured_objective.py:31-48).",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nimport torch.nn as nn\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef feature_pairs(ctx):\n    inputs = torch.randn(4, generator=ctx.rng.torch)\n    teacher_features = torch.randn(3, generator=ctx.rng.torch)\n    negative_teacher_features = torch.randn((2, 3), generator=ctx.rng.torch)\n    return {\"inputs\": synth.Tensor(inputs), \"teacher_features\": synth.Tensor(teacher_features), \"negative_teacher_features\": synth.Tensor(negative_teacher_features)}\ndataset = synth.Spec(\"crd-feature-pairs\", generator=feature_pairs, size=8, splits={\"train\": 1.0}, seed=7, root=root, monitor=\"none\").run()\ntrain = dataset.for_recipe(\"structured-objective\", split=\"train\")\nclass Student(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.projection = build(\"mlp\", \"tiny\", in_features=4, out_features=3)\n    def forward(self, inputs):\n        return {\"student_features\": self.projection(inputs)}\ntrainer = Trainer(Student(), train, recipe=\"structured-objective\", recipe_config={\"loss\": \"crd\", \"loss_kwargs\": {\"dataset_size\": 8, \"num_negatives\": 2}, \"bindings\": {\"logits_or_prediction\": {\"output\": \"student_features\"}, \"targets\": {\"batch\": \"teacher_features\"}, \"negative_teacher_features\": {\"batch\": \"negative_teacher_features\"}}}, batch_size=4, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
+          "title": "Train a student with contrastive representation distillation"
+        }
+      ],
+      "id": "crd",
+      "implementation": {
+        "path": "implementations/losses/crd.py",
+        "sha256": "d7e4d17f51c69f93a034ba15d83e06f740e96e2062fbd83820a855cb1dd2f4e9",
+        "symbol": "crd"
+      },
+      "name": "Contrastive Representation Distillation loss",
+      "parameters": {
+        "additional parameters": "negative_teacher_features, num_negatives, dataset_size, and temperature are the only accepted parameters in **params; unsupported keys raise ValueError",
+        "dataset_size": "required positive integer M used by the N/M critic correction",
+        "ignore_index": "must be None because CRD has no ignored class-index targets",
+        "logits_or_prediction": "floating-point student projected representations shaped [B,D] with finite, nonzero rows",
+        "negative_teacher_features": "floating-point caller-sampled negative teacher representations shaped [B,N,D], with finite, nonzero rows and matching dtype/device",
+        "num_negatives": "positive integer N matching the negative feature axis (default 4096)",
+        "reduction": "none per example, mean, or sum (default mean)",
+        "targets": "floating-point positive teacher projected representations shaped [B,D], with finite, nonzero rows and matching dtype/device",
+        "temperature": "finite positive critic temperature (default 0.1)"
+      },
+      "usage": "Trainer(model, train, recipe='structured-objective', recipe_config={'loss':'crd','loss_kwargs':{'dataset_size':8,'num_negatives':2},'bindings':{'logits_or_prediction':{'output':'student_features'},'targets':{'batch':'teacher_features'},'negative_teacher_features':{'batch':'negative_teacher_features'}}})"
+    },
+    {
       "api": "topologies.training.losses:compute_loss(cfg, logits, targets, **extra)",
       "description": "Class-index or probability-target cross entropy; PyTorch class axis, ignore_index, class weights, label smoothing, and none/mean/sum reduction.",
       "examples": [
@@ -271,6 +429,31 @@
       "usage": "Trainer(model, train_loader, recipe='tabular-classify', recipe_config={'loss':'cross-entropy','loss_kwargs':{'label_smoothing':0.1}})"
     },
     {
+      "api": "topologies.training.losses:get_loss('crps')(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', **params); prediction[..., 0] is mu and prediction[..., 1] is sigma",
+      "description": "Positive-oriented Gaussian CRPS for scalar Normal forecasts: sigma * (z * (2 * Phi(z) - 1) + 2 * phi(z) - 1 / sqrt(pi)), where z = (target - mu) / sigma (Gneiting & Raftery (2007), §4.2, Eqs. (20)–(21)); validation and reduction conventions follow src/topologies/implementations/losses/berhu.py:4-38.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nimport torch.nn as nn\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef samples(ctx):\n    features = torch.randn(6, generator=ctx.rng.torch)\n    target = 0.5 * features[0] - 0.25 * features[1]\n    return {\"inputs\": synth.Tensor(features), \"targets\": synth.Tensor(target)}\ndataset = synth.Spec(\"crps-regression\", generator=samples, size=16, splits={\"train\": 1.0}, seed=11, root=root, monitor=\"none\").run()\ntrain = dataset.for_recipe(\"structured-objective\", split=\"train\")\nclass GaussianRegressor(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.network = build(\"mlp\", \"tiny\", in_features=6, out_features=2)\n    def forward(self, inputs):\n        raw = self.network(inputs)\n        return {\"forecast\": torch.stack((raw[..., 0], torch.nn.functional.softplus(raw[..., 1]) + 1e-4), dim=-1)}\nmodel = GaussianRegressor()\ntrainer = Trainer(model, train, recipe=\"structured-objective\", recipe_config={\"loss\": \"crps\", \"bindings\": {\"logits_or_prediction\": {\"output\": \"forecast\"}, \"targets\": {\"batch\": \"targets\"}}}, batch_size=4, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
+          "title": "Train a Gaussian regressor with CRPS"
+        }
+      ],
+      "id": "crps",
+      "implementation": {
+        "path": "implementations/losses/crps.py",
+        "sha256": "316079cf32798b4f4e8f809dd754b113cdc1b50fe631766465ca4ab8c1dbaebc",
+        "symbol": "crps"
+      },
+      "name": "Gaussian CRPS loss",
+      "parameters": {
+        "additional parameters": "**params accepts no additional parameters; unsupported keys raise ValueError",
+        "ignore_index": "must be None because continuous targets are not indexed classes",
+        "logits_or_prediction": "floating-point tensor shaped [..., 2] with final axis [mu, sigma]; sigma must be finite and strictly positive",
+        "reduction": "none returns target-shaped values, mean averages all elements, or sum totals them (default mean)",
+        "targets": "floating-point tensor shaped [...] matching prediction.shape[:-1], with matching dtype and device"
+      },
+      "usage": "Trainer(model, train, recipe='structured-objective', recipe_config={'loss':'crps','bindings':{'logits_or_prediction':{'output':'forecast'},'targets':{'batch':'targets'}}})"
+    },
+    {
       "api": "topologies.training.losses:compute_loss(cfg, logits, targets, input_lengths=..., target_lengths=...)",
       "description": "PyTorch CTC on [time,batch,class] log-probabilities or logits with explicit input/target lengths and impossible-alignment policy.",
       "examples": [
@@ -293,6 +476,58 @@
         "zero_infinity": "zero infinite losses/gradients for impossible alignments"
       },
       "usage": "loss = ctc(logits, targets, input_lengths, target_lengths, blank=0, zero_infinity=True)"
+    },
+    {
+      "api": "topologies.training.losses:get_loss('ctc-attention')(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', **params)",
+      "description": "Per-example joint CTC-attention objective from Kim et al., Sec. 2.3, Eq. (14) (https://arxiv.org/html/1609.06773): combines caller-computed CTC and attention negative log-likelihoods with ctc_weight as lambda, then applies batch reduction (implementation: src/topologies/implementations/losses/ctc_attention.py:43-48).",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nimport torch.nn as nn\nimport torch.nn.functional as F\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef samples(ctx):\n    return {\"inputs\": synth.Tensor(torch.randn(4, generator=ctx.rng.torch))}\ndataset = synth.Spec(\"ctc-attention\", generator=samples, size=8, splits={\"train\": 1.0}, seed=7, root=root, monitor=\"none\").run()\ntrain = dataset.for_recipe(\"structured-objective\", split=\"train\")\nclass JointLossModel(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.network = build(\"mlp\", \"tiny\", in_features=4, out_features=2)\n    def forward(self, inputs):\n        components = F.softplus(self.network(inputs))\n        return {\"ctc_nll\": components[:, 0], \"attention_nll\": components[:, 1]}\ntrainer = Trainer(JointLossModel(), train, recipe=\"structured-objective\", recipe_config={\"loss\": \"ctc-attention\", \"loss_kwargs\": {\"ctc_weight\": 0.2}, \"bindings\": {\"logits_or_prediction\": {\"output\": \"ctc_nll\"}, \"targets\": {\"output\": \"attention_nll\"}}}, batch_size=4, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
+          "title": "Train with the joint CTC-attention objective"
+        }
+      ],
+      "id": "ctc-attention",
+      "implementation": {
+        "path": "implementations/losses/ctc_attention.py",
+        "sha256": "1f071229f14ad99858c20fd89f26210a64c143118f77f5edd87adc2d8b98842f",
+        "symbol": "ctc_attention"
+      },
+      "name": "Joint CTC-attention loss",
+      "parameters": {
+        "additional parameters": "ctc_weight is the only accepted value in **params; unsupported keys raise ValueError",
+        "ctc_weight": "required finite real weight in [0, 1] mapping to paper lambda; the paper specifies no default",
+        "ignore_index": "must be None because both inputs are already-computed sequence-level loss components",
+        "logits_or_prediction": "floating-point per-example CTC negative log-likelihood tensor with shape [B]",
+        "reduction": "none returns per-example mixtures, mean averages the batch, or sum totals it (default mean)",
+        "targets": "floating-point per-example attention negative log-likelihood tensor with shape [B], matching shape, dtype, and device"
+      },
+      "usage": "Trainer(model, train, recipe='structured-objective', recipe_config={'loss':'ctc-attention','loss_kwargs':{'ctc_weight':0.2},'bindings':{'logits_or_prediction':{'output':'ctc_nll'},'targets':{'output':'attention_nll'}}})"
+    },
+    {
+      "api": "topologies.training.losses:get_loss('cut-patchnce')(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', **params); params may contain temperature=0.07",
+      "description": "Single-layer PatchNCE for paired generated-query and source-key feature maps. Each query is compared with its aligned positive and other locations in the same image as negatives after channel-wise L2 normalization; temperature-scaled positive-class cross-entropy follows CUT §3.2 Eqs. (2)–(3) and Appendix C.3.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nimport torch.nn as nn\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef patch_pairs(ctx):\n    inputs = torch.randn(4, generator=ctx.rng.torch)\n    keys = torch.randn(3, 2, generator=ctx.rng.torch)\n    return {\"inputs\": synth.Tensor(inputs), \"keys\": synth.Tensor(keys)}\ndataset = synth.Spec(\"cut-patchnce-pairs\", generator=patch_pairs, size=8, splits={\"train\": 1.0}, seed=7, root=root, monitor=\"none\").run()\ntrain = dataset.for_recipe(\"structured-objective\", split=\"train\")\nclass PatchQuery(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.network = build(\"mlp\", \"tiny\", in_features=4, out_features=6)\n    def forward(self, inputs):\n        return {\"queries\": self.network(inputs).reshape(-1, 3, 2)}\ntrainer = Trainer(PatchQuery(), train, recipe=\"structured-objective\", recipe_config={\"loss\": \"cut-patchnce\", \"loss_kwargs\": {\"temperature\": 0.07}, \"bindings\": {\"logits_or_prediction\": {\"output\": \"queries\"}, \"targets\": {\"batch\": \"keys\"}}}, batch_size=4, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
+          "title": "Train paired patch features with PatchNCE"
+        }
+      ],
+      "id": "cut-patchnce",
+      "implementation": {
+        "path": "implementations/losses/cut_patchnce.py",
+        "sha256": "ec2081df9ade34ec5995f30b4ebb9ae71a40fa6587192d156b3c02b1a0f929c7",
+        "symbol": "cut_patchnce"
+      },
+      "name": "PatchNCE Loss",
+      "parameters": {
+        "additional parameters": "temperature is the only accepted keyword in **params; unknown keys raise ValueError",
+        "ignore_index": "must be None; continuous patch features do not define ignored labels",
+        "logits_or_prediction": "floating-point generated-query feature map shaped [B,C,S] with nonempty batch, channel, and patch dimensions",
+        "reduction": "none returns [B*S] patch losses, mean averages them, or sum totals them (default mean)",
+        "targets": "floating-point source-key feature map shaped [B,C,S], matching prediction in shape, dtype, and device",
+        "temperature": "finite positive real scalar used to scale similarities (default 0.07)"
+      },
+      "usage": "Trainer(model, train, recipe='structured-objective', recipe_config={'loss':'cut-patchnce','loss_kwargs':{'temperature':0.07},'bindings':{'logits_or_prediction':{'output':'queries'},'targets':{'batch':'keys'}}})"
     },
     {
       "api": "topologies.training.losses:compute_loss(cfg, log_prob, **extra)",

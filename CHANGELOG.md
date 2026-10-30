@@ -2,6 +2,41 @@
 
 All notable changes to `topologies` are listed here.
 
+## 0.0.6 — 2026-10-30
+
+### Added
+- **Models**: `climax` (ClimaX) ([paper](https://arxiv.org/abs/2301.10343))
+- **Models**: `convnext-stage` (ConvNeXt block) ([paper](https://arxiv.org/abs/2201.03545))
+- **Models**: `coma` (COMA counterfactual advantage) ([paper](https://arxiv.org/abs/1705.08926))
+- **Models**: `core` (CORE) ([paper](https://arxiv.org/abs/2204.11067))
+- **Models**: `cql` (Conservative Q-Learning for Offline Reinforcement Learning) ([paper](https://arxiv.org/abs/2006.04779))
+- **Components**: `alif` (Adaptive Leaky Integrate-and-Fire Neuron) ([paper](https://arxiv.org/abs/1803.09574))
+- **Components**: `analogical` (Analogical Inference for Multi-Relational Embeddings) ([paper](https://arxiv.org/abs/1705.02426))
+- **Components**: `selu` (selu) ([paper](https://arxiv.org/abs/1706.02515))
+- **Components**: `ann-snn` (ANN-to-SNN threshold balancing) ([paper](https://arxiv.org/abs/1802.02627))
+- **Components**: `alpha-iou` (Alpha-IoU: A Family of Power Intersection over Union Losses for Bounding Box Regression) ([paper](https://arxiv.org/abs/2110.13675))
+- **Components**: `conformal` (Conformal Prediction Sets) ([paper](https://arxiv.org/abs/2006.02544))
+- **Components**: `appnp` (APPNP) ([paper](https://arxiv.org/abs/1810.05997))
+- **Components**: `attentive-np` (Scaled Dot-Product Attention Primitive for ANPs) ([paper](https://arxiv.org/abs/1901.05761))
+- **Components**: `anomaly-f1` (Point-Adjusted Anomaly F1) ([paper](https://arxiv.org/abs/1802.03903))
+- **Components**: `arcface` (ArcFace) ([paper](https://arxiv.org/abs/1801.07698))
+- **Components**: `awq` (awq) ([paper](https://arxiv.org/abs/2306.00978))
+- **Components**: `badge` (BADGE gradient-embedding selection) ([paper](https://arxiv.org/abs/1906.03671))
+- **Components**: `base-layer` (base-layer) ([paper](https://arxiv.org/abs/2103.16716))
+- **Components**: `bam` (BAM: Bottleneck Attention Module) ([paper](https://arxiv.org/abs/1807.06514))
+- **Components**: `gnmt` (GNMT Length-Normalized Sequence Score) ([paper](https://arxiv.org/abs/1609.08144))
+- **Components**: `sampled-softmax` (Uncorrected sampled-set cross-entropy (not LogQ-corrected sampled softmax)) ([paper](https://arxiv.org/abs/2507.09331))
+- **Losses**: `cldice-loss`
+- **Losses**: `cif-quantity`
+- **Losses**: `combo-loss`
+- **Losses**: `cosface`
+- **Losses**: `crd`
+- **Losses**: `crps`
+- **Losses**: `cpo`
+- **Losses**: `cut-patchnce`
+- **Losses**: `ctc-attention`
+
+
 ## 0.0.5 — 2026-10-25
 
 ### Added

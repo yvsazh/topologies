@@ -599,6 +599,145 @@
       "usage": "Trainer(model, loader, recipe_config={'loss':'dice','loss_kwargs':{'mode':'multiclass'}})"
     },
     {
+      "api": "topologies.training.losses:get_loss('dirichlet-calibration')(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', **params); params requires weight, bias, lambda, and mu",
+      "description": "Categorical negative log-likelihood after the Dirichlet linear map softmax(W log_softmax(logits) + b), with ODIR off-diagonal and intercept penalties; follows Kull et al., §3 Eq. (7) and the fitting objective after Eq. (8) (paper.txt:276-285, 402-415; src/topologies/implementations/losses/dirichlet_calibration.py:8-86).",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nfrom topologies import Trainer, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef calibration_samples(ctx):\n    logits = torch.randn(3, generator=ctx.rng.torch)\n    shifted = logits + 0.3 * torch.randn(3, generator=ctx.rng.torch)\n    return {\"inputs\": synth.Tensor(logits), \"targets\": int(shifted.argmax())}\nds = synth.Spec(\"dirichlet-calibration-data\", generator=calibration_samples, size=12, splits={\"train\": 1.0}, seed=11, root=root, monitor=\"none\").run()\ntrain = ds.for_recipe(\"structured-objective\", split=\"train\")\nclass FixedLogitsCalibrator(torch.nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.weight = torch.nn.Parameter(torch.eye(3))\n        self.bias = torch.nn.Parameter(torch.zeros(3))\n    def forward(self, logits):\n        return {\"logits\": logits, \"weight\": self.weight, \"bias\": self.bias}\nmodel = FixedLogitsCalibrator()\ntrainer = Trainer(model, train, recipe=\"structured-objective\", recipe_config={\"loss\": \"dirichlet-calibration\", \"loss_kwargs\": {\"lambda\": 0.01, \"mu\": 0.01}, \"bindings\": {\"logits_or_prediction\": {\"output\": \"logits\"}, \"targets\": {\"batch\": \"targets\"}, \"weight\": {\"output\": \"weight\"}, \"bias\": {\"output\": \"bias\"}}}, batch_size=4, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
+          "title": "Fit a Dirichlet calibrator on fixed logits"
+        }
+      ],
+      "id": "dirichlet-calibration",
+      "implementation": {
+        "path": "implementations/losses/dirichlet_calibration.py",
+        "sha256": "411bdadb79a2df4eb0007f814ec27c6698b1dec9275d57cb1a0240d31ad343b3",
+        "symbol": "dirichlet_calibration"
+      },
+      "name": "Dirichlet calibration loss",
+      "parameters": {
+        "bias": "required floating point trainable tensor with shape [K] and the same dtype and device as logits_or_prediction",
+        "ignore_index": "optional integer class index excluded from the NLL and mean denominator (default None)",
+        "lambda": "required finite nonnegative scalar multiplying the mean squared off-diagonal weight penalty",
+        "logits_or_prediction": "floating point classifier logits with shape [B, K], where K is at least 2",
+        "mu": "required finite nonnegative scalar multiplying the mean squared bias penalty",
+        "reduction": "none returns per-example NLL with ignored rows set to zero; mean or sum reduces valid NLL and adds ODIR penalties once (default mean)",
+        "targets": "long class indices or integral-valued floating class indices with shape [B]",
+        "weight": "required floating point trainable tensor with shape [K, K] and the same dtype and device as logits_or_prediction"
+      },
+      "usage": "Trainer(model, train, recipe='structured-objective', recipe_config={'loss':'dirichlet-calibration','loss_kwargs':{'lambda':0.01,'mu':0.01},'bindings':...})"
+    },
+    {
+      "api": "topologies.training.losses:get_loss('dist')(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', **params)",
+      "description": "Inter-class row-wise and intra-class column-wise Pearson distance between student and fixed teacher probability matrices, weighted by beta and gamma (paper §3.1 Eqs. (6)–(8), §3.2 Eqs. (9)–(10)); callers apply softmax and temperature per §2 Eq. (2). Structured-objective bindings follow src/topologies/training/recipes/structured_objective.py:36-50.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nimport torch.nn as nn\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef samples(ctx):\n    index = int(ctx.index)\n    inputs = torch.tensor([float(index % 3) + 0.2, float(index % 5) + 0.5, float(index % 7) + 0.9, float(index % 2) + 1.3])\n    teacher_logits = torch.tensor([float(index % 3) + 0.1, float((index * 2) % 5) + 1.0, float((index * 3) % 7) + 2.0])\n    return {\"inputs\": synth.Tensor(inputs), \"teacher_probs\": synth.Tensor(torch.softmax(teacher_logits, dim=0))}\ndataset = synth.Spec(\"distillation-correlation\", generator=samples, size=12, splits={\"train\": 1.0}, seed=7, root=root, monitor=\"none\").run()\ntrain = dataset.for_recipe(\"structured-objective\", split=\"train\")\nclass Student(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.network = build(\"mlp\", \"tiny\", in_features=4, out_features=3)\n    def forward(self, inputs):\n        return {\"student_probs\": torch.softmax(self.network(inputs), dim=-1)}\nmodel = Student()\ntrainer = Trainer(model, train, recipe=\"structured-objective\", recipe_config={\"loss\": \"dist\", \"loss_kwargs\": {\"beta\": 1.0, \"gamma\": 1.0}, \"bindings\": {\"logits_or_prediction\": {\"output\": \"student_probs\"}, \"targets\": {\"batch\": \"teacher_probs\"}}}, batch_size=4, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
+          "title": "Train a student with DIST correlation loss"
+        }
+      ],
+      "id": "dist",
+      "implementation": {
+        "path": "implementations/losses/dist.py",
+        "sha256": "2195e3e17ffb07d6026cd882bc26c955b2cb6ca307c975b1c1906cad4dc203cf",
+        "symbol": "dist"
+      },
+      "name": "Distillation Correlation (DIST)",
+      "parameters": {
+        "additional parameters": "**params accepts only beta and gamma; unsupported keys raise ValueError",
+        "beta": "finite nonnegative real weight for inter-class loss (default 1.0)",
+        "gamma": "finite nonnegative real weight for intra-class loss (default 1.0)",
+        "ignore_index": "must be None because the paper defines no ignored samples or classes",
+        "logits_or_prediction": "finite row-normalized floating-point student probabilities shaped [B,C], B and C at least 2",
+        "reduction": "none returns beta times each row distance plus gamma times the mean column distance; mean averages that vector and sum totals it (default mean)",
+        "targets": "finite row-normalized floating-point fixed-teacher probabilities matching student shape, dtype, and device; detached from gradients"
+      },
+      "usage": "Trainer(model, train, recipe='structured-objective', recipe_config={'loss':'dist','loss_kwargs':{'beta':1.0,'gamma':1.0},'bindings':{'logits_or_prediction':{'output':'student_probs'},'targets':{'batch':'teacher_probs'}}})"
+    },
+    {
+      "api": "topologies.training.losses:get_loss('dkd')(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', teacher_logits, alpha, beta, temperature)",
+      "description": "Decoupled Knowledge Distillation from §3.1 Eqs. (2), (5)-(6) and §3.3 Eq. (7): temperature-scaled target-class binary KL (TCKD) and conditional non-target KL (NCKD), weighted independently and multiplied by temperature squared. Teacher logits are detached; ignored rows follow the valid-row reduction convention in src/topologies/implementations/losses/lwf.py:108-113.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nimport torch.nn as nn\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef samples(ctx):\n    features = torch.randn(4, generator=ctx.rng.torch)\n    teacher_logits = torch.stack((features[0], -features[0], features[1]))\n    return {\"inputs\": synth.Tensor(features), \"labels\": int(features[:3].argmax()), \"teacher_logits\": synth.Tensor(teacher_logits)}\nclass DistillationModel(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.network = build(\"mlp\", \"tiny\", in_features=4, out_features=3)\n    def forward(self, inputs):\n        return {\"student_logits\": self.network(inputs)}\nds = synth.Spec(\"dkd-data\", generator=samples, size=12, splits={\"train\": 1.0}, seed=11, root=root, monitor=\"none\").run()\ntrain = ds.for_recipe(\"structured-objective\", split=\"train\")\ntrainer = Trainer(DistillationModel(), train, recipe=\"structured-objective\", recipe_config={\"loss\": \"dkd\", \"loss_kwargs\": {\"alpha\": 1.0, \"beta\": 1.0, \"temperature\": 2.0}, \"bindings\": {\"logits_or_prediction\": {\"output\": \"student_logits\"}, \"targets\": {\"batch\": \"labels\"}, \"teacher_logits\": {\"batch\": \"teacher_logits\"}}}, batch_size=4, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
+          "title": "Train a student with decoupled knowledge distillation"
+        }
+      ],
+      "id": "dkd",
+      "implementation": {
+        "path": "implementations/losses/dkd.py",
+        "sha256": "33f1232fa0276c38461686490708062bade4567e5d4b38799530237e307e09d2",
+        "symbol": "dkd"
+      },
+      "name": "Decoupled Knowledge Distillation loss",
+      "parameters": {
+        "alpha": "required finite real coefficient for target-class binary KL (TCKD)",
+        "beta": "required finite real coefficient for conditional non-target KL (NCKD)",
+        "ignore_index": "optional integer class index excluded from loss and mean reduction (default None)",
+        "logits_or_prediction": "floating-point student logits with shape [B, C], where B > 0 and C >= 2",
+        "reduction": "none per sample, mean over valid samples, or sum (default mean)",
+        "targets": "integer class indices with shape [B], in [0, C) except optional ignore_index",
+        "teacher_logits": "required floating-point teacher logits with shape [B, C]; teacher gradients are detached",
+        "temperature": "required finite positive divisor for both logits, with final T-squared scaling"
+      },
+      "usage": "Trainer(model, train, recipe='structured-objective', recipe_config={'loss':'dkd','loss_kwargs':{'alpha':1.0,'beta':1.0,'temperature':2.0},'bindings':{'logits_or_prediction':{'output':'student_logits'},'targets':{'batch':'labels'},'teacher_logits':{'batch':'teacher_logits'}}})"
+    },
+    {
+      "api": "topologies.training.losses:get_loss('dmd2')(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', **params)",
+      "description": "Gradient-equivalent scalar surrogate for the DMD generator update: sums -prediction times the detached precomputed s_real - s_fake score difference, with scores defined by Eq. (1), over event dimensions, then reduces over the batch (Improved Distribution Matching Distillation for Fast Image Synthesis, §3, Eqs. (1)–(2)).",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef score_differences(ctx):\n    inputs = torch.randn(4, generator=ctx.rng.torch)\n    targets = torch.randn(2, generator=ctx.rng.torch)\n    return {\"inputs\": synth.Tensor(inputs), \"targets\": synth.Tensor(targets)}\ndataset = synth.Spec(\"dmd2-score-differences\", generator=score_differences, size=16, splits={\"train\": 0.75, \"val\": 0.25}, seed=7, root=root, monitor=\"none\").run()\ntrain = dataset.for_recipe(\"regression\", split=\"train\", input_field=\"inputs\", target_field=\"targets\", preserve_shape=True)\nmodel = build(\"mlp\", \"tiny\", in_features=4, out_features=2)\ntrainer = Trainer(model, train, recipe=\"regression\", recipe_config={\"loss\": \"dmd2\"}, batch_size=4, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
+          "title": "Train a generator with DMD2 score-difference gradients"
+        }
+      ],
+      "id": "dmd2",
+      "implementation": {
+        "path": "implementations/losses/dmd2.py",
+        "sha256": "793eb242fe0b6f664e16c027a95733ae68702a3893baa785bebe2795cee642f4",
+        "symbol": "dmd2"
+      },
+      "name": "DMD2 gradient-equivalent distribution matching surrogate",
+      "parameters": {
+        "additional parameters": "unsupported; any extra keyword parameter raises ValueError",
+        "ignore_index": "must be None because score-difference tensors have no ignored class or label index",
+        "logits_or_prediction": "floating-point generator prediction tensor with a nonempty shape [B, ...]",
+        "reduction": "none returns one scalar per sample after summing event dimensions; mean or sum reduces across the batch (default mean)",
+        "targets": "floating-point precomputed s_real - s_fake score difference using the scores defined by §3, Eq. (1), with the same shape, dtype, and device as prediction; detached by the loss"
+      },
+      "usage": "Trainer(model, train, recipe='regression', recipe_config={'loss':'dmd2'})"
+    },
+    {
+      "api": "topologies.training.losses:get_loss('draem')(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', **params)",
+      "description": "Composite DRAEM objective: mean per-image reconstruction MSE plus Gaussian-window SSIM loss and two-class softmax focal segmentation loss (paper §3.1 Eqs. (1)-(2), §3.2 Eq. (3); official VitjanZ/DRAEM loss.py:64-156 and train_DRAEM.py:45-69).",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nimport torch.nn as nn\nfrom topologies import Trainer, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef samples(ctx):\n    original = torch.rand((1, 16, 16), generator=ctx.rng.torch)\n    mask = torch.zeros((1, 16, 16))\n    mask[:, 4:12, 4:12] = 1\n    corrupted = original * (1 - mask) + 0.5 * mask\n    return {\"inputs\": synth.Tensor(corrupted), \"original\": synth.Tensor(original), \"mask\": synth.Tensor(mask)}\ndataset = synth.Spec(\"draem-example\", generator=samples, size=4, splits={\"train\": 1.0}, seed=11, root=root, monitor=\"none\").run()\ntrain = dataset.for_recipe(\"structured-objective\", split=\"train\")\nclass DRAEMModel(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.network = nn.Conv2d(1, 3, kernel_size=1)\n    def forward(self, inputs):\n        outputs = self.network(inputs)\n        return {\"reconstruction\": outputs[:, :1], \"logits\": outputs[:, 1:]}\ntrainer = Trainer(DRAEMModel(), train, recipe=\"structured-objective\", recipe_config={\"loss\": \"draem\", \"bindings\": {\"logits_or_prediction\": {\"output\": \"logits\"}, \"targets\": {\"batch\": \"mask\"}, \"original\": {\"batch\": \"original\"}, \"reconstruction\": {\"output\": \"reconstruction\"}}}, batch_size=2, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
+          "title": "Train reconstruction and anomaly segmentation with DRAEM loss"
+        }
+      ],
+      "id": "draem",
+      "implementation": {
+        "path": "implementations/losses/draem.py",
+        "sha256": "a285cdc91a1402b94eb0201ff885ce22183538c036883370a114555693708156",
+        "symbol": "draem"
+      },
+      "name": "DRAEM composite reconstruction and segmentation loss",
+      "parameters": {
+        "additional parameters": "original, reconstruction, ssim_weight, gamma, smooth, and ssim_window_size only; unsupported parameters raise ValueError",
+        "gamma": "finite nonnegative focal focusing exponent (default 2.0)",
+        "ignore_index": "must be None because DRAEM binary anomaly masks do not support ignored pixels",
+        "logits_or_prediction": "finite raw two-class segmentation logits with shape [B, 2, H, W]",
+        "original": "finite clean floating-point image tensor shaped [B, C, H, W], matching reconstruction dtype and device and logits batch and spatial dimensions",
+        "reconstruction": "finite reconstructed floating-point image tensor with the same [B, C, H, W] shape, dtype, and device as original",
+        "reduction": "none returns one total objective per image, mean averages images, or sum totals images (default mean)",
+        "smooth": "positive focal target smoothing value in (0, 0.5] used for clamping the two-class one-hot mask and added to p_t (default 1e-5)",
+        "ssim_weight": "finite nonnegative multiplier for the SSIM reconstruction term (default 1.0)",
+        "ssim_window_size": "positive odd Gaussian SSIM window size with sigma 1.5 (default 11)",
+        "targets": "binary anomaly mask with shape [B, H, W] or [B, 1, H, W], containing only 0 and 1 values"
+      },
+      "usage": "Trainer(model, train, recipe='structured-objective', recipe_config={'loss':'draem','bindings':{'logits_or_prediction':{'output':'logits'},'targets':{'batch':'mask'},'original':{'batch':'original'},'reconstruction':{'output':'reconstruction'}}})"
+    },
+    {
       "api": "topologies.implementations.losses.evidential:evidential(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', annealing_coef=1.0)",
       "description": "Expected squared-error Bayes risk for nonnegative class evidence, with an annealed KL divergence from the uniform Dirichlet after removing target-class evidence.",
       "examples": [
@@ -928,6 +1067,33 @@
       "usage": "Trainer(model, train, recipe='tabular-classify', recipe_config={'loss':'poly1-loss','loss_kwargs':{'epsilon':1.0}})"
     },
     {
+      "api": "topologies.training.losses:get_loss('quality-focal-loss')(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', **params)",
+      "description": "Elementwise Quality Focal Loss for continuous targets in [0, 1], following Generalized Focal Loss Section 3 Eq. (2); avg_factor divides the summed loss by N_pos as in Eq. (8). Trainer passes loss_kwargs to the loss callable in src/topologies/training/losses.py:198-200.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef samples(ctx):\n    features = torch.randn(4, generator=ctx.rng.torch)\n    targets = torch.rand(2, generator=ctx.rng.torch)\n    return {\"inputs\": synth.Tensor(features), \"targets\": synth.Tensor(targets)}\nds = synth.Spec(\"quality-focal-multilabel\", generator=samples, size=8, splits={\"train\": 1.0}, seed=7, root=root, monitor=\"none\").run()\ntrain = ds.for_recipe(\"regression\", split=\"train\", input_field=\"inputs\", target_field=\"targets\", preserve_shape=True)\nmodel = build(\"mlp\", \"tiny\", in_features=4, out_features=2)\ntrainer = Trainer(model, train, recipe=\"regression\", recipe_config={\"loss\": \"quality-focal-loss\", \"loss_kwargs\": {\"beta\": 2.0}}, batch_size=4, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
+          "title": "Train a multilabel model with Quality Focal Loss"
+        }
+      ],
+      "id": "quality-focal-loss",
+      "implementation": {
+        "path": "implementations/losses/quality_focal_loss.py",
+        "sha256": "cd1a49d8dcacf3b99dcf90deb18148abbb4ef845e8eea8a541066549aa1d351b",
+        "symbol": "quality_focal_loss"
+      },
+      "name": "Quality Focal Loss",
+      "parameters": {
+        "additional parameters": "beta and avg_factor only; unrecognized keyword parameters raise ValueError",
+        "avg_factor": "optional finite positive scalar denominator for the summed loss; accepted only with mean reduction (default None)",
+        "beta": "finite nonnegative probability-error focusing exponent (default 2.0; paper Section 3 Eq. (2))",
+        "ignore_index": "must be None because continuous quality targets have no ignored-index convention",
+        "logits_or_prediction": "nonempty finite floating-point logits tensor of any shape",
+        "reduction": "none returns elementwise losses, mean averages all elements, or sum totals all elements (default mean)",
+        "targets": "floating-point tensor on the same device and with the same shape as logits, with finite values in [0, 1]"
+      },
+      "usage": "Trainer(model, train, recipe='regression', recipe_config={'loss':'quality-focal-loss','loss_kwargs':{'beta':2.0}})"
+    },
+    {
       "api": "topologies.training.losses:get_loss('raft-epe')(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', **params)",
       "description": "RAFT sequence-supervision componentwise L1 objective from paper Section 3.4, Equation (7), with exponentially weighted full-resolution predictions. The official validity threshold and strict target-magnitude cutoff are in train.py:753-772; Euclidean endpoint error is a separate metric.",
       "examples": [
@@ -954,6 +1120,32 @@
         "valid": "required tensor shaped [B, H, W]; values greater than or equal to 0.5 are marked valid"
       },
       "usage": "Trainer(model, train, recipe='structured-objective', recipe_config={'loss':'raft-epe','loss_kwargs':{'gamma':0.8,'max_flow':400},'bindings':{'logits_or_prediction':{'output':'predictions'},'targets':{'batch':'targets'},'valid':{'batch':'valid'}}})"
+    },
+    {
+      "api": "topologies.training.losses:get_loss('si-log')(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', **params)",
+      "description": "Per-sample scale-invariant log-depth training loss with exact target-sentinel masking and valid-pixel normalization (Eigen and Fergus, §3.3, Eq. (4); trainer objective dispatch in src/topologies/training/recipes/structured_objective.py:38-50). Predictions are already log depth.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nimport torch.nn as nn\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef samples(ctx):\n    features = torch.randn(4, generator=ctx.rng.torch)\n    targets = features[:2].abs() + 1.0\n    return {\"inputs\": synth.Tensor(features), \"depths\": synth.Tensor(targets)}\ndataset = synth.Spec(\"si-log-depth\", generator=samples, size=16, splits={\"train\": 1.0}, seed=11, root=root, monitor=\"none\").run()\ntrain = dataset.for_recipe(\"structured-objective\", split=\"train\")\nclass LogDepthModel(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.network = build(\"mlp\", \"tiny\", in_features=4, out_features=2)\n    def forward(self, inputs):\n        return {\"log_depth\": self.network(inputs)}\nmodel = LogDepthModel()\ntrainer = Trainer(model, train, recipe=\"structured-objective\", recipe_config={\"loss\": \"si-log\", \"loss_kwargs\": {\"lambda_\": 0.5}, \"bindings\": {\"logits_or_prediction\": {\"output\": \"log_depth\"}, \"targets\": {\"batch\": \"depths\"}}}, batch_size=4, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
+          "title": "Train a log-depth regressor with scale-invariant loss"
+        }
+      ],
+      "id": "si-log",
+      "implementation": {
+        "path": "implementations/losses/si_log.py",
+        "sha256": "3126474b3d0326b107abf1f635548cf0ebf964f9841c6202903bc4c0ba94dc2c",
+        "symbol": "si_log"
+      },
+      "name": "Scale-Invariant Log Depth Loss",
+      "parameters": {
+        "additional parameters": "**params accepts only lambda_; unknown keys raise ValueError",
+        "ignore_index": "None or a finite real target sentinel matched exactly before logarithms and reductions; every sample must retain a valid target",
+        "lambda_": "finite real weight in [0, 1] for the squared summed residual term (default 0.5; paper §3.3 Eq. (4))",
+        "logits_or_prediction": "predicted log-depth tensor shaped [B, ...] with finite values at valid targets; each sample is reduced across trailing depth pixels",
+        "reduction": "none returns one loss per sample [B]; mean or sum reduces per-sample losses (default mean)",
+        "targets": "positive finite depth tensor matching prediction shape, dtype, and device; ignored entries are excluded"
+      },
+      "usage": "Trainer(model, train, recipe='regression', recipe_config={'loss':'si-log','loss_kwargs':{'lambda_':0.5}})"
     },
     {
       "api": "topologies.training.losses:compute_loss(cfg, estimate, target, **extra)",

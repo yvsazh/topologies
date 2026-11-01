@@ -19,7 +19,7 @@ import importlib
 import logging
 from typing import Any
 
-__version__ = "0.0.6"
+__version__ = "0.0.7"
 
 # A library never configures output: applications attach handlers themselves.
 logging.getLogger("topologies").addHandler(logging.NullHandler())

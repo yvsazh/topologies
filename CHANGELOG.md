@@ -2,6 +2,37 @@
 
 All notable changes to `topologies` are listed here.
 
+## 0.0.7 — 2026-11-01
+
+### Added
+- **Models**: `deepsets` (Deep Sets) ([paper](https://arxiv.org/abs/1703.06114))
+- **Models**: `dcdetector` (DCdetector) ([paper](https://arxiv.org/abs/2306.10347))
+- **Models**: `ddpg` (Continuous control with deep reinforcement learning) ([paper](https://arxiv.org/abs/1509.02971))
+- **Models**: `dgi` (DGI) ([paper](https://arxiv.org/abs/1809.10341))
+- **Models**: `digress` (DiGress-style categorical graph denoiser) ([paper](https://arxiv.org/abs/2209.14734))
+- **Components**: `bitfit` (bitfit) ([paper](https://arxiv.org/abs/2106.10199))
+- **Components**: `bm25` (BM25) ([paper](https://doi.org/10.1561/1500000019))
+- **Components**: `cdan` (Conditional Adversarial Domain Adaptation) ([paper](https://arxiv.org/abs/1705.10667))
+- **Components**: `causalvae` (CausalVAE-inspired fixed-order Gaussian latent mixer) ([paper](https://arxiv.org/abs/2004.08697))
+- **Components**: `casmvsnet` (Cascade depth hypotheses) ([paper](https://arxiv.org/abs/1912.06378))
+- **Components**: `diou-nms` (Distance-IoU Loss: Faster and Better Learning for Bounding Box Regression) ([paper](https://arxiv.org/abs/1911.08287))
+- **Components**: `coda-prompt` (CODA-Prompt) ([paper](https://arxiv.org/abs/2211.13218))
+- **Components**: `citris` (CITRIS: causal slot transition model) ([paper](https://arxiv.org/abs/2202.03169))
+- **Components**: `coatnet` (CoAtNet relative-attention bias utility) ([paper](https://arxiv.org/abs/2106.04803))
+- **Components**: `convkb` (ConvKB: convolutional knowledge base scorer) ([paper](https://arxiv.org/abs/1712.02121))
+- **Components**: `convcnp` (ConvCNP RBF SetConv embedding) ([paper](https://arxiv.org/abs/1910.13556))
+- **Components**: `cope` (cope) ([paper](https://arxiv.org/abs/2405.18719))
+- **Components**: `convs2s` (ConvS2S Gated Convolution) ([paper](https://arxiv.org/abs/1705.03122))
+- **Components**: `coordconv` (CoordConv) ([paper](https://arxiv.org/abs/1807.03247))
+- **Losses**: `si-log`
+- **Losses**: `quality-focal-loss`
+- **Losses**: `dkd`
+- **Losses**: `dmd2`
+- **Losses**: `dirichlet-calibration`
+- **Losses**: `dist`
+- **Losses**: `draem`
+
+
 ## 0.0.6 — 2026-10-30
 
 ### Added

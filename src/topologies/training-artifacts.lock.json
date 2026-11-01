@@ -101,6 +101,72 @@
     },
     {
       "files": {
+        "catalog/losses/cif-quantity.json": "2e56ee5190e85a28a9de13017fe21a13f71baa9c5f15011c20889a645c440d41",
+        "implementations/losses/cif_quantity.py": "6197c2c37a0f88cb5771c73d058e573677881d0e9594eced490719bd467fc685"
+      },
+      "id": "cif-quantity",
+      "kind": "loss",
+      "name": "cif-quantity",
+      "namespace": "library",
+      "version": 1
+    },
+    {
+      "files": {
+        "catalog/losses/cldice-loss.json": "70c1b1573164483556aabb2938e966cd358982587fbd186c9b9f314affb21262",
+        "implementations/losses/cldice_loss.py": "375d5d923d38583f2d0e19ef46e546f2bbd6950d1de54438c7a5b8730553e73c"
+      },
+      "id": "cldice-loss",
+      "kind": "loss",
+      "name": "cldice-loss",
+      "namespace": "library",
+      "version": 2
+    },
+    {
+      "files": {
+        "catalog/losses/combo-loss.json": "fd245b01b41062d1106c76fcd042c11605a62c485ec51f3aaa8d002be67aae54",
+        "implementations/losses/combo_loss.py": "c75401de87f6426c7ffc2becc9aa50cbf98596350a2298409daf9b79bbcca065"
+      },
+      "id": "combo-loss",
+      "kind": "loss",
+      "name": "combo-loss",
+      "namespace": "library",
+      "version": 1
+    },
+    {
+      "files": {
+        "catalog/losses/cosface.json": "36cf2bd4b2924437e3894180ca074bad5f273374ea3097f9c588486e49835e6d",
+        "implementations/losses/cosface.py": "93c37e9368eb1d64d1f36988ce8676abdf1cf1c76b1dd445dbc70ddc5ed5765b"
+      },
+      "id": "cosface",
+      "kind": "loss",
+      "name": "cosface",
+      "namespace": "library",
+      "version": 1
+    },
+    {
+      "files": {
+        "catalog/losses/cpo.json": "cd3a0ad81676695fab9b695410a881f8936873efeb9026179f06c27aac6af05c",
+        "implementations/losses/cpo.py": "855fce00b0a8246608a606cba034de40088480f85c31837e3d02570cd0516a87"
+      },
+      "id": "cpo",
+      "kind": "loss",
+      "name": "cpo",
+      "namespace": "library",
+      "version": 2
+    },
+    {
+      "files": {
+        "catalog/losses/crd.json": "41bf89032883c337bc5a05c420eeffa2ed289f2193cc5cbd253c37fa4222c1b0",
+        "implementations/losses/crd.py": "d7e4d17f51c69f93a034ba15d83e06f740e96e2062fbd83820a855cb1dd2f4e9"
+      },
+      "id": "crd",
+      "kind": "loss",
+      "name": "crd",
+      "namespace": "library",
+      "version": 1
+    },
+    {
+      "files": {
         "catalog/losses/cross-entropy.json": "efd29b1d566b528b1c2bd643a5958704f47a742a4f8328283807115ad82729e7",
         "implementations/training/core.py": "878f03ad0677bb8cd1b993861f72dcf5bfa14853743a5b355353c1d1f8162f9b"
       },
@@ -112,6 +178,17 @@
     },
     {
       "files": {
+        "catalog/losses/crps.json": "eaa6877b3177c4bc18786d0dab45f3e23642b9ed6add1faeef9aa6da70ce3f78",
+        "implementations/losses/crps.py": "316079cf32798b4f4e8f809dd754b113cdc1b50fe631766465ca4ab8c1dbaebc"
+      },
+      "id": "crps",
+      "kind": "loss",
+      "name": "crps",
+      "namespace": "library",
+      "version": 1
+    },
+    {
+      "files": {
         "catalog/losses/ctc.json": "a9fafaa022979a8c5a11f5c70b88b51f83b707478900db0efe0af6e5fa59df02",
         "implementations/training/core.py": "878f03ad0677bb8cd1b993861f72dcf5bfa14853743a5b355353c1d1f8162f9b"
       },
@@ -120,6 +197,28 @@
       "name": "ctc",
       "namespace": "library",
       "version": 2
+    },
+    {
+      "files": {
+        "catalog/losses/ctc-attention.json": "023291a698dfa837da00cbeb5d2ba22a64c941fdad8bf1f618e4be63f91edf7e",
+        "implementations/losses/ctc_attention.py": "1f071229f14ad99858c20fd89f26210a64c143118f77f5edd87adc2d8b98842f"
+      },
+      "id": "ctc-attention",
+      "kind": "loss",
+      "name": "ctc-attention",
+      "namespace": "library",
+      "version": 1
+    },
+    {
+      "files": {
+        "catalog/losses/cut-patchnce.json": "24771318f4d08682b1eed6112dfcb56e3e91441070f0ec28dfcfb01125fd267c",
+        "implementations/losses/cut_patchnce.py": "ec2081df9ade34ec5995f30b4ebb9ae71a40fa6587192d156b3c02b1a0f929c7"
+      },
+      "id": "cut-patchnce",
+      "kind": "loss",
+      "name": "cut-patchnce",
+      "namespace": "library",
+      "version": 1
     },
     {
       "files": {

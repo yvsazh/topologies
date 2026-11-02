@@ -255,6 +255,61 @@
     },
     {
       "files": {
+        "catalog/losses/dirichlet-calibration.json": "9a2d72c90e394e5d32e3e401056739ff3e50f0d8ae3f753f74f119e00e5098c2",
+        "implementations/losses/dirichlet_calibration.py": "411bdadb79a2df4eb0007f814ec27c6698b1dec9275d57cb1a0240d31ad343b3"
+      },
+      "id": "dirichlet-calibration",
+      "kind": "loss",
+      "name": "dirichlet-calibration",
+      "namespace": "library",
+      "version": 1
+    },
+    {
+      "files": {
+        "catalog/losses/dist.json": "6078f1ad49fd3990697360180cd19190844f91d63d19feae3f84aac8b26cd827",
+        "implementations/losses/dist.py": "2195e3e17ffb07d6026cd882bc26c955b2cb6ca307c975b1c1906cad4dc203cf"
+      },
+      "id": "dist",
+      "kind": "loss",
+      "name": "dist",
+      "namespace": "library",
+      "version": 2
+    },
+    {
+      "files": {
+        "catalog/losses/dkd.json": "005cb7a0d31aea04e237314a99ad96db545f587691fff0729cde71c6de92a4c8",
+        "implementations/losses/dkd.py": "33f1232fa0276c38461686490708062bade4567e5d4b38799530237e307e09d2"
+      },
+      "id": "dkd",
+      "kind": "loss",
+      "name": "dkd",
+      "namespace": "library",
+      "version": 1
+    },
+    {
+      "files": {
+        "catalog/losses/dmd2.json": "2459b854b9350b2c5b297ba56192ffdf5837382f8f9cf732e9d73f9c5e00ca5c",
+        "implementations/losses/dmd2.py": "793eb242fe0b6f664e16c027a95733ae68702a3893baa785bebe2795cee642f4"
+      },
+      "id": "dmd2",
+      "kind": "loss",
+      "name": "dmd2",
+      "namespace": "library",
+      "version": 1
+    },
+    {
+      "files": {
+        "catalog/losses/draem.json": "ce5a99c8d32bae35450d8c91624330bbf2bc56b69fee02aa94d2d6e404d545c3",
+        "implementations/losses/draem.py": "a285cdc91a1402b94eb0201ff885ce22183538c036883370a114555693708156"
+      },
+      "id": "draem",
+      "kind": "loss",
+      "name": "draem",
+      "namespace": "library",
+      "version": 2
+    },
+    {
+      "files": {
         "catalog/losses/evidential.json": "ce0f2196c9ba40773336c418ad96e78d56d9ff3f2b9ac224386c07ba5b154440",
         "implementations/losses/evidential.py": "148db84063145ac5186c21ea2ea576e8d94090ee17f23f48a28b7aca28d6521d"
       },
@@ -409,12 +464,34 @@
     },
     {
       "files": {
+        "catalog/losses/quality-focal-loss.json": "e957f0762aae8e99a231b020994fb5565964b8fee7c5a336a53a6ef3afad43db",
+        "implementations/losses/quality_focal_loss.py": "cd1a49d8dcacf3b99dcf90deb18148abbb4ef845e8eea8a541066549aa1d351b"
+      },
+      "id": "quality-focal-loss",
+      "kind": "loss",
+      "name": "quality-focal-loss",
+      "namespace": "library",
+      "version": 2
+    },
+    {
+      "files": {
         "catalog/losses/raft-epe.json": "16affe3cd8a26ba45f1a284abfdbda92fc6ecda63539daa44be5c0dc83bebfea",
         "implementations/losses/raft_epe.py": "61067f71b7f31c36f1c688d231e245faeb661eb9f2a186479f3de792500c2a9f"
       },
       "id": "raft-epe",
       "kind": "loss",
       "name": "raft-epe",
+      "namespace": "library",
+      "version": 2
+    },
+    {
+      "files": {
+        "catalog/losses/si-log.json": "fe513b4ae00680c93bf70d7f072c6a7df575be28405761173e0584887be5ca77",
+        "implementations/losses/si_log.py": "3126474b3d0326b107abf1f635548cf0ebf964f9841c6202903bc4c0ba94dc2c"
+      },
+      "id": "si-log",
+      "kind": "loss",
+      "name": "si-log",
       "namespace": "library",
       "version": 2
     },

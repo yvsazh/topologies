@@ -2,6 +2,41 @@
 
 All notable changes to `topologies` are listed here.
 
+## 0.0.8 — 2026-11-02
+
+### Added
+- **Models**: `deepar` (DeepAR Gaussian recurrent prediction head) ([paper](https://arxiv.org/abs/1704.04110))
+- **Models**: `dreamer` (Dream to Control: Learning Behaviors by Latent Imagination) ([paper](https://arxiv.org/abs/1912.01603))
+- **Models**: `edsr` (edsr) ([paper](https://arxiv.org/abs/1707.02921))
+- **Models**: `elu` (elu) ([paper](https://arxiv.org/abs/1511.07289))
+- **Models**: `egnn` (EGNN) ([paper](https://arxiv.org/abs/2102.09844))
+- **Models**: `esmm` (ESMM) ([paper](https://arxiv.org/abs/1804.07931))
+- **Models**: `equiformer` (Equiformer) ([paper](https://arxiv.org/abs/2206.11990))
+- **Components**: `cox-time` (Cox-Time: Time-dependent neural Cox risk model) ([paper](https://arxiv.org/abs/1907.00825))
+- **Components**: `cotta` (CoTTA) ([paper](https://arxiv.org/abs/2203.13591))
+- **Components**: `crown` (Fixed ReLU Affine Relaxation (CROWN-Style)) ([paper](https://arxiv.org/abs/1811.00866))
+- **Components**: `cutout` (cutout) ([paper](https://arxiv.org/abs/1708.04552))
+- **Components**: `dbnet` (dbnet) ([paper](https://arxiv.org/abs/1911.08947))
+- **Components**: `cutmix` (CutMix) ([paper](https://arxiv.org/abs/1905.04899))
+- **Components**: `cutpaste` (CutPaste) ([paper](https://arxiv.org/abs/2104.04015))
+- **Components**: `decolle` (DECOLLE: Deep Continuous Local Learning) ([paper](https://arxiv.org/abs/1811.10766))
+- **Components**: `shared-expert` (Shared Expert Residual) ([paper](https://arxiv.org/abs/2401.06066))
+- **Components**: `deeplift` (deeplift) ([paper](https://arxiv.org/abs/1704.02685))
+- **Components**: `dfq` (Weight Equalization) ([paper](https://arxiv.org/abs/1906.04721))
+- **Components**: `dib-r` (Soft triangle renderer) ([paper](https://arxiv.org/abs/1908.01210))
+- **Components**: `deformable-3dgs` (Deformable 3DGS Canonical Mean-Offset Field) ([paper](https://arxiv.org/abs/2309.13101))
+- **Components**: `delta-modulation` (Delta-modulation feedback encoder) ([paper](https://cir.nii.ac.jp/crid/1370016973439399937))
+- **Components**: `directau` (DirectAU) ([paper](https://arxiv.org/abs/2206.12811))
+- **Components**: `dish-ts` (Dish-TS) ([paper](https://arxiv.org/abs/2302.14829))
+- **Components**: `dora` (Weight-Decomposed Low-Rank Adaptation) ([paper](https://arxiv.org/abs/2402.09353))
+- **Losses**: `dqn-huber`
+- **Losses**: `dual-focal`
+- **Losses**: `integral-regression`
+- **Losses**: `eikonal-sdf`
+- **Losses**: `eiou`
+- **Losses**: `facenet`
+
+
 ## 0.0.7 — 2026-11-01
 
 ### Added

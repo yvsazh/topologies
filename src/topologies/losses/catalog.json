@@ -707,6 +707,32 @@
       "usage": "Trainer(model, train, recipe='regression', recipe_config={'loss':'dmd2'})"
     },
     {
+      "api": "topologies.training.losses:get_loss('dqn-huber')(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', **params)",
+      "description": "Detached-target DQN Huber penalty for same-shaped floating predictions and TD targets, with rho_delta(e)=0.5*e^2 for |e|<=delta and delta*(|e|-0.5*delta) otherwise. The default delta=1 matches the clipped TD error described by Mnih et al. (2015), Nature 518, Methods § ‘Training algorithm for deep Q-networks’ (https://doi.org/10.1038/nature14236); Huber scaling follows the PyTorch HuberLoss formula (https://docs.pytorch.org/docs/stable/generated/torch.nn.modules.loss.HuberLoss.html). Target detachment mirrors src/topologies/training/recipes/value_learning.py:34-38; Bellman target construction and action selection remain caller-owned.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef samples(ctx):\n    features = torch.randn(6, generator=ctx.rng.torch)\n    return {\"inputs\": synth.Tensor(features), \"targets\": synth.Tensor(features[:1])}\nds = synth.Spec(\"dqn-huber-regression\", generator=samples, size=12, splits={\"train\": 1.0}, seed=7, root=root, monitor=\"none\").run()\ntrain = ds.for_recipe(\"regression\", split=\"train\", input_field=\"inputs\", target_field=\"targets\", preserve_shape=True)\nmodel = build(\"mlp\", \"tiny\", in_features=6, out_features=1)\ntrainer = Trainer(model, train, recipe=\"regression\", recipe_config={\"loss\": \"dqn-huber\"}, batch_size=4, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
+          "title": "Train a value regressor with DQN Huber loss"
+        }
+      ],
+      "id": "dqn-huber",
+      "implementation": {
+        "path": "implementations/losses/dqn_huber.py",
+        "sha256": "c47ed335c418a6f65159dd3e0ce78f82178e8a2a543beafb09918ccd52cbd9b5",
+        "symbol": "dqn_huber"
+      },
+      "name": "DQN Huber TD loss",
+      "parameters": {
+        "additional parameters": "**params accepts delta only; unsupported keys raise ValueError",
+        "delta": "finite positive Huber threshold (default 1.0)",
+        "ignore_index": "must be None because regression targets are not indexed classes",
+        "logits_or_prediction": "floating-point prediction tensor with any nonempty shape",
+        "reduction": "none returns elementwise penalties, mean averages all elements, or sum totals them (default mean)",
+        "targets": "floating-point tensor with the same shape, dtype, and device as the prediction; detached before residual calculation"
+      },
+      "usage": "Trainer(model, loader, recipe='regression', recipe_config={'loss':'dqn-huber','loss_kwargs':{'delta':1.0}})"
+    },
+    {
       "api": "topologies.training.losses:get_loss('draem')(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', **params)",
       "description": "Composite DRAEM objective: mean per-image reconstruction MSE plus Gaussian-window SSIM loss and two-class softmax focal segmentation loss (paper §3.1 Eqs. (1)-(2), §3.2 Eq. (3); official VitjanZ/DRAEM loss.py:64-156 and train_DRAEM.py:45-69).",
       "examples": [
@@ -738,6 +764,82 @@
       "usage": "Trainer(model, train, recipe='structured-objective', recipe_config={'loss':'draem','bindings':{'logits_or_prediction':{'output':'logits'},'targets':{'batch':'mask'},'original':{'batch':'original'},'reconstruction':{'output':'reconstruction'}}})"
     },
     {
+      "api": "topologies.training.losses:get_loss('dual-focal')(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', **params)",
+      "description": "Multiclass softmax loss from paper §3.2 Eq. (3), using the greatest class probability strictly below the true-class probability; the official implementation uses zero when no strictly lower probability exists (dual_focal_loss.py:22-30). Class-index shapes and reduction behavior follow the project loss convention (src/topologies/implementations/training/core.py:116-135).",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef samples(ctx):\n    features = torch.randn(6, generator=ctx.rng.torch)\n    return {\"features\": synth.Tensor(features), \"labels\": int(features[:3].argmax())}\nds = synth.Spec(\"dual-focal-classification\", generator=samples, size=16, splits={\"train\": 1.0}, seed=11, root=root, monitor=\"none\").run()\ntrain = ds.for_recipe(\"tabular-classify\", split=\"train\")\nmodel = build(\"mlp\", \"tiny\", in_features=6, out_features=3)\ntrainer = Trainer(model, train, recipe=\"tabular-classify\", recipe_config={\"loss\": \"dual-focal\"}, batch_size=4, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
+          "title": "Train a multiclass model with Dual Focal Loss"
+        }
+      ],
+      "id": "dual-focal",
+      "implementation": {
+        "path": "implementations/losses/dual_focal.py",
+        "sha256": "8f5aeb33fd10b96b9ba70e7c5a7c44810bfc44e56ae419fce6af7e30d0be99e9",
+        "symbol": "dual_focal"
+      },
+      "name": "Dual Focal Loss for Calibration",
+      "parameters": {
+        "additional parameters": "only gamma is accepted in **params; other keys raise ValueError",
+        "gamma": "finite nonnegative real focusing exponent (default 0.0; gamma=0 gives cross-entropy)",
+        "ignore_index": "integer class label or None; ignored positions contribute zero and are excluded from mean",
+        "logits_or_prediction": "finite floating-point logits shaped [N,C,*S], with C >= 2 and classes on dimension 1",
+        "reduction": "'none' returns target-shaped losses, 'mean' averages valid targets, or 'sum' totals valid targets (default 'mean')",
+        "targets": "integer class indices shaped [N,*S], in [0,C) except for ignore_index"
+      },
+      "usage": "Trainer(model, loader, recipe='tabular-classify', recipe_config={'loss':'dual-focal','loss_kwargs':{'gamma':2.0}})"
+    },
+    {
+      "api": "topologies.training.losses:get_loss('eikonal-sdf')(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', lambda_eikonal=0.1)",
+      "description": "Weighted Eikonal penalty lambda_eikonal * (||grad_x f||_2 - 1)^2 over caller-supplied precomputed input gradients; this is the Eikonal term from Gropp et al., §2 Eq. (2), with lambda=0.1 in §5. The caller computes grad_x f with create_graph=True as in the official IGR network.py:6-15; this entry omits the point-cloud fitting term. Clean-room implementation: src/topologies/implementations/losses/eikonal_sdf.py:8-35.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nimport torch.nn as nn\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef coordinates(ctx):\n    point = torch.rand(2, generator=ctx.rng.torch) * 2 - 1\n    return {\"inputs\": synth.Tensor(point), \"targets\": synth.Tensor(torch.zeros(2))}\ndataset = synth.Spec(\"eikonal-coordinates\", generator=coordinates, size=4, splits={\"train\": 1.0}, seed=7, root=root, monitor=\"none\").run()\ntrain = dataset.for_recipe(\"structured-objective\", split=\"train\")\nclass GradientField(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.field = build(\"mlp\", \"tiny\", in_features=2, out_features=1)\n    def forward(self, coordinates):\n        coordinates = coordinates.detach().requires_grad_(True)\n        values = self.field(coordinates)\n        gradients = torch.autograd.grad(values.sum(), coordinates, create_graph=True)[0]\n        return {\"gradients\": gradients}\ntrainer = Trainer(GradientField(), train, recipe=\"structured-objective\", recipe_config={\"loss\": \"eikonal-sdf\", \"loss_kwargs\": {\"lambda_eikonal\": 0.1}, \"bindings\": {\"logits_or_prediction\": {\"output\": \"gradients\"}, \"targets\": {\"batch\": \"targets\"}}}, batch_size=2, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
+          "title": "Train a coordinate field with the Eikonal term"
+        }
+      ],
+      "id": "eikonal-sdf",
+      "implementation": {
+        "path": "implementations/losses/eikonal_sdf.py",
+        "sha256": "78bbd3b0027fd5fc19c75171edb19a133c6cdd05c03db14a10624ed7f0b9c282",
+        "symbol": "eikonal_sdf"
+      },
+      "name": "Eikonal signed-distance field gradient penalty",
+      "parameters": {
+        "ignore_index": "must be None because this term has no ignored labels",
+        "lambda_eikonal": "finite nonnegative real weight for the Eikonal penalty (default 0.1)",
+        "logits_or_prediction": "floating-point precomputed input gradients with shape [B, D], where B and D are positive",
+        "reduction": "none returns one weighted penalty per point, mean averages points, or sum totals points (default mean)",
+        "targets": "required by the generic loss signature and unused; targets do not affect the result"
+      },
+      "usage": "Trainer(model, train, recipe='regression', recipe_config={'loss':'eikonal-sdf','loss_kwargs':{'lambda_eikonal':0.1}}); model returns differentiable precomputed input gradients"
+    },
+    {
+      "api": "topologies.training.losses:get_loss('eiou')(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', **params)",
+      "description": "Aligned xyxy EIoU with IoU, normalized center-distance, width, and height penalties from paper §3.2 Eq. (7); xyxy geometry follows src/topologies/implementations/training/core.py:139-155. Excludes Focal-EIoU weighting.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nimport torch.nn as nn\nfrom topologies import Trainer, analysis, build, synth\nroot = tempfile.mkdtemp()\ndef train_case(name, size, shift, size_change, batch_size):\n    @synth.generator\n    def samples(ctx):\n        index = int(ctx.index)\n        inputs = torch.randn(4, generator=ctx.rng.torch)\n        x1 = 0.1 + (index % 3) * shift\n        y1 = 0.15 + (index % 4) * shift\n        width = 0.5 + (index % 2) * size_change\n        height = 0.6 + (index % 3) * size_change\n        targets = torch.tensor([x1, y1, x1 + width, y1 + height]).unsqueeze(0)\n        return {\"inputs\": synth.Tensor(inputs), \"targets\": synth.Tensor(targets)}\n    dataset = synth.Spec(name, generator=samples, size=size, splits={\"train\": 0.75, \"val\": 0.25}, seed=7, root=root, monitor=\"none\").run()\n    train = dataset.for_recipe(\"structured-objective\", split=\"train\")\n    val = dataset.for_recipe(\"structured-objective\", split=\"val\", like=train)\n    class BoxPredictor(nn.Module):\n        def __init__(self):\n            super().__init__()\n            self.network = build(\"mlp\", \"tiny\", in_features=4, out_features=4)\n        def forward(self, inputs):\n            raw = self.network(inputs)\n            lower = raw[..., :2].sigmoid()\n            upper = lower + torch.nn.functional.softplus(raw[..., 2:]) + 0.01\n            return {\"boxes\": torch.cat((lower, upper), dim=-1).unsqueeze(-2)}\n    model = BoxPredictor()\n    trainer = Trainer(model, train, val, recipe=\"structured-objective\", recipe_config={\"loss\": \"eiou\", \"bindings\": {\"logits_or_prediction\": {\"output\": \"boxes\"}, \"targets\": {\"batch\": \"targets\"}}}, batch_size=batch_size, max_epochs=1, device=\"cpu\")\n    trainer.fit()\n    metrics = trainer.evaluate(val)\n    assert all(torch.isfinite(torch.tensor(value)) for value in metrics.values())\n    return analysis.analyze(model)\ntiny_report = train_case(\"eiou-tiny-boxes\", 4, 0.0, 0.0, 1)\nsmall_report = train_case(\"eiou-small-boxes\", 12, 0.02, 0.05, 4)",
+          "title": "Train box predictors with EIoU"
+        }
+      ],
+      "id": "eiou",
+      "implementation": {
+        "path": "implementations/losses/eiou.py",
+        "sha256": "011ad00d23a2c82f0876885bcfa450df9960659a2b7c1c6f062f25a80f79f0b2",
+        "symbol": "eiou"
+      },
+      "name": "Efficient IoU loss",
+      "parameters": {
+        "additional parameters": "unsupported; unrecognized keyword parameters raise ValueError",
+        "ignore_index": "must be None because aligned box pairs do not use ignored indices",
+        "logits_or_prediction": "finite floating-point aligned xyxy boxes shaped [...,4] with at least one leading box dimension and strictly positive width and height",
+        "reduction": "none returns one loss per box pair, mean averages pairs, or sum totals pairs (default mean)",
+        "targets": "finite floating-point xyxy boxes matching prediction shape, dtype, and device, with strictly positive width and height"
+      },
+      "usage": "Trainer(model, train, recipe='structured-objective', recipe_config={'loss':'eiou','bindings':{'logits_or_prediction':{'output':'boxes'},'targets':{'batch':'targets'}}})"
+    },
+    {
       "api": "topologies.implementations.losses.evidential:evidential(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', annealing_coef=1.0)",
       "description": "Expected squared-error Bayes risk for nonnegative class evidence, with an annealed KL divergence from the uniform Dirichlet after removing target-class evidence.",
       "examples": [
@@ -761,6 +863,31 @@
         "targets": "integer class indices with shape [B] and values in [0, K)"
       },
       "usage": "Trainer(model, train, recipe='tabular-classify', recipe_config={'loss':'evidential','loss_kwargs':{'annealing_coef':0.5,'reduction':'sum'}})"
+    },
+    {
+      "api": "facenet(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', margin=0.2)",
+      "description": "Mean squared-distance hinge over caller-selected anchor, positive, and negative embeddings, following FaceNet §3.1 Eq. (3); callers provide unit-normalized embeddings and select triplets.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nimport torch.nn as nn\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef samples(ctx):\n    triplets = torch.randn(3, 2, generator=ctx.rng.torch)\n    return {\"inputs\": synth.Tensor(triplets), \"targets\": synth.Tensor(torch.zeros(3, 2))}\nds = synth.Spec(\"facenet-triplets\", generator=samples, size=16, splits={\"train\": 0.75, \"val\": 0.25}, seed=11, root=root, monitor=\"none\").run()\ntrain = ds.for_recipe(\"regression\", split=\"train\", input_field=\"inputs\", target_field=\"targets\", preserve_shape=True)\nval = ds.for_recipe(\"regression\", split=\"val\", like=train, input_field=\"inputs\", target_field=\"targets\", preserve_shape=True)\nclass NormalizedEncoder(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.encoder = build(\"mlp\", \"tiny\", in_features=2, out_features=2)\n    def forward(self, inputs):\n        batch_size = inputs.shape[0]\n        encoded = self.encoder(inputs.reshape(-1, inputs.shape[-1]))\n        encoded = encoded.reshape(batch_size, 3, -1)\n        return torch.nn.functional.normalize(encoded, dim=-1)\nmodel = NormalizedEncoder()\ntrainer = Trainer(model, train, val, recipe=\"regression\", recipe_config={\"loss\": \"facenet\", \"loss_kwargs\": {\"margin\": 0.2}}, batch_size=4, max_epochs=1, device=\"cpu\", logger=\"none\", monitor=\"none\")\ntrainer.fit()\nassert all(torch.isfinite(torch.tensor(value)) for value in trainer.evaluate(val).values())",
+          "title": "Train a normalized triplet encoder with FaceNet loss"
+        }
+      ],
+      "id": "facenet",
+      "implementation": {
+        "path": "implementations/losses/facenet.py",
+        "sha256": "c407169da330ccccf8e6a691ffeecdd925b49ec5db56bc4c1d3f9f27c28a9117",
+        "symbol": "facenet"
+      },
+      "name": "FaceNet squared Euclidean triplet loss",
+      "parameters": {
+        "ignore_index": "must be None; FaceNet triplet loss defines no ignored-target behavior",
+        "logits_or_prediction": "floating-point tensor [T, 3, D] ordered anchor, positive, negative; callers L2-normalize each embedding",
+        "margin": "nonnegative finite hinge margin (default 0.2, the experimental value reported in FaceNet §3.3)",
+        "reduction": "none per triplet, mean, or sum (default mean)",
+        "targets": "accepted and ignored because triplet membership is encoded in logits_or_prediction"
+      },
+      "usage": "Trainer(model, train, recipe='regression', recipe_config={'loss':'facenet','loss_kwargs':{'margin':0.2}})"
     },
     {
       "api": "topologies.training.losses:get_loss('fixmatch')(logits_or_prediction, targets, *, weak_logits, strong_logits, threshold=0.95, unlabeled_weight=1.0, reduction='mean', ignore_index=None)",
@@ -926,6 +1053,31 @@
         "targets": "integer positive-candidate indices shaped [B] in [0, C), except ignore_index"
       },
       "usage": "Trainer(model, train, recipe='tabular-classify', recipe_config={'loss':'infoxlm'})"
+    },
+    {
+      "api": "topologies.training.losses:get_loss('integral-regression')(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', **params)",
+      "description": "Computes 1-based coordinate expectations from per-joint spatial softmax heatmaps, then applies coordinate L1 regression (Sun et al., §2 Eqs. (2)-(4), §3; paper.txt:77-121, 196; upstream reference helper pytorch_projects/common_pytorch/common_loss/weighted_mse.py:241-252).",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nimport torch.nn as nn\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef samples(ctx):\n    features = torch.randn(4, generator=ctx.rng.torch)\n    targets = torch.tensor([[1.0, 1.0]])\n    return {\"inputs\": synth.Tensor(features), \"targets\": synth.Tensor(targets)}\ndataset = synth.Spec(\"integral-regression\", generator=samples, size=12, splits={\"train\": 1.0}, seed=7, root=root, monitor=\"none\").run()\ntrain = dataset.for_recipe(\"structured-objective\", split=\"train\")\nclass HeatmapPredictor(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.network = build(\"mlp\", \"tiny\", in_features=4, out_features=4)\n    def forward(self, inputs):\n        return {\"heatmaps\": self.network(inputs).reshape(inputs.shape[0], 1, 2, 2)}\ntrainer = Trainer(HeatmapPredictor(), train, recipe=\"structured-objective\", recipe_config={\"loss\": \"integral-regression\", \"bindings\": {\"logits_or_prediction\": {\"output\": \"heatmaps\"}, \"targets\": {\"batch\": \"targets\"}}}, batch_size=4, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
+          "title": "Train a heatmap predictor with integral regression"
+        }
+      ],
+      "id": "integral-regression",
+      "implementation": {
+        "path": "implementations/losses/integral_regression.py",
+        "sha256": "f6dfe7f9836fe8081be213a8a1c55f0ed5a31a4670eb74917d55c981158af5b8",
+        "symbol": "integral_regression"
+      },
+      "name": "Integral regression loss",
+      "parameters": {
+        "additional parameters": "No additional parameters are supported; unsupported keys passed through **params raise ValueError",
+        "ignore_index": "must be None because ignored-keypoint semantics are unspecified",
+        "logits_or_prediction": "finite floating-point heatmap logits shaped [B,K,H,W] or [B,K,D,H,W] with positive dimensions",
+        "reduction": "none returns coordinate errors shaped [B,K,2] or [B,K,3], mean averages all coordinate errors, or sum totals them (default mean)",
+        "targets": "finite floating-point coordinates shaped [B,K,2] for 2D or [B,K,3] for 3D, in (x,y) or (x,y,z) order on the same dtype and device"
+      },
+      "usage": "Trainer(model, train, recipe='regression', recipe_config={'loss':'integral-regression'})"
     },
     {
       "api": "topologies.training.losses:get_loss('lwf')(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', old_logits, old_probabilities, temperature=2.0, lambda_old=1.0)",

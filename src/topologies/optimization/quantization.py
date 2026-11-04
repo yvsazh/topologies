@@ -694,9 +694,16 @@ def _quantize_legacy(model: Any, paths: list[str], config: QuantizationConfig):
         )
     if paths == [""]:
         wrapper = nn.Sequential(model)
-        _torch_ao.quantize_dynamic(
-            wrapper, qconfig_spec={nn.Linear, nn.LSTM}, dtype=torch.qint8, inplace=True
-        )
+        prior = torch.backends.quantized.engine
+        engine = prior if prior in engines else engines[0]
+        try:
+            torch.backends.quantized.engine = engine
+            _torch_ao.quantize_dynamic(
+                wrapper, qconfig_spec={nn.Linear, nn.LSTM}, dtype=torch.qint8, inplace=True
+            )
+        finally:
+            if prior in engines:
+                torch.backends.quantized.engine = prior
         converted = wrapper[0]
         if "quantized" not in type(converted).__module__:
             raise OptimizationError(

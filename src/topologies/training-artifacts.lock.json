@@ -299,6 +299,17 @@
     },
     {
       "files": {
+        "catalog/losses/dqn-huber.json": "2793de02ffc00f723d0eea75040237bcf7a127f7c4285df8409ee41e44dab99a",
+        "implementations/losses/dqn_huber.py": "c47ed335c418a6f65159dd3e0ce78f82178e8a2a543beafb09918ccd52cbd9b5"
+      },
+      "id": "dqn-huber",
+      "kind": "loss",
+      "name": "dqn-huber",
+      "namespace": "library",
+      "version": 1
+    },
+    {
+      "files": {
         "catalog/losses/draem.json": "ce5a99c8d32bae35450d8c91624330bbf2bc56b69fee02aa94d2d6e404d545c3",
         "implementations/losses/draem.py": "a285cdc91a1402b94eb0201ff885ce22183538c036883370a114555693708156"
       },
@@ -310,12 +321,56 @@
     },
     {
       "files": {
+        "catalog/losses/dual-focal.json": "0776ae5ab7a1fe3d3dd34714b705606cc6691a7045d9ed4256bdd253204fab5b",
+        "implementations/losses/dual_focal.py": "8f5aeb33fd10b96b9ba70e7c5a7c44810bfc44e56ae419fce6af7e30d0be99e9"
+      },
+      "id": "dual-focal",
+      "kind": "loss",
+      "name": "dual-focal",
+      "namespace": "library",
+      "version": 1
+    },
+    {
+      "files": {
+        "catalog/losses/eikonal-sdf.json": "5b03356090187ca2a326d3e273498bec5835e0a4c9cd3345b5ef78ce1123013f",
+        "implementations/losses/eikonal_sdf.py": "78bbd3b0027fd5fc19c75171edb19a133c6cdd05c03db14a10624ed7f0b9c282"
+      },
+      "id": "eikonal-sdf",
+      "kind": "loss",
+      "name": "eikonal-sdf",
+      "namespace": "library",
+      "version": 1
+    },
+    {
+      "files": {
+        "catalog/losses/eiou.json": "45f97395a79717df7b1ecd689b9bae043cb46ce8177c016735aa7db3dc579a0c",
+        "implementations/losses/eiou.py": "011ad00d23a2c82f0876885bcfa450df9960659a2b7c1c6f062f25a80f79f0b2"
+      },
+      "id": "eiou",
+      "kind": "loss",
+      "name": "eiou",
+      "namespace": "library",
+      "version": 1
+    },
+    {
+      "files": {
         "catalog/losses/evidential.json": "ce0f2196c9ba40773336c418ad96e78d56d9ff3f2b9ac224386c07ba5b154440",
         "implementations/losses/evidential.py": "148db84063145ac5186c21ea2ea576e8d94090ee17f23f48a28b7aca28d6521d"
       },
       "id": "evidential",
       "kind": "loss",
       "name": "evidential",
+      "namespace": "library",
+      "version": 1
+    },
+    {
+      "files": {
+        "catalog/losses/facenet.json": "7238842def15796cfc8df5b410f844b0cd2df29cc9d57f4ad17a86fa74bb9835",
+        "implementations/losses/facenet.py": "c407169da330ccccf8e6a691ffeecdd925b49ec5db56bc4c1d3f9f27c28a9117"
+      },
+      "id": "facenet",
+      "kind": "loss",
+      "name": "facenet",
       "namespace": "library",
       "version": 1
     },
@@ -395,6 +450,17 @@
       "name": "infoxlm",
       "namespace": "library",
       "version": 2
+    },
+    {
+      "files": {
+        "catalog/losses/integral-regression.json": "68b73a10da91a14b077776eba0aa406314c1421a9ad37627ce71719833837119",
+        "implementations/losses/integral_regression.py": "f6dfe7f9836fe8081be213a8a1c55f0ed5a31a4670eb74917d55c981158af5b8"
+      },
+      "id": "integral-regression",
+      "kind": "loss",
+      "name": "integral-regression",
+      "namespace": "library",
+      "version": 1
     },
     {
       "files": {

@@ -890,6 +890,31 @@
       "usage": "Trainer(model, train, recipe='regression', recipe_config={'loss':'facenet','loss_kwargs':{'margin':0.2}})"
     },
     {
+      "api": "topologies.training.losses:get_loss('fitnets')(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', **params)",
+      "description": "Per-example FitNets hint objective equal to half the squared Euclidean distance between a fixed teacher hint and the student activation after its trainable regressor, summed over activation coordinates. The teacher hint and regressor output use the same nonlinearity (Romero et al., §2.2, Eq. (3)); batch reductions follow implementations/losses/attention_transfer.py:47-52.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nimport torch.nn as nn\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef samples(ctx):\n    inputs = torch.randn(4, generator=ctx.rng.torch)\n    teacher_hint = torch.randn(3, generator=ctx.rng.torch)\n    return {\"inputs\": synth.Tensor(inputs), \"teacher_hint\": synth.Tensor(teacher_hint)}\ndataset = synth.Spec(\"fitnets-hints\", generator=samples, size=12, splits={\"train\": 1.0}, seed=7, root=root, monitor=\"none\").run()\ntrain = dataset.for_recipe(\"structured-objective\", split=\"train\")\nclass StudentWithRegressor(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.guided = build(\"mlp\", \"tiny\", in_features=4, out_features=2)\n        self.regressor = nn.Linear(2, 3)\n    def forward(self, inputs):\n        return {\"hint\": self.regressor(self.guided(inputs))}\ntrainer = Trainer(StudentWithRegressor(), train, recipe=\"structured-objective\", recipe_config={\"loss\": \"fitnets\", \"bindings\": {\"logits_or_prediction\": {\"output\": \"hint\"}, \"targets\": {\"batch\": \"teacher_hint\"}}}, batch_size=4, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
+          "title": "Train a student regressor to match teacher hints"
+        }
+      ],
+      "id": "fitnets",
+      "implementation": {
+        "path": "implementations/losses/fitnets.py",
+        "sha256": "627d42512648a157f4bbcd46f21750380e50de27b0c6f84b475cc4dd719f068f",
+        "symbol": "fitnets"
+      },
+      "name": "FitNets hint loss",
+      "parameters": {
+        "additional parameters": "unsupported; any extra parameter raises ValueError",
+        "ignore_index": "must be None because activation targets do not have ignored indices",
+        "logits_or_prediction": "floating-point student activation after the trainable regressor, shape [B,...], with B > 0 and nonempty activation dimensions",
+        "reduction": "none per example, mean over examples, or sum over examples (default mean)",
+        "targets": "floating-point teacher hint activation with identical shape, dtype, and device; detached from gradients"
+      },
+      "usage": "Trainer(model, train, recipe='structured-objective', recipe_config={'loss':'fitnets','bindings':{'logits_or_prediction':{'output':'hint'},'targets':{'batch':'teacher_hint'}}})"
+    },
+    {
       "api": "topologies.training.losses:get_loss('fixmatch')(logits_or_prediction, targets, *, weak_logits, strong_logits, threshold=0.95, unlabeled_weight=1.0, reduction='mean', ignore_index=None)",
       "description": "FixMatch objective combining labeled cross-entropy with confidence-masked pseudo-label cross-entropy on strong-view logits; hard pseudo-labels come from detached weak-view logits and the unlabeled term is averaged across the full unlabeled batch.",
       "examples": [
@@ -964,6 +989,59 @@
       "usage": "loss = gaussian_nll(mean, target, variance, full=True)"
     },
     {
+      "api": "topologies.training.losses:get_loss('ge2e')(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', **params)",
+      "description": "Generalized End-to-End speaker verification loss for balanced batches of normalized embeddings, using leave-one-out positive centroids, full negative centroids, and either the softmax or hardest-negative contrast objective (paper §1 Eq. (1), §2.1 Eqs. (4)–(10)); loss kwargs are dispatched by src/topologies/training/losses.py:196-200.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef samples(ctx):\n    features = torch.randn(4, generator=ctx.rng.torch)\n    return {\"features\": synth.Tensor(features), \"labels\": int(ctx.index) % 2}\ndataset = synth.Spec(\"ge2e-speakers\", generator=samples, size=8, splits={\"train\": 1.0}, seed=7, root=root, monitor=\"none\").run()\ntrain = dataset.for_recipe(\"tabular-classify\", split=\"train\")\nmodel = build(\"mlp\", \"tiny\", in_features=4, out_features=3)\ntrainer = Trainer(model, train, recipe=\"tabular-classify\", recipe_config={\"loss\": \"ge2e\", \"loss_kwargs\": {\"objective\": \"softmax\"}}, batch_size=8, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
+          "title": "Train speaker embeddings with GE2E"
+        }
+      ],
+      "id": "ge2e",
+      "implementation": {
+        "path": "implementations/losses/ge2e.py",
+        "sha256": "a7c2d57afaf05ea6879d964bd17bad343283c325907edd7c8160d56784ff3471",
+        "symbol": "ge2e"
+      },
+      "name": "Generalized End-to-End speaker verification loss",
+      "parameters": {
+        "additional parameters": "objective, w, and b are the only accepted parameters in **params; unsupported keys raise ValueError",
+        "b": "finite real scalar or floating-point tensor scalar bias (default -5.0)",
+        "ignore_index": "must be None because ignored speaker IDs are incompatible with balanced batches",
+        "logits_or_prediction": "floating-point raw embeddings shaped [B, D] with positive B and D; B must contain at least two speakers with the same number of utterances per speaker",
+        "objective": "'softmax' or 'contrast' GE2E objective (default 'softmax'; paper §2.1, Eqs. (6)–(7))",
+        "reduction": "none returns one loss per utterance in input order, mean averages utterances, or sum totals utterances (default mean)",
+        "targets": "integer speaker IDs shaped [B], with at least two speakers and at least two utterances per speaker in a balanced batch",
+        "w": "finite positive real scalar or floating-point tensor scalar scale (default 10.0); tensor values may receive gradients"
+      },
+      "usage": "Trainer(model, train, recipe='tabular-classify', recipe_config={'loss':'ge2e','loss_kwargs':{'objective':'softmax','w':10.0,'b':-5.0}})"
+    },
+    {
+      "api": "topologies.training.losses:get_loss('generalised-dice')(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', **params)",
+      "description": "Per-sample multiclass Dice loss with inverse-squared target class volumes, following the GDL_v weighting in paper §2.1, Eq. (GDL). The loss applies no smoothing and requires every class to appear in every sample.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nimport torch.nn as nn\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef masks(ctx):\n    inputs = torch.rand(16, generator=ctx.rng.torch)\n    targets = torch.zeros(2, 4, 4)\n    targets[0].reshape(-1)[:8] = 1\n    targets[1].reshape(-1)[8:] = 1\n    return {\"inputs\": synth.Tensor(inputs), \"targets\": synth.Tensor(targets)}\ndataset = synth.Spec(\"generalised-dice-masks\", generator=masks, size=8, splits={\"train\": 1.0}, seed=7, root=root, monitor=\"none\").run()\ntrain = dataset.for_recipe(\"regression\", split=\"train\", input_field=\"inputs\", target_field=\"targets\", preserve_shape=True)\nclass Segmenter(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.network = build(\"mlp\", \"tiny\", in_features=16, out_features=32)\n    def forward(self, inputs):\n        logits = self.network(inputs.reshape(inputs.shape[0], -1)).reshape(-1, 2, 4, 4)\n        return torch.softmax(logits, dim=1)\ntrainer = Trainer(Segmenter(), train, recipe=\"regression\", recipe_config={\"loss\": \"generalised-dice\"}, batch_size=4, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
+          "title": "Train a multiclass segmenter with Generalised Dice Loss"
+        }
+      ],
+      "id": "generalised-dice",
+      "implementation": {
+        "path": "implementations/losses/generalised_dice.py",
+        "sha256": "040dbf5acf42d92f00757c07e0b55e9f4b9dd89debd443107437e37ba7d7afcc",
+        "symbol": "generalised_dice"
+      },
+      "name": "Generalised Dice Loss (GDL_v)",
+      "parameters": {
+        "additional parameters": "none; unknown keyword arguments raise ValueError",
+        "ignore_index": "must be None because the dense one-hot target formula has no ignored-label rule",
+        "logits_or_prediction": "finite floating-point class probabilities in [0, 1] shaped [B, K, *spatial], with K >= 2",
+        "reduction": "none returns one loss per sample, mean averages samples, or sum adds samples (default mean)",
+        "targets": "dense one-hot class masks matching [B, K, *spatial], with positive target volume for every class in every sample"
+      },
+      "usage": "Trainer(model, train, recipe='regression', recipe_config={'loss':'generalised-dice'})"
+    },
+    {
       "api": "topologies.training.losses:compute_loss(cfg, boxes, targets, **extra)",
       "description": "Aligned xyxy boxes in common coordinate units; permits zero-area boxes, rejects reversed corners; returns 1-GIoU.",
       "examples": [
@@ -983,6 +1061,57 @@
         "reduction": "none per box, mean, or sum"
       },
       "usage": "loss = generalized_iou(predicted_xyxy, target_xyxy)"
+    },
+    {
+      "api": "topologies.training.losses:get_loss('ghm')(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', **params)",
+      "description": "Batch-local unit-region GHM-C for binary logits, weighting each binary cross-entropy term by inverse estimated gradient density; Chen et al., §Problem Description Eqs. (1)-(3) and §Unit Region Approximation Eqs. (9)-(11), paper.txt:97-124, 215-251; implementation: src/topologies/implementations/losses/ghm.py:8-58.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef samples(ctx):\n    features = torch.randn(6, generator=ctx.rng.torch)\n    targets = (features[:2] > 1.0).float()\n    return {\"inputs\": synth.Tensor(features), \"targets\": synth.Tensor(targets)}\nds = synth.Spec(\"ghm-multilabel\", generator=samples, size=16, splits={\"train\": 1.0}, seed=11, root=root, monitor=\"none\").run()\ntrain = ds.for_recipe(\"regression\", split=\"train\", input_field=\"inputs\", target_field=\"targets\", preserve_shape=True)\nmodel = build(\"mlp\", \"tiny\", in_features=6, out_features=2)\ntrainer = Trainer(model, train, recipe=\"regression\", recipe_config={\"loss\": \"ghm\", \"loss_kwargs\": {\"bins\": 30}}, batch_size=4, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
+          "title": "Train a multilabel model with GHM-C"
+        }
+      ],
+      "id": "ghm",
+      "implementation": {
+        "path": "implementations/losses/ghm.py",
+        "sha256": "7eedec5a65560033ab88dc83585e55c0425ed37ff98f95a6977cc3ee610fe320",
+        "symbol": "ghm"
+      },
+      "name": "Gradient Harmonizing Mechanism classification loss (GHM-C)",
+      "parameters": {
+        "additional parameters": "unsupported; unrecognized keyword parameters raise ValueError",
+        "bins": "positive integer number of equal-width gradient-norm bins (default 30)",
+        "ignore_index": "optional target value excluded from density counts and reductions; ignored positions return zero with reduction='none'",
+        "logits_or_prediction": "finite floating-point raw binary logits of any nonempty shape",
+        "reduction": "none returns per-element weighted losses, mean divides their sum by valid element count, or sum totals them (default mean)",
+        "targets": "real tensor with the same shape and device as logits; valid values must be binary 0 or 1"
+      },
+      "usage": "Trainer(model, loader, recipe='regression', recipe_config={'loss':'ghm','loss_kwargs':{'bins':30}})"
+    },
+    {
+      "api": "topologies.training.losses:get_loss('gram-loss')(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', **params)",
+      "description": "Computes one layer's style term from raw channel Gram matrices and their squared distance with the 1/(4*C^2*M^2) factor; caller combines weighted layers (Gatys et al., Methods Eqs. (3)-(5), paper.txt:121-152; src/topologies/implementations/losses/gram_loss.py:4-40).",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nimport torch.nn as nn\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef feature_pairs(ctx):\n    inputs = torch.randn(6, generator=ctx.rng.torch)\n    teacher_features = torch.randn(2, 2, 2, generator=ctx.rng.torch)\n    return {\"inputs\": synth.Tensor(inputs), \"teacher_features\": synth.Tensor(teacher_features)}\ndataset = synth.Spec(\"gram-style\", generator=feature_pairs, size=8, splits={\"train\": 1.0}, seed=7, root=root, monitor=\"none\").run()\ntrain = dataset.for_recipe(\"structured-objective\", split=\"train\")\nclass Student(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.network = build(\"mlp\", \"tiny\", in_features=6, out_features=8)\n    def forward(self, inputs):\n        return {\"features\": self.network(inputs).reshape(-1, 2, 2, 2)}\nmodel = Student()\ntrainer = Trainer(model, train, recipe=\"structured-objective\", recipe_config={\"loss\": \"gram-loss\", \"bindings\": {\"logits_or_prediction\": {\"output\": \"features\"}, \"targets\": {\"batch\": \"teacher_features\"}}}, batch_size=4, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
+          "title": "Train a student to match teacher feature Gram matrices"
+        }
+      ],
+      "id": "gram-loss",
+      "implementation": {
+        "path": "implementations/losses/gram_loss.py",
+        "sha256": "e6a9f0ed170d59db1d3394491ecd0a0cf88ca767ad0b73799d871c4c473001ae",
+        "symbol": "gram_loss"
+      },
+      "name": "Gram loss",
+      "parameters": {
+        "additional parameters": "**params accepts no additional parameters; unsupported keys raise ValueError",
+        "ignore_index": "must be None because feature maps are not indexed classes",
+        "logits_or_prediction": "floating-point prediction tensor shaped [B,C,H,W] with positive dimensions",
+        "reduction": "none returns one loss per sample, mean averages the batch, or sum totals it (default mean)",
+        "targets": "floating-point tensor with the same [B,C,H,W] shape, dtype, and device as the prediction"
+      },
+      "usage": "Trainer(model, train, recipe='structured-objective', recipe_config={'loss':'gram-loss','bindings':{'logits_or_prediction':{'output':'features'},'targets':{'batch':'teacher_features'}}})"
     },
     {
       "api": "topologies.training.losses:compute_loss(cfg, prediction, targets, **extra)",

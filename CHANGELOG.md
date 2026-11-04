@@ -2,6 +2,41 @@
 
 All notable changes to `topologies` are listed here.
 
+## 0.0.9 — 2026-11-03
+
+### Fixed
+- Fixed a final release CI failure in `ruff`.
+- Fixed a final release CI failure in `tests.test_optimization_foundations::test_plan_is_static_and_validation_output_diagnostics_explicit`.
+
+### Added
+- **Models**: `deep-ritz` (Deep Ritz) ([paper](https://arxiv.org/abs/1710.00211))
+- **Models**: `factorvae` (Disentangling by Factorising) ([paper](https://arxiv.org/abs/1802.05983))
+- **Models**: `gat` (GAT) ([paper](https://arxiv.org/abs/1710.10903))
+- **Models**: `fourier-features` (Fourier Features Let Networks Learn High Frequency Functions in Low Dimensional Domains) ([paper](https://arxiv.org/abs/2006.10739))
+- **Models**: `gated-gcn` (GatedGCN) ([paper](https://arxiv.org/abs/1711.07553))
+- **Models**: `gbp` (Generalized PageRank propagation (GBP component)) ([paper](https://arxiv.org/abs/2010.15421))
+- **Models**: `glide` (GLIDE) ([paper](https://arxiv.org/abs/2112.10741))
+- **Components**: `deepconvlstm` (DeepConvLSTM: Deep Convolutional and LSTM Recurrent Neural Networks) ([paper](https://pmc.ncbi.nlm.nih.gov/articles/PMC4732148/))
+- **Components**: `dpo` (Direct Preference Optimization: Your Language Model is Secretly a Reward Model) ([paper](https://arxiv.org/abs/2305.18290))
+- **Components**: `dropout` (Dropout) ([paper](https://arxiv.org/abs/1207.0580))
+- **Components**: `dsu` (Domain Shifts with Uncertainty) ([paper](https://arxiv.org/abs/2202.03958))
+- **Components**: `stochastic-depth` (Stochastic Depth) ([paper](https://arxiv.org/abs/1603.09382))
+- **Components**: `early-exit` (Early Exit) ([paper](https://arxiv.org/abs/2004.12993))
+- **Components**: `e2vid` (Events-to-Video voxel-grid encoding) ([paper](https://arxiv.org/abs/1904.08298))
+- **Components**: `e3b` (Exploration via Elliptical Episodic Bonuses) ([paper](https://arxiv.org/abs/2210.05805))
+- **Components**: `elmo` (ELMo Scalar Mix) ([paper](https://arxiv.org/abs/1802.05365))
+- **Components**: `energy-score` (Energy-based Out-of-distribution Detection) ([paper](https://arxiv.org/abs/2010.03759))
+- **Components**: `sinkhorn-knopp` (Sinkhorn-Knopp) ([paper](https://arxiv.org/abs/1306.0895))
+- **Components**: `esm` (ESM-2 masked amino-acid prediction) ([paper](https://doi.org/10.1126/science.ade2574))
+- **Components**: `evonorm` (EvoNorm-S0) ([paper](https://arxiv.org/abs/2004.02967))
+- **Components**: `expected-gradients` (Expected Gradients) ([paper](https://arxiv.org/abs/1906.10670))
+- **Losses**: `fitnets`
+- **Losses**: `ge2e`
+- **Losses**: `generalised-dice`
+- **Losses**: `ghm`
+- **Losses**: `gram-loss`
+
+
 ## 0.0.8 — 2026-11-02
 
 ### Added

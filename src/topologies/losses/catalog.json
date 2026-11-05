@@ -226,7 +226,7 @@
       "description": "Symmetric sum of squared nearest-neighbor distances between batched 3D point clouds, with no point-count normalization and configurable batch reduction (Fan et al., §4.3).",
       "examples": [
         {
-          "code": "import tempfile\nimport torch\nimport torch.nn as nn\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef point_clouds(ctx):\n    features = torch.randn(6, generator=ctx.rng.torch)\n    points = torch.randn(3, 3, generator=ctx.rng.torch)\n    return {\"inputs\": synth.Tensor(features), \"targets\": synth.Tensor(points)}\ndataset = synth.Spec(\"chamfer-point-clouds\", generator=point_clouds, size=8, splits={\"train\": 1.0}, seed=7, root=root, monitor=\"none\").run()\ntrain = dataset.for_recipe(\"structured-objective\", split=\"train\")\nclass PointCloudPredictor(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.network = build(\"mlp\", \"tiny\", in_features=6, out_features=6)\n    def forward(self, inputs):\n        return {\"points\": self.network(inputs).reshape(-1, 2, 3)}\ntrainer = Trainer(PointCloudPredictor(), train, recipe=\"structured-objective\", recipe_config={\"loss\": \"chamfer\", \"bindings\": {\"logits_or_prediction\": {\"output\": \"points\"}, \"targets\": {\"batch\": \"targets\"}}}, batch_size=4, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
+          "code": "import tempfile\nimport torch\nimport torch.nn as nn\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef point_clouds(ctx):\n    features = torch.randn(6, generator=ctx.rng.torch)\n    points = torch.randn(3, 3, generator=ctx.rng.torch)\n    return {\"inputs\": synth.Tensor(features), \"targets\": synth.Tensor(points)}\ndataset = synth.Spec(\"chamfer-point-clouds\", generator=point_clouds, size=8, splits={\"train\": 1.0}, seed=7, root=root, monitor=\"none\").run()\ntrain = dataset.for_recipe(\"structured-objective\", split=\"train\")\nclass PointCloudPredictor(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.network = build(\"mlp\", \"tiny\", in_features=6, out_features=6)\n    def forward(self, inputs):\n        return {\"points\": self.network(inputs).reshape(-1, 2, 3)}\ntrainer = Trainer(PointCloudPredictor(), train, recipe=\"structured-objective\", recipe_config={\"loss\": \"chamfer\", \"bindings\": {\"logits_or_prediction\": {\"output\": \"points\"}, \"targets\": {\"batch\": \"target_values\"}}}, batch_size=4, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
           "title": "Train a point-cloud predictor with Chamfer distance"
         }
       ],
@@ -355,7 +355,7 @@
       "description": "CPO objective from §3.2 Eqs. (3) and (5): sequence-summed token log probabilities with a uniform-reference preference term and unit-weight preferred-sequence NLL; beta=0.1 follows §4.2. Structured-objective bindings and scalar loss requirements are in src/topologies/training/recipes/structured_objective.py:36-50; record fields are converted to floats at :63.",
       "examples": [
         {
-          "code": "import tempfile\nimport torch\nimport torch.nn as nn\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef comparisons(ctx):\n    inputs = torch.randn(4, generator=ctx.rng.torch)\n    targets = torch.tensor([[0, 1], [1, 0]])\n    return {\"inputs\": synth.Tensor(inputs), \"targets\": synth.Tensor(targets)}\ndataset = synth.Spec(\"cpo-preferences\", generator=comparisons, size=8, splits={\"train\": 1.0}, seed=7, root=root, monitor=\"none\").run()\ntrain = dataset.for_recipe(\"structured-objective\", split=\"train\")\nclass PairLanguageModel(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.network = build(\"mlp\", \"tiny\", in_features=4, out_features=12)\n    def forward(self, inputs):\n        return {\"pair_logits\": self.network(inputs).reshape(-1, 2, 2, 3)}\ntrainer = Trainer(PairLanguageModel(), train, recipe=\"structured-objective\", recipe_config={\"loss\": \"cpo\", \"bindings\": {\"logits_or_prediction\": {\"output\": \"pair_logits\"}, \"targets\": {\"batch\": \"targets\"}}}, batch_size=4, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
+          "code": "import tempfile\nimport torch\nimport torch.nn as nn\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef comparisons(ctx):\n    inputs = torch.randn(4, generator=ctx.rng.torch)\n    targets = torch.tensor([[0, 1], [1, 0]])\n    return {\"inputs\": synth.Tensor(inputs), \"targets\": synth.Tensor(targets)}\ndataset = synth.Spec(\"cpo-preferences\", generator=comparisons, size=8, splits={\"train\": 1.0}, seed=7, root=root, monitor=\"none\").run()\ntrain = dataset.for_recipe(\"structured-objective\", split=\"train\")\nclass PairLanguageModel(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.network = build(\"mlp\", \"tiny\", in_features=4, out_features=12)\n    def forward(self, inputs):\n        return {\"pair_logits\": self.network(inputs).reshape(-1, 2, 2, 3)}\ntrainer = Trainer(PairLanguageModel(), train, recipe=\"structured-objective\", recipe_config={\"loss\": \"cpo\", \"bindings\": {\"logits_or_prediction\": {\"output\": \"pair_logits\"}, \"targets\": {\"batch\": \"target_values\"}}}, batch_size=4, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
           "title": "Train on paired preference sequences"
         }
       ],
@@ -1114,6 +1114,60 @@
       "usage": "Trainer(model, train, recipe='structured-objective', recipe_config={'loss':'gram-loss','bindings':{'logits_or_prediction':{'output':'features'},'targets':{'batch':'teacher_features'}}})"
     },
     {
+      "api": "topologies.training.losses:get_loss('group-dro')(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', **params)",
+      "description": "Maximum empirical mean cross-entropy across groups present in the input; a class-index specialization of the generic task loss in paper §2 Eq. (4), implemented in src/topologies/implementations/losses/group_dro.py:4-69. Reduction 'none' returns group means sorted by group ID, while 'sum' sums those means.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nimport torch.nn as nn\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef samples(ctx):\n    inputs = torch.randn(2, generator=ctx.rng.torch)\n    target = int(inputs[0] > 0)\n    group_id = int(ctx.index) % 2\n    return {\"inputs\": synth.Tensor(inputs), \"targets\": synth.Tensor(torch.tensor(target)), \"group_ids\": synth.Tensor(torch.tensor(group_id))}\ndataset = synth.Spec(\"group-dro-classification\", generator=samples, size=8, splits={\"train\": 1.0}, seed=7, root=root, monitor=\"none\").run()\ntrain = dataset.for_recipe(\"structured-objective\", split=\"train\")\nclass Classifier(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.network = build(\"mlp\", \"tiny\", in_features=2, out_features=2)\n    def forward(self, inputs):\n        return {\"logits\": self.network(inputs)}\ntrainer = Trainer(Classifier(), train, recipe=\"structured-objective\", recipe_config={\"loss\": \"group-dro\", \"bindings\": {\"logits_or_prediction\": {\"output\": \"logits\"}, \"targets\": {\"batch\": \"targets\"}, \"group_ids\": {\"batch\": \"group_ids\"}}}, batch_size=8, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
+          "title": "Train a classifier with worst-group risk"
+        }
+      ],
+      "id": "group-dro",
+      "implementation": {
+        "path": "implementations/losses/group_dro.py",
+        "sha256": "370de9519b1299fd457761beacc9e966195fedffbcb99df1cb93c197fba636dd",
+        "symbol": "group_dro"
+      },
+      "name": "Group DRO cross-entropy",
+      "parameters": {
+        "additional parameters": "**params accepts only group_ids; unsupported keys raise ValueError",
+        "group_ids": "required one-dimensional tensor with one integer-valued group ID per example; group means are sorted by ID",
+        "ignore_index": "integer target to exclude before group aggregation, or None; all-ignored batches raise ValueError",
+        "logits_or_prediction": "finite floating-point class logits with shape [B, C], B greater than zero and C at least two",
+        "reduction": "none returns means for observed groups sorted by ID, mean returns the maximum group mean, or sum totals group means (default mean)",
+        "targets": "one-dimensional class indices with shape [B]; integral floating-point indices are accepted"
+      },
+      "usage": "Trainer(model, train, recipe='structured-objective', recipe_config={'loss':'group-dro','bindings':{'logits_or_prediction':{'output':'logits'},'targets':{'batch':'targets'},'group_ids':{'batch':'group_ids'}}})"
+    },
+    {
+      "api": "topologies.training.losses:get_loss('hific')(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', **params)",
+      "description": "Per-image distortion d=k_M MSE+k_P LPIPS (HiFiC §3.2 before Eq. (3)); defaults k_M=0.075·2^-5 and k_P=1.0 (Appendix A.6). MSE uses raw RGB [0,255], while caller-provided per-image AlexNet net-lin v0.1 LPIPS uses images scaled by 1/255 (official tensorflow/compression models/hific/model.py:546-559,768-797; configs.py:28-44). Implements the distortion term only, without the rate or adversarial terms.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nimport torch.nn as nn\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef images(ctx):\n    inputs = torch.rand((3, 4, 4), generator=ctx.rng.torch) * 255\n    targets = torch.rand((3, 4, 4), generator=ctx.rng.torch) * 255\n    lpips_distance = torch.tensor(float(int(ctx.index) % 4) / 10)\n    return {\"inputs\": synth.Tensor(inputs), \"targets\": synth.Tensor(targets), \"lpips_distance\": synth.Tensor(lpips_distance)}\ndataset = synth.Spec(\"hific-reconstruction\", generator=images, size=8, splits={\"train\": 1.0}, seed=7, root=root, monitor=\"none\").run()\ntrain = dataset.for_recipe(\"structured-objective\", split=\"train\")\nclass Reconstructor(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.network = build(\"mlp\", \"tiny\", in_features=48, out_features=48)\n    def forward(self, inputs):\n        prediction = self.network(inputs.flatten(start_dim=1)).reshape(-1, 3, 4, 4)\n        return {\"prediction\": prediction}\ntrainer = Trainer(Reconstructor(), train, recipe=\"structured-objective\", recipe_config={\"loss\": \"hific\", \"bindings\": {\"logits_or_prediction\": {\"output\": \"prediction\"}, \"targets\": {\"batch\": \"targets\"}, \"lpips_distance\": {\"batch\": \"lpips_distance\"}}}, batch_size=4, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
+          "title": "Train an image reconstructor with HiFiC distortion"
+        }
+      ],
+      "id": "hific",
+      "implementation": {
+        "path": "implementations/losses/hific.py",
+        "sha256": "0ab2158bf34e3a126e731413bd5117b8d7c64ecc5b20b4577143a642bd9244ba",
+        "symbol": "hific"
+      },
+      "name": "HiFiC MSE-plus-LPIPS distortion",
+      "parameters": {
+        "additional parameters": "**params accepts required lpips_distance and optional mse_weight and lpips_weight; unsupported keys raise ValueError",
+        "ignore_index": "must be None because image distortion has no ignored indices",
+        "logits_or_prediction": "floating-point raw RGB prediction with shape [B,3,H,W] and positive dimensions, on the 0–255 pixel scale",
+        "lpips_distance": "required floating-point per-image AlexNet net-lin v0.1 LPIPS scores with shape [B], computed on prediction and targets divided by 255; a scalar is accepted only for B=1",
+        "lpips_weight": "finite nonnegative real coefficient for LPIPS distance (default 1.0, HiFiC Appendix A.6)",
+        "mse_weight": "finite nonnegative real coefficient for pixel MSE (default 0.00234375 = 0.075 * 2^-5, HiFiC Appendix A.6)",
+        "reduction": "none returns [B] per-image distortions, mean averages the batch, or sum totals it (default mean)",
+        "targets": "floating-point raw RGB targets matching prediction shape, dtype, and device, on the 0–255 pixel scale"
+      },
+      "usage": "Trainer(model, train, recipe='structured-objective', recipe_config={'loss':'hific','bindings':{'logits_or_prediction':{'output':'prediction'},'targets':{'batch':'targets'},'lpips_distance':{'batch':'lpips_distance'}}})"
+    },
+    {
       "api": "topologies.training.losses:compute_loss(cfg, prediction, targets, **extra)",
       "description": "Piecewise quadratic/linear regression loss with positive delta and PyTorch Huber scaling.",
       "examples": [
@@ -1207,6 +1261,59 @@
         "targets": "finite floating-point coordinates shaped [B,K,2] for 2D or [B,K,3] for 3D, in (x,y) or (x,y,z) order on the same dtype and device"
       },
       "usage": "Trainer(model, train, recipe='regression', recipe_config={'loss':'integral-regression'})"
+    },
+    {
+      "api": "topologies.training.losses:get_loss('irm')(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', environment_ids, penalty_weight=1.0)",
+      "description": "Squared-error IRMv1: each environment contributes mean squared error plus penalty_weight times the squared derivative of that mean risk with respect to a shared scalar output scale at 1.0. The scalar-classifier objective appears in §3.1.4, Eq. (6), the gradient penalty in §3.1.5, and the MSE specialization in Appendix D of the IRM paper. This computes the exact empirical mean-risk gradient square; structured-objective bindings are implemented at src/topologies/training/recipes/structured_objective.py:40-50.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nimport torch.nn as nn\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef samples(ctx):\n    index = int(ctx.index)\n    value = float(index)\n    return {\"inputs\": synth.Tensor(torch.tensor([value])), \"target_values\": synth.Tensor(torch.tensor([value + float(index % 2)])), \"environment_ids\": index % 2}\nclass IRMModel(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.network = build(\"mlp\", \"tiny\", in_features=1, out_features=1)\n    def forward(self, inputs):\n        return {\"prediction\": self.network(inputs)}\ndataset = synth.Spec(\"irm-regression\", generator=samples, size=4, splits={\"train\": 1.0}, seed=7, root=root, monitor=\"none\").run()\ntrain = dataset.for_recipe(\"structured-objective\", split=\"train\")\ntrainer = Trainer(IRMModel(), train, recipe=\"structured-objective\", recipe_config={\"loss\": \"irm\", \"loss_kwargs\": {\"penalty_weight\": 0.1}, \"bindings\": {\"logits_or_prediction\": {\"output\": \"prediction\"}, \"targets\": {\"batch\": \"target_values\"}, \"environment_ids\": {\"batch\": \"environment_ids\"}}}, batch_size=4, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
+          "title": "Train a regression model with IRMv1"
+        }
+      ],
+      "id": "irm",
+      "implementation": {
+        "path": "implementations/losses/irm.py",
+        "sha256": "d2816ddeca5b63eccb761d432aadb10152f624896f874f08a208d667784dc156",
+        "symbol": "irm"
+      },
+      "name": "Invariant Risk Minimization loss (IRMv1)",
+      "parameters": {
+        "additional parameters": "Unsupported parameter names passed through **params raise ValueError",
+        "environment_ids": "Required numeric tensor with shape [N], one finite integer-valued ID per sample; integral-valued floats are accepted and at least two distinct environments are required",
+        "ignore_index": "Must be None because squared-error regression has no ignored class index",
+        "logits_or_prediction": "Floating-point prediction tensor shaped [N, ...] with N > 0; all trailing output dimensions share one scalar scale",
+        "penalty_weight": "Finite nonnegative real number lambda multiplying the squared risk derivative (API default 1.0; the paper leaves lambda tunable)",
+        "reduction": "none returns one environment term per distinct ID; mean averages terms (default); sum matches the paper's environment sum",
+        "targets": "Floating-point tensor matching the prediction shape and device"
+      },
+      "usage": "Trainer(model, train, recipe='structured-objective', recipe_config={'loss':'irm','loss_kwargs':{'penalty_weight':0.1},'bindings':{'logits_or_prediction':{'output':'prediction'},'targets':{'batch':'target_values'},'environment_ids':{'batch':'environment_ids'}}})"
+    },
+    {
+      "api": "topologies.training.losses:get_loss('jtt')(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', error_mask, lambda_up=1.0)",
+      "description": "Stage-two JTT objective for multiclass classification: weight each per-example cross-entropy by lambda_up when a caller-supplied fixed mask marks it as an error from the stage-one identification model; the mask is defined in Just Train Twice §4, Eq. (7), and the weighted objective in §4, Eq. (8).",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nimport torch.nn as nn\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef samples(ctx):\n    features = torch.randn(4, generator=ctx.rng.torch)\n    targets = torch.tensor(int(features[0] > 0))\n    error_mask = torch.tensor(int(ctx.index) % 3 == 0)\n    return {\"inputs\": synth.Tensor(features), \"targets\": synth.Tensor(targets), \"error_mask\": synth.Tensor(error_mask)}\nds = synth.Spec(\"jtt-stage-two\", generator=samples, size=16, splits={\"train\": 1.0}, seed=7, root=root, monitor=\"none\").run()\ntrain = ds.for_recipe(\"structured-objective\", split=\"train\")\nclass Classifier(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.network = build(\"mlp\", \"tiny\", in_features=4, out_features=2)\n    def forward(self, inputs):\n        return {\"logits\": self.network(inputs)}\ntrainer = Trainer(Classifier(), train, recipe=\"structured-objective\", recipe_config={\"loss\": \"jtt\", \"loss_kwargs\": {\"lambda_up\": 3.0}, \"bindings\": {\"logits_or_prediction\": {\"output\": \"logits\"}, \"targets\": {\"batch\": \"targets\"}, \"error_mask\": {\"batch\": \"error_mask\"}}}, batch_size=4, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
+          "title": "Train a classifier with the JTT stage-two objective"
+        }
+      ],
+      "id": "jtt",
+      "implementation": {
+        "path": "implementations/losses/jtt.py",
+        "sha256": "d0978a6d6e98b3a4447043651e424a2ebbf1ba3b12ddfa1bf49b52af66aaaa78",
+        "symbol": "jtt"
+      },
+      "name": "Just Train Twice stage-two weighted loss",
+      "parameters": {
+        "error_mask": "required fixed boolean or binary numeric tensor with shape [B], true for examples misclassified by the stage-one identification model",
+        "ignore_index": "optional integer class index to exclude from the loss and mean divisor (default None)",
+        "lambda_up": "positive finite real weight for error_mask examples (default 1.0; lambda_up=1 recovers ERM per Just Train Twice §4)",
+        "logits_or_prediction": "floating-point multiclass logits with shape [B, C]",
+        "reduction": "none per example, mean over valid examples, or sum (default mean)",
+        "targets": "class indices with shape [B]; long tensors or integral-valued numeric tensors are accepted"
+      },
+      "usage": "Trainer(model, train, recipe='structured-objective', recipe_config={'loss':'jtt','loss_kwargs':{'lambda_up':3.0},'bindings':{'logits_or_prediction':{'output':'logits'},'targets':{'batch':'targets'},'error_mask':{'batch':'error_mask'}}})"
     },
     {
       "api": "topologies.training.losses:get_loss('lwf')(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', old_logits, old_probabilities, temperature=2.0, lambda_old=1.0)",

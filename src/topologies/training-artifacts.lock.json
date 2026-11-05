@@ -376,6 +376,17 @@
     },
     {
       "files": {
+        "catalog/losses/fitnets.json": "a66f93ceb6639d9f6443f222d5e6eaf88a8073605e03f31de0316917e4816d0c",
+        "implementations/losses/fitnets.py": "627d42512648a157f4bbcd46f21750380e50de27b0c6f84b475cc4dd719f068f"
+      },
+      "id": "fitnets",
+      "kind": "loss",
+      "name": "fitnets",
+      "namespace": "library",
+      "version": 1
+    },
+    {
+      "files": {
         "catalog/losses/fixmatch.json": "8fad6e7b9768d5232aacb375da1d0e34ab21fc644b4f55dda4371367cb1da977",
         "implementations/losses/fixmatch.py": "4780e1c1f44d5753263c0ebb2ede76cb1d59623f0f4400fb72bed74b3e01101d"
       },
@@ -409,6 +420,28 @@
     },
     {
       "files": {
+        "catalog/losses/ge2e.json": "d70211acb69b40581006c9832136fd8ba7c978d7fdb13a51aeee36abcbb40767",
+        "implementations/losses/ge2e.py": "a7c2d57afaf05ea6879d964bd17bad343283c325907edd7c8160d56784ff3471"
+      },
+      "id": "ge2e",
+      "kind": "loss",
+      "name": "ge2e",
+      "namespace": "library",
+      "version": 2
+    },
+    {
+      "files": {
+        "catalog/losses/generalised-dice.json": "d5676e4018a5c5f802f0344525556d7bc37cc54f9480dae36b360d78bd096160",
+        "implementations/losses/generalised_dice.py": "040dbf5acf42d92f00757c07e0b55e9f4b9dd89debd443107437e37ba7d7afcc"
+      },
+      "id": "generalised-dice",
+      "kind": "loss",
+      "name": "generalised-dice",
+      "namespace": "library",
+      "version": 1
+    },
+    {
+      "files": {
         "catalog/losses/generalized-iou.json": "58738fa365ef9c4b3ccce23ec6792ee22759dfdfd19a71c8b0138d67d99e65e6",
         "implementations/training/core.py": "878f03ad0677bb8cd1b993861f72dcf5bfa14853743a5b355353c1d1f8162f9b"
       },
@@ -417,6 +450,28 @@
       "name": "generalized-iou",
       "namespace": "library",
       "version": 2
+    },
+    {
+      "files": {
+        "catalog/losses/ghm.json": "6840cd17f1ea547770bf6c6e22287a99d18709fddac30387dddf7399785c1d59",
+        "implementations/losses/ghm.py": "7eedec5a65560033ab88dc83585e55c0425ed37ff98f95a6977cc3ee610fe320"
+      },
+      "id": "ghm",
+      "kind": "loss",
+      "name": "ghm",
+      "namespace": "library",
+      "version": 1
+    },
+    {
+      "files": {
+        "catalog/losses/gram-loss.json": "1e03467a6562502284e98cfb3e866d14808641e4a2d8d84f8a18fe00c50c9bd5",
+        "implementations/losses/gram_loss.py": "e6a9f0ed170d59db1d3394491ecd0a0cf88ca767ad0b73799d871c4c473001ae"
+      },
+      "id": "gram-loss",
+      "kind": "loss",
+      "name": "gram-loss",
+      "namespace": "library",
+      "version": 1
     },
     {
       "files": {

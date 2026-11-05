@@ -2,6 +2,36 @@
 
 All notable changes to `topologies` are listed here.
 
+## 0.0.10 — 2026-11-05
+
+### Added
+- **Models**: `deepokan` (DeepOKAN) ([paper](https://arxiv.org/abs/2405.19143))
+- **Models**: `gpr-gnn` (GPR-GNN) ([paper](https://arxiv.org/abs/2006.07988))
+- **Models**: `graphcast` (GraphCast processor step) ([paper](https://arxiv.org/abs/2212.12794))
+- **Models**: `gru` (gru) ([paper](https://arxiv.org/abs/1412.3555))
+- **Models**: `highway` (highway) ([paper](https://arxiv.org/abs/1505.00387))
+- **Models**: `indrnn` (indrnn) ([paper](https://arxiv.org/abs/1803.04831))
+- **Components**: `experience-replay` (Experience Replay with A-GEM Projection) ([paper](https://arxiv.org/abs/1812.00420))
+- **Components**: `fast-at` (Fast adversarial step) ([paper](https://arxiv.org/abs/2001.03994))
+- **Components**: `fat` (Attacks Which Do Not Kill Training Make Adversarial Learning Stronger) ([paper](https://arxiv.org/abs/2002.11242))
+- **Components**: `expert-choice` (expert-choice) ([paper](https://arxiv.org/abs/2202.09368))
+- **Components**: `fednova` (Step-weighted federated aggregation) ([paper](https://arxiv.org/abs/2007.07481))
+- **Components**: `fire` (fire) ([paper](https://arxiv.org/abs/2310.04418))
+- **Components**: `flexmatch` (Class-adaptive confidence thresholds) ([paper](https://arxiv.org/abs/2110.08263))
+- **Components**: `frn` (Filter Response Normalization) ([paper](https://arxiv.org/abs/1911.09737))
+- **Components**: `fid` (Fusion-in-Decoder Passage Concatenation) ([paper](https://arxiv.org/abs/2007.01282))
+- **Components**: `gae` (High-Dimensional Continuous Control Using Generalized Advantage Estimation) ([paper](https://arxiv.org/abs/1506.02438))
+- **Components**: `gassl` (gassl) ([paper](https://arxiv.org/abs/2011.09980))
+- **Components**: `gcn-renorm` (GCN Renormalization) ([paper](https://arxiv.org/abs/1609.02907))
+- **Components**: `gaussian-splatting` (3D Gaussian Splatting for Real-Time Radiance Field Rendering) ([paper](https://arxiv.org/abs/2308.04079))
+- **Components**: `grad-cam-pp` (Grad-CAM++) ([paper](https://arxiv.org/abs/1710.11063))
+- **Components**: `shap` (GradientSHAP attribution bridge) ([paper](https://arxiv.org/abs/1705.07874))
+- **Losses**: `group-dro`
+- **Losses**: `hific`
+- **Losses**: `irm`
+- **Losses**: `jtt`
+
+
 ## 0.0.9 — 2026-11-03
 
 ### Fixed

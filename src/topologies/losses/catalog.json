@@ -530,6 +530,31 @@
       "usage": "Trainer(model, train, recipe='structured-objective', recipe_config={'loss':'cut-patchnce','loss_kwargs':{'temperature':0.07},'bindings':{'logits_or_prediction':{'output':'queries'},'targets':{'batch':'keys'}}})"
     },
     {
+      "api": "topologies.training.losses:get_loss('deepsvdd')(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', **params)",
+      "description": "Squared Euclidean distance from each embedding to a shared fixed center, summed over embedding coordinates and reduced over examples; implements only Deep One-Class Classification §3 Eq. (4). Coordinate sum and batch mean follow src/optim/deepSVDD_trainer.py:650-663.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nimport torch.nn as nn\nfrom topologies import Trainer, analysis, build, synth\nroot = tempfile.mkdtemp()\nclass EmbeddingModel(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.network = build(\"mlp\", \"tiny\", in_features=4, out_features=2)\n    def forward(self, inputs):\n        return {\"embedding\": self.network(inputs)}\nmodel = EmbeddingModel()\nwith torch.no_grad():\n    center = model(torch.zeros((1, 4)))[\"embedding\"].squeeze(0)\n@synth.generator\ndef samples(ctx):\n    inputs = torch.randn(4, generator=ctx.rng.torch)\n    return {\"inputs\": synth.Tensor(inputs), \"center\": synth.Tensor(center.clone())}\ndataset = synth.Spec(\"deepsvdd-normal-vectors\", generator=samples, size=12, splits={\"train\": 0.75, \"val\": 0.25}, seed=7, root=root, monitor=\"none\").run()\ntrain = dataset.for_recipe(\"structured-objective\", split=\"train\")\nval = dataset.for_recipe(\"structured-objective\", split=\"val\", like=train)\ntrainer = Trainer(model, train, val, recipe=\"structured-objective\", recipe_config={\"loss\": \"deepsvdd\", \"bindings\": {\"logits_or_prediction\": {\"output\": \"embedding\"}, \"targets\": {\"batch\": \"center\"}}}, batch_size=4, max_epochs=1, device=\"cpu\")\ntrainer.fit()\nvalidation_metrics = trainer.evaluate(val)\nreport = analysis.analyze(model)",
+          "title": "Train embeddings against a fixed center"
+        }
+      ],
+      "id": "deepsvdd",
+      "implementation": {
+        "path": "implementations/losses/deepsvdd.py",
+        "sha256": "dbb00f007d78cef262c3961aacfa613b862f5d053999635abee32ef507b3d16b",
+        "symbol": "deepsvdd"
+      },
+      "name": "Deep SVDD One-Class Distance Loss",
+      "parameters": {
+        "additional parameters": "unsupported; unrecognized keyword parameters raise ValueError",
+        "ignore_index": "must be None because the one-class distance equation has no ignored labels",
+        "logits_or_prediction": "finite floating-point embeddings shaped [B,D] with positive batch and embedding dimensions",
+        "reduction": "none returns per-example coordinate sums; mean averages examples; sum totals examples (default mean)",
+        "targets": "finite floating-point fixed center shaped [D] or [B,D] with every row equal; dtype and device must match embeddings"
+      },
+      "usage": "Trainer(model, train, recipe='structured-objective', recipe_config={'loss':'deepsvdd','bindings':{'logits_or_prediction':{'output':'embedding'},'targets':{'batch':'center'}}})"
+    },
+    {
       "api": "topologies.training.losses:compute_loss(cfg, log_prob, **extra)",
       "description": "Negative already-computed log probability; flow Jacobian/density calculation remains model-owned.",
       "examples": [
@@ -1316,6 +1341,85 @@
       "usage": "Trainer(model, train, recipe='structured-objective', recipe_config={'loss':'jtt','loss_kwargs':{'lambda_up':3.0},'bindings':{'logits_or_prediction':{'output':'logits'},'targets':{'batch':'targets'},'error_mask':{'batch':'error_mask'}}})"
     },
     {
+      "api": "topologies.training.losses:get_loss('lambda-loss')(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', sigma=1.0)",
+      "description": "Implements the specified NDCG-weighted LambdaRank specialization: a per-query sum of base-2 pairwise logistic losses weighted by hard score-rank swap deltas. The repair specification attributes gains and normalization to Wang et al. §3.3 Eq. (4), swap weighting and pair loss to §3.4 Eqs. (5)-(6), and the LambdaRank M-step to §4.3 Eq. (11) (https://doi.org/10.1145/3269206.3271784). The local paper text was unavailable, so correspondence with those equations remains unverified.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nimport torch.nn as nn\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef queries(ctx):\n    features = torch.randn(4, 2, generator=ctx.rng.torch)\n    targets = torch.tensor([0.0, 1.0, 2.0, 1.0])\n    return {\"inputs\": synth.Tensor(features), \"targets\": synth.Tensor(targets)}\nclass RankingModel(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.scorer = build(\"mlp\", \"tiny\", in_features=2, out_features=1)\n    def forward(self, inputs):\n        scores = self.scorer(inputs.reshape(-1, inputs.shape[-1])).squeeze(-1)\n        return {\"scores\": scores.reshape(inputs.shape[:-1])}\ndataset = synth.Spec(\"lambda-loss-queries\", generator=queries, size=8, splits={\"train\": 1.0}, seed=7, root=root, monitor=\"none\").run()\ntrain = dataset.for_recipe(\"structured-objective\", split=\"train\")\ntrainer = Trainer(RankingModel(), train, recipe=\"structured-objective\", recipe_config={\"loss\": \"lambda-loss\", \"loss_kwargs\": {\"sigma\": 1.0, \"reduction\": \"mean\"}, \"bindings\": {\"logits_or_prediction\": {\"output\": \"scores\"}, \"targets\": {\"batch\": \"targets\"}}}, batch_size=2, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
+          "title": "Train a shared document scorer with LambdaLoss"
+        }
+      ],
+      "id": "lambda-loss",
+      "implementation": {
+        "path": "implementations/losses/lambda_loss.py",
+        "sha256": "7a3957c1eb0fdc37ff247752ff59fecc7cedea467102865d567661da2da6c77e",
+        "symbol": "lambda_loss"
+      },
+      "name": "LambdaLoss: NDCG-weighted LambdaRank specialization",
+      "parameters": {
+        "additional parameters": "unsupported parameter names passed through **params raise ValueError",
+        "ignore_index": "must be None; ignored-document semantics are unsupported",
+        "logits_or_prediction": "finite floating-point scores with shape [N] for one query or [B, N] for equal-length query batches; N and B must be positive",
+        "reduction": "'none' returns one unnormalized pair sum per query, 'mean' averages query losses, or 'sum' adds them (default 'mean')",
+        "sigma": "finite positive real slope for the pairwise logistic term (default 1.0)",
+        "targets": "finite nonnegative numeric relevance labels matching the score shape and device"
+      },
+      "usage": "Trainer(model, train, recipe='structured-objective', recipe_config={'loss':'lambda-loss','loss_kwargs':{'sigma':1.0},'bindings':{'logits_or_prediction':{'output':'scores'},'targets':{'batch':'targets'}}})"
+    },
+    {
+      "api": "topologies.training.losses:get_loss('ldam')(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', **params)",
+      "description": "Cross-entropy after subtracting each target class's LDAM margin Δ_j=C/n_j^(1/4) from its logit; max_margin normalizes the largest margin (paper §3.2, Eqs. (11)-(13); Appendix B).",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef samples(ctx):\n    features = torch.randn(6, generator=ctx.rng.torch)\n    label = int(int(ctx.index) % 4 == 0)\n    features[0] += float(label)\n    return {\"features\": synth.Tensor(features), \"labels\": label}\nds = synth.Spec(\"ldam-data\", generator=samples, size=16, splits={\"train\": 1.0}, seed=11, root=root, monitor=\"none\").run()\ntrain = ds.for_recipe(\"tabular-classify\", split=\"train\")\nmodel = build(\"mlp\", \"tiny\", in_features=6, out_features=2)\ntrainer = Trainer(model, train, recipe=\"tabular-classify\", recipe_config={\"loss\": \"ldam\", \"loss_kwargs\": {\"counts\": [12, 4], \"max_margin\": 0.5}}, batch_size=4, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
+          "title": "Train an imbalanced classifier with LDAM"
+        }
+      ],
+      "id": "ldam",
+      "implementation": {
+        "path": "implementations/losses/ldam.py",
+        "sha256": "7ff4de819842401503c887957d1be234e4036d5eb410b5b2f85618803c6aa886",
+        "symbol": "ldam"
+      },
+      "name": "Label-Distribution-Aware Margin (LDAM) Loss",
+      "parameters": {
+        "additional parameters": "**params accepts only counts and max_margin; unsupported keys raise ValueError",
+        "counts": "required finite positive training-example counts with shape [K], ordered by logit class (paper §3.2, Eqs. (11), (13))",
+        "ignore_index": "optional integer target class excluded from reductions, or None (default None)",
+        "logits_or_prediction": "floating-point multiclass logits with shape [B, K]",
+        "max_margin": "positive finite scalar largest target-class margin (default 0.5; derives C from counts)",
+        "reduction": "none returns one value per sample; mean averages valid samples; sum totals valid losses (default mean)",
+        "targets": "long tensor of class indices with shape [B], matching logits batch dimension"
+      },
+      "usage": "Trainer(model, train, recipe='tabular-classify', recipe_config={'loss':'ldam','loss_kwargs':{'counts':[12,4],'max_margin':0.5}})"
+    },
+    {
+      "api": "lovasz_softmax(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', **params)",
+      "description": "Batch-global multiclass Lovasz-Softmax Jaccard surrogate using softmax errors, descending sorting, and cumulative Jaccard-loss increments; follows Berman et al. §2.2 Eqs. (11)–(13), §3 Algorithm 1, and §3.1 for present-class averaging (.autopilot/sources/paper.txt:286-318,340-388,418-420). The optional valid-pixel mask follows the segmentation recipe hook (src/topologies/training/recipes/segmentation.py:41-45).",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef samples(ctx):\n    image = torch.rand((1, 8, 8), generator=ctx.rng.torch)\n    mask = torch.zeros((8, 8), dtype=torch.long)\n    mask[2:6, 2:6] = 1\n    return {\"pixels\": synth.Tensor(image), \"mask\": synth.Tensor(mask)}\nds = synth.Spec(\"lovasz-softmax-segmentation\", generator=samples, size=8, splits={\"train\": 0.75, \"val\": 0.25}, seed=11, root=root, monitor=\"none\").run()\ntrain = ds.for_recipe(\"segmentation\", split=\"train\")\nval = ds.for_recipe(\"segmentation\", split=\"val\", like=train)\nmodel = build(\"unet\", \"tiny\", in_channels=1, out_channels=2, features=[4, 8])\ntrainer = Trainer(model, train, val, recipe=\"segmentation\", recipe_config={\"loss\": \"lovasz-softmax\", \"loss_kwargs\": {\"classes\": \"present\"}}, max_epochs=1, batch_size=2, device=\"cpu\")\ntrainer.fit()\nresult = trainer.evaluate(val)",
+          "title": "Train a segmenter with Lovasz-Softmax"
+        }
+      ],
+      "id": "lovasz-softmax",
+      "implementation": {
+        "path": "implementations/losses/lovasz_softmax.py",
+        "sha256": "dd0e4b10672a8e9b8566f399f33be0a3c1aa5d80d0f2ae8957568ad16b068c54",
+        "symbol": "lovasz_softmax"
+      },
+      "name": "Lovasz-Softmax loss",
+      "parameters": {
+        "classes": "'all' averages every class (default); 'present' averages classes appearing in valid targets",
+        "ignore_index": "must be None because ignored pixels are unsupported",
+        "logits_or_prediction": "floating-point raw class logits shaped [N, C, *S] with C >= 1 and nonempty dimensions",
+        "mask": "optional boolean valid-pixel mask shaped like targets; supplied by the segmentation recipe",
+        "reduction": "'none' returns one value per selected class; 'mean' averages selected classes (default); 'sum' totals them",
+        "targets": "integer class indices shaped [N, *S] with values in [0, C)"
+      },
+      "usage": "Trainer(model, train, recipe='segmentation', recipe_config={'loss':'lovasz-softmax','loss_kwargs':{'classes':'present'}})"
+    },
+    {
       "api": "topologies.training.losses:get_loss('lwf')(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', old_logits, old_probabilities, temperature=2.0, lambda_old=1.0)",
       "description": "Implements Li & Hoiem, Sec. III, Fig. 3 and Eqs. (1)-(4): new-task class-index cross entropy plus lambda_old times the summed temperature-softened old-task distillation cross entropies. Cached old-model probabilities and current old-task logits are supplied by the caller. The structured-objective recipe binds named model outputs and batch fields (src/topologies/training/recipes/structured_objective.py:36-48).",
       "examples": [
@@ -1342,6 +1446,31 @@
         "temperature": "finite positive probability-softening temperature for old-task distillation (default 2.0)"
       },
       "usage": "Trainer(model, loader, recipe='structured-objective', recipe_config={'loss':'lwf','loss_kwargs':{'temperature':2.0,'lambda_old':1.0},'bindings':{...}})"
+    },
+    {
+      "api": "topologies.training.losses:get_loss('margin-mse')(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', **params)",
+      "description": "Mean squared error between student and teacher positive-minus-negative score margins, with each [B, 2] row ordered as [positive, negative] (paper §3, Eqs. (11)–(12); .autopilot/sources/paper.txt:418-439; implementation src/topologies/implementations/losses/margin_mse.py:1-36).",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef samples(ctx):\n    features = torch.randn(6, generator=ctx.rng.torch)\n    teacher_scores = torch.stack((features[:2].sum(), features[2:4].sum()))\n    return {\"inputs\": synth.Tensor(features), \"teacher_scores\": synth.Tensor(teacher_scores)}\ndataset = synth.Spec(\"margin-mse-distillation\", generator=samples, size=16, splits={\"train\": 1.0}, seed=11, root=root, monitor=\"none\").run()\ntrain = dataset.for_recipe(\"regression\", split=\"train\", input_field=\"inputs\", target_field=\"teacher_scores\", preserve_shape=True)\nmodel = build(\"mlp\", \"tiny\", in_features=6, out_features=2)\ntrainer = Trainer(model, train, recipe=\"regression\", recipe_config={\"loss\": \"margin-mse\"}, batch_size=4, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
+          "title": "Distill paired scores with Margin-MSE"
+        }
+      ],
+      "id": "margin-mse",
+      "implementation": {
+        "path": "implementations/losses/margin_mse.py",
+        "sha256": "3e2f2138f560b4ec4fb6d41e9703a0616bc237e7a3200109a42e8b98590a530d",
+        "symbol": "margin_mse"
+      },
+      "name": "Margin-MSE pairwise distillation loss",
+      "parameters": {
+        "additional parameters": "No additional parameters are supported; unsupported keys in **params raise ValueError",
+        "ignore_index": "must be None because the objective does not define ignored pairs",
+        "logits_or_prediction": "finite floating-point student scores shaped [B, 2], columns [positive, negative], with B >= 1",
+        "reduction": "none returns one squared margin error per pair [B], mean averages B errors, or sum totals them (default mean; paper §3 Eq. (12))",
+        "targets": "finite floating-point teacher scores shaped [B, 2], matching student dtype and device, columns [positive, negative]; detached because teacher scores are labels (paper §3)"
+      },
+      "usage": "Trainer(model, train, recipe='regression', recipe_config={'loss':'margin-mse'})"
     },
     {
       "api": "topologies.training.losses:compute_loss(cfg, prediction, targets, **extra)",
@@ -1384,6 +1513,31 @@
         "reduction": "none, mean, or sum (default mean)"
       },
       "usage": "Trainer(model, loader, recipe_config={'loss':'mean-squared-error'})"
+    },
+    {
+      "api": "min_snr_gamma(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', **params) -> torch.Tensor; params accept snr, gamma, and prediction_type.",
+      "description": "Per-example mean squared-error loss weighted by Min-SNR-γ: min(SNR, γ) for x0, min(SNR, γ)/SNR for epsilon (limit 1 at zero), and min(SNR, γ)/(SNR+1) for v. SNR: paper §3.1 Eq. (2); weights: §3.4, §4.2, and Appendix B; non-batch mean follows guided_diffusion/gaussian_diffusion.py:867-872.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nfrom topologies import Trainer, analysis, build, synth\nroot=tempfile.mkdtemp()\n@synth.generator\ndef samples(ctx):\n inputs=torch.randn(2,generator=ctx.rng.torch)\n targets=torch.randn(2,generator=ctx.rng.torch)\n return {\"inputs\":synth.Tensor(inputs),\"targets\":synth.Tensor(targets)}\nds=synth.Spec(\"min-snr-regression\",generator=samples,size=2,splits={\"train\":1.0},seed=7,root=root,monitor=\"none\").run()\ntrain=ds.for_recipe(\"regression\",split=\"train\",target_field=\"targets\",preserve_shape=True)\nmodel=build(\"mlp\",\"tiny\",in_features=2,out_features=2)\ntrainer=Trainer(model,train,recipe=\"regression\",recipe_config={\"loss\":\"min-snr-gamma\",\"loss_kwargs\":{\"snr\":torch.tensor([1.0,4.0]),\"gamma\":5.0,\"prediction_type\":\"x0\"}},batch_size=2,max_epochs=1,device=\"cpu\",logger=\"none\",monitor=\"none\")\nresult=trainer.fit()\nsummary=analysis.analyze(result,lambda values:{\"global_step\":values[\"global_step\"]})",
+          "title": "Train a regression model with Min-SNR-γ"
+        }
+      ],
+      "id": "min-snr-gamma",
+      "implementation": {
+        "path": "implementations/losses/min_snr_gamma.py",
+        "sha256": "2f7deba088702b04a28513c2f85f3211cccabf950895fa75e36a4313a5659465",
+        "symbol": "min_snr_gamma"
+      },
+      "name": "min-snr-gamma",
+      "parameters": {
+        "gamma": "Finite positive clipping threshold; defaults to 5.0.",
+        "ignore_index": "Must be None because targets are dense regression values.",
+        "prediction_type": "One of x0, epsilon, or v; defaults to x0.",
+        "reduction": "none returns one weighted mean MSE per example; mean and sum reduce those values.",
+        "snr": "Required floating tensor of shape (batch_size,) on the prediction device, with finite nonnegative values from the caller's diffusion schedule."
+      },
+      "usage": "Supply the per-example SNR from the diffusion schedule in loss_kwargs, for example recipe_config={\"loss\": \"min-snr-gamma\", \"loss_kwargs\": {\"snr\": snr, \"gamma\": 5.0, \"prediction_type\": \"epsilon\"}}."
     },
     {
       "api": "topologies.training.losses:compute_loss(cfg, prediction, targets, **extra)",
@@ -1625,6 +1779,32 @@
         "reduction": "none, mean over valid targets, or sum"
       },
       "usage": "loss = softmax_focal(class_logits, labels, alpha=class_weights, ignore_index=-100)"
+    },
+    {
+      "api": "topologies.training.losses:get_loss('student-teacher')(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', **params)",
+      "description": "Temperature-scaled KL from fixed teacher logits to student logits, summed over classes per example and multiplied by T^2. The softened distributions follow Hinton et al. §2 Eq. (1), and the T^2 scaling follows §2's soft-target gradient discussion and §2.1 Eq. (2); structured-objective bindings follow src/topologies/training/recipes/structured_objective.py:36-50. This is distinct from decoupled target/non-target KL in src/topologies/implementations/losses/dkd.py:59-103.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nimport torch.nn as nn\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef samples(ctx):\n    inputs = torch.randn(4, generator=ctx.rng.torch)\n    teacher_logits = torch.randn(3, generator=ctx.rng.torch)\n    return {\"inputs\": synth.Tensor(inputs), \"teacher_logits\": synth.Tensor(teacher_logits)}\ndataset = synth.Spec(\"student-teacher-logits\", generator=samples, size=12, splits={\"train\": 1.0}, seed=13, root=root, monitor=\"none\").run()\ntrain = dataset.for_recipe(\"structured-objective\", split=\"train\")\nclass Student(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.network = build(\"mlp\", \"tiny\", in_features=4, out_features=3)\n    def forward(self, inputs):\n        return {\"logits\": self.network(inputs)}\ntrainer = Trainer(Student(), train, recipe=\"structured-objective\", recipe_config={\"loss\": \"student-teacher\", \"loss_kwargs\": {\"temperature\": 2.0}, \"bindings\": {\"logits_or_prediction\": {\"output\": \"logits\"}, \"targets\": {\"batch\": \"teacher_logits\"}}}, batch_size=4, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
+          "title": "Train a student to match softened teacher logits"
+        }
+      ],
+      "id": "student-teacher",
+      "implementation": {
+        "path": "implementations/losses/student_teacher.py",
+        "sha256": "a5b068cb29a7a4453007a80074f3dcee3ed536adb5ca6efb4020a344f731a559",
+        "symbol": "student_teacher"
+      },
+      "name": "Student-Teacher Knowledge Distillation KL Loss",
+      "parameters": {
+        "additional parameters": "temperature is the only accepted parameter in **params; unsupported keys raise ValueError",
+        "ignore_index": "must be None because targets are teacher logits, not class indices",
+        "logits_or_prediction": "finite floating-point student logits shaped [B,C] with B > 0 and C >= 2",
+        "reduction": "none returns one KL value per example, mean averages the batch, or sum totals it (default mean)",
+        "targets": "finite floating-point teacher logits with the same [B,C] shape, dtype, and device; detached as fixed soft targets",
+        "temperature": "finite positive real scalar applied to both logits before softmax; per-example KL is multiplied by its square (default 1.0)"
+      },
+      "usage": "Trainer(model, train, recipe='structured-objective', recipe_config={'loss':'student-teacher','loss_kwargs':{'temperature':2.0},'bindings':{'logits_or_prediction':{'output':'logits'},'targets':{'batch':'teacher_logits'}}})"
     },
     {
       "api": "temperature_scaling(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', temperature=1.0)",

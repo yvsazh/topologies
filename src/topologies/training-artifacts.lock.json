@@ -475,6 +475,28 @@
     },
     {
       "files": {
+        "catalog/losses/group-dro.json": "e42e40f9c1919d3520ccd53f5b6dd3633f2c43a3e300784190cba12130bede89",
+        "implementations/losses/group_dro.py": "370de9519b1299fd457761beacc9e966195fedffbcb99df1cb93c197fba636dd"
+      },
+      "id": "group-dro",
+      "kind": "loss",
+      "name": "group-dro",
+      "namespace": "library",
+      "version": 1
+    },
+    {
+      "files": {
+        "catalog/losses/hific.json": "ce7289fa16dcbbe1434faa7d249f425a2d319f0f91d9b5b92d5b4e1c30108914",
+        "implementations/losses/hific.py": "0ab2158bf34e3a126e731413bd5117b8d7c64ecc5b20b4577143a642bd9244ba"
+      },
+      "id": "hific",
+      "kind": "loss",
+      "name": "hific",
+      "namespace": "library",
+      "version": 2
+    },
+    {
+      "files": {
         "catalog/losses/huber.json": "c7483686354fbf8585dd058c4e9c4fdc0e34945acfc2e7e1654a7766ea19803b",
         "implementations/training/core.py": "878f03ad0677bb8cd1b993861f72dcf5bfa14853743a5b355353c1d1f8162f9b"
       },
@@ -514,6 +536,28 @@
       "id": "integral-regression",
       "kind": "loss",
       "name": "integral-regression",
+      "namespace": "library",
+      "version": 1
+    },
+    {
+      "files": {
+        "catalog/losses/irm.json": "1ec34f8ae9fcbd0d2a231732be7fd03bd6e98af7c1d6f40160e824c8acde4b5a",
+        "implementations/losses/irm.py": "d2816ddeca5b63eccb761d432aadb10152f624896f874f08a208d667784dc156"
+      },
+      "id": "irm",
+      "kind": "loss",
+      "name": "irm",
+      "namespace": "library",
+      "version": 1
+    },
+    {
+      "files": {
+        "catalog/losses/jtt.json": "9a3e05f989a28546a0dc3f5d9921735c2ec24157e5294e4216d11e281e8b64a2",
+        "implementations/losses/jtt.py": "d0978a6d6e98b3a4447043651e424a2ebbf1ba3b12ddfa1bf49b52af66aaaa78"
+      },
+      "id": "jtt",
+      "kind": "loss",
+      "name": "jtt",
       "namespace": "library",
       "version": 1
     },

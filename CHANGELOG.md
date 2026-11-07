@@ -2,6 +2,36 @@
 
 All notable changes to `topologies` are listed here.
 
+## 0.0.11 — 2026-11-07
+
+### Added
+- **Models**: `mae-ast` (MAE-AST) ([paper](https://arxiv.org/abs/2203.16691))
+- **Models**: `mace` (MACE) ([paper](https://arxiv.org/abs/2206.07697))
+- **Models**: `lsgan` (Least Squares Generative Adversarial Networks) ([paper](https://arxiv.org/abs/1611.04076))
+- **Components**: `deepgbm` (DeepGBM leaf embedding component) ([paper](https://doi.org/10.1145/3292500.3330858))
+- **Components**: `gran-dag` (Gradient-Based Neural DAG Learning (GraN-DAG)) ([paper](https://arxiv.org/abs/1906.02226))
+- **Components**: `gptq` (gptq) ([paper](https://arxiv.org/abs/2210.17323))
+- **Components**: `glu` (Gated linear unit) ([paper](https://arxiv.org/abs/1612.08083))
+- **Components**: `grasp` (GraSP gradient-flow score) ([paper](https://arxiv.org/abs/2002.07376))
+- **Components**: `grokfast` (Grokfast) ([paper](https://arxiv.org/abs/2405.20233))
+- **Components**: `griffin-block` (Griffin Block) ([paper](https://arxiv.org/abs/2402.19427))
+- **Components**: `graphmvp` (GraphMVP paired-view contrastive objective component) ([paper](https://arxiv.org/abs/2110.07728))
+- **Components**: `hat` (Hard attention to the task) ([paper](https://arxiv.org/abs/1801.01423))
+- **Components**: `gshard` (GShard top-2 routing component) ([paper](https://arxiv.org/abs/2006.16668))
+- **Components**: `ia3` (ia3) ([paper](https://arxiv.org/abs/2205.05638))
+- **Components**: `ibp` (ibp) ([paper](https://arxiv.org/abs/1810.12715))
+- **Components**: `icarl` (icarl) ([paper](https://arxiv.org/abs/1611.07725))
+- **Components**: `infidelity` (Perturbation-based explanation infidelity metric) ([paper](https://arxiv.org/abs/1901.09392))
+- **Components**: `ipo` (Identity preference optimization) ([paper](https://arxiv.org/abs/2310.12036))
+- **Losses**: `deepsvdd`
+- **Losses**: `student-teacher`
+- **Losses**: `lambda-loss`
+- **Losses**: `ldam`
+- **Losses**: `lovasz-softmax`
+- **Losses**: `margin-mse`
+- **Losses**: `min-snr-gamma`
+
+
 ## 0.0.10 — 2026-11-05
 
 ### Added

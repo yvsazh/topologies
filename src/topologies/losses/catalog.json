@@ -1540,6 +1540,33 @@
       "usage": "Supply the per-example SNR from the diffusion schedule in loss_kwargs, for example recipe_config={\"loss\": \"min-snr-gamma\", \"loss_kwargs\": {\"snr\": snr, \"gamma\": 5.0, \"prediction_type\": \"epsilon\"}}."
     },
     {
+      "api": "minimum_wer(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', **params) -> torch.Tensor; params accept ce_weight, eos_token_id, and nbest_size.",
+      "description": "Expected word edit count over teacher-forced N-best hypotheses, with candidate sequence log probabilities renormalized over the supplied list (Prabhavalkar et al., §3 Eq. (4), §3.2); optional summed reference cross-entropy interpolation follows §3.3 Eq. (8). The implementation uses word-token IDs and accepts logits shaped [B, N+1, T, V].",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nimport torch.nn as nn\nfrom topologies import Trainer, analysis, build, synth\nroot=tempfile.mkdtemp()\n@synth.generator\ndef samples(ctx):\n features=torch.randn(4,generator=ctx.rng.torch)\n targets=torch.tensor([[0,1,3],[0,1,3],[0,2,3]])\n return {\"inputs\":synth.Tensor(features),\"targets\":synth.Tensor(targets)}\nclass CandidateLogits(nn.Module):\n def __init__(self):\n  super().__init__()\n  self.network=build(\"mlp\",\"tiny\",in_features=4,out_features=36)\n def forward(self,inputs):\n  return {\"logits\":self.network(inputs).reshape(-1,3,3,4)}\ndataset=synth.Spec(\"minimum-wer\",generator=samples,size=8,splits={\"train\":1.0},seed=7,root=root,monitor=\"none\").run()\ntrain=dataset.for_recipe(\"structured-objective\",split=\"train\")\ntrainer=Trainer(CandidateLogits(),train,recipe=\"structured-objective\",recipe_config={\"loss\":\"minimum-wer\",\"loss_kwargs\":{\"eos_token_id\":3,\"ignore_index\":-100},\"bindings\":{\"logits_or_prediction\":{\"output\":\"logits\"},\"targets\":{\"batch\":\"targets\"}}},batch_size=4,max_epochs=1,device=\"cpu\",logger=\"none\",monitor=\"none\")\nresult=trainer.fit()\nsummary=analysis.analyze(result,lambda values:{\"global_step\":values[\"global_step\"]})",
+          "title": "Train candidate-conditioned hypotheses with Minimum WER"
+        }
+      ],
+      "id": "minimum-wer",
+      "implementation": {
+        "path": "implementations/losses/minimum_wer.py",
+        "sha256": "7cacce709a5b2442aab3c1729770a6bb62960f0362107408be376e6ff66586bd",
+        "symbol": "minimum_wer"
+      },
+      "name": "minimum-wer",
+      "parameters": {
+        "ce_weight": "Finite nonnegative weight on the reference sequence's summed token NLL; defaults to 0.01 (paper §3.3 Eq. (8), §5.2).",
+        "eos_token_id": "Optional vocabulary ID; EOS contributes to sequence scores and reference NLL, then ends each word sequence (paper §2).",
+        "ignore_index": "Optional integer padding ID excluded from sequence scores, reference NLL, and word sequences; defaults to None.",
+        "logits_or_prediction": "Floating-point candidate-conditioned logits shaped [B, N+1, T, V]; row 0 is reference teacher-forced logits and rows 1..N are N-best candidate logits.",
+        "nbest_size": "Optional positive candidate count that must equal N; defaults to the number of candidate rows minus one.",
+        "reduction": "none returns one loss per example; mean or sum reduces the batch (default mean).",
+        "targets": "Reference and candidate word-token IDs shaped [B, N+1, T]; ignored positions may be padded and integer-valued floating tensors are accepted."
+      },
+      "usage": "Bind logits_or_prediction to the model output and targets to the batch with recipe='structured-objective'; pass ce_weight or eos_token_id in loss_kwargs."
+    },
+    {
       "api": "topologies.training.losses:compute_loss(cfg, prediction, targets, **extra)",
       "description": "Waveform [batch,samples] objective averaging spectral convergence plus absolute log-magnitude error across (n_fft,hop) resolutions; periodic Hann and explicit center convention.",
       "examples": [
@@ -1562,6 +1589,61 @@
         "resolutions": "nonempty sequence of (n_fft,hop) pairs"
       },
       "usage": "loss = multi_resolution_stft(estimate, reference, resolutions=((512,128),(256,64)))"
+    },
+    {
+      "api": "topologies.training.losses:get_loss('multi-similarity')(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', **params)",
+      "description": "Multi-similarity metric-learning loss over unit-normalized embeddings, with relative-similarity pair mining and log-sum-exp weighting (Wang et al., §3.1 and §4.2 Eqs. (11)–(15); paper.txt:116-137,354-419; implementation in src/topologies/implementations/losses/multi_similarity.py:7-105).",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nimport torch.nn as nn\nimport torch.nn.functional as F\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef samples(ctx):\n    label = int(ctx.index) % 2\n    features = torch.randn(4, generator=ctx.rng.torch)\n    return {\"inputs\": synth.Tensor(features), \"labels\": synth.Tensor(torch.tensor(float(label)))}\ndataset = synth.Spec(\"multi-similarity-embeddings\", generator=samples, size=16, splits={\"train\": 1.0}, seed=7, root=root, monitor=\"none\").run()\ntrain = dataset.for_recipe(\"structured-objective\", split=\"train\")\nclass EmbeddingModel(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.network = build(\"mlp\", \"tiny\", in_features=4, out_features=3)\n    def forward(self, inputs):\n        return {\"embeddings\": F.normalize(self.network(inputs), p=2, dim=-1)}\ntrainer = Trainer(EmbeddingModel(), train, recipe=\"structured-objective\", recipe_config={\"loss\": \"multi-similarity\", \"bindings\": {\"logits_or_prediction\": {\"output\": \"embeddings\"}, \"targets\": {\"batch\": \"labels\"}}}, batch_size=4, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
+          "title": "Train an embedding model with multi-similarity loss"
+        }
+      ],
+      "id": "multi-similarity",
+      "implementation": {
+        "path": "implementations/losses/multi_similarity.py",
+        "sha256": "db899271bd516824af2f924beb54a9520013707ee23f2026d7b4d0c76de6bf73",
+        "symbol": "multi_similarity"
+      },
+      "name": "Multi-similarity loss",
+      "parameters": {
+        "additional parameters": "**params accepts alpha, beta, lambda, and epsilon; unsupported keys raise ValueError",
+        "alpha": "positive finite scalar weighting the positive log-sum-exp term (default 2.0; paper §5)",
+        "beta": "positive finite scalar weighting the negative log-sum-exp term (default 50.0; paper §5)",
+        "epsilon": "finite nonnegative relative-similarity mining margin (default 0.1; paper §4.2 Eqs. (11)–(12) and §5)",
+        "ignore_index": "must be None because ignored-label semantics are not defined by the paper",
+        "lambda": "finite similarity offset in the pair objective (default 1.0; paper §4.2 Eq. (15) and §5)",
+        "logits_or_prediction": "floating-point unit-normalized embedding tensor with shape [B, D] and nonempty batch and feature dimensions",
+        "reduction": "none returns one term per anchor, mean averages anchor terms, or sum totals them (default mean)",
+        "targets": "integral class IDs shaped [B]; finite integral-valued floating labels are also accepted"
+      },
+      "usage": "Trainer(model, train, recipe='structured-objective', recipe_config={'loss':'multi-similarity','bindings':{'logits_or_prediction':{'output':'embeddings'},'targets':{'batch':'labels'}}})"
+    },
+    {
+      "api": "topologies.training.losses:get_loss('nnet-survival')(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', from_logits=False)",
+      "description": "Per-person discrete-time survival negative log-likelihood for packed survival-credit and event-interval flags, following Gensheimer & Narasimhan (2019), Implementation Eqs. 9-13. Probability inputs use epsilon-clipped likelihood factors as in the official PyTorch loss (nnet_survival_pytorch.py:380-423); batch reduction is none, mean, or sum.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nimport torch.nn as nn\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef samples(ctx):\n    features = torch.randn(4, generator=ctx.rng.torch)\n    index = int(ctx.index) % 3\n    if index == 0:\n        survival = torch.tensor([0.0, 0.0])\n        event = torch.tensor([1.0, 0.0])\n    elif index == 1:\n        survival = torch.tensor([1.0, 0.0])\n        event = torch.tensor([0.0, 1.0])\n    else:\n        survival = torch.tensor([1.0, 0.0])\n        event = torch.tensor([0.0, 0.0])\n    return {\"inputs\": synth.Tensor(features), \"packed\": synth.Tensor(torch.cat((survival, event)))}\nds = synth.Spec(\"nnet-survival\", generator=samples, size=12, splits={\"train\": 1.0}, seed=7, root=root, monitor=\"none\").run()\ntrain = ds.for_recipe(\"structured-objective\", split=\"train\")\nclass SurvivalModel(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.network = build(\"mlp\", \"tiny\", in_features=4, out_features=2)\n    def forward(self, inputs):\n        return {\"logits\": self.network(inputs)}\nmodel = SurvivalModel()\ntrainer = Trainer(model, train, recipe=\"structured-objective\", recipe_config={\"loss\": \"nnet-survival\", \"loss_kwargs\": {\"from_logits\": True}, \"bindings\": {\"logits_or_prediction\": {\"output\": \"logits\"}, \"targets\": {\"batch\": \"packed\"}}}, batch_size=4, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
+          "title": "Train a discrete-time survival model"
+        }
+      ],
+      "id": "nnet-survival",
+      "implementation": {
+        "path": "implementations/losses/nnet_survival.py",
+        "sha256": "3095c818f9e0cf59c8483d09753cd249c33eb803b3c9ce16b6b842e69f17e694",
+        "symbol": "nnet_survival_loss"
+      },
+      "name": "Nnet-Survival discrete-time loss",
+      "parameters": {
+        "additional parameters": "from_logits is the only accepted keyword in **params; unsupported keys raise ValueError",
+        "from_logits": "bool that applies sigmoid to logits and uses stable log-likelihood terms (default False)",
+        "ignore_index": "must be None because packed survival and event flags do not support ignored intervals",
+        "logits_or_prediction": "floating-point tensor shaped [B,T]; conditional survival probabilities in [0,1] by default or logits when from_logits=True",
+        "reduction": "none returns a negative log-likelihood per person, mean averages people, or sum totals people (default mean)",
+        "targets": "floating-point binary tensor shaped [B,2T], packed as T survival-credit flags followed by T event-interval flags"
+      },
+      "usage": "Trainer(model, train, recipe='regression', recipe_config={'loss':'nnet-survival','loss_kwargs':{'from_logits':True}})"
     },
     {
       "api": "topologies.training.losses:compute_loss(cfg, prediction, targets, **extra)",
@@ -1805,6 +1887,32 @@
         "temperature": "finite positive real scalar applied to both logits before softmax; per-example KL is multiplied by its square (default 1.0)"
       },
       "usage": "Trainer(model, train, recipe='structured-objective', recipe_config={'loss':'student-teacher','loss_kwargs':{'temperature':2.0},'bindings':{'logits_or_prediction':{'output':'logits'},'targets':{'batch':'teacher_logits'}}})"
+    },
+    {
+      "api": "topologies.training.losses:get_loss('swav-loss')(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', temperature=0.1)",
+      "description": "Two-view swapped prediction cross-entropy using temperature-scaled prototype scores and detached soft assignment codes. Each example averages the two cross-view directions (Caron et al., §3 Eqs. (1)–(2), Appendix A.1); structured-objective bindings follow src/topologies/training/recipes/structured_objective.py:36-50.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nimport torch.nn as nn\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef samples(ctx):\n    inputs = torch.randn(4, generator=ctx.rng.torch)\n    codes = torch.tensor([[0.8, 0.2], [0.2, 0.8]])\n    return {\"inputs\": synth.Tensor(inputs), \"codes\": synth.Tensor(codes)}\ndataset = synth.Spec(\"swav-two-view\", generator=samples, size=8, splits={\"train\": 1.0}, seed=7, root=root, monitor=\"none\").run()\ntrain = dataset.for_recipe(\"structured-objective\", split=\"train\")\nclass TwoViewPredictor(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.network = build(\"mlp\", \"tiny\", in_features=4, out_features=4)\n    def forward(self, inputs):\n        return {\"scores\": self.network(inputs).reshape(-1, 2, 2)}\ntrainer = Trainer(TwoViewPredictor(), train, recipe=\"structured-objective\", recipe_config={\"loss\": \"swav-loss\", \"loss_kwargs\": {\"temperature\": 0.1}, \"bindings\": {\"logits_or_prediction\": {\"output\": \"scores\"}, \"targets\": {\"batch\": \"codes\"}}}, batch_size=4, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
+          "title": "Train a two-view predictor with SwAV loss"
+        }
+      ],
+      "id": "swav-loss",
+      "implementation": {
+        "path": "implementations/losses/swav_loss.py",
+        "sha256": "64ef47cd482c0cf4c62479c5ff9c4a7913b25c64b9f356d9a0dec352fdc5f1ed",
+        "symbol": "swav_loss"
+      },
+      "name": "SwAV swapped prediction loss",
+      "parameters": {
+        "additional parameters": "temperature is the only accepted key in **params; unsupported keys raise ValueError",
+        "ignore_index": "must be None because targets are soft assignment codes, not indexed labels",
+        "logits_or_prediction": "finite floating-point raw prototype scores shaped [B,2,K] with B > 0 and K >= 2",
+        "reduction": "none returns per-example directional averages, mean averages examples, or sum totals examples (default mean)",
+        "targets": "finite floating-point soft assignment codes shaped [B,2,K], with each view nonnegative and summing to one; targets are detached",
+        "temperature": "finite positive real scalar applied before prototype softmax (default 0.1)"
+      },
+      "usage": "Trainer(model, train, recipe='structured-objective', recipe_config={'loss':'swav-loss','loss_kwargs':{'temperature':0.1},'bindings':{'logits_or_prediction':{'output':'scores'},'targets':{'batch':'codes'}}})"
     },
     {
       "api": "temperature_scaling(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', temperature=1.0)",

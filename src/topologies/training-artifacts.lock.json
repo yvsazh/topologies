@@ -222,6 +222,17 @@
     },
     {
       "files": {
+        "catalog/losses/deepsvdd.json": "b035b83d0687fbbdc9054da4164d95ca7409afe04d0c6fbe658a34952195b95b",
+        "implementations/losses/deepsvdd.py": "dbb00f007d78cef262c3961aacfa613b862f5d053999635abee32ef507b3d16b"
+      },
+      "id": "deepsvdd",
+      "kind": "loss",
+      "name": "deepsvdd",
+      "namespace": "library",
+      "version": 1
+    },
+    {
+      "files": {
         "catalog/losses/density-nll.json": "8efb9698b515178761c8a97e5114e1b8426cb4adf35f12c5c4a3ada3e156ffae",
         "implementations/training/core.py": "878f03ad0677bb8cd1b993861f72dcf5bfa14853743a5b355353c1d1f8162f9b"
       },
@@ -563,6 +574,39 @@
     },
     {
       "files": {
+        "catalog/losses/lambda-loss.json": "e4065e9b7b3c7de74a3c3cea9b706a575c944338018dd39b78ce0898a67ed699",
+        "implementations/losses/lambda_loss.py": "7a3957c1eb0fdc37ff247752ff59fecc7cedea467102865d567661da2da6c77e"
+      },
+      "id": "lambda-loss",
+      "kind": "loss",
+      "name": "lambda-loss",
+      "namespace": "library",
+      "version": 1
+    },
+    {
+      "files": {
+        "catalog/losses/ldam.json": "8fc63498d3abbb9667afc93a6b06f1da26caa74de6950cab3ca64d54180f6e94",
+        "implementations/losses/ldam.py": "7ff4de819842401503c887957d1be234e4036d5eb410b5b2f85618803c6aa886"
+      },
+      "id": "ldam",
+      "kind": "loss",
+      "name": "ldam",
+      "namespace": "library",
+      "version": 1
+    },
+    {
+      "files": {
+        "catalog/losses/lovasz-softmax.json": "e5ccea31628c86548396b8e660161a54eac707d86a7a28c11962dca0e638236b",
+        "implementations/losses/lovasz_softmax.py": "dd0e4b10672a8e9b8566f399f33be0a3c1aa5d80d0f2ae8957568ad16b068c54"
+      },
+      "id": "lovasz-softmax",
+      "kind": "loss",
+      "name": "lovasz-softmax",
+      "namespace": "library",
+      "version": 1
+    },
+    {
+      "files": {
         "catalog/losses/lwf.json": "73bd89bb69a2acc276c2beb9934448676f7ee20946163ae502c767b07d83e79b",
         "implementations/losses/lwf.py": "efd13ee0d516f60af1704339efeb9aeb570e9c599fe279cc35e6d6154b9aa175"
       },
@@ -571,6 +615,17 @@
       "name": "lwf",
       "namespace": "library",
       "version": 2
+    },
+    {
+      "files": {
+        "catalog/losses/margin-mse.json": "bcb20ab0c750ea40b5cbd4a3ed5f90e89000d379a7d77d7b1196301f652904b6",
+        "implementations/losses/margin_mse.py": "3e2f2138f560b4ec4fb6d41e9703a0616bc237e7a3200109a42e8b98590a530d"
+      },
+      "id": "margin-mse",
+      "kind": "loss",
+      "name": "margin-mse",
+      "namespace": "library",
+      "version": 1
     },
     {
       "files": {
@@ -593,6 +648,17 @@
       "name": "mean-squared-error",
       "namespace": "library",
       "version": 2
+    },
+    {
+      "files": {
+        "catalog/losses/min-snr-gamma.json": "a33c6e8224b8ee605e6da9ee9c4079c1693e8735e9a306abd91d1b6acad3452c",
+        "implementations/losses/min_snr_gamma.py": "2f7deba088702b04a28513c2f85f3211cccabf950895fa75e36a4313a5659465"
+      },
+      "id": "min-snr-gamma",
+      "kind": "loss",
+      "name": "min-snr-gamma",
+      "namespace": "library",
+      "version": 1
     },
     {
       "files": {
@@ -701,6 +767,17 @@
       "id": "softmax-focal",
       "kind": "loss",
       "name": "softmax-focal",
+      "namespace": "library",
+      "version": 2
+    },
+    {
+      "files": {
+        "catalog/losses/student-teacher.json": "352de59d3e535f29130ed3e00842187d4fc85f6a37f03544472cd2f50ae5b6ff",
+        "implementations/losses/student_teacher.py": "a5b068cb29a7a4453007a80074f3dcee3ed536adb5ca6efb4020a344f731a559"
+      },
+      "id": "student-teacher",
+      "kind": "loss",
+      "name": "student-teacher",
       "namespace": "library",
       "version": 2
     },

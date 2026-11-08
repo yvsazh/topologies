@@ -2,6 +2,33 @@
 
 All notable changes to `topologies` are listed here.
 
+## 0.0.12 — 2026-11-08
+
+### Added
+- **Models**: `mq-rnn` (MQ-RNN) ([paper](https://arxiv.org/abs/1711.11053))
+- **Models**: `nnclr` (NNCLR) ([paper](https://arxiv.org/abs/2104.14548))
+- **Components**: `rise` (RISE: randomized input sampling) ([paper](https://arxiv.org/abs/1806.07421))
+- **Components**: `kornia-geometry` (Normalized DLT Homography Core) ([paper](https://arxiv.org/abs/1910.02190))
+- **Components**: `l2p` (Learning to Prompt for Continual Learning) ([paper](https://arxiv.org/abs/2112.08654))
+- **Components**: `liv` (LIV: Language-Image Representations and Rewards for Robotic Control) ([paper](https://arxiv.org/abs/2306.00958))
+- **Components**: `leo` (Latent Embedding Optimization) ([paper](https://arxiv.org/abs/1807.05960))
+- **Components**: `lif-neuron` (Leaky integrate-and-fire neuron) ([paper](https://doi.org/10.3389/neuro.10.029.2009))
+- **Components**: `levit` (levit) ([paper](https://arxiv.org/abs/2104.01136))
+- **Components**: `listnet` (ListNet) ([paper](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/tr-2007-40.pdf))
+- **Components**: `lora-plus` (lora-plus) ([paper](https://arxiv.org/abs/2402.12354))
+- **Components**: `loha` (loha) ([paper](https://arxiv.org/abs/2108.06098))
+- **Components**: `lorentznet` (LorentzNet gamma check) ([paper](https://arxiv.org/abs/2201.08187))
+- **Components**: `luong` (Luong General Attention) ([paper](https://arxiv.org/abs/1508.04025))
+- **Components**: `mamba2` (mamba2) ([paper](https://arxiv.org/abs/2405.21060))
+- **Components**: `mcd` (Maximum Classifier Discrepancy) ([paper](https://arxiv.org/abs/1712.02560))
+- **Components**: `mahalanobis` (mahalanobis) ([paper](https://arxiv.org/abs/1807.03888))
+- **Components**: `mas` (Memory Aware Synapses) ([paper](https://arxiv.org/abs/1711.09601))
+- **Losses**: `minimum-wer`
+- **Losses**: `multi-similarity`
+- **Losses**: `swav-loss`
+- **Losses**: `nnet-survival`
+
+
 ## 0.0.11 — 2026-11-07
 
 ### Added

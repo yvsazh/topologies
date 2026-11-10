@@ -662,12 +662,45 @@
     },
     {
       "files": {
+        "catalog/losses/minimum-wer.json": "a9f8b4ba8f9008d761644557b3b3ab95889aa67e25d37181732664918d426c31",
+        "implementations/losses/minimum_wer.py": "7cacce709a5b2442aab3c1729770a6bb62960f0362107408be376e6ff66586bd"
+      },
+      "id": "minimum-wer",
+      "kind": "loss",
+      "name": "minimum-wer",
+      "namespace": "library",
+      "version": 1
+    },
+    {
+      "files": {
         "catalog/losses/multi-resolution-stft.json": "40152f8fae18a70bdba318d72f73f8825b8fed4eb3b3aabb6b3cd29943bea051",
         "implementations/training/core.py": "878f03ad0677bb8cd1b993861f72dcf5bfa14853743a5b355353c1d1f8162f9b"
       },
       "id": "multi-resolution-stft",
       "kind": "loss",
       "name": "multi-resolution-stft",
+      "namespace": "library",
+      "version": 2
+    },
+    {
+      "files": {
+        "catalog/losses/multi-similarity.json": "d476c258fb8fc3bdd27b730f771df9d6d856f31007400697c0a4223ee71bd076",
+        "implementations/losses/multi_similarity.py": "db899271bd516824af2f924beb54a9520013707ee23f2026d7b4d0c76de6bf73"
+      },
+      "id": "multi-similarity",
+      "kind": "loss",
+      "name": "multi-similarity",
+      "namespace": "library",
+      "version": 1
+    },
+    {
+      "files": {
+        "catalog/losses/nnet-survival.json": "06824f79ee4ddc86ffd049aaa897fb61f07d4eb1c6d581a916dd72b97c4b3cf9",
+        "implementations/losses/nnet_survival.py": "3095c818f9e0cf59c8483d09753cd249c33eb803b3c9ce16b6b842e69f17e694"
+      },
+      "id": "nnet-survival",
+      "kind": "loss",
+      "name": "nnet-survival",
       "namespace": "library",
       "version": 2
     },
@@ -780,6 +813,17 @@
       "name": "student-teacher",
       "namespace": "library",
       "version": 2
+    },
+    {
+      "files": {
+        "catalog/losses/swav-loss.json": "5fef82c2bedfd3c7f17d99d64b662d40b79d83beae6b65bf812b3387216dd4de",
+        "implementations/losses/swav_loss.py": "64ef47cd482c0cf4c62479c5ff9c4a7913b25c64b9f356d9a0dec352fdc5f1ed"
+      },
+      "id": "swav-loss",
+      "kind": "loss",
+      "name": "swav-loss",
+      "namespace": "library",
+      "version": 1
     },
     {
       "files": {

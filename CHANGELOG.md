@@ -2,6 +2,33 @@
 
 All notable changes to `topologies` are listed here.
 
+## 0.0.13 — 2026-11-10
+
+### Added
+- **Models**: `ppg` (PPG auxiliary value-head loss) ([paper](https://arxiv.org/abs/2009.04416))
+- **Models**: `pirl` (PIRL) ([paper](https://arxiv.org/abs/1912.01991))
+- **Models**: `qrnn` (qrnn) ([paper](https://arxiv.org/abs/1611.01576))
+- **Components**: `memae` (Memory attention) ([paper](https://arxiv.org/abs/1904.02639))
+- **Components**: `metaoptnet` (Meta-Learning with Differentiable Convex Optimization) ([paper](https://arxiv.org/abs/1904.03758))
+- **Components**: `memory-networks` (End-to-End Memory) ([paper](https://arxiv.org/abs/1503.08895))
+- **Components**: `metasgd` (Meta-SGD) ([paper](https://arxiv.org/abs/1707.09835))
+- **Components**: `mempool` (MemPool) ([paper](https://arxiv.org/abs/2002.09518))
+- **Components**: `mish` (mish) ([paper](https://arxiv.org/abs/1908.08681))
+- **Components**: `mip-nerf` (Mip-NeRF: Integrated Positional Encoding) ([paper](https://arxiv.org/abs/2103.13415))
+- **Components**: `mixmatch` (MixMatch: A Holistic Approach to Semi-Supervised Learning) ([paper](https://arxiv.org/abs/1905.02249))
+- **Components**: `minimal-rnn` (Minimal RNN) ([paper](https://arxiv.org/abs/1711.06788))
+- **Components**: `mincutpool` (MinCutPool) ([paper](https://arxiv.org/abs/1907.00481))
+- **Components**: `mosaic` (YOLO Mosaic Augmentation) ([paper](https://arxiv.org/abs/2004.10934))
+- **Components**: `movement-pruning` (movement-pruning) ([paper](https://arxiv.org/abs/2005.07683))
+- **Components**: `mup` (Maximal Update Parametrization Linear Layer) ([paper](https://arxiv.org/abs/2203.03466))
+- **Components**: `neural-sde` (Neural SDE Step) ([paper](https://arxiv.org/abs/2001.01328))
+- **Components**: `neural-sort` (NeuralSort) ([paper](https://arxiv.org/abs/1903.08850))
+- **Losses**: `stylegan-path-length`
+- **Losses**: `proxy-anchor`
+- **Losses**: `r-drop`
+- **Losses**: `r1-penalty`
+
+
 ## 0.0.12 — 2026-11-08
 
 ### Added

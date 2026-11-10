@@ -1691,6 +1691,34 @@
       "usage": "Trainer(model, train, recipe='tabular-classify', recipe_config={'loss':'poly1-loss','loss_kwargs':{'epsilon':1.0}})"
     },
     {
+      "api": "topologies.training.losses:get_loss('proxy-anchor')(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', **params)",
+      "description": "Cosine-similarity Proxy-Anchor objective with separate positive and negative log-sum-exp aggregation (Kim et al., §§3.1–3.2, Eqs. (4)–(5); paper.txt:181-247; clean-room implementation in src/topologies/implementations/losses/proxy_anchor.py:7-97).",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nimport torch.nn as nn\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef samples(ctx):\n    features = torch.randn(4, generator=ctx.rng.torch)\n    label = int(ctx.index) % 3\n    return {\"inputs\": synth.Tensor(features), \"labels\": synth.Tensor(torch.tensor(float(label)))}\ndataset = synth.Spec(\"proxy-anchor-embeddings\", generator=samples, size=12, splits={\"train\": 1.0}, seed=7, root=root, monitor=\"none\").run()\ntrain = dataset.for_recipe(\"structured-objective\", split=\"train\")\nclass EmbeddingModel(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.network = build(\"mlp\", \"tiny\", in_features=4, out_features=3)\n        self.proxies = nn.Parameter(torch.randn(3, 3))\n    def forward(self, inputs):\n        return {\"embeddings\": self.network(inputs), \"proxies\": self.proxies}\ntrainer = Trainer(EmbeddingModel(), train, recipe=\"structured-objective\", recipe_config={\"loss\": \"proxy-anchor\", \"loss_kwargs\": {\"alpha\": 32.0, \"delta\": 0.1}, \"bindings\": {\"logits_or_prediction\": {\"output\": \"embeddings\"}, \"targets\": {\"batch\": \"labels\"}, \"proxies\": {\"output\": \"proxies\"}}}, batch_size=4, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
+          "title": "Train embeddings with learnable class proxies"
+        }
+      ],
+      "id": "proxy-anchor",
+      "implementation": {
+        "path": "implementations/losses/proxy_anchor.py",
+        "sha256": "f3346b0ad22b3080e60e472b405aa0ebca3b2fef353c3c460d97fc6453910d69",
+        "symbol": "proxy_anchor"
+      },
+      "name": "Proxy Anchor Loss",
+      "parameters": {
+        "additional parameters": "proxies, alpha, and delta are accepted in **params; unsupported keys raise ValueError",
+        "alpha": "finite positive scale factor (default 32.0; Kim et al. §4.2)",
+        "delta": "finite nonnegative margin (default 0.1; Kim et al. §§4.2–4.3)",
+        "ignore_index": "optional integer class label whose samples are excluded before forming positive and negative sets; at least one sample must remain",
+        "logits_or_prediction": "finite floating-point embeddings shaped [B,D] with B,D > 0; embeddings are L2-normalized along D before cosine similarity",
+        "proxies": "required finite floating-point caller-owned/trainable class proxies shaped [C,D], with C,D > 0 and the same dtype and device as embeddings",
+        "reduction": "none returns C per-proxy contributions scaled so their mean equals the paper objective; mean averages them and sum totals them (default mean)",
+        "targets": "integer class IDs shaped [B] in [0,C); finite integral-valued floating-point labels are also accepted"
+      },
+      "usage": "Trainer(model, train, recipe='structured-objective', recipe_config={'loss':'proxy-anchor','loss_kwargs':{'alpha':32.0,'delta':0.1},'bindings':{'logits_or_prediction':{'output':'embeddings'},'targets':{'batch':'labels'},'proxies':{'output':'proxies'}}})"
+    },
+    {
       "api": "topologies.training.losses:get_loss('quality-focal-loss')(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', **params)",
       "description": "Elementwise Quality Focal Loss for continuous targets in [0, 1], following Generalized Focal Loss Section 3 Eq. (2); avg_factor divides the summed loss by N_pos as in Eq. (8). Trainer passes loss_kwargs to the loss callable in src/topologies/training/losses.py:198-200.",
       "examples": [
@@ -1716,6 +1744,58 @@
         "targets": "floating-point tensor on the same device and with the same shape as logits, with finite values in [0, 1]"
       },
       "usage": "Trainer(model, train, recipe='regression', recipe_config={'loss':'quality-focal-loss','loss_kwargs':{'beta':2.0}})"
+    },
+    {
+      "api": "topologies.training.losses:get_loss('r-drop')(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', **params)",
+      "description": "R-Drop paired-view categorical objective: sum the two cross-entropies and add alpha times the half-sum bidirectional KL (paper Section 2.1, Equations (2)-(4)); concatenate the two views as [view1_B; view2_B] per Algorithm 1 in Section 2.2. Structured-objective bindings follow src/topologies/training/recipes/structured_objective.py:36-48.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nimport torch.nn as nn\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef samples(ctx):\n    inputs = torch.randn(4, generator=ctx.rng.torch)\n    target = int(inputs[0] > 0)\n    return {\"inputs\": synth.Tensor(inputs), \"targets\": synth.Tensor(torch.tensor(target))}\ndataset = synth.Spec(\"r-drop-classification\", generator=samples, size=8, splits={\"train\": 1.0}, seed=7, root=root, monitor=\"none\").run()\ntrain = dataset.for_recipe(\"structured-objective\", split=\"train\")\nclass PairedClassifier(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.dropout = nn.Dropout(p=0.5)\n        self.network = build(\"mlp\", \"tiny\", in_features=4, out_features=2)\n    def forward(self, inputs):\n        paired_inputs = torch.cat((inputs, inputs), dim=0)\n        return {\"logits\": self.network(self.dropout(paired_inputs))}\ntrainer = Trainer(PairedClassifier(), train, recipe=\"structured-objective\", recipe_config={\"loss\": \"r-drop\", \"loss_kwargs\": {\"alpha\": 1.0}, \"bindings\": {\"logits_or_prediction\": {\"output\": \"logits\"}, \"targets\": {\"batch\": \"targets\"}}}, batch_size=4, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
+          "title": "Train a paired-view classifier with R-Drop"
+        }
+      ],
+      "id": "r-drop",
+      "implementation": {
+        "path": "implementations/losses/r_drop.py",
+        "sha256": "f908bb74c7ee29a066d531a57954481a720fd382629945642b0c5222e0de3d30",
+        "symbol": "r_drop"
+      },
+      "name": "R-Drop paired-view categorical loss",
+      "parameters": {
+        "additional parameters": "**params accepts only alpha; unsupported keys raise ValueError",
+        "alpha": "finite nonnegative coefficient for the symmetric KL term (default 1.0; paper Section 2.1, Equation (4))",
+        "ignore_index": "optional integer class index excluded from both views and the mean denominator (default None)",
+        "logits_or_prediction": "finite floating-point logits shaped [2*B,C], with the first B rows for view 1 and the next B rows for view 2; B positive and C at least two",
+        "reduction": "none returns one objective per example, mean averages nonignored examples, or sum totals them (default mean)",
+        "targets": "integer class-index tensor shaped [B], matching each view; finite integer-valued floating tensors are also accepted; values are in [0,C) except for ignore_index"
+      },
+      "usage": "Trainer(model, train, recipe='structured-objective', recipe_config={'loss':'r-drop','loss_kwargs':{'alpha':1.0},'bindings':{'logits_or_prediction':{'output':'logits'},'targets':{'batch':'targets'}}})"
+    },
+    {
+      "api": "topologies.training.losses:get_loss('r1-penalty')(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', **params)",
+      "description": "Real-data-only zero-centered discriminator input-gradient penalty R1=(gamma/2) E[||grad_x D(x)||^2], computed per sample and averaged over the batch (Mescheder et al., Section 4.1, Eq. (9), paper.txt:813-819). Bind logits_or_prediction to the real sample tensor and targets to its discriminator scores from the same forward pass; structured-objective bindings are implemented in src/topologies/training/recipes/structured_objective.py:36-50.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nimport torch.nn as nn\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef real_samples(ctx):\n    values = torch.randn(4, generator=ctx.rng.torch)\n    return {\"inputs\": synth.Tensor(values)}\ndataset = synth.Spec(\"r1-real-samples\", generator=real_samples, size=8, splits={\"train\": 1.0}, seed=7, root=root, monitor=\"none\").run()\ntrain = dataset.for_recipe(\"structured-objective\", split=\"train\")\nclass Critic(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.network = build(\"mlp\", \"tiny\", in_features=4, out_features=1)\n    def forward(self, inputs):\n        real_samples = inputs.requires_grad_()\n        scores = self.network(real_samples).reshape(-1)\n        return {\"real_samples\": real_samples, \"scores\": scores}\ntrainer = Trainer(Critic(), train, recipe=\"structured-objective\", recipe_config={\"loss\": \"r1-penalty\", \"loss_kwargs\": {\"gamma\": 10.0}, \"bindings\": {\"logits_or_prediction\": {\"output\": \"real_samples\"}, \"targets\": {\"output\": \"scores\"}}}, batch_size=4, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
+          "title": "Regularize a critic on real samples with R1"
+        }
+      ],
+      "id": "r1-penalty",
+      "implementation": {
+        "path": "implementations/losses/r1_penalty.py",
+        "sha256": "7e7c82a97c66ee84998049dfbe01cbbdacae59b0fbfd9e9e389942ff1d828541",
+        "symbol": "r1_penalty"
+      },
+      "name": "R1 gradient penalty",
+      "parameters": {
+        "additional parameters": "gamma is the only accepted key in **params; unsupported keys raise ValueError",
+        "gamma": "finite nonnegative real scale (default 10.0, the CIFAR-10 setting reported in paper Section 5.3)",
+        "ignore_index": "must be None because discriminator scores have no ignored target classes",
+        "logits_or_prediction": "floating-point real sample tensor shaped [B,...] with B > 0 and requires_grad=True",
+        "reduction": "none returns per-example penalties, mean averages the batch, or sum totals the batch (default mean)",
+        "targets": "floating-point discriminator scores shaped [B] or [B,1], differentiably computed from the same real samples"
+      },
+      "usage": "Trainer(model, train, recipe='structured-objective', recipe_config={'loss':'r1-penalty','loss_kwargs':{'gamma':10.0},'bindings':{'logits_or_prediction':{'output':'real_samples'},'targets':{'output':'scores'}}})"
     },
     {
       "api": "topologies.training.losses:get_loss('raft-epe')(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', **params)",
@@ -1887,6 +1967,34 @@
         "temperature": "finite positive real scalar applied to both logits before softmax; per-example KL is multiplied by its square (default 1.0)"
       },
       "usage": "Trainer(model, train, recipe='structured-objective', recipe_config={'loss':'student-teacher','loss_kwargs':{'temperature':2.0},'bindings':{'logits_or_prediction':{'output':'logits'},'targets':{'batch':'teacher_logits'}}})"
+    },
+    {
+      "api": "topologies.training.losses:get_loss('stylegan-path-length')(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', **params)",
+      "description": "Single-W StyleGAN2 path-length penalty: sample an unnormalized image-space Gaussian direction, compute the latent Jacobian-vector product as a gradient, then square its deviation from the caller-supplied target scale per sample (Karras et al., §3.2 Eq. (4), §4.2 Eq. (5), Appendix C Eq. (6); src/topologies/training/recipes/structured_objective.py:36-50). The caller maintains the target-scale EMA and applies resolution weighting and lazy-regularization scheduling.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nimport torch.nn as nn\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef latent_samples(ctx):\n    latent = torch.randn(4, generator=ctx.rng.torch)\n    return {\"inputs\": synth.Tensor(latent)}\ndataset = synth.Spec(\"stylegan-path-length\", generator=latent_samples, size=8, splits={\"train\": 1.0}, seed=7, root=root, monitor=\"none\").run()\ntrain = dataset.for_recipe(\"structured-objective\", split=\"train\")\nclass TinyGenerator(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.mapping = build(\"mlp\", \"tiny\", in_features=4, out_features=2)\n        self.synthesis = build(\"mlp\", \"tiny\", in_features=2, out_features=192)\n    def forward(self, inputs):\n        styles = self.mapping(inputs)\n        images = self.synthesis(styles).reshape(-1, 3, 8, 8)\n        return {\"images\": images, \"styles\": styles}\ntrainer = Trainer(TinyGenerator(), train, recipe=\"structured-objective\", recipe_config={\"loss\": \"stylegan-path-length\", \"loss_kwargs\": {\"target_scale\": 0.0, \"weight\": 1.0}, \"bindings\": {\"logits_or_prediction\": {\"output\": \"images\"}, \"targets\": {\"output\": \"styles\"}}}, batch_size=2, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
+          "title": "Train a tiny generator with path-length regularization"
+        }
+      ],
+      "id": "stylegan-path-length",
+      "implementation": {
+        "path": "implementations/losses/stylegan_path_length.py",
+        "sha256": "0b71116a37a8fc5fbb7871469ac988174693f61e918235b97c4645f229ef036d",
+        "symbol": "stylegan_path_length"
+      },
+      "name": "StyleGAN2 path-length regularization",
+      "parameters": {
+        "additional parameters": "target_scale, weight, and noise are accepted; unsupported keys raise ValueError. EMA decay pl_decay and lazy interval are maintained and applied by the caller, not by this stateless loss",
+        "ignore_index": "must be None because generated images and latent styles are continuous tensors",
+        "logits_or_prediction": "finite floating-point generated images with shape [B,C,H,W] (or another nonempty batch-first image-space tensor), requiring gradients",
+        "noise": "optional finite standard-normal image-space direction with the same shape, dtype, and device as logits_or_prediction; None samples an unnormalized direction (default None)",
+        "reduction": "none returns squared penalties per sample, mean averages samples, or sum totals samples (default mean)",
+        "target_scale": "finite nonnegative detached scalar a, supplied from caller-maintained EMA initialized at 0 with decay beta_pl=0.99 (default 0)",
+        "targets": "finite floating-point differentiable single-W latent vectors shaped [B,L], with positive dimensions and the same batch, dtype, and device as logits_or_prediction",
+        "weight": "finite nonnegative scalar multiplier; default 1 for Eq. (6), while callers may pass resolution weight gamma_pl and lazy interval multiplier k (default 1)"
+      },
+      "usage": "Trainer(model, train, recipe='structured-objective', recipe_config={'loss':'stylegan-path-length','loss_kwargs':{'target_scale':0.0,'weight':1.0},'bindings':{'logits_or_prediction':{'output':'images'},'targets':{'output':'styles'}}})"
     },
     {
       "api": "topologies.training.losses:get_loss('swav-loss')(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', temperature=0.1)",

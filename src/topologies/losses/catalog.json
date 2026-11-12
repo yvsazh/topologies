@@ -1826,6 +1826,32 @@
       "usage": "Trainer(model, train, recipe='structured-objective', recipe_config={'loss':'raft-epe','loss_kwargs':{'gamma':0.8,'max_flow':400},'bindings':{'logits_or_prediction':{'output':'predictions'},'targets':{'batch':'targets'},'valid':{'batch':'valid'}}})"
     },
     {
+      "api": "topologies.training.losses:get_loss('score-matching')(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', sigma=0.01)",
+      "description": "Fixed-scale denoising score matching for predictions of the perturbed-data score, with standardized Gaussian noise targets: 1/2 times the squared score residual summed over event dimensions and reduced across the batch (Song and Ermon, §2.1 Eq. (2), §4.2 Eq. (5); official implementation losses/dsm.py:20-24). Noise sampling and perturbed-input construction remain caller responsibilities.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\nsigma = 0.2\n@synth.generator\ndef samples(ctx):\n    clean = torch.randn(2, generator=ctx.rng.torch)\n    noise = torch.randn(2, generator=ctx.rng.torch)\n    return {\"inputs\": synth.Tensor(clean + sigma * noise), \"noise\": synth.Tensor(noise)}\ndataset = synth.Spec(\"score-matching\", generator=samples, size=12, splits={\"train\": 1.0}, seed=7, root=root, monitor=\"none\").run()\ntrain = dataset.for_recipe(\"regression\", split=\"train\", input_field=\"inputs\", target_field=\"noise\", preserve_shape=True)\nmodel = build(\"mlp\", \"tiny\", in_features=2, out_features=2)\ntrainer = Trainer(model, train, recipe=\"regression\", recipe_config={\"loss\": \"score-matching\", \"loss_kwargs\": {\"sigma\": sigma}}, batch_size=4, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
+          "title": "Train a score network at a fixed noise scale"
+        }
+      ],
+      "id": "score-matching",
+      "implementation": {
+        "path": "implementations/losses/score_matching.py",
+        "sha256": "28c20e5abb4336657f15149d973b5763924dafec73d002effd24ce0d5d5fc94c",
+        "symbol": "score_matching_loss"
+      },
+      "name": "Denoising score matching loss",
+      "parameters": {
+        "additional parameters": "unsupported; any extra keyword parameter raises ValueError",
+        "ignore_index": "must be None because Gaussian noise targets have no ignored indices",
+        "logits_or_prediction": "floating-point predicted score tensor with nonempty shape [B, ...]",
+        "reduction": "none returns one scalar per sample after summing event dimensions; mean or sum reduces across the batch (default mean)",
+        "sigma": "finite positive Gaussian noise standard deviation for this fixed-scale call (default 0.01)",
+        "targets": "standardized Gaussian noise ε paired with each perturbed input x̃=x+σ ε; floating-point tensor matching prediction shape, dtype, and device"
+      },
+      "usage": "Trainer(model, train, recipe='regression', recipe_config={'loss':'score-matching','loss_kwargs':{'sigma':0.2}})"
+    },
+    {
       "api": "topologies.training.losses:get_loss('si-log')(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', **params)",
       "description": "Per-sample scale-invariant log-depth training loss with exact target-sentinel masking and valid-pixel normalization (Eigen and Fergus, §3.3, Eq. (4); trainer objective dispatch in src/topologies/training/recipes/structured_objective.py:38-50). Predictions are already log depth.",
       "examples": [
@@ -1995,6 +2021,31 @@
         "weight": "finite nonnegative scalar multiplier; default 1 for Eq. (6), while callers may pass resolution weight gamma_pl and lazy interval multiplier k (default 1)"
       },
       "usage": "Trainer(model, train, recipe='structured-objective', recipe_config={'loss':'stylegan-path-length','loss_kwargs':{'target_scale':0.0,'weight':1.0},'bindings':{'logits_or_prediction':{'output':'images'},'targets':{'output':'styles'}}})"
+    },
+    {
+      "api": "topologies.implementations.losses.supcon:supcon(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', temperature=0.1) -> torch.Tensor",
+      "description": "Outside-the-log mean-positive supervised contrastive objective with L2-normalized view embeddings, self-pair exclusion, and same-label positives (Khosla et al., §3.1 and §3.2.2, Eq. (2)); Trainer bindings use src/topologies/training/recipes/structured_objective.py:36-50.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nimport torch.nn as nn\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef paired_views(ctx):\n    label = int(ctx.index) % 2\n    center = torch.zeros(6)\n    center[label] = 1.0\n    first = center + 0.05 * torch.randn(6, generator=ctx.rng.torch)\n    second = center + 0.05 * torch.randn(6, generator=ctx.rng.torch)\n    return {\"inputs\": synth.Tensor(torch.stack((first, second))), \"targets\": label}\ndataset = synth.Spec(\"supcon-paired-views\", generator=paired_views, size=16, splits={\"train\": 1.0}, seed=7, root=root, monitor=\"none\").run()\ntrain = dataset.for_recipe(\"structured-objective\", split=\"train\")\nclass Projector(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.network = build(\"mlp\", \"tiny\", in_features=6, out_features=8)\n    def forward(self, inputs):\n        batch_size, view_count, feature_count = inputs.shape\n        flat = inputs.reshape(batch_size * view_count, feature_count)\n        embeddings = self.network(flat).reshape(batch_size, view_count, -1)\n        return {\"embeddings\": embeddings}\ntrainer = Trainer(Projector(), train, recipe=\"structured-objective\", recipe_config={\"loss\": \"supcon\", \"loss_kwargs\": {\"temperature\": 0.1}, \"bindings\": {\"logits_or_prediction\": {\"output\": \"embeddings\"}, \"targets\": {\"batch\": \"targets\"}}}, batch_size=4, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
+          "title": "Train an encoder with supervised contrastive loss"
+        }
+      ],
+      "id": "supcon",
+      "implementation": {
+        "path": "implementations/losses/supcon.py",
+        "sha256": "57bdae1aab2e88677cc832ed6b3b2e5297713601dd50715e09e42355eebd3e04",
+        "symbol": "supcon"
+      },
+      "name": "Supervised contrastive loss",
+      "parameters": {
+        "ignore_index": "must be None because the SupCon formulation does not define ignored labels",
+        "logits_or_prediction": "finite floating-point projection embeddings shaped [B,V,D] with B >= 1, V >= 2, and D >= 1; embeddings are L2-normalized inside the loss",
+        "reduction": "none returns losses for each of the B*V anchors, mean averages anchors, or sum totals anchors (default mean)",
+        "targets": "class labels shaped [B], represented by integer tensors or integral-valued floating tensors from structured-objective batches",
+        "temperature": "finite positive scalar divisor for normalized pairwise dot products (default 0.1)"
+      },
+      "usage": "Trainer(model, train, recipe='structured-objective', recipe_config={'loss':'supcon','loss_kwargs':{'temperature':0.1},'bindings':{'logits_or_prediction':{'output':'embeddings'},'targets':{'batch':'targets'}}})"
     },
     {
       "api": "topologies.training.losses:get_loss('swav-loss')(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', temperature=0.1)",

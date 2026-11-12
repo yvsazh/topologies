@@ -728,12 +728,45 @@
     },
     {
       "files": {
+        "catalog/losses/proxy-anchor.json": "3f9065a9eddc1e00c9d9515dc4b645e81c9ff5306b7cad608007d7a545e2d4d5",
+        "implementations/losses/proxy_anchor.py": "f3346b0ad22b3080e60e472b405aa0ebca3b2fef353c3c460d97fc6453910d69"
+      },
+      "id": "proxy-anchor",
+      "kind": "loss",
+      "name": "proxy-anchor",
+      "namespace": "library",
+      "version": 2
+    },
+    {
+      "files": {
         "catalog/losses/quality-focal-loss.json": "e957f0762aae8e99a231b020994fb5565964b8fee7c5a336a53a6ef3afad43db",
         "implementations/losses/quality_focal_loss.py": "cd1a49d8dcacf3b99dcf90deb18148abbb4ef845e8eea8a541066549aa1d351b"
       },
       "id": "quality-focal-loss",
       "kind": "loss",
       "name": "quality-focal-loss",
+      "namespace": "library",
+      "version": 2
+    },
+    {
+      "files": {
+        "catalog/losses/r-drop.json": "c59f9d575549aefcdf1fac796e5245d08d678e8cbfbb07bf068ecd07ed181976",
+        "implementations/losses/r_drop.py": "f908bb74c7ee29a066d531a57954481a720fd382629945642b0c5222e0de3d30"
+      },
+      "id": "r-drop",
+      "kind": "loss",
+      "name": "r-drop",
+      "namespace": "library",
+      "version": 1
+    },
+    {
+      "files": {
+        "catalog/losses/r1-penalty.json": "ef1defbf7c9d672bd39f7114478cc60d334533dea552d6bb89f0c8a1bca87206",
+        "implementations/losses/r1_penalty.py": "7e7c82a97c66ee84998049dfbe01cbbdacae59b0fbfd9e9e389942ff1d828541"
+      },
+      "id": "r1-penalty",
+      "kind": "loss",
+      "name": "r1-penalty",
       "namespace": "library",
       "version": 2
     },
@@ -813,6 +846,17 @@
       "name": "student-teacher",
       "namespace": "library",
       "version": 2
+    },
+    {
+      "files": {
+        "catalog/losses/stylegan-path-length.json": "a0884d73d69cd608ff0092160aa3e2c0d3ad0c0f328cac884d513970cbff1c80",
+        "implementations/losses/stylegan_path_length.py": "0b71116a37a8fc5fbb7871469ac988174693f61e918235b97c4645f229ef036d"
+      },
+      "id": "stylegan-path-length",
+      "kind": "loss",
+      "name": "stylegan-path-length",
+      "namespace": "library",
+      "version": 1
     },
     {
       "files": {

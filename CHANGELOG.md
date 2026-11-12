@@ -2,6 +2,26 @@
 
 All notable changes to `topologies` are listed here.
 
+## 0.0.14 — 2026-11-12
+
+### Added
+- **Models**: `residual-flows` (Residual Flows Russian-roulette log-determinant component) ([paper](https://arxiv.org/abs/1906.02735))
+- **Models**: `scgpt` (Masked gene-value prediction sketch (not scGPT)) ([paper](https://doi.org/10.1038/s41592-024-02201-0))
+- **Models**: `se3-transformer` (SE3 Transformer) ([paper](https://arxiv.org/abs/2006.10503))
+- **Components**: `oc-sort` (Observation-Centric SORT: Rethinking SORT for Robust Multi-Object Tracking) ([paper](https://arxiv.org/abs/2203.14360))
+- **Components**: `numerical-embeddings` (Numerical Embeddings) ([paper](https://arxiv.org/abs/2203.05556))
+- **Components**: `openvla` (OpenVLA action-length check) ([paper](https://arxiv.org/abs/2406.09246))
+- **Components**: `onecycle` (Linear Two-Phase Learning-Rate Cycle) ([paper](https://arxiv.org/abs/1708.07120))
+- **Components**: `orpo` (ORPO: Monolithic Preference Optimization without Reference Model) ([paper](https://arxiv.org/abs/2403.07691))
+- **Components**: `osnet` (osnet) ([paper](https://arxiv.org/abs/1905.00953))
+- **Components**: `panet` (Path Aggregation Network) ([paper](https://arxiv.org/abs/1803.01534))
+- **Components**: `pfeiffer-adapter` (pfeiffer-adapter) ([paper](https://arxiv.org/abs/2005.00052))
+- **Components**: `pgd-attack` (Projected Gradient Descent attack utility) ([paper](https://arxiv.org/abs/1706.06083))
+- **Components**: `prefix-tuning` (prefix-tuning) ([paper](https://arxiv.org/abs/2101.00190))
+- **Losses**: `supcon`
+- **Losses**: `score-matching`
+
+
 ## 0.0.13 — 2026-11-10
 
 ### Added

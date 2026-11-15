@@ -1923,6 +1923,33 @@
       "usage": "loss = sigmoid_focal(class_logits, binary_targets, alpha=0.25, gamma=2.0)"
     },
     {
+      "api": "topologies.training.losses:get_loss('simpo-loss')(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', **params)",
+      "description": "Reference-free pairwise preference objective using each response's average token log probability and a target reward margin (paper §2.2 Eq. (4), §2.3 Eqs. (5)–(6)). The paired [B,2,T,V] logits and [B,2,T] target layout follows src/topologies/implementations/losses/cpo.py:7-55; structured-objective bindings follow src/topologies/training/recipes/structured_objective.py:36-50.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nimport torch.nn as nn\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef preference_pairs(ctx):\n    inputs = torch.randn(4, generator=ctx.rng.torch)\n    targets = torch.tensor([[0, 1], [1, 2]])\n    return {\"inputs\": synth.Tensor(inputs), \"targets\": synth.Tensor(targets)}\ndataset = synth.Spec(\"simpo-preference-pairs\", generator=preference_pairs, size=12, splits={\"train\": 1.0}, seed=7, root=root, monitor=\"none\").run()\ntrain = dataset.for_recipe(\"structured-objective\", split=\"train\")\nclass PreferenceModel(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.network = build(\"mlp\", \"tiny\", in_features=4, out_features=12)\n    def forward(self, inputs):\n        return {\"logits\": self.network(inputs).reshape(-1, 2, 2, 3)}\ntrainer = Trainer(PreferenceModel(), train, recipe=\"structured-objective\", recipe_config={\"loss\": \"simpo-loss\", \"loss_kwargs\": {\"beta\": 2.0, \"gamma\": 0.5}, \"bindings\": {\"logits_or_prediction\": {\"output\": \"logits\"}, \"targets\": {\"batch\": \"targets\"}}}, batch_size=4, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
+          "title": "Train a preference model with SimPO"
+        }
+      ],
+      "id": "simpo-loss",
+      "implementation": {
+        "path": "implementations/losses/simpo_loss.py",
+        "sha256": "c5239ab2de6ccd61ae1f30ca6dfcb0eff57a7e51ab4a52c498ccff7c8d2a4163",
+        "symbol": "simpo_loss"
+      },
+      "name": "SimPO loss",
+      "parameters": {
+        "additional parameters": "**params accepts only beta and gamma; both are required and unsupported keys raise ValueError",
+        "beta": "required positive finite scalar controlling reward difference scale; no universal default is specified (paper §2.2 Eq. (4))",
+        "gamma": "required positive finite target reward margin; no universal default is specified (paper §2.3 Eq. (5))",
+        "ignore_index": "optional integer token ID excluded from reward sums and response lengths; every response must retain at least one valid token",
+        "logits_or_prediction": "floating point token logits with shape [B, 2, T, V], chosen response at index 0 and rejected response at index 1",
+        "reduction": "none returns one loss per pair [B], mean averages pairs, or sum totals them (default mean)",
+        "targets": "integer or integral-valued token IDs with shape [B, 2, T], aligned to logits and on the same device"
+      },
+      "usage": "Trainer(model, train, recipe='structured-objective', recipe_config={'loss':'simpo-loss','loss_kwargs':{'beta':2.0,'gamma':0.5},'bindings':{'logits_or_prediction':{'output':'logits'},'targets':{'batch':'targets'}}})"
+    },
+    {
       "api": "topologies.training.losses:compute_loss(cfg, prediction, targets, **extra)",
       "description": "Elementwise Smooth-L1 for matching prediction/target shapes; beta is the quadratic-to-linear threshold, beta=0 is L1.",
       "examples": [
@@ -1943,6 +1970,32 @@
         "reduction": "none, mean, or sum over elements"
       },
       "usage": "loss = smooth_l1(box_deltas, targets, beta=1.0)"
+    },
+    {
+      "api": "topologies.training.losses:get_loss('soft-dtw')(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', **params); params accepts gamma",
+      "description": "Raw soft-DTW with squared-Euclidean local costs and the soft-min dynamic program (Cuturi & Blondel, §2.1 Eq. (2) and Algorithm 1; §2.2 following Eq. (3)); batch reductions follow src/topologies/implementations/training/core.py:70-76.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nimport torch.nn as nn\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef sequences(ctx):\n    features = torch.randn(6, generator=ctx.rng.torch)\n    targets = features[:6].reshape(3, 2)\n    return {\"inputs\": synth.Tensor(features), \"targets\": synth.Tensor(targets)}\ndataset = synth.Spec(\"soft-dtw-sequences\", generator=sequences, size=16, splits={\"train\": 1.0}, seed=11, root=root, monitor=\"none\").run()\ntrain = dataset.for_recipe(\"regression\", split=\"train\", input_field=\"inputs\", target_field=\"targets\", preserve_shape=True)\nclass SequenceRegressor(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.network = build(\"mlp\", \"tiny\", in_features=6, out_features=6)\n    def forward(self, inputs):\n        return self.network(inputs).reshape(-1, 3, 2)\nmodel = SequenceRegressor()\ntrainer = Trainer(model, train, recipe=\"regression\", recipe_config={\"loss\": \"soft-dtw\", \"loss_kwargs\": {\"gamma\": 1.0}}, batch_size=4, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
+          "title": "Train a sequence regressor with soft-DTW"
+        }
+      ],
+      "id": "soft-dtw",
+      "implementation": {
+        "path": "implementations/losses/soft_dtw.py",
+        "sha256": "cdb245fb702b84548843d4690664a40e76cfaa8eb65ef0b06eabffc2f43261d0",
+        "symbol": "soft_dtw"
+      },
+      "name": "Soft-DTW loss",
+      "parameters": {
+        "additional parameters": "**params accepts gamma only; unsupported keys raise ValueError",
+        "gamma": "finite positive real soft-min temperature (default 1.0)",
+        "ignore_index": "must be None because continuous sequence targets do not use indexed-label masking",
+        "logits_or_prediction": "floating-point sequences shaped [B, N] or [B, N, D], with nonempty batch and sequence dimensions",
+        "reduction": "none returns one raw score per sample, mean averages batch scores, or sum totals them (default mean)",
+        "targets": "floating-point sequences shaped [B, M] or [B, M, D], matching prediction batch, feature dimension, dtype, and device; M may differ from N"
+      },
+      "usage": "Trainer(model, train, recipe='regression', recipe_config={'loss':'soft-dtw','loss_kwargs':{'gamma':1.0}})"
     },
     {
       "api": "topologies.training.losses:compute_loss(cfg, logits, targets, **extra)",
@@ -1967,6 +2020,57 @@
         "reduction": "none, mean over valid targets, or sum"
       },
       "usage": "loss = softmax_focal(class_logits, labels, alpha=class_weights, ignore_index=-100)"
+    },
+    {
+      "api": "topologies.training.losses:get_loss('sphereface')(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', feature_norm, m=4)",
+      "description": "SphereFace A-Softmax replaces the target class score with ||x|| psi_m(acos(score/||x||)) and applies multiclass cross-entropy (paper §3.1 Eq. (5), §3.2 Eq. (7); .autopilot/sources/paper.txt:194-199,250-259). Scores require unit-normalized class weights, zero biases, and unnormalized embeddings; bind each embedding norm as feature_norm through src/topologies/training/recipes/structured_objective.py:36-48.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nimport torch.nn as nn\nimport torch.nn.functional as F\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef samples(ctx):\n    label = int(ctx.index) % 2\n    features = torch.randn(4, generator=ctx.rng.torch) * 0.1\n    features[0] = 1.0 if label else -1.0\n    inputs = torch.cat((features, torch.tensor([float(label)])))\n    return {\"inputs\": synth.Tensor(inputs)}\ndataset = synth.Spec(\"sphereface\", generator=samples, size=12, splits={\"train\": 1.0}, seed=7, root=root, monitor=\"none\").run()\ntrain = dataset.for_recipe(\"structured-objective\", split=\"train\")\nclass SphereFaceModel(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.encoder = build(\"mlp\", \"tiny\", in_features=4, out_features=4)\n        self.class_weights = nn.Parameter(torch.randn(2, 4))\n    def forward(self, inputs):\n        embedding = self.encoder(inputs[..., :4])\n        feature_norm = embedding.norm(dim=-1).clamp_min(1e-6)\n        logits = F.linear(embedding, F.normalize(self.class_weights, dim=1))\n        return {\"logits\": logits, \"feature_norm\": feature_norm, \"targets\": inputs[..., 4].long()}\ntrainer = Trainer(SphereFaceModel(), train, recipe=\"structured-objective\", recipe_config={\"loss\": \"sphereface\", \"loss_kwargs\": {\"m\": 4}, \"bindings\": {\"logits_or_prediction\": {\"output\": \"logits\"}, \"targets\": {\"output\": \"targets\"}, \"feature_norm\": {\"output\": \"feature_norm\"}}}, batch_size=4, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
+          "title": "Train a classifier with SphereFace A-Softmax"
+        }
+      ],
+      "id": "sphereface",
+      "implementation": {
+        "path": "implementations/losses/sphereface.py",
+        "sha256": "0ad4061c25c051bbee3872320945d0ff5df08e20efbe999da387234f39ce7cdf",
+        "symbol": "sphereface"
+      },
+      "name": "SphereFace A-Softmax loss",
+      "parameters": {
+        "feature_norm": "required positive floating-point embedding norms with shape [B] or [B, 1], matching the logits dtype and device",
+        "ignore_index": "optional integer target excluded from the batch mean; ignored samples return zero with reduction='none'",
+        "logits_or_prediction": "raw floating-point class scores with shape [B, K], produced by unit-normalized class weights and zero biases; embeddings themselves remain unnormalized",
+        "m": "positive integer angular multiplicity (default 4); m=1 reduces to modified softmax",
+        "reduction": "none returns per-example losses, mean averages valid targets, or sum totals valid losses (default mean)",
+        "targets": "long class indices with shape [B], in [0, K) except for ignore_index"
+      },
+      "usage": "Trainer(model, loader, recipe='structured-objective', recipe_config={'loss':'sphereface','loss_kwargs':{'m':4},'bindings':{'logits_or_prediction':{'output':'logits'},'targets':{'output':'targets'},'feature_norm':{'output':'feature_norm'}}})"
+    },
+    {
+      "api": "topologies.implementations.losses.stop_gradient_twins:stop_gradient_twins(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', **params) -> torch.Tensor",
+      "description": "Per-example negative cosine similarity between a prediction and an L2-normalized detached target, implementing the one-sided stop-gradient term; concatenate both cross-view directions to form the symmetric objective (Chen and He, §3 Eqs. (1), (3), and (4); src/topologies/implementations/losses/stop_gradient_twins.py:31-46). Trainer bindings use src/topologies/training/recipes/structured_objective.py:36-50.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nimport torch.nn as nn\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef paired_views(ctx):\n    first = torch.randn(4, generator=ctx.rng.torch)\n    second = first + 0.1 * torch.randn(4, generator=ctx.rng.torch)\n    return {\"inputs\": synth.Tensor(torch.stack((first, second)))}\ndataset = synth.Spec(\"stop-gradient-twins\", generator=paired_views, size=8, splits={\"train\": 1.0}, seed=7, root=root, monitor=\"none\").run()\ntrain = dataset.for_recipe(\"structured-objective\", split=\"train\")\nclass TwinModel(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.encoder = build(\"mlp\", \"tiny\", in_features=4, out_features=3)\n        self.predictor = build(\"mlp\", \"tiny\", in_features=3, out_features=3)\n    def forward(self, inputs):\n        batch_size, view_count, feature_count = inputs.shape\n        embeddings = self.encoder(inputs.reshape(batch_size * view_count, feature_count)).reshape(batch_size, view_count, -1)\n        predictions = self.predictor(embeddings.reshape(batch_size * view_count, -1)).reshape(batch_size, view_count, -1)\n        return {\"predictions\": torch.cat((predictions[:, 0], predictions[:, 1]), dim=0), \"targets\": torch.cat((embeddings[:, 1], embeddings[:, 0]), dim=0)}\ntrainer = Trainer(TwinModel(), train, recipe=\"structured-objective\", recipe_config={\"loss\": \"stop-gradient-twins\", \"bindings\": {\"logits_or_prediction\": {\"output\": \"predictions\"}, \"targets\": {\"output\": \"targets\"}}}, batch_size=4, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
+          "title": "Train a shared two-view encoder with stop-gradient twins loss"
+        }
+      ],
+      "id": "stop-gradient-twins",
+      "implementation": {
+        "path": "implementations/losses/stop_gradient_twins.py",
+        "sha256": "1c5d302f91f39e931cc5738c2542795a18eb8fa1c2f8d0dbcb3a978670fddf35",
+        "symbol": "stop_gradient_twins"
+      },
+      "name": "Stop-Gradient Twins Loss",
+      "parameters": {
+        "additional parameters": "no additional parameters are supported; unsupported keys in **params raise ValueError",
+        "ignore_index": "must be None because this embedding objective has no indexed labels",
+        "logits_or_prediction": "finite floating-point prediction tensor shaped [B,D] with B >= 1, D >= 1, and nonzero L2 norm for every vector",
+        "reduction": "none returns one negative cosine value per example, mean averages examples, or sum totals examples (default mean)",
+        "targets": "finite floating-point target tensor matching prediction shape, dtype, and device with nonzero L2 norm for every vector; detached before normalization"
+      },
+      "usage": "Trainer(model, train, recipe='structured-objective', recipe_config={'loss':'stop-gradient-twins','bindings':{'logits_or_prediction':{'output':'predictions'},'targets':{'output':'targets'}}})"
     },
     {
       "api": "topologies.training.losses:get_loss('student-teacher')(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', **params)",

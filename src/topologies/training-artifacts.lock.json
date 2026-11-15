@@ -783,6 +783,17 @@
     },
     {
       "files": {
+        "catalog/losses/score-matching.json": "684189b788814718a76cf9e7bd14ae5627061aae11ffaa7a09663b664544930c",
+        "implementations/losses/score_matching.py": "28c20e5abb4336657f15149d973b5763924dafec73d002effd24ce0d5d5fc94c"
+      },
+      "id": "score-matching",
+      "kind": "loss",
+      "name": "score-matching",
+      "namespace": "library",
+      "version": 1
+    },
+    {
+      "files": {
         "catalog/losses/si-log.json": "fe513b4ae00680c93bf70d7f072c6a7df575be28405761173e0584887be5ca77",
         "implementations/losses/si_log.py": "3126474b3d0326b107abf1f635548cf0ebf964f9841c6202903bc4c0ba94dc2c"
       },
@@ -855,6 +866,17 @@
       "id": "stylegan-path-length",
       "kind": "loss",
       "name": "stylegan-path-length",
+      "namespace": "library",
+      "version": 1
+    },
+    {
+      "files": {
+        "catalog/losses/supcon.json": "fe0f30f9262f7d02437f19690a6f8e3a7e9c3ec1c0078080d09a68665f50dd5d",
+        "implementations/losses/supcon.py": "57bdae1aab2e88677cc832ed6b3b2e5297713601dd50715e09e42355eebd3e04"
+      },
+      "id": "supcon",
+      "kind": "loss",
+      "name": "supcon",
       "namespace": "library",
       "version": 1
     },

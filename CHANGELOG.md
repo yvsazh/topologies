@@ -2,6 +2,32 @@
 
 All notable changes to `topologies` are listed here.
 
+## 0.0.15 — 2026-11-15
+
+### Added
+- **Models**: `segnet` (SegNet: A Deep Convolutional Encoder-Decoder Architecture for Image Segmentation) ([paper](https://arxiv.org/abs/1511.00561))
+- **Models**: `sqil` (SQIL soft-Bellman loss) ([paper](https://arxiv.org/abs/1905.11108))
+- **Models**: `spice` (SPICE Relative-Pitch Huber Loss) ([paper](https://arxiv.org/abs/1910.11664))
+- **Components**: `prenorm` (prenorm) ([paper](https://arxiv.org/abs/2002.04745))
+- **Components**: `point-e` (Point-E: Denoising step for point-cloud diffusion) ([paper](https://arxiv.org/abs/2212.08751))
+- **Components**: `proxylessnas` (ProxylessNAS) ([paper](https://arxiv.org/abs/1812.00332))
+- **Components**: `prompt-tuning` (prompt-tuning) ([paper](https://arxiv.org/abs/2104.08691))
+- **Components**: `projection-discriminator` (Projection Discriminator) ([paper](https://arxiv.org/abs/1802.05637))
+- **Components**: `qa-lora` (qa-lora) ([paper](https://arxiv.org/abs/2309.14717))
+- **Components**: `r2d2` (R2-D2) ([paper](https://arxiv.org/abs/1805.08136))
+- **Components**: `radam` (radam) ([paper](https://arxiv.org/abs/1908.03265))
+- **Components**: `random-erasing` (Random Erasing Data Augmentation) ([paper](https://arxiv.org/abs/1708.04896))
+- **Components**: `raps` (Regularized Adaptive Prediction Sets) ([paper](https://arxiv.org/abs/2009.14193))
+- **Components**: `retfound` (RETFound-inspired masked reconstruction scaffold) ([paper](https://doi.org/10.1038/s41586-023-06555-x))
+- **Components**: `restormer` (restormer) ([paper](https://arxiv.org/abs/2111.09881))
+- **Components**: `rezero` (rezero) ([paper](https://arxiv.org/abs/2003.04887))
+- **Components**: `rwalk` (Riemannian walk for incremental learning) ([paper](https://arxiv.org/abs/1801.10112))
+- **Losses**: `stop-gradient-twins`
+- **Losses**: `simpo-loss`
+- **Losses**: `soft-dtw`
+- **Losses**: `sphereface`
+
+
 ## 0.0.14 — 2026-11-12
 
 ### Added

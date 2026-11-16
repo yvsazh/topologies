@@ -53,7 +53,7 @@
     "rq": {"constructor": {"n_mels": 8, "mode": "attend", "vocab_size": 8, "context_length": 2}, "args": [{"tensor": "normal", "shape": [2, 2, 8]}]},
     "var": {"constructor": {"n_mels": 8, "mode": "attend", "vocab_size": 8, "context_length": 2}, "args": [{"tensor": "normal", "shape": [2, 2, 8]}]},
     "maskgit": {"constructor": {"vocab_size": 8, "hidden_dim": 8, "num_tokens": 6, "num_layers": 1, "num_heads": 2}, "args": [], "kwargs": {"tokens": {"tensor": "values", "values": [[0, 1, 2, 3, 4, 5]], "dtype": "long"}, "mask": {"tensor": "values", "values": [[false, true, false, true, false, true]], "dtype": "bool"}}},
-    "sdxl-lightning": {"constructor": {"n_mels": 8, "mode": "attend", "vocab_size": 8, "context_length": 2}, "args": [{"tensor": "normal", "shape": [2, 2, 8]}]},
+    "sdxl-lightning": {"constructor": {}, "args": [{"tensor": "normal", "shape": [2, 1, 4]}, {"tensor": "normal", "shape": [2, 1, 4]}], "kwargs": {"sigma": {"tensor": "full", "shape": [2, 1, 1], "value": 0.25}}},
     "dmd2": {"constructor": {"n_mels": 8, "mode": "attend", "vocab_size": 8, "context_length": 2}, "args": [{"tensor": "normal", "shape": [2, 2, 8]}]},
     "score-matching": {"constructor": {"n_mels": 8, "mode": "attend", "vocab_size": 8, "context_length": 2}, "args": [{"tensor": "normal", "shape": [2, 2, 8]}]},
     "v-pred": {"constructor": {"features": 4}, "args": [], "kwargs": {"clean": {"tensor": "values", "values": [[0.2, -0.4, 0.6, 0.8]], "dtype": "float32"}, "noise": {"tensor": "values", "values": [[-0.1, 0.3, 0.5, -0.7]], "dtype": "float32"}, "alpha": 0.8, "sigma": 0.6}},

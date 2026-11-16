@@ -827,12 +827,34 @@
     },
     {
       "files": {
+        "catalog/losses/simpo-loss.json": "93bcc9111c4616586a8fe85d2feab06998c91b697be8014535cdef2421af49b2",
+        "implementations/losses/simpo_loss.py": "c5239ab2de6ccd61ae1f30ca6dfcb0eff57a7e51ab4a52c498ccff7c8d2a4163"
+      },
+      "id": "simpo-loss",
+      "kind": "loss",
+      "name": "simpo-loss",
+      "namespace": "library",
+      "version": 1
+    },
+    {
+      "files": {
         "catalog/losses/smooth-l1.json": "1ff330df021b22bde778e4eb368808ca362a33756699bea80b5adf90bb069a19",
         "implementations/training/core.py": "878f03ad0677bb8cd1b993861f72dcf5bfa14853743a5b355353c1d1f8162f9b"
       },
       "id": "smooth-l1",
       "kind": "loss",
       "name": "smooth-l1",
+      "namespace": "library",
+      "version": 2
+    },
+    {
+      "files": {
+        "catalog/losses/soft-dtw.json": "d1a22bc342948918851353d8119ff76a1b6ef6c3327984e6d7e7d7cc505256ae",
+        "implementations/losses/soft_dtw.py": "cdb245fb702b84548843d4690664a40e76cfaa8eb65ef0b06eabffc2f43261d0"
+      },
+      "id": "soft-dtw",
+      "kind": "loss",
+      "name": "soft-dtw",
       "namespace": "library",
       "version": 2
     },
@@ -846,6 +868,28 @@
       "name": "softmax-focal",
       "namespace": "library",
       "version": 2
+    },
+    {
+      "files": {
+        "catalog/losses/sphereface.json": "eea704e75f5aa4d58d6b514b7318afc4df097e897aa4d0b561e4d58cbb1f833b",
+        "implementations/losses/sphereface.py": "0ad4061c25c051bbee3872320945d0ff5df08e20efbe999da387234f39ce7cdf"
+      },
+      "id": "sphereface",
+      "kind": "loss",
+      "name": "sphereface",
+      "namespace": "library",
+      "version": 1
+    },
+    {
+      "files": {
+        "catalog/losses/stop-gradient-twins.json": "30bc59d25f05f5f26922a7dda08f53870428dc5a43c9fe0f40fc3d685fcb4b30",
+        "implementations/losses/stop_gradient_twins.py": "1c5d302f91f39e931cc5738c2542795a18eb8fa1c2f8d0dbcb3a978670fddf35"
+      },
+      "id": "stop-gradient-twins",
+      "kind": "loss",
+      "name": "stop-gradient-twins",
+      "namespace": "library",
+      "version": 1
     },
     {
       "files": {

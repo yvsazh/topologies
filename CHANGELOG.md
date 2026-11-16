@@ -2,6 +2,12 @@
 
 All notable changes to `topologies` are listed here.
 
+## 0.0.16 — 2026-11-16
+
+### Added
+- **Components**: `sdxl-lightning` (Generic latent update (not SDXL-Lightning)) ([paper](https://arxiv.org/abs/2402.13929))
+
+
 ## 0.0.15 — 2026-11-15
 
 ### Added

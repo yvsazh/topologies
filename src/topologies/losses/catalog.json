@@ -2203,6 +2203,33 @@
       "usage": "Trainer(model, train, recipe='tabular-classify', recipe_config={'loss':'temperature-scaling','loss_kwargs':{'temperature':1.0}})"
     },
     {
+      "api": "topologies.training.losses:get_loss('trades')(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', adversarial_logits, beta) -> torch.Tensor",
+      "description": "Natural-label cross-entropy plus beta-weighted cross-entropy from the adversarial softmax distribution to the clean logits, following Zhang et al. §4 Eq. (5) and §5.2. The supplied adversarial prediction is used as-is; projected-gradient search stays outside this loss. Structured-objective bindings follow src/topologies/training/recipes/structured_objective.py:36-50.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nimport torch.nn as nn\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef paired_views(ctx):\n    label = int(ctx.index) % 2\n    center = torch.zeros(4)\n    center[label] = 1.0\n    clean = center + 0.05 * torch.randn(4, generator=ctx.rng.torch)\n    adversarial = clean + 0.1 * torch.randn(4, generator=ctx.rng.torch)\n    return {\"inputs\": synth.Tensor(torch.stack((clean, adversarial))), \"targets\": label}\ndataset = synth.Spec(\"trades-paired-views\", generator=paired_views, size=8, splits={\"train\": 1.0}, seed=7, root=root, monitor=\"none\").run()\ntrain = dataset.for_recipe(\"structured-objective\", split=\"train\")\nclass PairedClassifier(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.network = build(\"mlp\", \"tiny\", in_features=4, out_features=2)\n    def forward(self, inputs):\n        return {\"clean_logits\": self.network(inputs[:, 0]), \"adversarial_logits\": self.network(inputs[:, 1])}\ntrainer = Trainer(PairedClassifier(), train, recipe=\"structured-objective\", recipe_config={\"loss\": \"trades\", \"loss_kwargs\": {\"beta\": 1.0}, \"bindings\": {\"logits_or_prediction\": {\"output\": \"clean_logits\"}, \"adversarial_logits\": {\"output\": \"adversarial_logits\"}, \"targets\": {\"batch\": \"targets\"}}}, batch_size=4, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
+          "title": "Train a paired-view classifier with TRADES"
+        }
+      ],
+      "id": "trades",
+      "implementation": {
+        "path": "implementations/losses/trades.py",
+        "sha256": "084f1bf8a9b34d44a0573882fc92802448841fe0ff9805d252188db697de7546",
+        "symbol": "trades"
+      },
+      "name": "TRADES robustness-accuracy loss",
+      "parameters": {
+        "additional parameters": "adversarial_logits and beta are the only accepted keys in **params; both are required",
+        "adversarial_logits": "floating-point adversarial class logits shaped [B, C], matching the clean logits in shape, dtype, and device",
+        "beta": "finite positive real trade-off coefficient beta=1/lambda; required because the paper specifies no software default",
+        "ignore_index": "optional integer target index to exclude from both loss terms (default None)",
+        "logits_or_prediction": "floating-point clean class logits shaped [B, C] with B > 0 and C >= 2",
+        "reduction": "none returns per-example losses, mean averages valid examples, or sum totals valid examples (default mean)",
+        "targets": "class indices shaped [B], provided as integer or integral-valued floating-point tensors; ignored labels are excluded when ignore_index is set"
+      },
+      "usage": "Trainer(model, train, recipe='structured-objective', recipe_config={'loss':'trades','loss_kwargs':{'beta':1.0},'bindings':{'logits_or_prediction':{'output':'clean_logits'},'adversarial_logits':{'output':'adversarial_logits'},'targets':{'batch':'targets'}}})"
+    },
+    {
       "api": "topologies.training.losses:compute_loss(cfg, anchor, positive, negative, **extra)",
       "description": "Unmined torch triplet-margin objective over aligned anchor/positive/negative embeddings; mining remains external.",
       "examples": [
@@ -2224,6 +2251,111 @@
         "reduction": "none, mean, or sum"
       },
       "usage": "loss = triplet_margin(anchor, positive, negative, margin=0.2)"
+    },
+    {
+      "api": "topologies.training.losses:get_loss('trpo')(logits_or_prediction, targets, *, old_log_prob, ignore_index=None, reduction='mean')",
+      "description": "Single-path TRPO likelihood-ratio surrogate minimized over selected-action log probabilities and detached old-policy advantages. Uses q=pi_old and the advantage form equivalent up to a constant to the paper's Q form; callers own the KL constraint and policy update (Schulman et al., §5 Eqs. (13)–(14), §5.1; structured bindings: src/topologies/training/recipes/structured_objective.py:36-50).",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nimport torch.nn as nn\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef rollouts(ctx):\n    state = torch.randn(4, generator=ctx.rng.torch)\n    action = int(ctx.index) % 2\n    advantage = float(int(ctx.index) % 5 - 2)\n    inputs = torch.cat((state, torch.tensor([float(action)])))\n    return {\"inputs\": synth.Tensor(inputs), \"advantage\": synth.Tensor(torch.tensor(advantage)), \"old_log_prob\": synth.Tensor(torch.tensor(-0.6931471805599453))}\ndataset = synth.Spec(\"trpo-rollouts\", generator=rollouts, size=12, splits={\"train\": 1.0}, seed=7, root=root, monitor=\"none\").run()\ntrain = dataset.for_recipe(\"structured-objective\", split=\"train\")\nclass Policy(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.network = build(\"mlp\", \"tiny\", in_features=4, out_features=2)\n    def forward(self, inputs):\n        logits = self.network(inputs[..., :4])\n        log_probabilities = torch.log_softmax(logits, dim=-1)\n        actions = inputs[..., 4].long().unsqueeze(-1)\n        return {\"log_probability\": log_probabilities.gather(-1, actions).squeeze(-1)}\ntrainer = Trainer(Policy(), train, recipe=\"structured-objective\", recipe_config={\"loss\": \"trpo\", \"loss_kwargs\": {\"reduction\": \"mean\"}, \"bindings\": {\"logits_or_prediction\": {\"output\": \"log_probability\"}, \"targets\": {\"batch\": \"advantage\"}, \"old_log_prob\": {\"batch\": \"old_log_prob\"}}}, batch_size=4, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
+          "title": "Train a policy with the TRPO surrogate"
+        }
+      ],
+      "id": "trpo",
+      "implementation": {
+        "path": "implementations/losses/trpo.py",
+        "sha256": "ac2567c636c719550f0dbb32b65afe0dc7d581c06ceb4df01485b2f9979ea9ed",
+        "symbol": "trpo"
+      },
+      "name": "TRPO policy surrogate loss",
+      "parameters": {
+        "ignore_index": "must be None; transition masking is unsupported",
+        "logits_or_prediction": "floating-point selected-action log probabilities under the current policy, shape [B]",
+        "old_log_prob": "required floating-point selected-action log probabilities under the sampling policy pi_old, shape [B], detached from gradients",
+        "reduction": "none returns per-sample losses, mean averages samples, or sum totals samples (default mean)",
+        "targets": "floating-point advantages estimated under the old policy, shape [B], detached from gradients"
+      },
+      "usage": "Trainer(model, train, recipe='structured-objective', recipe_config={'loss':'trpo','loss_kwargs':{'reduction':'mean'},'bindings':{'logits_or_prediction':{'output':'log_probability'},'targets':{'batch':'advantage'},'old_log_prob':{'batch':'old_log_prob'}}})"
+    },
+    {
+      "api": "topologies.training.losses:get_loss('varifocal-loss')(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', **params)",
+      "description": "Varifocal Loss on predicted probabilities and continuous IoU-aware scores, with q-weighted positive binary cross-entropy and alpha*p^gamma-weighted negative binary cross-entropy (VarifocalNet paper §4.2 Eq. (2), .autopilot/sources/paper.txt:189-206). avg_factor supports N_pos normalization from §4.6 Eq. (3), .autopilot/sources/paper.txt:251-271, following the mean-reduction pattern in src/topologies/implementations/losses/quality_focal_loss.py:74-80; Trainer forwards loss_kwargs in src/topologies/training/losses.py:196-200.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nimport torch.nn as nn\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef samples(ctx):\n    features = torch.randn(4, generator=ctx.rng.torch)\n    targets = torch.rand(2, generator=ctx.rng.torch)\n    return {\"inputs\": synth.Tensor(features), \"targets\": synth.Tensor(targets)}\nds = synth.Spec(\"varifocal-iacs\", generator=samples, size=8, splits={\"train\": 1.0}, seed=7, root=root, monitor=\"none\").run()\ntrain = ds.for_recipe(\"regression\", split=\"train\", input_field=\"inputs\", target_field=\"targets\", preserve_shape=True)\nmodel = nn.Sequential(build(\"mlp\", \"tiny\", in_features=4, out_features=2), nn.Sigmoid())\ntrainer = Trainer(model, train, recipe=\"regression\", recipe_config={\"loss\": \"varifocal-loss\", \"loss_kwargs\": {\"alpha\": 0.75, \"gamma\": 2.0}}, batch_size=4, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
+          "title": "Train an IoU-aware classifier with Varifocal Loss"
+        }
+      ],
+      "id": "varifocal-loss",
+      "implementation": {
+        "path": "implementations/losses/varifocal_loss.py",
+        "sha256": "b278433f4e36ac5974f5761b70330f15a00d8ad101b548415d8a11e7de155e1e",
+        "symbol": "varifocal_loss"
+      },
+      "name": "Varifocal Loss",
+      "parameters": {
+        "additional parameters": "alpha, gamma, and avg_factor only; unrecognized keyword parameters raise ValueError",
+        "alpha": "finite nonnegative negative-example balancing factor (default 0.75; VarifocalNet paper §5.1.1)",
+        "avg_factor": "optional finite positive denominator for the summed loss; accepted only with mean reduction (default None), pass N_pos for paper §4.6 Eq. (3)",
+        "gamma": "finite nonnegative negative-example focusing exponent (default 2.0; VarifocalNet paper §5.1.1)",
+        "ignore_index": "must be None because continuous quality targets have no ignored-index convention",
+        "logits_or_prediction": "nonempty finite floating-point predicted probabilities in [0, 1], with any shape",
+        "reduction": "none returns elementwise losses, mean averages all elements, or sum totals them (default mean)",
+        "targets": "finite floating-point continuous quality targets in [0, 1], with the same shape and device as predictions"
+      },
+      "usage": "Trainer(model, train, recipe='regression', recipe_config={'loss':'varifocal-loss','loss_kwargs':{'alpha':0.75,'gamma':2.0}})"
+    },
+    {
+      "api": "topologies.training.losses:get_loss('wasserstein-1d')(logits_or_prediction, targets, *, ignore_index=None, reduction='mean', **params)",
+      "description": "Equal-weight empirical 1-D Wasserstein-1 distance via mean absolute sorted-rank differences, derived from Vallander (English translation, pp. 784-786, Eq. (2)); reduction and option validation conventions follow src/topologies/implementations/losses/multi_similarity.py:7-15,100-105.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nimport torch.nn as nn\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef samples(ctx):\n    inputs = torch.randn(4, generator=ctx.rng.torch)\n    target = torch.tensor(float(int(ctx.index) % 4))\n    return {\"inputs\": synth.Tensor(inputs), \"targets\": synth.Tensor(target)}\ndataset = synth.Spec(\"wasserstein-1d-regression\", generator=samples, size=8, splits={\"train\": 1.0}, seed=7, root=root, monitor=\"none\").run()\ntrain = dataset.for_recipe(\"regression\", split=\"train\", input_field=\"inputs\", target_field=\"targets\", preserve_shape=True)\nclass ScalarPredictor(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.network = build(\"mlp\", \"tiny\", in_features=4, out_features=1)\n    def forward(self, inputs):\n        return self.network(inputs).squeeze(-1)\ntrainer = Trainer(ScalarPredictor(), train, recipe=\"regression\", recipe_config={\"loss\": \"wasserstein-1d\"}, batch_size=4, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
+          "title": "Train a scalar regressor with empirical Wasserstein-1"
+        }
+      ],
+      "id": "wasserstein-1d",
+      "implementation": {
+        "path": "implementations/losses/wasserstein_1d.py",
+        "sha256": "32ce9bc36c4d7b72a10b0096d5d9dcd53bf50eda43dee81ac4778f7d8f74b961",
+        "symbol": "wasserstein_1d"
+      },
+      "name": "Equal-weight 1-D Wasserstein-1 loss",
+      "parameters": {
+        "**params": "unsupported; any extra parameter raises ValueError",
+        "ignore_index": "must be None because ignored-index semantics are undefined for real-valued samples",
+        "logits_or_prediction": "finite real-valued tensor with shape [N], where N is at least 1",
+        "reduction": "none returns sorted rankwise absolute gaps, mean returns Wasserstein-1, or sum returns the total gap (default mean)",
+        "targets": "finite real-valued tensor with shape [N], matching logits_or_prediction"
+      },
+      "usage": "Trainer(model, train, recipe='regression', recipe_config={'loss':'wasserstein-1d'})"
+    },
+    {
+      "api": "topologies.training.losses:get_loss('wing-loss')(logits_or_prediction, targets, *, ignore_index=None, reduction='sum', **params)",
+      "description": "Pointwise Wing penalty with a logarithmic region for absolute errors below width and a linear tail otherwise, following Feng et al., §4.2 Eq. (5). The summed default matches the coordinate and sample objective in §3 Eq. (2) and §4.1 Eq. (3). Clean-room implementation: src/topologies/implementations/losses/wing_loss.py:7-53.",
+      "examples": [
+        {
+          "code": "import tempfile\nimport torch\nfrom topologies import Trainer, build, synth\nroot = tempfile.mkdtemp()\n@synth.generator\ndef samples(ctx):\n    features = torch.randn(4, generator=ctx.rng.torch)\n    return {\"inputs\": synth.Tensor(features), \"targets\": synth.Tensor(features[:2])}\ndataset = synth.Spec(\"wing-regression\", generator=samples, size=8, splits={\"train\": 1.0}, seed=11, root=root, monitor=\"none\").run()\ntrain = dataset.for_recipe(\"regression\", split=\"train\", input_field=\"inputs\", target_field=\"targets\", preserve_shape=True)\nmodel = build(\"mlp\", \"tiny\", in_features=4, out_features=2)\ntrainer = Trainer(model, train, recipe=\"regression\", recipe_config={\"loss\": \"wing-loss\", \"loss_kwargs\": {\"width\": 10.0, \"epsilon\": 2.0, \"reduction\": \"sum\"}}, batch_size=2, max_epochs=1, device=\"cpu\")\ntrainer.fit()",
+          "title": "Train a coordinate regressor with Wing loss"
+        }
+      ],
+      "id": "wing-loss",
+      "implementation": {
+        "path": "implementations/losses/wing_loss.py",
+        "sha256": "c03a156980d7f89dd505cb2711468c4c2681c6d51e422fe3d2737855f6d5f5f4",
+        "symbol": "wing_loss"
+      },
+      "name": "Wing loss",
+      "parameters": {
+        "additional parameters": "**params accepts no additional parameters; unsupported keys raise ValueError",
+        "epsilon": "finite positive real number controlling the logarithmic curvature (default 2.0 from the CNN-6 setting in §4.2 and §7.1)",
+        "ignore_index": "must be None because the regression formula defines no ignored target",
+        "logits_or_prediction": "floating-point prediction tensor with any shape",
+        "reduction": "'none' returns elementwise penalties, 'mean' averages all elements, or 'sum' totals all elements (default 'sum')",
+        "targets": "floating-point tensor with the same shape and device as logits_or_prediction",
+        "width": "finite nonnegative real number setting the logarithmic region threshold (default 10.0 from the CNN-6 setting in §4.2 and §7.1)"
+      },
+      "usage": "Trainer(model, train, recipe='regression', recipe_config={'loss':'wing-loss'})"
     }
   ],
   "schema_version": 1

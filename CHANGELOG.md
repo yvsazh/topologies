@@ -2,6 +2,59 @@
 
 All notable changes to `topologies` are listed here.
 
+## 0.0.17 — 2026-11-17
+
+### Added
+- **Models**: `tico` (TiCo) ([paper](https://arxiv.org/abs/2206.10698))
+- **Models**: `timegrad` (TimeGrad) ([paper](https://arxiv.org/abs/2101.12072))
+- **Models**: `tinyhar` (TinyHAR: lightweight activity recognition) ([paper](https://doi.org/10.1145/3544794.3558467))
+- **Models**: `tpa-lstm` (TPA-LSTM) ([paper](https://arxiv.org/abs/1809.04206))
+- **Models**: `tokengt` (TokenGT) ([paper](https://arxiv.org/abs/2207.02505))
+- **Models**: `trans-svnet` (Trans-SVNet: causal stage aggregator) ([paper](https://arxiv.org/abs/2103.09712))
+- **Models**: `ultragcn` (UltraGCN) ([paper](https://arxiv.org/abs/2110.15114))
+- **Models**: `vits` (VITS identity-flow diagonal-Gaussian KL component) ([paper](https://arxiv.org/abs/2106.06103))
+- **Models**: `videoclip` (VideoCLIP) ([paper](https://arxiv.org/abs/2109.14084))
+- **Models**: `visualbert` (VisualBERT) ([paper](https://arxiv.org/abs/1908.03557))
+- **Models**: `w-mse` (W-MSE) ([paper](https://arxiv.org/abs/2007.06346))
+- **Models**: `wan` (WAN weak-form Poisson integrand component) ([paper](https://arxiv.org/abs/1907.08272))
+- **Components**: `roth` (RotH: Knowledge Graph Embeddings with Hyperbolic Rotation) ([paper](https://arxiv.org/abs/2005.00545))
+- **Components**: `satmae` (SatMAE spectral and temporal positional encoding) ([paper](https://arxiv.org/abs/2207.08051))
+- **Components**: `sagpool` (SAGPool) ([paper](https://arxiv.org/abs/1904.08082))
+- **Components**: `scaffold` (SCAFFOLD) ([paper](https://arxiv.org/abs/1910.06378))
+- **Components**: `scarf` (SCARF: Self-Supervised Contrastive Learning using Random Feature Corruption) ([paper](https://arxiv.org/abs/2106.15147))
+- **Components**: `volsdf` (volsdf) ([paper](https://arxiv.org/abs/2106.12052))
+- **Components**: `score-cam` (Score-CAM) ([paper](https://arxiv.org/abs/1910.01279))
+- **Components**: `schedule-free` (Schedule-Free SGD) ([paper](https://arxiv.org/abs/2405.15682))
+- **Components**: `scheduled-sampling` (Scheduled Sampling) ([paper](https://arxiv.org/abs/1506.03099))
+- **Components**: `self-consistency` (Self-Consistency) ([paper](https://arxiv.org/abs/2203.11171))
+- **Components**: `sew-resnet` (sew-resnet) ([paper](https://arxiv.org/abs/2102.04159))
+- **Components**: `shampoo` (Shampoo: Matrix-gradient preconditioner) ([paper](https://arxiv.org/abs/1802.09568))
+- **Components**: `simpleshot` (SimpleShot) ([paper](https://arxiv.org/abs/1911.04623))
+- **Components**: `shadow` (ShaDow) ([paper](https://arxiv.org/abs/2201.07858))
+- **Components**: `shot` (Do We Really Need to Access the Source Data? Source Hypothesis Transfer for Unsupervised Domain Adaptation) ([paper](https://arxiv.org/abs/2002.08546))
+- **Components**: `sinkhorn-attention` (Sinkhorn Attention) ([paper](https://arxiv.org/abs/2002.11296))
+- **Components**: `slayer` (SLAYER: spike layer error reassignment) ([paper](https://arxiv.org/abs/1810.08646))
+- **Components**: `smoothgrad` (SmoothGrad) ([paper](https://arxiv.org/abs/1706.03825))
+- **Components**: `soap` (SOAP 2-D Eigenbasis Adam Step) ([paper](https://arxiv.org/abs/2409.11321))
+- **Components**: `soft-moe` (soft-moe) ([paper](https://arxiv.org/abs/2308.00951))
+- **Components**: `soft-nms` (soft-nms) ([paper](https://arxiv.org/abs/1704.04503))
+- **Components**: `softsort` (SoftSort: A Continuous Relaxation for the argsort Operator) ([paper](https://arxiv.org/abs/2006.16038))
+- **Components**: `sparsemax` (Sparsemax and Entmax 1.5) ([paper](https://arxiv.org/abs/1602.02068))
+- **Components**: `sparse-gp` (Titsias Sparse-GP Variational Bound) ([paper](https://proceedings.mlr.press/v5/titsias09a.html))
+- **Components**: `speculative-decode` (Speculative Decoding) ([paper](https://arxiv.org/abs/2211.17192))
+- **Components**: `sparsegpt` (sparsegpt) ([paper](https://arxiv.org/abs/2301.00774))
+- **Components**: `starrelu` (starrelu) ([paper](https://arxiv.org/abs/2210.13452))
+- **Components**: `stgcn` (Spatio-Temporal Graph Convolution) ([paper](https://arxiv.org/abs/1709.04875))
+- **Components**: `stdp` (Pair-based STDP timing update (REVISE)) ([paper](https://doi.org/10.1038/78829))
+- **Components**: `st-moe` (st-moe) ([paper](https://arxiv.org/abs/2202.08906))
+- **Components**: `symplectic-rnn` (Symplectic RNN) ([paper](https://arxiv.org/abs/1909.13334))
+- **Losses**: `trades`
+- **Losses**: `trpo`
+- **Losses**: `varifocal-loss`
+- **Losses**: `wing-loss`
+- **Losses**: `wasserstein-1d`
+
+
 ## 0.0.16 — 2026-11-16
 
 ### Added

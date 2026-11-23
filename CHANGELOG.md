@@ -2,6 +2,46 @@
 
 All notable changes to `topologies` are listed here.
 
+## 0.0.18 — 2026-11-23
+
+### Added
+- **Models**: `wae` (Wasserstein Auto-Encoders) ([paper](https://arxiv.org/abs/1711.01558))
+- **Models**: `differentiable-finite-state-transducer` (Differentiable Exact Learning) ([paper](https://arxiv.org/abs/2611.21486))
+- **Models**: `structured-neural-clf` (Learning and Verifying Stabilizing Controllers with Structured Neural Control Lyapunov Functions) ([paper](https://arxiv.org/abs/2611.21009))
+- **Models**: `msar-next-scale-autoregressive` (MSAR: Next-Scale Autoregressive Forecasting for Time Series via Modular Multi-Scale Decoupling) ([paper](https://arxiv.org/abs/2611.20714))
+- **Models**: `raw-injected-transformer` (What kills $v$-prediction? A Patch-wise PCA Perspective on Pixel-Space Flow Matching) ([paper](https://arxiv.org/abs/2611.12852))
+- **Models**: `paloma-phase-forecasting` (Paloma: Phase-Conditioned Residual Modulation for Time Series Forecasting) ([paper](https://arxiv.org/abs/2610.25392))
+- **Models**: `motion-equivariant-convlstm` (Motion Equivariant Convolutional LSTM: When Motion Becomes a Gauge Symmetry) ([paper](https://arxiv.org/abs/2610.28771))
+- **Models**: `tqpnet` (Neural Compression of Long ADMM Trajectory for Multiparametric Quadratic Program) ([paper](https://arxiv.org/abs/2610.38079))
+- **Models**: `recoe-subspace-ood` (Subspace Learning with Outlier Exposure for Out-of-Distribution Detection) ([paper](https://arxiv.org/abs/2611.07580))
+- **Models**: `denoising-neural-process` (DnNP: Denoising Input Uncertainty in Neural Processes) ([paper](https://arxiv.org/abs/2611.14424))
+- **Models**: `multi-branch-transformer` (Multi-Branch Transformer) ([paper](https://arxiv.org/abs/2611.19800))
+- **Components**: `softras` (SoftRas Triangle Probability Map) ([paper](https://arxiv.org/abs/1904.01786))
+- **Components**: `swinir` (swinir) ([paper](https://arxiv.org/abs/2108.10257))
+- **Components**: `synthesizer` (Synthesizer: Rethinking Self-Attention in Transformer Models) ([paper](https://arxiv.org/abs/2005.00743))
+- **Components**: `swag` (SWAG) ([paper](https://arxiv.org/abs/1902.02476))
+- **Components**: `tas-b` (TAS-B: topic-aware in-batch distillation) ([paper](https://arxiv.org/abs/2104.06967))
+- **Components**: `talking-heads` (talking-heads) ([paper](https://arxiv.org/abs/2003.02436))
+- **Components**: `topk-pool` (Graph U-Nets gPool feature selection/gating subcomponent (precomputed scores)) ([paper](https://arxiv.org/abs/1905.05178))
+- **Components**: `trivialaugment` (TrivialAugment) ([paper](https://arxiv.org/abs/2103.10158))
+- **Components**: `uda` (Unsupervised Data Augmentation for Consistency Training) ([paper](https://arxiv.org/abs/1904.12848))
+- **Components**: `ulmfit` (ULMFiT Slanted Triangular Learning-Rate Schedule) ([paper](https://arxiv.org/abs/1801.06146))
+- **Components**: `vrex` (V-REx: variance risk extrapolation) ([paper](https://arxiv.org/abs/2003.00688))
+- **Components**: `vera` (vera) ([paper](https://arxiv.org/abs/2310.11454))
+- **Components**: `unigram-lm` (Unigram Language Model Tokenizer) ([paper](https://arxiv.org/abs/1804.10959))
+- **Components**: `vilt` (Joint Embedding) ([paper](https://arxiv.org/abs/2102.03334))
+- **Components**: `video-diffusion` (Video Diffusion Step) ([paper](https://arxiv.org/abs/2204.03458))
+- **Components**: `videochat` (VideoChat frame sampler) ([paper](https://arxiv.org/abs/2305.06355))
+- **Losses**: `falcon-speaker-contrastive-loss`
+- **Losses**: `fp2-triplet-velocity`
+- **Losses**: `diagnostic-loss`
+- **Losses**: `controljepa-lyapunov-tube-loss`
+- **Losses**: `latent-importance-reweighting`
+- **Losses**: `precision-safe-ce`
+- **Optimizers**: `graph-muon`
+- **Optimizers**: `stable-drift-control`
+
+
 ## 0.0.17 — 2026-11-17
 
 ### Added

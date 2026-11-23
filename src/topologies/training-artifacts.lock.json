@@ -948,6 +948,17 @@
     },
     {
       "files": {
+        "catalog/losses/trades.json": "3bf18d2f437d46481532a8da0f11131959254a71c793f6388ea574a784b3f0ba",
+        "implementations/losses/trades.py": "084f1bf8a9b34d44a0573882fc92802448841fe0ff9805d252188db697de7546"
+      },
+      "id": "trades",
+      "kind": "loss",
+      "name": "trades",
+      "namespace": "library",
+      "version": 1
+    },
+    {
+      "files": {
         "catalog/losses/triplet-margin.json": "f50ab04a959fbfa56aec7d67e696bce1c6105fcb514cb0c81f0cfe6d96c15ea5",
         "implementations/training/core.py": "878f03ad0677bb8cd1b993861f72dcf5bfa14853743a5b355353c1d1f8162f9b"
       },
@@ -956,6 +967,50 @@
       "name": "triplet-margin",
       "namespace": "library",
       "version": 2
+    },
+    {
+      "files": {
+        "catalog/losses/trpo.json": "f6559c4bcd00815a24b8ab01d77cfc6c3bd6c5b2cb090c1fcc8bf5018da51806",
+        "implementations/losses/trpo.py": "ac2567c636c719550f0dbb32b65afe0dc7d581c06ceb4df01485b2f9979ea9ed"
+      },
+      "id": "trpo",
+      "kind": "loss",
+      "name": "trpo",
+      "namespace": "library",
+      "version": 1
+    },
+    {
+      "files": {
+        "catalog/losses/varifocal-loss.json": "56489aa8da2ae2b8e8b7c2e1ff7f87e859c749b9156588faecafe250bb0c318d",
+        "implementations/losses/varifocal_loss.py": "b278433f4e36ac5974f5761b70330f15a00d8ad101b548415d8a11e7de155e1e"
+      },
+      "id": "varifocal-loss",
+      "kind": "loss",
+      "name": "varifocal-loss",
+      "namespace": "library",
+      "version": 1
+    },
+    {
+      "files": {
+        "catalog/losses/wasserstein-1d.json": "0b72af7bc2f245c47a160f7b52ea6cd3c1b0c851ce13e4e33885a12aa9bc7902",
+        "implementations/losses/wasserstein_1d.py": "32ce9bc36c4d7b72a10b0096d5d9dcd53bf50eda43dee81ac4778f7d8f74b961"
+      },
+      "id": "wasserstein-1d",
+      "kind": "loss",
+      "name": "wasserstein-1d",
+      "namespace": "library",
+      "version": 1
+    },
+    {
+      "files": {
+        "catalog/losses/wing-loss.json": "8d65df2506f38fd4f18b6a669dabac964730d84d9cabe0834ed61edc7e35c8d5",
+        "implementations/losses/wing_loss.py": "c03a156980d7f89dd505cb2711468c4c2681c6d51e422fe3d2737855f6d5f5f4"
+      },
+      "id": "wing-loss",
+      "kind": "loss",
+      "name": "wing-loss",
+      "namespace": "library",
+      "version": 1
     },
     {
       "files": {
